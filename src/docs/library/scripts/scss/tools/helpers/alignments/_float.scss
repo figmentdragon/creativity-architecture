@@ -1,0 +1,48 @@
+/* Float –––––––––––––––––––––––––––––––––––––––––––––––––– */
+$gutter-x: 0.05rem;
+$gutter-y: 0.05rem;
+
+.alignleft,
+.float-left {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+  $gutter-x: 0.05rem;
+  $gutter-y: 0.05rem;
+
+  img & {
+    margin-right: $gutter-x;
+  }
+}
+
+
+.alignright,
+.float-right {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+
+  img & {
+    margin-left: $gutter-x;
+  }
+}
+
+.aligncenter,
+.float-center {
+  clear: both;
+  display: block;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+
+  img & {
+    margin-bottom: $gutter-y;
+  }
+}
+
+.clearfix {
+    @include clearfix;
+}

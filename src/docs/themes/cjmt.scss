@@ -1,0 +1,131 @@
+/******************************************************************
+Site Name: CJMT - Creativity Architect
+Author: CJMT
+
+Stylesheet: CJMT Branding
+
+
+******************************************************************/
+
+// Colors
+@import "palettes/colors-cjmt";
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$cjmt-font-sans-serif: Euphorigenic, 'Hand Typewriter', 'Enjoy Writing', Avdira, Wanda 'Glass Antiqua', 'Love Ya Likes A Sister', Pompiere, 'Hadley';
+$font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; // stylelint-enable value-keyword-case
+
+$font-family-brand: $cjmt-font-sans-serif;
+$font-family-brand-code: 'Courier New';
+
+$cjmt-body-text-font: 'Avdira';
+$cjmt-author-text-font: 'Euphorigenic';
+$cjmt-site-title-font: 'Raylig';
+$cjmt-page-title-font: 'TELETYPE 1945-1985';
+$cjmt-tagline-text-font: 'Hand Typewriter';
+$cjmt-post-title-font: 'Hand Typewriter';
+$cjmt-nav-text-font: 'Enjoy Writing';
+$cjmt-btn-text-font: 'Glass Antiqua';
+$cjmt-lead-text-font: 'Lifesavers';
+$cjmt-footer-text-font: 'Raylig';
+
+$cjmt-body-bg: #000100;
+$cjmt-body-text: #e4edf4;
+$cjmt-body-text-align: null;
+
+$z-index-article: 400;
+$z-index-decorative-blue-ribbon: 440;
+$z-index-nav: 450;
+$z-index-header: 500;
+$z-index-author-name: 515;
+$z-index-site-title: 525;
+$z-index-main-navigation: 550;
+$z-index-footer: 700;
+$z-index-main: 725;
+$z-index-site-information: 800;
+$z-index-html-body: 850;
+$z-index-page: 850;
+
+
+#author-name {
+  font-family: $cjmt-author-text-font;
+  font-size: 8vh;
+  font-weight: bold;
+  line-height: 1.05rem;
+  z-index: $z-index-author-name;
+  color: $cjmt-primary-color;
+  text-shadow: 1 1 0 $cjmt-secondary-color, -1 -1 0 $cjmt-secondary-color;
+}
+
+#site-title {
+  font-family: $cjmt-site-title-font;
+  font-size: 9.25vh;
+  font-weight: bolder;
+  line-height: 1rem;
+  z-index: $z-index-site-title;
+  color: $cjmt-secondary-color;
+  text-shadow: $cjmt-title-shadow;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  -webkit-text-stroke-color: darken($cjmt-primary-color, 40%);
+  -webkit-text-stroke-width: 2px;
+}
+
+#page-title {
+  font-family: $cjmt-page-title-font;
+  font-size: 9vh;
+  font-weight: bold;
+  line-height: 2.75rem;
+  color: $cjmt-secondary-color;
+  text-shadow: $cjmt-title-shadow;
+  -webkit-text-stroke-color: darken($cjmt-accent-color, 75%);
+  -webkit-text-stroke-width: 1px;
+}
+
+#site-description {
+  font-family: $cjmt-tagline-text-font;
+  font-size: 5vh;
+  color: $cjmt-secondary-color;
+  text-shadow: 0.01rem 0.01rem 0.10rem darken($cjmt-secondary-color, 55%), -.01rem -.01rem 0.10rem darken($cjmt-secondary-color, 65%), 0.02rem 0.02rem 0.10rem darken($cjmt-secondary-color, 75%);
+}
+
+#navigation {
+  font-family: $cjmt-nav-text-font;
+  font-size: 4.75vh;
+  color: $cjmt-secondary-color;
+}
+
+#site-information{
+  font-family: $cjmt-footer-text-font;
+}
+
+
+.decorative {
+  position: absolute;
+  top: 2.50rem;
+  right: 95.73rem;
+  left: 0;
+  width: auto;
+  height: 3.5rem;
+  padding-left: 4rem;
+  z-index: $z-index-decorative-blue-ribbon;
+}
+
+#the {
+  font-family: $cjmt-site-title-font;
+  font-size: 4vh;
+  font-weight: bolder;
+  line-height: .5rem;
+  color: $cjmt-secondary-color;
+  text-shadow: $cjmt-title-shadow;
+  -webkit-text-stroke-color: darken($cjmt-primary-color, 40%);
+  -webkit-text-stroke-width: 2px;
+}
+
+#primary-color-ribbon {
+background-image: linear-gradient(to left bottom, #0abab5, #5cc7d0, #91d3e3, #bedfef, #e4edf4);
+}

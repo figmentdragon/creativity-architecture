@@ -1,54 +1,30 @@
 {
-  "name": "bootstrap-npm-starter",
-  "version": "1.4.0",
-  "private": true,
-  "description": "Demo project for building a Bootstrap powered site via npm.",
-  "author": "mdo",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/twbs/bootstrap-npm-starter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/twbs/bootstrap-npm-starter/issues"
-  },
-  "homepage": "https://github.com/twbs/bootstrap-npm-starter#readme",
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "npm run css",
-    "css-compile": "node-sass --include-path node_modules --output-style compressed --source-map true --source-map-contents true --precision 6 scss -o assets/css/",
-    "css-lint": "stylelint scss/",
-    "css-prefix": "postcss --replace assets/css/starter.css --use autoprefixer --map",
-    "css-purge": "purgecss --keyframes --css assets/css/starter.css --content index.html \"node_modules/bootstrap/js/dist/{util,modal}.js\" --output assets/css/",
-    "css": "npm-run-all css-compile css-prefix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass --embed-sources --embed-source-map src/style.scss:style.css src/assets:assets src/scss:assets/css",
     "server": "serve --listen 3000",
-    "start": "npm-run-all --parallel watch server",
-    "watch": "nodemon -e html,scss -x \"npm run css\"",
-    "test": "npm run css-lint && npm run css"
+    "production": "sass -i src/style.scss:style.css -w",
+    "server-watch": "concurrently serve --listen 3000 -w sass -i src/style.scss:style.css",
+    "watch": "sass src/style.scss:style.css src/assets:assets src/docs:docs -w",
+    "interactive": "sass -i -c --updated src/style.scss:style.css",
+    "concurrently": "npm-run-all production compile interactive watch server"
   },
-  "keywords": [
-    "bootstrap",
-    "sass",
-    "css",
-    "javascript",
-    "starter",
-    "template"
-  ],
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "bootstrap-icons": "^1.4.0",
-    "jquery": "^3.6.0",
-    "popper.js": "^1.16.1"
-  },
+  "author": "cjmt",
+  "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "node-sass": "^5.0.0",
-    "nodemon": "^2.0.7",
+    "concurrently": "^6.4.0",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.2.10",
-    "postcss-cli": "^8.3.1",
-    "purgecss": "^4.0.2",
-    "serve": "^11.3.2",
-    "stylelint": "^13.12.0",
-    "stylelint-config-twbs-bootstrap": "^2.1.0"
+    "sass": "^1.45.0",
+    "scss": "^0.2.4",
+    "serve": "^13.0.2"
+  },
+  "dependencies": {
+    "materialize-css": "^1.0.0",
+    "stylesheet-writer": "^1.0.1",
+    "the-new-css-reset": "^1.4.2"
   }
 }

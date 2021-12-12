@@ -1,0 +1,48 @@
+/* Code –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+code {
+  font-size: 90%;
+  margin: 0 0.2rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0A0A0A;
+  border-radius: 4px;
+  background: #FAFAFA;
+}
+
+pre > code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+}
+
+pre {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  padding: 1.6em;
+  overflow: auto;
+  max-width: 100%;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+figure {
+  margin: 0;
+}

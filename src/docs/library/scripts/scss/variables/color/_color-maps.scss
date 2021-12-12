@@ -1,0 +1,128 @@
+/* COLOR MAPS */
+
+/* fusv-disabled*/
+/* scss-docs-start gray-colors-map */
+$grays: (
+  100: $gray-100,
+  200: $gray-200,
+  300: $gray-300,
+  400: $gray-400,
+  500: $gray-500,
+  600: $gray-600,
+  700: $gray-700,
+  800: $gray-800,
+  900: $gray-900
+);
+/* scss-docs-end gray-colors-map */
+/* fusv-enable */
+
+/* scss-docs-start colors-map */
+$colors:(
+blue:            $blue,
+indigo:          $indigo,
+purple:          $purple,
+pink:            $pink,
+red:             $red,
+orange:          $orange,
+yellow:          $yellow,
+green:           $green,
+teal:            $teal,
+cyan:            $cyan
+);
+/* scss-docs-end colors-map */
+
+$theme-colors: (
+primary-color:           $primary-color,
+secondary-color:         secondary-color,
+accent-color:            $accent-color,
+valid-color:             $valid-color,
+info-color:              $info-color,
+attention-color:         $attention-color,
+alert-color:             $alert-color,
+invalid-color:           $invalid-color
+);
+
+$utilities-text-colors:(
+text-muted:         $text-muted,
+text-color:               $text-color,
+body-color:               $body-color,
+light-color:              $light-color,
+dark-color:               $dark-color
+);
+
+$utilities-text:(
+input:              $input,
+input-bg:           $input-bg,
+input-border:       $input-border,
+input-focus:        $input-focus,
+input-focus-bg:     $input-focus-bg,
+input-focus-border: $input-focus-border
+);
+
+
+$primary-color-100: tint-color($primary-color, 80%);
+$primary-color-200: tint-color($primary-color, 60%);
+$primary-color-300: tint-color($primary-color, 40%);
+$primary-color-400: tint-color($primary-color, 20%);
+$primary-color-500: $primary-color;
+$primary-color-600: shade-color($primary-color, 20%);
+$primary-color-700: shade-color($primary-color, 40%);
+$primary-color-800: shade-color($primary-color, 60%);
+$primary-color-900: shade-color($primary-color, 80%);
+
+$secondary-color-100: tint-color($secondary-color, 80%);
+$secondary-color-200: tint-color($secondary-color, 60%);
+$secondary-color-300: tint-color($secondary-color, 40%);
+$secondary-color-400: tint-color($secondary-color, 20%);
+$secondary-color-500: $secondary-color;
+$secondary-color-600: shade-color($secondary-color, 20%);
+$secondary-color-700: shade-color($secondary-color, 40%);
+$secondary-color-800: shade-color($secondary-color, 60%);
+$secondary-color-900: shade-color($secondary-color, 80%);
+
+$accent-color-100: tint-color($accent-color, 80%);
+$accent-color-200: tint-color($accent-color, 60%);
+$accent-color-300: tint-color($accent-color, 40%);
+$accent-color-400: tint-color($accent-color, 20%);
+$accent-color-500: $accent-color;
+$accent-color-600: shade-color($accent-color, 20%);
+$accent-color-700: shade-color($accent-color, 40%);
+$accent-color-800: shade-color($accent-color, 60%);
+$accent-color-900: shade-color($accent-color, 80%);
+
+
+$primarys: (
+  'primary-color-100': $primary-color-100,
+  'primary-color-200': $primary-color-200,
+  'primary-color-300': $primary-color-300,
+  'primary-color-400': $primary-color-400,
+  'primary-color-500': $primary-color-500,
+  'primary-color-600': $primary-color-600,
+  'primary-color-700': $primary-color-700,
+  'primary-color-800': $primary-color-800,
+  'primary-color-900': $primary-color-900
+);
+
+$secondarys: (
+  'secondary-color-100': $secondary-color-100,
+  'secondary-color-200': $secondary-color-200,
+  'secondary-color-300': $secondary-color-300,
+  'secondary-color-400': $secondary-color-400,
+  'secondary-color-500': $secondary-color-500,
+  'secondary-color-600': $secondary-color-600,
+  'secondary-color-700': $secondary-color-700,
+  'secondary-color-800': $secondary-color-800,
+  'secondary-color-900': secondary-color-900
+);
+
+$accents: (
+  accent-color-100: $accent-color-100,
+  accent-color-200: $accent-color-200,
+  accent-color-300: $accent-color-300,
+  accent-color-400: $accent-color-400,
+  accent-color-500: $accent-color-500,
+  accent-color-600: $accent-color-600,
+  accent-color-700: $accent-color-700,
+  accent-color-800: $accent-color-800,
+  accent-color-900: $accent-color-900
+);

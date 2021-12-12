@@ -1,0 +1,30 @@
+// Components
+$border-width: 1px;
+$border-widths: (
+  1: 1px,
+  2: 2px,
+  3: 3px,
+  4: 4px,
+  5: 5px
+);
+
+$border-width-sm:       1;
+$border-width-md:       2;
+$border-width-lg:       3;
+$border-width-focus:    4;
+$border-width-hover:    $border-width-lg;
+
+$border-radius:         .95rem;
+$border-radius-sm:      $border-radius * $sm;
+$border-radius-md:      $border-radius * $md;
+$border-radius-lg:      $border-radius * $lg;
+$border-radius-xl:      $border-radius * $xl;
+$border-radius-xxl:     $border-radius * $xxl;
+$border-radius-pill:    50rem;
+
+$btn-border-radius:     $border-radius-sm;
+$btn-focus-width:       $border-width-focus;
+
+$nav-pills-border-radius:           $border-radius !default;
+$nav-pills-link-active-color:       $component-active-color !default;
+$nav-pills-link-active-bg:          $component-active-bg !default;

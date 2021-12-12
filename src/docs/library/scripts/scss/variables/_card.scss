@@ -1,0 +1,21 @@
+// Cards
+
+// scss-docs-start card-variables
+$card-offset-y:                     $offset !default;
+$card-offset-x:                     $offset !default;
+$card-title-offset-y:               $offset * .5 !default;
+$card-border-width:                 $border-width !default;
+$card-border-color:                 rgba($black, .125) !default;
+$card-border-radius:                $border-radius !default;
+$card-box-shadow:                   null !default;
+$card-inner-border-radius:          subtract($card-border-radius, $card-border-width) !default;
+$card-cap-padding-y:                $card-offset-y * .5 !default;
+$card-cap-padding-x:                $card-offset-x !default;
+$card-cap-bg:                       rgba($black, .03) !default;
+$card-cap-color:                    null !default;
+$card-height:                       null !default;
+$card-color:                        null !default;
+$card-bg:                           $white !default;
+$card-img-overlay-padding:          $offset !default;
+$card-group-margin:                 $offset * .5 !default;
+// scss-docs-end card-variables

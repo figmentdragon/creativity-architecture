@@ -1,0 +1,128 @@
+@use 'sass:math';
+
+/* Headings */
+
+.h1,
+.h1 a,
+.h2,
+.h2 a,
+.h3,
+.h3 a,
+.h4,
+.h4 a,
+.h5,
+.h5 a,
+.h6,
+.h6 a,
+h1,
+h1 a,
+h2,
+h2 a,
+h3,
+h3 a,
+h4,
+h4 a,
+h5,
+h5 a,
+h6,
+h6 a
+{
+    clear: both;
+
+    margin-top: $spacer;
+    margin-bottom: $spacer;
+
+    text-decoration: none;
+
+    &:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+
+.h1,
+h1
+{
+    font-size: h1;
+    line-height: var(--xl);;
+
+    margin: .67em 0;
+    margin-top: calc(2 * $base-unit);
+}
+
+.h2,
+h2
+{
+    font-size: h2;
+    line-height: 1.25rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.h3,
+h3
+{
+    font-size: h3;
+    line-height: 1.25rem
+}
+
+.h4,
+h4
+{
+    font-size: h4;
+    line-height: $line-height-body;
+}
+
+.h5,
+h5
+{
+    font-size: h5;
+    line-height: var(--md);
+}
+
+.h6,
+h6
+{
+    font-size: h6;
+    line-height: $line-height-body;
+
+    margin-top: $spacer;
+    margin-bottom: 0;
+}
+
+/* Larger than phablet */
+
+@media
+  (min-width : 550px)
+{
+    h1
+    {
+        font-size: 5.0rem;
+    }
+
+    h2
+    {
+        font-size: 4.2rem;
+    }
+
+    h3
+    {
+        font-size: 3.6rem;
+    }
+
+    h4
+    {
+        font-size: 3.0rem;
+    }
+
+    h5
+    {
+        font-size: 2.4rem;
+    }
+
+    h6
+    {
+        font-size: 1.5rem;
+    }
+}

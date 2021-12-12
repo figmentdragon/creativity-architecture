@@ -1,0 +1,49 @@
+body,
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  width: 100%;
+  height: 1rem * 1.5;
+  padding: 0 divide(1rem, 2);
+  color: #0A0A0A;
+  border: solid 1px #0A0A0A;
+  border-radius: 0;
+  background-color: #FAFAFA;
+}
+
+body {
+    color: #0A0A0A;
+    font-family: system;
+    text-size-adjust: none;
+    font-size: font-md;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+ul,
+ol,
+dl {
+    margin-bottom: 1rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Rules
+ */
+
+hr {
+    height: 1px;
+    background-color: #FAFAFA;
+}
