@@ -1,30 +1,19 @@
 {
-  "name": "website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "creativity-architecture",
+  "version": "0.0.5",
+  "description": "personal CSS library and framework",
+  "main": "style.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "sass --embed-sources --embed-source-map src/style.scss:style.css src/assets:assets src/scss:assets/css",
-    "server": "serve --listen 3000",
-    "production": "sass -i src/style.scss:style.css -w",
-    "server-watch": "concurrently serve --listen 3000 -w sass -i src/style.scss:style.css",
-    "watch": "sass src/style.scss:style.css src/assets:assets src/docs:docs -w",
-    "interactive": "sass -i -c --updated src/style.scss:style.css",
-    "concurrently": "npm-run-all production compile interactive watch server"
+    "test": "test"
   },
-  "author": "cjmt",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^6.4.0",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.45.0",
-    "scss": "^0.2.4",
-    "serve": "^13.0.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/figmentdragon/creativityarchitect.git"
   },
-  "dependencies": {
-    "materialize-css": "^1.0.0",
-    "stylesheet-writer": "^1.0.1",
-    "the-new-css-reset": "^1.4.2"
-  }
+  "author": "CJMT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/figmentdragon/creativityarchitect/issues"
+  },
+  "homepage": "https://github.com/figmentdragon/creativityarchitect#readme"
 }
