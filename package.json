@@ -1,19 +1,26 @@
 {
   "name": "creativity-architecture",
-  "version": "0.0.5",
-  "description": "personal CSS library and framework",
-  "main": "style.css",
+  "version": "1.0.0",
+  "description": "personal css library and framework ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "sass": "sass --embed-sources docs/theme/theme.scss:style.css -w"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/figmentdragon/creativityarchitect.git"
   },
   "author": "CJMT",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/figmentdragon/creativityarchitect/issues"
   },
-  "homepage": "https://github.com/figmentdragon/creativityarchitect#readme"
+  "homepage": "https://github.com/figmentdragon/creativityarchitect#readme",
+  "devDependencies": {
+    "sass": "^1.45.1"
+  }
 }

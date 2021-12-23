@@ -1,6 +1,5 @@
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# DocumentJS generated files
+styleguide
 
 # Build and Release Folders
 bin-debug/
@@ -8,14 +7,9 @@ bin-release/
 [Oo]bj/
 [Bb]in/
 
-# Other files and folders
-.settings/
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# Files and directories created by pub
+.dart_tool/
+.packages
 
 .sass-cache/
 *.css.map
@@ -23,6 +17,31 @@ bin-release/
 *.scss.map
 
 .dart-tools
+
+# Other files and folders
+.settings/
+
+# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
+# should NOT be excluded as they contain compiler settings and other important
+# information for Eclipse / Flash Builder.
+
+# Directory created by dartdoc
+# If you don't generate documentation locally you can remove this line.
+doc/api/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
 
 # ignore everything in the root except the "wp-content" directory.
 !wp-content/
@@ -39,11 +58,3 @@ wp-content/plugins/hello.php
 
 # ignore specific themes
 wp-content/themes/twenty*/
-
-# ignore log files and databases
-*.log
-*.sql
-*.sqlite
-
-# ignore node dependency directories
-node_modules/
