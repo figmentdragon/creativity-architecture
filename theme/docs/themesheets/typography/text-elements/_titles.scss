@@ -1,6 +1,10 @@
 #site-title{
 
 }
+
 #page-title{
-  
+  font-family: $page-title-font;
+  font-size: 5vh;
+  text-transform: uppercase;
+  color: $headings-text-color;
 }

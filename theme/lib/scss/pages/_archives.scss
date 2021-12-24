@@ -16,9 +16,9 @@ h1.page-title
 
 .page-header
 {
-    padding-bottom: calc(2 * $vertical-offset);
+    padding-bottom: calc(2 * $spacing-vertical);
 
-    border-bottom: 3px solid $border-color;
+    border-bottom: 3px solid $color-border;
 }
 
 .archive,
@@ -44,7 +44,7 @@ h1.page-title
     {
         .entry-content
         {
-            margin-top: calc(2 * $vertical-offset);
+            margin-top: calc(2 * $spacing-vertical);
         }
     }
 
@@ -74,5 +74,5 @@ h1.page-title
     font-size: $archive-description-font-size;
     line-height: $archive-description-line-height;
 
-    margin-top: $vertical-offset;
+    margin-top: $spacing-vertical;
 }

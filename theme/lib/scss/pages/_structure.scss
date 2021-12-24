@@ -22,7 +22,7 @@ https://github.com/Automattic/_s/blob/master/layouts/
 .main {
   margin-right: -0.5rem;
   padding-bottom: .75rem;
-  padding-left: 6rem;
+  padding-left: .25rem;
 }
 
 .primary {
@@ -36,21 +36,11 @@ https://github.com/Automattic/_s/blob/master/layouts/
   display: grid;
   @include make-container;
 }
-.secondary {
-  /* Container for your first widget area */
-  padding: $offset-y $offset-x;
-  background-image: linear-gradient(
-    205deg,
-    transparent,
-    rgba($white, 0.05) 5%,
-    rgba($accent-color, 0.15) 10%,
-    rgba($accent-color, 0.3) 20%,
-    rgba($primary-color, 0.45) 30%,
-    rgba($primary-color, 0.6) 40%,
-    rgba($primary-color, 0.75) 50%,
-    rgba($primary-color, 0.9) 60%
-  );
+
+@import "structure/masthead";
+#secondary {
   @include border-box;
+  background-image: $secondary-color-gradient;
 }
 .tertiary {
   /* Container for your second widget area */

@@ -13,7 +13,7 @@
 
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-		
+
 		<script src="https://kit.fontawesome.com/a52bc36f18.js" crossorigin="anonymous"></script>
 		<?php wp_head(); ?>
 
@@ -22,7 +22,16 @@
 	</head>
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
+	<section class="masthead vertical absolute-masthead" id="page-title">
+
+			<?php the_title(); ?>
+
+	</section>
+
+
   <div class="container">
+
+
 		<main class="main absolute-main" role="main">
 			<article>
 

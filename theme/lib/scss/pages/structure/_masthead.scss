@@ -6,32 +6,34 @@
 .masthead {
   /* The container for the page-title group area */
   @include border-box;
-  display: grid;
-
+  @include make-col;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: stretch;
   align-self: stretch;
-  flex-direction: column;
+  height: 105%;
+  max-height: 102vh;
+  width: 100%;
+  max-width: 8rem;
   box-shadow: $masthead-shadow;
-  .vertical{
-    margin-top: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    margin-left: 0;
 
-    padding-top: 2rem;
-    padding-right: 0.25rem;
-    padding-left: 0.25rem;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  margin-top: -1rem;
+  margin-right: 0;
+  margin-bottom: -3rem;
+  margin-left: 0;
+  padding-top: 10rem;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
 
-    writing-mode: vertical-lr;
-    text-orientation: upright;
 
     height: 110%;
-    width: 8rem;
     border: 1px solid $black;
-  }
-
-  .pageplate {
-    @include linear-gradient($secondary-color-gradient);
-  }
 
 }
+
+  .pageplate #secondary {
+    @include linear-gradient($secondary-color-gradient);
+  }
