@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "test",
-    "sass": "sass --embed-sources docs/theme/theme.scss:style.css -w",
+    "sass": "sass --embed-source-map theme/architecture.scss:style.css -w",
     "makefile": "fontawesome makefile.js"
   },
   "repository": {

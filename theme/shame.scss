@@ -1,0 +1,33 @@
+.fixed-footer {
+  position: fixed;
+  z-index: $z-index-footer;
+  right: 2rem;
+  bottom: 1rem;
+  left: 8rem;
+}
+
+.absolute-header {
+  position: absolute;
+  z-index: $z-index-header;
+  top: 2rem;
+  right: 2rem;
+  left: 0;
+}
+
+.absolute-masthead {
+  position: absolute;
+  top: -6.5rem;
+  right: auto;
+  bottom: -55.5rem;
+  left: 2.25rem;
+  z-index: $z-index-masthead;
+}
+
+.absolute-main {
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+  bottom: 1rem;
+  left: 2rem;
+  z-index: $z-index-main;
+}

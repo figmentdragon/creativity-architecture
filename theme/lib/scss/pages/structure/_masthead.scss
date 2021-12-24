@@ -1,0 +1,37 @@
+@mixin linear-gradient($secondary-color-gradient){
+  background-image: $secondary-color-gradient;
+}
+
+
+.masthead {
+  /* The container for the page-title group area */
+  @include border-box;
+  display: grid;
+
+  justify-content: stretch;
+  align-self: stretch;
+  flex-direction: column;
+  box-shadow: $masthead-shadow;
+  .vertical{
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    padding-top: 2rem;
+    padding-right: 0.25rem;
+    padding-left: 0.25rem;
+
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+
+    height: 110%;
+    width: 8rem;
+    border: 1px solid $black;
+  }
+
+  .pageplate {
+    @include linear-gradient($secondary-color-gradient);
+  }
+
+}
