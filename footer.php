@@ -2,7 +2,7 @@
 
 
 
-<footer class="site-footer fixed-footer">
+<footer class="row site-footer fixed-footer">
 	<div class="site-info container">
 		<section class="social-media">
 			scroll of updates
@@ -16,9 +16,9 @@
 		</section>
 	</div><!-- .site-info -->
 </footer><!-- #colophon .site-footer -->
+</article>
 </main>
 <?php wp_footer(); ?>
-
-
+</div class>
 </body>
 </html>

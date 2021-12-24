@@ -228,4 +228,49 @@ function architecture_excerpt_more($more) {
 	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'architecture' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'architecture' ) .'</a>';
 }
 
+/**
+* Checks for single template by category
+* Check by category slug and ID
+*/
+foreach((array)get_the_category() as $cat) :
+
+	if(file_exists(SINGLE_PATH . '/docs/theme/site-templates/single-cat-' . $cat->slug . '.php'))
+		return SINGLE_PATH . '/docs/theme/theme-template/single-cat-' . $cat->slug . '.php';
+
+		elseif(file_exists(SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php'))
+			return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
+
+			/**
+		* Define a constant path to our single template folder
+		*/
+		define(SINGLE_PATH, TEMPLATEPATH . 'docs/theme/site-templates/single');
+
+		/**
+		* Filter the single_template with our custom function
+		*/
+		add_filter('single_template', 'my_single_author_template');
+
+		/**
+		* Single template function which will choose our template
+		*/
+		function my_single_author_template($single) {
+		global $wp_query, $post;
+
+		/**
+		* Checks for single template by author
+		* Check by user nicename and ID
+		*/
+		$curauth = get_userdata($wp_query->post->post_author);
+
+		if(file_exists(SINGLE_PATH . '/single-author-' . $curauth->user_nicename . '.php'))
+		return SINGLE_PATH . '/single-author-' . $curauth->user_nicename . '.php';
+
+		elseif(file_exists(SINGLE_PATH . '/single-author-' . $curauth->ID . '.php'))
+			return SINGLE_PATH . '/single-author-' . $curauth->ID . '.php';
+
+		}
+
+endforeach;
+
+
 ?>

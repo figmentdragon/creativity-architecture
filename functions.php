@@ -8,7 +8,7 @@
 define( 'architecture_VERSION', 1.0 );
 
 require_once( 'inc/architecture.php' );
-require_once( 'inc/custom-functions.php' );
+require_once( 'inc/custom-functions.php' );  
 
 // SVG Icons class.
 require get_template_directory() . '/inc/class-architecture-svg-icons.php';
