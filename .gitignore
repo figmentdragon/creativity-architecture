@@ -29,8 +29,6 @@ bin-release/
 # If you don't generate documentation locally you can remove this line.
 doc/api/
 
-# ignore node dependency directories
-node_modules/
 
 # ignore log files and databases
 *.log
