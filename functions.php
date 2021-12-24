@@ -153,22 +153,32 @@ function architecture_scripts() {
 //adding scripts file in the footer
 	wp_register_script( 'architecture-js', get_stylesheet_directory_uri() . '/scripts/js/scripts.js', array( 'jquery' ), '', true );
 
-	wp_register_script( 'architecture-portfolio',
-	array(
-		get_stylesheet_directory_uri() . '/docs/materials/vendor/purecounter/purecounter.js',
-		get_stylesheet_directory_uri() . '/docs/materials/vendor/aos/aos.js',
-		get_stylesheet_directory_uri() . '/docs/materials/vendor/glightbox/js/glightbox.min.js',
-		get_stylesheet_directory_uri() . '/docs/materials/vendor/isotope-layout/isotope.pkgd.min.js',
-		get_stylesheet_directory_uri() . '/docs/materials//vendor/swiper/swiper-bundle.min.js',
-		get_stylesheet_directory_uri() . '/docs/materials//vendor/typed.js/typed.min.js',
-		get_stylesheet_directory_uri() . '/docs/materials/vendor/waypoints/noframework.waypoints.js',
-		get_stylesheet_directory_uri() . '/docs/materials/vendor/php-email-form/validate.js'
-	),
-	)
+	wp_register_script( 'purecounter-js', get_stylesheet_directory_uri() . '/docs/materials/vendor/purecounter/purecounter.js' );
+
+	wp_register_script(  'aos-js', get_stylesheet_directory_uri() . '/docs/materials/vendor/aos/aos.js' );
+
+	wp_register_script(  'glightbox-js', get_stylesheet_directory_uri() . '/docs/materials/vendor/glightbox/js/glightbox.min.js' );
+
+	wp_register_script( 'isotope-js', get_stylesheet_directory_uri() . '/docs/materials/vendor/isotope-layout/isotope.pkgd.min.js' );
+
+	wp_register_script( 'swiper-js', get_stylesheet_directory_uri() . '/docs/materials//vendor/swiper/swiper-bundle.min.js' );
+
+	wp_register_script(  'typed-js', get_stylesheet_directory_uri() . '/docs/materials//vendor/typed.js/typed.min.js' );
+
+	wp_register_script( 'noframework-js', get_stylesheet_directory_uri() . '/docs/materials/vendor/waypoints/noframework.waypoints.js' );
+
+	wp_register_script( 'email-form-js', get_stylesheet_directory_uri() . '/docs/materials/vendor/php-email-form/validate.js' );
 
 // add theme scripts
 	wp_enqueue_script( 'architecture', get_template_directory_uri() . '/scripts/js/theme.min.js', array(), architecture_VERSION, true );
-	wp_enqueue_script( 'architecture-portfolio' );
+	wp_enqueue_script( 'purecounter-js' );
+	wp_enqueue_script( 'aos-js' );
+	wp_enqueue_script( 'glightbox-js' );
+	wp_enqueue_script( 'isotope-js' );
+	wp_enqueue_script( 'swiper-js' );
+	wp_enqueue_script( 'typed-js' );
+	wp_enqueue_script( 'noframework-js' );
+	wp_enqueue_script( 'email-form-js' );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'architecture-js' );
 }
