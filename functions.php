@@ -8,7 +8,7 @@
 define( 'architecture_VERSION', 1.0 );
 
 require_once( 'inc/architecture.php' );
-require_once( 'inc/custom-functions.php' );  
+require_once( 'inc/custom-functions.php' );
 
 // SVG Icons class.
 require get_template_directory() . '/inc/class-architecture-svg-icons.php';
@@ -153,8 +153,22 @@ function architecture_scripts() {
 //adding scripts file in the footer
 	wp_register_script( 'architecture-js', get_stylesheet_directory_uri() . '/scripts/js/scripts.js', array( 'jquery' ), '', true );
 
+	wp_register_script( 'architecture-portfolio',
+	array(
+		get_stylesheet_directory_uri() . '/docs/materials/vendor/purecounter/purecounter.js',
+		get_stylesheet_directory_uri() . '/docs/materials/vendor/aos/aos.js',
+		get_stylesheet_directory_uri() . '/docs/materials/vendor/glightbox/js/glightbox.min.js',
+		get_stylesheet_directory_uri() . '/docs/materials/vendor/isotope-layout/isotope.pkgd.min.js',
+		get_stylesheet_directory_uri() . '/docs/materials//vendor/swiper/swiper-bundle.min.js',
+		get_stylesheet_directory_uri() . '/docs/materials//vendor/typed.js/typed.min.js',
+		get_stylesheet_directory_uri() . '/docs/materials/vendor/waypoints/noframework.waypoints.js',
+		get_stylesheet_directory_uri() . '/docs/materials/vendor/php-email-form/validate.js'
+	),
+	)
+
 // add theme scripts
 	wp_enqueue_script( 'architecture', get_template_directory_uri() . '/scripts/js/theme.min.js', array(), architecture_VERSION, true );
+	wp_enqueue_script( 'architecture-portfolio' );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'architecture-js' );
 }

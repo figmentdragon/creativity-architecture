@@ -13,7 +13,8 @@
 
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
+		
+		<script src="https://kit.fontawesome.com/a52bc36f18.js" crossorigin="anonymous"></script>
 		<?php wp_head(); ?>
 
 		<?php // drop Google Analytics Here ?>
@@ -24,7 +25,7 @@
   <div class="container">
 		<main class="main absolute-main" role="main">
 			<article>
-				
+
 			<header class="absolute-header site-header">
   			<div class="logo">LOGO</div>
 
