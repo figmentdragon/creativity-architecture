@@ -1,15 +1,12 @@
-<?php /* TEMPLATE NAME: 404 */ ?>
+<?php /* TEMPLATE NAME: 404 */
 
 /**
  * The template for displaying 404 pages (not found)
  *
- */
+ */?>
 
  <?php get_header(); ?>
 
- <body <?php body_class(); ?>>
-
-   <div class="container">
 
      <?php get_sidebar(); ?>
 

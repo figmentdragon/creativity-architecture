@@ -1,8 +1,8 @@
 <?php /* Template Name : Index */?>
 
-	<?php get_header(); ?>
+ <?php get_header(); ?>
+	 <article>
 
-		<article>
-		</article>
+	 </article>
 
-	<?php get_footer(); ?>
+ <?php get_footer(); ?>

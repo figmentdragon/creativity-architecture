@@ -1,7 +1,9 @@
 <?php /* Template Name : Single */?>
+	<?php get_header(); ?>
+		<article>
+      <?php the_content(); ?>
+ <div class="elementor-theme-builder-content-area">Content Area</div>
 
-<?php get_header(); ?>
+		</article>
 
-
-
-<?php get_footer(); ?>
+	<?php get_footer(); ?>

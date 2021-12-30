@@ -1,0 +1,32 @@
+// Utilities maps
+//
+// Extends the default `$theme-colors` maps to help create our utilities.
+
+// Come v6, we'll de-dupe these variables. Until then, for backward compatibility, we keep them to reassign.
+// scss-docs-start utilities-colors
+//$utilities-colors: $theme-colors-rgb !default;
+// scss-docs-end utilities-colors
+
+// scss-docs-start utilities-text-colors
+$utilities-text: map-merge(
+$utilities-colors:
+  (
+    "black": to-rgb(0, 1, 0),
+    "white": to-rgb(234, 235, 236),
+    "body": to-rgb( 0, 1, 0)
+  )
+) !default;
+$utilities-text-colors: map-loop($utilities-text, rgba-css-var, "$key", "text") !default;
+// scss-docs-end utilities-text-colors
+
+// scss-docs-start utilities-backgrounds
+$utilities-bg: map-merge(
+  $utilities-colors:
+  (
+    "black": to-rgb($black),
+    "white": to-rgb($ghost-white),
+    "body": to-rgb($body-bg)
+  )
+) !default;
+$utilities-backgrounds: map-loop($utilities-bg, rgba-css-var, "$key", "bg") !default;
+// scss-docs-end utilities-backgrounds

@@ -1,7 +1,5 @@
 <?php /* TEMPLATE PART: Footer */ ?>
 
-
-
 <footer class="row site-footer fixed-footer">
 	<div class="site-info container">
 		<section class="social-media">

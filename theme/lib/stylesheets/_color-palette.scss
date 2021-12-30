@@ -1,0 +1,91 @@
+/* CJMT ______________________________________________________
+
+Theme/Brand Name: CJMT
+Author: CJMT
+
+Stylesheet: CJMT Brand Stylesheet
+
+  = TOC =
+  [] Color Palette
+    (1) Color Variables
+    (2) Color Theme
+    (3) Utilities Colors
+  [] Color Theme
+  [] Utilities
+
+ ______________________________________________________ CJMT */
+
+ /* _______________VARIABLES */
+ /* Colors */
+
+/* scss-docs-start gray-color-variables */
+$white:   #e4edf4;
+$gray-100:     #c0c0c0;
+$gray-200:     #9a9a9a;
+$gray-300:     #7b7b7b;
+$gray-400:     #626262;
+$gray-500:     #4e4e4e;
+$gray-600:     #3e3e3e;
+$gray-700:     #323232;
+$gray-800:     #282828;
+$gray-900:     #1a1a1a;
+$black:        #000100;
+/* scss-docs-end gray-color-variables */
+
+/* Color Variables */
+$blue:               #0A0FBA;
+$indigo:             #6600FF;
+$purple:             #510bda;
+$pink:               #fc89ac;
+$red:                #BA0A0f;
+$orange:             #FD8535;
+$yellow:             #ffe41e;
+$green:              #82ded1;
+$teal:               #b5ede4;
+$cyan:               #0abab5;
+$gray:               $gray-600;
+
+$silver:             #a8a9ad;
+
+/* Tabs */
+$chocolate:          #623412;
+$camel:              #c19a6b;
+$saltpan:            #ffffcc;
+$white-chocolate:    #ede6d6;
+$dark-vanilla:       #d1bea8;
+$ghost-white:        #fbfbfd;
+/* scss-docs-end color-variables */
+
+$deep-sky-blue:      #0dcaf0;
+$coral:              #ff7f50;
+$maroon:             #800000;
+
+/* Brand Colors */
+$primary-color-:      $cyan;
+$secondary-color:     $yellow;
+$accent-color:        $silver;
+
+$light-cyan:         #CDFFFF; /* Light Green */
+$neon-blue:          #555AFF; /* light blue */
+$salomie:            #FFD080; /* light orange */
+$wild-watermelon:    #FF555A; /* light red */
+$hot-pink:           #FF6FA9;
+
+/* Utility Colors */
+$valid-color:              $green;
+$info-color:               $blue;
+$alert-color:              $orange;
+$invalid-color:            $red;
+$attention-color:          $pink;
+
+$valid-border-color:       shade-color($valid-color, $border-shade-percentage);
+$info-border-color:        shade-color($info-color, $border-shade-percentage);
+$alert-border-color:       shade-color($alert-color, $border-shade-percentage);
+$invalid-border-color:     shade-color($invalid-color, $border-shade-percentage);
+$attention-border-color:   shade-color($attention-color,$border-shade-percentage);
+
+$valid-bg-color:                $light-cyan;
+$info-bg-color:                 $neon-blue;
+$alert-bg-color:                $salomie;
+$invalid-bg-color:              $wild-watermelon;
+$attention-bg-color:            $hot-pink;

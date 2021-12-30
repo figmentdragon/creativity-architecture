@@ -1,10 +1,10 @@
-<?php /* TEMPLATE NAME: Search */ ?>
+<?php /* TEMPLATE NAME: Search */ 
 /**
  * The template for displaying search results pages
  *
  * @package the_creativity_architect
  */
-
+?>
 <? get_header(); ?>
 
 <div class="wrapper" id="search-wrapper">

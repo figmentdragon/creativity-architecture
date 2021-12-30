@@ -1,0 +1,21 @@
+// container mixins
+@mixin make-container($gutter: $grid-gutter-width) {
+  display: inline;
+  align-items: left;
+  justify-content: flex-start;
+  margin: auto;
+  padding-top: $gutter-y * 2;
+  padding-bottom: $gutter-y;
+  @if not $enable-flex {
+    @include clearfix();
+  }
+}
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths) {
+  @each $breakpoint, $container-max-width in $max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
+}

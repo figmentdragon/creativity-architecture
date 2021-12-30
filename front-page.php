@@ -1,17 +1,8 @@
-<?php /* Front Page */ ?>
+<?php /* TEMPLATE NAME: Front Page */ ?>
 
-<?php get_header(); ?>
+ <?php get_header(); ?>
+   <article>
 
-    <div class="container">
+   </article>
 
-      <article class="absolute-article">
-
-      </article>
-
-    </div>
-<?php get_footer(); ?>
-  </main>
-
-    </div>
-  </body>
-</html>
+ <?php get_footer(); ?>
