@@ -23,8 +23,7 @@
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
 	<section class="masthead vertical absolute-masthead" id="page-title">
-
-			<?php the_title(); ?>
+		<?php the_title(); ?>
 
 	</section>
 
