@@ -14,12 +14,12 @@ _________________________________________________________ CJMTheme */
 
 /* __________________________________________________ DEMOLITION */
 
-  @import "lib/scss/grid/grid";
+  @import "website/scss/grid/grid";
 
 /* __________________________________________________ FUNCTIONS */
 
-  @import "lib/scss/abstracts/tools/functions";
-  @import "lib/scss/abstracts/tools/mixins";
+  @import "website/scss/abstracts/tools/functions";
+  @import "website/scss/abstracts/tools/mixins";
 
 /* __________________________________________________ THEME */
 
@@ -29,40 +29,40 @@ _________________________________________________________ CJMTheme */
   @import "docs/themesheets/color-palette/patterns";
   @import "docs/themesheets/typesetting";
 
-  @import "lib/scss/abstracts/materials/zindex";
-  @import "lib/scss/abstracts/materials/escaped-characters";
-  @import "lib/scss/abstracts/materials/gradient";
+  @import "website/scss/abstracts/materials/zindex";
+  @import "website/scss/abstracts/materials/escaped-characters";
+  @import "website/scss/abstracts/materials/gradient";
 
   @import "shame";
 
 /* __________________________________________________ ROOT */
 
-  @import "lib/scss/abstracts/tools/helpers";
+  @import "website/scss/abstracts/tools/helpers";
 
-  @import "lib/scss/abstracts/root";
+  @import "website/scss/abstracts/root";
 
 /* __________________________________________________ OBJECTS */
 
-  @import "lib/scss/objects/elements/base";
-  @import "lib/scss/objects/elements/headings";
-  @import "lib/scss/objects/elements/text-elements";
-  @import "lib/scss/objects/elements/lists";
-  @import "lib/scss/objects/elements/code";
-  @import "lib/scss/objects/elements/table";
-  @import "lib/scss/objects/elements/form-elements";
-  @import "lib/scss/objects/elements/input";
-  @import "lib/scss/objects/elements/links";
-  @import "lib/scss/objects/elements/social";
-  @import "lib/scss/objects/elements/alignment";
-  @import "lib/scss/objects/elements/assistive-tech";
+  @import "website/scss/objects/elements/base";
+  @import "website/scss/objects/elements/headings";
+  @import "website/scss/objects/elements/text-elements";
+  @import "website/scss/objects/elements/lists";
+  @import "website/scss/objects/elements/code";
+  @import "website/scss/objects/elements/table";
+  @import "website/scss/objects/elements/form-elements";
+  @import "website/scss/objects/elements/input";
+  @import "website/scss/objects/elements/links";
+  @import "website/scss/objects/elements/social";
+  @import "website/scss/objects/elements/alignment";
+  @import "website/scss/objects/elements/assistive-tech";
 
-  @import "lib/scss/objects/widgets";
+  @import "website/scss/objects/widgets";
 
-  @import "lib/scss/objects/modules/shadows";
-  @import "lib/scss/objects/modules/card";
+  @import "website/scss/objects/modules/shadows";
+  @import "website/scss/objects/modules/card";
 
 /* __________________________________________________ PAGES */
 
-  @import "lib/scss/pages/global";
+  @import "website/scss/pages/global";
 
-  @import "lib/scss/pages/structure";
+  @import "website/scss/pages/structure";
