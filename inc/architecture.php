@@ -58,6 +58,8 @@ function architecture_theme_support() {
 			'chat'               // chat transcript
 		)
 	);
+	add_post_type_support( 'post', 'post-formats' );
+	add_post_type_support( 'page', 'post-formats' );
 
 	// wp menus
 	add_theme_support( 'menus' );
