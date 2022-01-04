@@ -1,0 +1,104 @@
+/*
+Theme Name: Architecture
+Theme URI: Your Theme URL
+Author: Your Name
+Author URI: Your URL
+Description: Describe your theme and its features.
+Version: Your Theme's Version Number
+License: GNU General Public License
+License URI: license.txt
+Tags: insert tags to describe your theme to help users search for it. Find the list of tags at: http://wordpress.org/extend/themes/about/
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+IMPORTANT: This stylesheet is designed for learning and includes comments for guidance. It's a good idea to remove the comments when preparing your them for distribution. However, keep the section headers (the word "Reset" below is an example of a section header) intact.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/ and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/* ________________________________________________________ RESET */
+
+	@import "node_modules/the-new-css-reset/css/reset";
+
+/* _______________________________________________________ GRID */
+
+    @import "theme/grid/theme-grid";
+
+/* _______________________________________________________ FUNCTIONS */
+
+    @import "assets/scripts/scss/functions";
+    @import "assets/scripts/scss/mixins";
+	@import "assets/scripts/scss/tools/change-percentage";
+
+/* _______________________________________________________ THEME */
+
+    @import "theme/properties";
+    @import "theme/color-pallete";
+    @import "theme/typography";
+
+	@import "assets/scripts/scss/utilities";
+
+/* _______________________________________________________ ROOT */
+
+    @import "assets/scripts/scss/root";
+
+/* _______________________________________________________ COMPONENTS */
+
+/* ______________________________________________ ELEMENTS */
+
+	@import "assets/scripts/scss/components/type";
+
+	@import "assets/scripts/scss/components/elements/images";
+
+    @import "theme/properties/patterns/shadow/input-shadow";
+
+
+	@import "assets/scripts/scss/components/objects/nav";
+	@import "assets/scripts/scss/components/objects/navbar";
+
+/* _______________________________________________________ GLOBAL */
+
+	@import "assets/scripts/scss/global";
+
+
+
+/* Widget */
+
+@import "assets/scripts/scss/components/elements/site-footer";
+
+/* =Responsive Structures
+----------------------------------------------- */
+
+@media only screen and (max-width: 768px) {
+	#content,
+	#primary,
+	#secondary,
+	#tertiary { /* Remove floats on all structural elements for smaller screens */
+		float: none;
+		margin: 0;
+		padding: 0;
+	}
+	#primary,
+	#secondary,
+	#tertiary { /* Make all structural elements full-width */
+		width: 100%;
+	}
+}
+
+
+/* =IE Styling
+----------------------------------------------- */
+
+/* If you have any IE-specific adjustments to make, add them here.
+
+For example:
+
+#ie8 body {
+	color #333;
+}
+
+Will make the sbody text #333 on IE8 only. In order for this to work, you need to set up conditionals to add an ID-selector to the HTML element when IE is detected. For instructions on how to set up the conditionals, see: http://themeshaper.com/2012/10/31/the-wordpress-theme-header-template/
+*/

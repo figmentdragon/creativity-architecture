@@ -1,0 +1,13 @@
+$theme-colors :             ();
+$theme-colors :             merge-maps(
+    (
+    "primary-color" :       $primary-color,
+    "secondary-color" :     $secondary-color,
+    "accent-color" :        $accent-color,
+    "valid-color" :         $valid-color,
+    "info-color" :          $info-color,
+    "alert-color" :         $alert-color,
+    "invalid-color" :       $invalid-color,
+    "attention-color" :     $attention-color
+    ) $theme-colors
+);

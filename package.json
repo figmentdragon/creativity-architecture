@@ -1,16 +1,28 @@
 {
-  "name": "creativity-architecture",
+  "name": "architecture",
   "version": "1.0.0",
-  "description": "A tool for building website UI toolkits",
-  "license": "MIT",
-  "homepage": "http://fbrctr.github.io/",
+  "description": "Project setup instructions --- To setup current WordPress project, you should do the following steps: (Project is based on [WordPress Starter](https://github.com/justcoded/wordpress-starter) )",
+  "main": "index.js",
   "scripts": {
+    "test": "eslint --fix . && npm run build",
     "prestart": "npm install",
     "build": "npm run prestart && gulp",
     "start": "gulp --dev",
-    "test": "eslint --fix . && npm run build",
-    "lint": "eslint .",
-    "stylesheet": "sass --embed-sources theme/architecture.scss:style.css -w"
+    "stylesheet": "sass --embed-sources style.scss:style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/figmentdragon/creativityarchitect.git"
+  },
+  "author": "cjmt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/figmentdragon/creativityarchitect/issues"
+  },
+  "homepage": "https://github.com/figmentdragon/creativityarchitect#readme",
+  "engines": {
+    "node": ">=8.14",
+    "npm": ">=6.4.1"
   },
   "browserslist": [
     "ie 11",
@@ -29,15 +41,6 @@
     "patterns",
     "library"
   ],
-  "author": "CJMT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/figmentdragon/creativity-architecture.git"
-  },
-  "engines": {
-    "node": ">=8.14",
-    "npm": ">=6.4.1"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
@@ -45,6 +48,8 @@
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "bulma": "^0.9.3",
+    "clean-css": "^5.2.2",
+    "clean-css-cli": "^5.5.0",
     "del": "^6.0.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -53,6 +58,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "fabricator-assemble": "^1.4.0",
     "fancy-log": "^1.3.2",
+    "fibers": "^5.0.0",
     "foundation-sites": "^6.7.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -64,10 +70,14 @@
     "gulp-sourcemaps": "^3.0.0",
     "minimist": "^1.2.0",
     "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
     "postcss-cli": "^9.1.0",
     "prettier": "^2.5.1",
     "purgecss": "^4.1.3",
+    "rimraf": "^3.0.2",
+    "rimraff": "^0.0.1-security",
     "sass": "^1.45.2",
+    "sass-boilerplate": "^1.0.0",
     "scss": "^0.2.4",
     "webpack": "^5.65.0",
     "wordpress": "^1.4.1"
@@ -75,6 +85,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "bootstrap": "^5.1.3",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "starter-kit": "^2.2.0",
+    "the-new-css-reset": "^1.4.4"
   }
 }

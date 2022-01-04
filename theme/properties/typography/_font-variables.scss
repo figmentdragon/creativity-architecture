@@ -1,0 +1,102 @@
+/* _______________________________________________________ FONT VARIABLES */
+/* Enable keyword, short hand for callig font Stack. */
+$primary-font-family     : $font-sans-serif;
+$secondary-font-family   : $font-serif;
+
+
+$body-font               : sans-serif;
+$code-font               : monospace;
+
+$primary-font            : "Hand Typewriter", $body-font;
+$main-font               : Avdira, $body-font;
+$content-font            : Raylig, $body-font;
+$article-font            : "TELETYPE1945-1985";
+$secondary-font          : "Enjoy Writing", $body-font;
+$tertiary-font           : "Raleway", $body-font;
+$emphasis-font           : "GlassAntiqua-Regular", $body-font;
+
+$body-text-align         : null;
+$text-margin-bottom      : $offset;
+$paragraph-margin-bottom : $text-margin-bottom;
+
+$quotation               : obalique;
+$citation                : italic;
+$link                    : underline;
+
+/* ________________________________________________________ TEXTS & TITLES */
+  /* Color */
+  $author-color          : $accent-color;
+  $body-text             : darken($primary-color, 60%);
+  $btn-text-color        : darken($body-text,10%);
+  $caption-text-color    : darken($body-text,10%);
+  $entry-header-color    : darken($primary-color, 10%);
+  $footer-color          : darken($accent-color, 10%);
+  $nav-text-color        : darken($secondary-color, 10%);
+  $page-title-color      : $secondary-color;
+  $post-title-color      : $accent-color;
+  $quote-text-color      : darken($primary-color, 10%);
+  $site-title-color      : $primary-color;
+  $text-muted-color      : color-mix(srgb, $accent-color 40%, $white);
+
+  /* Font Family */
+  $article-text-font     : "TELETYPE1945-1985", $body-font;
+  $author-text-font      : Euphorigenic, $body-font;
+  $body-text-font        : $main-font;
+  $btn-font-text-font    : "Raleway", $body-font;
+  $emphasis-text-font    : "GlassAntiqua-Regular";
+  $footer-text-font      : $tertiary-font;
+  $lead-text-font        : "Pompiere";
+  $nav-text-font         : "Raleway", $body-font;
+  $page-title-font       : "Raylig", $body-font;
+  $post-title-font       : "TELETYPE1945-1985", $body-font;
+  $site-title-font       : $primary-font;
+
+
+/* ______________________________________________________ FONT SIZE */
+  $font-size-root        : null;
+  $font-size-base        : 1.05;
+  $base-unit             : 1.15rem; // Assumes the browser default, typically `16px`
+  $xs                    : .75;
+  $sm                    : .875;
+  $md                    : 1.05;
+  $lg                    : 1.25;
+  $xl                    : 1.50;
+  $xxl                   : 1.75;
+
+  $font-size-xs          : calc($font-size-base * $xs);
+  $font-size-sm          : calc($font-size-base * $sm);
+  $font-size-md          : $font-size-base;
+  $font-size-lg          : calc($font-size-base * $lg);
+  $font-size-xl          : calc($font-size-base * $xl);
+  $font-size-xxl         : calc($font-size-base * $xxl);
+
+  /* Font Weight */
+  $font-weight-lighter   : lighter;
+  $font-weight-light     : 300;
+  $font-weight-normal    : 400;
+  $font-weight-bold      : 700;
+  $font-weight-bolder    : bolder;
+
+  $font-weight-base      : $font-weight-normal;
+
+  /* Letter Spacing */
+  $letter-spacing-xs     : calc($xs * $base) rem;
+  $letter-spacing-sm     : calc($sm * $base) rem;
+  $letter-spacing-md     : calc($md * $base) rem;
+  $letter-spacing-lg     : calc($lg * $base) rem;
+  $letter-spacing-xl     : calc($xl * $base) rem;
+  $letter-spacing-xxl    : calc(3 * $base) rem;
+
+  /* Line Height */
+  $line-height-base      : 1.15;
+  $line-height-xs        : calc($xs * $line-height-base) rem;
+  $line-height-sm        : calc($sm * $line-height-base) rem;
+  $line-height-md        : calc($md * $line-height-base) rem;
+  $line-height-lg        : calc($lg * $line-height-base) rem;
+  $line-height-xl        : calc($xl * $line-height-base) rem;
+  $line-height-xxl       : calc($xxl * $line-height-base) rem;
+
+  $line-height-body      : $line-height-base;
+
+  $heading-base-unit     : 1.25vh;
+  // scss-docs-end font-variables
