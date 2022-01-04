@@ -1,7 +1,7 @@
 {
   "name": "architecture",
   "version": "1.0.0",
-  "description": "Project setup instructions --- To setup current WordPress project, you should do the following steps: (Project is based on [WordPress Starter](https://github.com/justcoded/wordpress-starter) )",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "eslint --fix . && npm run build",
