@@ -1,0 +1,36 @@
+/* ____________________________________ THEME */
+
+  /* Theme Border */
+  $valid-border-color     : shade-color($valid-color, $border-percentage);
+  $info-border-color      : shade-color($info-color, $border-percentage);
+  $alert-border-color     : shade-color($alert-color, $border-percentage);
+  $invalid-border-color   : shade-color($invalid-color, $border-percentage);
+  $attention-border-color : shade-color($attention-color, $border-percentage);
+
+  /* Theme BG Colors */
+  $valid-bg-color         : tint-color($valid-color, $background-percentage);
+  $info-bg-color          : tint-color($info-color, $background-percentage);
+  $alert-bg-color         : tint-color($alert-color, $background-percentage);
+  $invalid-bg-color       : tint-color($invalid-color, $background-percentage);
+  $attention-bg-color     : tint-color($attention-color, $background-percentage);
+
+  /* THEME RGB */
+  $primary-color-rgb      : rgb(0,204,204);
+  $secondary-color-rgb    : rgb(255,228,30);
+  $accent-color-rgb       : rgb(168,169,173);
+  $valid-color-rgb        : rgb(11,218,81);
+  $warning-color-rgb      : rgb(255,153,102);
+  $alert-color-rgb        : rgb(186,10,15);
+  $color-info-rgb         : rgb(65,105,225);
+  $invalid-color          : rgb(186,10,15);
+
+  $theme-colors           : (
+      "primary-color"     : $primary-color,
+      "secondary-color"   : $secondary-color,
+      "accent-color"      : $accent-color,
+      "valid-color"       : $valid-color,
+      "info-color"        : $info-color,
+      "alert-color"       : $alert-color,
+      "invalid-color"     : $invalid-color,
+      "attention-color"   : $attention-color
+  );

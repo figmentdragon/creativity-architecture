@@ -22,30 +22,3 @@
 	</head>
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
-	<section class="masthead vertical absolute-masthead" id="page-title">
-
-			<?php the_title(); ?>
-
-	</section>
-
-
-  <div class="container">
-
-
-		<main class="main absolute-main" role="main">
-			<article>
-
-			<header class="absolute-header site-header">
-  			<div class="logo">LOGO</div>
-
-  			<section class="nameplate">
-        	<sup id="author-name"><?php get_the_author_meta( 'display_name' ) ?></sup>
-        	<p id="site-title">
-          	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        	</p>
-        	<sub id="site-description"><?php bloginfo( 'description' ) ?></sub>
-  			</section>
-  			<nav>
-
-  			</nav>
-  	</header>

@@ -26,18 +26,18 @@ function architecture_theme_support() {
 	);
 
 	$logo_width                                   = 300;
-	$logo_height                                  = 100;
+	$logo_height                                  = 300;
 
-	add_theme_support(
-		'custom-logo',
-		array(
+	function architecture_custom_logo_setup() {
+		$defaults = array(
 			'height'                                  => $logo_height,
 			'width'                                   => $logo_width,
 			'flex-width'                              => true,
 			'flex-height'                             => true,
-			'unlink-homepage-logo'                    => true,
-		)
-	);
+			'unlink-homepage-logo'                    => true
+		);
+		add_theme_support( 'custom-logo', $defaults );
+	}
 
 	// rss thingy
 	add_theme_support( 'automatic-feed-links' );
@@ -58,6 +58,8 @@ function architecture_theme_support() {
 			'chat'               // chat transcript
 		)
 	);
+	add_post_type_support( 'post', 'post-formats' );
+	add_post_type_support( 'page', 'post-formats' );
 
 	// wp menus
 	add_theme_support( 'menus' );
@@ -271,6 +273,16 @@ foreach((array)get_the_category() as $cat) :
 		}
 
 endforeach;
+
+
+function wpb_autolink_featured_images( $html, $post_id, $post_image_id ) {
+	If (! is_singular()) {
+		$html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
+		return $html;
+	} else {
+		return $html;
+	}
+}
 
 
 ?>

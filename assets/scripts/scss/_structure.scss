@@ -1,0 +1,10 @@
+
+@import "pages/structure/container";
+
+.main {
+    @include make-container;
+    display: inline-flex;
+    min-height: 100%;
+    min-width: 100%;
+    border: 3px solid $red;
+}

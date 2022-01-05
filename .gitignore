@@ -1,58 +1,6 @@
-# DocumentJS generated files
-styleguide
-
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
-
-# Files and directories created by pub
-.dart_tool/
-.packages
-
-.sass-cache/
-*.css.map
-*.sass.map
-*.scss.map
-
-.dart-tools
-
-# Other files and folders
-.settings/
-
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
-
-# Directory created by dartdoc
-# If you don't generate documentation locally you can remove this line.
-doc/api/
+node_modules
+dist
+.sass-cache
+.idea
 
 
-# ignore log files and databases
-*.log
-*.sql
-*.sqlite
-
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
-
-# ignore everything in the root except the "wp-content" directory.
-!wp-content/
-
-# ignore everything in the "wp-content" directory, except:
-# "mu-plugins", "plugins", "themes" directory
-wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
-
-# ignore these plugins
-wp-content/plugins/hello.php
-
-# ignore specific themes
-wp-content/themes/twenty*/
