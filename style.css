@@ -1,10 +1,9 @@
-/* Error: Undefined variable.
- *   ,
- * 3 | $shadow-text                 : shade-color($body-text-color, $active-percentage);
- *   |                                            ^^^^^^^^^^^^^^^^
- *   '
- *   theme/themesheets/objects/modules/_shadows.scss 3:44  @import
- *   theme/architecture.scss 61:11                         root stylesheet */
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 27 |   @import "themesheets/color-palette";
+ *    |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   theme/architecture.scss 27:11  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -14,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 3 \2502  $shadow-text                 : shade-color($body-text-color, $active-percentage);\a   \2502                                             ^^^^^^^^^^^^^^^^\a   \2575 \a   theme/themesheets/objects/modules/_shadows.scss 3:44  @import\a   theme/architecture.scss 61:11                         root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 27 \2502    @import \"themesheets/color-palette\";\a    \2502            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   theme/architecture.scss 27:11  root stylesheet";
 }
