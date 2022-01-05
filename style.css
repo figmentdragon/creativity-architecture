@@ -1,107 +1,21 @@
 @charset "UTF-8";
-/*
-Theme Name: Your Theme Name
-Theme URI: Your Theme URL
-Author: Your Name
-Author URI: Your URL
-Description: Describe your theme and its features.
-Version: Your Theme's Version Number
-License: GNU General Public License
-License URI: license.txt
-Tags: insert tags to describe your theme to help users search for it. Find the list of tags at: http://wordpress.org/extend/themes/about/
+/* CJMTheme _________________________________________________________
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+  Theme                          : CJMT - Creativity Architect Default
+  Author                         : CJMT
 
-IMPORTANT: This stylesheet is designed for learning and includes comments for guidance. It's a good idea to remove the comments when preparing your them for distribution. However, keep the section headers (the word "Reset" below is an example of a section header) intact.
+  Stylesheet                     : Default Theme
 
-Resetting and rebuilding styles have been helped along thanks to the fine work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/ and Blueprint http://www.blueprintcss.org/
-*/
-/* =Reset
--------------------------------------------------------------- */
-/*** The new CSS Reset - version 1.4.4 (last updated 22.12.2021) ***/
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
+  = TOC =
+   ()
+   ()
+   ()
+
+_________________________________________________________ CJMTheme */
+/* __________________________________________________ DEMOLITION */
+/**
+ * Default variables and helper mixins
  */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
-}
-
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-  list-style: none;
-}
-
-/* For images to not be able to exceed their container */
-img {
-  max-width: 100%;
-}
-
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
-}
-
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
-}
-
-/* fix the feature of 'hidden' attribute.
-   display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly. */
-:where([contenteditable]) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable="true"]) {
-  -webkit-user-drag: element;
-}
-
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-https://github.com/dope/lemonade - Neat lightweight grid.
-
-
-The grid below is a custom built thingy I modeled a bit after
-Gridset. It's VERY basic and probably shouldn't be used on
-your client projects. The idea is you learn how to roll your
-own grids. It's better in the long run and allows you full control
-over your project's layout.
-
-******************************************************************/
 /* Grid Variables */
 /* Container padding */
 /* Grid Variables */
@@ -132,19 +46,33 @@ over your project's layout.
   clear: both;
 }
 
+.row {
+  margin-left: 16px;
+  list-style: none;
+  align-content: space-between;
+}
+.row:not(.row--flex):before, .row:not(.row--flex):after {
+  content: " ";
+  display: table;
+}
+.row:not(.row--flex):after {
+  clear: both;
+}
+.row.row--gutterless {
+  margin-left: 0;
+}
+.row.row--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .col {
-  @includ grid-col;
   box-sizing: border-box;
   float: left;
   padding-left: 16px;
 }
 .row--gutterless .col {
   padding-left: 0;
-}
-
-.last-col {
-  float: right;
-  padding-right: 0 !important;
 }
 
 /* Columns generator */
@@ -1498,837 +1426,19 @@ over your project's layout.
     margin-left: divide("xs", 16);
   }
 }
-.row {
-  margin-left: 16px;
-  list-style: none;
-  align-content: space-between;
-}
-.row:not(.row--flex):before, .row:not(.row--flex):after {
-  content: " ";
-  display: table;
-}
-.row:not(.row--flex):after {
-  clear: both;
-}
-.row.row--gutterless {
-  margin-left: 0;
-}
-.row.row--flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-/*
-Mobile Grid Styles
-These are the widths for the mobile grid.
-There are four types, but you can add or customize
-them however you see fit.
-*/
-@media (max-width: 767px) {
-  .m-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .m-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%;
-  }
-
-  .m-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%;
-  }
-
-  .m-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%;
-  }
-
-  .m-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%;
-  }
-
-  .m-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%;
-  }
-}
-/* Portrait tablet to landscape */
-@media (min-width: 768px) and (max-width: 1029px) {
-  .t-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .t-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%;
-  }
-
-  .t-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%;
-  }
-
-  .t-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%;
-  }
-
-  .t-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%;
-  }
-
-  .t-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%;
-  }
-
-  .t-1of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 20%;
-  }
-
-  .t-2of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 40%;
-  }
-
-  .t-3of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 60%;
-  }
-
-  .t-4of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 80%;
-  }
-}
-/* Landscape to small desktop */
-@media (min-width: 1030px) {
-  .d-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .d-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%;
-  }
-
-  .d-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%;
-  }
-
-  .d-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%;
-  }
-
-  .d-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%;
-  }
-
-  .d-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%;
-  }
-
-  .d-1of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 20%;
-  }
-
-  .d-2of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 40%;
-  }
-
-  .d-3of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 60%;
-  }
-
-  .d-4of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 80%;
-  }
-
-  .d-1of6 {
-    float: left;
-    padding-right: 0.75em;
-    width: 16.6666666667%;
-  }
-
-  .d-1of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 14.2857142857%;
-  }
-
-  .d-2of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 28.5714286%;
-  }
-
-  .d-3of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 42.8571429%;
-  }
-
-  .d-4of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 57.1428572%;
-  }
-
-  .d-5of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 71.4285715%;
-  }
-
-  .d-6of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 85.7142857%;
-  }
-
-  .d-1of8 {
-    float: left;
-    padding-right: 0.75em;
-    width: 12.5%;
-  }
-
-  .d-1of9 {
-    float: left;
-    padding-right: 0.75em;
-    width: 11.1111111111%;
-  }
-
-  .d-1of10 {
-    float: left;
-    padding-right: 0.75em;
-    width: 10%;
-  }
-
-  .d-1of11 {
-    float: left;
-    padding-right: 0.75em;
-    width: 9.0909090909%;
-  }
-
-  .d-1of12 {
-    float: left;
-    padding-right: 0.75em;
-    width: 8.33%;
-  }
-}
-/* CHANGEpercentage _________________________________________________________
-_________________________________________________________ CHANGEpercentage */
-/* ________________________________________________________ CHANGEpercentage */
-/* COLORpalette _________________________________________________________
-
-Theme/Brand Name             : CJMT
-Author                       : CJMT
-
-Stylesheet                   : CJMT Brand Stylesheet
-
-  = TOC =
-  [] Color Palette
-    (1) Color Variables
-    (2) Brand Colors
-    (3) Utilities Colors
-  [] Properties
-  [] Utilities
-
-_________________________________________________________ colorPALETTE */
-/* _______________________________________ GRAY SCALE */
-/* scss-docs-start gray-color-variables */
-/* scss-docs-end gray-color-variables */
-/* _______________________________________ CORE COLOR */
-/* _______________________________________ CUSTOM COLOR */
-/* Light Green */
-/* light blue */
-/* light orange */
-/* light red */
-/* _______________________________________ THEME COLOR */
-/* ____________________________________ THEME */
-/* Theme Border */
-/* Theme BG Colors */
-/* THEME RGB */
-/* ___________________________________________________ UTILITY */
-/* ___________________________________________________ BUTTONS + FORMS */
-/* ___________________________________________________ LINK */
-/* Link */
-/* Nav */
-/* Tabs */
-/* Navbar */
-/* Utilities Text Variables */
-/* ________________________________________________________ COLOR MAP */
-/* Contrast */
-/* The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7. */
-/* See https                     ://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast */
-/* Customize the light and dark text colors for use in our color contrast function. */
-/* ___________________________________________________ CONTRAST */
-/* The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7. */
-/* See https                 ://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast */
-/* Customize the light and dark text colors for use in our color contrast function. */
-/* THEMEproperties __________________________________________________________
-Site Name                     : CJMT
-Author                        : CJ Montes-Termini
-
-Stylesheet                    : THEME Properties
-
-	= TOC =
- __________________________________________________________ themePROPERTIES */
-/* ______________________________________________ BASE */
-/* 1.7525 = 26-29px */
-/* 2.5875 = 40-42px */
-/* Map */
-/* ______________________________________________ SPACING */
-/* ______________________________________________ PADDING*/
-/* 32 px */
-/* ______________________________________________ BORDERS */
-/* Border Width */
-/* 1.75 */
-/* Border Radius */
-.rounded-circle {
-  border-radius: 50% !important;
-}
-
-/* ______________________________________________ OPTIONS */
-/* ______________________________________________ VARIABLE PREFIX */
-/* ______________________________________________ SVG CHARACTERS */
-/* ______________________________________________ ASPECT RATIOS */
-/* ______________________________________________ POSITION VALUES */
-/* ______________________________________________ ANIMATION */
-/* ______________________________________________ LINK */
-/* ______________________________________________ THUMBNAILS */
-/* ______________________________________________ Z-INDEX */
-/* Border Width */
-/* 1.75 */
-/* Border Radius */
-.rounded-circle {
-  border-radius: 50% !important;
-}
-
-/* ______________________________________________________ Link */
-/* Style anchor elements. */
-.stretched-link::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-  content: "";
-}
-
-/* BOX SHADOW */
-/* BUTTON + FORM */
-/* CARD */
-/* Logo Shadow */
-.logo-shadow {
-  filter: drop-shadow(20px 10px 1px rgba(0, 0, 0, 0.432));
-}
-
-/* Group Shadow */
-.hgroup {
-  filter: drop-shadow(20px 10px 1px rgba(0, 0, 0, 0.432));
-}
-
-.otto {
-  background: #0e8dbc;
-  color: #ffe41e;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* https://css-tricks.com/almanac/properties/b/box-shadow/ */
-.right-shadow {
-  position: relative;
-}
-
-.right-shadow:before {
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 15px;
-  left: 0;
-  width: 75%;
-  top: 80%;
-  max-width: 600px;
-  background: mix-color(srgb, #0abab5, shadow);
-  box-shadow: -0.9px 0.2px 1px rgba(154, 85, 175, 0.49), -2.7px 0.8px 3px -1px rgba(154, 85, 175, 0.45), -7.2px 2.1px 7.9px -2px rgba(154, 85, 175, 0.41), -18.3px 5.3px 20.1px -2.9px rgba(154, 85, 175, 0.38);
-  transform: rotate(-16deg);
-}
-
-.left-and-right-shadow {
-  position: relative;
-}
-
-.left-and-right-shadow:before, .left-and-right-shadow:after {
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 25px;
-  left: 10px;
-  width: 50%;
-  top: 80%;
-  max-width: 300px;
-  background: mix-color(srgb, #0abab5, shadow);
-  -webkit-box-shadow: 0 50px 20px mix-color(srgb, #0abab5, shadow);
-  -moz-box-shadow: 0 50px 20px mix-color(srgb, #0abab5, shadow);
-  box-shadow: 0 50px 20px mix-color(srgb, #0abab5, shadow);
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  -o-transform: rotate(-8deg);
-  -ms-transform: rotate(-8deg);
-  transform: rotate(-8deg);
-}
-
-.left-and-right-shadow:after {
-  -webkit-transform: rotate(8deg);
-  -moz-transform: rotate(8deg);
-  -o-transform: rotate(8deg);
-  -ms-transform: rotate(8deg);
-  transform: rotate(8deg);
-  right: 10px;
-  left: auto;
-}
-
-/* GRADIENTS */
-/* THEME */
-/* NAV */
-/* GLOBAL */
-/* ___________________________________________________ THUMBNAIL */
-/* ________________________________________________ @FONTFACE (IN YOUR FACE) */
-@font-face {
-  font-family: "Avdira";
-  src: local("theme/properties/typography/fonts/avdira/Avdira_R.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Enjoy Writing";
-  src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot");
-  src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.woff") format("woff"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.svg#Enjoy Writing") format("svg");
-}
-@font-face {
-  font-family: "Euphorigenic";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Euphorigenic"), url("https://fonts.cdnfonts.com/s/8860/euphorigenic.woff") format("woff");
-}
-@font-face {
-  font-family: "Glass Antiqua";
-  src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot");
-  src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.woff") format("woff"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.svg#Glass Antiqua") format("svg");
-}
-@font-face {
-  font-family: "Hand TypeWriter";
-  src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot");
-  src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.woff") format("woff"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.svg#Hand TypeWriter") format("svg");
-}
-@font-face {
-  font-family: "Life Savers";
-  src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot");
-  src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.woff") format("woff"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.svg#Life Savers") format("svg");
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot");
-  src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.svg#Raleway") format("svg");
-}
-@font-face {
-  font-family: "Raylig";
-  font-style: normal;
-  font-weight: 600;
-  src: local("Raylig"), url("https://fonts.cdnfonts.com/s/70312/RayligSemibold-Wy9mE.woff") format("woff");
-}
-@font-face {
-  font-family: "TELETYPE 1945-1985";
-  src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot");
-  src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff") format("woff"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.svg#TELETYPE 1945-1985") format("svg");
-}
-/* FONT STACKS ______ */
-/* Enable keyword, short hand for calling font Stack. */
-/* _______________________________________________________ FONT VARIABLES */
-/* Enable keyword, short hand for callig font Stack. */
-/* ________________________________________________________ TEXTS & TITLES */
-/* Color */
-/* Font Family */
-/* ______________________________________________________ FONT SIZE */
-/* Font Weight */
-/* Letter Spacing */
-/* Line Height */
-body {
-  text-align: left;
-  color: #07827f;
-  font-family: "Enjoy Writing", sans-serif;
-  font-size: 1.05;
-  line-height: 1.6;
-  margin: auto;
-  padding: 2em 2em 5em;
-  background: #ffe840;
-}
-
-/* Text elements */
-p {
-  margin-bottom: 1.5em;
-}
-
-b, strong {
-  font-weight: bold;
-}
-
-dfn, cite, em, i {
-  font-style: italic;
-}
-
-address {
-  margin: 0 0 1.5em;
-}
-
-/* ______________________________________________ HEADINGS */
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 1.05;
-  font-family: "TELETYPE1945-1985";
-  font-weight: 600;
-  line-height: 1.25;
-  color: #767679;
-}
-
-h1 {
-  font-size: h1;
-}
-
-h2 {
-  font-size: h2;
-}
-
-h3 {
-  font-size: h3;
-}
-
-h4 {
-  font-size: h4;
-}
-
-h5 {
-  font-size: h5;
-}
-
-h6 {
-  font-size: h6;
-}
-
-.h1 {
-  font-size: h1;
-}
-
-.h2 {
-  font-size: h2;
-}
-
-.h3 {
-  font-size: h3;
-}
-
-.h4 {
-  font-size: h4;
-}
-
-.h5 {
-  font-size: h5;
-}
-
-.h6 {
-  font-size: h6;
-}
-
-/* ______________________________________________________ LINK */
-a {
-  outline: none !important;
-  font-family: "Raleway", sans-serif;
-}
-a :active {
-  text-decoration: bold;
-  color: #ffe41e;
-}
-a :active :hover {
-  text-decoration: underline, bold;
-  color: #ccb618;
-}
-a :hover {
-  text-decoration: underline, bold;
-  color: #ccb618;
-}
-a :disabled {
-  color: color-mix(srgb, #a8a9ad 40%, #e4edf4);
-  text-decoration: none;
-}
-/* ______________________________________________ QUOTE */
-/* Blockquote */
-blockquote {
-  font-family: "GlassAntiqua-Regular", sans-serif;
-  font-style: italic;
-  border-left: 5px solid #a8a9ad;
-  padding-left: 1.5;
-  margin: 0 1.5em;
-}
-
-blockquote small {
-  display: block;
-  line-height: 1.7em;
-}
-
-/* ______________________________________________ LIST */
-ol,
-ul {
-  margin: 0 0 1.5em 3em;
-}
-
-ul {
-  list-style: disc;
-}
-
-ol {
-  list-style: decimal;
-}
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin-bottom: 0;
-  margin-left: 1.5em;
-}
-
-li > ol,
-li > ul {
-  margin-bottom: 0;
-}
-
-dt {
-  font-weight: bold;
-}
-
-dd {
-  margin: 0 1.5em 1.5em;
-}
-
-.list--unstyled {
-  margin-left: 0;
-  list-style: none;
-}
-
-/* ______________________________________________ CODE */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace;
-}
-
-code {
-  padding: 0.2rem 0.4rem;
-  font-size: 90%;
-  color: #fc89ac;
-  background-color: #000100;
-  border-top-right-radius: 0.94rem;
-  border-top-left-radius: 0.94rem;
-  border-bottom-right-radius: 0.94rem;
-  border-bottom-left-radius: 0.94rem;
-}
-
-kbd {
-  padding: 0.2rem 0.4rem;
-  font-size: 90%;
-  color: #e4edf4;
-  background-color: #1a1a1a;
-  border-top-right-radius: 0.945875rem;
-  border-top-left-radius: 0.945875rem;
-  border-bottom-right-radius: 0.945875rem;
-  border-bottom-left-radius: 0.945875rem;
-  box-shadow: inset 0 -0.1rem 0 rgba(0, 0, 0, 0.25);
-}
-kbd kbd {
-  padding: 0;
-  font-size: 100%;
-  font-weight: 700;
-  box-shadow: none;
-}
-
-pre {
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 1.5rem;
-  text-align: left;
-  display: block;
-  margin-top: 0;
-  margin-bottom: 1.6em;
-  font-size: 90%;
-  line-height: 1.6;
-  max-width: 100%;
-  overflow: auto;
-  padding: 1.6em;
-}
-pre code {
-  padding: 0.25em;
-  font-size: inherit;
-  color: inherit;
-  background-color: transparent;
-  border-radius: 0;
-}
-pre code, pre kbd, pre tt, pre var {
-  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-
-code {
-  font-family: courier, monospace;
-}
-
-p > code {
-  padding: 0.25em;
-  background: #eee;
-}
-
-.pre-scrollable {
-  max-height: 340px;
-  overflow-y: scroll;
-}
-
-abbr, acronym {
-  border-bottom: 1px dotted #666;
-  cursor: help;
-}
-
-sup,
-sub {
-  font-size: 75%;
-  height: 0;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  bottom: 1ex;
-}
-
-sub {
-  top: 0.5ex;
-}
-
-big {
-  font-size: 125%;
-}
-
-small,
-.small {
-  font-size: 80%;
-  font-weight: normal;
-}
-
-ins,
-mark,
-.mark {
-  padding: 0.2em;
-  background-color: #ffd793;
-  text-decoration: none;
-}
-
-/* ______________________________________________ TABLE */
-figure {
-  margin: 0;
-}
-
-table {
-  margin: 0 0 1.5em;
-  width: 100%;
-}
-
-th {
-  font-weight: bold;
-}
-
-hr {
-  height: 2.3rem;
-  color: inherit;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 3.6225px solid #ff6fa9;
-}
-
-.normal {
-  font-weight: normal;
-}
-
-.quiet {
-  color: #999;
-}
-
-.pull-left {
-  float: left;
-  margin: 0.5em 2em 1em 0;
-}
-
-.pull-right {
-  float: right;
-  margin: 0.5em 0 1em 2em;
-}
-
-/* RESPONSIVE SETTINGS */
-@media (max-width: 500px) {
-  body {
-    font-size: 80%;
-  }
-
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-    float: none !important;
-  }
-}
+/* __________________________________________________ FUNCTIONS */
+/******************************************************************
+Site Name: The Creativity Architect
+Author: CJM Termini
+
+Stylesheet: Grid Mixin Stylesheet
+
+******************************************************************/
+/* Grid system */
+/* Generate semantic grid columns with these mixins. */
+/* Row columns*/
+/* Specify on a parent element(e.g., .row) to force immediate children into NN numberof columns. Supports wrapping to new lines, but does not do a Masonry style grid.*/
+/* ##Columns generator## */
 /******************************************************************
 Site Name: The Creativity Architect
 Author: CJM Termini
@@ -2394,9 +1504,6 @@ Author: CJM Termini
 Stylesheet: Navigation Mixin Stylesheet
 
 ******************************************************************/
-/*
- * Placeholder mixin for <input>
- */
 /* You can also use a <br class="clear" /> to clear columns */
 .clear {
   display: block;
@@ -2407,483 +1514,534 @@ Stylesheet: Navigation Mixin Stylesheet
   height: 0;
 }
 
-/**
- * Root Media Query Variables
- */
-/**
- * Root Media Query Variables
- */
-/**
- * Extends
- */
-.default-max-width {
-  max-width: calc(100vw - 33vh);
-  margin-right: auto;
-  margin-left: auto;
-}
+/* __________________________________________________ THEME */
+/* CJMT colorpalette ______________________________________________________
 
-.wide-max-width {
-  max-width: calc(100vw - 4vh);
-  margin-right: auto;
-  margin-left: auto;
-}
+Theme/Brand Name         : CJMT
+Author                   : CJMT
 
-@media only screen and (min-width: 576px) {
-  .full-max-width {
-    width: auto;
-    max-width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-/* ==========================================================================
-* Site Name:
-* The Creativity Architect
-* Author: CJM Termini
-* Stylesheet: Print Stylsheet
-*
-* Adding print support. The print styles are based on the the great work of *Andreas Hecht* in
-* https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/.
-*
-* Import this
-* file using the following HTML or equivalent: <link
-* href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css"
-* /> ==========================================================================*/
-/* TOC */
-/* () Margins * Padding */
-/* () Typography */
-/* () Page breaks */
-/* () Links */
-/* () Visibility */
-@media print {
-  *,
-*::before,
-*::after {
-    text-shadow: none !important;
-    box-shadow: none !important;
-    color: black !important;
-    background: transparent !important;
-    filter: none !important;
-  }
+Stylesheet               : CJMT Brand Stylesheet
 
-  a,
-a:visited {
-    text-decoration: underline;
-  }
+  = TOC =
+  [] Color Palette
+    (1) Color Variables
+    (2) Theme Colors
+    (3) Utilities Colors
+  [] Properties
+  [] Utilities
+________________________________________________________ CJMT colorpalette */
+/* CJMT colorpalette ______________________________________________________
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
+Theme/Brand Name         : CJMT
+Author                   : CJMT
 
-  pre,
-blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
+Stylesheet               : CJMT Brand Stylesheet
 
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  p,
-h2,
-h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-h3 {
-    page-break-after: avoid;
-  }
-
-  .navbar {
-    display: none;
-  }
-
-  .btn > .caret,
-.dropup > .btn > .caret {
-    border-top-color: #000 !important;
-  }
-
-  .label {
-    border: 1px solid #000;
-  }
-
-  .table {
-    border-collapse: collapse !important;
-  }
-  .table td,
-.table th {
-    background-color: #fff !important;
-  }
-
-  .table-bordered th,
-.table-bordered td {
-    border: 1px solid #ddd !important;
-  }
-}
-/* Margins & paddings */
-@page {
-  margin: 0.5cm;
-}
-h2,
-h3,
-p {
-  widows: 3;
-  orphans: 3;
-}
-
-.entry,
-.entry .entry-header,
-.single .site-main > article > .entry-footer {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.site-footer .site-info-color {
-  margin: 0;
-}
-
-.site-header {
-  padding: 0;
-}
-
-/* Fonts */
-body {
-  color: #000;
-  background: #fff !important;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 13pt;
-  line-height: 1.3;
-}
-
-.has-background-dark * {
-  color: #000 !important;
-}
-
-.entry-title,
-.page-title,
-.singular .entry-title,
-h1 {
-  font-size: 22pt;
-  font-weight: bold;
-}
-
-.archive-description,
-.comments-title,
-.has-large-font-size,
-.has-regular-font-size,
-h2,
-h2.author-title,
-h3,
-h4,
-p.author-bio {
-  margin-top: 25px;
-  font-size: 14pt;
-}
-
-.comment-meta,
-.comment-meta .comment-author .fn {
-  font-size: 13pt;
-}
-
-/* Page breaks */
-a {
-  page-break-inside: avoid;
-}
-
-blockquote,
-pre {
-  border: 1px solid #999;
-  page-break-inside: avoid;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  page-break-after: avoid;
-  page-break-inside: avoid;
-}
-
-img,
-tr {
-  page-break-inside: avoid;
-}
-
-img {
-  max-width: 100% !important;
-  page-break-after: avoid;
-  page-break-inside: avoid;
-}
-
-figure,
-pre,
-table {
-  page-break-inside: avoid;
-}
-
-thead {
-  display: table-header-group;
-}
-
-dl,
-ol,
-ul {
-  page-break-before: avoid;
-}
-
+  = TOC =
+  [] Color Palette
+    (1) Color Variables
+    (2) Theme Colors
+    (3) Utilities Colors
+  [] Properties
+  [] Utilities
+________________________________________________________ CJMT colorpalette */
+/* _______________________________________ VARIABLES */
+/* Gray Scale */
+/* scss-docs-end gray-variables */
+/* Core Colors */
+/* Custom Colors */
+/* ____________________________________ Utilities Colors */
+/* Brand Color Variables */
+/* Functional Color Variables */
+/* Light Green */
+/* light blue */
+/* light orange */
+/* light red */
+/* ____________________________________ THEME */
+/* Variables */
+/* Utility Colors */
+/* Typography */
+/* ____________________________________ FOUNDATION */
+/* Background */
+/* Borders */
 /* Links */
-a:link,
-a:visited,
-a {
-  background: transparent;
-  text-align: left;
-  text-decoration: underline;
+/* ____________________________________ OBJECTS */
+/* Shadow */
+/* Nav */
+/* Lists */
+/* Color Maps */
+/* ______________________________________________________ BACKGROUNDS */
+/* Theme BG Colors */
+/* CJMTheme _________________________________________________________
+
+  Theme                          : CJMT - Creativity Architect Default
+  Author                         : CJMT
+
+  Stylesheet                     : Default Theme
+
+  = TOC =
+   ()
+   ()
+   ()
+
+_________________________________________________________ CJMTheme */
+/* ________________________ PROPERTIES CONTROLED BY DEFAULT*/
+/* Contrast */
+/* The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7. */
+/* See https                     ://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast */
+/* Customize the light and dark text colors for use in our color contrast function. */
+/* _____________________________________ SPACING */
+/* Base Number */
+/* Map */
+/* Base Size */
+/* Map */
+/* Base Offset */
+/* Block Spacing */
+/* _____________________________________ POSITIONING */
+/* Position Values Map */
+/* Aspect Ratios Map */
+/* _____________________________________ PADDING */
+/* 16 px */
+/* _____________________________________ GRID */
+/* ____________________________________ BORDERS */
+/* ____________________________________ BORDERS */
+/* Colors */
+/* ____________________________________ ANIMATION */
+/* _____________________________________ LINK */
+/* ______________________________________________________ Link */
+/* Style anchor elements. */
+/* ____________________________________________ Buttons + Form */
+/* __________________________________________________ Lists */
+/* _____________________________________ SHADOWS */
+/* BOX SHADOW */
+/* CARD SHADOW */
+/* INPUT SHADOW */
+/* BUTTON SHADOW */
+/* TYPOGRAPHY __________________________________________________________
+Site Name                     : CJMT
+Author                        : CJ Montes-Termini
+
+Stylesheet                    : CJMT Brand Typography
+
+	= TOC =
+		(1) @FONTFACE (In Your Face)
+		(2) Font Stacks
+		(3) Font Variables
+			- [] Font Families
+			- [] Font Colors
+				- Shadows
+				- Gradients
+				- Stroke Outline
+		(4) Text Level CSS Selectors
+			- [] Text Level
+			- [] Headings
+			- [] Links
+		(5) Text Level HTML Elements
+		(6) Responsive Settings
+
+ __________________________________________________________ TYPOGRAPHY */
+/* ________________________________________________ @FONTFACE (IN YOUR FACE) */
+@font-face {
+  font-family: "Avdira";
+  src: local("Avdira"), url("docs/theme/branding/typography/cjmt_fonts/avdira/Avdira_R.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Enjoy Writing";
+  src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot");
+  src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.woff") format("woff"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.svg#Enjoy Writing") format("svg");
+}
+@font-face {
+  font-family: "Euphorigenic";
+  src: url("//db.onlinewebfonts.com/t/3757e021aebfe1417f8e3b74cd6034da.eot");
+  src: url("//db.onlinewebfonts.com/t/3757e021aebfe1417f8e3b74cd6034da.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3757e021aebfe1417f8e3b74cd6034da.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3757e021aebfe1417f8e3b74cd6034da.woff") format("woff"), url("//db.onlinewebfonts.com/t/3757e021aebfe1417f8e3b74cd6034da.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3757e021aebfe1417f8e3b74cd6034da.svg#Euphorigenic") format("svg");
+}
+@font-face {
+  font-family: "Glass Antiqua";
+  src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot");
+  src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.woff") format("woff"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.svg#Glass Antiqua") format("svg");
+}
+@font-face {
+  font-family: "Hand TypeWriter";
+  src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot");
+  src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.woff") format("woff"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.svg#Hand TypeWriter") format("svg");
+}
+@font-face {
+  font-family: "Life Savers";
+  src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot");
+  src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.woff") format("woff"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.svg#Life Savers") format("svg");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot");
+  src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.svg#Raleway") format("svg");
+}
+@font-face {
+  font-family: "Raylig";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Raylig"), url("https://fonts.cdnfonts.com/s/70312/RayligSemibold-Wy9mE.woff") format("woff");
+}
+@font-face {
+  font-family: "TELETYPE 1945-1985";
+  src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot");
+  src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff") format("woff"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.svg#TELETYPE 1945-1985") format("svg");
+}
+/* FONT STACKS ______ */
+/* Enable keyword, short hand for calling font Stack. */
+/* _______________________________________________________ FONT VARIABLES */
+/* Enable keyword, short hand for callig font Stack. */
+/* ________________________________________________________ TEXTS & TITLES */
+/* Color */
+/* Font Family */
+/* ______________________________________________________ FONT SIZE */
+/* Font Weight */
+/* Letter Spacing */
+/* Line Height */
+/* ______________________________________________________ TEXT SHADOW */
+p {
+  margin-bottom: 16px;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
   font-weight: bold;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 a,
-a:visited {
-  color: #444 !important;
+a:link {
+  outline: none !important;
+  font-weight: bold;
   text-decoration: underline;
+  color: #ffe41e;
 }
-a:after,
-a:visited:after {
-  content: " (" attr(href) ")";
+a :hover,
+a:link :hover {
+  text-decoration: underline, bold;
+  color: #665b0c;
 }
-a abbr[title]:after,
-a:visited abbr[title]:after {
-  content: " (" attr(title) ")";
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.575rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0abab5;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+.h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a {
+  font-weight: inherit;
+}
+
+h1 {
+  font-size: h1;
+  line-height: 1.35;
+  font-style: normal;
+  margin: 0.575rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: h2;
+  margin: 0.575rem 0 0.8em;
+}
+
+h3 {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: h3;
+  letter-spacing: 0.15em;
+  margin: 0.2875rem 0 0.8em;
+}
+
+h4 {
+  font-weight: 600;
+  font-size: h4;
+  letter-spacing: 0.1em;
+  margin: 0.2875rem 0 0.8em;
+}
+
+h5 {
+  font-weight: 600;
+  font-style: italic;
+  font-size: h5;
+  margin: 0.2875rem 0 0.8em;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: h6;
+  letter-spacing: 0.1em;
+  margin: 0.2875rem 0 0.8em;
+}
+
+.h1 {
+  font-size: h1;
+}
+
+.h2 {
+  font-size: h2;
+}
+
+.h3 {
+  font-size: h3;
+}
+
+.h4 {
+  font-size: h4;
+}
+
+.h5 {
+  font-size: h5;
+}
+
+.h6 {
+  font-size: h6;
+}
+
+.lead {
+  font-size: 1.4375rem;
+  font-weight: 300;
+  font-family: "Pompiere";
+}
+
+.display-1 {
+  font-size: 1;
+  font-weight: 300;
+}
+
+.display-2 {
+  font-size: 2;
+  font-weight: 300;
+}
+
+.display-3 {
+  font-size: 3;
+  font-weight: 300;
+}
+
+.display-4 {
+  font-size: 4;
+  font-weight: 300;
+}
+
+hr {
+  margin-top: 14.7px;
+  margin-bottom: 14.7px;
+  border: 0;
+  border-top: 1px solid #ff6fa9;
+  border-bottom: 1px solid #ff6fa9;
+  border-left: none;
+  border-right: none;
+}
+
+small,
+.small {
+  font-size: 0.91875;
+  font-weight: normal;
+}
+
+small #copyright {
+  font-size: 0.91875;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+
+mark,
+.mark {
+  padding: 0.2em;
+  background-color: #ffd999;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.dl-horizontal {
+  margin-right: -16px;
+  margin-left: -16px;
+}
+.dl-horizontal::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.dl-horizontal:after, .dl-horizontal:before {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  table-layout: fixed;
+  content: " ";
+}
+.dl-horizontal:after {
+  clear: both;
+}
+
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+#page-title {
+  font-family: "Raylig", sans-serif;
+  font-size: 5vh;
+  text-transform: uppercase;
+  color: #0abab5;
+}
+
+.blockquote {
+  font-family: "GlassAntiqua-Regular";
+  padding: 0.575rem 1.15rem;
+  margin-bottom: 1.15rem 0;
+  font-size: 2.3625;
+  border-left: 0.25 solid #5c5d5f;
+}
+.blockquote p:last-child {
+  padding-bottom: 0;
+}
+
+.blockquote-footer {
+  font-family: "GlassAntiqua-Regular";
+  display: block;
+  font-size: md;
+  line-height: 1.15;
+  color: #a8a9ad;
+}
+.blockquote-footer::before {
+  content: "— ";
+}
+
+.blockquote-reverse {
+  font-family: "GlassAntiqua-Regular";
+  padding-right: 1.15rem;
+  padding-left: 0;
+  text-align: right;
+  border-right: 0.25 solid #5c5d5f;
+  border-left: 0;
+}
+
+.blockquote-reverse .blockquote-footer::before {
+  content: "";
+}
+.blockquote-reverse .blockquote-footer::after {
+  content: " —";
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+}
+
+code {
+  padding: 0.2rem 0.4rem;
+  font-size: 90%;
+  color: #fc89ac;
+  background-color: #000100;
+  border-radius: 0.95rem;
+}
+
+kbd {
+  padding: 0.2rem 0.4rem;
+  font-size: 90%;
+  color: #e4edf4;
+  background-color: #1a1a1a;
+  border-radius: 0.8728125rem;
+  box-shadow: inset 0 -0.1rem 0 rgba(0, 0, 0, 0.25);
+}
+kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+pre {
+  text-align: left;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 90%;
+  line-height: 1.00625 rem;
+}
+pre code {
+  padding: 0.25em;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
 }
 
 /**
-* Don't show links that are fragment identifiers, or use the `javascript:`
-* pseudo protocol
-*/
-.ir a:after,
-a[href^="#"]:after,
-a[href^="javascript:"]:after {
-  content: "";
+ * ## Z-Index
+ =========================*/
+/* GRADIENTS */
+.fixed-footer {
+  position: fixed;
+  z-index: 700;
+  right: 2rem;
+  bottom: 1rem;
+  left: 8rem;
 }
 
-a[href]:after {
-  content: " (" attr(href) ")";
+.absolute-header {
+  position: absolute;
+  z-index: 600;
+  top: 2rem;
+  right: 2rem;
+  left: 0;
 }
 
-a:after > img {
-  content: "";
+.absolute-masthead {
+  position: absolute;
+  top: -0.5rem;
+  right: auto;
+  bottom: -0.5rem;
+  left: 4.5rem;
+  z-index: 1400;
 }
 
-article a[href^="#"]:after {
-  content: "";
+.absolute-main {
+  position: absolute;
+  top: 1rem;
+  right: 0rem;
+  bottom: 1rem;
+  left: 2rem;
+  z-index: 300;
 }
 
-a:not(:local-link):after {
-  content: " < " attr(href) "> ";
-}
-
-.entry-title a:after {
-  content: "\a< " attr(href) "> ";
-  font-size: 14pt;
-  white-space: pre;
-}
-
-.byline a:after,
-.cat-links a:after,
-.comment-metadata a:after,
-.page-links a:after,
-.tags-links a:after,
-.wp-block-calendar a:after,
-.wp-block-tag-cloud a:after {
-  content: "";
-}
-
-/* Visibility */
-#dark-mode-toggler,
-.comment-reply,
-.comment-respond,
-.comment .comment-metadata .edit-link,
-.edit-link,
-.entry-footer,
-.footer-navigation,
-.more-link,
-.navigation.pagination,
-.post-navigation,
-.primary-navigation,
-.reply,
-.site-title + .primary-navigation,
-.widget-area {
-  display: none !important;
-}
-
-.entry .entry-content .button,
-.entry .entry-content .wp-block-button .wp-block-button__link,
-.entry .entry-content .wp-block-file__button {
-  color: #000;
-  background: none;
-}
-
-.page-navigation,
-.respond-form,
-.sidebar,
-.wp-prev-next,
-nav {
-  display: none;
-}
-
-@media only screen and (min-width: 1169px) and (max-width: 1368px) {
-  .visible-xxl {
-    display: block !important;
-  }
-}
-
-@media only screen and (min-width: 1169px) and (max-width: 1368px) {
-  .hidden-xxl {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 961px) and (max-width: 1168px) {
-  .visible-xl {
-    display: block !important;
-  }
-}
-
-@media only screen and (min-width: 961px) and (max-width: 1168px) {
-  .hidden-xl {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 737px) and (max-width: 960px) {
-  .visible-lg {
-    display: block !important;
-  }
-}
-
-@media only screen and (min-width: 737px) and (max-width: 960px) {
-  .hidden-lg {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 543px) and (max-width: 736px) {
-  .visible-md {
-    display: block !important;
-  }
-}
-
-@media only screen and (min-width: 543px) and (max-width: 736px) {
-  .hidden-md {
-    display: none !important;
-  }
-}
-
-@media only screen and (min-width: 1) and (max-width:542px) {
-  .visible-sm {
-    display: block !important;
-  }
-}
-
-@media only screen and (min-width: 1) and (max-width:542px) {
-  .hidden-sm {
-    display: none !important;
-  }
-}
-
-@media only screen and (max-width: 0) {
-  .visible-xs {
-    display: block !important;
-  }
-}
-
-@media only screen and (max-width: 0) {
-  .hidden-xs {
-    display: none !important;
-  }
-}
-
-.hidden-xs-up {
-  display: none !important;
-}
-
-.hidden-xs-down {
-  display: none !important;
-}
-
-@media (min-width: 542px) {
-  .hidden-sm-up {
-    display: none !important;
-  }
-}
-
-@media (max-width: 541.98px) {
-  .hidden-sm-down {
-    display: none !important;
-  }
-}
-
-@media (min-width: 736px) {
-  .hidden-md-up {
-    display: none !important;
-  }
-}
-
-@media (max-width: 735.98px) {
-  .hidden-md-down {
-    display: none !important;
-  }
-}
-
-@media (min-width: 960px) {
-  .hidden-lg-up {
-    display: none !important;
-  }
-}
-
-@media (max-width: 959.98px) {
-  .hidden-lg-down {
-    display: none !important;
-  }
-}
-
-@media (min-width: 1168px) {
-  .hidden-xl-up {
-    display: none !important;
-  }
-}
-
-@media (max-width: 1167.98px) {
-  .hidden-xl-down {
-    display: none !important;
-  }
-}
-
-@media (min-width: 1368px) {
-  .hidden-xxl-up {
-    display: none !important;
-  }
-}
-
-@media (max-width: 1367.98px) {
-  .hidden-xxl-down {
-    display: none !important;
-  }
-}
-
+/* __________________________________________________ ROOT */
 /* Assistive Tech –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /**
  * Text meant only for screen readers. It's hidden due to the clip property, but
@@ -2967,15 +2125,18 @@ nav {
     transition-duration: 0s !important;
   }
 }
-.left {
+.left,
+.align-text-left {
   text-align: left;
 }
 
-.right {
+.right,
+.align-text-right {
   text-align: right;
 }
 
-.center {
+.center,
+.align-text-center {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -3046,7 +2207,7 @@ nav {
 }
 img .alignleft,
 img .float-left {
-  margin-right: 1.05;
+  margin-right: 1.15rem;
 }
 
 .alignright,
@@ -3055,7 +2216,7 @@ img .float-left {
 }
 img .alignright,
 img .float-right {
-  margin-left: 1.05;
+  margin-left: 1.15rem;
 }
 
 .aligncenter,
@@ -3066,98 +2227,7 @@ img .float-right {
 }
 img .aligncenter,
 img .float-center {
-  margin-bottom: 1.05;
-}
-
-.clearfix .row,
-.clearfix .clearfix {
-  zoom: 1;
-}
-.clearfix .row .clearfix:before,
-.clearfix .row .clearfix:after,
-.clearfix .row .row:before,
-.clearfix .row .row:after,
-.clearfix .clearfix .clearfix:before,
-.clearfix .clearfix .clearfix:after,
-.clearfix .clearfix .row:before,
-.clearfix .clearfix .row:after {
-  display: block;
-  visibility: hidden;
-  clear: both;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  table-layout: fixed;
-  content: " ";
-}
-.clearfix .row .clearfix::after,
-.clearfix .row .row::after,
-.clearfix .clearfix .clearfix::after,
-.clearfix .clearfix .row::after {
-  display: block;
-  clear: both;
-  content: "";
-}
-
-/**
-* Text aligments
-*/
-.align-text-left {
-  text-align: left;
-}
-
-.align-text-right {
-  text-align: right;
-}
-
-.align-text-center {
-  text-align: center;
-}
-
-/**
- * Elements visibility
- */
-.visible-on-mobile {
-  display: none !important;
-}
-@media screen and (max-width: 576px) {
-  .visible-on-mobile {
-    display: block !important;
-  }
-}
-
-.visible-on-tablet {
-  display: none !important;
-}
-@media screen and (max-width: 768px) {
-  .visible-on-tablet {
-    display: block !important;
-  }
-}
-@media screen and (max-width: 576px) {
-  .visible-on-tablet {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .visible-on-desktop {
-    display: none !important;
-  }
-}
-
-/**
- * Accessibility
- */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  margin-bottom: 1.15rem;
 }
 
 .level {
@@ -3165,7 +2235,7 @@ img .float-center {
   justify-content: space-between;
 }
 .level code {
-  border-radius: 0.94rem;
+  border-radius: 0.95rem;
 }
 .level img {
   display: inline-block;
@@ -3273,52 +2343,12 @@ img .float-center {
   left: 0;
 }
 
-.absolute-main {
-  position: absolute;
-  top: 1rem;
-  right: 0rem;
-  bottom: 1rem;
-  left: 2rem;
-  z-index: 725;
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: "";
 }
-
-.fixed-footer {
-  position: fixed;
-  z-index: 700;
-  right: 2rem;
-  bottom: 1rem;
-  left: 8rem;
-}
-
-.absolute-header {
-  position: absolute;
-  z-index: 500;
-  top: 2rem;
-  right: 2rem;
-  left: 0;
-}
-
-.absolute-masthead {
-  position: absolute;
-  top: -0.5rem;
-  right: auto;
-  bottom: -0.5rem;
-  left: 4.5rem;
-  z-index: 515;
-}
-
-.clearfix .row,
-.clearfix .clearfix {
-  zoom: 1;
-}
-.clearfix .row .clearfix:before,
-.clearfix .row .clearfix:after,
-.clearfix .row .row:before,
-.clearfix .row .row:after,
-.clearfix .clearfix .clearfix:before,
-.clearfix .clearfix .clearfix:after,
-.clearfix .clearfix .row:before,
-.clearfix .clearfix .row:after {
+.clearfix:after, .clearfix:before {
   display: block;
   visibility: hidden;
   clear: both;
@@ -3328,13 +2358,78 @@ img .float-center {
   table-layout: fixed;
   content: " ";
 }
-.clearfix .row .clearfix::after,
-.clearfix .row .row::after,
-.clearfix .clearfix .clearfix::after,
-.clearfix .clearfix .row::after {
-  display: block;
+.clearfix:after {
   clear: both;
-  content: "";
+}
+
+.link-primary-color {
+  color: #0abab5;
+}
+.link-primary-color:hover, .link-primary-color:focus {
+  color: #54cfcb;
+}
+
+.link-secondary-color {
+  color: #ffe41e;
+}
+.link-secondary-color:hover, .link-secondary-color:focus {
+  color: #ffec62;
+}
+
+.link-accent-color {
+  color: #a8a9ad;
+}
+.link-accent-color:hover, .link-accent-color:focus {
+  color: #c2c3c6;
+}
+
+.link-valid-color {
+  color: #cdffff;
+}
+.link-valid-color:hover, .link-valid-color:focus {
+  color: #dcffff;
+}
+
+.link-info-color {
+  color: #555aff;
+}
+.link-info-color:hover, .link-info-color:focus {
+  color: #888cff;
+}
+
+.link-alert-color {
+  color: #ffd080;
+}
+.link-alert-color:hover, .link-alert-color:focus {
+  color: #ffdea6;
+}
+
+.link-invalid-color {
+  color: #ff555a;
+}
+.link-invalid-color:hover, .link-invalid-color:focus {
+  color: #ff888c;
+}
+
+.link-attention-color {
+  color: #ff6fa9;
+}
+.link-attention-color:hover, .link-attention-color:focus {
+  color: #ff9ac3;
+}
+
+.link-light {
+  color: #9a9a9a;
+}
+.link-light:hover, .link-light:focus {
+  color: #b8b8b8;
+}
+
+.link-dark {
+  color: #282828;
+}
+.link-dark:hover, .link-dark:focus {
+  color: #1c1c1c;
 }
 
 /**
@@ -3399,174 +2494,100 @@ img .float-center {
   --ca-aspect-ratio: 42.8571428571%;
 }
 
-.container .span.col1 {
-  flex: 0 0;
-  width: 6.25%;
-}
-
-.container .span.col2 {
-  flex: 0 0;
-  width: 12.5%;
-}
-
-.container .span.col3 {
-  flex: 0 0;
-  width: 18.75%;
-}
-
-.container .span.col4 {
-  flex: 0 0;
-  width: 25%;
-}
-
-.container .span.col5 {
-  flex: 0 0;
-  width: 31.25%;
-}
-
-.container .span.col6 {
-  flex: 0 0;
-  width: 37.5%;
-}
-
-.container .span.col7 {
-  flex: 0 0;
-  width: 43.75%;
-}
-
-.container .span.col8 {
-  flex: 0 0;
-  width: 50%;
-}
-
-.container .span.col9 {
-  flex: 0 0;
-  width: 56.25%;
-}
-
-.container .span.col10 {
-  flex: 0 0;
-  width: 62.5%;
-}
-
-.container .span.col11 {
-  flex: 0 0;
-  width: 68.75%;
-}
-
-.container .span.col12 {
-  flex: 0 0;
-  width: 75%;
-}
-
-.container .span.col13 {
-  flex: 0 0;
-  width: 81.25%;
-}
-
-.container .span.col14 {
-  flex: 0 0;
-  width: 87.5%;
-}
-
-.container .span.col15 {
-  flex: 0 0;
-  width: 93.75%;
-}
-
-.container .span.col16 {
+.span1 {
   flex: 0 0;
   width: 100%;
+  flex-basis: 6.25%;
 }
 
-.container .span.col-auto {
+.span2 {
+  flex: 0 0;
+  width: 12.5%;
+  flex-basis: 12.5%;
+}
+
+.span3 {
+  flex: 0 0;
+  width: 18.7500000001%;
+  flex-basis: 18.75%;
+}
+
+.span4 {
+  flex: 0 0;
+  width: 25%;
+  flex-basis: 25%;
+}
+
+.span5 {
+  flex: 0 0;
+  width: 31.25%;
+  flex-basis: 31.25%;
+}
+
+.span6 {
+  flex: 0 0;
+  width: 37.4999999995%;
+  flex-basis: 37.5%;
+}
+
+.span7 {
+  flex: 0 0;
+  width: 43.7500000003%;
+  flex-basis: 43.75%;
+}
+
+.span8 {
+  flex: 0 0;
+  width: 50%;
+  flex-basis: 50%;
+}
+
+.span9 {
+  flex: 0 0;
+  width: 56.2499999993%;
+  flex-basis: 56.25%;
+}
+
+.span10 {
+  flex: 0 0;
+  width: 62.5%;
+  flex-basis: 62.5%;
+}
+
+.span11 {
+  flex: 0 0;
+  width: 68.7500000021%;
+  flex-basis: 68.75%;
+}
+
+.span12 {
+  flex: 0 0;
+  width: 75.0000000019%;
+  flex-basis: 75%;
+}
+
+.span13 {
+  flex: 0 0;
+  width: 81.249999998%;
+  flex-basis: 81.25%;
+}
+
+.span14 {
   flex: 0 0 auto;
-  width: auto;
+  width: 87.4999999967%;
+  flex-basis: 87.5%;
 }
 
-.container .span.row1 {
-  flex: 0 0;
-  height: 6.25%;
-}
-
-.container .span.row2 {
-  flex: 0 0;
-  height: 12.5%;
-}
-
-.container .span.row3 {
-  flex: 0 0;
-  height: 18.75%;
-}
-
-.container .span.row4 {
-  flex: 0 0;
-  height: 25%;
-}
-
-.container .span.row5 {
-  flex: 0 0;
-  height: 31.25%;
-}
-
-.container .span.row6 {
-  flex: 0 0;
-  height: 37.5%;
-}
-
-.container .span.row7 {
-  flex: 0 0;
-  height: 43.75%;
-}
-
-.container .span.row8 {
-  flex: 0 0;
-  height: 50%;
-}
-
-.container .span.row9 {
-  flex: 0 0;
-  height: 56.25%;
-}
-
-.container .span.row10 {
-  flex: 0 0;
-  height: 62.5%;
-}
-
-.container .span.row11 {
-  flex: 0 0;
-  height: 68.75%;
-}
-
-.container .span.row12 {
-  flex: 0 0;
-  height: 75%;
-}
-
-.container .span.row13 {
-  flex: 0 0;
-  height: 81.25%;
-}
-
-.container .span.row14 {
-  flex: 0 0;
-  height: 87.5%;
-}
-
-.container .span.row15 {
-  flex: 0 0;
-  height: 93.75%;
-}
-
-.container .span.row16 {
-  flex: 0 0;
-  height: 100%;
-}
-
-.container .span.row-fluid {
+.span15 {
   flex: 0 0 auto;
-  height: auto;
+  width: 93.7499999971%;
+  flex-basis: 93.75%;
+}
+
+.span16 {
+  flex: 0 0 auto;
+  width: 100%;
+  flex-basis: 100%;
 }
 
 .hstack {
@@ -3581,6 +2602,16 @@ img .float-center {
   flex: 1 1 auto;
   flex-direction: column;
   align-self: stretch;
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
 }
 
 .text-truncate {
@@ -3622,9 +2653,95 @@ img .float-center {
   opacity: 0.25;
 }
 
-/* =Global
------------------------------------------------ */
-/* Set a default font size, color, line-height, and font family for your body element and all input elements. These can get overridden later on in the stylesheet, but are useful as base styles. */
+:root {
+  --ca-blue: #0a0fba;
+  --ca-indigo: #6600ff;
+  --ca-purple: #510bda;
+  --ca-pink: #fc89ac;
+  --ca-red: #ba0a0f;
+  --ca-yellow: #ffe41e;
+  --ca-orange: #fd8535;
+  --ca-green: #82ded1;
+  --ca-teal: #b5ede4;
+  --ca-cyan: #0abab5;
+  --ca-gray: #3e3e3e;
+  --ca-silver: #a8a9ad;
+  --ca-chocolate: #623412;
+  --ca-camel: #c19a6b;
+  --ca-saltpan: #ffffcc;
+  --ca-white-chocolate: #ede6d6;
+  --ca-dark-vanilla: #d1bea8;
+  --ca-ghost-white: #fbfbfd;
+  --ca-deep-sky-blue: #0dcaf0;
+  --ca-coral: #ff7f50;
+  --ca-maroon: #800000;
+  --ca-light-cyan: #cdffff;
+  --ca-neon-blue: #555aff;
+  --ca-salomie: #ffd080;
+  --ca-wild-watermelon: #ff555a;
+  --ca-hot-pink: #ff6fa9;
+  --ca-$primary-color100: #c0c0c0;
+  --ca-$primary-color200: #9a9a9a;
+  --ca-$primary-color300: #7b7b7b;
+  --ca-$primary-color400: #626262;
+  --ca-$primary-color500: #4e4e4e;
+  --ca-$primary-color600: #3e3e3e;
+  --ca-$primary-color700: #323232;
+  --ca-$primary-color800: #282828;
+  --ca-$primary-color900: #1a1a1a;
+  --ca-primary-color: #0abab5;
+  --ca-secondary-color: #ffe41e;
+  --ca-accent-color: #a8a9ad;
+  --ca-valid-color: #cdffff;
+  --ca-info-color: #555aff;
+  --ca-alert-color: #ffd080;
+  --ca-invalid-color: #ff555a;
+  --ca-attention-color: #ff6fa9;
+  --ca-light: #9a9a9a;
+  --ca-dark: #282828;
+  --ca-white-rgb: 228, 237, 244;
+  --ca-black-rgb: 0, 1, 0;
+  --ca-text-rgb: 255, 233, 75;
+  --ca-body-bg-rgb: 255, 233, 75;
+  --ca-font-sans-serif: Euphorigenic, "Hand Typewriter", "Enjoy Writing", Avdira, "TELETYPE1945-1985", Raylig, "Life Savers", "Glass Antiqua", sans-serif;
+  --ca-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --ca-gradient: linear-gradient(-120deg, rgba(10, 186, 181, 0.95), rgba(255, 228, 30, 0.65), rgba(168, 169, 173, 0.45), transparent, 95%);
+  --ca-body-font-family: Euphorigenic, Hand Typewriter, Enjoy Writing, Avdira, TELETYPE1945-1985, Raylig, Life Savers, Glass Antiqua, sans-serif;
+  --ca-body-font-size: 1.15rem;
+  --ca-body-font-weight: 400;
+  --ca-line-height-body: line-height-md;
+  --ca-text: #ffe94b;
+  --ca-body-bg: #ffe94b;
+}
+
+/* __________________________________________________ OBJECTS */
+/* Base/Default settings. */
+html {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
+body {
+  float: left;
+  overflow: hidden;
+  align-items: left;
+  justify-content: flex-start;
+  font-size: 100%;
+}
+
+div {
+  display: flex;
+  float: left;
+  justify-content: space-evenly;
+}
+
+/* If you want to give a common style to all of the titles in your theme, here's a place to do it (you can style them individually later) */
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   clear: both;
@@ -3633,6 +2750,23 @@ h1, h2, h3, h4, h5, h6 {
 /* Text elements */
 p {
   margin-bottom: 1.5em;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
 }
 
 ul, ol {
@@ -3652,6 +2786,11 @@ ul ul, ol ol, ul ol, ol ul {
   margin-left: 1.5em;
 }
 
+li > ul,
+li > ol {
+  margin-bottom: 0;
+}
+
 dt {
   font-weight: bold;
 }
@@ -3660,21 +2799,9 @@ dd {
   margin: 0 1.5em 1.5em;
 }
 
-b, strong {
-  font-weight: bold;
-}
-
-dfn, cite, em, i {
-  font-style: italic;
-}
-
-blockquote {
-  font-style: italic;
-  margin: 0 1.5em;
-}
-
-address {
-  margin: 0 0 1.5em;
+.list--unstyled {
+  margin-left: 0;
+  list-style: none;
 }
 
 pre {
@@ -3741,6 +2868,10 @@ th {
 }
 
 /* Form Elements */
+*:focus {
+  outline: 0;
+}
+
 button,
 input,
 select,
@@ -3763,19 +2894,36 @@ input {
   /* Corrects inner spacing displayed oddly in IE6/7 */
 }
 
+select {
+  line-height: normal;
+  padding: 0;
+  padding-left: 8px;
+}
+
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  width: 98%;
+  min-height: 4;
+  resize: vertical;
+}
+
 /* Gives a basic visual design to form elements */
 button,
 html input[type=button],
 input[type=reset],
 input[type=submit] {
-  border: 1px solid #ccc;
-  border-color: #ccc #ccc #bbb #ccc;
+  border: 1px solid #ba0a0f;
+  border-color: #ba0a0f #ba0a0f #3e3e3e #ba0a0f;
   border-radius: 3px;
-  background: #e6e6e6;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  background: #9a9a9a;
+  -webkit-box-shadow: inset 0 1px 0 rgba(186, 10, 15, 0.5), inset 0 15px 17px rgba(186, 10, 15, 0.5), inset 0 -5px 12px rgba(0, 1, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(186, 10, 15, 0.5), inset 0 15px 17px rgba(186, 10, 15, 0.5), inset 0 -5px 12px rgba(0, 1, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(186, 10, 15, 0.5), inset 0 15px 17px rgba(186, 10, 15, 0.5), inset 0 -5px 12px rgba(0, 1, 0, 0.05);
+  color: rgba(0, 1, 0, 0.8);
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
   -webkit-appearance: button;
@@ -3784,17 +2932,17 @@ input[type=submit] {
   font-size: 1.4rem;
   line-height: 1;
   padding: 1.12em 1.5em 1em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  text-shadow: 0 1px 0 rgba(186, 10, 15, 0.8);
 }
 
 button:hover,
 html input[type=button]:hover,
 input[type=reset]:hover,
 input[type=submit]:hover {
-  border-color: #ccc #bbb #aaa #bbb;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+  border-color: #ba0a0f #3e3e3e #9a9a9a #3e3e3e;
+  -webkit-box-shadow: inset 0 1px 0 rgba(186, 10, 15, 0.8), inset 0 15px 17px rgba(186, 10, 15, 0.8), inset 0 -5px 12px rgba(0, 1, 0, 0.02);
+  -moz-box-shadow: inset 0 1px 0 rgba(186, 10, 15, 0.8), inset 0 15px 17px rgba(186, 10, 15, 0.8), inset 0 -5px 12px rgba(0, 1, 0, 0.02);
+  box-shadow: inset 0 1px 0 rgba(186, 10, 15, 0.8), inset 0 15px 17px rgba(186, 10, 15, 0.8), inset 0 -5px 12px rgba(0, 1, 0, 0.02);
 }
 
 button:focus,
@@ -3805,10 +2953,10 @@ button:active,
 html input[type=button]:active,
 input[type=reset]:active,
 input[type=submit]:active {
-  border-color: #aaa #bbb #bbb #bbb;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-color: #9a9a9a #3e3e3e #3e3e3e #3e3e3e;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(186, 10, 15, 0.5), inset 0 2px 5px rgba(0, 1, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(186, 10, 15, 0.5), inset 0 2px 5px rgba(0, 1, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(186, 10, 15, 0.5), inset 0 2px 5px rgba(0, 1, 0, 0.15);
 }
 
 input[type=checkbox],
@@ -3843,8 +2991,8 @@ input::-moz-focus-inner {
 input[type=text],
 input[type=email],
 textarea {
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid #ccc;
+  background: rgba(228, 237, 244, 0.3);
+  border: 1px solid #ba0a0f;
   border-radius: 3px;
   padding: 6px;
 }
@@ -3852,19 +3000,59 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  background: #fff;
-}
-
-textarea {
-  overflow: auto;
-  /* Removes default vertical scrollbar in IE6/7/8/9 */
-  padding-left: 3px;
-  vertical-align: top;
-  /* Improves readability and alignment in all browsers */
-  width: 98%;
+  background: #e4edf4;
 }
 
 /* Links */
+a {
+  outline: none !important;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+a :active {
+  text-decoration: underline;
+  color: #ffe41e;
+}
+a :active :hover {
+  text-decoration: underline, bold;
+  color: #665b0c;
+}
+a :hover {
+  text-decoration: underline, bold;
+  color: #665b0c;
+}
+a :disabled {
+  color: color-mix(srgb, #ffe41e 40%, #e4edf4);
+  text-decoration: none;
+}
+
+.social-icons {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-height: 3rem;
+  width: 100%;
+  max-width: auto;
+}
+.social-icons .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 8rem;
+  width: 8rem;
+  border-radius: 100rem;
+}
+
+@media (min-width: 960px) {
+  .social-icons {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 2.5rem;
+    width: auto;
+  }
+}
 /* Alignment - WordPress uses these classes to align images and other elements inside the editor. */
 .alignleft {
   display: inline;
@@ -3893,449 +3081,6 @@ textarea {
   /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
-}
-
-/* If you want to give a common style to all of the titles in your theme, here's a place to do it (you can style them individually later) */
-/* =Structure
------------------------------------------------ */
-/* Refer to the HTML structure graphic (http://themeshaper.com/wp-content/uploads/2012/10/html-visual.png) to see how these elements are nested in the mark-up.
-
-Use this section to set widths and margins, and to build a layout. For examples of layouts that you can copy and paste into this section, see:
-https://github.com/Automattic/_s/blob/master/layouts/
-*/
-.site {
-  /* The the outer-most container, wraps the entire site */
-}
-
-.site-header {
-  /* The container for the entire header area */
-}
-
-#main {
-  /* The container for #primary, #secondary, and #tertiary */
-}
-
-#primary {
-  /* The container for your primary content.*/
-}
-
-#content {
-  /* The container for your post and page content. */
-}
-
-#secondary {
-  /* Container for your first widget area */
-}
-
-#tertiary {
-  /* Container for your second widget area */
-}
-
-.site-footer {
-  /* Container for the entire site footer area */
-}
-
-/* =Site Header
------------------------------------------------ */
-/* Style elements inside of the .site-header container */
-.site-header hgroup {
-  /* Container for site title and description */
-}
-
-.site-description {
-  /* This is the tagline */
-}
-
-/* =Menu
------------------------------------------------ */
-/* Style your navigation menu, which is inside .site-header. A basic drop-down menu structure is provided. */
-.main-navigation {
-  /* wraps the entire navigation menu */
-}
-
-.main-navigation:after {
-  /* Clears the floats after the menu */
-  clear: both;
-  content: "";
-  display: block;
-}
-
-.main-navigation ul {
-  /* The menu is an unordered list */
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-}
-
-.main-navigation li {
-  /* Makes the menu "list" items horizontal */
-  float: left;
-  margin: 0.5em 0;
-  position: relative;
-}
-
-.main-navigation a {
-  /* The individual list item links */
-  display: block;
-  text-decoration: none;
-}
-
-.main-navigation ul ul {
-  /* Submenu drop-down "box" */
-  display: none;
-  float: left;
-  position: absolute;
-  top: 1.2em;
-  left: 0;
-  z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-  /* 3rd+ level drop-down "box" */
-  left: 100%;
-  top: 0;
-}
-
-.main-navigation ul ul li {
-  /* List items inside the drop-down box */
-}
-
-.main-navigation ul ul a {
-  /* Menu links inside the drop-down "box" */
-  padding: 0 1.5em;
-  width: 200px;
-}
-
-.main-navigation li:hover > a,
-.main-navigation li.current_page_item a,
-.main-navigation li.current-menu-item a,
-.main-navigation ul ul a:hover {
-  /* Hover styles for menu items */
-}
-
-.main-navigation ul li:hover > ul {
-  display: block;
-}
-
-/* Small menu toggle area for screens < 600 pixels wide. The small menu requires some simple JavaScript in order to take affect. See http://themeshaper.com/2012/10/31/the-wordpress-theme-header-template/ for instructions on setting up this script. */
-.menu-toggle {
-  cursor: pointer;
-}
-
-.main-small-navigation .menu {
-  display: none;
-}
-
-/* =Content
------------------------------------------------ */
-/* Styles for posts and pages */
-.sticky {
-  /* Style your sticky posts. This class is applied to the same element as .hentry below. */
-}
-
-.hentry {
-  /* The wrapper for individual posts */
-  margin: 0 0 1.5em;
-  padding-bottom: 1.5em;
-}
-
-.entry-header {
-  /* Container for the entry title, byline and post date */
-}
-
-.entry-title,
-.entry-title a {
-  /* Post titles */
-}
-
-.page-title {
-  /* Page titles */
-}
-
-body.search .page-title,
-body.archive .page-title {
-  /* Optional, if you want your page titles to look different on search and archive pages */
-}
-
-.entry-meta {
-  /* Container for the entry metadata */
-  clear: both;
-}
-
-.byline {
-  /* By default, bylines are hidden */
-  display: none;
-}
-
-.single .byline,
-.group-blog .byline {
-  /* Bylines are displayed on single posts and/or when there are multiple authors */
-  display: inline;
-}
-
-.cat-links {
-  /* Styles category links inside the entry meta */
-}
-
-.tag-links {
-  /* Styles links to tags inside the entry-meta */
-}
-
-.sep {
-  /* Separator between category links, cat links, comments links, etc */
-}
-
-.comments-link {
-  /* Link to leave a comment */
-}
-
-.edit-link {
-  /* Link to Edit the post (only shows up for admins)
-
-  }
-  .entry-content,
-  .entry-summary { /* Container for the post body/excerpt text */
-  margin: 1.5em 0 0;
-}
-
-/* Styling In-Post Tables */
-.entry-content table,
-.comment-content table {
-  border: 1px solid #000;
-  border-left-width: 0;
-  margin: 0 -0.083em 2.083em 0;
-  text-align: left;
-  width: 100%;
-}
-
-.entry-content tr th,
-.entry-content thead th,
-.comment-content tr th,
-.comment-content thead th {
-  border-left: 1px solid #000;
-  font-weight: bold;
-  padding: 0.5em 1.25em;
-}
-
-.entry-content tr td,
-.comment-content tr td {
-  border: 1px solid #000;
-  border-width: 1px 0 0 1px;
-  padding: 0.5em 1.25em;
-}
-
-.entry-content tr.odd td,
-.comment-content tr.odd td {
-  /* If you want to apply alternate styles to even/odd table rows */
-}
-
-.page-links {
-  /* Style the page numbers for multi-page posts (posts that have been split with <!--next-page -->. */
-  clear: both;
-  margin: 0 0 1.5em;
-}
-
-/* =Aside Post Format
------------------------------------------------ */
-/* Just put ".format-aside" before any of the above classes to create special formatting for Aside posts */
-.format-aside .entry-content {
-  border-left: 4px solid #000;
-  padding-left: 1em;
-}
-
-/* =Media
------------------------------------------------ */
-/* Styling for images and videos */
-.site-header img,
-.entry-content img,
-.comment-content img,
-.widget img {
-  max-width: 100%;
-  /* Fluid images for posts, comments, and widgets */
-}
-
-.site-header img,
-.entry-content img,
-.widget-img,
-img[class*=align],
-img[class*=wp-image-],
-.wp-caption img {
-  height: auto;
-  /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-
-.site-header img,
-.entry-content img,
-.widget img,
-img.size-full {
-  max-width: 100%;
-  width: auto;
-  /* Prevent stretching of full-size images with height and width attributes in IE8 */
-}
-
-.entry-content img.wp-smiley,
-.comment-content img.wp-smiley {
-  /* Remove borders and backgrounds from WP smileys */
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-}
-
-.wp-caption {
-  /* The container for image captions */
-  max-width: 100%;
-}
-
-.wp-caption.aligncenter,
-.wp-caption.alignleft,
-.wp-caption.alignright,
-.wp-caption.alignnone {
-  /* Add spacing around captions and post text */
-  margin-bottom: 1.5em;
-}
-
-.wp-caption img {
-  /* The image inside the caption container */
-  display: block;
-  margin: 1.2% auto 0;
-  max-width: 98%;
-}
-
-.wp-caption-text {
-  text-align: center;
-}
-
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-
-#content .gallery {
-  /* Container for image galleries */
-  margin-bottom: 1.5em;
-}
-
-.gallery-caption {
-  font-style: italic;
-}
-
-#content .gallery a img {
-  border: none;
-  height: auto;
-  max-width: 90%;
-}
-
-#content .gallery dd {
-  margin: 0;
-}
-
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-
-/* =Navigation
------------------------------------------------ */
-/* Older/Newer Post Navigation */
-.site-content .nav-previous {
-  float: left;
-  width: 50%;
-}
-
-.site-content .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%;
-}
-
-/* =Comments
------------------------------------------------ */
-#comments {
-  /* Container for the comments section */
-  clear: both;
-}
-
-.bypostauthor {
-  /* Gives post author comments thier own style */
-}
-
-.commentlist li {
-  list-style: none;
-}
-
-.commentlist,
-.children {
-  list-style: none;
-  margin: 0;
-}
-
-.children {
-  /* Nested comments */
-  margin: 0 0 0 6%;
-}
-
-.commentlist li.comment {
-  /* Individual top-level comments */
-}
-
-.commentlist li.pingback {
-  /* Individual top-level pingbacks */
-}
-
-.commentlist li:last-of-type {
-  /* Do you want to style the last comment differently, such as remove borders? */
-}
-
-.commentlist .children li {
-  /* Contains individual nested comments */
-}
-
-.children article.comment,
-.children li.pingback {
-  /* Nexted comments and pingbacks */
-  padding-top: 1em;
-}
-
-.comment .avatar {
-  /* Comment author's gravatar image */
-}
-
-.comment-author {
-  /* Comment author's name */
-}
-
-.comment-meta {
-  /* Comment date, time, etc */
-}
-
-.comment-content {
-  /* Actual comment text */
-}
-
-.comment .reply {
-  /* The "Reply" link under each comment */
-  text-align: right;
-}
-
-/* Comment Form */
-.required {
-  /* The little asterisk next to a required comment field */
-  color: #880000;
-}
-
-#commentform label {
-  /* The text next to each comment form field */
-  padding: 1em 0;
-}
-
-#commentform #comment {
-  /* The comment form textarea */
-}
-
-p.nocomments {
-  /* Message displayed when there are no comments */
 }
 
 /* =Widgets
@@ -4424,39 +3169,753 @@ p.nocomments {
   font-weight: bold;
 }
 
-/* =Site Footer
------------------------------------------------ */
-/* =Responsive Structures
------------------------------------------------ */
-@media only screen and (max-width: 768px) {
-  #content,
-#primary,
-#secondary,
-#tertiary {
-    /* Remove floats on all structural elements for smaller screens */
-    float: none;
-    margin: 0;
-    padding: 0;
+/* _____________________________________ SHADOWS */
+/* BOX SHADOW */
+/* CARD SHADOW */
+/* INPUT SHADOW */
+/* BUTTON SHADOW */
+/* https://css-tricks.com/almanac/properties/b/box-shadow/ */
+.right-shadow {
+  position: relative;
+}
+
+.right-shadow:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 0;
+  width: 75%;
+  top: 80%;
+  max-width: 600px;
+  background: black;
+  box-shadow: -0.9px 0.2px 1px rgba(154, 85, 175, 0.49), -2.7px 0.8px 3px -1px rgba(154, 85, 175, 0.45), -7.2px 2.1px 7.9px -2px rgba(154, 85, 175, 0.41), -18.3px 5.3px 20.1px -2.9px rgba(154, 85, 175, 0.38);
+  transform: rotate(-16deg);
+}
+
+.left-and-right-shadow {
+  position: relative;
+}
+
+.left-and-right-shadow:before, .left-and-right-shadow:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: black;
+  -webkit-box-shadow: 0 50px 20px black;
+  -moz-box-shadow: 0 50px 20px black;
+  box-shadow: 0 50px 20px black;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+.left-and-right-shadow:after {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+/* Cover image */
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+  background-color: #b9babd;
+  border: 2 solid #8c7d11;
+  border-top-left-radius: 0.95rem;
+  border-top-right-radius: 0.95rem;
+  border-bottom-right-radius: 0.95rem;
+  border-bottom-left-radius: 0.95rem;
+}
+
+.card-block {
+  padding: 16px;
+}
+
+.card-title {
+  margin-bottom: 16px;
+}
+
+.card-subtitle {
+  margin-top: -divide(16px, 2);
+  margin-bottom: 0;
+}
+
+.card-text :last-child {
+  margin-bottom: 0;
+}
+
+.card-link :hover {
+  text-decoration: none;
+}
+.card-link + .card-link {
+  margin-left: 16px;
+}
+
+.card > .list-group :first-child .list-group-item :first-child {
+  border-radius: 0.95rem 0.95rem 0 0;
+}
+.card > .list-group :last-child .list-group-item :last-child {
+  border-radius: 0 0 0.95rem 0.95rem;
+}
+
+.card-header {
+  margin-bottom: 0;
+  padding: 16px 16px;
+  background-color: #c7c8ca;
+  border-bottom: 2;
+  border-style: solid;
+  border-color: #8c7d11;
+  align-items: center;
+  line-height: normal;
+  box-sizing: border-box;
+  box-shadow: 1.5rem 1.25rem 1.25rem black;
+}
+.card-header :first-child {
+  border-top-left-radius: 0.8728125rem 0.8728125rem 0 0;
+  border-top-right-radius: 0.8728125rem 0.8728125rem 0 0;
+  border-bottom-right-radius: 0.8728125rem 0.8728125rem 0 0;
+  border-bottom-left-radius: 0.8728125rem 0.8728125rem 0 0;
+}
+
+.card-title {
+  font-family: "TELETYPE1945-1985", sans-serif;
+  align-items: center;
+  align-self: flex-end;
+  color: #a8a9ad;
+  display: block;
+  display: flex;
+  font-size: font-size-lg;
+  font-weight: 300;
+  line-height: normal;
+  overflow: hidden;
+  margin: 0;
+  padding: 1vh 1vw;
+  box-sizing: border-box;
+}
+
+.card-lead {
+  font-family: "Pompiere";
+  font-size: 1.4375rem;
+  color: #434445;
+  overflow: hidden;
+  width: 90%;
+}
+
+.card-footer {
+  padding: 16px 16px;
+  background-color: #c7c8ca;
+  border-top: 2 solid #8c7d11;
+}
+.card-footer :last-child {
+  border-top-left-radius: 0 0 0.8728125rem 0.8728125rem;
+  border-top-right-radius: 0 0 0.8728125rem 0.8728125rem;
+  border-bottom-right-radius: 0 0 0.8728125rem 0.8728125rem;
+  border-bottom-left-radius: 0 0 0.8728125rem 0.8728125rem;
+}
+
+.card-attention {
+  background-color: #ff6fa9;
+  border-color: #ff6fa9;
+}
+
+.card-valid {
+  background-color: #cdffff;
+  border-color: #cdffff;
+}
+
+.card-info {
+  background-color: #555aff;
+  border-color: #555aff;
+}
+
+.card-alert {
+  background-color: #ffd080;
+  border-color: #ffd080;
+}
+
+.card-invaild {
+  background-color: #ff555a;
+  border-color: #ff555a;
+}
+
+.card-attention-outline {
+  background-color: transparent;
+  border-color: #ff8cba;
+}
+
+.card-secondary-outline {
+  background-color: transparent;
+  border-color: #ffe41e;
+}
+
+.card-info-outline {
+  background-color: transparent;
+  border-color: #777bff;
+}
+
+.card-valid-outline {
+  background-color: transparent;
+  border-color: #d7ffff;
+}
+
+.card-alert-outline {
+  background-color: transparent;
+  border-color: #ffd999;
+}
+
+.card-invalid-outline {
+  background-color: transparent;
+  border-color: #ff777b;
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer {
+  border-bottom: 2 solid rgba(255, 255, 255, 0.2);
+}
+.card-inverse .card-header,
+.card-inverse .card-footer,
+.card-inverse .card-title,
+.card-inverse .card-blockquote {
+  color: #fff;
+}
+.card-inverse .card-link,
+.card-inverse .card-text,
+.card-inverse .card-blockquote > footer {
+  color: rgba(255, 255, 255, 0.65);
+}
+.card-inverse .card-link:focus {
+  color: #044a48;
+}
+@media (hover: hover) {
+  .card-inverse .card-link:hover {
+    color: #044a48;
+  }
+  .card-inverse .card-link:hover:focus, .card-inverse .card-link:hover:hover {
+    color: #044a48;
+  }
+}
+.card-inverse .card-link:hover {
+  color: #044a48;
+}
+.card-inverse .card-link:hover:focus, .card-inverse .card-link:hover:hover {
+  color: #044a48;
+}
+
+.card-blockquote {
+  padding: 0;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+.card-img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.25rem;
+}
+
+.card-img-top {
+  border-top-left-radius: 0.8728125rem 0.8728125rem 0 0;
+  border-top-right-radius: 0.8728125rem 0.8728125rem 0 0;
+  border-bottom-right-radius: 0.8728125rem 0.8728125rem 0 0;
+  border-bottom-left-radius: 0.8728125rem 0.8728125rem 0 0;
+}
+
+.card-img-bottom {
+  border-top-left-radius: 0 0 0.8728125rem 0.8728125rem;
+  border-top-right-radius: 0 0 0.8728125rem 0.8728125rem;
+  border-bottom-right-radius: 0 0 0.8728125rem 0.8728125rem;
+  border-bottom-left-radius: 0 0 0.8728125rem 0.8728125rem;
+}
+
+@media (min-width: 542px) {
+  .card-deck {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -0.625rem;
+    margin-left: -0.625rem;
+  }
+  .card-deck .card {
+    flex: 1 0 0;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
+  }
+}
+@media (min-width: 542px) {
+  .card-deck {
+    display: table;
+    table-layout: fixed;
+    border-spacing: 1.25rem 0;
+  }
+  .card-deck .card {
+    display: table-cell;
+    width: 1%;
+    vertical-align: top;
   }
 
-  #primary,
-#secondary,
-#tertiary {
-    /* Make all structural elements full-width */
+  .card-deck-wrapper {
+    margin-right: -1.25rem;
+    margin-left: -1.25rem;
+  }
+}
+@media (min-width: 542px) {
+  .card-group {
+    display: flex;
+    flex-flow: row wrap;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .card-group .card {
+    flex: 1 0 0;
+    display: table-cell;
+    vertical-align: top;
+  }
+  .card-group .card + .card {
+    margin-left: 0;
+    border-left: 0;
+  }
+  .card-group .card :first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-group .card :first-child .card-img-top {
+    border-top-right-radius: 0;
+  }
+  .card-group .card :first-child .card-img-bottom {
+    border-bottom-right-radius: 0;
+  }
+  .card-group .card :last-child {
+    border-top-left-radius: 0.95rem;
+    border-bottom-left-radius: 0.95rem;
+  }
+  .card-group .card :last-child .card-img-top {
+    border-top-left-radius: 0;
+  }
+  .card-group .card :last-child .card-img-bottom {
+    border-bottom-left-radius: 0;
+  }
+  .card-group .card :not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  .card-group .card :not(:first-child):not(:last-child) .card-img-top,
+.card-group .card :not(:first-child):not(:last-child) .card-img-bottom {
+    border-radius: 0;
+  }
+}
+@media (min-width: 542px) {
+  .card-columns {
+    column-count: 3;
+    column-gap: 1.25rem;
+  }
+  .card-columns .card {
+    display: inline-block;
     width: 100%;
   }
 }
-/* =IE Styling
------------------------------------------------ */
-/* If you have any IE-specific adjustments to make, add them here.
-
-For example:
-
-#ie8 body {
-	color #333;
+/* __________________________________________________ PAGES */
+/*________________________________________________________________ GLOBAL */
+*,
+*::after,
+*::before,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-Will make the sbody text #333 on IE8 only. In order for this to work, you need to set up conditionals to add an ID-selector to the HTML element when IE is detected. For instructions on how to set up the conditionals, see: http://themeshaper.com/2012/10/31/the-wordpress-theme-header-template/
-*/
+div {
+  display: flex;
+  float: left;
+  justify-content: space-evenly;
+}
 
-/*# sourceMappingURL=style.css.map */
+html {
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  max-height: 100vh;
+  z-index: 50;
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.05) 3%, rgba(168, 169, 173, 0.1) 15%, rgba(255, 228, 30, 0.25) 27%, rgba(255, 228, 30, 0.3) 39%, rgba(10, 186, 181, 0.6) 45%, rgba(10, 186, 181, 0.35) 51%, rgba(10, 186, 181, 0.4) 63%, rgba(10, 186, 181, 0.45) 75%, rgba(10, 186, 181, 0.5) 90%);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body,
+html {
+  position: relative;
+  margin: 0;
+  z-index: 50;
+  box-sizing: border-box;
+}
+body *,
+html * {
+  box-sizing: inherit;
+}
+
+body {
+  text-align: left;
+  color: black;
+  font-family: "Enjoy Writing", sans-serif;
+  font-size: 1.05;
+  line-height: 1.15;
+  z-index: 800;
+  padding-top: 0.75rem;
+  padding-right: 0;
+  padding-bottom: 0.75rem;
+  padding-left: 1.75rem;
+  height: 100%;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+}
+
+header {
+  display: inline-block;
+  height: 100%;
+  max-height: 4rem;
+  width: 100%;
+  max-width: 95.75vw;
+  margin-left: 0;
+  box-shadow: 0 0.5rem 0.4rem -0.15rem black;
+  border: 3px solid #fd8535;
+}
+
+nav {
+  height: 100%;
+  max-height: 3.75rem;
+  width: 100%;
+  max-width: 30vw;
+  border: 3px solid #fc89ac;
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.3) 40%, rgba(255, 228, 30, 0.5) 35% rgba(10, 186, 181, 0.4) 25%, rgba(10, 186, 181, 0.5) 40%, rgba(168, 169, 173, 0.6) 45%, rgba(168, 169, 173, 0.7) 55%, rgba(168, 169, 173, 0.8) 65%, rgba(168, 169, 173, 0.9) 80%, #a8a9ad 90%);
+}
+
+main {
+  width: 100%;
+  max-width: 99vw;
+  height: 100%;
+  max-height: 96vh;
+  z-index: 300;
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.3) 40%, rgba(255, 228, 30, 0.5) 35% rgba(10, 186, 181, 0.4) 25%, rgba(10, 186, 181, 0.5) 40%, rgba(168, 169, 173, 0.6) 45%, rgba(168, 169, 173, 0.7) 55%, rgba(168, 169, 173, 0.8) 65%, rgba(168, 169, 173, 0.9) 80%, #a8a9ad 90%);
+  background-image: rbga(#a8a9ad, 0.5);
+  border-top-left-radius: 1.745625rem;
+  border-bottom-left-radius: 1.745625rem;
+  box-shadow: 1.5rem 1.25rem 1.25rem black;
+  border: 4px solid #ffe41e;
+}
+
+article {
+  display: block;
+  margin-top: 1rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 14rem;
+  width: 100%;
+  max-width: 85vw;
+  height: 100%;
+  max-height: 92vh;
+  background: #e4edf4;
+  outline-style: solid;
+  outline-color: #623412;
+  outline-width: 3px;
+  border-top-left-radius: 1.047375rem;
+  border-top-right-radius: 1.047375rem;
+  border-bottom-right-radius: 1.047375rem;
+  border-bottom-left-radius: 1.047375rem;
+}
+
+footer {
+  font-family: "Raleway", sans-serif;
+  display: inline-block;
+  height: 100%;
+  max-height: 4rem;
+  width: 100%;
+  max-width: 116.75rem;
+  box-shadow: 0 0.5rem 0.4rem -0.1rem black;
+  background-image: linear-gradient(90deg, transparent, rgba(168, 169, 173, 0.9) 15%, rgba(168, 169, 173, 0.85) 20%, rgba(168, 169, 173, 0.8) 25%, rgba(168, 169, 173, 0.7) 30%, rgba(10, 186, 181, 0.6) 35%, rgba(10, 186, 181, 0.55) 50%, rgba(10, 186, 181, 0.5) 65%, rgba(10, 186, 181, 0.45) 80%, rgba(10, 186, 181, 0.4) 95%);
+  justify-content: space-between;
+  align-content: space-evenly;
+  align-items: center;
+  border: 3px solid #6600ff;
+  color: #a8a9ad;
+  font-weight: 700;
+  font-size: 1.05;
+}
+
+/* =Structure
+----------------------------------------------- */
+/* Refer to the HTML structure graphic (http://themeshaper.com/wp-content/uploads/2012/10/html-visual.png) to see how these elements are nested in the mark-up.
+
+Use this section to set widths and margins, and to build a layout. For examples of layouts that you can copy and paste into this section, see:
+https://github.com/Automattic/_s/blob/master/layouts/
+*/
+.site {
+  position: absolute;
+  height: 100%;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  border: 3px solid #ba0a0f;
+}
+
+.site-header {
+  z-index: 625;
+  display: inline;
+  padding-right: 4rem;
+  padding-left: 4.75rem;
+  width: 100%;
+  max-width: 123.75rem;
+  margin-left: -0.5rem;
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.05) 3%, rgba(168, 169, 173, 0.1) 15%, rgba(255, 228, 30, 0.25) 27%, rgba(255, 228, 30, 0.3) 39%, rgba(10, 186, 181, 0.6) 45%, rgba(10, 186, 181, 0.35) 51%, rgba(10, 186, 181, 0.4) 63%, rgba(10, 186, 181, 0.45) 75%, rgba(10, 186, 181, 0.5) 90%);
+  flex-wrap: nowrap;
+}
+
+/* Style elements inside of the .site-header container */
+.nameplate,
+.site-header hgroup {
+  /* Container for site title and description */
+  margin-left: 12rem;
+  width: 100%;
+  max-width: 40vw;
+  border: 2px solid #ba0a0f;
+}
+
+.site-description {
+  /* This is the tagline */
+  margin-left: 8rem;
+  margin-right: 0;
+  width: 30rem;
+}
+
+.main {
+  margin-right: -0.5rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.primary {
+  /* The container for your primary content.*/
+}
+
+.content {
+  /* The container for your post and page content. */
+  margin: 0;
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.3) 40%, rgba(255, 228, 30, 0.5) 35% rgba(10, 186, 181, 0.4) 25%, rgba(10, 186, 181, 0.5) 40%, rgba(168, 169, 173, 0.6) 45%, rgba(168, 169, 173, 0.7) 55%, rgba(168, 169, 173, 0.8) 65%, rgba(168, 169, 173, 0.9) 80%, #a8a9ad 90%);
+  border-radius: 1.246875rem;
+  display: grid;
+  box-sizing: border-box;
+  min-width: 100vw;
+  max-width: 1368px;
+  margin: 0 0 auto;
+  padding: 0 16px;
+  overflow: hidden;
+  display: block;
+}
+.content::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+.content:after, .content:before {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  table-layout: fixed;
+  content: " ";
+}
+.content:after {
+  clear: both;
+}
+
+.masthead {
+  /* The container for the page-title group area */
+  box-sizing: border-box;
+  flex: 1 1 0;
+  max-width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  align-self: stretch;
+  height: 105%;
+  max-height: 102vh;
+  width: 100%;
+  max-width: 8rem;
+  box-shadow: 0 1.2rem 0.9rem 1rem black;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  margin-top: -1rem;
+  margin-right: 0;
+  margin-bottom: -3rem;
+  margin-left: 0;
+  padding-top: 10rem;
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  height: 110%;
+  border: 1px solid #000100;
+}
+
+.pageplate #secondary {
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.3) 40%, rgba(10, 186, 181, 0.5) 35% rgba(168, 169, 173, 0.4) 25%, rgba(168, 169, 173, 0.5) 40%, rgba(255, 228, 30, 0.6) 45%, rgba(255, 228, 30, 0.7) 55%, rgba(255, 228, 30, 0.8) 65%, rgba(255, 228, 30, 0.9) 70%, #ffe41e 90%);
+}
+
+#secondary {
+  box-sizing: border-box;
+  background-image: linear-gradient(290deg, transparent, rgba(228, 237, 244, 0.3) 40%, rgba(10, 186, 181, 0.5) 35% rgba(168, 169, 173, 0.4) 25%, rgba(168, 169, 173, 0.5) 40%, rgba(255, 228, 30, 0.6) 45%, rgba(255, 228, 30, 0.7) 55%, rgba(255, 228, 30, 0.8) 65%, rgba(255, 228, 30, 0.9) 70%, #ffe41e 90%);
+}
+
+.tertiary {
+  /* Container for your second widget area */
+}
+
+.site-footer {
+  /* Container for the entire site footer area */
+  display: inline;
+  align-items: center;
+  align-content: center;
+  height: 3rem;
+  margin-bottom: 2.5rem;
+  padding-right: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+#site-information {
+  /* Container for the entire site footer area */
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  z-index: 725;
+}
+
+.social-media {
+  width: 90rem;
+  align-self: baseline;
+  height: 2.8rem;
+  color: #ff6fa9;
+  font-weight: bold;
+  border-style: solid;
+  border-width: thin;
+  border-color: #fc89ac;
+}
+
+.icons {
+  width: 100%;
+  max-width: 10rem;
+  height: 100%;
+  max-height: 2rem;
+  line-height: 2rem;
+  align-self: center;
+  align-content: center;
+  border: 2px solid #ba0a0f;
+}
+
+.news-scroll {
+  width: 100%;
+  max-width: 75rem;
+  line-height: 2rem;
+  margin-left: 1rem;
+  align-items: start;
+  align-content: start;
+  border: 2px solid #000100;
+}
+
+#updates {
+  font-size: 1.575;
+  font-weight: bolder;
+  text-transform: capitalize;
+  text-shadow: 0 0.12rem, 0.12rem, 0.05rem #ff6fa9;
+}
+
+#social-icons {
+  font-family: fab;
+}
+
+.copyright {
+  justify-content: end;
+  align-self: end;
+  margin-top: -1rem;
+}
+
+#copyright {
+  font-size: 0.75vw;
+  line-height: 1rem;
+}
+
+.email {
+  justify-content: end;
+  align-self: end;
+  margin-top: -0.5rem;
+  padding-left: 0;
+}
+
+#email {
+  font-size: 0.75vw;
+  line-height: 1rem;
+}
+
+.contact {
+  display: inline-flex;
+  font-family: "Raleway", sans-serif;
+  width: auto;
+  padding-right: 0.25rem;
+  align-self: stretch;
+  align-items: stretch;
+  color: #555aff;
+  font-weight: bolder;
+  text-align: right;
+  line-height: 0.5rem;
+}
+
+.section {
+  padding: 16px;
+  border: 3px solid #fd8535;
+  background: #e4edf4;
+}
+@media screen and (min-width: 1824px) {
+  .section {
+    padding: 3rem 3rem;
+  }
+  .section.is-medium {
+    padding: 17.64px;
+  }
+  .section.is-large {
+    padding: 21px;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22theme/architecture.scss%22,%22theme/lib/scss/grid/grid.scss%22,%22theme/lib/scss/grid/_variables.scss%22,%22theme/lib/scss/grid/_defaults.scss%22,%22theme/lib/scss/grid/_mixins.scss%22,%22theme/lib/scss/grid/_rows.scss%22,%22theme/lib/scss/grid/_col.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_grid.scss%22,%22theme/lib/scss/abstracts/tools/mixins/grid/_grid.scss%22,%22theme/lib/scss/abstracts/tools/mixins/grid/_rows.scss%22,%22theme/lib/scss/abstracts/tools/mixins/grid/_cols.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_responsive.scss%22,%22theme/lib/scss/abstracts/tools/mixins/responsive-styles/_responsive-variables.scss%22,%22theme/lib/scss/abstracts/tools/mixins/responsive-styles/_responsive-style.scss%22,%22theme/lib/scss/abstracts/tools/mixins/responsive-styles/media/_media-query-size.scss%22,%22theme/lib/scss/abstracts/tools/mixins/responsive-styles/media/_root-media-query.scss%22,%22theme/lib/scss/abstracts/tools/mixins/responsive-styles/_responsiveness.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_font-size.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_ltr.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_navigation.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_clearfix.scss%22,%22theme/docs/themesheets/color-palette.scss%22,%22theme/docs/themesheets/color-palette/_color-palette.scss%22,%22theme/_properties.scss%22,%22theme/lib/scss/abstracts/materials/_padding.scss%22,%22theme/lib/scss/abstracts/materials/_borders.scss%22,%22theme/lib/scss/abstracts/materials/_links.scss%22,%22theme/docs/themesheets/color-palette/_patterns.scss%22,%22theme/docs/themesheets/typesetting.scss%22,%22theme/docs/themesheets/typography/fonts/_font-face.scss%22,%22theme/docs/themesheets/typography/fonts/_font-stacks.scss%22,%22theme/docs/themesheets/typography/fonts/_font-variables.scss%22,%22theme/docs/themesheets/typography/_typography.scss%22,%22theme/docs/themesheets/typography/fonts/_headings-variables.scss%22,%22theme/docs/themesheets/typography/fonts/_type-variables.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_list.scss%22,%22theme/docs/themesheets/typography/text-elements/_titles.scss%22,%22theme/docs/themesheets/typography/text-elements/_blockquote.scss%22,%22theme/docs/themesheets/typography/text-elements/_code.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_border-radius.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_box-shadows.scss%22,%22theme/docs/themesheets/typography/fonts/_code.scss%22,%22theme/lib/scss/abstracts/materials/_zindex.scss%22,%22theme/lib/scss/abstracts/materials/_gradient.scss%22,%22theme/shame.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_a11y.scss%22,%22theme/lib/scss/abstracts/tools/helpers/alignments/_alignments.scss%22,%22theme/lib/scss/abstracts/tools/helpers/alignments/_flex.scss%22,%22theme/lib/scss/abstracts/tools/helpers/alignments/_float.scss%22,%22theme/lib/scss/abstracts/tools/helpers/alignments/_level.scss%22,%22theme/lib/scss/abstracts/tools/mixins/ltr/_ltr-property.scss%22,%22theme/lib/scss/abstracts/tools/helpers/alignments/_position.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_colored-links.scss%22,%22theme/docs/themesheets/color-palette/_color-maps.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_media-query.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_ratio.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_span.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_stacks.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_stretched-link.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_text-truncation.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_text-truncate.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_visually-hidden.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_visually-hidden.scss%22,%22theme/lib/scss/abstracts/tools/helpers/_vr.scss%22,%22theme/lib/scss/abstracts/_root.scss%22,%22theme/lib/scss/objects/elements/_base.scss%22,%22theme/lib/scss/objects/elements/_headings.scss%22,%22theme/lib/scss/objects/elements/_text-elements.scss%22,%22theme/lib/scss/objects/elements/_lists.scss%22,%22theme/lib/scss/objects/elements/_code.scss%22,%22theme/lib/scss/objects/elements/_table.scss%22,%22theme/lib/scss/objects/elements/_form-elements.scss%22,%22theme/lib/scss/objects/elements/_input.scss%22,%22theme/lib/scss/objects/elements/_links.scss%22,%22theme/lib/scss/objects/elements/_social.scss%22,%22theme/lib/scss/abstracts/tools/mixins/responsive-styles/media/_media-breakpoint.scss%22,%22theme/lib/scss/objects/elements/_alignment.scss%22,%22theme/lib/scss/objects/elements/_assistive-tech.scss%22,%22theme/lib/scss/objects/_widgets.scss%22,%22theme/lib/scss/objects/modules/_shadows.scss%22,%22theme/lib/scss/objects/modules/_card.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_cards.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_hover.scss%22,%22theme/lib/scss/pages/_global.scss%22,%22theme/lib/scss/abstracts/tools/mixins/global/_main.scss%22,%22theme/lib/scss/pages/_structure.scss%22,%22theme/lib/scss/pages/structure/_site-header.scss%22,%22theme/lib/scss/abstracts/tools/mixins/_container.scss%22,%22theme/lib/scss/pages/structure/_masthead.scss%22,%22theme/lib/scss/pages/structure/_site-footer.scss%22,%22theme/lib/scss/pages/structure/_section.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22;AAAA;;AAAA;AAAA;;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAAA;AAcA;ACdA;AAAA;AAAA;ACEA;AAwBA;AAxBA;AAwBA;ACxBA;AACA;AASA;AACA;ACbA;AAAA;AAAA;AAwBA;AAAA;AAAA;AHdA;AAAA;AAAA;AAIA;EAEI,WCQa;EDPb;EACA;;AGWA;EAEI;EACA;;AAEJ;EACI;;;AClCR;EACE,aHEsB;EGDtB;EACA;;ADyBE;EAEI;EACA;;AAEJ;EACI;;ACzBN;EACE;;AAGF;EACE;EACA;;;AChBJ;EACE;EACA;EACA,cJCsB;;AICtB;EACE;;;AAIJ;AAKE;EFRU;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;AEHV;EFRU;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;AEHV;EFRU;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;AEHV;EFRU;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;AEHV;EFRU;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;AEHV;EFRU;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;IACA;IACA;IACA;;;EAIZ;IACI;;;EAXA;IACI;;EACA;IACI;I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,OCyCiB;;ADtCf;EAEE;;;AANN;EACE,OCyCiB;;ADtCf;EAEE;;;AANN;EACE,OCyCiB;;ADtCf;EAEE;;;AANN;EACE,OCyCiB;;ADtCf;EAEE;;;AANN;EACE,OCyCiB;;ADtCf;EAEE;;;AANN;EACE,OCyCiB;;ADtCf;EAEE;;;AANN;EACE,OCyCiB;;ADtCf;EAEE;;;AEPR;AAAA;AAAA;AAWA;AAAA;AAAA;AAoCA;AAAA;AAAA;AAGA;EAEI;EACA;EACA;;;AAGJ;EAEI;EACA;EACA;;;AtChDF;EsC6DE;IAEI;IACA;IACA;IACA;;;AC7ER;EACE;EACA;;AAEA;EACE;EACA;EACA;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAKF;EACE;;;AADF;EACE;;;AADF;EACE;;;AADF;EACE;;;ACvBJ;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAGF;EACE;EAEA;EACA;;;AAGF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAEF;EACE;EAEA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;EACA;;;AAEF;EACE;EACA;EACA;;;AC1FF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;ACPA;EACE;EACA;EACA;EACA;EACA;EACA,ShCI4B;EgCH5B;;;ACRJ;ECAE;EACA;EACA;;;ACNF;AAGA;ECKE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;ADVA;ECEA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AChBF;EACE;EACA;EACA;EACA;EACA;EACA,S7BmB4B;;;A8BzB9B;EAQI;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAIA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAIA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAAA;EAOF;EACA;EACA;EACA;EAMA;EACA;EACA;EAQA;EACA;EACA;EACA;EACA;EAIA;;;AhEPF;AiE3CA;AAUA;EACE;;;AAGF;AAAA;EAEE;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;;;AAIF;EACE;EACA;EACA;;;AAIF;ACrCA;AACA;EACC;;;ACFD;AACA;EACC;;;AAED;EACC;;;AAED;EACC;;;AAED;EACC;EACA;;;AAED;EACC;;;ACfD;EACC;;;AAED;EACC;;;AAED;EACC;;;AAED;EACC;EACA;;;AAIG;AAAA;EAEI;;;AAIR;EACC;;;AAED;EACC;;;AAGD;EACI;EACA;;;AC9BJ;EACC;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAED;EACC;;;AAED;EACC;EACA;;;AAED;EACC;EACA;;;AAED;AAAA;EAEC;EACA;EACA;EACA;EACA;;;AAED;EACC;;;AAED;EACC;;;AAED;EACC;;;AAED;EACC;;;ACvCD;EACC;;;AAED;EACC;EACA;;;AAED;EACC;;;ACRD;AACA;EACE;;;AAGF;AAAA;AAAA;AAAA;EAIE;AAAiB;EACjB;AAAW;EACX;AAA0B;EAC1B;AAAyB;;;AAE3B;AAAA;EAEE;AAAqB;EACrB;AAAoB;;;AAGtB;EACE;EACA;EACA;;;AAGF;EACE;AAAgB;EAChB;EACA;AAAqB;EACrB;EACA;EACA;;;AChCF;AACA;AAAA;AAAA;AAAA;EAIC;EACA;EACA;EACA,YlDa0B;EkDZ1B;EACA;EACA;EACA;EACA;AAAiB;EACjB;AAA4B;EAC5B;EACA;EACA;EACA;EACA;;;AAED;AAAA;AAAA;AAAA;EAIC;EACA;EACA;EACA;;;AAED;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;EAQC;EACA;EACA;EACA;;;AAED;AAAA;EAEC;AAAwB;EACxB;AAAY;;;AAEb;EACC;AAA+B;EAC/B;EACA;AAAiC;EACjC;;;AAED;AAAkD;EACjD;;;AAED;AAAA;AAC0B;EACzB;EACA;;;AAED;AAAA;AAAA;EAGC;EACA;EACA;EACA;;;AAED;AAAA;AAAA;EAGC,YlDtD0B;;;AmDnB3B;AACA;EACE;EACA,a1C6CyB;E0C5CzB;;AAEA;EACE;EACA,OnDsEuB;;AmDpEvB;EACE;EACA,OlD0H6B;;AkDtHjC;EACE;EACA,OlDoH+B;;AkDjHjC;EACE,OlD6G+B;EkD5G/B;;;AClBJ;EACI;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;;ACZJ;EDkBA;IACI;IACA;IACA;IACA;IACA;;;AE/BR;AACA;EACC;EACA;EACA;EACA;;;AAED;EACC;EACA;EACA;EACA;;;AAED;EACC;EACA;EACA;;;AChBD;AAAA;AAEA;EACC;AAA6B;EAC7B;EACA;;;ACLD;AAAA;AAGA;AAAe;;;AAGf;AAAU;EACT;;;AAKD;AAAa;EACZ;EACA;;;AAED;AAAgB;EACf;;;AAGD;AACA;EACC;;;AAMD;AACA;AAAA;EAEC;;;AAOD;AAUA;AACA;AAAA;EAEC;EACA;;;AAGD;AACA;AAAiB;EAChB;EACA;;;AASD;AACA;EACC;;;AAED;EACC;;;AAED;EACC;;;AAED;AAAA;EAEC;;;AAED;EACC;;;AAED;EACG;;;AAEH;EACC;;;AAKD;EACC;;;AAED;EACC;;;ACjGD;AAQA;AAaA;AAIA;AAIA;AAMA;AAKA;EAEE;;;AAEF;EAGE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA,YzDoDyB;EyDnDzB;EAIA;;;AAGF;EAEE;;;AAEF;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA,YzD8ByB;EyD7BzB;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAEF;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;;;ACjBF;AAyBA;EACE;EACA;EACA,eAvGsC;EAwGtC,kBA/FsC;EAgGtC;EAnBA,wBzDkCiC;EyDjCjC,yBzDiCiC;EyDhCjC,4BzDgCiC;EyD/B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;EuDuEzB,2BvDvEyB;;;A0D4F3B;EACE,apDpGyB;EoDqGzB;EACA;EACA;EACA;EACA;EACA;EACA,kBxDhEgB;EwDiEhB;EACA;EACA;EACA;EACA,O7D/CyB;E6DgDzB,apDnDyB;EoDoDzB,WpDxEyB;;;AsDxD3B;AAAA;AAGA;;AAAA;AAAA;AAAA;AAMA;EACE;EACA;EACA;EACA;EACA;EACA;;;ACdF;EACE,S5COoB;E4CNpB;EACA;EACA;EACA;EACA;EACA;EACA,kB3DTuB;E2DUvB;;;AAIF;AACA;AAAA;AACsB;EACpB;EACA;EACA;EACA;;;AAOF;AACE;EACA;EACA;EACA;;;ADVF;EACE;EACA;EACA;;;AAGF;AACE;;;AAEF;AACE;EACA;EACA,kB1DLsB;E0DMtB,e5DZyB;E4DazB;EL6DA;EO5FA;EACA,WrFmBe;EqFlBf;EACA;EACA;EACA;;AnEPA;EACE;EACA;EAEA;;AAGF;EAEE;EACA;EACA;EACA;EAEA;EACA;EAEA;EAEA;;AAGF;EACE;;;AoEpBJ;AACE;ER0FA;EtExEE;EACA;E8EhBF;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA,YTDgB;ESGhB;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EAGE;EACA;;;AAIF;EAnCA,kB7DayB;;;A0D0B3B;ELwDE;EKtDA,kB1D5ByB;;;A0D8B3B;AACE;;;AI7CF;AACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;AACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA,S/CRyB;;;A+CW3B;EACE;EACA;EACA;EACA,OnE6CyB;EmE5CzB;EACA;EACA;EACA,cnEKyB;;;AmEF3B;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE,W1DayB;E0DZzB;EACA;EACA;;;AAGF;EACE;;;AAGF;EACE;EACA;EACA;;;AAGF;EACE;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;EACA;;;AAKF;EACE;EACA,a1D/EyB;E0DgFzB;EACA;EACA;EACA;EACA,OnE7ByB;EmE8BzB;EACA;EACA;;;AChGF;EACE,SnEoFiC;EmEnFjC;EACA,YpEWyB;;ANczB;E0E5BF;IAMI,SAVa;;EAYb;IACE,SlEN2B;;EkEQ7B;IACE,SlER2B%22,%22file%22:%22style.css%22%7D */
