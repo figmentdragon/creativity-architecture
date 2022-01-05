@@ -43,7 +43,7 @@ $card-image-placeholder-color         : $primary-color;
 
 $card-group-margin                    : $offset * 0.5;
 $card-link-hover-color                : shift-color($card-cap-text-color, $link-hover-percentage);
-$card-hover-background                : darken($primary-color, 5%);
+$card-hover-background                : shade-color($primary-color, 5%);
 
 $card-badge-top                       : 15px;
 $card-badge-right                     : 15px;

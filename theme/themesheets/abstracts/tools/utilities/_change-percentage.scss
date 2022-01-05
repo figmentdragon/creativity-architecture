@@ -79,11 +79,11 @@ $tabs-active-border:     shade-color($nav-link-color, $active-border-shade-borde
 
 /* ______________________________________________________ Typography */
 $lead-text-color:         shift-color($post-title, $muted-tint-percentage);
-$caption-text-color:      darken($body-text,10%);
-$nav-link-color:          darken($secondary-color, 10%);
-$btn-text-color:          darken($body-text,10%);
-$quote-text-color:        darken($primary-color, 10%);
-$footer-text-color:       darken($accent-color, 10%);
+$caption-text-color:      shade-color($body-text,10%);
+$nav-link-color:          shade-color($secondary-color, 10%);
+$btn-text-color:          shade-color($body-text,10%);
+$quote-text-color:        shade-color($primary-color, 10%);
+$footer-text-color:       shade-color($accent-color, 10%);
 
 
 /* ____________________________________________________________ Card */

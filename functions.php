@@ -9,6 +9,7 @@ define( 'architecture_VERSION', 1.0 );
 
 require_once( 'inc/architecture.php' );
 require_once( 'inc/custom-functions.php' );
+require_once( 'inc/flei_wp_toolkit.php' );
 
 // SVG Icons class.
 require get_template_directory() . '/inc/class-architecture-svg-icons.php';
@@ -158,7 +159,7 @@ function architecture_style() {
 	wp_enqueue_style( 'glightbox-css',
 	get_stylesheet_directory_uri() . '/docs/materials/vendor/glightbox/css/glightbox.min.css', );
 
-	wp_enqueue_style( 'swiper-css', get_stylesheet_directory_uri() . '/docs/materials/vendor/swiper/swiper-bundle.min.css', ); 
+	wp_enqueue_style( 'swiper-css', get_stylesheet_directory_uri() . '/docs/materials/vendor/swiper/swiper-bundle.min.css', );
 
 	wp_enqueue_style( 'fontawesome-style', get_stylesheet_directory_uri() . '/docs/theme/img/icons/fontawesome/css/all.css' );
 }

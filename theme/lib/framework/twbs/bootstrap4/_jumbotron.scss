@@ -10,7 +10,7 @@
 }
 
 .jumbotron-hr {
-  border-top-color: darken($jumbotron-bg, 10%);
+  border-top-color: shade-color($jumbotron-bg, 10%);
 }
 
 .jumbotron-fluid {

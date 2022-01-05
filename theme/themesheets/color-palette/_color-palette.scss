@@ -59,25 +59,17 @@ $deep-sky-blue           : #0dcaf0;
 $coral                   : #ff7f50;
 $maroon                  : #800000;
 
-/* ____________________________________ Utilities Colors */
+$light-cyan              : #cdffff; /* Light Green */
+$neon-blue               : #555aff; /* light blue */
+$salomie                 : #ffd080; /* light orange */
+$wild-watermelon         : #ff555a; /* light red */
+$hot-pink                : #ff6fa9;
+
+/* ____________________________________ THEME */
   /* Brand Color Variables */
     $primary-color       : #0abab5;
     $secondary-color     : #ffe41e;
     $accent-color        : #a8a9ad;
-
-  /* Functional Color Variables */
-    $light-cyan          : #cdffff; /* Light Green */
-    $neon-blue           : #555aff; /* light blue */
-    $salomie             : #ffd080; /* light orange */
-    $wild-watermelon     : #ff555a; /* light red */
-    $hot-pink            : #ff6fa9;
-
-
-/* ____________________________________ THEME */
-  /* Variables */
-  $primary-color         : #0abab5;
-  $secondary-color       : #ffe41e;
-  $accent-color          : #a8a9ad;
 
   /* Utility Colors */
     $valid-color         : $light-cyan;
@@ -96,37 +88,29 @@ $maroon                  : #800000;
   $page-bg-color         : tint-color($primary-color, $background-percentage);
   $main-bg-color         : tint-color($accent-color, $background-percentage);
 
-  /* Borders */
-  $border-color          : $chocolate;
+  $active-color     : $secondary-color;
+  $disabled-color        : tint-color($accent-color, $disabled-percentage);
 
-  /* Links */
-  $active-link-color     : $secondary-color;
-  $disabled-color        : $saltpan;
+  /* Borders */
+  $border-color          : shade-color($active-color, $border-percentage);
+
+  /* Mixes */
+
+  $shadow-mix-color      :  $gray-200;
+
 
 /* ____________________________________ OBJECTS */
   /* Shadow */
-  $shadow-color          : darken($primary-color, $shadow-percentage);
+  $shadow-color          : mix-color(srgb, $primary-color $shadow-percentage, $shadow-mix-color);
 
   /* Nav */
-  $nav-link-color        : $active-link-color;
+  $nav-link-color        : $active-color;
     // Navbar
     $navbar-dark-text    : $accent-color;
     $navbar-light-text   : $primary-color;
 
   /* Lists */
   $list-group-text-color : $gray-900;
-
-  /* Color Maps */
-  $theme-colors            : (
-    primary-color          : #0abab5,
-    secondary-color        : #ffe41e,
-    accent-color           : #a8a9ad,
-    valid-color            : #cdffff,
-    info-color             : #555aff,
-    alert-color            : #ffd080,
-    invalid-color          : #ff555a,
-    attention-color        : #ff6fa9
-    );
 
 /* ______________________________________________________ BACKGROUNDS */
   /* Theme BG Colors */

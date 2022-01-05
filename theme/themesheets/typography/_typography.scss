@@ -1,6 +1,6 @@
 /* ______________________________________________________ TEXT SHADOW */
-$shadow-text             : darken($body-text,$active-percentage);
-$shadow-title            : darken($headings-text-color, $active-percentage);
+$shadow-text             : shade-color($body-text,$active-percentage);
+$shadow-title            : shade-color($headings-text-color, $active-percentage);
 
 $text-shadow             : .75rem .25rem .10rem $shadow-text;
 $title-soffset           : .65rem .5rem .15rem $shadow-title;

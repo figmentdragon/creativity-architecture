@@ -8412,8 +8412,8 @@ EOL;
         return $this->adjustHsl($color, 3, $amount);
     }
 
-    protected static $libDarken = ['color', 'amount'];
-    protected function libDarken($args)
+    protected static $libshade-color = ['color', 'amount'];
+    protected function libshade-color($args)
     {
         $color = $this->assertColor($args[0], 'color');
         $amount = Util::checkRange('amount', new Range(0, 100), $args[1], '%');

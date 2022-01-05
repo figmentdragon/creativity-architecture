@@ -95,7 +95,7 @@ $body-color:                 $gray-dark !default;
 
 $link-color:                 $brand-primary !default;
 $link-decoration:            none !default;
-$link-hover-color:           darken($link-color, 15%) !default;
+$link-hover-color:           shade-color($link-color, 15%) !default;
 $link-hover-decoration:      underline !default;
 
 
@@ -336,7 +336,7 @@ $dropdown-border-width:          $border-width !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
 
 $dropdown-link-color:            $gray-dark !default;
-$dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
+$dropdown-link-hover-color:      shade-color($gray-dark, 5%) !default;
 $dropdown-link-hover-bg:         #f5f5f5 !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
@@ -459,19 +459,19 @@ $jumbotron-bg:                   $gray-lighter !default;
 
 $state-success-text:             #3c763d !default;
 $state-success-bg:               #dff0d8 !default;
-$state-success-border:           darken($state-success-bg, 5%) !default;
+$state-success-border:           shade-color($state-success-bg, 5%) !default;
 
 $state-info-text:                #31708f !default;
 $state-info-bg:                  #d9edf7 !default;
-$state-info-border:              darken($state-info-bg, 7%) !default;
+$state-info-border:              shade-color($state-info-bg, 7%) !default;
 
 $state-warning-text:             #8a6d3b !default;
 $state-warning-bg:               #fcf8e3 !default;
-$state-warning-border:           darken($state-warning-bg, 5%) !default;
+$state-warning-border:           shade-color($state-warning-bg, 5%) !default;
 
 $state-danger-text:              #a94442 !default;
 $state-danger-bg:                #f2dede !default;
-$state-danger-border:            darken($state-danger-bg, 5%) !default;
+$state-danger-border:            shade-color($state-danger-bg, 5%) !default;
 
 
 // Cards
@@ -505,7 +505,7 @@ $popover-max-width:                   276px !default;
 $popover-border-width:                $border-width !default;
 $popover-border-color:                rgba(0,0,0,.2) !default;
 
-$popover-title-bg:                    darken($popover-bg, 3%) !default;
+$popover-title-bg:                    shade-color($popover-bg, 3%) !default;
 
 $popover-arrow-width:                 10px !default;
 $popover-arrow-color:                 $popover-bg !default;

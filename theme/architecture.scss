@@ -14,55 +14,55 @@ _________________________________________________________ CJMTheme */
 
 /* __________________________________________________ DEMOLITION */
 
-  @import "lib/scss/grid/grid";
+  @import "themesheets/grid/grid";
 
 /* __________________________________________________ FUNCTIONS */
 
-  @import "lib/scss/abstracts/tools/functions";
-  @import "lib/scss/abstracts/tools/mixins";
+  @import "themesheets/abstracts/tools/functions";
+  @import "themesheets/abstracts/tools/mixins";
 
 /* __________________________________________________ THEME */
 
-  @import "docs/themesheets/change-percentage";
-  @import "docs/themesheets/color-palette";
+  @import "themesheets/change-percentage";
+  @import "themesheets/color-palette";
   @import "properties";
-  @import "docs/themesheets/color-palette/patterns";
-  @import "docs/themesheets/typesetting";
+  @import "themesheets/color-palette/patterns";
+  @import "themesheets/typesetting";
 
-  @import "lib/scss/abstracts/materials/zindex";
-  @import "lib/scss/abstracts/materials/escaped-characters";
-  @import "lib/scss/abstracts/materials/gradient";
+  @import "themesheets/abstracts/materials/zindex";
+  @import "themesheets/abstracts/materials/escaped-characters";
+  @import "themesheets/abstracts/materials/gradient";
 
   @import "shame";
 
 /* __________________________________________________ ROOT */
 
-  @import "lib/scss/abstracts/tools/helpers";
+  @import "themesheets/abstracts/tools/helpers";
 
-  @import "lib/scss/abstracts/root";
+  @import "themesheets/abstracts/root";
 
 /* __________________________________________________ OBJECTS */
 
-  @import "lib/scss/objects/elements/base";
-  @import "lib/scss/objects/elements/headings";
-  @import "lib/scss/objects/elements/text-elements";
-  @import "lib/scss/objects/elements/lists";
-  @import "lib/scss/objects/elements/code";
-  @import "lib/scss/objects/elements/table";
-  @import "lib/scss/objects/elements/form-elements";
-  @import "lib/scss/objects/elements/input";
-  @import "lib/scss/objects/elements/links";
-  @import "lib/scss/objects/elements/social";
-  @import "lib/scss/objects/elements/alignment";
-  @import "lib/scss/objects/elements/assistive-tech";
+  @import "themesheets/objects/elements/base";
+  @import "themesheets/objects/elements/headings";
+  @import "themesheets/objects/elements/text-elements";
+  @import "themesheets/objects/elements/lists";
+  @import "themesheets/objects/elements/code";
+  @import "themesheets/objects/elements/table";
+  @import "themesheets/objects/elements/form-elements";
+  @import "themesheets/objects/elements/input";
+  @import "themesheets/objects/elements/links";
+  @import "themesheets/objects/elements/social";
+  @import "themesheets/objects/elements/alignment";
+  @import "themesheets/objects/elements/assistive-tech";
 
-  @import "lib/scss/objects/widgets";
+  @import "themesheets/objects/widgets";
 
-  @import "lib/scss/objects/modules/shadows";
-  @import "lib/scss/objects/modules/card";
+  @import "themesheets/objects/modules/shadows";
+  @import "themesheets/objects/modules/card";
 
 /* __________________________________________________ PAGES */
 
-  @import "lib/scss/pages/global";
+  @import "themesheets/pages/global";
 
-  @import "lib/scss/pages/structure";
+  @import "themesheets/pages/structure";

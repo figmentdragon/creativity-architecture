@@ -36,12 +36,12 @@
 
 $primary-color: color("materialize-red", "lighten-2") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
-$primary-color-dark: darken($primary-color, 15%) !default;
+$primary-color-dark: shade-color($primary-color, 15%) !default;
 
 $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
-$link-color: color("light-blue", "darken-1") !default;
+$link-color: color("light-blue", "shade-color-1") !default;
 
 
 // 2. Badges
@@ -137,7 +137,7 @@ $chip-margin: 5px !default;
 $datepicker-display-font-size: 2.8rem;
 $datepicker-calendar-header-color: #999;
 $datepicker-weekday-color: rgba(0, 0, 0, .87) !default;
-$datepicker-weekday-bg: darken($secondary-color, 7%) !default;
+$datepicker-weekday-bg: shade-color($secondary-color, 7%) !default;
 $datepicker-date-bg: $secondary-color !default;
 $datepicker-year: rgba(255, 255, 255, .7) !default;
 $datepicker-focus: rgba(0,0,0, .05) !default;

@@ -103,7 +103,7 @@ Quickly change the weight (boldness) of text or italicize text.
 
 ## Contextual colors and backgrounds
 
-Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.
+Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will shade-color on hover just like our default link styles.
 
 {% example html %}
 <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
@@ -125,7 +125,7 @@ Contextual text classes also work well on anchors with the provided hover and fo
 <a href="#" class="text-danger">Danger link</a>
 {% endexample %}
 
-Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will darken on hover, just like the text classes.
+Similar to the contextual text color classes, easily set the background of an element to any contextual class. Anchor components will shade-color on hover, just like the text classes.
 
 {% example html %}
 <div class="bg-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</div>

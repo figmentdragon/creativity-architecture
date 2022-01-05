@@ -1,9 +1,4 @@
 <?php /* TEMPLATE NAME: Search Form */ ?>
-/**
- * The template for displaying search forms
- *
- * @package the_creativity_architect
- */
 
 <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
 	<label class="sr-only" for="s"><?php esc_html_e( 'Search', 'the_creativity_architect' ); ?></label>

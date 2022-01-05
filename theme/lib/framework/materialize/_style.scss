@@ -505,7 +505,7 @@ $height: auto;
     height: 30px;
     border-radius: 5px 5px 0 0;
     border-top: thin solid lighten($topColor, 1%);
-    border-bottom: thin solid darken($bottomColor, 1%);
+    border-bottom: thin solid shade-color($bottomColor, 1%);
     background: linear-gradient($topColor, $bottomColor);
   }
 }

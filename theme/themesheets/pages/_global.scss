@@ -65,10 +65,12 @@ body {
 header {
   display: inline-block;
   height: 100%;
-  max-height: 4rem;
+  max-height: 102vh;
   width: 100%;
-  max-width: 95.75vw;
+  max-width: 7vw;
   margin-left: 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
 
   box-shadow:  0 .5rem .4rem -.15rem $shadow-color;
   border: 3px solid $orange;

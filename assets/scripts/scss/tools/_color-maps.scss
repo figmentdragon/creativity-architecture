@@ -4,7 +4,7 @@ $colors : ();
     $map  : (
     base  : $color,
     light : lighten($color, $percentage),
-    dark  : darken($color, $percentage),
+    dark  : shade-color($color, $percentage),
     trans : transparentize($color, $opacity)
     );
     @return $map;
@@ -24,7 +24,7 @@ $theme-colors : ();
     $map  : (
     base  : $color,
     light : lighten($color, $percentage),
-    dark  : darken($color, $percentage),
+    dark  : shade-color($color, $percentage),
     trans : transparentize($color, $opacity)
     );
     @return $map;

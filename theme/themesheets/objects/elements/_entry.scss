@@ -1,4 +1,4 @@
-$entry-header-color: darken($primary-color, 10%);
+$entry-header-color: shade-color($primary-color, 10%);
 
 .entry-title {
 

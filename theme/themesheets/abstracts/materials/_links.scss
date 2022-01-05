@@ -1,9 +1,9 @@
 /* ______________________________________________________ Link */
-$component-active-link-color  : $active-link-color;
-$component-active-bg          : lighten($component-active-link-color, $background-percentage);
+$component-active-color  : $active-color;
+$component-active-bg          : lighten($component-active-color, $background-percentage);
 
 /* Style anchor elements. */
-$link-text-color              : $active-link-color;
+$link-text-color              : $active-color;
 $link-decoration              : bold;
 $link-text-hover              : $link-hover-color;
 $link-hover-color-decoration  : underline, bold;

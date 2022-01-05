@@ -135,7 +135,7 @@ _________________________________________________________ colorPALETTE */
 
     /* Nav */
     $nav-text-color                  : $active-color;
-    $nav-text-hover                  : darken($nav-text-color, $hover-percentage);
+    $nav-text-hover                  : shade-color($nav-text-color, $hover-percentage);
     $nav-disabled-color              : shade-color($nav-text-color, $disabled-percentage);
 
     /* Tabs */

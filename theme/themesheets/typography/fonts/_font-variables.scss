@@ -26,15 +26,15 @@ $link                    : underline;
 /* ________________________________________________________ TEXTS & TITLES */
   /* Color */
   $author-color          : $accent-color;
-  $body-text             : darken($primary-color, 60%);
-  $btn-text-color        : darken($body-text,10%);
-  $caption-text-color    : darken($body-text,10%);
-  $entry-header-color    : darken($primary-color, 10%);
-  $footer-color          : darken($accent-color, 10%);
-  $nav-text-color        : darken($secondary-color, 10%);
+  $body-text             : shade-color($primary-color, 60%);
+  $btn-text-color        : shade-color($body-text,10%);
+  $caption-text-color    : shade-color($body-text,10%);
+  $entry-header-color    : shade-color($primary-color, 10%);
+  $footer-color          : shade-color($accent-color, 10%);
+  $nav-text-color        : shade-color($secondary-color, 10%);
   $page-title-color      : $secondary-color;
   $post-title-color      : $accent-color;
-  $quote-text-color      : darken($primary-color, 10%);
+  $quote-text-color      : shade-color($primary-color, 10%);
   $site-title-color      : $primary-color;
   $text-muted-color      : color-mix(srgb, $accent-color 40%, $white);
 

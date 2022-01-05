@@ -16,7 +16,7 @@
 // $gray-light:             lighten($gray-base, 46.7%) // #777
 // $gray-lighter:           lighten($gray-base, 93.5%) // #eee
 
-// $brand-primary:         darken(#428bca, 6.5%) // #337ab7
+// $brand-primary:         shade-color(#428bca, 6.5%) // #337ab7
 // $brand-success:         #5cb85c
 // $brand-info:            #5bc0de
 // $brand-warning:         #f0ad4e
@@ -34,8 +34,8 @@
 
 //** Global textual link color.
 // $link-color:            $brand-primary
-//** Link hover color set via `darken()` function.
-// $link-hover-color:      darken($link-color, 15%)
+//** Link hover color set via `shade-color()` function.
+// $link-hover-color:      shade-color($link-color, 15%)
 //** Link hover decoration.
 // $link-hover-decoration: underline
 
@@ -156,23 +156,23 @@
 
 // $btn-primary-color:              #fff
 // $btn-primary-bg:                 $brand-primary
-// $btn-primary-border:             darken($btn-primary-bg, 5%)
+// $btn-primary-border:             shade-color($btn-primary-bg, 5%)
 
 // $btn-success-color:              #fff
 // $btn-success-bg:                 $brand-success
-// $btn-success-border:             darken($btn-success-bg, 5%)
+// $btn-success-border:             shade-color($btn-success-bg, 5%)
 
 // $btn-info-color:                 #fff
 // $btn-info-bg:                    $brand-info
-// $btn-info-border:                darken($btn-info-bg, 5%)
+// $btn-info-border:                shade-color($btn-info-bg, 5%)
 
 // $btn-warning-color:              #fff
 // $btn-warning-bg:                 $brand-warning
-// $btn-warning-border:             darken($btn-warning-bg, 5%)
+// $btn-warning-border:             shade-color($btn-warning-bg, 5%)
 
 // $btn-danger-color:               #fff
 // $btn-danger-bg:                  $brand-danger
-// $btn-danger-border:              darken($btn-danger-bg, 5%)
+// $btn-danger-border:              shade-color($btn-danger-bg, 5%)
 
 // $btn-link-disabled-color:        $gray-light
 
@@ -249,7 +249,7 @@
 //** Dropdown link text color.
 // $dropdown-link-color:            $gray-dark
 //** Hover color for dropdown links.
-// $dropdown-link-hover-color:      darken($gray-dark, 5%)
+// $dropdown-link-hover-color:      shade-color($gray-dark, 5%)
 //** Hover background for dropdown links.
 // $dropdown-link-hover-bg:         #f5f5f5
 
@@ -372,20 +372,20 @@
 
 // $navbar-default-color:             #777
 // $navbar-default-bg:                #f8f8f8
-// $navbar-default-border:            darken($navbar-default-bg, 6.5%)
+// $navbar-default-border:            shade-color($navbar-default-bg, 6.5%)
 
 // Navbar links
 // $navbar-default-link-color:                #777
 // $navbar-default-link-hover-color:          #333
 // $navbar-default-link-hover-bg:             transparent
 // $navbar-default-link-active-color:         #555
-// $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%)
+// $navbar-default-link-active-bg:            shade-color($navbar-default-bg, 6.5%)
 // $navbar-default-link-disabled-color:       #ccc
 // $navbar-default-link-disabled-bg:          transparent
 
 // Navbar brand label
 // $navbar-default-brand-color:               $navbar-default-link-color
-// $navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%)
+// $navbar-default-brand-hover-color:         shade-color($navbar-default-brand-color, 10%)
 // $navbar-default-brand-hover-bg:            transparent
 
 // Navbar toggle
@@ -398,14 +398,14 @@
 // Reset inverted navbar basics
 // $navbar-inverse-color:                      lighten($gray-light, 15%)
 // $navbar-inverse-bg:                         #222
-// $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%)
+// $navbar-inverse-border:                     shade-color($navbar-inverse-bg, 10%)
 
 // Inverted navbar links
 // $navbar-inverse-link-color:                 lighten($gray-light, 15%)
 // $navbar-inverse-link-hover-color:           #fff
 // $navbar-inverse-link-hover-bg:              transparent
 // $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color
-// $navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%)
+// $navbar-inverse-link-active-bg:             shade-color($navbar-inverse-bg, 10%)
 // $navbar-inverse-link-disabled-color:        #444
 // $navbar-inverse-link-disabled-bg:           transparent
 
@@ -504,19 +504,19 @@
 
 // $state-success-text:             #3c763d
 // $state-success-bg:               #dff0d8
-// $state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%)
+// $state-success-border:           shade-color(adjust-hue($state-success-bg, -10), 5%)
 
 // $state-info-text:                #31708f
 // $state-info-bg:                  #d9edf7
-// $state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%)
+// $state-info-border:              shade-color(adjust-hue($state-info-bg, -10), 7%)
 
 // $state-warning-text:             #8a6d3b
 // $state-warning-bg:               #fcf8e3
-// $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%)
+// $state-warning-border:           shade-color(adjust-hue($state-warning-bg, -10), 5%)
 
 // $state-danger-text:              #a94442
 // $state-danger-bg:                #f2dede
-// $state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%)
+// $state-danger-border:            shade-color(adjust-hue($state-danger-bg, -10), 5%)
 
 
 //== Tooltips
@@ -551,7 +551,7 @@
 // $popover-fallback-border-color:       #ccc
 
 //** Popover title background color
-// $popover-title-bg:                    darken($popover-bg, 3%)
+// $popover-title-bg:                    shade-color($popover-bg, 3%)
 
 //** Popover arrow width
 // $popover-arrow-width:                 10px
@@ -563,7 +563,7 @@
 //** Popover outer arrow color
 // $popover-arrow-outer-color:           fade_in($popover-border-color, 0.05)
 //** Popover outer arrow fallback color
-// $popover-arrow-outer-fallback-color:  darken($popover-fallback-border-color, 20%)
+// $popover-arrow-outer-fallback-color:  shade-color($popover-fallback-border-color, 20%)
 
 
 //== Labels
@@ -767,7 +767,7 @@
 //##
 
 // $well-bg:                     #f5f5f5
-// $well-border:                 darken($well-bg, 7%)
+// $well-border:                 shade-color($well-bg, 7%)
 
 
 //== Badges

@@ -112,7 +112,7 @@ $color-contrast-light            : $light-contrast;
     );
 
 /* _____________________________________ PADDING */
-  @import "lib/scss/abstracts/materials/padding";
+  @import "themesheets/abstracts/materials/padding";
 
 /* _____________________________________ GRID */
   $grid-columns                  : 16;
@@ -122,27 +122,27 @@ $color-contrast-light            : $light-contrast;
 /* ____________________________________ BORDERS */
   $base-width                    : 1px;
   $base-radius                   : .95rem;
-  @import "lib/scss/abstracts/materials/borders";
+  @import "themesheets/abstracts/materials/borders";
 
 /* ____________________________________ ANIMATION */
   $animation-speed: 250ms;
   $animation: ease-in-out;
 
 /* _____________________________________ LINK */
-  $disabled-text                 : color-mix(srgb, $secondary-color 40%, $white);
+  $disabled-text                 : color-mix(srgb, $secondary-color $disabled-percentage, $disabled-color);
 
-  $link-text-color               : $active-link-color;
+  $link-text-color               : $active-color;
   $link-hover-color              : shift-color($link-text-color, $link-hover-percentage);
   $link-hover-decoration         : underline, bold;
   $link-focus-color              : tint-color($link-text-color, $focus-percentage);
   $link-visited-color            : shade-color($link-text-color, $link-visited-percentage);
   $link-visited-hover-color      : shade-color($link-text-color, $link-visited-percentage);
 
-  @import "lib/scss/abstracts/materials/links";
+  @import "themesheets/abstracts/materials/links";
 
 
 
-  $nav-link-hover                : darken($nav-link-color, $hover-percentage);
+  $nav-link-hover                : shade-color($nav-link-color, $hover-percentage);
   $gradient-tabs-bg              : linear-gradient(320deg, transparent, rgba($white, .10) 20%, rgba($accent-color, .20) 35%, rgba($accent-color, .30) 50%, rgba($accent-color, .40) 65%);
 
   $tabs-hover-border             : shade-color($border-color, $hover-percentage);
@@ -159,7 +159,7 @@ $color-contrast-light            : $light-contrast;
 
 /* ____________________________________________ Buttons + Form */
 
-$input-text-color                : darken($primary-color, 50%);
+$input-text-color                : shade-color($primary-color, 50%);
 $input-bg-color                  : tint-color($primary-color, 35%);
 $input-border-color              : shade-color($primary-color, $border-percentage);
 

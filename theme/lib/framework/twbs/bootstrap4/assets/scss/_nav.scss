@@ -17,7 +17,7 @@
       }
 
       &.active {
-        color: darken($gray-dark, 25%);
+        color: shade-color($gray-dark, 25%);
       }
     }
   }
