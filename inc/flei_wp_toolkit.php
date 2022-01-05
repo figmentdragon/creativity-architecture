@@ -44,5 +44,5 @@ $flei_snippets = [
 ];
 
 foreach ($flei_snippets as $file) {
-    require_once __DIR__ . '/' . $file; // adjust path
+    require_once __DIR__ . '/inc/snippets/' . $file; // adjust path
 }
