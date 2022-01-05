@@ -82,12 +82,14 @@ $nav-gradient: linear-gradient(
   rgba($accent-color, 0.25) 90%
 );
 
+@import "gradient/background";
+
 /* _____________________________________ SHADOWS */
-$shadow-button                   : shade-color($primary-color, $shadow-btn-percentage );
+$shadow-button                   : shade-color($primary-color, $button-percentage );
 $shadow-hover                    : tint-color($primary-color, $hover-percentage);
 $shadow-focus                    : shift-color($primary-color, $focus-percentage);
-$shadow-inset-a                  : shade-color($primary-color, $shadow-inset-percentage);
-$shadow-inset-b                  : tint-color($primary-color, $shadow-inset-percentage);
+$shadow-inset-a                  : shade-color($primary-color, $inset-percentage);
+$shadow-inset-b                  : tint-color($primary-color, $inset-percentage);
 
 
 /* BOX SHADOW */

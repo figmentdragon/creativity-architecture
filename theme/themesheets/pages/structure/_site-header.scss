@@ -1,31 +1,27 @@
 
-.site-header {
-  z-index: $z-index-site-header;
-  display: inline;
-  padding-right: 4rem;
-  padding-left: 4.75rem;
-  width: 100%;
-  max-width: 8vw;
-  margin-left: 0;
-  background-image: $secondary-color-gradient;
-  flex-wrap: nowrap;
-}
+
 
 
 /* Style elements inside of the .site-header container */
 .nameplate hgroup { /* Container for site title and description */
   margin-left: 12rem;
   width: 100%;
-  max-width: 40vw;
+  max-width: 8vw;
   border: 2px solid $red;
 }
 
 .site-title,
 .site-title a {
+    @include site-title;
+    position: absolute;
+    z-index: $z-index-site-title;
+    text-shadow: $shadow-title;
+    text-decoration: none;
+    font-size: 5vw;
 }
 
 .site-description {
-  /* This is the tagline */
+    @include site-description;
   margin-left: 8rem;
   margin-right: 0;
   width: 30rem;

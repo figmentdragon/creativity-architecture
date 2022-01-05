@@ -22,33 +22,12 @@
 	</head>
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
-	<header class="fixed-header site-header" id="masthead">
-		<section class="nameplate">
+	<header class="site-header bg-accent-gradient">
+		<section id="masthead" class="namplate">
 			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
 			</a>
 			<sub id="site-description">
 				<?php bloginfo( 'description' ); ?>
 			</sub>
 		</section>
-
-		<nav>
-
-		</nav>
-
 	</header>
-
-
-  <div class="container">
-
-
-		<main class="main absolute-main" role="main">
-			<article>
-
-  			<div class="logo">LOGO</div>
-
-        	<sup id="author-name"><?php get_the_author_meta( 'display_name' ) ?></sup>
-        	<p id="site-title">
-
-        	</p>
-        	<sub id="site-description"><?php bloginfo( 'description' ) ?></sub>
-  			</section>

@@ -3,7 +3,7 @@ $shadow-text             : shade-color($body-text,$active-percentage);
 $shadow-title            : shade-color($headings-text-color, $active-percentage);
 
 $text-shadow             : .75rem .25rem .10rem $shadow-text;
-$title-soffset           : .65rem .5rem .15rem $shadow-title;
+$title-shadow           : .65rem .5rem .15rem $shadow-title;
 
 
 p {
@@ -152,7 +152,7 @@ small #copyright {
   font-size: $font-size-sm;
   font-family: $footer-text-font;
   font-weight: bold;
-  
+
 }
 
 mark,

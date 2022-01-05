@@ -1,80 +1,70 @@
-@mixin linear-gradient($secondary-color-gradient){
-  background-image: $secondary-color-gradient;
+@mixin linear-gradient($secondary-color-gradient) {
+    background-image: $secondary-color-gradient;
 }
-
 
 #masthead {
-  /* The container for the page-title group area */
-  @include border-box;
-  @include make-col;
+    /* The container for the page-title group area */
+    @include border-box;
+    @include make-col;
+    z-index: $z-index-masthead;
+    box-shadow: $masthead-shadow;
+    background-image: $accent-color-gradient;
+    position: absolute;
+    top: 0;
+    left: 3vw;
+    bottom: 0;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    align-self: stretch;
+    height: 100%;
+    max-height: 100vh;
+    width: 100%;
+    max-width: 10vw;
+    transition: all ease-in-out 0.5s;
+    transition: all 0.5s;
+    padding: 3vh 15px;
+    overflow: hidden;
 
-  position: fixed;
-  top: 0;
-  left: 3vw;
-  bottom: 0;
-  z-index: $z-index-masthead;
+    #masthead .nameplate img {
+        margin: 3vh auto;
+        display: block;
+        width: 120px;
+        border: 8px solid $yellow;
+    }
 
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: stretch;
-  align-self: stretch;
+    #masthead .nameplate .site-title {
+        margin: 0;
+        padding-bottom: 10vw;
+        border: 8px solid $yellow;
 
-  height: 105%;
-  max-height: 102vh;
-  width: 100%;
-  max-width: 7vw;
-  box-shadow: $masthead-shadow;
+        }
 
-  margin-top: -1rem;
-  margin-right: 0;
-  margin-bottom: -3rem;
-  margin-left: 0;
+    #masthead .nameplate site-title a,
+    #masthead .nameplate site-title a:hover {
+        color: $site-title-color;
+        text-decoration: none;
+    }
 
-  border: 1px solid $black;
+    #masthead .nameplate .social-links a {
+        font-size: 18px;
+        display: inline-block;
+        background: 0.212431;
+        color: $info-color;
+        line-height: 1;
+        padding: 8px 0;
+        margin-right: 4px;
+        border-radius: 50%;
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        transition: 0.3s;
+    }
 
-  transition: all ease-in-out 0.5s;
-  transition: all 0.5s;
-  padding: 0 15px;
-  background-image: $secondary-color-gradient;
-  overflow-y: auto;
-}
-#masthead .nameplate img {
-  margin: 15px auto;
-  display: block;
-  width: 120px;
-  border: 8px solid #2c2f3f;
-}
-#masthead .nameplate h1 {
-  font-size: 24px;
-  margin: 0;
-  padding: 0;
-  font-weight: 600;
-  -moz-text-align-last: center;
-  text-align-last: center;
-  font-family: "Poppins", sans-serif;
-}
-#masthead .nameplate h1 a,
-#masthead .nameplate h1 a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-#masthead .nameplate .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #212431;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-#masthead .nameplate .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
-  text-decoration: none;
+    #masthead .nameplate .social-links a:hover {
+        background: #149ddd;
+        color: #fff;
+        text-decoration: none;
+    }
 }

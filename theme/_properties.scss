@@ -132,11 +132,11 @@ $color-contrast-light            : $light-contrast;
   $disabled-text                 : color-mix(srgb, $secondary-color $disabled-percentage, $disabled-color);
 
   $link-text-color               : $active-color;
-  $link-hover-color              : shift-color($link-text-color, $link-hover-percentage);
+  $link-hover-color              : shift-color($link-text-color, $hover-percentage);
   $link-hover-decoration         : underline, bold;
   $link-focus-color              : tint-color($link-text-color, $focus-percentage);
-  $link-visited-color            : shade-color($link-text-color, $link-visited-percentage);
-  $link-visited-hover-color      : shade-color($link-text-color, $link-visited-percentage);
+  $link-visited-color            : shade-color($link-text-color, $visited-percentage);
+  $link-visited-hover-color      : shade-color($link-text-color, $visited-percentage);
 
   @import "themesheets/abstracts/materials/links";
 

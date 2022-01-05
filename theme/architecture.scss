@@ -23,8 +23,9 @@ _________________________________________________________ CJMTheme */
 
 /* __________________________________________________ THEME */
 
-  @import "themesheets/change-percentage";
-  @import "themesheets/color-palette";
+  @import "themesheets/abstracts/tools/change-percentage";
+  @import "themesheets/color-palette/color-palette";
+  @import "themesheets/color-palette/color-maps";
   @import "properties";
   @import "themesheets/color-palette/patterns";
   @import "themesheets/typesetting";
@@ -66,3 +67,5 @@ _________________________________________________________ CJMTheme */
   @import "themesheets/pages/global";
 
   @import "themesheets/pages/structure";
+    @import "themesheets/pages/structure/site-header";
+    @import "themesheets/pages/structure/masthead";

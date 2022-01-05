@@ -8,7 +8,7 @@
 define( 'architecture_VERSION', 1.0 );
 
 require_once( 'inc/architecture.php' );
-require_once( 'inc/custom-functions.php' );
+require_once( 'inc/custom/custom-functions.php' );
 require_once( 'inc/flei_wp_toolkit.php' );
 
 // SVG Icons class.

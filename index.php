@@ -1,4 +1,4 @@
-<?php /* Template Name : Index */?>
+<?php /* Template Name : Page */ ?>
 
 <?php get_header(); ?>
 

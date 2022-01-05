@@ -2,16 +2,7 @@
 
 <?php get_header(); ?>
 
-    <div class="container">
+    <main>
+    </main>
 
-      <article class="absolute-article">
-
-      </article>
-
-    </div>
 <?php get_footer(); ?>
-  </main>
-
-    </div>
-  </body>
-</html>

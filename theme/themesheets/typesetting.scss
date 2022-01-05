@@ -34,3 +34,14 @@ Stylesheet                    : CJMT Brand Typography
 @import "typography/text-elements/titles";
 @import "typography/text-elements/blockquote";
 @import "typography/text-elements/code";
+
+@mixin site-title {
+    font-family: 'Euphorigenic';
+    font-weight: bolder;
+    text-decoration: none;
+    color: $site-title-color;
+}
+
+@mixin site-description {
+    font-family:
+}

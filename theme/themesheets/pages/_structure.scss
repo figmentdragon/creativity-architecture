@@ -16,14 +16,21 @@ https://github.com/Automattic/_s/blob/master/layouts/
   border: 3px solid $red;
 }
 
-
-@import "structure/site-header";
+.site-header {
+  display: inline;
+  width: 100%;
+  max-width: 9vw;
+  margin-left: 2vw;
+  flex-wrap: nowrap;
+  border: 2px solid $orange;
+}
 
 .main {
-  margin-right: -0.5rem;
-  padding-bottom: .75rem;
-  padding-left: .25rem;
+    margin-right: -0.5rem;
+    padding-bottom: .75rem;
+    padding-left: .25rem;
 }
+@import "structure/main";
 
 .primary {
   /* The container for your primary content.*/

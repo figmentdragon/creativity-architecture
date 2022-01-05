@@ -19,7 +19,6 @@
 
 .fixed-header {
   position: fixed;
-  z-index: $z-index-header;
   top: 0;
   bottom: 0;
 }
@@ -42,10 +41,7 @@
 }
 
 .absolute-main {
-  position: absolute;
-  top: 1rem;
-  right: 0rem;
-  bottom: 1rem;
-  left: 2rem;
-  z-index: $z-index-main;
+	box-shadow: $card-box-shadow;
+    border: 4px solid $yellow;
+    background-image: rbga($accent-color, .5);
 }
