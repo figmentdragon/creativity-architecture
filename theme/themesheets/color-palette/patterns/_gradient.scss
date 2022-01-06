@@ -1,0 +1,15 @@
+$alpha-from              : 1 ;
+$alpha-to                : 0 ;
+$diff                    : $alpha-from - $alpha-to;
+
+$gradient                : linear-gradient(180deg, to right bottom, #0abab5, #0abab5, #0abab5, #0abab5, #ffcc33, #ffcc33, #ffcc33, #a8a9ad, #a8a9ad, #fbfbfd, transparent);
+
+@import "gradient/global";
+@import "gradient/theme";
+@import "gradient/mixins";
+
+.bg-accent-gradient {
+    background-image: $accent-color-gradient;
+    width: 100%;
+    height: 100%;
+}

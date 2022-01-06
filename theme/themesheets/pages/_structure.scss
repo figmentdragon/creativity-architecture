@@ -18,20 +18,22 @@ https://github.com/Automattic/_s/blob/master/layouts/
 
 .site-header {
     position: absolute;
-  display: inline;
-  width: 100%;
-  max-width: 9vw;
-  margin-left: 3vw;
-  flex-wrap: nowrap;
-  background-image: $accent-color-gradient;
+    z-index: 925;
+    display: inline;
+    width: 100%;
+    max-width: 9vw;
+    margin-left: 2.5vw;
+    flex-wrap: nowrap;
+    align-self: stretch;
 }
 
 .main {
-    margin-right: -0.5rem;
+    margin-right: -0.05rem;
+    margin-bottom: 1;
     padding-bottom: .75rem;
     padding-left: .25rem;
 }
-@import "structure/main";
+
 
 .primary {
   /* The container for your primary content.*/

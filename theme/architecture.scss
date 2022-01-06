@@ -43,19 +43,26 @@ _________________________________________________________ CJMTheme */
   @import "themesheets/abstracts/root";
 
 /* __________________________________________________ OBJECTS */
+/* ____________________________________ BASE */
+      @import "themesheets/objects/base/base";
+      @import "themesheets/objects/base/headings";
+      @import "themesheets/objects/base/text-elements";
+      @import "themesheets/objects/base/lists";
+      @import "themesheets/objects/base/links";
+      @import "themesheets/objects/base/input";
+      @import "themesheets/objects/base/form-elements";
+      @import "themesheets/objects/base/table";
+      @import "themesheets/objects/base/code";
 
-  @import "themesheets/objects/elements/base";
-  @import "themesheets/objects/elements/headings";
-  @import "themesheets/objects/elements/text-elements";
-  @import "themesheets/objects/elements/lists";
-  @import "themesheets/objects/elements/code";
-  @import "themesheets/objects/elements/table";
-  @import "themesheets/objects/elements/form-elements";
-  @import "themesheets/objects/elements/input";
-  @import "themesheets/objects/elements/links";
-  @import "themesheets/objects/elements/social";
-  @import "themesheets/objects/elements/alignment";
-  @import "themesheets/objects/elements/assistive-tech";
+/* ____________________________________ ELEMENTS */
+    @import "themesheets/objects/elements/media"
+    @import "themesheets/objects/elements/entry";
+    @import "themesheets/objects/elements/content";
+    @import "themesheets/objects/elements/comments"
+    @import "themesheets/objects/elements/social";
+    @import "themesheets/objects/elements/alignment";
+    @import "themesheets/objects/elements/assistive-tech";
+    @import "themesheets/objects/elements/responsive-embeds";
 
   @import "themesheets/objects/widgets";
 
@@ -68,3 +75,6 @@ _________________________________________________________ CJMTheme */
 
   @import "themesheets/pages/structure";
     @import "themesheets/pages/structure/site-header";
+
+
+  @import "themesheets/objects/elements/responsive-structures";

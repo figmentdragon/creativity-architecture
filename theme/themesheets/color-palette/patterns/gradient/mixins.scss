@@ -34,8 +34,7 @@
   );
 }
 
-@mixin theme-gradient($color4: $white, $alpha-from: 1, $alpha-to: 0) {
-  $diff: $alpha-from - $alpha-to;
+@mixin theme-gradient($diff: $alpha-from - $alpha-to) {
   background-image: linear-gradient(
     transparent,
     rgba($color4, $alpha-from) 3%,

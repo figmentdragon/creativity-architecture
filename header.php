@@ -23,11 +23,26 @@
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
 	<header class="site-header bg-accent-gradient">
-		<section id="masthead" class="namplate">
+		<section id="masthead">
+			<div class="namplate">
+				<sup class="site-title">the</sup>
 			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
 			</a>
-			<sup class="site-description">
+			<sub class="site-description">
 				<?php bloginfo( 'description' ); ?>
-			</sup>
+			</sub>
 		</section>
+		<nav>
+			<ul>
+				<li>
+					About
+				</li>
+				<li>
+					Blueprints
+				</li>
+				<li>
+					Creativity Coach
+				</li>
+			</ul>
+		</nav>
 	</header>
