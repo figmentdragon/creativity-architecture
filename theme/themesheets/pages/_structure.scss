@@ -17,12 +17,13 @@ https://github.com/Automattic/_s/blob/master/layouts/
 }
 
 .site-header {
+    position: absolute;
   display: inline;
   width: 100%;
   max-width: 9vw;
-  margin-left: 2vw;
+  margin-left: 3vw;
   flex-wrap: nowrap;
-  border: 2px solid $orange;
+  background-image: $accent-color-gradient;
 }
 
 .main {
@@ -44,7 +45,7 @@ https://github.com/Automattic/_s/blob/master/layouts/
   @include make-container;
 }
 
-@import "structure/masthead";
+
 #secondary {
   @include border-box;
   background-image: $secondary-color-gradient;

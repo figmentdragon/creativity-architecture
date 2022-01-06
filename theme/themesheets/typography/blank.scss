@@ -1,0 +1,88 @@
+/* Nav */
+$nav-text-color :                $active-link-color;
+$nav-bg-color :                  $gradient-tabs-bg;
+$nav-border-color:               shade-color($nav-text-color, $border-percentage);
+
+$nav-text-hover                  : darken($nav-text-color, $hover-percentage);
+$nav-hover-border                 : shade-color($nav-text-color, $hover-percentage);
+
+  // Navbar
+  $navbar-dark-text :            $accent-color;
+  $navbar-dark-toggler-border :  $navbar-dark-text;
+  $navbar-light-text :           $primary-color;
+  $navbar-light-toggler-border : $navbar-dark-text;
+
+$nav-link-transition         : color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+/* Buttons + Forms */
+$input-text-color       : shade-color($primary-color, $text-percentage);
+$input-bg-color         : tint-color($primary-color, $background-percentage);
+$input-border-color     : shade-color($primary-color, $border-percentage);
+
+$input-group-bg-color   : $gray-200;
+$form-switch-text-color : $input-bg-color;
+
+$form-switch-text-color : $input-bg-color;
+
+/* Card */
+$card-text-color :               $body-text-color;
+$card-bg-color: tint-color($primary-color, $background-percentage);
+$card-border-color :             shade-color($card-text-color, $active-border-border);
+
+  /* Card Header */
+  $card-cap-text-color :           $primary-color;
+  $card-cap-bg-color:   tint-color($card-cap-text-color, $background-percentage);
+
+
+
+  /* _________________________________________________ THEME */
+
+  $valid-border-color:       shade-color($valid-color, $border-shade-percentage);
+  $info-border-color:        shade-color($info-color, $border-shade-percentage);
+  $alert-border-color:       shade-color($alert-color, $border-shade-percentage);
+  $invalid-border-color:     shade-color($invalid-color, $border-shade-percentage);
+  $attention-border-color:   shade-color($attention-color,$border-shade-percentage);
+
+  /* Utilities */
+
+
+  $disabled-bg-color :                tint-color($disabled-color, $disabled-bg-percentage);
+  $disabled-border-color :            shade-color($disabled-color, $disabled-border-border);
+
+
+  /* ________________________________________________ PROPERTIES */
+      /* Shadow _________ */
+      $shadow-color :                 $gray-800;
+      $shadow-button-color :          $white;
+
+      $body-bg-color :                tint-color($primary-color, $background-percentage);
+      $text-muted-color :             shift-color($body-color, $muted-change-percentage);
+
+      /* Card */
+      $card-body-border-color :       shade-color($card-color, $active-border-border);
+      $card-cap-bg-color :            $white;
+      $card-bg-color :                tint-color($card-cap-color, $background-percentage);
+
+      /* Link Utilities */
+      $link-hover-color :             shift-color($link-color, $link-percentage);
+
+      $link-visited-color :           shade-color($link-color, $link-visited-percentage);
+      $link-visited-hover :           tint-color($link-visited, $link-percentage);
+
+      /*  Buttons + Form */
+      $btn-focus-color :              rgba($active-bg-color, $input-btn-focus-color-opacity);
+      $input-focus-border-color :     tint-color($active-bg-color, $focus-change-percentage);
+
+      $input-disabled-bg-color :      tint-color($disabled-color, $disabled-bg-percentage);
+      $input-disabled-border-color :  shade($input-disabled-texgt-color, $disabled-border-border);
+
+      /*  List */
+      $list-group-bg-color :          tint-color($list-group-color, $background-percentage);
+      $list-group-hover-bg :          shift-color($list-group-bg-color, $hover-percentage);
+      $list-group-active-bg-color :   shift-color($list-group-color, $active-hover-change-percentage);
+
+      $list-group-disabled-bg-color : $disabled-border-color;`
+
+
+  /* ________________________________________________ COMPONENTS */
+  $jumbotron-bg-color :               tint-color($gray-400, $muted-change-percentage);

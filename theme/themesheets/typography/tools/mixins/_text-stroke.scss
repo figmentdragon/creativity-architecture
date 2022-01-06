@@ -1,0 +1,23 @@
+@mixin text-stroke($primary-color) {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $primary-color;
+    -webkit-text-stroke-fill: $accent-color;
+}
+
+@mixin text-stroke($secondary-color) {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $secondary-color;
+    -webkit-text-stroke-fill: $primary-color;
+}
+
+@mixin text-stroke($accent-color) {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $accent-color;
+    -webkit-text-stroke-fill: $secondary-color;
+}
+
+@mixin text-stroke($black) {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $black;
+    -webkit-text-stroke-fill: $primary-color;
+}

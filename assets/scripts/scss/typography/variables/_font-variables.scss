@@ -8,7 +8,7 @@ $body-font               : sans-serif;
 $code-font               : monospace;
 
 $primary-font            : "Hand Typewriter", $body-font;
-$main-font               : Avdira, $body-font;
+$text-font               : Avdira, $body-font;
 $content-font            : Raylig, $body-font;
 $article-font            : "TELETYPE1945-1985";
 $secondary-font          : "Enjoy Writing", $body-font;
@@ -41,7 +41,7 @@ $link                    : underline;
   /* Font Family */
   $article-text-font     : "TELETYPE1945-1985", $body-font;
   $author-text-font      : Euphorigenic, $body-font;
-  $body-text-font        : $main-font;
+  $body-text-font        : $text-font;
   $btn-font-text-font    : "Raleway", $body-font;
   $emphasis-text-font    : "GlassAntiqua-Regular";
   $footer-text-font      : $tertiary-font;

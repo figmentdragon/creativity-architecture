@@ -1,0 +1,33 @@
+
+
+
+@mixin site-title {
+    @include text-transform($text-transform: uppercase);
+    @include title-shadow;
+    @include text-stroke($black);
+    font-family: 'Euphorigenic';
+    font-weight: bolder;
+    text-decoration: none;
+    color: $primary-color;
+}
+
+@mixin site-description {
+    @include text-transform(lowercase);
+    font-family: 'Enjoy Writing';
+    font-weight: normal;
+    color:$accent-color;
+}
+
+@mixin page-title {
+    @include text-transform;
+    font-family: $page-title-font;
+    text-transform: uppercase;
+    color: $headings-text-color;
+    font-weight: bold;
+}
+
+@mixin post-title {
+    @include text-transform;
+    font-family: 'TELETYPE-1895-1945';
+    font-weight: bold;
+}

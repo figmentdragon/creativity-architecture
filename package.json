@@ -37,6 +37,9 @@
     "scss": "^0.2.4"
   },
   "dependencies": {
+    "@material/card": "^13.0.0",
+    "@material/tab-bar": "^13.0.0",
+    "@material/tooltip": "^13.0.0",
     "acf": "^0.2.1",
     "anymatch": "^3.1.2",
     "aos": "^2.3.4",

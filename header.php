@@ -26,8 +26,8 @@
 		<section id="masthead" class="namplate">
 			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
 			</a>
-			<sub id="site-description">
+			<sup class="site-description">
 				<?php bloginfo( 'description' ); ?>
-			</sub>
+			</sup>
 		</section>
 	</header>

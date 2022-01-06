@@ -16,26 +16,26 @@ _________________________________________________________ CJMTheme */
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret                    : true !default;
-$enable-rounded                  : true !default;
-$enable-shadows                  : true !default;
-$enable-gradients                : true !default;
-$enable-transitions              : true !default;
-$enable-reduced-motion           : true !default;
-$enable-smooth-scroll            : true !default;
-$enable-grid-classes             : true !default;
-$enable-container-classes        : true !default;
-$enable-cssgrid                  : true !default;
-$enable-button-pointers          : true !default;
-$enable-rfs                      : true !default;
-$enable-validation-icons         : true !default;
-$enable-negative-margins         : true !default;
-$enable-deprecation-messages     : true !default;
-$enable-important-utilities      : true !default;
+$enable-caret                    : true;
+$enable-rounded                  : true;
+$enable-shadows                  : true;
+$enable-gradients                : true;
+$enable-transitions              : true;
+$enable-reduced-motion           : true;
+$enable-smooth-scroll            : true;
+$enable-grid-classes             : true;
+$enable-container-classes        : true;
+$enable-cssgrid                  : true;
+$enable-button-pointers          : true;
+$enable-rfs                      : true;
+$enable-validation-icons         : true;
+$enable-negative-margins         : true;
+$enable-deprecation-messages     : true;
+$enable-important-utilities      : true;
 
 // Prefix for                    :root CSS variables
 
-$variable-prefix                 : ca- !default;
+$variable-prefix                 : ca-;
 
 /* ________________________ PROPERTIES CONTROLED BY DEFAULT*/
 /* Contrast */
@@ -88,7 +88,7 @@ $color-contrast-light            : $light-contrast;
     );
 
   /* Base Offset */
-  $base-offset                   : 16px;
+
 
   /* Block Spacing */
   $block-spacing                 : 1.5rem;
@@ -112,6 +112,12 @@ $color-contrast-light            : $light-contrast;
     );
 
 /* _____________________________________ PADDING */
+    $base-offset                     : 16px;
+    $horizontal-offset-px            : 16px; // 1vh = 8px;
+    $horizontal-offset               : 2vh;
+    $vertical-offset                 : 2.75vw;
+    $vertical-offset-px              : 16px; // 1vw = 6px;
+
   @import "themesheets/abstracts/materials/padding";
 
 /* _____________________________________ GRID */
@@ -163,8 +169,8 @@ $input-text-color                : shade-color($primary-color, 50%);
 $input-bg-color                  : tint-color($primary-color, 35%);
 $input-border-color              : shade-color($primary-color, $border-percentage);
 
-$input-disabled-bg-color         : color-mix($input-text-color $disabled-bg-percentage, $disabled-color);
-$input-disabled-border-color     : color-mix($input-text-color $disabled-border-percentage, $disabled-color);
+$input-disabled-bg-color         : color-mix($input-text-color $disabled-percentage, $disabled-color);
+$input-disabled-border-color     : color-mix($input-text-color $disabled-percentage, $disabled-color);
 
 $input-text-focus-color          : shade-color($input-text-color, $focus-percentage);
 $input-focus-bg-color            : shade-color($input-bg-color, $focus-percentage);
@@ -185,4 +191,4 @@ $list-group-bg-color             : tint-color($list-group-text-color, $backgroun
 $list-group-border-color         : shade-color($list-group-text-color, $border-percentage);
 $list-group-hover-bg             : shift-color($list-group-bg-color, $hover-percentage);
 $list-group-bg-color             : shift-color($list-group-text-color, $hover-percentage);
-$list-group-disabled-bg-color    : color-mix($list-group-bg-color $disabled-bg-percentage, $disabled-color);
+$list-group-disabled-bg-color    : color-mix($list-group-bg-color $disabled-percentage, $disabled-color);

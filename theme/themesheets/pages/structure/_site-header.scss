@@ -1,28 +1,100 @@
 
+#masthead {
+    /* The container for the page-title group area */
+    @include border-box;
+    @include make-col;
+    z-index: $z-index-masthead;
+
+    box-shadow: $masthead-shadow;
+    background-image: $accent-color-gradient;
+
+    position: absolute;
+    top: 0;
+    left: 3vw;
+    bottom: 0;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    align-self: stretch;
+
+    height: 100%;
+    max-height: 100vh;
+    width: 100%;
+    max-width: 10vw;
+
+    transition: all ease-in-out 0.5s;
+    transition: all 0.5s;
+    padding: 3vh 15px;
+    overflow: hidden;
+}
+
+    #masthead .nameplate {
+        margin: 0;
+        padding-bottom: 10vw;
+
+        img {
+        margin: 3vh auto;
+        display: block;
+        width: 120px;
+        border: 8px solid $yellow;
+    }
+
+
+        #masthead .nameplate .social-links a {
+            font-size: 18px;
+            display: inline-block;
+            background: 0.212431;
+            color: $info-color;
+            line-height: 1;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            text-align: center;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+        }
+
+        #masthead .nameplate .social-links a:hover {
+            background: #149ddd;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+
 
 
 
 /* Style elements inside of the .site-header container */
-.nameplate hgroup { /* Container for site title and description */
+.nameplate { /* Container for site title and description */
   margin-left: 12rem;
   width: 100%;
-  max-width: 8vw;
+  max-width: 100vh;
+  max-width: 6vw;
   border: 2px solid $red;
 }
 
 .site-title,
-.site-title a {
+.site-title a,
+.site-title a:hover {
     @include site-title;
     position: absolute;
     z-index: $z-index-site-title;
     text-shadow: $shadow-title;
     text-decoration: none;
     font-size: 5vw;
+
+        :hover {
+        text-decoration: $link-decoration;
+        color: shift-color($active-color, $active-percentage);
+    }
 }
 
 .site-description {
     @include site-description;
-  margin-left: 8rem;
-  margin-right: 0;
-  width: 30rem;
+    position: absolute;
+    font-size: 3.5vw;
 }

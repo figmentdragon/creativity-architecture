@@ -1,9 +1,9 @@
 /* CJMT colorpalette ______________________________________________________
 
-Theme/Brand Name         : CJMT
-Author                   : CJMT
+Theme/Brand Name            : CJMT
+Author                      : CJMT
 
-Stylesheet               : CJMT Brand Stylesheet
+Stylesheet                  : CJMT Brand Stylesheet
 
   = TOC =
   [] Color Palette
@@ -17,108 +17,131 @@ ________________________________________________________ CJMT colorpalette */
 
 /* _______________________________________ VARIABLES */
 /* Gray Scale */
-$white                   : #e4edf4;
-$gray-100                : #c0c0c0;
-$gray-200                : #9a9a9a;
-$gray-300                : #7b7b7b;
-$gray-400                : #626262;
-$gray-500                : #4e4e4e;
-$gray-600                : #3e3e3e;
-$gray-700                : #323232;
-$gray-800                : #282828;
-$gray-900                : #1a1a1a;
-$black                   : #000100;
+$white                      : #e4edf4;
+$gray-100                   : #c0c0c0;
+$gray-200                   : #9a9a9a;
+$gray-300                   : #7b7b7b;
+$gray-400                   : #626262;
+$gray-500                   : #4e4e4e;
+$gray-600                   : #3e3e3e;
+$gray-700                   : #323232;
+$gray-800                   : #282828;
+$gray-900                   : #1a1a1a;
+$black                      : #000100;
 /* scss-docs-end gray-variables */
 
 /* Core Colors */
-$blue                    : #0a0fba;
-$indigo                  : #6600ff;
-$purple                  : #510bda;
-$pink                    : #fc89ac;
-$red                     : #ba0a0f;
-$orange                  : #fd8535;
-$yellow                  : #ffe41e;
-$green                   : #82ded1;
-$teal                    : #b5ede4;
-$cyan                    : #0abab5;
-$gray                    : $gray-600;
-$light                   : $gray-200;
-$dark                    : $gray-800;
+$blue                       : #0a0fba;
+$indigo                     : #6600ff;
+$purple                     : #510bda;
+$pink                       : #fc89ac;
+$red                        : #ba0a0f;
+$orange                     : #fd8535;
+$yellow                     : #ffe41e;
+$green                      : #82ded1;
+$teal                       : #b5ede4;
+$cyan                       : #0abab5;
+$gray                       : $gray-600;
+$light                      : $gray-200;
+$dark                       : $gray-800;
 
 /* Custom Colors */
-$silver                  : #a8a9ad;
+$silver                     : #a8a9ad;
 
-$chocolate               : #623412;
-$camel                   : #c19a6b;
-$saltpan                 : #ffffcc;
-$white-chocolate         : #ede6d6;
-$dark-vanilla            : #d1bea8;
-$ghost-white             : #fbfbfd;
+$chocolate                  : #623412;
+$camel                      : #c19a6b;
+$saltpan                    : #ffffcc;
+$white-chocolate            : #ede6d6;
+$dark-vanilla               : #d1bea8;
+$ghost-white                : #fbfbfd;
 
-$deep-sky-blue           : #0dcaf0;
-$coral                   : #ff7f50;
-$maroon                  : #800000;
+$deep-sky-blue              : #0dcaf0;
+$coral                      : #ff7f50;
+$maroon                     : #800000;
 
-$light-cyan              : #cdffff; /* Light Green */
-$neon-blue               : #555aff; /* light blue */
-$salomie                 : #ffd080; /* light orange */
-$wild-watermelon         : #ff555a; /* light red */
-$hot-pink                : #ff6fa9;
+$light-cyan                 : #cdffff; /* Light Green */
+$neon-blue                  : #555aff; /* light blue */
+$salomie                    : #ffd080; /* light orange */
+$wild-watermelon            : #ff555a; /* light red */
+$hot-pink                   : #ff6fa9;
 
 /* ____________________________________ THEME */
   /* Brand Color Variables */
-    $primary-color       : #0abab5;
-    $secondary-color     : #ffe41e;
-    $accent-color        : #a8a9ad;
+    $primary-color          : #0abab5;
+    $secondary-color        : #ffe41e;
+    $accent-color           : #a8a9ad;
 
   /* Utility Colors */
-    $valid-color         : $light-cyan;
-    $info-color          : $neon-blue;
-    $alert-color         : $salomie;
-    $invalid-color       : $wild-watermelon;
-    $attention-color     : $hot-pink;
+    $valid-color            : $light-cyan;
+    $info-color             : $neon-blue;
+    $alert-color            : $salomie;
+    $invalid-color          : $wild-watermelon;
+    $attention-color        : $hot-pink;
 
   /* Typography */
-  $headings-text-color   : $primary-color;
-  $footer-text-color     : $accent-color;
+  $headings-text-color      : $primary-color;
+  $footer-text-color        : $accent-color;
+
+/* ___________________________________________________ UTILITY */
+  $active-color             : $secondary-color;
+  $disabled-color           : color-mix(srgb, $accent-color $disabled-percentage, $white);
+
+  $muted-color              : tint-color( $accent-color, $muted-percentage );
+  $hover-color              : tint-color( $active-color, $hover-percentage );
+  $focus-color              : shade-color( $active-color, $focus-percentage );
+  $border-color             : shade-color( $primary-color, $border-percentage);
+  $shadow-color             : shade-color( $primary-color, $shadow-percentage);
+  $active-color             : tint-color( $secondary-color, $active-percentage);
+  $disabled-color           : shade-color( $accent-color, $disabled-percentage);
+
+  $body-text-color          : shade-color($primary-color, $active-percentage);
+  $text-muted-color         : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
+
+  $body-bg-color            : tint-color($secondary-color, $background-percentage);
+  $page-bg-color            : tint-color($primary-color, $background-percentage);
+  $main-bg-color            : tint-color($accent-color, $background-percentage);
+
+  $caption-text-color       : shade-color($primary-color, $emphasis-percentage);
+  $caption-border-color     : shade-color($primary-color, $border-percentage);
+  $light                    : $gray-100;
+  $dark                     : $gray-900;
+  $input-text-color         : $gray-500;
+  $input-bg-color           : $gray-100;
+  $input-border-color       : $gray-900;
+  $input-text-focus-color   : $gray-800;
+  $input-bg-focus-color     : $white;
+  $input-border-focus-color : $gray-100;
+
 
 /* ____________________________________ FOUNDATION */
   /* Background */
-  $body-bg-color         : tint-color($secondary-color, $background-percentage);
-  $page-bg-color         : tint-color($primary-color, $background-percentage);
-  $main-bg-color         : tint-color($accent-color, $background-percentage);
-
-  $active-color     : $secondary-color;
-  $disabled-color        : tint-color($accent-color, $disabled-percentage);
 
   /* Borders */
-  $border-color          : shade-color($active-color, $border-percentage);
+  $border-color             : shade-color($active-color, $border-percentage);
 
   /* Mixes */
 
-  $shadow-mix-color      :  $gray-200;
 
 
 /* ____________________________________ OBJECTS */
   /* Shadow */
-  $shadow-color          : mix-color(srgb, $primary-color $shadow-percentage, $shadow-mix-color);
 
   /* Nav */
-  $nav-link-color        : $active-color;
+  $nav-link-color           : $active-color;
     // Navbar
-    $navbar-dark-text    : $accent-color;
-    $navbar-light-text   : $primary-color;
+    $navbar-dark-text       : $accent-color;
+    $navbar-light-text      : $primary-color;
 
   /* Lists */
-  $list-group-text-color : $gray-900;
+  $list-group-text-color    : $gray-900;
 
 /* ______________________________________________________ BACKGROUNDS */
   /* Theme BG Colors */
-  $primary-bg            : tint-color($primary-color, $background-percentage);
-  $secondary-bg          : tint-color($secondary-color, $background-percentage);
-  $accent-bg             : tint-color($accent-color, $background-percentage);
-  $valid-bg              : tint-color($valid-color, $background-percentage);
-  $alert-bg              : tint-color($alert-color, $background-percentage);
-  $invalid-bg            : tint-color($invalid-color, $background-percentage);
-  $attention-bg          : tint-color($attention-color, $background-percentage);
-  $info-bg               : tint-color($info-color, $background-percentage);
+  $primary-bg               : tint-color($primary-color, $background-percentage);
+  $secondary-bg             : tint-color($secondary-color, $background-percentage);
+  $accent-bg                : tint-color($accent-color, $background-percentage);
+  $valid-bg                 : tint-color($valid-color, $background-percentage);
+  $alert-bg                 : tint-color($alert-color, $background-percentage);
+  $invalid-bg               : tint-color($invalid-color, $background-percentage);
+  $attention-bg             : tint-color($attention-color, $background-percentage);
+  $info-bg                  : tint-color($info-color, $background-percentage);
