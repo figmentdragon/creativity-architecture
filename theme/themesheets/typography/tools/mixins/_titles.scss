@@ -5,7 +5,16 @@
     font-family: 'Euphorigenic';
     font-weight: bolder;
     text-decoration: none;
+}
 
+@mixin nameplate-site-title {
+    font-family: 'Euphorigenic';
+    font-weight: bolder;
+    text-decoration: none;
+    color: transparent;
+    @include text-stroke($black, $accent-color);
+    @include text-transform($text-transform: uppercase);
+    @include site-title-shadow;
 }
 
 @mixin site-description {
@@ -13,7 +22,7 @@
     @include text-stroke($black, $secondary-color);
     font-family: 'Enjoy Writing';
     font-weight: normal;
-    color: $accent-color;
+    color: $secondary-color;
     text-align: right;
 }
 

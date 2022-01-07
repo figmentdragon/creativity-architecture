@@ -3,15 +3,15 @@
 /**
  * Include static snippets that don't need to be modified by themselves.
  */
-$flei_tools = [
+$architecture_tools = [
     'admin-bar-env-ribbon.php',
     'clean-up.php',
     'disable-author-archives.php',
     'disable-comments.php',
     'disable-feeds.php',
-//    'disable-json-api.php'
+    'disable-json-api.php',
     'disable-google-fonts-in-backend.php',
-    'excerpt.php',
+//    'excerpt.php',
     'gutenberg-gallery-carousel.php',
     'laravel-mix.php',
     'menu-editor-custom-fields.php',
@@ -23,7 +23,7 @@ $flei_tools = [
     'wp-env-body-class.php',
 ];
 
-foreach ($flei_tools as $file) {
+foreach ($architecture_tools as $file) {
     require_once __DIR__ . '/wp-toolkit/' . $file; // adjust path
 }
 
@@ -31,7 +31,7 @@ foreach ($flei_tools as $file) {
  * Copy a snippet from the repositories "snippets" folder next to this file,
  * remove ".example" from the filename, adjust it to your needs and uncomment below.
  */
-$flei_snippets = [
+$architecture_snippets = [
         'admin-custom-columns.php',
         'cpt.php',
         'gutenberg-disable-blocks.php',
@@ -43,6 +43,6 @@ $flei_snippets = [
         'visualcomposer.php',
 ];
 
-foreach ($flei_snippets as $file) {
+foreach ($architecture_snippets as $file) {
     require_once __DIR__ . '/snippets/' . $file; // adjust path
 }

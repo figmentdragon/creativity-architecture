@@ -1,59 +1,59 @@
 /* Fonts */
-@import "typography/fonts/font-face";
-@import "typography/variables/font-stacks";
-@import "typography/variables/fonts";
+@import "fonts/font-face";
+@import "variables/font-stacks";
+@import "variables/fonts";
 
 /* Variables */
-$body-text-color    : shade-color($base-text-color, $active-percentage);
+$body-text-color    : shade-color($body-text-color, $active-percentage);
 $text-muted-color   : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
 $btn-text-color        : shade-color($primary-color, 10%);
 $entry-header-color    : shade-color($primary-color, 10%);
 
-$headings-text-color      : mix-color($primary-color $title-percentage, $text-mix-color);
+$headings-text-color      : mix-color($primary-color $title-percentage, $body-text-color);
 $site-title-color   : shade-color($primary-color, $title-percentage);
 $page-title-color   : shade-color($secondary-color, $title-percentage);
 $post-title-color   : $headings-text-color;
 $footer-text-color  : $accent-color;
 $quote-text-color   : shade-color($accent-color, $focus-percentage);
-$lead-text-color    : shade-color($post-title-color, $muted-percentage);
+$lead-text-color    : shade-color($primary-color, $muted-percentage);
 $caption-text-color : shade-color($body-text-color, $focus-percentage);
 $nav-text-color     : shade-color($secondary-color, 10%);
 $code-text-color    : shade-color($hot-pink, $focus-percentage);
 
 
-@import "typography/variables/font-stacks";
-@import "typography/variables/fonts";
-@import "typography/variables/base-typography";
-@import "typography/variables/headings";
-@import "typography/variables/display";
-@import "typography/variables/lead";
-@import "typography/variables/links";
-@import "typography/variables/quote";
-@import "typography/variables/type-variables";
-@import "typography/variables/code";
+@import "variables/font-stacks";
+@import "variables/fonts";
+@import "variables/base-typography";
+@import "variables/headings";
+@import "variables/display";
+@import "variables/lead";
+@import "variables/links";
+@import "variables/quote";
+@import "variables/type-variables";
+@import "variables/code";
 
-$shadow-text        : shade-color($base-text-color, $active-percentage);
+$shadow-text        : shade-color($body-text-color, $active-percentage);
 $shadow-title       : shade-color($purple, $active-percentage);
 $text-shadow        : 0.75rem 0.25rem 0.10rem $shadow-text;
-$title-shadow       : -0.65rem 0.5rem 0.15rem $base-shadow-color, -0.65rem -0.5rem 0.25rem $shadow-mix-color;
+$title-shadow       : -0.65rem 0.5rem 0.15rem $shadow-text, -0.65rem -0.5rem 0.25rem $shadow-title;
 
-@import "typography/tools/mixins/font-size";
-@import "typography/tools/mixins/footer";
-@import "typography/tools/mixins/heading";
-@import "typography/tools/mixins/list";
-@import "typography/tools/mixins/shadow";
-@import "typography/tools/mixins/text-stroke";
-@import "typography/tools/mixins/text-transform";
-@import "typography/tools/mixins/text-truncate";
-@import "typography/tools/mixins/titles";
+@import "tools/mixins/font-size";
+@import "tools/mixins/footer";
+@import "tools/mixins/heading";
+@import "tools/mixins/list";
+@import "tools/mixins/shadow";
+@import "tools/mixins/text-stroke";
+@import "tools/mixins/text-transform";
+@import "tools/mixins/text-truncate";
+@import "tools/mixins/titles";
 
-@import "typography/tools/helpers/colored-links";
-@import "typography/tools/helpers/stretched-link";
-@import "typography/tools/helpers/text-truncation";
+@import "tools/helpers/colored-links";
+@import "tools/helpers/stretched-link";
+@import "tools/helpers/text-truncation";
 
-@import "typography/text-elements/titles";
-@import "typography/text-elements/blockquote";
-@import "typography/text-elements/code";
+@import "text-elements/titles";
+@import "text-elements/blockquote";
+@import "text-elements/code";
 
 p {
   margin-bottom: $offset;
@@ -70,7 +70,7 @@ a:link {
   outline: none !important;
   font-weight: bold;
   text-decoration: underline;
-  color: $link-text-color;
+  color: $link-active-color;
 
     & :hover {
       text-decoration: underline, bold;

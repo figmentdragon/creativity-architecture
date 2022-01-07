@@ -58,20 +58,20 @@ add_action('admin_menu', __NAMESPACE__.'\\remove_menus');
 
 // Add Taxonomy to Media (Attachments)
 
-function flei_add_taxonomies_to_attachments()
+function architecture_add_taxonomies_to_attachments()
 {
   register_taxonomy_for_object_type('my_expertise', 'attachment');
 }
 
-//add_action( 'init' , __NAMESPACE__ . '\\flei_add_taxonomies_to_attachments' );
+//add_action( 'init' , __NAMESPACE__ . '\\architecture_add_taxonomies_to_attachments' );
 
 /**
  * Remove Meta Boxes
  */
-function flei_remove_meta_boxes()
+function architecture_remove_meta_boxes()
 {
   // remove taxonomy meta box for my_expertise b/c for attachment this has to be done through ACF
   remove_meta_box('custom-post-type-onomies-my_expertise', 'attachment', 'normal');
 }
 
-add_action('admin_menu', 'flei_remove_meta_boxes');
+add_action('admin_menu', 'architecture_remove_meta_boxes');

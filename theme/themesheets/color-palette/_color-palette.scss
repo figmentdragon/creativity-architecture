@@ -81,18 +81,9 @@ $hot-pink                   : #ff6fa9;
 
 /* ___________________________________________________ BASE COLORS */
 
-  $base-active-color             : $secondary-color;
-  $base-disabled-color           : $accent-color;
-  $base-text-color               : $primary-color;
-
-  $tint-mix-color             : $light-cyan;
-  $shade-mix-color            : $indigo;
-
-  $active-mix-color              : $coral;
-  $disabled-mix-color            : $saltpan;
-  $border-mix-color              : $blue;
-  $text-mix-color                : $deep-sky-blue;
-  $shadow-mix-color              : $purple;
+  $active-color              : $secondary-color;
+  $disabled-color            : $accent-color;
+  $text-color                : $primary-color;
 
     /* Input */
   $input-text-color         : $gray-500;
@@ -107,29 +98,37 @@ $hot-pink                   : #ff6fa9;
   $footer-text-color        : $accent-color;
 
 /* ___________________________________________________ UTILITY */
-
-
   $muted-color              : tint-color( $accent-color, $muted-percentage );
-  $hover-color              : tint-color( $base-active-color, $hover-percentage );
-  $focus-color              : shade-color( $base-active-color, $focus-percentage );
+  $hover-color              : tint-color( $active-color, $hover-percentage );
+  $focus-color              : shade-color( $active-color, $focus-percentage );
   $shadow-color             : shade-color( $primary-color, $shadow-percentage);
-  $border-color             : shade-color( $base-border-color, $border-percentage);
+  $border-color             : shade-color( $deep-sky-blue, $border-percentage);
 
-  $link-text-color             : shade-color( $base-active-color, $active-percentage);
-  $disabled-color           : tint-color( $base-disabled-color, $disabled-percentage);
+  $link-active-color         : shade-color( $active-color, $active-percentage);
 
-  $body-text-color          : shade-color($base-text-color, $active-percentage);
-  $text-muted-color         : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
+
 
   $body-bg-color            : tint-color($secondary-color, $background-percentage);
   $page-bg-color            : tint-color($primary-color, $background-percentage);
   $main-bg-color            : tint-color($accent-color, $background-percentage);
 
-  $caption-text-color       : shade-color($primary-color, $emphasis-percentage);
+/* ____________________________________ TYPOGRAPHY */
+    $body-text-color     : shade-color($text-color, $active-percentage);
+    $text-muted-color    : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
 
+    $btn-text-color      : shade-color($primary-color, 10%);
+    $entry-header-color  : shade-color($primary-color, 10%);
 
-
-
+    $headings-text-color : mix-color($primary-color $title-percentage, $text-color);
+    $site-title-color    : shade-color($primary-color, $title-percentage);
+    $page-title-color    : shade-color($secondary-color, $title-percentage);
+    $post-title-color    : $headings-text-color;
+    $footer-text-color   : $accent-color;
+    $quote-text-color    : shade-color($accent-color, $focus-percentage);
+    $lead-text-color     : shade-color($primary-color, $muted-percentage);
+    $caption-text-color  : shade-color($body-text-color, $focus-percentage);
+    $nav-text-color      : shade-color($secondary-color, 10%);
+    $code-text-color     : shade-color($hot-pink, $focus-percentage);
 
 /* ____________________________________ FOUNDATION */
   /* Background */
@@ -149,7 +148,7 @@ $hot-pink                   : #ff6fa9;
   /* Shadow */
 
   /* Nav */
-  $nav-link-color           : $active-color;
+  $nav-link-color           : $link-active-color;
     // Navbar
     $navbar-dark-text       : $accent-color;
     $navbar-light-text      : $primary-color;

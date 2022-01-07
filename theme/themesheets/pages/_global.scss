@@ -4,6 +4,8 @@
 @import "global/footer";
 @import "global/article";
 @import "global/menu";
+@import "global/aside";
+@import "global/bg";
 
 *,
 *::after,
@@ -50,7 +52,7 @@ html {
 body {
     z-index: 30;
     text-align: left;
-    color: $body-text;
+    color: $body-text-color;
     font-family: $secondary-font;
     font-size: $font-size-base;
     line-height: $line-height-base;
@@ -91,7 +93,7 @@ header {
         top: -10;
         bottom: 0;
         z-index: 925;
-        display: inline-flex;
+        display: inline-block;
         height: 100%;
         max-height: 80vh;
         width: 100%;
@@ -120,10 +122,13 @@ main {
         max-width: 85vw;
         height: 100%;
         max-height: 93.5vh;
-        background: $white;
-        outline-width: 3px;
-        background: opacity .55;
-        box-shadow: inset 10px 10px 20px $gray-700, inset -29px -29px 58px $white;
+        background:white;
+        opacity: .65;
+        border-right-color: $gray-800;
+        border-right-style: inset;
+        border-right-width: 1px;
+        box-shadow: inset 10px 10px 20px $gray-700, inset -29px -29px 58px $white, inset 3.9px 3.9px 1px $gray-500, inset -3.9px -3.9px 1px $white, inset -5px -5px 10px #bebebe,
+            inset 5px 5px 10px $gray-900;
     }
 }
 
@@ -139,5 +144,5 @@ footer {
     max-width: 84.25vw;
     box-shadow: 0 0.5rem 0.4rem -.1rem $shadow-color;
     background-image: $footer-gradient;
-    border-right: 1px solid $gray-500;
+    border-right: 1px inset $gray-500;
 }

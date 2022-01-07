@@ -2,7 +2,7 @@
 
 body {
   text-align: left;
-  color: $body-text;
+  color: $body-text-color;
   font-family: $secondary-font;
   font-size: $font-size-base;
   line-height: 1.6;
@@ -40,7 +40,7 @@ a {
 
   :active {
     text-decoration: $link-decoration;
-    color: $link-text-color;
+    color: $link-active-color;
 
     & :hover {
       text-decoration: $link-hover-decoration;

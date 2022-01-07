@@ -58,16 +58,9 @@ https://github.com/Automattic/_s/blob/master/layouts/
   /* Container for your second widget area */
 }
 
-#site-information {
-  /* Container for the entire site footer area */
-  width: 100%;
-  margin-left: 0;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-self: center;
-  z-index: $z-index-site-information;
-}
+
+
+
+
 
 @import "structure/section";

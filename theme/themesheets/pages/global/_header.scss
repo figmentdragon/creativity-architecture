@@ -7,25 +7,31 @@
 }
 
 @mixin neumorphic-text-shadow {
-    text-shadow: -.65rem .5rem .15rem rgba($active-color-rgb, 0.8),
-                .65rem -.5rem .15rem rgba($accent-color-rgb, 0.8);
+    text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
 }
 
 @mixin neumorphic-site-title {
     &::before {
+        position: absolute;
         left: 0;
         width: 100px;
         height: 100px;
         top: -150px;
         z-index: 1225;
-        @include neumorphic-text-shadow;
+        background: linear-gradient(145deg, #D2D3D8, #7E7F82);
+        text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+
     }
-    &::after {
+    &::after,
+    :hover {
+        position: absolute;
         left: -50px;
         width: 200px;
         height: 200px;
         top: -200px;
-        @include neumorphic-text-shadow;
+        z-index: 1205;
+        background: linear-gradient(145deg, #D2D3D8, #7E7F82);
+        text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
     }
 
 }

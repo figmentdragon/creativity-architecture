@@ -5,9 +5,9 @@
  * Added: 06.04.2021
  */
 
-add_filter('allowed_block_types_all', 'flei_allowed_block_types', 10, 2);
+add_filter('allowed_block_types_all', 'architecture_allowed_block_types', 10, 2);
 
-function flei_allowed_block_types($allowed_blocks, $post)
+function architecture_allowed_block_types($allowed_blocks, $post)
 {
     $allowed_blocks = [
         'core/paragraph',
@@ -81,4 +81,3 @@ function flei_allowed_block_types($allowed_blocks, $post)
 
     return $allowed_blocks;
 }
-

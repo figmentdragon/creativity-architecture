@@ -125,13 +125,13 @@ _________________________________________________________ colorPALETTE */
     $nav-link-transition         : color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 
     /* Link */
-    $link-text-color                 : $active-color;
-    $hover-color                     : shift-color($link-text-color, $hover-percentage);
+    $link-active-color                 : $active-color;
+    $hover-color                     : shift-color($link-active-color, $hover-percentage);
 
-    $link-focus-color               : tint-color($link-text-color, $focus-percentage);
+    $link-focus-color               : tint-color($link-active-color, $focus-percentage);
 
-    $visited-color              : shade-color($link-text-color, $visited-percentage);
-    $visited-hover-color        : shade-color($link-text-color, $visited-percentage);
+    $visited-color              : shade-color($link-active-color, $visited-percentage);
+    $visited-hover-color        : shade-color($link-active-color, $visited-percentage);
 
     /* Nav */
     $nav-text-color                  : $active-color;

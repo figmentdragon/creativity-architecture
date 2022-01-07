@@ -1,13 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: flei
+ * User: architecture
  * Date: 14.08.17
  * Time: 13:48
  */
 
 // My function to modify the main query object
-function flei_loop_query($query)
+function architecture_loop_query($query)
 {
   if ($query->is_home() && $query->is_main_query()) { // Run only on the homepage
     $query->query_vars['cat'] = -2; // Exclude my featured category because I display that elsewhere
@@ -30,4 +30,4 @@ function flei_loop_query($query)
 }
 
 // Hook my above function to the pre_get_posts action
-add_action('pre_get_posts', 'flei_loop_query');
+add_action('pre_get_posts', 'architecture_loop_query');

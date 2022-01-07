@@ -11,17 +11,12 @@ require_once( 'inc/architecture.php' );
 require_once( 'inc/custom/custom-functions.php' );
 require_once( 'inc/flei_wp_toolkit.php' );
 
+require get_template_directory() . '/inc/functions/menu-functions.php';
+require get_template_directory() . '/inc/functions/template-functions.php';
+require get_template_directory() . '/inc/functions/template-tags.php';
+
 // SVG Icons class.
 require get_template_directory() . '/inc/classes/class-architecture-svg-icons.php';
-
-// Enhance the theme by hooking into WordPress.
-require get_template_directory() . '/inc/functions/template-functions.php';
-
-// Menu functions and filters.
-require get_template_directory() . '/inc/functions/menu-functions.php';
-
-// Custom template tags for the theme.
-require get_template_directory() . '/inc/functions/template-tags.php';
 
 // Customizer additions.
 require get_template_directory() . '/inc/classes/class-architecture-customize.php';

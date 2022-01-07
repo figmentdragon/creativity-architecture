@@ -1,3 +1,7 @@
 @mixin title-shadow {
     text-shadow: $title-shadow;
 }
+
+@mixin site-title-shadow {
+    text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+}

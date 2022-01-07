@@ -12,6 +12,8 @@
 @mixin site-footer-container {
     @include make-container;
     margin-right: 2vw;
+    margin-left: 0;
+    margin-bottom: 1rem;
     padding-right: .75rem;
     padding-left: .25rem;
 }

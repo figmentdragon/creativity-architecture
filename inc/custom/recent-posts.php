@@ -1,4 +1,4 @@
-<?php /* called by <?php recent_posts(); ?> */ ?>
+<?php /* called by <?php recent_posts(); ?> */ 
 
 function recent_posts($no_posts = 3, $excerpts = true) {
 

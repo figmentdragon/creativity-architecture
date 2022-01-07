@@ -69,7 +69,7 @@ $active-bg-color:       tint($active-text-color, active-bg-tint-percentage);
 $active-border-color:   shade($active-text-color, $active-border-shade-border);
 
 $link-text-hover-color              : shift-color($nav-link-color, $link-shade-percentage);
-$link-text-visited-color:           shade-color($link-text-color, $link-visited-shade-percentage);
+$link-text-visited-color:           shade-color($link-active-color, $link-visited-shade-percentage);
 $link-text-visited-hover: shade-color($link-text-visited-color, $link-hover-shade-percentage);
 
 /* Nav Utilities */

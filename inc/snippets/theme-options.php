@@ -10,7 +10,7 @@
 
 namespace Roots\Sage\Init;
 
-function flei_customize_register($wp_customize)
+function architecture_customize_register($wp_customize)
 {
   /**
    * Project Settings
@@ -18,7 +18,7 @@ function flei_customize_register($wp_customize)
 
   // first declare settings
   $wp_customize->add_setting(
-    'flei_projects_page_id',
+    'architecture_projects_page_id',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -26,7 +26,7 @@ function flei_customize_register($wp_customize)
   );
 
   $wp_customize->add_setting(
-    'flei_social_fb_url',
+    'architecture_social_fb_url',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -34,7 +34,7 @@ function flei_customize_register($wp_customize)
   );
 
   $wp_customize->add_setting(
-    'flei_social_xing_url',
+    'architecture_social_xing_url',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -42,7 +42,7 @@ function flei_customize_register($wp_customize)
   );
 
   $wp_customize->add_setting(
-    'flei_social_linkedin_url',
+    'architecture_social_linkedin_url',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -51,17 +51,17 @@ function flei_customize_register($wp_customize)
 
   // declare sections
   $wp_customize->add_section(
-    'flei_projects_section',
+    'architecture_projects_section',
     [
-      'title'    => __('Projekte', 'flei'),
+      'title'    => __('Projekte', 'architecture'),
       'priority' => 30,
     ]
   );
 
   $wp_customize->add_section(
-    'flei_social_section',
+    'architecture_social_section',
     [
-      'title'    => __('Social Media', 'flei'),
+      'title'    => __('Social Media', 'architecture'),
       'priority' => 30,
     ]
   );
@@ -70,11 +70,11 @@ function flei_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'flei_projects_page_id',
+      'architecture_projects_page_id',
       [
-        'label'    => __('Seite "Projekte":', 'flei'),
-        'section'  => 'flei_projects_section',
-        'settings' => 'flei_projects_page_id',
+        'label'    => __('Seite "Projekte":', 'architecture'),
+        'section'  => 'architecture_projects_section',
+        'settings' => 'architecture_projects_page_id',
         'type'     => 'dropdown-pages',
       ]
     )
@@ -83,11 +83,11 @@ function flei_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'flei_social_fb_url',
+      'architecture_social_fb_url',
       [
-        'label'    => __('URL Facebook', 'flei'),
-        'section'  => 'flei_social_section',
-        'settings' => 'flei_social_fb_url',
+        'label'    => __('URL Facebook', 'architecture'),
+        'section'  => 'architecture_social_section',
+        'settings' => 'architecture_social_fb_url',
         'type'     => 'text',
       ]
     )
@@ -96,11 +96,11 @@ function flei_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'flei_social_xing_url',
+      'architecture_social_xing_url',
       [
-        'label'    => __('URL XING', 'flei'),
-        'section'  => 'flei_social_section',
-        'settings' => 'flei_social_xing_url',
+        'label'    => __('URL XING', 'architecture'),
+        'section'  => 'architecture_social_section',
+        'settings' => 'architecture_social_xing_url',
         'type'     => 'text',
       ]
     )
@@ -109,15 +109,15 @@ function flei_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'flei_social_linkedin_url',
+      'architecture_social_linkedin_url',
       [
-        'label'    => __('URL LinkedIn', 'flei'),
-        'section'  => 'flei_social_section',
-        'settings' => 'flei_social_linkedin_url',
+        'label'    => __('URL LinkedIn', 'architecture'),
+        'section'  => 'architecture_social_section',
+        'settings' => 'architecture_social_linkedin_url',
         'type'     => 'text',
       ]
     )
   );
 }
 
-add_action('customize_register', __NAMESPACE__.'\\flei_customize_register');
+add_action('customize_register', __NAMESPACE__.'\\architecture_customize_register');

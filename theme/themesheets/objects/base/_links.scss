@@ -6,7 +6,7 @@ a {
 
   :active {
     text-decoration: underline;
-    color: $link-text-color;
+    color: $link-active-color;
 
     & :hover {
       text-decoration: underline, bold;

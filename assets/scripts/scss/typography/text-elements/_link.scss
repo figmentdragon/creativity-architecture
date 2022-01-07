@@ -2,12 +2,12 @@ $link-offset-y:                $offset-y;
 $link-offset-x:                $offset-x;
 $link-font-size:                $font-size-md;;
 $link-font-weight:             $font-weight-bold;
-$link-text-color:                    $active-color;
-$link-hover-color:              shade-color($link-text-color, $hover-percentage);
+$link-active-color:                    $active-color;
+$link-hover-color:              shade-color($link-active-color, $hover-percentage);
 $link-transition:               color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-$link-disabled-color:          shade-color($link-text-color, $disabled-percentage);
+$link-disabled-color:          shade-color($link-active-color, $disabled-percentage);
 
-$tabs-border-color:             shade-color($link-text-color, $border-percentage);
+$tabs-border-color:             shade-color($link-active-color, $border-percentage);
 $tabs-border-width:             $base-width;
 $tabs-border-radius:            $base-radius;
 $tabs-hover-border:             shade-color($bord)$gray-200 $gray-200 $tabs-border-color;

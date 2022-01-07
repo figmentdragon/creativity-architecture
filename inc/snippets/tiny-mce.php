@@ -1,25 +1,25 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: flei
+ * User: architecture
  * Date: 11/02/17
  * Time: 19:58
  */
 
-function flei_mce_buttons_2($buttons)
+function architecture_mce_buttons_2($buttons)
 {
   array_unshift($buttons, 'styleselect');
 
   return $buttons;
 }
 
-add_filter('mce_buttons_2', __NAMESPACE__.'\\flei_mce_buttons_2');
+add_filter('mce_buttons_2', __NAMESPACE__.'\\architecture_mce_buttons_2');
 
 /*
 * Callback function to filter the MCE settings
 */
 
-function flei_mce_before_init_insert_formats($init_array)
+function architecture_mce_before_init_insert_formats($init_array)
 {
   // Define the style_formats array
 
@@ -148,4 +148,4 @@ function flei_mce_before_init_insert_formats($init_array)
 }
 
 // Attach callback to 'tiny_mce_before_init'
-add_filter('tiny_mce_before_init', __NAMESPACE__.'\\flei_mce_before_init_insert_formats');
+add_filter('tiny_mce_before_init', __NAMESPACE__.'\\architecture_mce_before_init_insert_formats');

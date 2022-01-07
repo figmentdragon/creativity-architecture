@@ -39,7 +39,7 @@ a {
 
   :active {
     text-decoration: $link-decoration;
-    color: $link-text-color;
+    color: $link-active-color;
 
     & :hover {
       text-decoration: $link-hover-decoration;

@@ -21,7 +21,7 @@ p {
 
 body {
   text-align: left;
-  color: $body-text;
+  color: $body-text-color;
   font-family: $secondary-font;
   font-size: $font-size-base;
   line-height: 1.6;
@@ -34,7 +34,7 @@ a {
   outline: none !important;
   font-weight: bold;
   text-decoration: underline;
-  color: $link-text-color;
+  color: $link-active-color;
 
     @include on-event {
       text-decoration: underline, bold
@@ -42,7 +42,7 @@ a {
 }
 
 a:link {
-  color: $link-text-color;
+  color: $link-active-color;
 }
 
 a:visited {
@@ -52,7 +52,7 @@ a:hover {
   color: $link-text-hover;
 }
 a:active {
-  color: $link-text-color;
+  color: $link-active-color;
   outline: none;
 }
 

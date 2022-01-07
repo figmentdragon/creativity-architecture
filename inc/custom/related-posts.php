@@ -1,6 +1,6 @@
 <?php
-// Related Posts Function, matches posts by tags - call using the_architecture_related_posts(); )
-function the_architecture_related_posts() {
+// Related Posts Function, matches posts by tags - call using architecture_related_posts(); )
+function architecture_related_posts() {
 	global $post;
 	$tag_arr = '';
 	$tags = wp_get_post_tags( $post->ID );
@@ -15,8 +15,8 @@ function the_architecture_related_posts() {
 		);
 		$related_posts = get_posts( $args );
 		if($related_posts) {
-		echo __( '<h4>Related Posts</h4>', 'the_architecture' );
-		echo '<ul class="the_architecture-related-posts">';
+		echo __( '<h4>Related Posts</h4>', 'architecture' );
+		echo '<ul class="architecture-related-posts">';
 			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
 				<li class="related_post">
 					<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
@@ -26,4 +26,4 @@ function the_architecture_related_posts() {
 			}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end the_architecture related posts function */
+} /* end architecture related posts function */
