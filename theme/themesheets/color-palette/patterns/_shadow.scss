@@ -1,15 +1,80 @@
-$shadow-color            : darken($primary-color, $shadow-percentage);
-$shadow-text             : darken($body-text-color, $active-percentage);
-$shadow-title            : darken($accent-color, $focus-percentage);
+/* __________________________________________________ VARIABLES */
+$shadow-color            : darken($base-shadow-color, $shadow-percentage);
+$shadow-text             : darken($base-text-color, $text-percentage);
+$shadow-title            : darken($title-text-color, $title-percentage);
 
-$shadow-button           : shade-color($primary-color, $button-percentage);
-$shadow-hover            : tint-color($primary-color, $hover-percentage);
-$shadow-focus            : shift-color($primary-color, $focus-percentage);
-$shadow-inset-a          : shade-color($primary-color, $inset-percentage);
-$shadow-inset-b          : tint-color($primary-color, $inset-percentage);
+$shadow-button           : shade-color($shadow-color, $button-percentage);
+$shadow-hover            : tint-color($shadow-color, $hover-percentage);
+$shadow-focus            : shift-color($shadow-color, $focus-percentage);
+$shadow-inset-a          : shade-color($shadow-color, $inset-percentage);
+$shadow-inset-b          : tint-color($shadow-color, $inset-percentage);
 
+
+/* __________________________________________________ ELEMENTS */
 @import "shadow/box-shadow";
 @import "shadow/card-shadow";
 @import "shadow/masthead-shadow";
 @import "shadow/input-shadow";
 @import "shadow/button-shadow";
+
+/* __________________________________________________ MIXINS */
+@import "shadow/mixins/box-shadows";
+
+/* __________________________________________________ OBJECTS */
+.right-shadow
+{
+  position: relative;
+}
+.right-shadow:before
+{
+   $right-shadow-color: 286deg 36% 51%;
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 0;
+  width: 75%;
+  top: 80%;
+  max-width:600px;
+  background: $shadow-color;
+  box-shadow: -0.9px 0.2px 1px hsl( 286deg, 36%, 51%,  0.49),
+    -2.7px 0.8px 3px -1px hsl( 286deg, 36%, 51%, 0.45),
+    -7.2px 2.1px 7.9px -2px hsl( 286deg, 36%, 51%, 0.41),
+    -18.3px 5.3px 20.1px -2.9px hsl( 286deg, 36%, 51%, 0.38);
+  transform: rotate(-16deg);
+}
+
+.left-and-right-shadow
+{
+  position: relative;
+}
+.left-and-right-shadow:before, .left-and-right-shadow:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: $shadow-color;
+  -webkit-box-shadow: 0 50px 20px $shadow-color;
+  -moz-box-shadow: 0 50px 20px $shadow-color;
+  box-shadow: 0 50px 20px $shadow-color;
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+.left-and-right-shadow:after
+{
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}

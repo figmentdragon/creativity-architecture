@@ -1,9 +1,0 @@
-@mixin main {
-    position: relative;
-    top: 1.25vh;
-    right: 0;
-    bottom: 1.25vh;
-    left: 1vw;
-    z-index: $z-index-main;
-    @include border-start-radius($border-radius-xxl);
-}

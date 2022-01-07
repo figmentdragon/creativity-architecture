@@ -4,35 +4,35 @@ $entry-header-color: shade-color($primary-color, 10%);
 
 	color: $entry-header-color;
 	font-size: $entry-header-font-size;
-	letter-spacing: $heading-letter-spacing-h2;
-	line-height: $heading-line-height-h2;
+	letter-spacing: $letter-spacing-lg;;
+	line-height: $line-height-md;
 	overflow-wrap: break-word;
 
 	a {
-		color: $entry-header-color-link;
+		color: $link-color;
 		text-underline-offset: 0.15em;
 
 		&:hover {
-			color: $entry-header-color-hover;
+			color: $hover-color;
 		}
 
 		&:focus {
-			color: $entry-header-color-focus;
+			color: $focus-color;
 		}
 
 		&:active {
-			color: $entry-header-color-link;
+			color: $link-color;
 		}
 	}
 }
 
 .singular .entry-title {
-	font-size: $font-size-page-title;
+	font-size: $page-font-size;
 }
 
 h1.entry-title {
-	line-height: $heading-line-height-h1;
-	font-weight: $heading-font-weight-page-title;
+	line-height: $lg;
+	font-weight: bold;
 }
 
 /**
@@ -41,7 +41,7 @@ h1.entry-title {
 
 .entry-content,
 .entry-summary {
-	font-family: $entry-content-font-family;
+	font-family: $tertiary-font;
 }
 
 .entry-content {
@@ -80,11 +80,11 @@ h1.entry-title {
 
 		&:hover,
 		&:focus {
-			color: $primary-color-hover;
+			color: $hover-color;
 		}
 
 		&:active {
-			color: currentColor;
+			color: #active-color;
 		}
 	}
 }
@@ -92,13 +92,13 @@ h1.entry-title {
 // Extra specificity to override rules in _vertical-margins.scss
 .site-main > article > .entry-footer {
 	margin-top: $vertical-offset;
-	padding-top: $spacing-unit;
+	padding-top: $offset;
 	padding-bottom: calc(3 * $vertical-offset);
-	border-bottom: $separator-height solid $separator-border-color;
+	border-bottom: $border-width solid $border-color;
 }
 
 body:not(.single) .site-main > article:last-of-type .entry-footer {
-	border-bottom: $separator-height solid transparent;
+	border-bottom: $border-width solid transparent;
 }
 
 .single .site-main > article > .entry-footer {
@@ -106,8 +106,8 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 	margin-bottom: calc(3.4 * $vertical-offset);
 	padding-bottom: 0;
 	padding-top: calc(0.8 * $vertical-offset);
-	border-top: 3px solid $separator-border-color;
-	border-bottom: $separator-height solid transparent;
+	border-top: 3px solid $border-color;
+	border-bottom: $border-width solid transparent;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: calc(2 * $horizontal-offset);
@@ -198,8 +198,8 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 	.author-bio-content {
 
 		.author-title {
-			font-family: $entry-author-bio-font-family;
-			font-size: $entry-author-bio-font-size;
+			font-family: $emphasis-font;
+			font-size: $font-size-md;
 			display: inline;
 		}
 

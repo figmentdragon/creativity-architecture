@@ -163,9 +163,14 @@ function architecture_scripts() {
 //adding scripts file in the footer
 	wp_register_script( 'architecture', get_stylesheet_directory_uri() . '/assets/scripts/js/scripts.js', array( 'jquery' ), '', true );
 
+	wp_register_script( 'fontawesome',
+	get_stylesheet_directory_uri() . '/assets/scripts/js/fontawesome/all.js' );
+
+	wp_register_script( 'cards', get_stylesheet_directory_uri() . '/assets/scripts/js/cardsSpec.js' );
+
 	wp_register_script( 'purecounter', get_stylesheet_directory_uri() . '/assets/vendor/purecounter/purecounter.js' );
 
-	wp_register_script(  'aos', get_stylesheet_directory_uri() . '/docs/materials/vendor/aos/aos.js' );
+	wp_register_script(  'aos', get_stylesheet_directory_uri() . '/assets/vendor/aos/aos.js' );
 
 	wp_register_script(  'glightbox', get_stylesheet_directory_uri() . '/assets/vendor/glightbox/js/glightbox.min.js' );
 
@@ -179,10 +184,19 @@ function architecture_scripts() {
 
 	wp_register_script( 'email-form', get_stylesheet_directory_uri() . '/assets/vendor/php-email-form/validate.js' );
 
-	wp_register_script( 'fontawesome',
-	get_stylesheet_directory_uri() . '/scripts/js/fontawesome/all.js' );
-
 	wp_register_script( 'portfolio', get_stylesheet_directory_uri() . '/assets/scripts/js/portfolio.js' );
+
+	wp_register_script( 'appbar', get_stylesheet_directory_uri() . '/assets/scripts/js/tronic247/appbar.js' );
+
+	wp_register_script( 'dialog', get_stylesheet_directory_uri() . '/assets/scripts/js/tronic247/dialog.js' );
+
+	wp_register_script( 'menu', get_stylesheet_directory_uri() . '/assets/scripts/js/tronic247/menu.js' );
+
+	wp_register_script( 'ripple', get_stylesheet_directory_uri() . '/assets/scripts/js/tronic247/ripple.js' );
+
+	wp_register_script( 'snackbar', get_stylesheet_directory_uri() . '/assets/scripts/js/tronic247/snackbar.js' );
+
+	wp_register_script( 'tabs', get_stylesheet_directory_uri() . '/assets/scripts/js/tronic247/tabs.js' );
 
 // add theme scripts
 	wp_enqueue_script( 'architecture-theme', get_template_directory_uri() . '/assets/scripts/js/theme.min.js', array(), architecture_VERSION, true );
@@ -198,12 +212,19 @@ function architecture_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'architecture' );
 	wp_enqueue_script( 'portfolio' );
+	wp_enqueue_script( 'cards' );
+	wp_enqueue_script( 'dialog' );
+	wp_enqueue_script( 'appbar' );
+	wp_enqueue_script( 'ripple' );
+	wp_enqueue_script( 'snackbar' );
+	wp_enqueue_script( 'tabs' );
+	wp_enqueue_script( 'menu' );
 }
 
 function architecture_customize_preview_init() {
 	wp_enqueue_script(
 		'architecture-customize-helpers',
-		get_theme_file_uri( '/assets/scripts/js/customize-helpers.js' ),
+		get_theme_file_uri( '/assets/scripts/js/wordpress/customize-helpers.js' ),
 		array(),
 		wp_get_theme()->get( 'Version' ),
 		true
@@ -211,7 +232,7 @@ function architecture_customize_preview_init() {
 
 	wp_enqueue_script(
 		'architecture-customize-preview',
-		get_theme_file_uri( '/assets/scripts/js/customize-preview.js' ),
+		get_theme_file_uri( '/assets/scripts/js/wordpress/customize-preview.js' ),
 		array( 'customize-preview', 'customize-selective-refresh', 'jquery', 'architecture-customize-helpers' ),
 		wp_get_theme()->get( 'Version' ),
 		true
@@ -230,7 +251,7 @@ function architecture_customize_controls_enqueue_scripts() {
 
 	wp_enqueue_script(
 		'architecture-customize-helpers',
-		get_theme_file_uri( '/assets/scripts/js/customize-helpers.js' ),
+		get_theme_file_uri( '/assets/scripts/js/wordpress/customize-helpers.js' ),
 		array(),
 		wp_get_theme()->get( 'Version' ),
 		true

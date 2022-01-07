@@ -1,53 +1,17 @@
-
-#site-info {
-  /* Container for the entire site footer area */
-  width: 100%;
-  margin-left: 0;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-self: center;
-  z-index: $z-index-site-information;
+@mixin footer {
+    position: relative;
+    right: 2.5vw;
+    bottom: 5.75vh;
+    left: 13vw;
+    z-index: $z-index-footer;
+    display: inline;
+    align-items: center;
+    align-content: center;
 }
 
-.social-media {
-  width: 90rem;
-  margin-left: 2rem;
-  align-self: center;
-  color: $alert-color;
-  font-weight: bolder;
-}
-
-.contact {
-  font-family: "Hand Typewriter";
-  width: auto;
-  padding-right: 1.75rem;
-  align-self: stretch;
-  align-items: stretch;
-  color: $alert-color;
-  font-weight: bolder;
-}
-
-.email {
-  justify-content: end;
-  align-self: end;
-}
-
-#email {
-  font-size: 0.75vw;
-  line-height: 1rem;
-  color: $alert-color;
-}
-
-.copyright {
-  justify-content: end;
-  align-self: end;
-  margin-top: -1rem;
-}
-
-#copyright {
-  font-size: 0.75vw;
-  line-height: 1rem;
-  color: $alert-color;
+@mixin site-footer-container {
+    @include make-container;
+    margin-right: 2vw;
+    padding-right: .75rem;
+    padding-left: .25rem;
 }

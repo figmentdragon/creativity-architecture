@@ -78,23 +78,47 @@ $hot-pink                   : #ff6fa9;
     $invalid-color          : $wild-watermelon;
     $attention-color        : $hot-pink;
 
+
+/* ___________________________________________________ BASE COLORS */
+
+  $base-active-color             : $secondary-color;
+  $base-disabled-color           : $accent-color;
+  $base-text-color               : $primary-color;
+
+  $tint-mix-color             : $light-cyan;
+  $shade-mix-color            : $indigo;
+
+  $active-mix-color              : $coral;
+  $disabled-mix-color            : $saltpan;
+  $border-mix-color              : $blue;
+  $text-mix-color                : $deep-sky-blue;
+  $shadow-mix-color              : $purple;
+
+    /* Input */
+  $input-text-color         : $gray-500;
+  $input-bg-color           : $gray-100;
+  $input-border-color       : $gray-700;
+  $input-text-focus-color   : $gray-800;
+  $input-bg-focus-color     : $white;
+  $input-border-focus-color : $gray-900;
+
   /* Typography */
-  $headings-text-color      : $primary-color;
+
   $footer-text-color        : $accent-color;
 
 /* ___________________________________________________ UTILITY */
-  $active-color             : $secondary-color;
-  $disabled-color           : color-mix(srgb, $accent-color $disabled-percentage, $white);
+
 
   $muted-color              : tint-color( $accent-color, $muted-percentage );
-  $hover-color              : tint-color( $active-color, $hover-percentage );
-  $focus-color              : shade-color( $active-color, $focus-percentage );
-  $border-color             : shade-color( $primary-color, $border-percentage);
+  $hover-color              : tint-color( $base-active-color, $hover-percentage );
+  $focus-color              : shade-color( $base-active-color, $focus-percentage );
   $shadow-color             : shade-color( $primary-color, $shadow-percentage);
-  $active-color             : tint-color( $secondary-color, $active-percentage);
-  $disabled-color           : shade-color( $accent-color, $disabled-percentage);
+  $border-color             : shade-color( $base-border-color, $border-percentage);
 
-  $body-text-color          : shade-color($primary-color, $active-percentage);
+  $link-text-color             : shade-color( $base-active-color, $active-percentage);
+  $disabled-color           : tint-color( $base-disabled-color, $disabled-percentage);
+
+  $body-text-color          : shade-color($base-text-color, $active-percentage);
   $text-muted-color         : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
 
   $body-bg-color            : tint-color($secondary-color, $background-percentage);
@@ -102,27 +126,25 @@ $hot-pink                   : #ff6fa9;
   $main-bg-color            : tint-color($accent-color, $background-percentage);
 
   $caption-text-color       : shade-color($primary-color, $emphasis-percentage);
-  $caption-border-color     : shade-color($primary-color, $border-percentage);
-  $light                    : $gray-100;
-  $dark                     : $gray-900;
-  $input-text-color         : $gray-500;
-  $input-bg-color           : $gray-100;
-  $input-border-color       : $gray-900;
-  $input-text-focus-color   : $gray-800;
-  $input-bg-focus-color     : $white;
-  $input-border-focus-color : $gray-100;
+
+
+
 
 
 /* ____________________________________ FOUNDATION */
   /* Background */
+  $primary-bg: tint-color($primary-color, $background-percentage);
+  $secondary-bg: tint-color($secondary-color, $background-percentage);
+  $accent-bg: tint-color($accent-color, $background-percentage);
+  $valid-bg: tint-color($valid-color, $background-percentage);
+  $alert-bg: tint-color($alert-color, $background-percentage);
+  $invalid-bg: tint-color($invalid-color, $background-percentage);
+  $attention-bg: tint-color($attention-color, $background-percentage);
+  $info-bg:tint-color($info-color, $background-percentage);
 
   /* Borders */
-  $border-color             : shade-color($active-color, $border-percentage);
 
-  /* Mixes */
-
-
-
+  $caption-border-color     : shade-color($primary-color, $border-percentage);
 /* ____________________________________ OBJECTS */
   /* Shadow */
 
@@ -134,14 +156,3 @@ $hot-pink                   : #ff6fa9;
 
   /* Lists */
   $list-group-text-color    : $gray-900;
-
-/* ______________________________________________________ BACKGROUNDS */
-  /* Theme BG Colors */
-  $primary-bg               : tint-color($primary-color, $background-percentage);
-  $secondary-bg             : tint-color($secondary-color, $background-percentage);
-  $accent-bg                : tint-color($accent-color, $background-percentage);
-  $valid-bg                 : tint-color($valid-color, $background-percentage);
-  $alert-bg                 : tint-color($alert-color, $background-percentage);
-  $invalid-bg               : tint-color($invalid-color, $background-percentage);
-  $attention-bg             : tint-color($attention-color, $background-percentage);
-  $info-bg                  : tint-color($info-color, $background-percentage);

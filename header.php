@@ -22,10 +22,10 @@
 	</head>
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
-	<header class="site-header bg-accent-gradient">
+	<header class="site-header">
 		<section id="masthead">
-			<div class="namplate">
-				<sup class="site-title">the</sup>
+			<div class="nameplate">
+				<sup class="the">the</sup>
 			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
 			</a>
 			<sub class="site-description">

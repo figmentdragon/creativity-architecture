@@ -25,6 +25,7 @@ _________________________________________________________ CJMTheme */
 
   @import "themesheets/abstracts/tools/change-percentage";
   @import "themesheets/color-palette/color-palette";
+  @import "themesheets/color-palette/variables/rgba";
   @import "themesheets/color-palette/color-maps";
   @import "properties";
   @import "themesheets/color-palette/patterns";
@@ -55,26 +56,30 @@ _________________________________________________________ CJMTheme */
       @import "themesheets/objects/base/code";
 
 /* ____________________________________ ELEMENTS */
-    @import "themesheets/objects/elements/media"
+    @import "themesheets/objects/elements/media";
     @import "themesheets/objects/elements/entry";
     @import "themesheets/objects/elements/content";
-    @import "themesheets/objects/elements/comments"
+    @import "themesheets/objects/elements/comments";
     @import "themesheets/objects/elements/social";
     @import "themesheets/objects/elements/alignment";
     @import "themesheets/objects/elements/assistive-tech";
-    @import "themesheets/objects/elements/responsive-embeds";
+    @import "themesheets/objects/elements/responsive-embed";
 
   @import "themesheets/objects/widgets";
 
-  @import "themesheets/objects/modules/shadows";
   @import "themesheets/objects/modules/card";
 
 /* __________________________________________________ PAGES */
 
-  @import "themesheets/pages/global";
+@import "themesheets/pages/global";
 
-  @import "themesheets/pages/structure";
-    @import "themesheets/pages/structure/site-header";
+@import "themesheets/pages/structure";
+  @import "themesheets/pages/structure/site-header";
+  @import "themesheets/pages/structure/site-footer";
+
+
+
+
 
 
   @import "themesheets/objects/elements/responsive-structures";

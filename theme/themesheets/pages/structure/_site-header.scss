@@ -1,100 +1,104 @@
-
 #masthead {
     /* The container for the page-title group area */
     @include border-box;
     @include make-col;
-    z-index: 950;
-
-    box-shadow: $masthead-shadow;
-    background-image: $accent-color-gradient;
-
-    position: absolute;
-    top: 0;
-    left: 3vw;
+    z-index: 925;
+    position: fixed;
+    top: -10;
+    left: 0;
     bottom: 0;
-
     display: inline-flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: stretch;
     align-self: stretch;
-
+    align-items: flex-end;
+    justify-content: flex-end;
     height: 100%;
-    max-height: 100vh;
+    max-height: 95vh;
     width: 100%;
     max-width: 10vw;
-
     transition: all ease-in-out 0.5s;
     transition: all 0.5s;
-    padding: 3vh 15px;
-    overflow: hidden;
-}
+    overflow: visible;
+    border: 2px solid $yellow;
 
-.nameplate {
+    .nameplate {
+        position: absolute;
+        z-index: 930;
+        top: 0;
+        left: 3.25vw;
+        height: 100%;
+        max-height: 98vh;
+        width: 100%;
+        max-width: 7vw;
+        align-content: flex-end;
+        transition: 0.3s;
+        border: 2px solid $green;
 
-    padding-bottom: 5vh;
-    margin-left: 12rem;
-    width: 100%;
-    max-width: 100vh;
-    max-width: 6vw;
-    border: 2px solid $red;
-}
-        img {
-        margin: 3vh auto;
-        display: block;
-        width: 120px;
-        border: 8px solid $yellow;
-    }
-
-
-        #masthead .nameplate .social-links a {
-            font-size: 18px;
-            display: inline-block;
-            background: 0.212431;
-            color: $info-color;
-            line-height: 1;
-            padding: 8px 0;
-            margin-right: 4px;
-            border-radius: 50%;
-            text-align: center;
-            width: 36px;
-            height: 36px;
-            transition: 0.3s;
+        .the {
+            @include site-title;
+            position: absolute;
+            z-index: 1220;
+            top: 2vh;
+            left: 4.75vw;
+            bottom: -1.5vh;
+            font-size: 2.5vw;
+            text-transform: lowercase;
+            opacity: 0.75;
         }
 
-        #masthead .nameplate .social-links a:hover {
-            background: #149ddd;
-            color: #fff;
+        .site-title,
+        .site-title a {
+            @include site-title;
+            @include neumorphic-site-title;
+            position: absolute;
+            left: -1vh;
+            z-index: 1215;
             text-decoration: none;
+            font-size: 5.25vw;
+            text-align: bottom;
+
+            &:hover {
+                text-decoration: none;
+                color: shift-color($active-color, $active-percentage);
+            }
         }
 
-
-
-
-
-/* Style elements inside of the .site-header container */
-.nameplate { /* Container for site title and description */
-
-}
-
-.site-title,
-.site-title a,
-.site-title a:hover {
-    @include site-title;
-    position: absolute;
-    z-index: $z-index-site-title;
-    text-shadow: $shadow-title;
-    text-decoration: none;
-    font-size: 5.5vw;
-
-        :hover {
-        text-decoration: $link-decoration;
-        color: shift-color($active-color, $active-percentage);
+        .site-description {
+            @include site-description;
+            @include text-transform(lowercase);
+            position: absolute;
+            z-index: 1220;
+            font-size: 3.5vw;
+            height: 100%;
+            max-height: 100vh;
+        }
     }
 }
 
-.site-description {
-    @include site-description;
-    position: absolute;
-    font-size: 3.5vw;
+img {
+    margin: 3vh auto;
+    display: block;
+    width: 120px;
+    border: 8px solid $yellow;
+}
+
+nav .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: 0.212431;
+    color: $info-color;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#masthead .nameplate .social-links a:hover {
+    background: #149ddd;
+    color: #fff;
+    text-decoration: none;
 }

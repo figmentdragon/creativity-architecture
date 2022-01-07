@@ -1,0 +1,55 @@
+@mixin html-gradient {
+  background-image: radial-gradient(
+    circle at top left, $primary-color 56%, $secondary-color 15%, $accent-color 15%, $white
+  );
+}
+
+@mixin global-gradient($color) {
+    $diff: $alpha-from - $alpha-to;
+    background-image: linear-gradient(
+  90deg,
+  transparent,
+  rgba($white, 0.2) 5%,
+  rgba($accent-color, 0.3) 5%,
+  rgba($secondary-color, 0.4) 15%,
+  rgba($secondary-color, 0.5) 30%,
+  rgba($secondary-color, 0.6) 45%,
+  rgba($color, 0.7) 60%,
+  rgba($color, 0.8) 75%,
+  rgba($color, 0.9) 90%,
+  rgba($color, 1) 95%
+);
+}
+
+@mixin global-gradient($accent-color) {
+    $diff: $alpha-from - $alpha-to;
+    background-image: linear-gradient(
+    195deg,
+    transparent 20%,
+    rgba($secondary-color, $alpha-from - $diff * 0.981) 30%,
+    rgba($secondary-color, $alpha-from - $diff * 0.981) 40%,
+    rgba($primary-color, $alpha-from - $diff * 0.981) 50%,
+    rgba($primary-color, $alpha-from - $diff * 0.981) 60%,
+    rgba($primary-color, $alpha-from - $diff * 0.981) 70%,
+    rgba($accent-color, $alpha-from - $diff * 0.981) 80%,
+    rgba($accent-color, $alpha-from - $diff * 0.981) 85%,
+    rgba($accent-color, $alpha-from - $diff * 0.981) 90%,
+    rgba($accent-color, $alpha-from - $diff * 0.981) 95%
+    );
+}
+
+@mixin global-gradient($color: $secondary-color) {
+    $diff: $alpha-from - $alpha-to;
+    background-image: linear-gradient(
+    205deg,
+    rgba($white, 0.2) 5%,
+    rgba($accent-color, 0.3) 5%,
+    rgba($color, 0.4) 15%,
+    rgba($color, 0.5) 30%,
+    rgba($color, 0.6) 45%,
+    rgba($primary-color, 0.7) 60%,
+    rgba($primary-color, 0.8) 75%,
+    rgba($primary-color, 0.9) 90%,
+    rgba($primary-color, 1) 95%
+    );
+}

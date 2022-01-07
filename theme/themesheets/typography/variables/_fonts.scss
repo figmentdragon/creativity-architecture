@@ -19,20 +19,6 @@ $tertiary-font           : "Raleway", $body-font;
 
 
 /* ________________________________________________________ TEXTS & TITLES */
-  /* Color */
-  $author-color          : $accent-color;
-  $page-title-color      : $secondary-color;
-  $post-title-color      : $accent-color;
-  $body-text             : shade-color($primary-color, $text-percentage);
-  $btn-text-color        : shade-color($primary-color, 10%);
-  $caption-text-color    : shade-color($primary-color, $emphasis-percentage);
-  $entry-header-color    : shade-color($primary-color, 10%);
-  $footer-color          : shade-color($accent-color, 10%);
-  $nav-text-color        : shade-color($secondary-color, 10%);
-
-  $quote-text-color      : shade-color($primary-color, 10%);
-  $site-title-color      : $primary-color;
-  $text-muted-color      : color-mix(srgb, $accent-color 40%, $white);
 
   /* Font Family */
   $article-text-font     : "TELETYPE1945-1985", $body-font;

@@ -15,16 +15,17 @@ $footer-gradient2        : linear-gradient(
 $footer-gradient         : linear-gradient(
   90deg,
   transparent,
-  rgba($accent-color, 0.9) 15%,
-  rgba($accent-color, 0.85) 20%,
-  rgba($accent-color, 0.8) 25%,
-  rgba($accent-color, 0.7) 30%,
-  rgba($primary-color, 0.6) 35%,
-  rgba($primary-color, 0.55) 50%,
-  rgba($primary-color, 0.50) 65%,
-  rgba($primary-color, 0.45) 80%,
-  rgba($primary-color, .4) 95%
-);
+  rgba($primary-color, 0.10) 5%,
+  rgba($primary-color, 0.15) 10%,
+  rgba($primary-color, 0.20) 20%,
+  rgba($primary-color, 0.25) 35%,
+  rgba($primary-color, 0.30) 50%,
+  rgba($primary-color, 0.45) 65%,
+  rgba($primary-color, 0.60) 80%,
+  rgba($primary-color, .75) 90%,
+  rgba($primary-color, .9) 95%
+),
+    radial-gradient( circle at bottom right, $black, $primary-color, transparent );
 
 $nav-gradient            : linear-gradient(
   205deg,

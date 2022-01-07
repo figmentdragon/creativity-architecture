@@ -53,3 +53,40 @@ $theme-colors      : (
   "light"          : $light,
   "dark"           : $dark
 );
+
+
+$grays-rgb: (
+  gray-100-rgb: $gray-100-rgb,
+  gray-200-rgb: $gray-200-rgb,
+  gray-300-rgb: $gray-300-rgb,
+  gray-400-rgb: $gray-400-rgb,
+  gray-500-rgb: $gray-500-rgb,
+  gray-600-rgb: $gray-600-rgb,
+  gray-700-rgb: $gray-700-rgb,
+  gray-800-rgb: $gray-800-rgb,
+  gray-900-rgb: $gray-900-rgb
+);
+
+$colors-rgb: (
+  teal-rgb: $teal-rgb,
+  yellow-rgb: $yellow-rgb,
+  red-rgb: $red-rgb,
+  orange-rgb: $orange-rgb,
+  green-rgb: $green-rgb,
+  blue-rgb: $blue-rgb,
+  indigo-rgb: $indigo-rgb,
+  purple-rgb: $purple-rgb,
+  cyan-rgb: $cyan-rgb,
+  pink-rgb: $pink-rgb,
+);
+
+$theme-color-rgb:(
+primary-color-rgb:   $primary-color-rgb,
+secondary-color-rgb: $secondary-color-rgb,
+accent-color-rgb:    $accent-color-rgb,
+valid-color-rgb:         $valid-color-rgb,
+attention-color-rgb:         $attention-color-rgb,
+invalid-color-rgb:          $invalid-color-rgb,
+info-color-rgb:            $info-color-rgb,
+alert-color-rgb:    $alert-color-rgb
+);

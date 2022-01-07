@@ -2,6 +2,11 @@ var sass = require("sass");
 var Fiber = require("fibers");
 var fa = require("fontawesome");
 
+var result = sass.renderSync({file: scss_filename});
+import 'node_modules/sass/sass.js'
+import 'node_modules/sass/sass.dart.js'
+import 'node_modules/sass/sass.default.dart.js'
+
 sass.render({
   file: "input.scss",
   importer: function(url, prev, done) {
@@ -11,10 +16,6 @@ sass.render({
 }, function(err, result) {
   // ...
 });
-
-import 'node_modules/sass/sass.js'
-import 'node_modules/sass/sass.dart.js'
-import 'node_modules/sass/sass.default.dart.js'
 
 import 'node_modules/fontawesome/index.js'
 import 'node_modeuls/fontawesome/generate.js'

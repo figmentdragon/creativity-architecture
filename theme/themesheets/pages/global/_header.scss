@@ -1,19 +1,31 @@
-/*________________________________________________________________ HEADER */
-
-/* Style elements inside of the .site-header container */
-.nameplate,
-.site-header hgroup { /* Container for site title and description */
-  margin-left: 12rem;
-  width: 50%;
+@mixin header-container {
+    position: relative;
+    z-index: 900;
+    left: 2vw;
+    top: 1.8vh;
+    bottom: 0;
 }
 
-.site-title,
-.site-title a {
+@mixin neumorphic-text-shadow {
+    text-shadow: -.65rem .5rem .15rem rgba($active-color-rgb, 0.8),
+                .65rem -.5rem .15rem rgba($accent-color-rgb, 0.8);
 }
 
-.site-description {
-  /* This is the tagline */
-  margin-left: 8rem;
-  margin-right: 0;
-  width: 30rem;
+@mixin neumorphic-site-title {
+    &::before {
+        left: 0;
+        width: 100px;
+        height: 100px;
+        top: -150px;
+        z-index: 1225;
+        @include neumorphic-text-shadow;
+    }
+    &::after {
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        top: -200px;
+        @include neumorphic-text-shadow;
+    }
+
 }

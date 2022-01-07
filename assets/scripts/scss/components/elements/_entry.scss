@@ -94,11 +94,11 @@ h1.entry-title {
 	margin-top: $vertical-offset;
 	padding-top: $spacing-unit;
 	padding-bottom: calc(3 * $vertical-offset);
-	border-bottom: $separator-height solid $separator-border-color;
+	border-bottom: $border-width solid $border-color;
 }
 
 body:not(.single) .site-main > article:last-of-type .entry-footer {
-	border-bottom: $separator-height solid transparent;
+	border-bottom: $border-width solid transparent;
 }
 
 .single .site-main > article > .entry-footer {
@@ -106,8 +106,8 @@ body:not(.single) .site-main > article:last-of-type .entry-footer {
 	margin-bottom: calc(3.4 * $vertical-offset);
 	padding-bottom: 0;
 	padding-top: calc(0.8 * $vertical-offset);
-	border-top: 3px solid $separator-border-color;
-	border-bottom: $separator-height solid transparent;
+	border-top: 3px solid $border-color;
+	border-bottom: $border-width solid transparent;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	column-gap: calc(2 * $horizontal-offset);

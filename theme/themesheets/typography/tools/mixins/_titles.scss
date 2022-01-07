@@ -1,21 +1,20 @@
-
-
-
 @mixin site-title {
-    @include text-transform($text-transform: uppercase);
     @include title-shadow;
-    @include text-stroke($black);
+    @include text-stroke($black, $primary-color);
+    @include text-transform($text-transform: uppercase);
     font-family: 'Euphorigenic';
     font-weight: bolder;
     text-decoration: none;
-    color: $primary-color;
+
 }
 
 @mixin site-description {
     @include text-transform(lowercase);
+    @include text-stroke($black, $secondary-color);
     font-family: 'Enjoy Writing';
     font-weight: normal;
-    color:$accent-color;
+    color: $accent-color;
+    text-align: right;
 }
 
 @mixin page-title {

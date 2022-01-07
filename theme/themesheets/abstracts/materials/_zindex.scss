@@ -1,13 +1,15 @@
 /**
  * ## Z-Index
  =========================*/
-$z-index-html: 50;
+$z-index-html: 25;
 
-$z-index-body: 75;
-$z-index-page: 100;
-$z-index-main: 300;
+$z-index-body: 50;
+$z-index-page: 50;
+
+$z-index-main: 100;
 $z-index-main-container: 325;
 $z-index-primary-container: 350;
+
 $z-index-article: 400;
 $z-index-content: 425;
 $z-index-post-title: 450;
@@ -30,11 +32,11 @@ $z-index-site-header: 925;
 $z-index-masthead: 950;
 $z-index-nameplate: 975;
 
-$z-index-site-description: 1200;
-$z-index-site-title: 1215;
+$z-index-main-navigation: 1000;
+$z-index-nav: 1025;
 
-$z-index-nav: 900;
-$z-index-main-navigation: 950;
+$z-index-site-title: 1200;
+$z-index-site-description: 1215;
 
 $z-index-dropdown: 1200;
 $z-index-sticky: 1220;
