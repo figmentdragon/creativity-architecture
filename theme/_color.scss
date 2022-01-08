@@ -59,27 +59,22 @@ ________________________________________________________ CJMT colorpalette */
     // scss-docs-end theme-color-variables
 
 /*! ___________________________________________________ UTILITY COLORS */
-/* ____________________________________ COLOR MIXES */
-$muted-color        : tint-color( $accent-color, $muted-percentage );
-$hover-color        : tint-color( $secondary-color, $hover-percentage );
-$focus-color        : shade-color( $primary-color, $focus-percentage );
-
-$body-color    : shade-color( $text-color, $text-percentage );
-$text-muted-color   : color-mix(srgb, $body-color $muted-percentage, $muted-color );
-
-$btn-color     : shade-color( $primary-color, $button-percentage );
-
-$entry-color   : shade-color( $title-color, $text-percentage );
-$site-title-color   : shade-color( $title-color, $title-percentage );
-$page-title-color   : mix-color( $secondary-color $title-percentage, $title-color );
-$post-title-color   : mix-color( $accent-color $title-percentage, $title-color );
-$lead-color    : tint-color( $title-color, $muted-percentage );
-
-$footer-color  : shade-color( $accent-color, $text-percentage );
-$quote-color   : tint-color( $footer-color, $focus-percentage );
-$caption-color : shade-color( $body-color, $focus-percentage );
-$nav-color     : shade-color( $link-color, $active-percentage );
-$code-color    : shade-color( $hot-pink, $text-percentage );
+/*! ____________________________________ COLOR MIXES */
+    $muted-color      : tint-color( $accent-color, $muted-percentage );
+    $hover-color      : tint-color( $secondary-color, $hover-percentage );
+    $focus-color      : shade-color( $primary-color, $focus-percentage );
+    $body-color       : shade-color( $text-color, $text-percentage );
+    $btn-color        : shade-color( $primary-color, $button-percentage );
+    $entry-color      : shade-color( $title-color, $text-percentage );
+    $site-title-color : shade-color( $title-color, $title-percentage );
+    $page-title-color : mix-color( $secondary-color $title-percentage, $title-color );
+    $post-title-color : mix-color( $accent-color $title-percentage, $title-color );
+    $lead-color       : tint-color( $title-color, $muted-percentage );
+    $footer-color     : shade-color( $accent-color, $text-percentage );
+    $quote-color      : tint-color( $footer-color, $focus-percentage );
+    $caption-color    : shade-color( $body-color, $focus-percentage );
+    $nav-color        : shade-color( $link-color, $active-percentage );
+    $code-color       : shade-color( $hot-pink, $text-percentage );
 
 
 $text-muted:        $gray-400 !default;
@@ -146,3 +141,8 @@ $dark:              $gray-900 !default;
 
   /*! Lists */
   $list-group-color    : $gray-900;
+
+
+  @import "color-palette/color/contrast-color";
+  @import "color-palette/rgba";
+  @import "color-palette/"

@@ -24,12 +24,11 @@ _________________________________________________________ CJMTheme */
 /* __________________________________________________ THEME */
 
   @import "themesheets/abstracts/tools/change-percentage";
-  @import "themesheets/color-palette/color-palette";
-  @import "themesheets/color-palette/variables/rgba";
-  @import "themesheets/color-palette/color-maps";
+  @import "docs/visual-branding/color-palette";
+  @import "color";
   @import "properties";
   @import "themesheets/color-palette/patterns";
-  @import "themesheets/typesetting";
+  @import "typesetting";
 
   @import "themesheets/abstracts/materials/zindex";
   @import "themesheets/abstracts/materials/escaped-characters";
