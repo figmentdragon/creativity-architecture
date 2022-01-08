@@ -1,13 +1,51 @@
-/* ______________________________________________________ Link */
-/* Style anchor elements. */
-$link-active-color            : shade-color( $active-color, $active-percentage);
-$link-decoration              : bold;
-$link-text-hover              : $link-hover-color;
-$link-hover-color-decoration  : underline, bold;
+/* ____________________________________ NAV */
+$nav-link-padding-y               : .5rem;
+$nav-link-padding-x               : 1rem;
+$nav-link-font-size               : null;
+$nav-link-font-weight             : null;
+$nav-link-color                   : $link-color;
+$nav-link-hover-color             : $link-hover-color;
+$nav-link-transition              : color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+$nav-link-inactive-color          : $inactive-link;
 
-$link-text-visited            : $link-visited-color;
-$link-visited-decoration      : underline;
-$link-text-visited-hover      : $link-visited-hover-color;
+$nav-tabs-border-color            : $tabs-border-color;
+$nav-tabs-border-width            : $border-width-sm;
+$nav-tabs-border-radius           : $border-radius-md;
+$nav-tabs-link-hover-border-color : $tabs-border-hover-color;
+$nav-tabs-link-active-color       : $nav-link-color;
+$nav-tabs-link-active-bg          : $tabs-bg-color;
+$nav-tabs-link-active-border-color: $tabs-border-color;
 
-$stretched-link-pseudo-element: after;
-$stretched-link-z-index       : 1;
+    /* Navbar */
+    $navbar-padding-y                 : $offset * .5;
+    $navbar-padding-x                 : $offset;
+
+    $navbar-nav-link-padding-x        : divide($offset, 2);
+
+    $navbar-brand-font-size           : $font-size-lg;
+
+    $nav-link-height                  : $font-size-base * $line-height-base + $nav-link-padding-x * 2;
+    $navbar-brand-height              : $navbar-brand-font-size * $line-height-base;
+    $navbar-brand-padding-y           : ($nav-link-height - $navbar-brand-height) * .5;
+    $navbar-brand-margin-end          : 1rem;
+
+    $navbar-toggler-padding-y         : .25rem;
+    $navbar-toggler-padding-x         : .75rem;
+    $navbar-toggler-font-size         : $font-size-lg;
+    $navbar-toggler-border-radius     : $btn-border-radius;
+    $navbar-toggler-focus-width       : $btn-focus-width;
+    $navbar-toggler-transition        : box-shadow .15s ease-in-out;
+
+
+  $navbar-dark-color              : $navbar-dark-text;
+  $navbar-dark-hover              : shift-color($navbar-dark-color, $hover-percentage);
+  $navbar-dark-inactive-text      : tint-color( $navbar-dark-color, $inactive-percentage );
+$navbar-dark-toggler-icon-bg      : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>")
+  $navbar-dark-toggler-border     : $navbar-dark-color;
+
+  $navbar-light-color             : $navbar-light-text;
+  $navbar-light-hover             : shift-color($navbar-light-color, $hover-percentage);
+  $navbar-light-inactive-text     : tint-color($navbar-light-color, $inactive-percentage);
+$navbar-light-toggler-icon-bg     : url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+
+  $navbar-light-toggler-border    : $navbar-light-color;

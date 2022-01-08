@@ -31,8 +31,8 @@
     color: material-color($dk, "900");
   }
 
-  &.disabled,
-  &:disabled {
+  &.inactive,
+  &:inactive {
     background: material-color($dk, "200");
     color: material-color($dk, "500");
     cursor: not-allowed;

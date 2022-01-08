@@ -1,0 +1,12 @@
+a,
+a:link {
+  outline: none !important;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $link-color;
+
+    & :hover {
+      text-decoration: underline, bold;
+      color: $link-hover-color;
+    }
+}

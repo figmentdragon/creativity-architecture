@@ -1,0 +1,22 @@
+//
+// Emphasis
+//
+
+small,
+.small {
+  font-size: $font-size-sm;
+  font-weight: normal;
+}
+
+small #copyright {
+  font-size: $font-size-sm;
+  font-family: $footer-text-font;
+  font-weight: bold;
+
+}
+
+mark,
+.mark {
+  padding: .2em;
+  background-color: $alert-bg;
+}

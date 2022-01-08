@@ -20,9 +20,9 @@ $active-bg-tint-color-percentage    : 40%;
 $active-border-shade-border         : 35%;
 $active-hover-change-percentage     : 15%;
 
-$disabled-text-shade-percentage     : 40%;
-$disabled-bg-tint-percentage        : 50%;
-$disabled-border-shade-border       : 45%;
+$inactive-text-shade-percentage     : 40%;
+$inactive-bg-tint-percentage        : 50%;
+$inactive-border-shade-border       : 45%;
 
 $link-shade-percentage              : 10%;
 $link-hover-shade-percentage        : 15%;
@@ -34,12 +34,12 @@ $muted-tint-percentage              : 20%;
 $hover-shade-percentage             : 20%;
 $focus-shade-percentage             : 35%;
 
-$btn-disabled-opacity               : .45;
+$btn-inactive-opacity               : .45;
 
 $input-btn-focus-color-opacity      : .25;
 $input-btn-focus-blur               : 0;
 
-$btn-disabled-opacity               : .65;
+$btn-inactive-opacity               : .65;
 $btn-hover-bg-shade-percentage      : 15%;
 $btn-hover-bg-tint-percentage       : 20%;
 $btn-hover-border-shade-percentage  : 35%;
@@ -58,8 +58,8 @@ $active-text-hover-color            : shift-color($active-text-color, $active-ho
 $active-border-hover-color          : shift-color($active-text-color, $active-hover-change-percentage);
 $active-bg-hover-color              : shift-color($active-bg-color, $active-hover-change-percentage);
 
-$disabled-bg-color           : tint-color($disabled-text-color, $disabled-bg-tint-percentage);
-$disabled-border-color       : shade($disabled-text-color, $disabled-border-shade-border);
+$inactive-bg-color           : tint-color($inactive-text-color, $inactive-bg-tint-percentage);
+$inactive-border-color       : shade($inactive-text-color, $inactive-border-shade-border);
 
 /* ________________________________________________ Components */
 
@@ -69,7 +69,7 @@ $active-bg-color:       tint($active-text-color, active-bg-tint-percentage);
 $active-border-color:   shade($active-text-color, $active-border-shade-border);
 
 $link-text-hover-color              : shift-color($nav-link-color, $link-shade-percentage);
-$link-text-visited-color:           shade-color($link-active-color, $link-visited-shade-percentage);
+$link-text-visited-color:           shade-color($active-link, $link-visited-shade-percentage);
 $link-text-visited-hover: shade-color($link-text-visited-color, $link-hover-shade-percentage);
 
 /* Nav Utilities */
@@ -96,8 +96,8 @@ $input-border-color: shade-color($input-text-color, $active-border-shade-border)
 $input-focus-border-color           : tint-color($input-border-color, $focus-shade-percentage);
 
 $input-bg-color: $body-bg-color;
-$input-disabled-bg-color:   tint-color($input-text-color, $disabled-bg-tint-percentage);
-$input-disabled-border-color: shade-color($input-text-color, $disabled-border-shade-border);
+$input-inactive-bg-color:   tint-color($input-text-color, $inactive-bg-tint-percentage);
+$input-inactive-border-color: shade-color($input-text-color, $inactive-border-shade-border);
 
 $input-text-focus-color      : shade-color($input-text-color, $focus-shade-percentage);
 $input-focus-bg-color: shade-color($input-bg-color, $focus-shade-percentage);
@@ -115,4 +115,4 @@ $list-group-border-color     : shade-color($list-group-text-color, $border-shade
 $list-group-hover-bg:       shift-color($list-group-bg-color, $hover-shade-percentage);
 $list-group-active-bg-color: shift-color($list-group-text-color, $active-hover-change-percentage);
 
-$list-group-disabled-bg-color: $disabled-border-color;
+$list-group-inactive-bg-color: $inactive-border-color;

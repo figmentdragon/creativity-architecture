@@ -1,29 +1,25 @@
-$active-percentage           : 30%;
+
 $background-percentage       : 10%;
-$border-percentage           : 45%;
-$hover-percentage            : 15%;
-$emphasis-percentage         : 35%;
-$text-percentage             : 10%;
+$text-percentage             : 15%;
+$thumbnail-percentage        : 20%;
+$border-percentage           : 25%;
+$link-percentage             : 30%;
+$button-percentage           : 35%;
+$title-percentage            : 40%;
+$shadow-percentage           : 49%;
 
+$active-percentage           : 50%;
+$hover-percentage            : 60%;
+$muted-percentage            : 70%;
+$focus-percentage            : 80%;
+$visited-percentage          : 90%;
+$inactive-percentage         : 95%;
 
-$shadow-percentage           : 35%;
-$button-percentage           : 30%;
-$inset-percentage            : 70%;
-
-$thumbnail-percentage        : 15%;
-
-$muted-percentage            : 20%;
-$focus-percentage            : 35%;
-$title-percentage            : 30%;
-
-$disabled-percentage         : 40%;
-$visited-percentage          : 40%;
-
-$btn-disabled-opacity        : .45;
-$input-btn-focus-opacity     : .25;
 $input-btn-focus-blur        : 10%;
-$btn-hover-bg-percentage     : 20%;
-$btn-hover-border-percentage : 40%;
 
+$btn-hover-border-percentage : 40%;
 $btn-bg-percentage           : 50%;
 $btn-border-percentage       : 65%;
+
+$btn-inactive-opacity        : .45;
+$input-btn-focus-opacity     : .25;

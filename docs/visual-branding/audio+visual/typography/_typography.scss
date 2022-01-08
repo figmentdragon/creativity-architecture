@@ -1,0 +1,127 @@
+@import 'fonts/cjmt-font-family';
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$cjmt-font-sans-serif: Euphorigenic, 'Hand Typewriter', 'Enjoy Writing', Avdira, Wanda 'Glass Antiqua', 'Love Ya Likes A Sister', Pompiere, 'Hadley';
+$font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+// stylelint-enable value-keyword-case
+$cjmt-font-family: $cjmt-font-sans-serif;
+$code-font-family: 'Courier New';
+
+$cjmt-body-font-family: 'Avdira';
+$cjmt-site-font-family: 'Euphorigenic';
+$cjmt-page-font-family: 'Hand Typewriter';
+$cjmt-post-font-family: 'Enjoy Writing';
+$cjmt-nav-font-family: 'Wanda';
+$cjmt-btn-font-family: 'Hadley';
+$cjmt-lead-font-family: 'Pompiere';
+$cjmt-emphasis-font-family: 'Glass Antiqua';
+$cjmt-footer-font-family: 'Love Ya Like A Sister';
+
+$body-bg: $cjmt-gray-800;
+$body-text: $cjmt-gray-200;
+$body-text-align: null;
+
+$font-size-root:              null !default;
+$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm:                $font-size-base * $sm !default;
+$font-size-lg:                $font-size-base * $lg !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;
+$line-height-sm:              1.25 !default;
+$line-height-lg:              2 !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+// scss-docs-end font-variables
+
+// scss-docs-start font-sizes
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+) !default;
+// scss-docs-end font-sizes
+
+// scss-docs-start headings-variables
+$headings-margin-bottom:      $offset * .5 !default;
+$headings-font-family:        $cjmt-post-font-family;
+$headings-font-style:         null !default;
+$headings-font-weight:        500 !default;
+$headings-line-height:        1.2 !default;
+$headings-color:              $cjmt-accent;
+// scss-docs-end headings-variables
+
+// scss-docs-start display-headings
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+) !default;
+
+$display-font-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+// scss-docs-end display-headings
+
+// scss-docs-start type-variables
+$lead-font-size:              $font-size-base * $lg !default;
+$lead-font-weight:            300 !default;
+
+$small-font-size:             .875em !default;
+
+$sub-sup-font-size:           .75em !default;
+
+$text-muted:                  $cjmt-gray-600 !default;
+
+$initialism-font-size:        $small-font-size !default;
+
+$blockquote-margin-y:         $offset-y !default;
+$blockquote-font-size:        $font-size-base * $lg !default;
+$blockquote-footer-color:     $cjmt-accent !default;
+$blockquote-footer-font-size: $small-font-size !default;
+$blockquote-font-family:      $cjmt-lead-font-family;
+$blockquote-font-weight:      $font-weight-bold;
+$blockquote-credit-font-family: $cjmt-emphasis-font-family;
+$blockquote-color:            $cjmt-primary;
+
+$hr-margin-y:                 $offset-y !default;
+$hr-color:                    inherit !default;
+$hr-height:                   $border-width !default;
+$hr-opacity:                  .25 !default;
+
+$legend-margin-bottom:        .5rem !default;
+$legend-font-size:            1.5rem !default;
+$legend-font-weight:          $font-weight-bold !default;
+
+$mark-padding:                .2em !default;
+
+$dt-font-weight:              $font-weight-bold !default;
+
+$nested-kbd-font-weight:      $font-weight-bold !default;
+
+$list-inline-padding:         .5rem !default;
+
+$mark-bg:                     #fcf8e3 !default;
+// scss-docs-end type-variables

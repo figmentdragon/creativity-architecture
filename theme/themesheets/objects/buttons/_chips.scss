@@ -29,8 +29,8 @@
     }
   }
 
-  &.disabled,
-  &:disabled {
+  &.inactive,
+  &:inactive {
     background: material-color($dk, "200");
     color: material-color($dk, "800");
     cursor: default;

@@ -1,0 +1,73 @@
+/* TYPESETTING __________________________________________________
+Site Name                     : CJMT
+Author                        : CJ Montes-Termini
+
+Stylesheet                    : CJMT Brand Typography
+
+	= TOC =
+		(1) @FONTFACE (In Your Face)
+		(2) Font Stacks
+		(3) Font Variables
+			- [] Font Families
+			- [] Font Colors
+				- Shadows
+				- Gradients
+				- Stroke Outline
+		(4) Text Level CSS Selectors
+			- [] Text Level
+			- [] Headings
+			- [] Links
+		(5) Text Level HTML Elements
+		(6) Responsive Settings
+
+ __________________________________________________________ TYPESETTING */
+  /* __________________________________  */
+
+  /* __________________________________ @Import */
+
+  /* __________________________________ Variables */
+    /* Fonts */
+    @import "style/type/variables/font-face";
+    @import "style/type/variables/font-stacks";
+    @import "style/type/variables/font-properties";
+
+    /* Text Elements */
+    @import "style/type/variables/type-variables";
+    @import "style/type/variables/headings-variables";
+    @import "style/type/variables/code";
+
+  /* __________________________________ Text Elements */
+  /* Titles */
+  @import "style/type/legend";
+
+    @import "style/type/lead-entry";
+
+  /* Quotes */
+  @import "style/type/blockquote";
+
+  /* Code */
+  @import "style/type/code";
+
+  @import "style/type/hr";
+
+@mixin site-title {
+  font-family: "Euphorigenic";
+  font-weight: bolder;
+  text-decoration: $link-decoration;
+  text-transform: uppercase;
+
+  & a {
+    text-decoration: $link-decoration;
+     a:hover {
+       text-decoration: $link-hover-decoration;
+     }
+  }
+}
+
+@mixin site-description {
+  font-family: $tertiary-font;
+  color: $body-text-color;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: lowercase;
+}

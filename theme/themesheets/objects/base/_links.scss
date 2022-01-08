@@ -6,7 +6,7 @@ a {
 
   :active {
     text-decoration: underline;
-    color: $link-active-color;
+    color: $active-link;
 
     & :hover {
       text-decoration: underline, bold;
@@ -19,8 +19,8 @@ a {
     color: $link-hover-color;
   }
 
-  :disabled {
-    color: $disabled-text;
+  :inactive {
+    color: $inactive-text;
     text-decoration: none;
 
   }

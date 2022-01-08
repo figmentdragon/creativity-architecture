@@ -87,9 +87,6 @@ $color-contrast-light            : $light-contrast;
       'xxl'                      : $xxl
     );
 
-  /* Base Offset */
-
-
   /* Block Spacing */
   $block-spacing                 : 1.5rem;
 
@@ -134,33 +131,7 @@ $color-contrast-light            : $light-contrast;
   $animation-speed: 250ms;
   $animation: ease-in-out;
 
-/* _____________________________________ LINK */
-  $disabled-text                 : color-mix(srgb, $secondary-color $disabled-percentage, $disabled-color);
-
-  $link-active-color            : shade-color( $active-color, $active-percentage);
-  $link-hover-color              : shift-color($link-active-color, $hover-percentage);
-  $link-hover-decoration         : underline, bold;
-  $link-focus-color              : tint-color($link-active-color, $focus-percentage);
-  $link-visited-color            : shade-color($link-active-color, $visited-percentage);
-  $link-visited-hover-color      : shade-color($link-active-color, $visited-percentage);
-
-  @import "themesheets/abstracts/materials/links";
-
-
-
-  $nav-link-hover                : shade-color($nav-link-color, $hover-percentage);
-  $gradient-tabs-bg              : linear-gradient(320deg, transparent, rgba($white, .10) 20%, rgba($accent-color, .20) 35%, rgba($accent-color, .30) 50%, rgba($accent-color, .40) 65%);
-
-  $tabs-hover-border             : shade-color($border-color, $hover-percentage);
-
-  $navbar-dark-hover             : shift-color($navbar-dark-text, $hover-percentage);
-  $navbar-dark-disabled-text     : color-mix(srgb $navbar-dark-text $disabled-percentage, $disabled-color);
-  $navbar-dark-toggler-border    : $navbar-dark-text;
-
-  $navbar-light-hover            : shift-color($navbar-light-text, $hover-percentage);
-  $navbar-light-disabled-text    : color-mix(srgb $navbar-light-text $disabled-percentage, $disabled-color);
-  $navbar-light-toggler-border   : $navbar-dark-text;
-
+/* ________________________________________________________ LINK */
 
 
 /* ____________________________________________ Buttons + Form */
@@ -169,8 +140,8 @@ $input-text-color                : shade-color($primary-color, 50%);
 $input-bg-color                  : tint-color($primary-color, 35%);
 $input-border-color              : shade-color($primary-color, $border-percentage);
 
-$input-disabled-bg-color         : color-mix($input-text-color $disabled-percentage, $disabled-color);
-$input-disabled-border-color     : color-mix($input-text-color $disabled-percentage, $disabled-color);
+$input-inactive-bg-color         : color-mix($input-text-color $inactive-percentage, $inactive-color);
+$input-inactive-border-color     : color-mix($input-text-color $inactive-percentage, $inactive-color);
 
 $input-text-focus-color          : shade-color($input-text-color, $focus-percentage);
 $input-focus-bg-color            : shade-color($input-bg-color, $focus-percentage);
@@ -191,4 +162,4 @@ $list-group-bg-color             : tint-color($list-group-text-color, $backgroun
 $list-group-border-color         : shade-color($list-group-text-color, $border-percentage);
 $list-group-hover-bg             : shift-color($list-group-bg-color, $hover-percentage);
 $list-group-bg-color             : shift-color($list-group-text-color, $hover-percentage);
-$list-group-disabled-bg-color    : color-mix($list-group-bg-color $disabled-percentage, $disabled-color);
+$list-group-inactive-bg-color    : color-mix($list-group-bg-color $inactive-percentage, $inactive-color);

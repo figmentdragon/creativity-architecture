@@ -1,0 +1,148 @@
+/*! CJMT colorpalette _____________________________________
+ *    Theme/Brand Name            : CJMT
+ *    Author                      : CJMT
+ *
+ *    Stylesheet                  : CJMT Brand Stylesheet
+ *
+ *      = TOC =
+ *      [] Color Palette
+ *        (1) Color Variables
+ *        (2) Theme Colors
+ *        (3) Utilities Colors
+ *      [] Properties
+ *      [] Utilities
+________________________________________________________ CJMT colorpalette */
+
+/*! ___________________________________________________ VARIABLE COLORS */
+/*! ____________________________________ BASE COLOR */
+    // scss-docs-start gray-color-variables
+    $white:    #FAFAFA !default;
+    $gray-100: #F5F5F5 !default;
+    $gray-200: #EDEDED !default;
+    $gray-300: #DBDBDB !default;
+    $gray-400: #B5B5B5 !default;
+    $gray-500: #7A7A7A !default;
+    $gray-600: #4A4A4A !default;
+    $gray-700: #363636 !default;
+    $gray-800: #242424 !default;
+    $gray-900: #121212 !default;
+    $black:    #0A0A0A !default;
+    // scss-docs-end gray-color-variables
+
+    // scss-docs-start color-variables
+    $blue:    #485FC7 !default;
+    $indigo:  #6610f2 !default;
+    $purple:  #B86BFF !default;
+    $pink:    #d63384 !default;
+    $red:     #F14668 !default;
+    $orange:  #FF470F !default;
+    $yellow:  #FFE08A !default;
+    $green:   #48C78E !default;
+    $teal:    #00D1B2 !default;
+    $cyan:    #3E8ED0 !default;
+    $gray:    $gray-600 !default;
+    // scss-docs-end color-variables
+
+/*! ____________________________________ CUSTOM COLOR */
+@import "color-palette/custom-color";
+
+/*! ____________________________________ THEME COLOR */
+    // scss-docs-start theme-color-variables
+    $primary-color:       $cyan !default;
+    $secondary-color:     $yellow !default;
+    $accent-color:        $silver !default;
+    $valid-color:         $green !default;
+    $info-color:          $blue !default;
+    $attention-color:     $orange !default;
+    $invalid-color:       $red !default;
+    $alert-color:         $pink !default;
+    // scss-docs-end theme-color-variables
+
+/*! ___________________________________________________ UTILITY COLORS */
+/* ____________________________________ COLOR MIXES */
+$muted-color        : tint-color( $accent-color, $muted-percentage );
+$hover-color        : tint-color( $secondary-color, $hover-percentage );
+$focus-color        : shade-color( $primary-color, $focus-percentage );
+
+$body-color    : shade-color( $text-color, $text-percentage );
+$text-muted-color   : color-mix(srgb, $body-color $muted-percentage, $muted-color );
+
+$btn-color     : shade-color( $primary-color, $button-percentage );
+
+$entry-color   : shade-color( $title-color, $text-percentage );
+$site-title-color   : shade-color( $title-color, $title-percentage );
+$page-title-color   : mix-color( $secondary-color $title-percentage, $title-color );
+$post-title-color   : mix-color( $accent-color $title-percentage, $title-color );
+$lead-color    : tint-color( $title-color, $muted-percentage );
+
+$footer-color  : shade-color( $accent-color, $text-percentage );
+$quote-color   : tint-color( $footer-color, $focus-percentage );
+$caption-color : shade-color( $body-color, $focus-percentage );
+$nav-color     : shade-color( $link-color, $active-percentage );
+$code-color    : shade-color( $hot-pink, $text-percentage );
+
+
+$text-muted:        $gray-400 !default;
+$text:              $gray-200 !default;
+$body:              $gray-800 !default;
+$light:             $gray-100 !default;
+$dark:              $gray-900 !default;
+
+/* ____________________________________ INPUT */
+    $input:               $gray-500 !default;
+    $input-bg:            $gray-100 !default;
+    $input-border:        $gray-900 !default;
+    $input-focus:         $gray-800 !default;
+    $input-focus-bg:      $white !default;
+    $input-focus-border:  $gray-100 !default;
+
+
+
+
+ /*! ___________________________________________________ UTILITY */
+
+
+
+  $visited-color  : shade-color( $accent-color, $visited-percentage);
+
+
+
+  $body-bg-color            : tint-color($secondary-color, $background-percentage);
+  $page-bg-color            : tint-color($primary-color, $background-percentage);
+  $main-bg-color            : tint-color($accent-color, $background-percentage);
+
+/*! ____________________________________ TYPOGRAPHY */
+
+
+/*! ____________________________________ FOUNDATION */
+  /*! Background */
+  $primary-bg               : tint-color($primary-color, $background-percentage);
+  $secondary-bg             : tint-color($secondary-color, $background-percentage);
+  $accent-bg                : tint-color($accent-color, $background-percentage);
+  $valid-bg                 : tint-color($valid-color, $background-percentage);
+  $alert-bg                 : tint-color($alert-color, $background-percentage);
+  $invalid-bg               : tint-color($invalid-color, $background-percentage);
+  $attention-bg             : tint-color($attention-color, $background-percentage);
+  $info-bg                  :tint-color($info-color, $background-percentage);
+
+  /*! Borders */
+  $caption-border-color     : shade-color($primary-color, $border-percentage);
+
+
+
+/*! Nav */
+  $nav-link-color    : $active-link;
+  $tabs-bg-color      : $gradient-tabs-bg : linear-gradient(320deg, transparent, rgba($white, .10) 20%, rgba($accent-color, .20) 35%, rgba($accent-color, .30) 50%, rgba($accent-color, .40) 65%);
+  $tabs-border-color : shade-color($nav-link-color, $border-percentage);
+
+  $tabs-border-color : shade-color($nav-color, $hover-percentage);
+  $tabs-border-hover-color  : shade-color($nav-border-color, $hover-percentage);
+
+    // Navbar
+    $navbar-dark-text            : mix-color($accent-color $active-percentage, $link-color);
+    $navbar-dark-toggler-border  : $navbar-dark-text;
+    $navbar-light-text           : mix-color($primary-color $active-percentage, $link-color);
+    $navbar-light-toggler-border : $navbar-light-text;
+
+  /*! Lists */
+  $list-group-color    : $gray-900;

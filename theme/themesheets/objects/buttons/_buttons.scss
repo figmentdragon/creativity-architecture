@@ -94,8 +94,8 @@
     }
   }
 
-  &.disabled,
-  &:disabled {
+  &.inactive,
+  &:inactive {
     background: material-color($dk, "200");
     color: material-color($dk, "800");
     cursor: not-allowed;
@@ -198,8 +198,8 @@
       }
     }
 
-    &.disabled,
-    &:disabled {
+    &.inactive,
+    &:inactive {
       background: transparent;
       outline-color: material-color($dk, "300");
       color: material-color($dk, "800");
@@ -283,8 +283,8 @@
       }
     }
 
-    &.disabled,
-    &:disabled {
+    &.inactive,
+    &:inactive {
       background: transparent;
       color: material-color($dk, "800");
       cursor: not-allowed;
