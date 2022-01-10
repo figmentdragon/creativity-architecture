@@ -169,7 +169,7 @@
 
   &.inactive,
   &:inactive {
-    color: $dropdown-link-inactive-color;
+    color: $dropdown-link-inactive-link;
     pointer-events: none;
     background-color: transparent;
     // Remove CSS gradients if they're enabled
@@ -222,7 +222,7 @@
 
     &.inactive,
     &:inactive {
-      color: $dropdown-dark-link-inactive-color;
+      color: $dropdown-dark-link-inactive-link;
     }
   }
 

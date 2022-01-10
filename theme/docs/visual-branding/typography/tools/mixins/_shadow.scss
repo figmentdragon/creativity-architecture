@@ -1,7 +1,20 @@
 @mixin title-shadow {
-    text-shadow: $title-shadow;
+    text-shadow: $shadow-title;
 }
 
 @mixin site-title-shadow {
-    text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+    text-shadow: inset 6.31px -6.31px 10px $secondary-color, inset -6.31px 6.31px 10px $accent-color-gradient;
+    @include text-stroke($black, $secondary-color);
+}
+
+@mixin title-shadow-inset {
+    background: $accent-color;
+    color: transparent;
+    text-shadow: 3.75px 3.25px 3.5px rgba(transparent, 0.95),
+                3.25px 3.5px 3px rgba($secondary-color-rgb, 0.95),
+                3.5px  3px   3.75px rgba($primary-color-rgb, 0.95),
+                3px 3.75px 3.25px rgba($secondary-color-rgb, 0.95), ;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
 }

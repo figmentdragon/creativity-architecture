@@ -1,28 +1,32 @@
 /* Fonts */
-@import "fonts/font-face";
-@import "variables/font-stacks";
-@import "variables/fonts";
+
 
 /* Variables */
-$body-text-color    : shade-color($body-text-color, $active-percentage);
-$text-muted-color   : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
-$btn-text-color        : shade-color($primary-color, 10%);
-$entry-header-color    : shade-color($primary-color, 10%);
+$body-text-color                 : shade-color($primary-color, $text-percentage);
 
-$headings-text-color      : mix-color($primary-color $title-percentage, $body-text-color);
-$site-title-color   : shade-color($primary-color, $title-percentage);
-$page-title-color   : shade-color($secondary-color, $title-percentage);
-$post-title-color   : $headings-text-color;
-$footer-text-color  : $accent-color;
-$quote-text-color   : shade-color($accent-color, $focus-percentage);
-$lead-text-color    : shade-color($primary-color, $muted-percentage);
-$caption-text-color : shade-color($body-text-color, $focus-percentage);
-$nav-text-color     : shade-color($secondary-color, 10%);
+$body-text-align                 : null;
+$text-margin-bottom              : $offset;
+$text-muted-color                : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
+
+$btn-text-color        : shade-color($button-color, 10%);
+$entry-header-color    : shade-color($entry-color, 10%);
+$headings-text-color      : mix-color($title-color $title-percentage, $body-text-color);
+$site-title-color   : shade-color($site-color, $title-percentage);
+$page-title-color   : shade-color($page-color, $title-percentage);
+$post-title-color   : $post-color;
+$footer-text-color  : $footer-color ;
+$quote-text-color   : shade-color($quote-color, $focus-percentage);
+$lead-text-color    : shade-color($lead-color, $muted-percentage);
+$caption-text-color : shade-color($caption-color, $focus-percentage);
+$nav-text-color     : shade-color($nav-color, $active-percentage);
 $code-text-color    : shade-color($hot-pink, $focus-percentage);
 
 
-@import "variables/font-stacks";
-@import "variables/fonts";
+@import "fonts/font-face";
+@import "fonts/font-stacks";
+@import "fonts/font-variables";
+@import "fonts/font-properties";
+
 @import "variables/base-typography";
 @import "variables/headings";
 @import "variables/display";
@@ -31,11 +35,6 @@ $code-text-color    : shade-color($hot-pink, $focus-percentage);
 @import "variables/quote";
 @import "variables/type-variables";
 @import "variables/code";
-
-$shadow-text        : shade-color($body-text-color, $active-percentage);
-$shadow-title       : shade-color($purple, $active-percentage);
-$text-shadow        : 0.75rem 0.25rem 0.10rem $shadow-text;
-$title-shadow       : -0.65rem 0.5rem 0.15rem $shadow-text, -0.65rem -0.5rem 0.25rem $shadow-title;
 
 @import "tools/mixins/font-size";
 @import "tools/mixins/footer";
@@ -51,200 +50,15 @@ $title-shadow       : -0.65rem 0.5rem 0.15rem $shadow-text, -0.65rem -0.5rem 0.2
 @import "tools/helpers/stretched-link";
 @import "tools/helpers/text-truncation";
 
-@import "text-elements/titles";
-@import "text-elements/blockquote";
+@import "text-elements/base";
+@import "text-elements/type";
+@import "text-elements/quote";
+@import "text-elements/emphasis";
+@import "text-elements/headings";
+@import "text-elements/lists";
+@import "text-elements/links";
+@import "text-elements/input";
+@import "text-elements/form-elements";
+@import "text-elements/table";
 @import "text-elements/code";
-
-p {
-  margin-bottom: $offset;
-}
-
-// Text Styles
-em { font-style: italic; }
-strong { font-weight: bold; }
-.uppercase { text-transform: uppercase; }
-
-
-a,
-a:link {
-  outline: none !important;
-  font-weight: bold;
-  text-decoration: underline;
-  color: $active-link;
-
-    & :hover {
-      text-decoration: underline, bold;
-      color: $link-hover-color;
-    }
-}
-
-//
-// Headings
-//
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: $headings-margin;
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-text-color;
-  a {
-    font-weight: inherit;
-  }
-}
-
-h1 {
-  font-size: h1;
-  line-height: 1.35;
-  font-style: normal;
-  margin: $headings-margin;
-  font-weight: $headings-font-weight;
-}
-
-h2 {
-  font-weight: $headings-font-weight;
-  font-size: h2;
-  margin: $headings-margin 0 0.8em;
-}
-
-h3 {
-  font-weight: $headings-font-weight;
-  text-transform: uppercase;
-  font-size: h3;
-  letter-spacing: 0.15em;
-  margin: divide($headings-margin, 2) 0 0.8em;
-}
-
-h4 {
-  font-weight: 600;
-  font-size: h4;
-  letter-spacing: 0.1em;
-  margin: divide($headings-margin, 2) 0 0.8em;
-}
-
-h5 {
-  font-weight: 600;
-  font-style: italic;
-  font-size: h5;
-  margin: divide($headings-margin, 2) 0 0.8em;
-}
-
-h6 {
-  font-weight: 500;
-  font-size: h6;
-  letter-spacing: 0.1em;
-  margin: divide($headings-margin, 2) 0 0.8em;
-}
-
-// These declarations are kept separate from and placed after
-// the previous tag-based declarations so that the classes beat the tags in
-// the CSS cascade, and thus <h1 class="h2"> will be styled like an h2.
-.h1 { font-size: h1; }
-.h2 { font-size: h2; }
-.h3 { font-size: h3; }
-.h4 { font-size: h4; }
-.h5 { font-size: h5; }
-.h6 { font-size: h6; }
-
-.lead {
-  font-size: $lead-font-size;
-  font-weight: $lead-font-weight;
-  font-family: $lead-font;
-}
-
-// Type display classes
-.display-1 {
-  font-size: 1;
-  font-weight: $display-weight;
-}
-.display-2 {
-  font-size: 2;
-  font-weight: $display-weight;
-}
-.display-3 {
-  font-size: 3;
-  font-weight: $display-weight;
-}
-.display-4 {
-  font-size: 4;
-  font-weight: $display-weight;
-}
-
-
-//
-// Horizontal rules
-//
-
-hr {
-  margin-top: $offset-sm;
-  margin-bottom: $offset-sm;
-  border: 0;
-  border-top: $hr-border-width solid $hr-border-color;
-  border-bottom: $hr-border-width solid $hr-border-color;
-  border-left: none;
-  border-right: none;
-}
-
-
-//
-// Emphasis
-//
-
-small,
-.small {
-  font-size: $font-size-sm;
-  font-weight: normal;
-}
-
-small #copyright {
-  font-size: $font-size-sm;
-  font-family: $footer-text-font;
-  font-weight: bold;
-
-}
-
-mark,
-.mark {
-  padding: .2em;
-  background-color: $alert-bg;
-}
-
-
-//
-// Lists
-//
-
-.list-unstyled {
-  @include list-unstyled;
-}
-
-// Inline turns list items into inline-block
-.list-inline {
-  @include list-unstyled;
-}
-.list-inline-item {
-  display: inline-block;
-
-  &:not(:last-child) {
-    margin-right: $list-inline-padding;
-  }
-}
-
-// Horizontal description lists w/ grid classes
-.dl-horizontal {
-  margin-right: -$grid-gutter;
-  margin-left: -$grid-gutter;
-  @include clearfix;
-}
-
-
-//
-// Misc
-//
-
-// Builds on `abbr`
-.initialism {
-  font-size: 90%;
-  text-transform: uppercase;
-}
+@import "text-elements/hr";

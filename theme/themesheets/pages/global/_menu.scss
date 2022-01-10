@@ -1,25 +1,31 @@
- /* ___________________________________________________ MENU & NAVIGATION */
- /* LINK ____________________________________ Style anchor elements. */
-    /* Color Palette */
-     $active-link                   : shade-color( $link-color, $link-percentage);
-     $link-text-hover-color         : shade-color( $link-color, $hover-percentage);
-     $link-focus-color              : shade-color( $link-color, $focus-percentage);
-     $link-text-visited-color       : shade-color( $link-color, $visited-percentage);
-     $link-text-visited-hover-color : shade-color( $link-text-visited-color, $visited-percentage);
-
-     $inactive-link                 : color-mix(srgb, $active-color $inactive-percentage, $inactive-color);
-
-    /* Properties */
-    $link-decoration              : bold;
-    $link-hover-color-decoration  : underline bold;
-    $link-visited-decoration      : underline;
-
-    $stretched-link-pseudo-element: after;
-    $stretched-link-z-index       : 1;
-
+/* ___________________________________________________ MENU & NAVIGATION */
+/* LINK ____________________________________ Style anchor elements. */
 
 @import "nav/mixins/nav-divider";
 @import "nav/mixins/navbar-align";
 @import "nav/mixins/tab-focus";
-
+@import "nav/base/nav-variables";
 @import "nav/base/nav";
+
+ul {
+    display: flex;
+    list-style-type: none;
+    width: 500px;
+    justify-content: center;
+    font-size: 30px;
+}
+
+li {
+    text-decoration: none;
+    margin-right: 11px;
+}
+
+ul li a {
+    color: rgb(232, 231, 233);
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: rgb(150, 120, 180);
+}

@@ -1,18 +1,5 @@
-@mixin main {
-    position: relative;
-    top: 1vh;
-    right: 0;
-    bottom: 1.75vh;
-    left: 0;
-    z-index: 200;
-}
-
-@mixin main-container {
-    @include make-container;
-    padding-bottom: .75rem;
-    padding-left: .25rem;
-}
-
-
-.main-elevation-20 {
-  box-shadow: 0 15px 19px 3px rgba($black-rgb, 0.6), 0 -10px -10px 8px rgba($purple-rgb, 0.3), 0 3px 14px 5px rgba($black-rgb, 0.82); }
+@mixin main-elevation {
+    box-shadow: 0 8px 8px 8px rgba($gray-700-rgb, 0.6),
+                0 6px 6px 6px rgba($gray-800-rgb, 0.65),
+                0 4px 4px 4px rgba($black-rgb, 0.9);
+            }

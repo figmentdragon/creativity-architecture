@@ -12,11 +12,8 @@
     $map                 : ();
     $map                 : map-merge($map, ($key:
     create_color_map($value, 15%, 0.5)) );
-    $colors              : map-merge($colors-map, $map);
+    $colors              : map-merge($colors, $map);
 }
-
-@debug $theme-colors;
-
 
 $theme-color-interval    : 8%;
 $yiq-contrasted-threshold: 150;

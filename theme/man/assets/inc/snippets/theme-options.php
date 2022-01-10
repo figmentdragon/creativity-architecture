@@ -53,7 +53,7 @@ function architecture_customize_register($wp_customize)
   $wp_customize->add_section(
     'architecture_projects_section',
     [
-      'title'    => __('Projekte', 'architecture'),
+      'title'    => __('Projects', 'architecture'),
       'priority' => 30,
     ]
   );
@@ -72,7 +72,7 @@ function architecture_customize_register($wp_customize)
       $wp_customize,
       'architecture_projects_page_id',
       [
-        'label'    => __('Seite "Projekte":', 'architecture'),
+        'label'    => __('Side "Project":', 'architecture'),
         'section'  => 'architecture_projects_section',
         'settings' => 'architecture_projects_page_id',
         'type'     => 'dropdown-pages',

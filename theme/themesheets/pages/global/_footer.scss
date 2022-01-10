@@ -1,19 +1,1 @@
-@mixin footer {
-    position: relative;
-    right: 2.5vw;
-    bottom: 5.75vh;
-    left: 13vw;
-    z-index: $z-index-footer;
-    display: inline;
-    align-items: center;
-    align-content: center;
-}
 
-@mixin site-footer-container {
-    @include make-container;
-    margin-right: 2vw;
-    margin-left: 0;
-    margin-bottom: 1rem;
-    padding-right: .75rem;
-    padding-left: .25rem;
-}

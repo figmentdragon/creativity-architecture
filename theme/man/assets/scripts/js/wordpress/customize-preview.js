@@ -1,4 +1,4 @@
-/* global architectureGetHexLum, jQuery */
+architecture/* global architectureGetHexLum, jQuery */
 ( function() {
 	// Add listener for the "background_color" control.
 	wp.customize( 'background_color', function( value ) {
@@ -46,9 +46,9 @@
 			// Generate the styles.
 			styles += '--global--color-primary:' + textColor + ';';
 			styles += '--global--color-secondary:' + textColor + ';';
-			styles += '--global--text:' + to + ';';
+			styles += '--global--color-background:' + to + ';';
 
-			styles += '--button--text:' + textColor + ';';
+			styles += '--button--color-background:' + textColor + ';';
 			styles += '--button--color-text:' + to + ';';
 			styles += '--button--color-text-hover:' + textColor + ';';
 

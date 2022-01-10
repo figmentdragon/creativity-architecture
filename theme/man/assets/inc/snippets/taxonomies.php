@@ -1,6 +1,6 @@
 <?php
 
-function my_create_expertise_taxonomy()
+function architecture_create_expertise_taxonomy()
 {
   $labels = [
     'name'               => 'Expertisen (Taxonomie)',
@@ -31,11 +31,11 @@ function my_create_expertise_taxonomy()
   );
   register_taxonomy_for_object_type('tax_expertise', 'page');
   register_taxonomy_for_object_type('tax_expertise', 'post');
-  register_taxonomy_for_object_type('tax_expertise', 'my_case');
-  register_taxonomy_for_object_type('tax_expertise', 'my_job');
+  register_taxonomy_for_object_type('tax_expertise', 'architecture_case');
+  register_taxonomy_for_object_type('tax_expertise', 'architecture_job');
 }
 
-//add_action('init', __NAMESPACE__ . '\\my_create_expertise_taxonomy');
+add_action('init', __NAMESPACE__ . '\\architecture_create_expertise_taxonomy');
 
 function ev_unregister_taxonomy()
 {
@@ -43,7 +43,7 @@ function ev_unregister_taxonomy()
   register_taxonomy('category', []);
 }
 
-add_action('init', __NAMESPACE__.'\\ev_unregister_taxonomy');
+add_action( 'init', __NAMESPACE__.'\\ev_unregister_taxonomy' );
 
 //To remove the sidebar menu entry:
 
@@ -60,7 +60,7 @@ add_action('admin_menu', __NAMESPACE__.'\\remove_menus');
 
 function architecture_add_taxonomies_to_attachments()
 {
-  register_taxonomy_for_object_type('my_expertise', 'attachment');
+  register_taxonomy_for_object_type('architecture_expertise', 'attachment');
 }
 
 //add_action( 'init' , __NAMESPACE__ . '\\architecture_add_taxonomies_to_attachments' );
@@ -74,4 +74,4 @@ function architecture_remove_meta_boxes()
   remove_meta_box('custom-post-type-onomies-my_expertise', 'attachment', 'normal');
 }
 
-add_action('admin_menu', 'architecture_remove_meta_boxes');
+add_action( 'admin_menu', 'architecture_remove_meta_boxes' );

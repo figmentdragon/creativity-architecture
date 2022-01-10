@@ -1,0 +1,129 @@
+/*________________________________________________________________ GLOBAL */
+@import "themesheets/pages/global/main";
+@import "themesheets/pages/global/header";
+@import "themesheets/pages/global/footer";
+@import "themesheets/pages/global/article";
+@import "themesheets/pages/global/menu";
+@import "themesheets/pages/global/aside";
+@import "themesheets/pages/global/global";
+
+*,
+*::after,
+*::before,
+*:after,
+*:before {
+    padding: 0;
+    margin: 0;
+    @include border-box;
+}
+
+div {
+    display: flex;
+    float: left;
+    justify-content: space-evenly;
+}
+
+html {
+    background-image: $body-gradient;
+    @include html-relative;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    @media only screen and (min-width: $breakpoint-sm) {
+      font-size: 15px;
+    }
+
+    @media only screen and (min-width: $breakpoint-lg) {
+      font-size: $font-size-base;
+    }
+
+    body {
+        @include body-container;
+        @include body-typography;
+        @include body-absolute;
+        max-height: 100vh;
+        max-width: 100vw;
+    }
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    @include border-box;
+    * {
+        @include border-box;
+    }
+}
+
+header {
+    @include make-col;
+    @include border-box;
+    @include header-relative;
+    @include header-properties;
+    @include header-container;
+    height: 100%;
+    max-height: 90vh;
+    width: 100%;
+    max-width: 10vw;
+    border-color: $black;
+
+    nav {
+        @include nav-fixed;
+        @include make-col;
+        @include nav-container;
+
+        height: 100%;
+        max-height: 95.25vh;
+        width: 100%;
+        max-width: 2.5vw;
+        background-color: $orange;
+    }
+}
+
+main {
+    @include main-elevation;
+    @include main-relative;
+    @include main-properties;
+    @include main-container;
+    width: 100%;
+    max-width: 99vw;
+    height: 100%;
+    max-height: 96vh;
+
+    article {
+        @include article-container;
+        width: 100%;
+        max-width: 88vw;
+        height: 100%;
+        max-height: 94vh;
+        background-color: $white;
+        border-radius: $border-radius-xl;
+        border-left-color: $gray-800;
+        border-left-style: inset;
+        border-left-width: 1px;
+        box-shadow: inset 20px 10px 20px $gray-700,
+                    inset -19px -19px 58px $gray-100,
+                    inset 5px 5px 10px $gray-500,
+                    inset -3.9px -3.9px 1px $white,
+                    inset -5px -5px 10px #bebebe,
+                    inset 5px 5px 10px $gray-900;
+    }
+}
+
+footer {
+    @include footer-container;
+    @include footer-text;
+    @include footer-properties;
+    @include border-box;
+    @include make-row($gutter: $grid-gutter);
+    @include footer-relative;
+    height: 100%;
+    max-height: 5vh;
+    width: 100%;
+    max-width: 85.15vw;
+
+}

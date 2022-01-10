@@ -4,7 +4,7 @@ $diff                    : $alpha-from - $alpha-to;
 
 $gradient                : linear-gradient(180deg, to right bottom, #0abab5, #0abab5, #0abab5, #0abab5, #ffcc33, #ffcc33, #ffcc33, #a8a9ad, #a8a9ad, #fbfbfd, transparent);
 
-$gradient-tabs-bg: linear-gradient(320deg, transparent, rgba($white-rgb, .10) 20%, rgba($accent-rgb, .20) 35%, rgba($accent-rgb, .30) 50%, rgba($accent-rgb, .40) 65%);
+$gradient-tabs-bg: linear-gradient(320deg, transparent, rgba($white-rgb, .10) 20%, rgba($accent-color-rgb, .20) 35%, rgba($accent-color-rgb, .30) 50%, rgba($accent-color-rgb, .40) 65%);
 
 @import "gradient/global";
 @import "gradient/theme";

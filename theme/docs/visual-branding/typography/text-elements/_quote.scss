@@ -1,0 +1,12 @@
+
+blockquote {
+  font-style: italic;
+  font-family: $emphasis-font;
+  border-left: 5px solid $accent-color;
+  padding-left: $xl;
+  margin: 1em 0 0 1.5em;
+}
+blockquote small {
+  display: block;
+  line-height: 1.7em;
+}

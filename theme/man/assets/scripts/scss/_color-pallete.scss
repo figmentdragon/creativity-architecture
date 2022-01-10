@@ -78,20 +78,7 @@ _________________________________________________________ colorPALETTE */
 @import "color/theme-color";
 
 /* ___________________________________________________ UTILITY */
-        $active-color                : $secondary-color;
-        $disabled-color              : color-mix(srgb, $accent-color $disabled-percentage, $white);
 
-        $muted-color      : shade-color( $accent-color, $muted-percentage );
-        $hover-color      : shade-color( $active-color, $hover-percentage );
-        $focus-color      : shade-color( $active-color, $focus-percentage );
-        $border-color     : shade-color($primary-color, $border-percentage);
-
-        $body-text-color  : shade-color($primary-color, $active-percentage);
-        $text-muted-color : color-mix(srgb, $body-text-color $muted-percentage, $muted-color);
-
-        $body-bg-color    : tint-color($secondary-color, $background-percentage);
-        $page-bg-color    : tint-color($primary-color, $background-percentage);
-        $main-bg-color    : tint-color($accent-color, $background-percentage);
 
         $caption:           rgb(62,62,62);
         $caption-border:    rgb(26,26,26);

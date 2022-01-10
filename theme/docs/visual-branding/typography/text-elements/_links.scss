@@ -1,12 +1,47 @@
+/* Links */
 a,
 a:link {
   outline: none !important;
-  font-weight: bold;
-  text-decoration: underline;
+  font-family: $nav-text-font;
   color: $link-color;
+
+  :active {
+    text-decoration: underline;
+    color: $link-color;
 
     & :hover {
       text-decoration: underline, bold;
-      color: $link-hover-color;
+      color: $link-hover-color   ;
     }
+  }
+
+  :hover {
+    text-decoration: underline, bold;
+      color: $link-hover-color   ;
+  }
+
+  :inactive {
+    color: $inactive-link;
+    text-decoration: none;
+
+  }
+}
+
+a:focus {
+
+}
+
+a:link {
+  color: $link-color;
+}
+
+a:visited {
+  color: $link-visited-color;
+}
+a:hover {
+  color: $link-hover-color   ;
+}
+a:active {
+  color: $link-color;
+  outline: none;
 }

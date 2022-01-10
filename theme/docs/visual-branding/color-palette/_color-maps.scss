@@ -13,16 +13,16 @@ gray-900   : #1a1a1a
 $colors    : ();
   $colors  : map-merge(
   (
-  'blue'   : #0a0fba,
-  'indigo' : #6600ff,
-  'purple' : #510bda,
-  'pink'   : #fc89ac,
-  'red'    : #ba0a0f,
-  'orange' : #fd8535,
-  'yellow' : #ffcc33,
-  'green'  : #82ded1,
-  'teal'   : #b5ede4,
-  'cyan'   : #0abab5
+  "blue"   : #0a0fba,
+  "indigo" : #6600ff,
+  "purple" : #510bda,
+  "pink"   : #fc89ac,
+  "red"    : #ba0a0f,
+  "orange" : #fd8535,
+  "yellow" : #ffcc33,
+  "green"  : #82ded1,
+  "teal"   : #b5ede4,
+  "cyan"   : #0abab5
   ),
   $colors
 );
@@ -30,21 +30,21 @@ $colors    : ();
 $custom-colors      : ();
 $custom-colors      : map-merge(
 (
-silver             : #a8a9ad,
-chocolate          : #623412,
-camel              : #c19a6b,
-saltpan            : #ffffcc,
-white-chocolate    : #ede6d6,
-dark-vanilla       : #d1bea8,
-ghost-white        : #fbfbfd,
-deep-sky-blue      : #0dcaf0,
-coral              : #ff7f50,
-maroon             : #800000,
-light-cyan         : #cdffff,
-neon-blue          : #555aff,
-salomie            : #ffd080,
-wild-watermelon    : #ff555a,
-hot-pink           : #ff6fa9
+"silver"             : #a8a9ad,
+"chocolate"          : #623412,
+"camel"              : #c19a6b,
+"saltpan"            : #ffffcc,
+"white-chocolate"    : #ede6d6,
+"dark-vanilla"       : #d1bea8,
+"ghost-white"        : #fbfbfd,
+"deep-sky-blue"      : #0dcaf0,
+"oral"              : #ff7f50,
+"maroon"             : #800000,
+"light-cyan"         : #cdffff,
+"neon-blue"          : #555aff,
+"salomie"            : #ffd080,
+"wild-watermelon"    : #ff555a,
+"hot-pink"           : #ff6fa9
   ),
   $custom-colors
 );

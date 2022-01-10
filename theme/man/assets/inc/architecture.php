@@ -5,15 +5,11 @@ function architecture_theme_support() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'align-wide' );
-
-
 	add_theme_support( 'custom-header' );
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
-
 	// default thumb size
 	set_post_thumbnail_size(125, 125, true);
-
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
 	    array(
@@ -27,6 +23,11 @@ function architecture_theme_support() {
 
 	$logo_width                                   = 300;
 	$logo_height                                  = 100;
+	// If the retina setting is active, double the recommended width and height.
+	if ( get_theme_mod( 'retina_logo', false ) ) {
+		$logo_width  = floor( $logo_width * 2 );
+		$logo_height = floor( $logo_height * 2 );
+	}
 
 	add_theme_support(
 		'custom-logo',
@@ -62,34 +63,21 @@ function architecture_theme_support() {
 	// wp menus
 	add_theme_support( 'menus' );
 
-	// registering wp3+ menus
-	register_nav_menus(
-		array(
-			'primary'	                                  =>	__( 'Primary Menu', 'architecture' ), // Register the Primary menu
-			// Copy and paste the line above right here if you want to make another menu,
-			// just change the 'primary' to another name
-		)
-	);
+  	function architecture_register_nav_menus() {
+		register_nav_menus([
+        	'header' => 'Header',
+        	'footer' => 'Footer',
+		]);
+    }
 
-  /**
-   * Register nav menus
-   *
-   * @return void
-   */
-
-  function architecture_register_nav_menus() {
-      register_nav_menus([
-          'header' => 'Header',
-          'footer' => 'Footer',
-      ]);
-  }
-
-  add_action( 'after_setup_theme', 'architecture_register_nav_menus', 0 );
-
-  function architecture_custom_menu() {
-	  register_nav_menu( 'architecture-custom-menu',__( 'Architecture Menu' ));
-  }
-  add_action( 'init', 'architecture_custom_menu' );
+	function architecture_custom_menu() {
+	  	register_nav_menus(
+		  	array(
+			  	'architecture-menu' => __( 'Site Menu' ),
+			  	'social-menu' => __( 'Extra Menu' )
+			)
+		);
+	}
 
 
 	/**
@@ -100,9 +88,9 @@ function architecture_theme_support() {
 	 */
 
 	function architecture_nav_menu_args( $args ) {
-	    $args['container'] = false;
-	    $args['container_class'] = false;
-	    $args['menu_id'] = false;
+	    $args['container'] = true;
+	    $args['container_class'] = true;
+	    $args['menu_id'] = true;
 	    $args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
 
 	    return $args;
@@ -112,6 +100,7 @@ function architecture_theme_support() {
 	add_theme_support(
 		'html5',
 			array(
+				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
@@ -122,28 +111,23 @@ function architecture_theme_support() {
 			)
 		);
 
-		if ( is_customize_preview() ) {
-			require get_template_directory() . '/inc/starter-content.php';
-			add_theme_support( 'starter-content', architecture_get_starter_content() );
-		}
-
-		// Add support for responsive embedded content.
+	if ( is_customize_preview() ) {
+		require get_template_directory() . '/theme/man/assets/inc/starter-content.php';
+		add_theme_support( 'starter-content',
+				architecture_get_starter_content() );
+			// Add support for responsive embedded content.
 		add_theme_support( 'responsive-embeds' );
-
-		// Add support for custom line height controls.
+			// Add support for custom line height controls.
 		add_theme_support( 'custom-line-height' );
-
-		// Add support for experimental link color control.
+			// Add support for experimental link color control.
 		add_theme_support( 'experimental-link-color' );
-
-		// Add support for experimental cover block spacing.
+			// Add support for experimental cover block spacing.
 		add_theme_support( 'custom-spacing' );
-
-		// Add support for custom units.
-		// This was removed in WordPress 5.6 but is still required to properly support WP 5.5.
+			// Add support for custom units.
+			// This was removed in WordPress 5.6 but is still required to properly support WP 5.5.
 		add_theme_support( 'custom-units' );
 	}
-
+}
  /* end architecture theme support */
 
 

@@ -12,47 +12,42 @@
 
 _________________________________________________________ CJMTheme */
 
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+
+$min-contrast-ratio: 2.5 !default;
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark: black !default;
+$color-contrast-light: white !default;
+
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret                    : true;
-$enable-rounded                  : true;
-$enable-shadows                  : true;
-$enable-gradients                : true;
-$enable-transitions              : true;
-$enable-reduced-motion           : true;
-$enable-smooth-scroll            : true;
-$enable-grid-classes             : true;
-$enable-container-classes        : true;
-$enable-cssgrid                  : true;
-$enable-button-pointers          : true;
-$enable-rfs                      : true;
-$enable-validation-icons         : true;
-$enable-negative-margins         : true;
-$enable-deprecation-messages     : true;
-$enable-important-utilities      : true;
+$enable-caret:                false !default;
+$enable-rounded:              false !default;
+$enable-shadows:              false !default;
+$enable-gradients:            false !default;
+$enable-transitions:          false !default;
+$enable-reduced-motion:       false !default;
+$enable-smooth-scroll:        false !default;
+$enable-grid-classes:         false !default;
+$enable-container-classes:    false !default;
+$enable-cssgrid:              false !default;
+$enable-button-pointers:      false !default;
+$enable-rfs:                  false !default;
+$enable-validation-icons:     false !default;
+$enable-negative-margins:     false !default;
+$enable-deprecation-messages: false !default;
+$enable-important-utilities:  false !default;
 
 // Prefix for                    :root CSS variables
 
-$variable-prefix                 : ca-;
-
-/* ________________________ PROPERTIES CONTROLED BY DEFAULT*/
-/* Contrast */
-/* The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7. */
-/* See https                     ://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast */
-$min-contrast-ratio              : 4.5;
-
-$dark-contrast                   : $dark;
-$light-contrast                  : $light;
-
-/* Customize the light and dark text colors for use in our color contrast function. */
-$color-contrast-dark             : $dark-contrast;
-$color-contrast-light            : $light-contrast;
+$variable-prefix                 : -- !default;
 
 /* _____________________________________ SPACING */
   /* Base Number */
-  $base-number                   : 1;
+  $base-number                   : 1 !default;
     /* Map */
     $base-numbers                : (
       0                          : 0,
@@ -65,11 +60,11 @@ $color-contrast-light            : $light-contrast;
 
   $negative-numbers              : negativify-map($base-number);
 
-  $vertical-base                 : 1vh;
-  $horizontal-base               : 1vw;
+  $vertical-base                 : 1vh !default;
+  $horizontal-base               : 1vw !default;
 
   /* Base Size */
-  $base-size                     : 1.05;
+  $base-size                     : 1.05 !default;
     $xs                          : $base-size * .75; // .86 14px 10.5pt
     $sm                          : $base-size * .875; // 1.0 16px 12pt medium
     $md                          : $base-size * 1.05; // 1.20 19px 14pt
@@ -88,7 +83,7 @@ $color-contrast-light            : $light-contrast;
     );
 
   /* Block Spacing */
-  $block-spacing                 : 1.5rem;
+  $block-spacing                 : 1.5rem !default;
 
 /* _____________________________________ POSITIONING */
     /* Position Values Map */
@@ -109,57 +104,33 @@ $color-contrast-light            : $light-contrast;
     );
 
 /* _____________________________________ PADDING */
-    $base-offset                     : 16px;
-    $horizontal-offset-px            : 16px; // 1vh = 8px;
-    $horizontal-offset               : 2vh;
-    $vertical-offset                 : 2.75vw;
-    $vertical-offset-px              : 16px; // 1vw = 6px;
+    $base-offset                     : 16px !default;
+    $horizontal-offset-px            : 16px !default; // 1vh = 8px;
+    $horizontal-offset               : 2vh !default;
+    $vertical-offset                 : 2.75vw !default;
+    $vertical-offset-px              : 16px !default; // 1vw = 6px;
 
   @import "themesheets/abstracts/materials/padding";
 
 /* _____________________________________ GRID */
-  $grid-columns                  : 16;
-  $grid-row-columns              : 16;
-  $grid-gutter                   : 16px;
+  $grid-columns                  : 16 !default;
+  $grid-row-columns              : 16 !default;
+  $grid-gutter                   : 16px !default;
 
 /* ____________________________________ BORDERS */
-  $base-width                    : 1px;
-  $base-radius                   : .95rem;
+  $base-width                    : 1px !default;
+  $base-radius                   : .95rem !default;
   @import "themesheets/abstracts/materials/borders";
 
 /* ____________________________________ ANIMATION */
-  $animation-speed: 250ms;
-  $animation: ease-in-out;
+  $animation-speed: 250ms !default;
+  $animation: ease-in-out !default;
 
-/* ________________________________________________________ LINK */
+/* ____________________________________ Z-INDEX */
+@import "themesheets/abstracts/materials/zindex";
 
+/* ____________________________________ LINK */
+@import "themesheets/abstracts/materials/links";
 
-/* ____________________________________________ Buttons + Form */
-
-$input-text-color                : shade-color($primary-color, 50%);
-$input-bg-color                  : tint-color($primary-color, 35%);
-$input-border-color              : shade-color($primary-color, $border-percentage);
-
-$input-inactive-bg-color         : color-mix($input-text-color $inactive-percentage, $inactive-color);
-$input-inactive-border-color     : color-mix($input-text-color $inactive-percentage, $inactive-color);
-
-$input-text-focus-color          : shade-color($input-text-color, $focus-percentage);
-$input-focus-bg-color            : shade-color($input-bg-color, $focus-percentage);
-$input-focus-border-color        : shade-color($input-border-color, $focus-percentage);
-
-$input-placeholder-text-color    : tint-color($input-text-color, $muted-percentage);
-$input-plaintext-text-color      : tint-color($primary-color, $muted-percentage);
-
-$form-file-button-hover-bg-color : shade-color($input-bg-color, $hover-percentage);
-
-$input-group-bg-color            : tint-color($accent-color, $background-percentage);
-$form-switch-text-color          : $input-bg-color;
-
-/* __________________________________________________ Lists */
-
-$list-group-text-color           : $gray-900;
-$list-group-bg-color             : tint-color($list-group-text-color, $background-percentage);
-$list-group-border-color         : shade-color($list-group-text-color, $border-percentage);
-$list-group-hover-bg             : shift-color($list-group-bg-color, $hover-percentage);
-$list-group-bg-color             : shift-color($list-group-text-color, $hover-percentage);
-$list-group-inactive-bg-color    : color-mix($list-group-bg-color $inactive-percentage, $inactive-color);
+/* ____________________________________ WIDTH */
+@import "themesheets/abstracts/materials/width";

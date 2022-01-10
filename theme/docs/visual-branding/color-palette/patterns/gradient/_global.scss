@@ -1,16 +1,15 @@
-$footer-gradient2        : linear-gradient(
-  90deg,
-  transparent,
-  rgba($white, 0.2) 5%,
-  rgba($white, 0.3) 5%,
-  rgba($accent-color, 0.4) 15%,
-  rgba($accent-color, 0.5) 30%,
-  rgba($primary-color, 0.6) 45%,
-  rgba($primary-color, 0.7) 60%,
-  rgba($primary-color, 0.8) 75%,
-  rgba($primary-color, 0.9) 90%,
-  rgba($primary-color, 1) 95%
-);
+$body-gradient         :
+    radial-gradient( circle at top left, $primary-color 12%, transparent, $white ),
+    radial-gradient( circle at top left, $primary-color 24%, $secondary-color, transparent, $white ),
+    radial-gradient( circle at top left, $primary-color 36%, $secondary-color 24%, $accent-color, transparent, $white ),
+    radial-gradient( circle at top left, $primary-color 48%, $secondary-color 36%, $accent-color 24%, transparent, $white );
+
+$header-gradient         :
+    linear-gradient( $gray-400 .12%, $primary-color, transparent ),
+    linear-gradient( $primary-color, transparent ),
+    linear-gradient( $gray-200 .25%, $primary-color, transparent ),
+    linear-gradient( $primary-color, transparent ),
+    linear-gradient( $gray-100 .5%, $primary-color, transparent );
 
 $footer-gradient         :
     radial-gradient( circle at bottom right, $gray-400 .12%, $primary-color, transparent ),

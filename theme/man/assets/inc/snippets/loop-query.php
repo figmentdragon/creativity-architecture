@@ -23,7 +23,7 @@ function architecture_loop_query($query)
       $post_type = $query->query_vars['post_type'];
     }
 
-    if (strpos($post_type, 'my_projects') !== false) {
+    if (strpos($post_type, 'architecture_projects') !== false) {
       $query->query_vars['post_status'] = 'publish';
     }
   }

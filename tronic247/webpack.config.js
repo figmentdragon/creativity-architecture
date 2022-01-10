@@ -20,12 +20,12 @@ module.exports = {
     mode: "production",
     plugins: [
         new webpack.BannerPlugin(`
- Tronic247 Material design - v3.0
- https://material.tronic247.com
+ a The Creativity Architect Production
+ https://thecreativityarchitect.com
 
- Copyright (C) 2021 "Tronic247" Posandu Mapa
+ Copyright (C) 2021 "The Creativity Architect" CJMTermini
  licensed under the MIT license.
- https://github.com/Tronic247/material/blob/Main/LICENSE
+ https://github.com/figmentdragon/architecture/LICENSE
  `)
     ],
     optimization: {

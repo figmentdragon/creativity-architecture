@@ -46,7 +46,7 @@ class architecture_Customize_Color_Control extends WP_Customize_Color_Control {
 		// Enqueue the script.
 		wp_enqueue_script(
 			'architecture-control-color',
-			get_theme_file_uri( 'assets/js/palette-colorpicker.js' ),
+			get_theme_file_uri( 'theme/man/assets/scripts/js/palette-colorpicker.js' ),
 			array( 'customize-controls', 'jquery', 'customize-base', 'wp-color-picker' ),
 			wp_get_theme()->get( 'Version' ),
 			false

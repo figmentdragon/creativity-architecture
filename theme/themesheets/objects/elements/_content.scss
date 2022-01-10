@@ -48,12 +48,16 @@ body.archive .page-title { /* Optional, if you want your page titles to look dif
 .comments-link {  /* Link to leave a comment */
 
 }
-.edit-link { /* Link to Edit the post (only shows up for admins)
+.edit-link { /* Link to Edit the post (only shows up for admins) */
 
 }
 .entry-content,
-.entry-summary { /* Container for the post body/excerpt text */
-	margin: 1.5em 0 0;
+.entry-summary,
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+  font-family: $lead-font;
+
 }
 
 /* Styling In-Post Tables */

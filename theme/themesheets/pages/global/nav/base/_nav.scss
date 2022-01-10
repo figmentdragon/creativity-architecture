@@ -42,7 +42,7 @@ padding: 30px 0 0 0;
 
 .nav-link {
   display: block;
-  padding: $nav-link-padding-y $nav-link-padding-x;
+  padding: $offset-y $offset-x;
   @include font-size($nav-link-font-size);
   font-weight: $nav-link-font-weight;
   color: $nav-link-color;
@@ -52,11 +52,11 @@ padding: 30px 0 0 0;
   &:focus,
   &:hover {
     color: $nav-link-hover-color;
-    text-decoration: if($link-active-hover-decoration == underline, none, null);
+    text-decoration: if($link-hover-decoration == underline, none, null);
   }
   /* inactive state lightens text */
   &.inactive {
-    color: $nav-link-inactive-color;
+    color: $nav-link-inactive-link;
     pointer-events: none;
     cursor: default;
   }
@@ -79,7 +79,7 @@ padding: 30px 0 0 0;
     }
 
     &.inactive {
-      color: $nav-link-inactive-color;
+      color: $nav-link-inactive-link;
       background-color: transparent;
       border-color: transparent;
     }
@@ -87,7 +87,7 @@ padding: 30px 0 0 0;
 
   .nav-item.show .nav-link,
   .nav-link.active {
-    color: $nav-tabs-link-active-text-color;
+    color: $nav-tabs-link-active-color;
     background-color: $nav-tabs-link-active-bg;
     border-color: $nav-tabs-link-active-border-color;
   }

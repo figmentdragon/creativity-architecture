@@ -2,11 +2,10 @@
 
 /**
  *
- * Registration unseres Custom Post Types "Portfolio"
+ * Registration Custom Post Types "Portfolio"
  *
-
  */
-function my_cpt_projects()
+function architecture_cpt_projects()
 {
   $labels = [
     'name'               => 'Projects',
@@ -48,11 +47,11 @@ function my_cpt_projects()
     'menu_icon'           => 'dashicons-hammer',
     'taxonomies'          => ['category', 'post_tag'],
   ];
-  register_post_type('my_project', $args);
+  register_post_type( 'architecture_project', $args);
 }
 
 // Hook into the 'init' action
-add_action('init', __NAMESPACE__.'\\my_cpt_projects', 20);
+add_action( 'init', __NAMESPACE__.'\\architecture_cpt_projects', 20);
 
 /**
  *
@@ -60,7 +59,7 @@ add_action('init', __NAMESPACE__.'\\my_cpt_projects', 20);
  *
 
  */
-function my_cpt_directors()
+function architecture_cpt_directors()
 {
   $labels = [
     'name'               => 'Directors',
@@ -102,8 +101,8 @@ function my_cpt_directors()
     'menu_icon'           => 'dashicons-businessman',
     'taxonomies'          => ['category', 'post_tag'],
   ];
-  register_post_type('my_director', $args);
+  register_post_type( 'architecture_director', $args);
 }
 
 // Hook into the 'init' action
-add_action('init', __NAMESPACE__.'\\my_cpt_directors', 20);
+add_action( 'init', __NAMESPACE__.'\\architecture_cpt_directors', 20 );

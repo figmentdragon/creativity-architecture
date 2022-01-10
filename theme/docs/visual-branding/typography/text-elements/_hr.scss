@@ -1,0 +1,15 @@
+//
+// Horizontal rules
+//
+
+hr {
+  height: $hr-height;
+  color: $hr-color;
+  margin-top: $offset-sm;
+  margin-bottom: $offset-sm;
+  border: 1px solid #eee;
+  border-top: $hr-border-width solid $hr-border-color;
+  border-bottom: $hr-border-width solid $hr-border-color;
+  border-left: none;
+  border-right: none;
+}

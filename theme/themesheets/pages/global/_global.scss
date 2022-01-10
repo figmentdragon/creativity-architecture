@@ -1,108 +1,198 @@
-/*________________________________________________________________ GLOBAL */
- *,
- *::after,
- *::before,
- *:after,
- *:before {
-   padding: 0;
-   margin: 0;
-   @include border-box;
- }
+/*! _______________________________________________________ PATTERN */
+/*! _____________________________________________ GRADIENT */
+/*! ___________________________________ HTML */
+/*! ___________________________________ BODY */
+    $body-gradient         :
+        radial-gradient( circle at top left, $primary-color 12%, transparent, $white ),
+        radial-gradient( circle at top left, $primary-color 24%, $secondary-color, transparent, $white ),
+        radial-gradient( circle at top left, $primary-color 36%, $secondary-color 24%, $accent-color, transparent, $white ),
+        radial-gradient( circle at top left, $primary-color 48%, $secondary-color 36%, $accent-color 24%, transparent, $white );
+/*! ___________________________________ HEADER */
+/*! ___________________________________ MAIN */
+/*! ___________________________________ ARTICLE */
+/*! ___________________________________ FOOTER */
+    $footer-gradient         :
+        radial-gradient( circle at bottom right, $gray-400 .12%, $primary-color, transparent ),
+        radial-gradient( circle at bottom right, $primary-color, transparent ),
+        radial-gradient( circle at bottom right, $gray-200 .25%, $primary-color, transparent ),
+        radial-gradient( circle at bottom right, $primary-color, transparent ),
+        radial-gradient( circle at bottom right, $gray-100 .5%, $primary-color, transparent );
 
- div {
-   display: flex;
-   float: left;
-   justify-content: space-evenly;
- }
+/*! _____________________________________________ SHADOW */
+/*! ___________________________________ HTML */
+/*! ___________________________________ BODY */
+/*! ___________________________________ HEADER */
+/*! ___________________________________ MAIN */
+/*! ___________________________________ ARTICLE */
+/*! ___________________________________ NAV */
+/*! ___________________________________ FOOTER */
+/*! _______________________________________________________ TYPOGRAPHY */
+/*! ___________________________________ HTML */
+/*! ___________________________________ BODY */
+    @mixin body-typography {
+        font-family: $secondary-font;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+        text-align: left;
+        color: transparent;
+    }
+/*! ___________________________________ HEADER */
+/*! ___________________________________ MAIN */
+/*! ___________________________________ ARTICLE */
+/*! ___________________________________ NAV */
+/*! ___________________________________ FOOTER */
+
+/*! _______________________________________________________ PROPERTIES */
+/*! ___________________________________ HTML */
+/*! ___________________________________ BODY */
+    @mixin body-properties {
+        padding-top: .75vh;
+        padding-right: 0;
+        padding-bottom: .75vh;
+        padding-left: 1vw;
+    }
+/*! ___________________________________ HEADER */
+    @mixin header-properties {
+        display: inline-block;
+        writing-mode: vertical-lr;
+        text-orientation: sideways;
+        rotate: 180deg;
+    }
+/*! ___________________________________ MAIN */
+    @mixin main-properties {
+        @include border-start-radius($border-radius-xxl);
+        display: block;
+        opacity: .50;
+        background-color: $white;
+    }
+/*! ___________________________________ ARTICLE */
+    @mixin article-properties {
+        @include border-radius($border-radius-xl);
+        border-radius: $border-radius-xl;
+        display: block;
+    }
+/*! ___________________________________ NAV */
+    @mixin nav-properties {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+/*! ___________________________________ FOOTER */
+    @mixin footer-properties {
+        display: inline;
+        align-items: center;
+        align-content: center;
+        box-shadow: 0 0.5rem 0.4rem -.1rem $shadow-color;
+        background-image: $footer-gradient;
+    }
+
+/*! _______________________________________________________ CONTAINER */
+/*! ___________________________________ HTML */
+/*! ___________________________________ BODY */
+    @mixin body-container {
+        margin: 0;
+        padding-top: .5vh;
+        padding-right: 0;
+        padding-bottom: .5vh;
+        padding-left: 1vw;
+    }
+/*! ___________________________________ HEADER */
+    @mixin header-container {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: .75vw;
+    }
+/*! ___________________________________ MAIN */
+    @mixin main-container{
+        @include make-container;
+        padding-top: .5vh;
+        padding-right: 1vw;
+        padding-bottom: .5vh;
+        padding-left: 12vw
+    }
+/*! ___________________________________ ARTICLE */
+    @mixin article-container {
+        @include make-container;
+        margin-top: .5vh;
+        margin-bottom: .5vh;
+    }
+/*! ___________________________________ NAV */
+    @mixin nav-container {
+        margin-top: 1.25vh;
+        margin-bottom: .75vh;
+    }
+/*! ___________________________________ FOOTER */
+    @mixin footer-container {
+        @include make-container;
+        margin-right: 2vw;
+        margin-left: 0;
+        margin-bottom: 1rem;
+        padding-right: .75rem;
+        padding-left: .25rem;
+    }
+
+/*! _______________________________________________________ PLACEMENT */
+/*! ___________________________________ HTML */
+    @mixin html-relative {
+        position: relative;
+        z-index: 25;
+    }
+/*! ___________________________________ BODY */
+    @mixin body-absolute {
+        position: absolute;
+        z-index: 30;
+    }
+/*! ___________________________________ HEADER */
+    @mixin header-relative {
+        position: relative;
+        z-index: 900;
+        top: 0;
+        right: 80;
+        bottom: 0;
+        left: 10;
+    }
 
 
-html {
-  padding-top: 1rem;
-  padding-right: 0;
-  padding-bottom: 2rem;
-  padding-left: 1rem;
-  width: 100%;
-  height: 100%;
-  border: 5px solid $black;
-  z-index: $z-index-html-body;
-  background-image: $primary-color-gradient;
-  @include border-box;
-  overflow: hidden;
-  @media screen and (min-width: 768px){
-    font-size: 75%;
-  }
-}
+/*! ___________________________________ MAIN */
+    @mixin main-relative {
+        position: relative;
+        top: 1.5vh;
+        right: -.25;
+        bottom: 1.5vh;
+        left: 0;
+        z-index: 200;
+    }
+    @mixin main-elevation {
+        box-shadow: 0 1px 1px 0.5px rgba($black-rgb, 1),
+                    0 1px 1px .75px rgba($black-rgb, 1),
+                    0 4px 6px 2px rgba($black-rgb, 0.9),
+                    0 6px 8px 10px rgba($gray-900-rgb, .8),
+                    0 8px 10px 12px rgba($gray-700-rgb, .95);
+                }
+/*! ___________________________________ ARTICLE */
+    @mixin article-absolute {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 225;
+    }
 
-body,
-html
-{
-  margin: 0;
-  z-index: $z-index-html-body;
-  @include border-box;
-  * {
-    box-sizing: inherit;
-  }
-}
-
-body {
-  text-align: left;
-  color: $body-text-color;
-  font-family: $secondary-font;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  z-index: $z-index-page;
-  border: 3px solid $red;
-  height: 100%;
-  max-height: 100vh;
-  width: 100%;
-  max-width: 100vw;
-}
-
-header {
-  display: block;
-  margin-top: 2.5rem;
-  margin-left: -9rem;
-  width: 111.25%;
-  height: 5rem;
-  background-image: $primary-color-gradient;
-  box-shadow:  0 .5rem .4rem -.2rem $shadow-color;
-}
-
-nav {
-  position: absolute;
-  z-index: $z-index-main-navigation;
-  top: .25rem;
-  right: 0;
-  left: 35rem;
-  height: 4.75rem;
-  border: 2px solid $black;
-  background-image: $accent-color-gradient;
-}
-
-main {
-  border: 4px solid $yellow;
-  display: block;
-  width: 54%;
-  height: 100%;
-  align-items: flex-start;
-  align-content: stretch;
-  padding-bottom: 5rem;
-  @include border-radius($border-radius-sm);
-  box-shadow: inset 13px 13px 26px $gray-900, inset -13px -13px 26px $black;
-}
-
-article {
-  width: 100%;
-  height: auto;
-  margin: 0;
-}
-
-
-footer {
-  display: block;
-  margin-bottom: 3rem;
-  box-shadow:  0 .5rem .4rem -.1rem $shadow-color;
-  background-image: $footer-gradient2;
-  justify-content: space-between;
-  align-content: space-evenly;
-}
+/*! ___________________________________ NAV */
+    @mixin nav-fixed {
+        position: absolute;
+        top: 30;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 925;
+    }
+/*! ___________________________________ FOOTER */
+    @mixin footer-relative {
+        position: relative;
+        right: 0;
+        bottom: 5.15vh;
+        left: 13vw;
+        z-index: $z-index-footer;
+    }

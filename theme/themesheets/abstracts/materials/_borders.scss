@@ -18,6 +18,7 @@ $border-width-focus      : divide($xs, 3);
 $border-width-hover      : $border-width-lg;
 
 $border-radius           : $base-radius;
+$border-radius-xs        : $border-radius * $xs;
 $border-radius-sm        : $border-radius * $sm;
 $border-radius-md        : $border-radius * $md;
 $border-radius-lg        : $border-radius * $lg;

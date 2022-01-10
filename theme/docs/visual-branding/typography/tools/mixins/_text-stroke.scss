@@ -10,10 +10,10 @@
     -webkit-text-stroke-fill: $primary-color;
 }
 
-@mixin text-stroke($accent-color) {
+@mixin text-stroke-transparent($color) {
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $accent-color;
-    -webkit-text-stroke-fill: $secondary-color;
+    -webkit-text-stroke-color: $color;
+    -webkit-text-stroke-fill: transparent;
 }
 
 @mixin text-stroke($color, $theme-color) {

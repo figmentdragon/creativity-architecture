@@ -1,80 +1,83 @@
-#masthead {
-    /* The container for the page-title group area */
-    @include border-box;
-    @include make-col;
-    z-index: 925;
-    position: fixed;
-    top: -10;
-    left: 0;
-    bottom: 0;
-    display: inline-flex;
-    flex-direction: column;
-    align-self: stretch;
-    align-items: flex-end;
-    justify-content: flex-end;
-    height: 100%;
-    max-height: 95vh;
+.site-header {
+    position: absolute;
+    z-index: 915;
+    display: inline;
     width: 100%;
     max-width: 10vw;
-    transition: all ease-in-out 0.5s;
-    transition: all 0.5s;
-    overflow: visible;
-    border: 2px solid $yellow;
+    height: 100%;
+    max-height: 100vh;
+    flex-wrap: nowrap;
+    align-self: stretch;
 
-    .nameplate {
-        position: absolute;
-        z-index: 930;
-        top: 0;
-        left: 3.25vw;
+    #masthead {
+        /* The container for the page-title group area */
+        @include border-box;
+        @include make-col;
+        z-index: 925;
+        position: fixed;
+        top: -5;
+        left: 0s;
+        bottom: 0;
+        display: inline-block;
+        flex-direction: column;
+        align-self: stretch;
         height: 100%;
         max-height: 98vh;
         width: 100%;
-        max-width: 7vw;
-        align-content: flex-end;
-        transition: 0.3s;
-        border: 2px solid $green;
+        max-width: 10vw;
+        transition: all ease-in-out 0.5s;
+        transition: all 0.5s;
+        overflow: visible;;
 
-        .the {
-            @include nameplate-site-title;
+        .nameplate {
+            overflow: visible;
             position: absolute;
-            z-index: 1220;
-            top: 2vh;
-            left: 4.75vw;
-            bottom: -1.5vh;
-            font-size: 2.5vw;
-            text-transform: lowercase;
-            opacity: 0.75;
-        }
-
-        .site-title,
-        .site-title a {
-            @include nameplate-site-title;
-            @include neumorphic-text-shadow;
-            position: absolute;
-            left: -1vh;
-            z-index: 1215;
-            text-decoration: none;
-            font-size: 5.31vw;
-            text-align: bottom;
-
-            &:hover {
-                @include nameplate-site-title;
-                @include neumorphic-text-shadow;
-                text-decoration: none;
-                color: shift-color($active-color, $active-percentage);
-            }
-        }
-
-        .site-description {
-            @include site-description;
-            @include text-transform(lowercase);
-            position: absolute;
-            top: -1vh;
-            right: 2vw;
-            z-index: 1220;
-            font-size: 2.5vw;
+            z-index: 930;
+            top: -4;
+            left: 3.25vw;
             height: 100%;
-            max-height: 100vh;
+            max-height: 98.5vh;
+            width: 100%;
+            max-width: 7vw;
+            align-content: center;
+            transition: 0.3s;
+
+            .the {
+                @include title-shadow-inset;
+                position: absolute;
+                z-index: 1220;
+                top: 0;
+                left: 5.75vw;
+                bottom: 0;
+                font-size: 2.5vw;
+                text-transform: lowercase;
+            }
+
+            .site-title,
+            .site-title a {
+                @include nameplate-site-title;
+                text-decoration: none;
+                font-size: 5.32vw;
+                text-align: center;
+
+                &:hover {
+                    text-decoration: none;
+                    color: shift-color($link-color, $active-percentage);
+                    opacity: .65;
+                }
+            }
+
+            .site-description {
+                @include site-description;
+                @include text-transform(lowercase);
+                position: absolute;
+                top: -1vh;
+                right: 2vw;
+                z-index: 1220;
+                font-size: 2.5vw;
+                height: 100%;
+                max-height: 100vh;
+            }
         }
     }
 }

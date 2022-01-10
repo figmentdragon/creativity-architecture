@@ -12,9 +12,7 @@
     font-weight: bolder;
     text-decoration: none;
     color: transparent;
-    @include text-stroke($black, $accent-color);
-    @include text-transform($text-transform: uppercase);
-    @include site-title-shadow;
+    @include title-shadow-inset;
 }
 
 @mixin site-description {

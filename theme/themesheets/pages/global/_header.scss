@@ -1,37 +1,36 @@
-@mixin header-container {
-    position: relative;
-    z-index: 900;
-    left: 2vw;
-    top: 1.8vh;
-    bottom: 0;
-}
+
 
 @mixin neumorphic-text-shadow {
     text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
 }
 
 @mixin neumorphic-site-title {
-    &::before {
+    .site-title {
         position: absolute;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        top: -150px;
-        z-index: 1225;
-        background: linear-gradient(145deg, #D2D3D8, #7E7F82);
-        text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+        top: 10vh;
+        left: 3vw;
+        z-index: 1215;
 
-    }
-    &::after,
-    :hover {
-        position: absolute;
-        left: -50px;
-        width: 200px;
-        height: 200px;
-        top: -200px;
-        z-index: 1205;
-        background: linear-gradient(145deg, #D2D3D8, #7E7F82);
-        text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
-    }
+        &::before {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            top: -150px;
+            z-index: 1225;
+            background: linear-gradient(145deg, #D2D3D8, #7E7F82);
+            text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+        }
 
+        &::after {
+            position: absolute;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            top: -200px;
+            z-index: 1205;
+            background: linear-gradient(145deg, #D2D3D8, #7E7F82);
+            text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+        }
+    }
 }

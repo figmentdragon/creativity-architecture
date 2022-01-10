@@ -1,13 +1,13 @@
 /* __________________________________________________ VARIABLES */
-$shadow-color   : darken($shadow-color, $shadow-percentage);
-$shadow-text    : darken($body-text-color, $text-percentage);
-$shadow-title   : shade-color($purple, $active-percentage);
+$shadow-color   : mix-color(srgb, $primary-color $shadow-percentage, $gray-700);
+$shadow-text    : mix-color(srgb, $text-color $shadow-percentage, $shadow-color);
+$shadow-title   : mix-color(srgb, $title-color $shadow-percentage, $shadow-color);
 
-$shadow-button  : shade-color($shadow-color, $button-percentage);
-$shadow-hover   : tint-color($shadow-color, $hover-percentage);
-$shadow-focus   : shift-color($shadow-color, $focus-percentage);
-$shadow-inset-a : shade-color($shadow-color, $inset-percentage);
-$shadow-inset-b : tint-color($shadow-color, $inset-percentage);
+$shadow-button  : mix-color(srgb, $button-color $shadow-percentage, $shadow-color);
+$shadow-hover   : mix-color(srgb, $hover-color $shadow-percentage, $shadow-color);
+$shadow-focus   : mix-color(srgb, $focus-color $shadow-percentage, $shadow-color);
+$shadow-inset-a : mix-color(srgb, $shadow-color $shadow-percentage, $gray-700);
+$shadow-inset-b : mix-color(srgb, $shadow-color $shadow-percentage, $gray-300);
 
 
 /* __________________________________________________ ELEMENTS */

@@ -27,7 +27,7 @@
     {
         text-decoration: none;
 
-        color: $active-text-color;
+        color: $link-color;
 
         &:hover
         {
@@ -43,7 +43,7 @@
 
         &:active
         {
-            color: $active-text-color;
+            color: $link-color;
         }
     }
 
