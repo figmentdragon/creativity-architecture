@@ -1,7 +1,0 @@
-@mixin footer-text {
-    @include text-stroke($black, $alert-color);
-    font-family: $footer-text-font;
-    color: $footer-text-color;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-md;
-}

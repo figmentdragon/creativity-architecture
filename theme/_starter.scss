@@ -1,9 +1,9 @@
 /* CJMTheme _________________________________________________________
 
-  Theme                          : CJMT - Creativity Architect Default
-  Author                         : CJMT
+  Theme                         : CJMT - Creativity Architect Default
+  Author                        : CJMT
 
-  Stylesheet                     : Default Theme
+  Stylesheet                    : Default Theme
 
   = TOC =
    ()
@@ -13,116 +13,117 @@
 _________________________________________________________ CJMTheme */
 
 // scss-docs-start gray-color-variables
-$white:    #e4edf4;
-$gray-100: #c0c0c0;
-$gray-200: #9a9a9a;
-$gray-300: #7b7b7b;
-$gray-400: #626262;
-$gray-500: #4e4e4e;
-$gray-600: #3e3e3e;
-$gray-700: #323232;
-$gray-800: #282828;
-$gray-900: #1a1a1a;
-$black:    #000100;
+    $white                      : #e4edf4;
+    $gray-100                   : #c0c0c0;
+    $gray-200                   : #9a9a9a;
+    $gray-300                   : #7b7b7b;
+    $gray-400                   : #626262;
+    $gray-500                   : #4e4e4e;
+    $gray-600                   : #3e3e3e;
+    $gray-700                   : #323232;
+    $gray-800                   : #282828;
+    $gray-900                   : #1a1a1a;
+    $black                      : #000100;
 // scss-docs-end gray-color-variables
 
 
 // scss-docs-start color-variables
-$blue:               #0A0FBA;
-$indigo:             #6600FF;
-$purple:             #510bda;
-$pink:               #fc89ac;
-$red:                #BA0A0f;
-$orange:             #FD8535;
-$yellow:             #ffe41e;
-$green:              #82ded1;
-$teal:               #b5ede4;
-$cyan:               #0abab5;
-$gray:    $gray-600;
+    $blue                       : #0A0FBA;
+    $indigo                     : #6600FF;
+    $purple                     : #510bda;
+    $pink                       : #fc89ac;
+    $red                        : #BA0A0f;
+    $orange                     : #FD8535;
+    $yellow                     : #ffe41e;
+    $green                      : #82ded1;
+    $teal                       : #b5ede4;
+    $cyan                       : #0abab5;
+    $gray                       : $gray-600;
 // scss-docs-end color-variables
 
 @import "docs/visual-branding/custom";
 
 // scss-docs-start theme-color-variables
-$primary-color:       $cyan;
-$secondary-color:     $yellow;
-$accent-color:        $silver;
-$valid-color:         $light-cyan;
-$info-color:          $neon-blue;
-$attention-color:     $salomie;
-$invalid-color:       $wild-watermelon;
-$alert-color:         $hot-pink;
+    $primary-color              : $cyan;
+    $secondary-color            : $yellow;
+    $accent-color               : $silver;
+    $valid-color                : $light-cyan;
+    $info-color                 : $neon-blue;
+    $attention-color            : $salomie;
+    $invalid-color              : $wild-watermelon;
+    $alert-color                : $hot-pink;
 
 // scss-docs-end theme-color-variables
 @import "docs/visual-branding/rgba";
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
-// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+// See https                    ://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
 
-$min-contrast-ratio: 4.5;
+    $min-contrast-ratio         : 4.5;
 // Customize the light and dark text colors for use in our color contrast function.
-$color-contrast-dark: black;
-$color-contrast-light: white;
+    $color-contrast-dark        : black;
+    $color-contrast-light       : white;
 
 
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret:                true;
-$enable-rounded:              true;
-$enable-shadows:              true;
-$enable-gradients:            true;
-$enable-transitions:          true;
-$enable-reduced-motion:       true;
-$enable-smooth-scroll:        true;
-$enable-grid-classes:         true;
-$enable-container-classes:    true;
-$enable-cssgrid:              true;
-$enable-button-pointers:      true;
-$enable-rfs:                  true;
-$enable-validation-icons:     true;
-$enable-negative-margins:     true;
-$enable-deprecation-messages: true;
-$enable-important-utilities:  true;
+    $enable-caret               : true;
+    $enable-rounded             : true;
+    $enable-shadows             : true;
+    $enable-gradients           : true;
+    $enable-transitions         : true;
+    $enable-reduced-motion      : true;
+    $enable-smooth-scroll       : true;
+    $enable-grid-classes        : true;
+    $enable-container-classes   : true;
+    $enable-cssgrid             : true;
+    $enable-button-pointers     : true;
+    $enable-rfs                 : true;
+    $enable-validation-icons    : true;
+    $enable-negative-margins    : true;
+    $enable-deprecation-messages: true;
+    $enable-important-utilities : true;
 
-// Prefix for :root CSS variables
+// Prefix for                   :root CSS variables
 
-$variable-prefix:             ca-;
+    $variable-prefix            : ca-;
 
 /* _____________________________________ SPACING */
-$spacing                         : 1;
-$base-number                     : 1.15;
-$vertical-base                 : 1vh;
-$horizontal-base               : 1vw;
+    $spacing                    : 1;
+    $base-number                : 1.15;
+    $vertical-base              : 1vh;
+    $horizontal-base            : 1vw;
 
-
-  $base-size                     : 1.05;
-  $block-spacing                 : 1.5rem;
+    $base-size                  : 1.05;
+    $block-spacing              : 1.5rem;
 
 /* _____________________________________ POSITIONING */
-$base-offset                     : 16px;
-$horizontal-offset-px            : 16px; // 1vh = 8px;
-$horizontal-offset               : 2vh;
-$vertical-offset                 : 2.75vw;
-$vertical-offset-px              : 16px; // 1vw = 6px;
+    $base-offset                : 16px;
+    $horizontal-offset-px       : 16px; // 1vh = 8px;
+    $horizontal-offset          : 2vh;
+    $vertical-offset            : 2.75vw;
+    $vertical-offset-px         : 16px; // 1vw = 6px;
 
 /* _____________________________________ GRID */
-$grid-columns                  : 16;
-$grid-row-columns              : 16;
-$grid-gutter                   : 16px;
+    $grid-columns               : 16;
+    $grid-row-columns           : 16;
+    $grid-gutter                : 16px;
 
 /* ____________________________________ BORDERS */
-  $base-width                    : 1px;
-  $base-radius                   : .95rem;
+    $base-width                 : 1px;
+    $base-radius                : .95rem;
 
 /* ____________________________________ ANIMATION */
-  $animation-speed: 250ms;
-  $animation: ease-in-out;
+    $animation-speed            : 250ms;
+    $animation                  : ease-in-out;
 
-/* _____________________________________ BODY */
-
+/* _____________________________________ TYPOGRAPHY */
+    $font-size-root             : null;
+    $font-size-base             : 1.05;
+    $font-weight-base           : 400;
+    $line-height-base           : 1.15;
+    $heading-base-unit          : 1.25vh;
 
 /* _____________________________________ BORDERS */
-$base-width                      : 1px;
-$base-radius                     : .95rem;

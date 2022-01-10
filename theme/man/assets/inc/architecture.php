@@ -70,7 +70,7 @@ function architecture_theme_support() {
 		]);
     }
 
-	function architecture_custom_menu() {
+	function architecture_custom_new_menu() {
 	  	register_nav_menus(
 		  	array(
 			  	'architecture-menu' => __( 'Site Menu' ),
@@ -169,7 +169,7 @@ function get_post_thumbnail_url( $size = 'full', $post_id = false, $icon = false
 /**
  * Add Front Page edit link to admin Pages menu
  */
-
+/*
 function front_page_on_pages_menu() {
     global $submenu;
     if ( get_option( 'page_on_front' ) ) {
@@ -180,7 +180,7 @@ function front_page_on_pages_menu() {
         );
     }
 }
-
+*/
 // Numeric Page Navi (built into the theme by default)
 function architecture_page_navi() {
   global $wp_query;

@@ -36,9 +36,9 @@
 
 			<nav class="main-navigation" id="architecture">
 				<?php wp_nav_menu( array(
-					'theme_location' => 'header',
-					
-					'container_class' => 'custom-menu-class' ) ); ?>
+					'theme_location' => 'architecture-menu',
+					'container_class' => 'custom-menu-class',
+				 	'menu_class' 	 => 'main-navigation', ) ); ?>
 				    <li class="widget_search alignright" id="s">
 						<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
 							<input type="search" class="form-control form-control-dark"   placeholder="Search..." aria-label="Search">
@@ -49,20 +49,16 @@
 	</header>
 
 	<main class="main-elevation-20">
-        <article>
+        <article class="primary">
 
         </article>
     </main>
 
       <?php /* TEMPLATE PART: Footer */ ?>
-	  <footer id="site-info">
-          <section class="social-media">
-            scrolling social media updates
-          </section>
-          <secion class="contact">
-            <address class="email" id="email"><a href="">contact @email </address>
-            <small class="copyright" id="copyright">Works by <?php get_author_name( $auth_id = 'true', 'display' ); ?>are <?php echo architecture_copyright(); ?></small>
-          </section>
+	<footer class="site-footer" id="site-information">
+			<address class="email"><a href="#">contact @email</a></address>
+			<small class="copyright">Works by <?php get_author_name( $auth_id = 'true', 'display' ); ?>are <?php echo architecture_copyright(); ?></small>
+		</colgroup>
       </footer><!-- #colophon .site-footer -->
 
       <?php wp_footer(); ?>

@@ -1,12 +1,14 @@
 {
     "require": {
-        "scssphp/scssphp": "^1.9.0",
+        "scssphp/scssphp": "^1.10",
         "ext-ctype": "*",
         "ext-json": "*",
         "php": ">=7.0",
-        "justcoded/wordpress-theme-framework": "^3.1",
-        "ext-mbstring": "*",
-        "ext-iconv": "*"
+        "fortawesome/font-awesome": "^5.15",
+        "cakephp/cakephp": "^2.10",
+        "squizlabs/php_codesniffer": "^3.6",
+        "phpunit/phpunit": "^5.2",
+        "kss-php/kss-php": "^2.0"
     },
     "suggest": {
         "ext-mbstring": "For best performance, mbstring should be installed as it is faster than ext-iconv",
@@ -14,16 +16,13 @@
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.4",
-        "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.3 || ^9.4",
-        "sass/sass-spec": "*",
-        "squizlabs/php_codesniffer": "~3.5",
-        "symfony/phpunit-bridge": "^5.1",
-        "thoughtbot/bourbon": "^7.0",
         "twbs/bootstrap": "~5.0",
-        "twbs/bootstrap4": "4.6.0",
         "zurb/foundation": "~6.5"
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
     }
 }

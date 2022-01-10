@@ -14,9 +14,9 @@ html {
 
 body,
 html {
-  height: auto;
-  width: auto;
-  margin: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 body {
@@ -26,7 +26,6 @@ body {
   justify-content: flex-start;
   font-size: 100%;
 }
-
 
 div {
   display: flex;
@@ -38,14 +37,4 @@ div {
 abbr, acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
-}
-
-/* If you want to give a common style to all of the titles in your theme, here's a place to do it (you can style them individually later) */
-.site-title,
-.entry-title,
-.page-title,
-.widget-title,
-.comments-title,
-#reply-title {
-
 }

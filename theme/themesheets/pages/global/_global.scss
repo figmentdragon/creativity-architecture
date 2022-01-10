@@ -10,13 +10,8 @@
 /*! ___________________________________ HEADER */
 /*! ___________________________________ MAIN */
 /*! ___________________________________ ARTICLE */
-/*! ___________________________________ FOOTER */
-    $footer-gradient         :
-        radial-gradient( circle at bottom right, $gray-400 .12%, $primary-color, transparent ),
-        radial-gradient( circle at bottom right, $primary-color, transparent ),
-        radial-gradient( circle at bottom right, $gray-200 .25%, $primary-color, transparent ),
-        radial-gradient( circle at bottom right, $primary-color, transparent ),
-        radial-gradient( circle at bottom right, $gray-100 .5%, $primary-color, transparent );
+/*! ___________________________________ SITE-FOOTER */
+
 
 /*! _____________________________________________ SHADOW */
 /*! ___________________________________ HTML */
@@ -25,7 +20,7 @@
 /*! ___________________________________ MAIN */
 /*! ___________________________________ ARTICLE */
 /*! ___________________________________ NAV */
-/*! ___________________________________ FOOTER */
+/*! ___________________________________ SITE-FOOTER */
 /*! _______________________________________________________ TYPOGRAPHY */
 /*! ___________________________________ HTML */
 /*! ___________________________________ BODY */
@@ -40,29 +35,23 @@
 /*! ___________________________________ MAIN */
 /*! ___________________________________ ARTICLE */
 /*! ___________________________________ NAV */
-/*! ___________________________________ FOOTER */
+/*! ___________________________________ SITE-FOOTER */
 
 /*! _______________________________________________________ PROPERTIES */
 /*! ___________________________________ HTML */
 /*! ___________________________________ BODY */
     @mixin body-properties {
-        padding-top: .75vh;
+        padding-top: 1.75vh;
         padding-right: 0;
         padding-bottom: .75vh;
         padding-left: 1vw;
     }
 /*! ___________________________________ HEADER */
-    @mixin header-properties {
-        display: inline-block;
-        writing-mode: vertical-lr;
-        text-orientation: sideways;
-        rotate: 180deg;
-    }
+
 /*! ___________________________________ MAIN */
     @mixin main-properties {
         @include border-start-radius($border-radius-xxl);
         display: block;
-        opacity: .50;
         background-color: $white;
     }
 /*! ___________________________________ ARTICLE */
@@ -70,6 +59,8 @@
         @include border-radius($border-radius-xl);
         border-radius: $border-radius-xl;
         display: block;
+        color: $body-text-color;
+        text-align: left;
     }
 /*! ___________________________________ NAV */
     @mixin nav-properties {
@@ -77,14 +68,7 @@
         align-items: center;
         justify-content: center;
     }
-/*! ___________________________________ FOOTER */
-    @mixin footer-properties {
-        display: inline;
-        align-items: center;
-        align-content: center;
-        box-shadow: 0 0.5rem 0.4rem -.1rem $shadow-color;
-        background-image: $footer-gradient;
-    }
+/*! ___________________________________ SITE-FOOTER */
 
 /*! _______________________________________________________ CONTAINER */
 /*! ___________________________________ HTML */
@@ -97,39 +81,30 @@
         padding-left: 1vw;
     }
 /*! ___________________________________ HEADER */
-    @mixin header-container {
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: .75vw;
-    }
+
 /*! ___________________________________ MAIN */
     @mixin main-container{
         @include make-container;
         padding-top: .5vh;
         padding-right: 1vw;
-        padding-bottom: .5vh;
+        padding-bottom: 1vh;
         padding-left: 12vw
     }
 /*! ___________________________________ ARTICLE */
     @mixin article-container {
         @include make-container;
-        margin-top: .5vh;
-        margin-bottom: .5vh;
+        border: 2px solid $red;
+        margin-top: 1.5vh;
+        margin-right: 0vw;
+        margin-bottom: 1.5vh;
+        margin-left: 0vw;
     }
 /*! ___________________________________ NAV */
     @mixin nav-container {
         margin-top: 1.25vh;
-        margin-bottom: .75vh;
+        margin-bottom: 1.25vh;
     }
 /*! ___________________________________ FOOTER */
-    @mixin footer-container {
-        @include make-container;
-        margin-right: 2vw;
-        margin-left: 0;
-        margin-bottom: 1rem;
-        padding-right: .75rem;
-        padding-left: .25rem;
-    }
 
 /*! _______________________________________________________ PLACEMENT */
 /*! ___________________________________ HTML */
@@ -143,19 +118,9 @@
         z-index: 30;
     }
 /*! ___________________________________ HEADER */
-    @mixin header-relative {
-        position: relative;
-        z-index: 900;
-        top: 0;
-        right: 80;
-        bottom: 0;
-        left: 10;
-    }
-
 
 /*! ___________________________________ MAIN */
     @mixin main-relative {
-        position: relative;
         top: 1.5vh;
         right: -.25;
         bottom: 1.5vh;
@@ -164,10 +129,8 @@
     }
     @mixin main-elevation {
         box-shadow: 0 1px 1px 0.5px rgba($black-rgb, 1),
-                    0 1px 1px .75px rgba($black-rgb, 1),
-                    0 4px 6px 2px rgba($black-rgb, 0.9),
-                    0 6px 8px 10px rgba($gray-900-rgb, .8),
-                    0 8px 10px 12px rgba($gray-700-rgb, .95);
+                    0 6px 8px 6px rgba($gray-900-rgb, .8),
+                    0 8px 10px 12px rgba($gray-200-rgb, .55);
                 }
 /*! ___________________________________ ARTICLE */
     @mixin article-absolute {
@@ -181,18 +144,11 @@
 
 /*! ___________________________________ NAV */
     @mixin nav-fixed {
-        position: absolute;
-        top: 30;
+        position: relative;
+        top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         z-index: 925;
     }
-/*! ___________________________________ FOOTER */
-    @mixin footer-relative {
-        position: relative;
-        right: 0;
-        bottom: 5.15vh;
-        left: 13vw;
-        z-index: $z-index-footer;
-    }
+/*! ___________________________________ SITE-FOOTER */

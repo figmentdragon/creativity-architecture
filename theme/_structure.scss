@@ -7,28 +7,38 @@ Use this section to set widths and margins, and to build a layout. For examples 
 https://github.com/Automattic/_s/blob/master/layouts/
 */
 
-.site {
-  position: absolute;
-  height: 100%;
-  max-height: 100vh;
-  width: 100%;
-  max-width: 100vw;
-  border: 3px solid $red;
+body,
+body .page {
+  flex-direction: row;
+  flex-wrap     : nowrap;
+  overflow      : hidden;
+  margin        : 0;
+  max-height        : 100vh;
+  max-width         : 100vw;
+  overflow      : hidden;
+  opacity       : 1;
+  z-index       : 50;
+  flex          : 1 1 auto;
+  color         : $body-text-color;
+  padding-top: 1vh;
+  padding-right: 0;
+  padding-bottom: 1vh;
+  padding-left: 1vw;
 }
-
-
-
-
-
 
 .primary {
-  /* The container for your primary content.*/
+    @include article-container;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 92vh;
 }
+
 .content {
   /* The container for your post and page content. */
-  margin: 0;
+  margin-left: 12vw;
   background-image: $accent-color-gradient;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-xl;
   display: grid;
   @include make-container;
 }
@@ -42,9 +52,22 @@ https://github.com/Automattic/_s/blob/master/layouts/
   /* Container for your second widget area */
 }
 
+#site-information .site-footer {
+    @include make-row($gutter: $grid-gutter);
+    @include footer-typography;
+    position: absolute;
+    align-content: baseline;
+    z-index: $z-index-site-information;
+    display: inline;
+}
 
-
-
-
+.email a:link,
+.email a:hover {
+    color: shift-color($footer-text-color, $hover-percentage);
+    font-weight: bolder;
+    color: tint-color($footer-text-color, $link-percentage);
+    text-align:left;
+    width: 50%;
+}
 
 @import "themesheets/pages/structure/section";

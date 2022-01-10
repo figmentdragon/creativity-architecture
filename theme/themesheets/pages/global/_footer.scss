@@ -1,1 +1,55 @@
+/*! _______________________________________________________ FOOTER */
+/*! _____________________________________________ PLACEMENT */
+    @mixin footer-relative {
+        position        : relative;
+        right           : 0;
+        bottom          : 3.15vh;
+        left            : 19.12vw;
+        z-index         : $z-index-footer;
+    }
 
+/*! _____________________________________________ CONTAINER */
+    @mixin footer-container {
+        @include make-container;
+        margin-right    : 2vw;
+        margin-left     : 0;
+        margin-bottom   : 1rem;
+        padding-right   : .75rem;
+        padding-left    : .25rem;
+    }
+
+/*! _____________________________________________ TYPOGRAPHY */
+    @mixin footer-typography {
+        a,
+        a:link {
+            @include text-stroke($black, $footer-text-color);
+            font-family     : $footer-text-font;
+            color           : $footer-text-color;
+            font-weight     : $font-weight-bold;
+            font-size       : $font-size-md;
+
+            :hover {
+                font-weight: $font-weight-bolder;
+                color: shift-color($footer-text-color, $hover-percentage);
+            }
+        }
+    }
+
+
+/*! _____________________________________________ PROPERTIES */
+    @mixin footer-properties {
+        display         : inline-flex;
+        align-content   : baseline;
+        align-self      : stretch;
+        background-image: $footer-gradient;
+    }
+
+/*! _____________________________________________ PATTERN */
+/*! ___________________________________ GRADIENT */
+$footer-gradient        :
+    radial-gradient( circle at bottom right, transparent 1.25%, $primary-color, transparent ),
+    radial-gradient( circle at bottom right, transparent 2.37%, $primary-color, transparent ),
+    radial-gradient( circle at bottom right, transparent 3.49%, $primary-color, transparent 3.49%),
+    radial-gradient( circle at bottom right, transparent 4.61%, $primary-color, transparent 2.37%),
+    radial-gradient( circle at bottom right, transparent 5.73%, $primary-color, transparent 1.25%);
+/*! ___________________________________ SHADOW*/

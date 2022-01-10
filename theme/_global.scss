@@ -1,11 +1,11 @@
 /*________________________________________________________________ GLOBAL */
 @import "themesheets/pages/global/main";
 @import "themesheets/pages/global/header";
-@import "themesheets/pages/global/footer";
 @import "themesheets/pages/global/article";
-@import "themesheets/pages/global/menu";
+@import "themesheets/pages/global/nav";
 @import "themesheets/pages/global/aside";
 @import "themesheets/pages/global/global";
+@import "themesheets/pages/global/footer";
 
 *,
 *::after,
@@ -60,27 +60,101 @@ html {
 }
 
 header {
-    @include make-col;
+    @include header-container;
     @include border-box;
     @include header-relative;
     @include header-properties;
-    @include header-container;
     height: 100%;
     max-height: 90vh;
     width: 100%;
     max-width: 10vw;
     border-color: $black;
 
-    nav {
-        @include nav-fixed;
-        @include make-col;
-        @include nav-container;
-
-        height: 100%;
-        max-height: 95.25vh;
+    .site-header {
+        @include site-header-container;
+        @include site-header-absolute;
         width: 100%;
-        max-width: 2.5vw;
-        background-color: $orange;
+        max-width: 10vw;
+        height: 100%;
+        max-height: 96.50vh;
+
+        #masthead {
+            @include border-box;
+            @include make-col;
+            @include masthead-fixed;
+
+            height: 100%;
+            max-height: 100vh;
+            width: 100%;
+            max-width: 10vw;
+            transition: all ease-in-out 0.5s;
+            transition: all 0.5s;
+            overflow: visible;
+            border: 2px solid $red;
+
+            .nameplate {
+                overflow: visible;
+                position: absolute;
+                z-index: 930;
+                top: -4;
+                left: 3.25vw;
+                height: 100%;
+                max-height: 100vh;
+                width: 100%;
+                max-width: 7vw;
+                text-align: center;
+                transition: 0.3s;
+                border: 2px solid $yellow;
+
+                .the{
+                    @include title-shadow-inset;
+                    position: absolute;
+                    z-index: 1220;
+                    top: 0;
+                    left: 5.75vw;
+                    bottom: 0;
+                    font-size: 2.5vw;
+                    text-transform: lowercase;
+                }
+                .site-title,
+                .site-title a {
+                    @include nameplate-site-title;
+                    text-decoration: none;
+                    font-size: 5.32vw;
+                    text-align: center;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: shift-color($link-color, $active-percentage);
+                        opacity: .65;
+                    }
+                }
+            }
+
+            .site-description {
+                @include site-description;
+                @include text-transform(lowercase);
+                position: absolute;
+                top: -1vh;
+                right: 2vw;
+                z-index: 1220;
+                font-size: 2.5vw;
+                height: 100%;
+                max-height: 100vh;
+            }
+        }
+
+        nav {
+            @include nav-fixed;
+            @include make-col;
+            @include nav-container;
+
+            height: 100%;
+            max-height: 50vh;
+            width: 100%;
+            max-width: 2.5vw;
+            background-color: $orange;
+        }
     }
 }
 
@@ -95,35 +169,27 @@ main {
     max-height: 96vh;
 
     article {
-        @include article-container;
-        width: 100%;
-        max-width: 88vw;
-        height: 100%;
-        max-height: 94vh;
+        @include make-container;
         background-color: $white;
-        border-radius: $border-radius-xl;
-        border-left-color: $gray-800;
         border-left-style: inset;
         border-left-width: 1px;
         box-shadow: inset 20px 10px 20px $gray-700,
                     inset -19px -19px 58px $gray-100,
-                    inset 5px 5px 10px $gray-500,
-                    inset -3.9px -3.9px 1px $white,
-                    inset -5px -5px 10px #bebebe,
+                    inset 5px 5px 10px $gray-800,
+                    inset -3.9px -3.9px 1px $gray-500,
+                    inset -5px -5px 10px $gray-700,
                     inset 5px 5px 10px $gray-900;
     }
 }
 
 footer {
     @include footer-container;
-    @include footer-text;
     @include footer-properties;
     @include border-box;
-    @include make-row($gutter: $grid-gutter);
     @include footer-relative;
-    height: 100%;
-    max-height: 5vh;
-    width: 100%;
-    max-width: 85.15vw;
-
+    height                   : 100%;
+    max-height               : 3vh;
+    width                    : 100%;
+    max-width                : 80vw;
+    box-shadow               : 0 0.5rem 0.4rem -.1rem $shadow-color;
 }

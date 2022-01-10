@@ -33,14 +33,14 @@ function architecture_setup() {
 
 	add_editor_style( get_stylesheet_directory_uri() . 'theme/man/assets/scripts/css/editor-style.css' );
 
-	add_action( 'admin_menu' , 'front_page_on_pages_menu' );
+	//add_action( 'admin_menu' , 'front_page_on_pages_menu' );
   	add_action( 'after_setup_theme', 'architecture_register_nav_menus', 0 );
 	add_action( 'customize_controls_enqueue_scripts', 'architecture_customize_controls_enqueue_scripts' );
 	add_action( 'customize_preview_init', 'architecture_customize_preview_init' );
 	add_action( 'customize_register', 'architecture_theme_customizer' );
 
 	add_action( 'init', 'architecture_head_cleanup' );
- 	add_action( 'init', 'architecture_custom_menu' );
+ 	add_action( 'init', 'architecture_custom_new_menu' );
 
 	add_action( 'widgets_init', 'architecture_register_sidebars' );
 

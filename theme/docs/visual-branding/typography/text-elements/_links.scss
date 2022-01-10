@@ -1,47 +1,41 @@
 /* Links */
 a,
-a:link {
-  outline: none !important;
-  font-family: $nav-text-font;
-  color: $link-color;
-
-  :active {
-    text-decoration: underline;
+a:active,
+a:link,
+a:link .active {
+    outline: none !important;
+    font-family: $nav-text-font;
     color: $link-color;
+    text-decoration: underline;
 
-    & :hover {
-      text-decoration: underline, bold;
-      color: $link-hover-color   ;
+    a:focus,
+    a:focus .active,
+    a:hover,
+    a:hover .active {
+        text-decoration: underline, bold;
+        color: $link-hover-color;
     }
-  }
-
-  :hover {
-    text-decoration: underline, bold;
-      color: $link-hover-color   ;
-  }
-
-  :inactive {
-    color: $inactive-link;
-    text-decoration: none;
-
-  }
 }
+
+a:hover,
+a:hover .active {
+      ext-decoration: underline, bold;
+      color: $link-hover-color;
+}
+
+a:disabled,
+a:focus .disabled,
+a:hover .disabled {
+    color: tint-color($link-color, $inactive-percentage);
+    text-decoration: none;
+}
+
 
 a:focus {
-
-}
-
-a:link {
-  color: $link-color;
+    text-decoration: underline, bold;
+    color: $link-hover-color;
 }
 
 a:visited {
   color: $link-visited-color;
-}
-a:hover {
-  color: $link-hover-color   ;
-}
-a:active {
-  color: $link-color;
-  outline: none;
 }
