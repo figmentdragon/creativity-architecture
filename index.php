@@ -24,28 +24,26 @@
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
 	<header class="site-header">
-		<section id="masthead">
-			<div class="nameplate">
-				<sup class="the">the</sup>
-				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
-				</a>
-				<sub class="site-description">
-					<?php bloginfo( 'description' ); ?>
-				</sub>
-			</div>
+		<div class="nameplate">
+			<sup class="the">the</sup>
+			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
+			</a>
+			<sub class="site-description">
+				<?php bloginfo( 'description' ); ?>
+			</sub>
+		</div>
 
-			<nav class="main-navigation" id="architecture">
-				<?php wp_nav_menu( array(
-					'theme_location' => 'architecture-menu',
-					'container_class' => 'custom-menu-class',
-				 	'menu_class' 	 => 'main-navigation', ) ); ?>
-				    <li class="widget_search alignright" id="s">
-						<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-							<input type="search" class="form-control form-control-dark"   placeholder="Search..." aria-label="Search">
-						</form>
-				  	</li>
-			</nav>
-		  </section>
+		<nav class="main-navigation" id="architecture">
+			<?php wp_nav_menu( array(
+				'theme_location' => 'architecture-menu',
+				'container_class' => 'custom-menu-class',
+			 	'menu_class' 	 => 'main-navigation', ) ); ?>
+			    <li class="widget_search alignright" id="s">
+					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+						<input type="search" class="form-control form-control-dark"   placeholder="Search..." aria-label="Search">
+					</form>
+			  	</li>
+		</nav>
 	</header>
 
 	<main class="main-elevation-20">
@@ -58,8 +56,8 @@
 	<footer class="site-footer" id="site-information">
 			<address class="email"><a href="#">contact @email</a></address>
 			<small class="copyright">Works by <?php get_author_name( $auth_id = 'true', 'display' ); ?>are <?php echo architecture_copyright(); ?></small>
-		</colgroup>
-      </footer><!-- #colophon .site-footer -->
+
+    </footer><!-- #colophon .site-footer -->
 
       <?php wp_footer(); ?>
       </body>

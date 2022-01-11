@@ -7,27 +7,25 @@ Use this section to set widths and margins, and to build a layout. For examples 
 https://github.com/Automattic/_s/blob/master/layouts/
 */
 
-body,
-body .page {
+.page {
   flex-direction: row;
   flex-wrap     : nowrap;
   overflow      : hidden;
-  margin        : 0;
   max-height        : 100vh;
   max-width         : 100vw;
-  overflow      : hidden;
   opacity       : 1;
   z-index       : 50;
   flex          : 1 1 auto;
   color         : $body-text-color;
-  padding-top: 1vh;
+  padding-top: 2vh;
   padding-right: 0;
-  padding-bottom: 1vh;
+  padding-bottom: 2vh;
   padding-left: 1vw;
 }
 
 .primary {
     @include article-container;
+    border-radius: $border-radius-xl;
     width: 100%;
     height: 100%;
     max-width: 100vw;

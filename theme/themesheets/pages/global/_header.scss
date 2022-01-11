@@ -1,25 +1,29 @@
 /*! _______________________________________________________ HEADER */
 /*! _____________________________________________ PLACEMENT */
-    @mixin header-relative {
+    @mixin header-fixed {
         position: fixed;
         z-index: 900;
-        top: 0;
-        right: 80;
-        bottom: 0;
-        left: 10;
+        top: 3;
+        bottom: 3;
+        left: 11;
+        border: 2px solid $red;
     }
 
     @mixin site-header-absolute {
-        position: absolute;
+        position: relative;
+        top: 1.5vh;
+        bottom: 1.5vh;
         z-index: 915;
+        background: $orange;
     }
 
     @mixin masthead-fixed{
         z-index                : 925;
         position               : fixed;
-        top                    : 0;
+        top                    : 1.25vh;
         left                   : 0;
         bottom                 : 0;
+        background: $yellow;
     }
 
 
@@ -28,11 +32,13 @@
         padding-top: 1.75vh;
         padding-bottom: 1.75vh;
         margin-left: .75vw;
+        border: 2px solid $green;
     }
 
     @mixin site-header-container {
         margin-top: 0;
         margin-bottom: 0;
+        border: 2px solid $blue;
     }
 
 /*! _____________________________________________ TYPOGRAPHY */
@@ -44,11 +50,13 @@
         text-orientation: sideways;
         align-self: stretch;
         rotate: 180deg;
+        border: 2px solid $indigo;
     }
 
     @mixin site-header-properties {
         align-content: stretch;
         text-align: center;
+        border: 2px solid $purple;
     }
 
     @mixin masthead-properties {
@@ -56,6 +64,7 @@
         flex-direction         : column;
         align-self             : stretch;
         overflow               : visible;
+        border: 2px solid $teal;
     }
 /*! _____________________________________________ PATTERN */
 /*! ___________________________________ GRADIENT */

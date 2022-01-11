@@ -49,11 +49,7 @@
 /*! ___________________________________ HEADER */
 
 /*! ___________________________________ MAIN */
-    @mixin main-properties {
-        @include border-start-radius($border-radius-xxl);
-        display: block;
-        background-color: $white;
-    }
+
 /*! ___________________________________ ARTICLE */
     @mixin article-properties {
         @include border-radius($border-radius-xl);
@@ -83,13 +79,7 @@
 /*! ___________________________________ HEADER */
 
 /*! ___________________________________ MAIN */
-    @mixin main-container{
-        @include make-container;
-        padding-top: .5vh;
-        padding-right: 1vw;
-        padding-bottom: 1vh;
-        padding-left: 12vw
-    }
+
 /*! ___________________________________ ARTICLE */
     @mixin article-container {
         @include make-container;
@@ -120,18 +110,7 @@
 /*! ___________________________________ HEADER */
 
 /*! ___________________________________ MAIN */
-    @mixin main-relative {
-        top: 1.5vh;
-        right: -.25;
-        bottom: 1.5vh;
-        left: 0;
-        z-index: 200;
-    }
-    @mixin main-elevation {
-        box-shadow: 0 1px 1px 0.5px rgba($black-rgb, 1),
-                    0 6px 8px 6px rgba($gray-900-rgb, .8),
-                    0 8px 10px 12px rgba($gray-200-rgb, .55);
-                }
+
 /*! ___________________________________ ARTICLE */
     @mixin article-absolute {
         position: absolute;
