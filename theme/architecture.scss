@@ -43,6 +43,16 @@ _________________________________________________________ CJMTheme */
   @import "themesheets/abstracts/root";
 
 /* __________________________________________________ PAGES */
+@import "themesheets/pages/global/body";
+@import "themesheets/pages/global/main";
+@import "themesheets/pages/global/header";
+@import "themesheets/pages/global/header/header";
+@import "themesheets/pages/global/header/masthead";
+@import "themesheets/pages/global/article";
+@import "themesheets/pages/global/nav";
+@import "themesheets/pages/global/aside";
+@import "themesheets/pages/global/footer";
+
   @import "global";
 
   @import "structure";

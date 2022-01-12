@@ -1,15 +1,19 @@
 /*! _______________________________________________________ MAIN */
 /*! _____________________________________________ PLACEMENT */
-    @mixin main-static {
-        margin-top: 0;
-        margin-right: -.25;
-        margin-bottom: 0;
-        margin-left: 1vw;
+    @mixin main-relative {
+        position: relative;
+        top: 1vh;
+        right: 0;
+        bottom: 1vh;
+        left: .75vw;
         z-index: 200;
     }
 
 /*! _____________________________________________ CONTAINER */
     @mixin main-container {
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+        margin-left: 5vw;
         @include make-container;
         padding-top: .5vh;
         padding-right: 1vw;
@@ -17,9 +21,7 @@
         padding-left: 12vw;
     }
 
-    @mixin primary-container {
-        border: 2px solid $red;
-    }
+
 
 /*! _____________________________________________ TYPOGRAPHY */
 
@@ -28,7 +30,8 @@
     @mixin main-properties {
         @include border-start-radius($border-radius-xxl);
         display: block;
-        background-color: $white;
+        background-color: transparent;
+        background-blend-mode: color-dodge;
     }
 
 /*! _____________________________________________ PATTERN */

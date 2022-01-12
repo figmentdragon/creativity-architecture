@@ -9,10 +9,10 @@
     & .item {
       flex: 1;
       text-align: center;
-      padding: #{$padding * 14px} #{$padding * 20px};
+      padding: #{$offset * 14px} #{$offset * 20px};
       color: material-color($dk, "600");
       font-size: $font-size * 14px;
-      font-weight: 500;
+      font-weight: $font-weight-normal;
       border-bottom: 2px solid transparent;
       cursor: pointer;
       transition: border-bottom-color 0.2s ease;

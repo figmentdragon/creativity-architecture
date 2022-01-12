@@ -4,52 +4,58 @@
   );
 }
 
-@mixin global-gradient($color) {
-    $diff: $alpha-from - $alpha-to;
+@mixin theme-gradient($theme-color) {
     background-image: linear-gradient(
-  90deg,
-  transparent,
-  rgba($white, 0.2) 5%,
-  rgba($accent-color, 0.3) 5%,
-  rgba($secondary-color, 0.4) 15%,
-  rgba($secondary-color, 0.5) 30%,
-  rgba($secondary-color, 0.6) 45%,
-  rgba($color, 0.7) 60%,
-  rgba($color, 0.8) 75%,
-  rgba($color, 0.9) 90%,
-  rgba($color, 1) 95%
-);
+    90deg, $theme-color, $white, transparent );
 }
 
-@mixin global-gradient($accent-color) {
+@mixin accent-gradient {
     $diff: $alpha-from - $alpha-to;
     background-image: linear-gradient(
     195deg,
-    transparent 20%,
-    rgba($secondary-color, $alpha-from - $diff * 0.981) 30%,
-    rgba($secondary-color, $alpha-from - $diff * 0.981) 40%,
-    rgba($primary-color, $alpha-from - $diff * 0.981) 50%,
-    rgba($primary-color, $alpha-from - $diff * 0.981) 60%,
-    rgba($primary-color, $alpha-from - $diff * 0.981) 70%,
-    rgba($accent-color, $alpha-from - $diff * 0.981) 80%,
-    rgba($accent-color, $alpha-from - $diff * 0.981) 85%,
-    rgba($accent-color, $alpha-from - $diff * 0.981) 90%,
+    transparent 5%,
+    rgba($secondary-color, $alpha-from - $diff * 0.10) 10%,
+    rgba($secondary-color, $alpha-from - $diff * 0.211) 15%,
+    rgba($primary-color, $alpha-from - $diff * 0.321) 20%,
+    rgba($primary-color, $alpha-from - $diff * 0.431) 30%,
+    rgba($primary-color, $alpha-from - $diff * 0.541) 40%,
+    rgba($accent-color, $alpha-from - $diff * 0.651) 50%,
+    rgba($accent-color, $alpha-from - $diff * 0.761) 65%,
+    rgba($accent-color, $alpha-from - $diff * 0.871) 80%,
     rgba($accent-color, $alpha-from - $diff * 0.981) 95%
     );
 }
 
-@mixin global-gradient($color: $secondary-color) {
+@mixin secondary-gradient {
     $diff: $alpha-from - $alpha-to;
     background-image: linear-gradient(
-    205deg,
-    rgba($white, 0.2) 5%,
-    rgba($accent-color, 0.3) 5%,
-    rgba($color, 0.4) 15%,
-    rgba($color, 0.5) 30%,
-    rgba($color, 0.6) 45%,
-    rgba($primary-color, 0.7) 60%,
-    rgba($primary-color, 0.8) 75%,
-    rgba($primary-color, 0.9) 90%,
-    rgba($primary-color, 1) 95%
+    195deg,
+    transparent 5%,
+    rgba($primary-color, $alpha-from - $diff * 0.10) 10%,
+    rgba($primary-color, $alpha-from - $diff * 0.211) 15%,
+    rgba($accent-color, $alpha-from - $diff * 0.321) 20%,
+    rgba($accent-color, $alpha-from - $diff * 0.431) 30%,
+    rgba($accent-color, $alpha-from - $diff * 0.541) 40%,
+    rgba($secondary-color, $alpha-from - $diff * 0.651) 50%,
+    rgba($secondary-color, $alpha-from - $diff * 0.761) 65%,
+    rgba($secondary-color, $alpha-from - $diff * 0.871) 80%,
+    rgba($secondary-color, $alpha-from - $diff * 0.981) 95%
+    );
+}
+
+@mixin primary-gradient {
+    $diff: $alpha-from - $alpha-to;
+    background-image: linear-gradient(
+    195deg,
+    transparent 5%,
+    rgba($accent-color, $alpha-from - $diff * 0.10) 10%,
+    rgba($accent-color, $alpha-from - $diff * 0.211) 15%,
+    rgba($secondary-color, $alpha-from - $diff * 0.321) 20%,
+    rgba($secondary-color, $alpha-from - $diff * 0.431) 30%,
+    rgba($secondary-color, $alpha-from - $diff * 0.541) 40%,
+    rgba($primary-color, $alpha-from - $diff * 0.651) 50%,
+    rgba($primary-color, $alpha-from - $diff * 0.761) 65%,
+    rgba($primary-color, $alpha-from - $diff * 0.871) 80%,
+    rgba($primary-color, $alpha-from - $diff * 0.981) 95%
     );
 }

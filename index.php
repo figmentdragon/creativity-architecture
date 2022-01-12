@@ -33,30 +33,29 @@
 			</sub>
 		</div>
 
-		<nav class="main-navigation" id="architecture">
+		<nav class="navbar" id="architecture">
 			<?php wp_nav_menu( array(
 				'theme_location' => 'architecture-menu',
 				'container_class' => 'custom-menu-class',
-			 	'menu_class' 	 => 'main-navigation', ) ); ?>
-			    <li class="widget_search alignright" id="s">
-					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-						<input type="search" class="form-control form-control-dark"   placeholder="Search..." aria-label="Search">
-					</form>
-			  	</li>
+			 	'menu_class' 	 => 'navbar', ) ); ?>
 		</nav>
 	</header>
 
-	<main class="main-elevation-20">
-        <article class="primary">
+	<main>
 
+        <article>
+			<div class="primary">
+
+			</div>
         </article>
     </main>
 
       <?php /* TEMPLATE PART: Footer */ ?>
-	<footer class="site-footer" id="site-information">
+	<footer class="site-footer">
+		<div id ="site-information">
 			<address class="email"><a href="#">contact @email</a></address>
 			<small class="copyright">Works by <?php get_author_name( $auth_id = 'true', 'display' ); ?>are <?php echo architecture_copyright(); ?></small>
-
+		</div>
     </footer><!-- #colophon .site-footer -->
 
       <?php wp_footer(); ?>

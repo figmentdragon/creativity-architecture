@@ -38,8 +38,8 @@
 
 /*! _____________________________________________ PROPERTIES */
     @mixin footer-properties {
-        display         : inline-flex;
-        align-content   : baseline;
+    display: inline;
+    align-content: baseline;
         align-self      : stretch;
         background-image: $footer-gradient;
     }

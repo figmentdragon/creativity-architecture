@@ -8,12 +8,14 @@
 }
 
 @mixin title-shadow-inset {
-    background: $accent-color;
+    @include text-stroke($black, $accent-color);
+    background-blend-mode: color-burn;
     color: transparent;
-    text-shadow: 3.75px 3.25px 3.5px rgba(transparent, 0.95),
-                3.25px 3.5px 3px rgba($secondary-color-rgb, 0.95),
-                3.5px  3px   3.75px rgba($primary-color-rgb, 0.95),
-                3px 3.75px 3.25px rgba($secondary-color-rgb, 0.95), ;
+    text-shadow:
+        inset 2.75px 9.25px 1.5px rgba($white-rgb, 0.85),
+         inset -3.25px 3.5px -3px rgba($secondary-color-rgb, 0.95),
+        inset -2.5px  13px -2.75px rgba($white, 0.35),
+        inset 12px -6.75px 6.25px $primary-color;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;

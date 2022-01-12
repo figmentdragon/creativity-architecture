@@ -1,106 +1,135 @@
 /*! _______________________________________________________ HEADER */
 /*! _____________________________________________ PLACEMENT */
-    @mixin header-fixed {
-        position: fixed;
-        z-index: 900;
-        top: 3;
-        bottom: 3;
-        left: 11;
-        border: 2px solid $red;
+    @mixin masthead-relative {
+        position               : relative;
+        z-index                : 900;
+        top                    : 0;
+    	left                   : 0;
+    	bottom                 : 0;
     }
 
-    @mixin site-header-absolute {
-        position: relative;
-        top: 1.5vh;
-        bottom: 1.5vh;
-        z-index: 915;
-        background: $orange;
-    }
-
-    @mixin masthead-fixed{
-        z-index                : 925;
-        position               : fixed;
-        top                    : 1.25vh;
-        left                   : 0;
+    @mixin nameplate-absolute {
+        z-index                : 915;
+        position               : absolute;
+        top                    : 0;
         bottom                 : 0;
-        background: $yellow;
+        left: -10;
+        margin: auto;
     }
-
 
 /*! _____________________________________________ CONTAINER */
-    @mixin header-container {
-        padding-top: 1.75vh;
-        padding-bottom: 1.75vh;
-        margin-left: .75vw;
-        border: 2px solid $green;
-    }
 
-    @mixin site-header-container {
-        margin-top: 0;
-        margin-bottom: 0;
-        border: 2px solid $blue;
+    @mixin masthead-container {
+        margin-top             : 0;
+        margin-bottom          : 0;
+        margin-left            : 2vw;
+        padding-top            : 1vh;
+        padding-right          : .5vw;
+        padding-bottom         : 1vh;
+        padding-left           : .5vw;
     }
-
 /*! _____________________________________________ TYPOGRAPHY */
-
-/*! _____________________________________________ PROPERTIES */
-    @mixin header-properties {
-        display: inline-block;
-        writing-mode: vertical-lr;
-        text-orientation: sideways;
-        align-self: stretch;
+    @mixin masthead-typography{
+        writing-mode           : vertical-lr;
+        text-orientation       : sideways;
         rotate: 180deg;
-        border: 2px solid $indigo;
     }
-
-    @mixin site-header-properties {
-        align-content: stretch;
-        text-align: center;
-        border: 2px solid $purple;
-    }
-
+/*! _____________________________________________ PROPERTIES */
     @mixin masthead-properties {
         display                : inline-block;
-        flex-direction         : column;
         align-self             : stretch;
-        overflow               : visible;
-        border: 2px solid $teal;
+        overflow               : hidden;
+        flex-direction         : column;
+        transition             : all ease-in-out 0.5s;
+        transition             : all 0.5s;
     }
+
+    @mixin nameplate-properties {
+        align-content          : stretch;
+        overflow               : hidden;
+        text-align             : center;
+        transition             : 0.3s;
+        overflow: visible;
+    }
+
 /*! _____________________________________________ PATTERN */
 /*! ___________________________________ GRADIENT */
 
+    @mixin nameplate-site-title {
+        @include site-title-shadow;
+        @include title-shadow-inset;
+        background             : -webkit-linear-gradient($primary-color, $accent-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
 /*! ___________________________________ SHADOW*/
     @mixin neumorphic-text-shadow {
-        text-shadow        : inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+        text-shadow            : inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
     }
 
     @mixin neumorphic-site-title {
         .site-title {
-            position       : absolute;
-            top            : 10vh;
-            left           : 3vw;
-            z-index        : 1215;
+            position           : absolute;
+            top                : 10vh;
+            left               : 3vw;
+            z-index            : 1215;
 
-            &              ::before {
-                position   : absolute;
-                left       : 0;
-                width      : 100px;
-                height     : 100px;
-                top        : -150px;
-                z-index    : 1225;
-                background : linear-gradient(145deg, #D2D3D8, #7E7F82);
-                text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+            &                  ::before {
+                position       : absolute;
+                left           : 0;
+                width          : 100px;
+                height         : 100px;
+                top            : -150px;
+                z-index        : 1225;
+                background     : linear-gradient(145deg, #D2D3D8, #7E7F82);
+                text-shadow    : inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
             }
 
-            &              ::after {
-                position   : absolute;
-                left       : -50px;
-                width      : 200px;
-                height     : 200px;
-                top        : -200px;
-                z-index    : 1205;
-                background : linear-gradient(145deg, #D2D3D8, #7E7F82);
-                text-shadow: inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
+            &                  ::after {
+                position       : absolute;
+                left           : -50px;
+                width          : 200px;
+                height         : 200px;
+                top            : -200px;
+                z-index        : 1205;
+                background     : linear-gradient(145deg, #D2D3D8, #7E7F82);
+                text-shadow    : inset 6.31px -6.31px 10px #7C7D80, inset -6.31px 6.31px 10px #D4D5DA;
             }
         }
+    }
+
+
+    .the{
+        @include title-shadow-inset;
+        position               : absolute;
+        z-index                : 1220;
+        top                    : 0;
+        left                   : 5.75vw;
+        bottom                 : 0;
+        font-size              : 2.5vw;
+        text-transform         : lowercase;
+    }
+    .site-title,
+    .site-title a {
+            text-decoration    : none;
+            font-size          : 5.32vw;
+
+        &                      :hover {
+                text-decoration: none;
+                color          : shift-color($link-color, $active-percentage);
+                opacity        : .65;
+            }
+    }
+
+    .site-description {
+        @include site-description;
+        @include text-transform(lowercase);
+        position               : absolute;
+        top                    : -1vh;
+        right                  : 2vw;
+        z-index                : 1220;
+        font-size              : 2.5vw;
+        height                 : 100%;
+        max-height             : 100vh;
     }

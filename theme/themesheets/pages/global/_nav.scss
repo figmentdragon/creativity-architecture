@@ -1,0 +1,137 @@
+/*! _______________________________________________________ NAV */
+/*! _____________________________________________ VARIABLES */
+    @import "nav/base/nav-variables";
+
+/*! _____________________________________________ TOOLS */
+/*! ___________________________________ FUNCTIONS */
+/*! ___________________________________ MIXINS */
+    @mixin nav-shadow-inset {
+        background-color: $nav-link-hover-color;
+        color: transparent;
+        text-shadow: 3.75px 3.25px 3.5px rgba(transparent, 0.95),
+                    3.25px 3.5px 3px rgba($nav-text-color, 0.95),
+                    3.5px  3px   3.75px rgba($nav-link-hover-color, 0.95),
+                    3px 3.75px 3.25px rgba($secondary-color-rgb, 0.95), ;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+    }
+
+
+/*! _________________________ Placement */
+    @mixin nav-relative {
+        position: relative;
+        top: 0vh;
+        right: -1vw;
+        bottom: 0vh;
+        left: -1vw;
+        z-index: 1000;
+        background-color: $red;
+    }
+/*! _________________________ Container */
+    @mixin nav-container {
+        margin-top: 1.25vh;
+        margin-bottom: 1.25vh;
+        border: 2px solid $orange;
+    }
+/*! _________________________ Typography */
+    @mixin architecture-menu {
+        #architecture a:link,
+        #architecture a:link .active {
+            font-family: $nav-text-font;
+            color: $nav-text-color;
+            font-weight: $font-weight-base;
+        }
+
+        #architecture a:hover,
+        #architecture a:hover .active,
+        #architecture a:focus,
+        #architecture a:focus .active {
+            @include nav-shadow-inset;
+            font-weight: $font-weight-bolder;
+        }
+    }
+
+/*! _________________________ Properties */
+    @mixin nav-properties {
+        display: inline-flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $purple;
+    }
+/*! _________________________ Pattern */
+/* ________________ Gradient */
+/* ________________ Shadow */
+/*! _____________________________________________ ELEMENTS */
+/*! ___________________________________ effect html tags */
+    @import "nav/base/nav";
+    @import "nav/navbar";
+/*! _____________________________________________ OBJECTS */
+/*! ___________________________________ reusable generic pieces */
+/*! _____________________________________________ COMPONENTS */
+/*! ___________________________________ parts of the UI */
+    @import "nav/vertical-navigation";
+
+    nav .active{
+        ul {
+            visibility: visible;
+            pointer-events: initial;
+            transition-delay: 0.2s;
+        }
+    }
+
+    .nav-icon {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        cursor: pointer;
+        display: inline-block;
+        height: 35px;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        transition: background 0.3s;
+        width: 35px;
+
+        span {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            background: #fff;
+            display: block;
+            height: 3px;
+            right: 5px;
+            transition: transform 0.3s;
+
+            &:before{
+                width: 100%;
+                height: 3px;
+                background: #fff;
+                content: "";
+                display: block;
+                left: 0;
+                position: absolute;
+                top: -8px;
+            }
+
+            &:after {
+                width: 100%;
+                height: 3px;
+                background: #fff;
+                content: "";
+                display: block;
+                left: 0;
+                position: absolute;
+                bottom: -8px;
+            }
+        }
+    }
+    .active {
+        .nav-icon {
+            span{
+                transform: rotate(90deg);
+            }
+        }
+    }

@@ -1,18 +1,10 @@
 @mixin site-title {
+    font-family: 'Euphorigenic';
     @include title-shadow;
     @include text-stroke($black, $primary-color);
-    @include text-transform($text-transform: uppercase);
-    font-family: 'Euphorigenic';
-    font-weight: bolder;
-    text-decoration: none;
-}
-
-@mixin nameplate-site-title {
-    font-family: 'Euphorigenic';
     font-weight: bolder;
     text-decoration: none;
     color: transparent;
-    @include title-shadow-inset;
 }
 
 @mixin site-description {

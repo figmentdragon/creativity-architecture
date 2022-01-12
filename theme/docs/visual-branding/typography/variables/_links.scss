@@ -2,15 +2,17 @@
 //
 // Style anchor elements.
 
-$link-hover-color              : shift-color($link-color, $hover-percentage);
-$link-focus-color              : shade-color( $link-color, $focus-percentage);
-$link-visited-color            : shade-color($link-color, $visited-percentage);
-$link-visited-hover-color      : shade-color($link-visited-color, $hover-percentage);
+$link-hover-color             : shift-color($link-color, $hover-percentage);
+$link-focus-color             : shade-color($link-color, $focus-percentage);
+$link-visited-color           : shade-color($link-color, $visited-percentage);
+$link-visited-hover-color     : shade-color($link-visited-color, $hover-percentage);
 
 /* Properties */
 $link-decoration              : bold;
-$link-hover-decoration  : underline bold;
+$link-hover-decoration        : underline bold;
 $link-visited-decoration      : underline;
+
+$link-transition              : color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
 
 $stretched-link-pseudo-element: after;
 $stretched-link-z-index       : 1;
