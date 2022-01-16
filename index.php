@@ -14,8 +14,8 @@
 
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-		<script src="https://kit.fontawesome.com/a52bc36f18.js" crossorigin="anonymous"></script>
+		<link href="style.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/a52bc36f18.js" crossorigin="anonymous"></script>
 		<?php wp_head(); ?>
 
 		<?php // drop Google Analytics Here ?>
@@ -26,7 +26,11 @@
 	<header class="site-header">
 		<div class="nameplate">
 			<sup class="the">the</sup>
-			<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
+			<h1 class="site-title">
+				<a>
+				CREATIVITY ARCHITECT	
+				</a>
+			</h1><a href="/"><?php bloginfo( 'name' ); ?>
 			</a>
 			<sub class="site-description">
 				<?php bloginfo( 'description' ); ?>
