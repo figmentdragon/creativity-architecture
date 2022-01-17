@@ -1,0 +1,86 @@
+/* COLORpalette _________________________________________________________
+
+Theme/Brand Name             : CJMT
+Author                       : CJMT
+
+Stylesheet                   : CJMT Brand Stylesheet
+
+  = TOC =
+  [] Color Palette
+    (1) Color Variables
+    (2) Brand Colors
+    (3) Utilities Colors
+  [] Properties
+  [] Utilities
+
+_________________________________________________________ colorPALETTE */
+
+/* _______________________________________ GRAY SCALE */
+  @import "color/gray-scale";
+
+/* _______________________________________ CORE COLOR */
+  @import "color/color";
+
+/* _______________________________________ CUSTOM COLOR */
+    $silver                      : #a8a9ad;
+
+/* _______________________________________ THEME COLOR */
+  @import "color/theme";
+
+/* ___________________________________________________ VARIABLES */
+  @import "color/variables";
+
+/* ___________________________________________________ UTILITY */
+  @import "color/utility";
+
+/* ___________________________________________________ TEXT */
+  @import "color/text";
+
+/* ___________________________________________________ BUTTONS + FORMS */
+    $input-text-color       : shade-color($primary-color, $text-percentage);
+    $input-bg-color         : tint-color($primary-color, $background-percentage);
+    $input-border-color     : shade-color($primary-color, $border-percentage);
+
+    $input-text-focus-color : shade-color($input-text-color, $focus-percentage);
+    $input-bg-focus-color   : tint-color($input-bg-color, $focus-percentage);
+    $input-border-focus-color : shade-color($input-border-color, $focus-percentage);
+
+    $input-group-bg-color   : $gray-200;
+    $form-switch-text-color : $input-bg-color;
+
+    $form-switch-text-color : $input-bg-color;
+
+/* ___________________________________________________ LINK */
+    $nav-link-transition         : color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+
+    /* Link */
+    $link-active-color                 : $active-color;
+    $hover-color                     : shift-color($link-active-color, $hover-percentage);
+
+    $link-focus-color               : tint-color($link-active-color, $focus-percentage);
+
+    $visited-color              : shade-color($link-active-color, $visited-percentage);
+    $visited-hover-color        : shade-color($link-active-color, $visited-percentage);
+
+    /* Nav */
+    $nav-text-color                  : $active-color;
+    $nav-text-hover                  : shade-color($nav-text-color, $hover-percentage);
+    $nav-disabled-color              : shade-color($nav-text-color, $disabled-percentage);
+
+    /* Tabs */
+    $tabs-hover-border               : shade-color($border-color, $hover-percentage);
+
+    /* Navbar */
+    $navbar-dark-text                : $accent-color;
+    $navbar-dark-hover               : shift-color($navbar-dark-text, $hover-percentage);
+    $navbar-dark-disabled-text       : color-mix(srgb $navbar-dark-text $disabled-percentage, $disabled-color);
+    $navbar-dark-toggler-border      :     $navbar-dark-text;
+
+    $navbar-light-text               : $primary-color;
+    $navbar-light-hover              : shift-color($navbar-light-text, $hover-percentage);
+    $navbar-light-disabled-text      : color-mix(srgb $navbar-light-text $disabled-percentage, $disabled-color);
+    $navbar-light-toggler-border     :     $navbar-dark-text;
+
+    @import "color/rgba";
+    @import "color/maps";
+    @import "color/contrast";

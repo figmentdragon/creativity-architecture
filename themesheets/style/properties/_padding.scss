@@ -1,0 +1,8 @@
+/* _____________________________________ PADDING */
+    $base-offset                     : 16px !default;
+    $horizontal-offset-px            : 16px !default; // 1vh = 8px;
+    $horizontal-offset               : 2vh !default;
+    $vertical-offset                 : 2.75vw !default;
+    $vertical-offset-px              : 16px !default; // 1vw = 6px;
+
+  @import "themesheets/abstracts/materials/padding";

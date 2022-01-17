@@ -2,7 +2,7 @@ var sass = import("sass");
 var Fiber = import("fibers");
 var fa = import("fontawesome");
 var result = sass.renderSync({file:
-    entry: path.resolve(__dirname, "theme/architecture.scss");
+    entry: path.resolve(__dirname, "themesheets/style.scss");
 
 sass.render({
   file: "input.scss",
