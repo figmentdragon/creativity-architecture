@@ -11,7 +11,7 @@ $architecture_tools = [
     'disable-feeds.php',
     'disable-json-api.php',
     'disable-google-fonts-in-backend.php',
-//    'excerpt.php',
+    'excerpt.php',
     'gutenberg-gallery-carousel.php',
     'laravel-mix.php',
     'menu-editor-custom-fields.php',

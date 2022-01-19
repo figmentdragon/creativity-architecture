@@ -1,26 +1,39 @@
-b, strong {
+b,
+strong,
+time {
 	font-weight: bold;
 }
-dfn, cite, em, i {
+
+cite,
+dfn,
+em,
+i {
 	font-style: italic;
 }
-sup,
-sub {
+
+sub,
+sup {
 	font-size: 75%;
 	height: 0;
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
+
 sup {
 	bottom: 1ex;
 }
+
 sub {
-	top: .5ex;
+	font-size: 60%;
+	vertical-align: bottom;
+	top: 0.5ex;
 }
+
 small {
-	font-size: 75%;
+	font-size: 80%;
 }
+
 big {
 	font-size: 125%;
 }

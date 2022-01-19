@@ -34,6 +34,7 @@ function architecture_setup() {
 	add_editor_style( get_stylesheet_directory_uri() . 'assets/scripts/css/editor-style.css' );
 
 	//add_action( 'admin_menu' , 'front_page_on_pages_menu' );
+	add_action( 'after_setup_theme', 'architecture_clean_up' );
   add_action( 'after_setup_theme', 'architecture_register_nav_menus', 0 );
 	add_action( 'customize_controls_enqueue_scripts', 'architecture_customize_controls_enqueue_scripts' );
 	add_action( 'customize_preview_init', 'architecture_customize_preview_init' );

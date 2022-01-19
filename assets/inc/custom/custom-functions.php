@@ -13,7 +13,7 @@ add_filter('pre_option_link_manager_enabled', '__return_true');
  * Hide admin bar
  */
 
- add_filter( 'show_admin_bar', '__return_false' );
+add_filter( 'show_admin_bar', '__return_false' );
 
 
 /**

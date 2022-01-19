@@ -3,7 +3,6 @@ $gradient: linear-gradient(-120deg, rgba($primary, .95), rgba($secondary, .65), 
 
 $gradient-tabs-bg: linear-gradient(320deg, transparent, rgba($white-rgb, .10) 20%, rgba($accent-rgb, .20) 35%, rgba($accent-rgb, .30) 50%, rgba($accent-rgb, .40) 65%);
 
-
 /* THEME */
 $gradient-primary: linear-gradient(
   290deg,
@@ -89,4 +88,4 @@ $nav-gradient: linear-gradient(
   rgba($accent, 0.25) 90%
 );
 
-@import "html-gradient";
+$html-gradient: radial-gradient(circle at top left, $primary, $secondary, $accent, $white);

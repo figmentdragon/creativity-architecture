@@ -23,38 +23,32 @@
 	</head>
 
 <body <?php body_class(); ?> id="<?php the_ID(); ?>">
-	<header class="site-header">
-		<div class="nameplate">
-			<sup class="the">the</sup>
-			<h1 class="site-title">
-				<a>
-				CREATIVITY ARCHITECT	
-				</a>
-			</h1><a href="/"><?php bloginfo( 'name' ); ?>
-			</a>
-			<sub class="site-description">
-				<?php bloginfo( 'description' ); ?>
-			</sub>
-		</div>
-
-		<nav class="navbar" id="architecture">
-			<?php wp_nav_menu( array(
-				'theme_location' => 'architecture-menu',
-				'container_class' => 'custom-menu-class',
-			 	'menu_class' 	 => 'navbar', ) ); ?>
-		</nav>
-	</header>
 
 	<main>
 
-        <article>
-			<div class="primary">
+		<header class="site-header">
+			<section class="nameplate">
+				<h4 class="site-desecription">
+					<?php bloginfo( 'name' ); ?>
+				</h4>	
+				<h1 class="site-title">
+					<?php bloginfo( 'name' ); ?>
+				</h1>
+				<nav class="navbar" id="architecture">
+					<?php wp_nav_menu( array(
+					'theme_location' => 'architecture-menu',
+					'container_class' => 'custom-menu-class',
+				 	'menu_class' 	 => 'navbar', ) ); ?>
+				</nav>
+			</section>
+		</header>
 
-			</div>
-        </article>
-    </main>
+     <article>
+		<div class="primary">
 
-      <?php /* TEMPLATE PART: Footer */ ?>
+		</div>
+    </article>
+
 	<footer class="site-footer">
 		<div id ="site-information">
 			<address class="email"><a href="#">contact @email</a></address>
@@ -62,6 +56,6 @@
 		</div>
     </footer><!-- #colophon .site-footer -->
 
-      <?php wp_footer(); ?>
-      </body>
-      </html>
+	</main>
+ </body>
+ </html>

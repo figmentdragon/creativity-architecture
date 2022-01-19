@@ -7,6 +7,7 @@ $border-radius-xxl:     $base-radius * $xxl;
 $border-radius-pill:    50rem;
 
 $thumbnail-radius:      $base-radius * divide($md, 2);
+$card-border-radius-inner: $border-radius-sm;
 $border-radius    :     $base-radius;
 
 // Single side border-radius

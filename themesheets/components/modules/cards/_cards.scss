@@ -3,19 +3,19 @@
   @include elevation(2);
   position: relative;
   overflow: hidden;
-  border-radius: $border-radius * 4px;
-  $a: $padding * 20px;
+  border-radius: $border-radius-lg;
+  $a: $offset * 20px;
 
   & .body {
-    padding: 6px $a;
+    padding: $offset-x $offset-y;
   }
 
   & .footer {
-    padding: 10px $a;
+    padding: $offset-x $offset-y;
   }
 
   & .card-title {
-    font-size: $font-size * 26px !important;
+    font-size: $font-size-base * 26 !important;
   }
 
   &.hoverable {

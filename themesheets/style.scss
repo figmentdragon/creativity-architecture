@@ -58,24 +58,51 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 #reply-title {
 }
 
+@import "components/modules/cards/card",
+	"components/modules/cards/cards";
+
 /* __________________________________________________ EXTERIOR FACADE */
 *, *:after, *:before, *::after, *::before {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	@include border-box;
+	-webkit-font-smoothing: antialiased;
+	border: 0;
+	outline: 0;
+}
+
+body:hover,
+header:hover,
+footer:hover,
+main:hover {
+	@include elevation(19);
 }
 
 html {
 	max-height: 100%;
 	max-width: 100%;
 	z-index: 25;
-	@include html-gradient;
+	background: $html-gradient;
+	background-size: cover;
+	background-blend-mode: hard-light;
+	animation: hue-rotate 3s radial infinite;
+	@include hue-rotate;
+	@include container;
+	@include make-container-max-widths($max-widths: $container-max-widths);
+	@media only screen and (min-width: $breakpoint-sm) {
+		font-size: 15px;
+	}
+
+	@media only screen and (min-width: $breakpoint-lg) {
+		font-size: $font-size-base;
+	}
 }
 
 html, body {
 	width: 100%;
 	height: 100%;
 	@include border-box;
+	overflow: hidden;
 	position: relative;
 	* {
     box-sizing: inherit;
@@ -85,13 +112,144 @@ html, body {
 body {
 	max-height: 100vh;
 	max-width: 100vw;
-	@include border-start-radius($border-radius-xxl);
 	z-index: 50;
-}
+	padding: 0;
+	@include border-start-radius($border-radius-xxl);
+	@include elevation(25);
+	
+	   main {
+			width: 100%;
+			max-width: 97vw;
+			height: 100%;
+			max-height: 94vh;
+			position: relative;
+			top: 1vh;
+			right: 0;
+			bottom: 1vh;
+			left: 1vw;
+			@include border-end-radius($border-radius-xl);   
+			z-index: 100;
+ 
+			header {
+  	  			width: 100%;
+	  			max-width: 5vw;
+	  			height: 100%;
+	  			max-height: 100vh;
+	  			@include border-start-radius($border-radius-xxl);
+     			writing-mode: vertical-lr;
+     			overflow: visible;
+    		 	z-index: 200;
+ 		
+ 				.nameplate {
+ 					height: 100%;
+ 					max-height: 100vh;
+ 					width: 100%;
+ 					max-width: 5vw;
+ 					rotate: 180deg;
+ 					@include border-end-radius($border-radius-xxl);
+ 					z-index: 225;
+ 					text-align: left;
+
+ 						h1 {
+ 							position: absolute;
+ 							top: 0;
+ 							right: 0;
+ 							bottom: 0;
+ 							left: .25vw;
+ 							font-size: 3.48vw;
+ 							font-family: 'Raylig';
+ 							text-transform: uppercase;
+ 							font-weight: bolder;
+ 							z-index: 235;
+ 							@include html-gradient($html-gradient);
+ 							-webkit-background-clip: text;
+ 							-webkit-text-fill-color: transparent;
+ 							-webkit-text-stroke-width: .5px;
+ 							-webkit-text-stroke-color: $black;
+ 							text-shadow: $shadow-text;
+ 						}
+ 			
+ 						h4 {
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: -1vw;
+ 							font-size: 2vw;
+ 							font-family: $secondary-font;
+ 							text-align: right;
+ 							color: $secondary;
+ 							z-index: 265;
+ 							-webkit-text-stroke-width: .5px;
+ 							-webkit-text-stroke-color: $black;
+ 						}
+ 			
+ 						nav {
+ 							border: 2px solid $yellow;
+ 							width: 100%;
+ 							max-width: 4vw;
+ 							height: 100%;
+ 							max-heigh: 100vh;
+ 						}
+					}		
+   			}
+     footer {
+  			position: fixed;
+  			right: 0;
+  			bottom: 4.75vh;
+  			left: 19.25vw;
+  			z-index: 300;
+  			height: 100%;
+  			max-height: 2vh;
+  			width: 100%;
+  			max-width: 80vw;
+    		padding: $offset-x $offset-y;
+    		align-content: center;
+    		background-image: $footer-gradient;
+    	
+    			.site-footer {
+					display: inline;
+			
+					.site-information {
+						border: 2px solid $blue;
+					}
+
+					.site-footer address {
+						border: 2px solid $blue;
+					}
+			
+					.site-footer small {
+					}
+				}
+			}
+		}
+	}
+
+    	
+    	small {
+    		font-size: 75%;
+    	}
+  	
+
+   .card-title {
+    font-size: $font-size-base * 26 !important;
+  }
+
+  .hoverable {
+    transition: all 0.2s ease;
+
+    &:hover , &:focus {
+      @include elevation(6);
+    }
+  }
+
+
 
 header {}
 
-main {}
+main {
+	@include border-start-radius($border-radius-xxl);
+}
 
 article {}
 
