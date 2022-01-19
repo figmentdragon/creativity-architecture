@@ -1,13 +1,13 @@
 
 body {
   text-align: left;
-  color: $body-text-color;
+  color: $text;
   font-family: $secondary-font;
   font-size: $font-size-base;
   line-height: 1.6;
   margin: auto;
   padding: 2em 2em 5em;
-  background: $body-bg-color;
+  background: $body-bg;
 }
 
 /* Text elements */
@@ -28,9 +28,6 @@ body {
 
 /* ______________________________________________ HEADINGS */
 
-
-@import "text-elements/headings";
-
 /* ______________________________________________________ LINK */
 
 a {
@@ -39,21 +36,21 @@ a {
 
   :active {
     text-decoration: $link-decoration;
-    color: $link-active-color;
+    color: $link;
 
     & :hover {
-      text-decoration: $link-hover-decoration;
-      color: $hover-color;
+      text-decoration: $hover-decoration;
+      color: $hover;
     }
   }
 
   :hover {
-    text-decoration: $link-hover-decoration;
-    color: $hover-color;
+    text-decoration: $hover-decoration;
+    color: $hover;
   }
 
-  :disabled {
-    color: $disabled-color;
+  :inactive {
+    color: $inactive;
     text-decoration: none;
 
   }
@@ -69,7 +66,7 @@ a {
     blockquote {
       font-family: $emphasis-font;
       font-style: italic;
-      border-left: 5px solid $accent-color;
+      border-left: 5px solid $accent;
       padding-left: $xl;
       margin: 0 1.5em;
     }
@@ -120,8 +117,6 @@ a {
         list-style: none;
     }
 /* ______________________________________________ CODE */
-@import "text-elements/code";
-
     abbr, acronym {
         border-bottom: 1px dotted #666;
         cursor: help;
@@ -146,8 +141,6 @@ a {
         font-size: 125%;
     }
 
-@import "text-elements/emphasis";
-
 
 /* ______________________________________________ TABLE */
 figure {
@@ -160,8 +153,6 @@ table {
 th {
 	font-weight: bold;
 }
-
-@import "text-elements/horizontal-rule";
 
 .normal {
   font-weight: normal;

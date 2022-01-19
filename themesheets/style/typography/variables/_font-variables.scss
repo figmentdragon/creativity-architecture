@@ -15,7 +15,7 @@ $secondary-font          : "Enjoy Writing", $body-font;
 $tertiary-font           : "Raleway", $body-font;
 $emphasis-font           : "GlassAntiqua-Regular", $body-font;
 
-$body-text-align         : null;
+$text-align         : null;
 $text-margin-bottom      : $offset;
 $paragraph-margin-bottom : $text-margin-bottom;
 
@@ -25,23 +25,22 @@ $link                    : underline;
 
 /* ________________________________________________________ TEXTS & TITLES */
   /* Color */
-  $author-color          : $accent-color;
-  $body-text             : shade-color($primary-color, 60%);
-  $btn-text-color        : shade-color($body-text,10%);
-  $caption-text-color    : shade-color($body-text,10%);
-  $entry-header-color    : shade-color($primary-color, 10%);
-  $footer-color          : shade-color($accent-color, 10%);
-  $nav-text-color        : shade-color($secondary-color, 10%);
-  $page-title-color      : $secondary-color;
-  $post-title-color      : $accent-color;
-  $quote-text-color      : shade-color($primary-color, 10%);
-  $site-title-color      : $primary-color;
-  $text-muted-color      : color-mix(srgb, $accent-color 40%, $white);
+  $text             : shade($primary, 60%);
+  $btn-text        : shade($text,10%);
+  $caption-text    : shade($text,10%);
+  $entry-header    : shade($primary, 10%);
+  $footer          : shade($accent, 10%);
+  $nav-text        : shade($secondary, 10%);
+  $page-title      : $secondary;
+  $post-title      : $accent;
+  $quote-text      : shade($primary, 10%);
+  $site-title      : $primary;
+  $text-muted      : color-mix(srgb, $accent 40%, $white);
 
   /* Font Family */
   $article-text-font     : "TELETYPE1945-1985", $body-font;
   $author-text-font      : Euphorigenic, $body-font;
-  $body-text-font        : $text-font;
+  $text-font        : $text-font;
   $btn-font-text-font    : "Raleway", $body-font;
   $emphasis-text-font    : "GlassAntiqua-Regular";
   $footer-text-font      : $tertiary-font;
@@ -53,16 +52,6 @@ $link                    : underline;
 
 
 /* ______________________________________________________ FONT SIZE */
-  $font-size-root        : null;
-  $font-size-base        : 1.05;
-  $base-unit             : 1.15rem; // Assumes the browser default, typically `16px`
-  $xs                    : .75;
-  $sm                    : .875;
-  $md                    : 1.05;
-  $lg                    : 1.25;
-  $xl                    : 1.50;
-  $xxl                   : 1.75;
-
   $font-size-xs          : calc($font-size-base * $xs);
   $font-size-sm          : calc($font-size-base * $sm);
   $font-size-md          : $font-size-base;
@@ -80,12 +69,12 @@ $link                    : underline;
   $font-weight-base      : $font-weight-normal;
 
   /* Letter Spacing */
-  $letter-spacing-xs     : calc($xs * $base) rem;
-  $letter-spacing-sm     : calc($sm * $base) rem;
-  $letter-spacing-md     : calc($md * $base) rem;
-  $letter-spacing-lg     : calc($lg * $base) rem;
-  $letter-spacing-xl     : calc($xl * $base) rem;
-  $letter-spacing-xxl    : calc(3 * $base) rem;
+  $letter-spacing-xs     : calc($xs * $base-unit) rem;
+  $letter-spacing-sm     : calc($sm * $base-unit) rem;
+  $letter-spacing-md     : calc($md * $base-unit) rem;
+  $letter-spacing-lg     : calc($lg * $base-unit) rem;
+  $letter-spacing-xl     : calc($xl * $base-unit) rem;
+  $letter-spacing-xxl    : calc(3 * $base-unit) rem;
 
   /* Line Height */
   $line-height-base      : 1.15;

@@ -28,7 +28,7 @@
 #copyright {
   font-size: 0.75vw;
   line-height: 1rem;
-  color: $alert-color;
+  color: $invalid-color;
 }
 
 .email {
@@ -39,14 +39,14 @@
 #email {
   font-size: 0.75vw;
   line-height: 1rem;
-  color: $alert-color;
+  color: $invalid-color;
 }
 
 .social-media {
   width: 90rem;
   margin-left: 2rem;
   align-self: center;
-  color: $alert-color;
+  color: $invalid-color;
   font-weight: bolder;
 }
 
@@ -56,7 +56,7 @@
   padding-right: 1.75rem;
   align-self: stretch;
   align-items: stretch;
-  color: $alert-color;
+  color: $invalid-color;
   font-weight: bolder;
 }
 

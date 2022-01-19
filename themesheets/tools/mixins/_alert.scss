@@ -1,6 +1,6 @@
-// Alerts
+// invalids
 
-@mixin alert-variant($background, $border, $body-color) {
+@mixin invalid-variant($background, $border, $body-color) {
   background-color: $background;
   border-color: $border;
   color: $body-color;
@@ -8,7 +8,7 @@
   hr {
     border-top-color: shade-color($border, 5%);
   }
-  .alert-link {
+  .invalid-link {
     color: shade-color($body-color, 10%);
   }
 }

@@ -1,6 +1,7 @@
 /*! _______________________________________________________ CHANGEpercentage */
 
 $active-percentage               : 5%;
+$inset-percentage : 6%;
 
 $link-percentage                 : 10%;
 $visited-percentage              : 20%;
@@ -9,33 +10,34 @@ $focus-percentage                : 40%;
 $muted-percentage                : 50%;
 $inactive-percentage             : 60%;
 
+$target-percentage               : 4%;
+$target-within-percentage        : 14%;
+$scope-percentage                : 24%;
+$focus-visible-percentage        : 34%;
+$focus-within-percentage         : 44%;
 
+$background-percentage: 41%;
+$nav-percentage           : 51%;
+$border-percentage               : 61%;
+$button-percentage               : 71%;
+$card-percentage                 : 81%;
+$shadow-percentage               : 91%;
+
+$text-percentage                 : 52%;
+$caption-percentage              : 62%;
+$quote-percentage                : 72%;
+$comment-percentage              : 82%;
+$heading-percentage              : 92%;
+
+$info-percentage: 94%;
+
+$lead-percentage                 : 55%;
+$post-percentage                 : 65%;
+$page-percentage                 : 75%;
+$site-percentage                 : 85%;
+$title-percentage                : 95%;
 
 $local-link-percentage           : 20%;
-
-$target-percentage               : 24%;
-$target-within-percentage        : 26%;
-$scope-percentage                : 28%;
-$focus-visible-percentage        : 23%;
-$focus-within-percentage         : 25%;
-
-$background-percentage           : 50%;
-$border-percentage               : 60%;
-$button-percentage               :70%;
-$card-percentage                 : 80%;
-$shadow-percentage               : 90%;
-
-
-$text-percentage                 : 51%;
-$caption-percentage              : 61%;
-$quote-percentage                : 71%;
-$comment-percentage              : 81%;
-$heading-percentage              : 91%;
-
-$lead-percentage                 : 65%;
-$post-percentage                 : 75%;
-$page-percentage                 : 85%;
-$site-percentage                 : 95%;
 
 $btn-disabled-opacity            : .45;
 $input-btn-focus-color-opacity   : .25;

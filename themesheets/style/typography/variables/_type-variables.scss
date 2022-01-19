@@ -2,7 +2,7 @@
 $lead-font                  : "Pompiere";
 $lead-font-size             : $base-unit * $lg;
 $lead-font-weight           : 300;
-$lead-text-color            : shift-color($post-title-color, $muted-percentage);
+$lead-text            : shift($post-title, $muted-percentage);
 
 $small-font-size            : sm;
 
@@ -13,18 +13,18 @@ $initialism-font-size       : sm;
 $blockquote-font-family     : $emphasis-text-font;
 $blockquote-margin-y        : $offset-y;
 $blockquote-font-size       : $font-size-base * 2.25;
-$blockquote-text-footer-color          : $accent-color;
+$blockquote-text-footer          : $accent;
 $blockquote-footer-font-size: md;
-$blockquote-border-color    : shade-color(
-  $blockquote-text-footer-color,
+$blockquote-border    : shade(
+  $blockquote-text-footer,
   $border-percentage
 );
 
 $hr-margin-y                : $offset;
-$hr-color                   : inherit;
+$hr                   : shade($pink, $text-percentage);
 $hr-height                  : $base-unit * 2;
 $hr-opacity:                  .25;
-$hr-border-color            : $hot-pink;
+$hr-border            : shade($pink, $border-percentage);
 $hr-border-width            : $border-width-md;
 
 $legend-margin-bottom       : 0.5rem;

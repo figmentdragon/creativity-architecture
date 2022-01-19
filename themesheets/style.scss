@@ -19,66 +19,35 @@ along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normali
 */
 
 
-/* __________________________________________________ SITE EXCAVATION */
+@import "starter-architecture";
 
 
-
-/* __________________________________________________ FOUNDATION */
-@import "/grid/theme-grid";
-
-/* __________________________________________________ FRAMING */
-@import "tools/functions";
-@import "tools/mixins";
-@import "tools/utilities";
-
-/* __________________________________________________ MECHANICALS */
-@import "tools/change-percentage";
-
-@import "style/color-pallete";
-	@import "style/properties/shadow/shadow";
-	@import "style/properties/gradient/gradients";
-
-@import "style/properties";
-	@import "style/properties/border/border-width";
-	@import "style/properties/links/links";
-	@import "style/properties/media/media";
-
-@import "style/typography/variables/font-face";
-@import "style/typography/variables/font-stacks";
-@import "style/typography/variables/font-variables";
-@import "style/typography/variables/headings-variables";
-@import "style/typography/variables/type-variables";
-@import "style/typography/variables/code";
-@import "style/typography/type";
-
-/* __________________________________________________ INSULATION */
-@import "tools/root";
 
 /* Set a default font size, color, line-height, and font family for your body element and all input elements. These can get overridden later on in the stylesheet, but are useful as base styles. */
 
-@import "elements/base-default/base";
+@import "components/elements/base-default/base";
 
-@import "elements/base-default/headings";
+@import "components/elements/base-default/headings";
 
-@import "elements/base-default/text-elements";
+@import "components/elements/base-default/text-elements";
 
-@import "elements/base-default/lists";
+@import "components/elements/base-default/lists";
 
-@import "elements/base-default/emphasis";
+@import "components/elements/base-default/emphasis";
 
-@import "elements/base-default/quote";
+@import "components/elements/base-default/quote";
 
-@import "elements/base-default/code";
+@import "components/elements/base-default/code";
 
-@import "elements/base-default/table";
+@import "components/elements/base-default/table";
 
-@import "elements/base-default/form-elements";
+@import "components/elements/base-default/form-elements";
 
-@import "elements/base-default/input";
+@import "components/elements/base-default/input";
 
-@import "elements/base-default/links";
+@import "components/elements/base-default/links";
 
-@import "elements/base-default/helpers";
+@import "components/elements/base-default/helpers";
 
 /* If you want to give a common style to all of the titles in your theme, here's a place to do it (you can style them individually later) */
 .site-title,
@@ -118,8 +87,6 @@ body {
 	max-width: 100vw;
 	@include border-start-radius($border-radius-xxl);
 	z-index: 50;
-	@include body-container;
-	@include body-typography;
 }
 
 header {}

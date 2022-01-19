@@ -25,6 +25,7 @@
     "the-new-css-reset": "^1.4.5"
   },
   "devDependencies": {
+    "bootstrap": "^5.1.3",
     "sass": "^1.48.0"
   }
 }

@@ -102,31 +102,31 @@ if ( ! class_exists( 'Just_Theme_Framework_Checker' ) ) {
 
 		/**
 		 * Print admin notices in case of requirements are not met.
-		 * Can print "missing plugin" or "not activated" warnings.
+		 * Can print "missing plugin" or "not activated" attentions.
 		 */
 		public function display_requirements_admin_notice() {
 			if ( $this->check_requirements() ) {
 				return;
 			}
 
-			$warnings = array();
+			$attentions = array();
 			foreach ( $this->required_plugins as $plugin_file => $plugin_details ) {
 				$plugin_path = WP_PLUGIN_DIR . '/' . $plugin_file;
 
 				if ( ! is_file( $plugin_path ) ) {
-					$warnings[] = sprintf( '<strong>%s</strong> plugin should be installed. <a href="%s" target="_blank">Download plugin &raquo;</a>',
+					$attentions[] = sprintf( '<strong>%s</strong> plugin should be installed. <a href="%s" target="_blank">Download plugin &raquo;</a>',
 						esc_html( $plugin_details[1] ),
 						esc_attr( $plugin_details[2] )
 					);
 				} elseif ( ! is_plugin_active( $plugin_file ) ) {
-					$warnings[] = sprintf( '<strong>%s</strong> plugin should be activated. <a href="%s">Manage Plugins &raquo;</a>',
+					$attentions[] = sprintf( '<strong>%s</strong> plugin should be activated. <a href="%s">Manage Plugins &raquo;</a>',
 						esc_html( $plugin_details[1] ),
 						esc_attr( admin_url( 'plugins.php' ) )
 					);
 				}
 			}
 
-			$html = '<div class="error"><h3>Please fix the errors below to use current activated theme:</h3><p>' . implode( '</p><p>', $warnings ) . '</p></div>';
+			$html = '<div class="error"><h3>Please fix the errors below to use current activated theme:</h3><p>' . implode( '</p><p>', $attentions ) . '</p></div>';
 			echo wp_kses( $html, array(
 				'div' => [
 					'class' => true,

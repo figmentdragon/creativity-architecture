@@ -10,7 +10,7 @@
   }
 
   @each $color, $value in $grays {
-    --#{$variable-prefix}#{"$primary-color"}#{$color}: #{$value};
+    --#{$variable-prefix}#{"$primary"}#{$color}: #{$value};
   }
 
   @each $color, $value in $theme-colors {
@@ -23,8 +23,8 @@
 
   --#{$variable-prefix}white-rgb: #{to-rgb($white)};
   --#{$variable-prefix}black-rgb: #{to-rgb($black)};
-  --#{$variable-prefix}text-rgb: #{to-rgb($body-bg-color)};
-  --#{$variable-prefix}body-bg-rgb: #{to-rgb($body-bg-color)};
+  --#{$variable-prefix}text-rgb: #{to-rgb($body-bg)};
+  --#{$variable-prefix}body-bg-rgb: #{to-rgb($body-bg)};
 
   // Fonts
 
@@ -44,11 +44,11 @@
   --#{$variable-prefix}body-font-size: #{$base-unit};
   --#{$variable-prefix}body-font-weight: #{$font-weight-base};
   --#{$variable-prefix}line-height-body: #{line-height-md};
-  --#{$variable-prefix}text: #{$body-bg-color};
-  @if $body-text-align != null {
-    --#{$variable-prefix}body-text-align: #{$body-text-align};
+  --#{$variable-prefix}text: #{$body-bg};
+  @if $text-align != null {
+    --#{$variable-prefix}text-align: #{$text-align};
   }
-  --#{$variable-prefix}body-bg: #{$body-bg-color};
+  --#{$variable-prefix}body-bg: #{$body-bg};
   // scss-docs-end root-body-variables
   // stylelint-enable custom-property-empty-line-before
 }

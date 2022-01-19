@@ -3,14 +3,16 @@
 // -----------------------------------------------------------------------------
 
 
-@import "tools/helpers/a11y";
-@import "tools/helpers/alignment";
-@import "tools/helpers/clearfix";
-@import "helpers/colored-links";
-@import "tools/helpers/media-query";
-@import "tools/helpers/ratio";
-@import "tools/helpers/span";
-@import "tools/helpers/stacks";
-@import "tools/helpers/text-truncation";
-@import "tools/helpers/visually-hidden";
-@import "tools/helpers/vr";
+@import "helpers/a11y";
+@import "helpers/alignment";
+@import "helpers/clearfix";
+@import "helpers/lists";
+@import "helpers/print";
+@import "helpers/ratio";
+@import "helpers/span";
+@import "helpers/stacks";
+@import "helpers/text-truncation";
+@import "helpers/type";
+@import "helpers/visibility";
+@import "helpers/visually-hidden";
+@import "helpers/vr";

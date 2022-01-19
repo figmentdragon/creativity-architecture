@@ -68,7 +68,7 @@
     }
   }
 
-  &.success {
+  &.valid {
     background: material-color($g, "500");
     color: #fff;
 
@@ -170,7 +170,7 @@
       }
     }
 
-    &.success {
+    &.valid {
       outline-color: material-color($g, "300");
       color: material-color($g, "500");
 
@@ -259,7 +259,7 @@
       }
     }
 
-    &.success {
+    &.valid {
       color: material-color($g, "500");
 
       &:hover {

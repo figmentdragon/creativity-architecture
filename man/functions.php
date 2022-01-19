@@ -226,7 +226,7 @@ function architecture_comments( $comment, $args, $depth ) {
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
-        <div class="alert alert-info">
+        <div class="invalid invalid-info">
           <p><?php _e( 'Your comment is awaiting moderation.', 'architecture' ) ?></p>
         </div>
       <?php endif; ?>

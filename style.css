@@ -1,17 +1,5026 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 27 | @import "assets/scripts/scss/grid/theme-grid";
- *    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   themesheets/style.scss 27:9  root stylesheet */
+@charset "UTF-8";
+/*
+Theme Name: Your Theme Name
+Theme URI: Your Theme URL
+Author: Your Name
+Author URI: Your URL
+Description: Describe your theme and its features.
+Version: Your Theme's Version Number
+License: GNU General Public License
+License URI: license.txt
+Tags: insert tags to describe your theme to help users search for it. Find the list of tags at: http://wordpress.org/extend/themes/about/
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 27 \2502  @import \"assets/scripts/scss/grid/theme-grid\";\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   themesheets/style.scss 27:9  root stylesheet";
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+IMPORTANT: This stylesheet is designed for learning and includes comments for guidance. It's a good idea to remove the comments when preparing your them for distribution. However, keep the section headers (the word "Reset" below is an example of a section header) intact.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/ and Blueprint http://www.blueprintcss.org/
+*/
+/* CJMTheme _________________________________________________________
+
+  Theme                         : CJMT - Creativity Architect Default
+  Author                        : CJMT
+
+  Stylesheet                    : Default Theme
+
+  = TOC =
+   ()
+   ()
+   ()
+
+_________________________________________________________ CJMTheme */
+/* __________________________________________________ SITE EXCAVATION */
+/* __________________________________________________ FOUNDATION */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+https://github.com/dope/lemonade - Neat lightweight grid.
+
+
+The grid below is a custom built thingy I modeled a bit after
+Gridset. It's VERY basic and probably shouldn't be used on
+your client projects. The idea is you learn how to roll your
+own grids. It's better in the long run and allows you full control
+over your project's layout.
+
+******************************************************************/
+/* Grid Variables */
+/* Container padding */
+/* Grid Variables */
+/* Container padding */
+/* Grid containers */
+/* Define the maximum width of `.container` for different screen sizes. */
+/* Grid breakpoints */
+/* Define the minimum dimensions at which your layout will change, adapting to different screen sizes, for use in media queries. */
+/**
+ * Grid loop mixin
+ */
+/**
+ * Clearfix
+ */
+/**
+ * Grid scaffolding
+ */
+.container {
+  max-width: 1368px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
+.container:before, .container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
+
+.col {
+  @includ grid-col;
+  box-sizing: border-box;
+  float: left;
+  padding-left: 16px;
+}
+.row--gutterless .col {
+  padding-left: 0;
+}
+
+.last-col {
+  float: right;
+  padding-right: 0 !important;
+}
+
+/* Columns generator */
+@media only screen and (and (min-width: 1169px) and (max-width: 1368px): and (min-width: 1169px) and (max-width: 1368px)) {
+  .col--xxl-1 {
+    width: divide(1, 16);
+  }
+  .row--flex .col--xxl-1 {
+    flex-basis: divide(1, 16);
+    max-width: calc(divide(1, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-1 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-2 {
+    width: divide(2, 16);
+  }
+  .row--flex .col--xxl-2 {
+    flex-basis: divide(2, 16);
+    max-width: calc(divide(2, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-2 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-3 {
+    width: divide(3, 16);
+  }
+  .row--flex .col--xxl-3 {
+    flex-basis: divide(3, 16);
+    max-width: calc(divide(3, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-3 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-4 {
+    width: divide(4, 16);
+  }
+  .row--flex .col--xxl-4 {
+    flex-basis: divide(4, 16);
+    max-width: calc(divide(4, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-4 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-5 {
+    width: divide(5, 16);
+  }
+  .row--flex .col--xxl-5 {
+    flex-basis: divide(5, 16);
+    max-width: calc(divide(5, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-5 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-6 {
+    width: divide(6, 16);
+  }
+  .row--flex .col--xxl-6 {
+    flex-basis: divide(6, 16);
+    max-width: calc(divide(6, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-6 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-7 {
+    width: divide(7, 16);
+  }
+  .row--flex .col--xxl-7 {
+    flex-basis: divide(7, 16);
+    max-width: calc(divide(7, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-7 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-8 {
+    width: divide(8, 16);
+  }
+  .row--flex .col--xxl-8 {
+    flex-basis: divide(8, 16);
+    max-width: calc(divide(8, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-8 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-9 {
+    width: divide(9, 16);
+  }
+  .row--flex .col--xxl-9 {
+    flex-basis: divide(9, 16);
+    max-width: calc(divide(9, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-9 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-10 {
+    width: divide(10, 16);
+  }
+  .row--flex .col--xxl-10 {
+    flex-basis: divide(10, 16);
+    max-width: calc(divide(10, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-10 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-11 {
+    width: divide(11, 16);
+  }
+  .row--flex .col--xxl-11 {
+    flex-basis: divide(11, 16);
+    max-width: calc(divide(11, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-11 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-12 {
+    width: divide(12, 16);
+  }
+  .row--flex .col--xxl-12 {
+    flex-basis: divide(12, 16);
+    max-width: calc(divide(12, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-12 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-13 {
+    width: divide(13, 16);
+  }
+  .row--flex .col--xxl-13 {
+    flex-basis: divide(13, 16);
+    max-width: calc(divide(13, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-13 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-14 {
+    width: divide(14, 16);
+  }
+  .row--flex .col--xxl-14 {
+    flex-basis: divide(14, 16);
+    max-width: calc(divide(14, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-14 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-15 {
+    width: divide(15, 16);
+  }
+  .row--flex .col--xxl-15 {
+    flex-basis: divide(15, 16);
+    max-width: calc(divide(15, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-15 {
+    margin-left: divide("xxl", 16);
+  }
+
+  .col--xxl-16 {
+    width: divide(16, 16);
+  }
+  .row--flex .col--xxl-16 {
+    flex-basis: divide(16, 16);
+    max-width: calc(divide(16, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xxl-offset-16 {
+    margin-left: divide("xxl", 16);
+  }
+}
+@media only screen and (and (min-width: 961px) and (max-width: 1168px): and (min-width: 961px) and (max-width: 1168px)) {
+  .col--xl-1 {
+    width: divide(1, 16);
+  }
+  .row--flex .col--xl-1 {
+    flex-basis: divide(1, 16);
+    max-width: calc(divide(1, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-1 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-2 {
+    width: divide(2, 16);
+  }
+  .row--flex .col--xl-2 {
+    flex-basis: divide(2, 16);
+    max-width: calc(divide(2, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-2 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-3 {
+    width: divide(3, 16);
+  }
+  .row--flex .col--xl-3 {
+    flex-basis: divide(3, 16);
+    max-width: calc(divide(3, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-3 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-4 {
+    width: divide(4, 16);
+  }
+  .row--flex .col--xl-4 {
+    flex-basis: divide(4, 16);
+    max-width: calc(divide(4, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-4 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-5 {
+    width: divide(5, 16);
+  }
+  .row--flex .col--xl-5 {
+    flex-basis: divide(5, 16);
+    max-width: calc(divide(5, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-5 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-6 {
+    width: divide(6, 16);
+  }
+  .row--flex .col--xl-6 {
+    flex-basis: divide(6, 16);
+    max-width: calc(divide(6, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-6 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-7 {
+    width: divide(7, 16);
+  }
+  .row--flex .col--xl-7 {
+    flex-basis: divide(7, 16);
+    max-width: calc(divide(7, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-7 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-8 {
+    width: divide(8, 16);
+  }
+  .row--flex .col--xl-8 {
+    flex-basis: divide(8, 16);
+    max-width: calc(divide(8, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-8 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-9 {
+    width: divide(9, 16);
+  }
+  .row--flex .col--xl-9 {
+    flex-basis: divide(9, 16);
+    max-width: calc(divide(9, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-9 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-10 {
+    width: divide(10, 16);
+  }
+  .row--flex .col--xl-10 {
+    flex-basis: divide(10, 16);
+    max-width: calc(divide(10, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-10 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-11 {
+    width: divide(11, 16);
+  }
+  .row--flex .col--xl-11 {
+    flex-basis: divide(11, 16);
+    max-width: calc(divide(11, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-11 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-12 {
+    width: divide(12, 16);
+  }
+  .row--flex .col--xl-12 {
+    flex-basis: divide(12, 16);
+    max-width: calc(divide(12, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-12 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-13 {
+    width: divide(13, 16);
+  }
+  .row--flex .col--xl-13 {
+    flex-basis: divide(13, 16);
+    max-width: calc(divide(13, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-13 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-14 {
+    width: divide(14, 16);
+  }
+  .row--flex .col--xl-14 {
+    flex-basis: divide(14, 16);
+    max-width: calc(divide(14, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-14 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-15 {
+    width: divide(15, 16);
+  }
+  .row--flex .col--xl-15 {
+    flex-basis: divide(15, 16);
+    max-width: calc(divide(15, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-15 {
+    margin-left: divide("xl", 16);
+  }
+
+  .col--xl-16 {
+    width: divide(16, 16);
+  }
+  .row--flex .col--xl-16 {
+    flex-basis: divide(16, 16);
+    max-width: calc(divide(16, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xl-offset-16 {
+    margin-left: divide("xl", 16);
+  }
+}
+@media only screen and (and (min-width: 737px) and (max-width: 960px): and (min-width: 737px) and (max-width: 960px)) {
+  .col--lg-1 {
+    width: divide(1, 16);
+  }
+  .row--flex .col--lg-1 {
+    flex-basis: divide(1, 16);
+    max-width: calc(divide(1, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-1 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-2 {
+    width: divide(2, 16);
+  }
+  .row--flex .col--lg-2 {
+    flex-basis: divide(2, 16);
+    max-width: calc(divide(2, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-2 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-3 {
+    width: divide(3, 16);
+  }
+  .row--flex .col--lg-3 {
+    flex-basis: divide(3, 16);
+    max-width: calc(divide(3, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-3 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-4 {
+    width: divide(4, 16);
+  }
+  .row--flex .col--lg-4 {
+    flex-basis: divide(4, 16);
+    max-width: calc(divide(4, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-4 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-5 {
+    width: divide(5, 16);
+  }
+  .row--flex .col--lg-5 {
+    flex-basis: divide(5, 16);
+    max-width: calc(divide(5, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-5 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-6 {
+    width: divide(6, 16);
+  }
+  .row--flex .col--lg-6 {
+    flex-basis: divide(6, 16);
+    max-width: calc(divide(6, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-6 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-7 {
+    width: divide(7, 16);
+  }
+  .row--flex .col--lg-7 {
+    flex-basis: divide(7, 16);
+    max-width: calc(divide(7, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-7 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-8 {
+    width: divide(8, 16);
+  }
+  .row--flex .col--lg-8 {
+    flex-basis: divide(8, 16);
+    max-width: calc(divide(8, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-8 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-9 {
+    width: divide(9, 16);
+  }
+  .row--flex .col--lg-9 {
+    flex-basis: divide(9, 16);
+    max-width: calc(divide(9, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-9 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-10 {
+    width: divide(10, 16);
+  }
+  .row--flex .col--lg-10 {
+    flex-basis: divide(10, 16);
+    max-width: calc(divide(10, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-10 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-11 {
+    width: divide(11, 16);
+  }
+  .row--flex .col--lg-11 {
+    flex-basis: divide(11, 16);
+    max-width: calc(divide(11, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-11 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-12 {
+    width: divide(12, 16);
+  }
+  .row--flex .col--lg-12 {
+    flex-basis: divide(12, 16);
+    max-width: calc(divide(12, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-12 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-13 {
+    width: divide(13, 16);
+  }
+  .row--flex .col--lg-13 {
+    flex-basis: divide(13, 16);
+    max-width: calc(divide(13, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-13 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-14 {
+    width: divide(14, 16);
+  }
+  .row--flex .col--lg-14 {
+    flex-basis: divide(14, 16);
+    max-width: calc(divide(14, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-14 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-15 {
+    width: divide(15, 16);
+  }
+  .row--flex .col--lg-15 {
+    flex-basis: divide(15, 16);
+    max-width: calc(divide(15, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-15 {
+    margin-left: divide("lg", 16);
+  }
+
+  .col--lg-16 {
+    width: divide(16, 16);
+  }
+  .row--flex .col--lg-16 {
+    flex-basis: divide(16, 16);
+    max-width: calc(divide(16, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--lg-offset-16 {
+    margin-left: divide("lg", 16);
+  }
+}
+@media only screen and (and (min-width: 543px) and (max-width: 736px): and (min-width: 543px) and (max-width: 736px)) {
+  .col--md-1 {
+    width: divide(1, 16);
+  }
+  .row--flex .col--md-1 {
+    flex-basis: divide(1, 16);
+    max-width: calc(divide(1, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-1 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-2 {
+    width: divide(2, 16);
+  }
+  .row--flex .col--md-2 {
+    flex-basis: divide(2, 16);
+    max-width: calc(divide(2, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-2 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-3 {
+    width: divide(3, 16);
+  }
+  .row--flex .col--md-3 {
+    flex-basis: divide(3, 16);
+    max-width: calc(divide(3, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-3 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-4 {
+    width: divide(4, 16);
+  }
+  .row--flex .col--md-4 {
+    flex-basis: divide(4, 16);
+    max-width: calc(divide(4, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-4 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-5 {
+    width: divide(5, 16);
+  }
+  .row--flex .col--md-5 {
+    flex-basis: divide(5, 16);
+    max-width: calc(divide(5, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-5 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-6 {
+    width: divide(6, 16);
+  }
+  .row--flex .col--md-6 {
+    flex-basis: divide(6, 16);
+    max-width: calc(divide(6, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-6 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-7 {
+    width: divide(7, 16);
+  }
+  .row--flex .col--md-7 {
+    flex-basis: divide(7, 16);
+    max-width: calc(divide(7, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-7 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-8 {
+    width: divide(8, 16);
+  }
+  .row--flex .col--md-8 {
+    flex-basis: divide(8, 16);
+    max-width: calc(divide(8, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-8 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-9 {
+    width: divide(9, 16);
+  }
+  .row--flex .col--md-9 {
+    flex-basis: divide(9, 16);
+    max-width: calc(divide(9, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-9 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-10 {
+    width: divide(10, 16);
+  }
+  .row--flex .col--md-10 {
+    flex-basis: divide(10, 16);
+    max-width: calc(divide(10, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-10 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-11 {
+    width: divide(11, 16);
+  }
+  .row--flex .col--md-11 {
+    flex-basis: divide(11, 16);
+    max-width: calc(divide(11, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-11 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-12 {
+    width: divide(12, 16);
+  }
+  .row--flex .col--md-12 {
+    flex-basis: divide(12, 16);
+    max-width: calc(divide(12, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-12 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-13 {
+    width: divide(13, 16);
+  }
+  .row--flex .col--md-13 {
+    flex-basis: divide(13, 16);
+    max-width: calc(divide(13, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-13 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-14 {
+    width: divide(14, 16);
+  }
+  .row--flex .col--md-14 {
+    flex-basis: divide(14, 16);
+    max-width: calc(divide(14, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-14 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-15 {
+    width: divide(15, 16);
+  }
+  .row--flex .col--md-15 {
+    flex-basis: divide(15, 16);
+    max-width: calc(divide(15, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-15 {
+    margin-left: divide("md", 16);
+  }
+
+  .col--md-16 {
+    width: divide(16, 16);
+  }
+  .row--flex .col--md-16 {
+    flex-basis: divide(16, 16);
+    max-width: calc(divide(16, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--md-offset-16 {
+    margin-left: divide("md", 16);
+  }
+}
+@media only screen and (and (min-width: 1) and (max-width:542px): and (min-width: 1) and (max-width:542px)) {
+  .col--sm-1 {
+    width: divide(1, 16);
+  }
+  .row--flex .col--sm-1 {
+    flex-basis: divide(1, 16);
+    max-width: calc(divide(1, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-1 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-2 {
+    width: divide(2, 16);
+  }
+  .row--flex .col--sm-2 {
+    flex-basis: divide(2, 16);
+    max-width: calc(divide(2, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-2 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-3 {
+    width: divide(3, 16);
+  }
+  .row--flex .col--sm-3 {
+    flex-basis: divide(3, 16);
+    max-width: calc(divide(3, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-3 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-4 {
+    width: divide(4, 16);
+  }
+  .row--flex .col--sm-4 {
+    flex-basis: divide(4, 16);
+    max-width: calc(divide(4, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-4 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-5 {
+    width: divide(5, 16);
+  }
+  .row--flex .col--sm-5 {
+    flex-basis: divide(5, 16);
+    max-width: calc(divide(5, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-5 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-6 {
+    width: divide(6, 16);
+  }
+  .row--flex .col--sm-6 {
+    flex-basis: divide(6, 16);
+    max-width: calc(divide(6, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-6 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-7 {
+    width: divide(7, 16);
+  }
+  .row--flex .col--sm-7 {
+    flex-basis: divide(7, 16);
+    max-width: calc(divide(7, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-7 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-8 {
+    width: divide(8, 16);
+  }
+  .row--flex .col--sm-8 {
+    flex-basis: divide(8, 16);
+    max-width: calc(divide(8, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-8 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-9 {
+    width: divide(9, 16);
+  }
+  .row--flex .col--sm-9 {
+    flex-basis: divide(9, 16);
+    max-width: calc(divide(9, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-9 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-10 {
+    width: divide(10, 16);
+  }
+  .row--flex .col--sm-10 {
+    flex-basis: divide(10, 16);
+    max-width: calc(divide(10, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-10 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-11 {
+    width: divide(11, 16);
+  }
+  .row--flex .col--sm-11 {
+    flex-basis: divide(11, 16);
+    max-width: calc(divide(11, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-11 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-12 {
+    width: divide(12, 16);
+  }
+  .row--flex .col--sm-12 {
+    flex-basis: divide(12, 16);
+    max-width: calc(divide(12, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-12 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-13 {
+    width: divide(13, 16);
+  }
+  .row--flex .col--sm-13 {
+    flex-basis: divide(13, 16);
+    max-width: calc(divide(13, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-13 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-14 {
+    width: divide(14, 16);
+  }
+  .row--flex .col--sm-14 {
+    flex-basis: divide(14, 16);
+    max-width: calc(divide(14, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-14 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-15 {
+    width: divide(15, 16);
+  }
+  .row--flex .col--sm-15 {
+    flex-basis: divide(15, 16);
+    max-width: calc(divide(15, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-15 {
+    margin-left: divide("sm", 16);
+  }
+
+  .col--sm-16 {
+    width: divide(16, 16);
+  }
+  .row--flex .col--sm-16 {
+    flex-basis: divide(16, 16);
+    max-width: calc(divide(16, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--sm-offset-16 {
+    margin-left: divide("sm", 16);
+  }
+}
+@media only screen and (and (max-width: 0): and (max-width: 0)) {
+  .col--xs-1 {
+    width: divide(1, 16);
+  }
+  .row--flex .col--xs-1 {
+    flex-basis: divide(1, 16);
+    max-width: calc(divide(1, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-1 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-2 {
+    width: divide(2, 16);
+  }
+  .row--flex .col--xs-2 {
+    flex-basis: divide(2, 16);
+    max-width: calc(divide(2, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-2 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-3 {
+    width: divide(3, 16);
+  }
+  .row--flex .col--xs-3 {
+    flex-basis: divide(3, 16);
+    max-width: calc(divide(3, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-3 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-4 {
+    width: divide(4, 16);
+  }
+  .row--flex .col--xs-4 {
+    flex-basis: divide(4, 16);
+    max-width: calc(divide(4, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-4 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-5 {
+    width: divide(5, 16);
+  }
+  .row--flex .col--xs-5 {
+    flex-basis: divide(5, 16);
+    max-width: calc(divide(5, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-5 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-6 {
+    width: divide(6, 16);
+  }
+  .row--flex .col--xs-6 {
+    flex-basis: divide(6, 16);
+    max-width: calc(divide(6, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-6 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-7 {
+    width: divide(7, 16);
+  }
+  .row--flex .col--xs-7 {
+    flex-basis: divide(7, 16);
+    max-width: calc(divide(7, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-7 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-8 {
+    width: divide(8, 16);
+  }
+  .row--flex .col--xs-8 {
+    flex-basis: divide(8, 16);
+    max-width: calc(divide(8, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-8 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-9 {
+    width: divide(9, 16);
+  }
+  .row--flex .col--xs-9 {
+    flex-basis: divide(9, 16);
+    max-width: calc(divide(9, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-9 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-10 {
+    width: divide(10, 16);
+  }
+  .row--flex .col--xs-10 {
+    flex-basis: divide(10, 16);
+    max-width: calc(divide(10, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-10 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-11 {
+    width: divide(11, 16);
+  }
+  .row--flex .col--xs-11 {
+    flex-basis: divide(11, 16);
+    max-width: calc(divide(11, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-11 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-12 {
+    width: divide(12, 16);
+  }
+  .row--flex .col--xs-12 {
+    flex-basis: divide(12, 16);
+    max-width: calc(divide(12, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-12 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-13 {
+    width: divide(13, 16);
+  }
+  .row--flex .col--xs-13 {
+    flex-basis: divide(13, 16);
+    max-width: calc(divide(13, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-13 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-14 {
+    width: divide(14, 16);
+  }
+  .row--flex .col--xs-14 {
+    flex-basis: divide(14, 16);
+    max-width: calc(divide(14, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-14 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-15 {
+    width: divide(15, 16);
+  }
+  .row--flex .col--xs-15 {
+    flex-basis: divide(15, 16);
+    max-width: calc(divide(15, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-15 {
+    margin-left: divide("xs", 16);
+  }
+
+  .col--xs-16 {
+    width: divide(16, 16);
+  }
+  .row--flex .col--xs-16 {
+    flex-basis: divide(16, 16);
+    max-width: calc(divide(16, 16) * 100);
+    width: auto;
+    float: none;
+  }
+
+  .col--xs-offset-16 {
+    margin-left: divide("xs", 16);
+  }
+}
+.row {
+  margin-left: 16px;
+  list-style: none;
+  align-content: space-between;
+}
+.row:not(.row--flex):before, .row:not(.row--flex):after {
+  content: " ";
+  display: table;
+}
+.row:not(.row--flex):after {
+  clear: both;
+}
+.row.row--gutterless {
+  margin-left: 0;
+}
+.row.row--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+Mobile Grid Styles
+These are the widths for the mobile grid.
+There are four types, but you can add or customize
+them however you see fit.
+*/
+@media (max-width: 767px) {
+  .m-all {
+    float: left;
+    padding-right: 0.75em;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .m-1of2 {
+    float: left;
+    padding-right: 0.75em;
+    width: 50%;
+  }
+
+  .m-1of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 33.33%;
+  }
+
+  .m-2of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 66.66%;
+  }
+
+  .m-1of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 25%;
+  }
+
+  .m-3of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 75%;
+  }
+}
+/* Portrait tablet to landscape */
+@media (min-width: 768px) and (max-width: 1029px) {
+  .t-all {
+    float: left;
+    padding-right: 0.75em;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .t-1of2 {
+    float: left;
+    padding-right: 0.75em;
+    width: 50%;
+  }
+
+  .t-1of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 33.33%;
+  }
+
+  .t-2of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 66.66%;
+  }
+
+  .t-1of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 25%;
+  }
+
+  .t-3of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 75%;
+  }
+
+  .t-1of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 20%;
+  }
+
+  .t-2of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 40%;
+  }
+
+  .t-3of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 60%;
+  }
+
+  .t-4of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 80%;
+  }
+}
+/* Landscape to small desktop */
+@media (min-width: 1030px) {
+  .d-all {
+    float: left;
+    padding-right: 0.75em;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .d-1of2 {
+    float: left;
+    padding-right: 0.75em;
+    width: 50%;
+  }
+
+  .d-1of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 33.33%;
+  }
+
+  .d-2of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 66.66%;
+  }
+
+  .d-1of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 25%;
+  }
+
+  .d-3of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 75%;
+  }
+
+  .d-1of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 20%;
+  }
+
+  .d-2of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 40%;
+  }
+
+  .d-3of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 60%;
+  }
+
+  .d-4of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 80%;
+  }
+
+  .d-1of6 {
+    float: left;
+    padding-right: 0.75em;
+    width: 16.6666666667%;
+  }
+
+  .d-1of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 14.2857142857%;
+  }
+
+  .d-2of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 28.5714286%;
+  }
+
+  .d-3of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 42.8571429%;
+  }
+
+  .d-4of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 57.1428572%;
+  }
+
+  .d-5of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 71.4285715%;
+  }
+
+  .d-6of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 85.7142857%;
+  }
+
+  .d-1of8 {
+    float: left;
+    padding-right: 0.75em;
+    width: 12.5%;
+  }
+
+  .d-1of9 {
+    float: left;
+    padding-right: 0.75em;
+    width: 11.1111111111%;
+  }
+
+  .d-1of10 {
+    float: left;
+    padding-right: 0.75em;
+    width: 10%;
+  }
+
+  .d-1of11 {
+    float: left;
+    padding-right: 0.75em;
+    width: 9.0909090909%;
+  }
+
+  .d-1of12 {
+    float: left;
+    padding-right: 0.75em;
+    width: 8.33%;
+  }
+}
+/* __________________________________________________ FRAMING */
+/* __________________________________________________ MECHANICALS */
+/*! _______________________________________________________ CHANGEpercentage */
+/* Custom Colors */
+/* ____________________________________ VARIABLES */
+/* Typography */
+/* ____________________________________ FOUNDATION */
+/* __________________________ UTILITY */
+/* Link Utilities */
+/* __________________________ OBJECTS */
+/* __________________________ COMPONENTS */
+/* Nav */
+/* Lists */
+/* Utilities Typography */
+/* Nav Utilities */
+/* Utilities Input*/
+/* ______________________________________________________ BACKGROUNDS */
+/* Theme BG Colors */
+/* Background */
+/* _____________________________________ FEATURES */
+/* _____________________________________ ESCAPED CHARACTERS */
+/* _____________________________________ POSITIONING */
+/* Position Values Map */
+/* Aspect Ratios Map */
+/* _____________________________________ SPACING */
+/* _____________________________________ SPACING */
+/* Base Number */
+/* Map */
+/* Base Size */
+/* Map */
+/* _____________________________________ PADDING */
+/* 56px */
+/* .76 */
+/* 1.10px */
+/* 1.56 */
+/* 2.25 */
+/* 3.06px */
+/* ____________________________________ BORDERS */
+/* ____________________________________ BORDERS */
+/* Border Width */
+/* 1.75 */
+/* Border Radius */
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+/* ____________________________________ ANIMATION */
+/* _____________________________________ TYPOGRAPHY */
+/* ______________________________________________________ Link */
+/* Style anchor elements. */
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+/* ____________________________________ Z-INDEX */
+/**
+ * ## Z-Index
+ =========================*/
+/* ____________________________________ WIDTH */
+/* GRADIENTS */
+/* THEME */
+/* GLOBAL */
+/* Logo Shadow */
+.logo-shadow {
+  filter: drop-shadow(20px 10px 1px rgba(0, 0, 0, 0.432));
+}
+
+/* Group Shadow */
+.hgroup {
+  filter: drop-shadow(20px 10px 1px rgba(0, 0, 0, 0.432));
+}
+
+.otto {
+  background: #0e8dbc;
+  color: #ffcc33;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* https://css-tricks.com/almanac/properties/b/box-shadow/ */
+.right-shadow {
+  position: relative;
+}
+
+.right-shadow:before {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 0;
+  width: 75%;
+  top: 80%;
+  max-width: 600px;
+  background: shade(#0abab5, 91%);
+  box-shadow: -0.9px 0.2px 1px rgba(154, 85, 175, 0.49), -2.7px 0.8px 3px -1px rgba(154, 85, 175, 0.45), -7.2px 2.1px 7.9px -2px rgba(154, 85, 175, 0.41), -18.3px 5.3px 20.1px -2.9px rgba(154, 85, 175, 0.38);
+  transform: rotate(-16deg);
+}
+
+.left-and-right-shadow {
+  position: relative;
+}
+
+.left-and-right-shadow:before, .left-and-right-shadow:after {
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 25px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width: 300px;
+  background: shade(#0abab5, 91%);
+  -webkit-box-shadow: 0 50px 20px shade(#0abab5, 91%);
+  -moz-box-shadow: 0 50px 20px shade(#0abab5, 91%);
+  box-shadow: 0 50px 20px shade(#0abab5, 91%);
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -o-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
+  transform: rotate(-8deg);
+}
+
+.left-and-right-shadow:after {
+  -webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+/* BOX SHADOW */
+/* BUTTON + FORM */
+/* CARD */
+/* ________________________ PROPERTIES CONTROLED BY DEFAULT*/
+/* Contrast */
+/* The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7. */
+/* See https                     ://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast */
+/* Customize the light and dark text colors for use in our color contrast function. */
+/* ________________________________________________ @FONTFACE (IN YOUR FACE) */
+@font-face {
+  font-family: "Avdira";
+  src: local("theme/properties/typography/fonts/avdira/Avdira_R.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Enjoy Writing";
+  src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot");
+  src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.woff") format("woff"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.svg#Enjoy Writing") format("svg");
+}
+@font-face {
+  font-family: "Euphorigenic";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Euphorigenic"), url("https://fonts.cdnfonts.com/s/8860/euphorigenic.woff") format("woff");
+}
+@font-face {
+  font-family: "Glass Antiqua";
+  src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot");
+  src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.woff") format("woff"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.svg#Glass Antiqua") format("svg");
+}
+@font-face {
+  font-family: "Hand TypeWriter";
+  src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot");
+  src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.woff") format("woff"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.svg#Hand TypeWriter") format("svg");
+}
+@font-face {
+  font-family: "Life Savers";
+  src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot");
+  src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.woff") format("woff"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.svg#Life Savers") format("svg");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot");
+  src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.woff") format("woff"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.svg#Raleway") format("svg");
+}
+@font-face {
+  font-family: "Raylig";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Raylig"), url("https://fonts.cdnfonts.com/s/70312/RayligSemibold-Wy9mE.woff") format("woff");
+}
+@font-face {
+  font-family: "TELETYPE 1945-1985";
+  src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot");
+  src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff") format("woff"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.svg#TELETYPE 1945-1985") format("svg");
+}
+/* FONT STACKS ______ */
+/* Enable keyword, short hand for calling font Stack. */
+/* _______________________________________________________ FONT VARIABLES */
+/* Enable keyword, short hand for callig font Stack. */
+/* ________________________________________________________ TEXTS & TITLES */
+/* Color */
+/* Font Family */
+/* ______________________________________________________ FONT SIZE */
+/* Font Weight */
+/* Letter Spacing */
+/* Line Height */
+body {
+  text-align: left;
+  color: shade(#0abab5, 60%);
+  font-family: "Enjoy Writing", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: auto;
+  padding: 2em 2em 5em;
+  background: #0abab5;
+}
+
+/* Text elements */
+p {
+  margin-bottom: 1.5em;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+/* ______________________________________________ HEADINGS */
+/* ______________________________________________________ LINK */
+a {
+  outline: none !important;
+  font-family: "Raleway", sans-serif;
+}
+a :active {
+  text-decoration: underline;
+  color: underline;
+}
+a :active :hover {
+  text-decoration: bold;
+  color: shade(tint(#ffcc33, 10%), 30%);
+}
+a :hover {
+  text-decoration: bold;
+  color: shade(tint(#ffcc33, 10%), 30%);
+}
+a :inactive {
+  color: tint(#0abab5, 60%);
+  text-decoration: none;
+}
+/* ______________________________________________ QUOTE */
+/* Blockquote */
+blockquote {
+  font-family: "GlassAntiqua-Regular", sans-serif;
+  font-style: italic;
+  border-left: 5px solid #a8a9ad;
+  padding-left: 1.725;
+  margin: 0 1.5em;
+}
+
+blockquote small {
+  display: block;
+  line-height: 1.7em;
+}
+
+/* ______________________________________________ LIST */
+ol,
+ul {
+  margin: 0 0 1.5em 3em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+li > ol,
+li > ul {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+.list--unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+/* ______________________________________________ CODE */
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
+big {
+  font-size: 125%;
+}
+
+/* ______________________________________________ TABLE */
+figure {
+  margin: 0;
+}
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+th {
+  font-weight: bold;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.quiet {
+  color: #999;
+}
+
+.pull-left {
+  float: left;
+  margin: 0.5em 2em 1em 0;
+}
+
+.pull-right {
+  float: right;
+  margin: 0.5em 0 1em 2em;
+}
+
+/* RESPONSIVE SETTINGS */
+@media (max-width: 500px) {
+  body {
+    font-size: 80%;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    float: none !important;
+  }
+}
+/* __________________________________________________ INSULATION */
+/******************************************************************
+Site Name: The Creativity Architect
+Author: CJM Termini
+
+Stylesheet: Responsive  Stylesheet
+
+******************************************************************/
+/**
+ * Required Variables
+ */
+/**
+ * Required Variables
+ */
+/*
+ * Media query to respond to a minimum size (mobile first)
+ */
+/*
+ * Media query to respond to a maximum size
+ */
+/**
+ * Root Media Query Variables
+ */
+/**
+ * Root Media Query Variables
+ */
+/**
+ * Extends
+ */
+.default-max-width {
+  max-width: calc(100vw - 33vh);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wide-max-width {
+  max-width: calc(100vw - 4vh);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 1224px) {
+  .full-max-width {
+    width: auto;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/*
+ * Output font size in px/rem
+ */
+/******************************************************************
+Site Name: The Creativity Architect
+Author: CJM Termini
+
+Stylesheet: Left to Right  Stylesheet
+
+******************************************************************/
+/******************************************************************
+Site Name: The Creativity Architect
+Author: CJM Termini
+
+Stylesheet: Navigation Mixin Stylesheet
+
+******************************************************************/
+/*
+ * Placeholder mixin for <input>
+ */
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+.link-primary {
+  color: #0abab5;
+}
+.link-primary:hover, .link-primary:focus {
+  color: #23c1bc;
+}
+
+.link-secondary {
+  color: #ffcc33;
+}
+.link-secondary:hover, .link-secondary:focus {
+  color: #ffd147;
+}
+
+.link-accent {
+  color: #a8a9ad;
+}
+.link-accent:hover, .link-accent:focus {
+  color: #b1b2b5;
+}
+
+.link-valid {
+  color: #cdffff;
+}
+.link-valid:hover, .link-valid:focus {
+  color: #d2ffff;
+}
+
+.link-info {
+  color: #0dcaf0;
+}
+.link-info:hover, .link-info:focus {
+  color: #25cff2;
+}
+
+.link-attention {
+  color: #ffd080;
+}
+.link-attention:hover, .link-attention:focus {
+  color: #ffd58d;
+}
+
+.link-invalid {
+  color: #ff555a;
+}
+.link-invalid:hover, .link-invalid:focus {
+  color: #ff666b;
+}
+
+.link-alert {
+  color: #ff6fa9;
+}
+.link-alert:hover, .link-alert:focus {
+  color: #ff7db2;
+}
+
+/**
+ * Root Media Query Variables
+ */
+/**
+ * Root Media Query Variables
+ */
+/**
+ * Extends
+ */
+.default-max-width {
+  max-width: calc(100vw - 33vh);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.wide-max-width {
+  max-width: calc(100vw - 4vh);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 576px) {
+  .full-max-width {
+    width: auto;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+/* ==========================================================================
+* Site Name:
+* The Creativity Architect
+* Author: CJM Termini
+* Stylesheet: Print Stylsheet
+*
+* Adding print support. The print styles are based on the the great work of *Andreas Hecht* in
+* https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/.
+*
+* Import this
+* file using the following HTML or equivalent: <link
+* href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css"
+* /> ==========================================================================*/
+/* TOC */
+/* () Margins * Padding */
+/* () Typography */
+/* () Page breaks */
+/* () Links */
+/* () Visibility */
+@media print {
+  *,
+*::before,
+*::after {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    color: black !important;
+    background: transparent !important;
+    filter: none !important;
+  }
+
+  a,
+a:visited {
+    text-decoration: underline;
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  pre,
+blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+h2,
+h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+h3 {
+    page-break-after: avoid;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .btn > .caret,
+.dropup > .btn > .caret {
+    border-top-color: #000 !important;
+  }
+
+  .label {
+    border: 1px solid #000;
+  }
+
+  .table {
+    border-collapse: collapse !important;
+  }
+  .table td,
+.table th {
+    background-color: #fff !important;
+  }
+
+  .table-bordered th,
+.table-bordered td {
+    border: 1px solid #ddd !important;
+  }
+}
+/* Margins & paddings */
+@page {
+  margin: 0.5cm;
+}
+h2,
+h3,
+p {
+  widows: 3;
+  orphans: 3;
+}
+
+.entry,
+.entry .entry-header,
+.single .site-main > article > .entry-footer {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.site-footer .site-info-color {
+  margin: 0;
+}
+
+.site-header {
+  padding: 0;
+}
+
+/* Fonts */
+body {
+  color: #000;
+  background: #fff !important;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 13pt;
+  line-height: 1.3;
+}
+
+.has-background-dark * {
+  color: #000 !important;
+}
+
+.entry-title,
+.page-title,
+.singular .entry-title,
+h1 {
+  font-size: 22pt;
+  font-weight: bold;
+}
+
+.archive-description,
+.comments-title,
+.has-large-font-size,
+.has-regular-font-size,
+h2,
+h2.author-title,
+h3,
+h4,
+p.author-bio {
+  margin-top: 25px;
+  font-size: 14pt;
+}
+
+.comment-meta,
+.comment-meta .comment-author .fn {
+  font-size: 13pt;
+}
+
+/* Page breaks */
+a {
+  page-break-inside: avoid;
+}
+
+blockquote,
+pre {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+img,
+tr {
+  page-break-inside: avoid;
+}
+
+img {
+  max-width: 100% !important;
+  page-break-after: avoid;
+  page-break-inside: avoid;
+}
+
+figure,
+pre,
+table {
+  page-break-inside: avoid;
+}
+
+thead {
+  display: table-header-group;
+}
+
+dl,
+ol,
+ul {
+  page-break-before: avoid;
+}
+
+/* Links */
+a:link,
+a:visited,
+a {
+  background: transparent;
+  text-align: left;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a,
+a:visited {
+  color: #444 !important;
+  text-decoration: underline;
+}
+a:after,
+a:visited:after {
+  content: " (" attr(href) ")";
+}
+a abbr[title]:after,
+a:visited abbr[title]:after {
+  content: " (" attr(title) ")";
+}
+
+/**
+* Don't show links that are fragment identifiers, or use the `javascript:`
+* pseudo protocol
+*/
+.ir a:after,
+a[href^="#"]:after,
+a[href^="javascript:"]:after {
+  content: "";
+}
+
+a[href]:after {
+  content: " (" attr(href) ")";
+}
+
+a:after > img {
+  content: "";
+}
+
+article a[href^="#"]:after {
+  content: "";
+}
+
+a:not(:local-link):after {
+  content: " < " attr(href) "> ";
+}
+
+.entry-title a:after {
+  content: "\a< " attr(href) "> ";
+  font-size: 14pt;
+  white-space: pre;
+}
+
+.byline a:after,
+.cat-links a:after,
+.comment-metadata a:after,
+.page-links a:after,
+.tags-links a:after,
+.wp-block-calendar a:after,
+.wp-block-tag-cloud a:after {
+  content: "";
+}
+
+/* Visibility */
+#dark-mode-toggler,
+.comment-reply,
+.comment-respond,
+.comment .comment-metadata .edit-link,
+.edit-link,
+.entry-footer,
+.footer-navigation,
+.more-link,
+.navigation.pagination,
+.post-navigation,
+.primary-navigation,
+.reply,
+.site-title + .primary-navigation,
+.widget-area {
+  display: none !important;
+}
+
+.entry .entry-content .button,
+.entry .entry-content .wp-block-button .wp-block-button__link,
+.entry .entry-content .wp-block-file__button {
+  color: #000;
+  background: none;
+}
+
+.page-navigation,
+.respond-form,
+.sidebar,
+.wp-prev-next,
+nav {
+  display: none;
+}
+
+@media only screen and (min-width: 1169px) and (max-width: 1368px) {
+  .visible-xxl {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 1169px) and (max-width: 1368px) {
+  .hidden-xxl {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 961px) and (max-width: 1168px) {
+  .visible-xl {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 961px) and (max-width: 1168px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 737px) and (max-width: 960px) {
+  .visible-lg {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 737px) and (max-width: 960px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 543px) and (max-width: 736px) {
+  .visible-md {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 543px) and (max-width: 736px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 1) and (max-width:542px) {
+  .visible-sm {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 1) and (max-width:542px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 0) {
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 0) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+.hidden-xs-up {
+  display: none !important;
+}
+
+.hidden-xs-down {
+  display: none !important;
+}
+
+@media (min-width: 542px) {
+  .hidden-sm-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 541.98px) {
+  .hidden-sm-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 736px) {
+  .hidden-md-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 735.98px) {
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 960px) {
+  .hidden-lg-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 959.98px) {
+  .hidden-lg-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1168px) {
+  .hidden-xl-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1167.98px) {
+  .hidden-xl-down {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1368px) {
+  .hidden-xxl-up {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1367.98px) {
+  .hidden-xxl-down {
+    display: none !important;
+  }
+}
+
+/* RFS rescaling */
+@media (min-width: 1200px) {
+  /* Loop over each utility property */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* Loop over each utility property */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* Loop over each utility property */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* Loop over each utility property */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* Loop over each utility property */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Only proceed if responsive media queries are enabled or if it's the base media query */
+}
+/* Print utilities */
+@media print {
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  .d-print-inline {
+    display: inline !important;
+  }
+
+  .d-print-inline-block {
+    display: inline-block !important;
+  }
+
+  .d-print-block {
+    display: block !important;
+  }
+
+  .d-print-grid {
+    display: grid !important;
+  }
+
+  .d-print-table {
+    display: table !important;
+  }
+
+  .d-print-table-row {
+    display: table-row !important;
+  }
+
+  .d-print-table-cell {
+    display: table-cell !important;
+  }
+
+  .d-print-flex {
+    display: flex !important;
+  }
+
+  .d-print-inline-flex {
+    display: inline-flex !important;
+  }
+
+  .d-print-none {
+    display: none !important;
+  }
+
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+  /* The utility can be disabled with `false`, thus check if the utility is a map first */
+  /* Then check if the utility needs print styles */
+}
+:root {
+  --ca-blue: #0dcaf0;
+  --ca-indigo: #6600ff;
+  --ca-purple: #510bda;
+  --ca-pink: #ff6fa9;
+  --ca-red: #ff555a;
+  --ca-orange: #ffd080;
+  --ca-yellow: #ffcc33;
+  --ca-green: #cdffff;
+  --ca-teal: #b5ede4;
+  --ca-cyan: #0abab5;
+  --ca-$primary100: #c0c0c0;
+  --ca-$primary200: #9a9a9a;
+  --ca-$primary300: #7b7b7b;
+  --ca-$primary400: #626262;
+  --ca-$primary500: #4e4e4e;
+  --ca-$primary600: #3e3e3e;
+  --ca-$primary700: #323232;
+  --ca-$primary800: #282828;
+  --ca-$primary900: #1a1a1a;
+  --ca-primary: #0abab5;
+  --ca-secondary: #ffcc33;
+  --ca-accent: #a8a9ad;
+  --ca-valid: #cdffff;
+  --ca-info: #0dcaf0;
+  --ca-attention: #ffd080;
+  --ca-invalid: #ff555a;
+  --ca-alert: #ff6fa9;
+  --ca-primary-rgb: 10, 186, 181;
+  --ca-secondary-rgb: 255, 204, 51;
+  --ca-accent-rgb: 168, 169, 173;
+  --ca-valid-rgb: 205, 255, 255;
+  --ca-info-rgb: 13, 202, 240;
+  --ca-attention-rgb: 255, 208, 128;
+  --ca-invalid-rgb: 255, 85, 90;
+  --ca-alert-rgb: 255, 111, 169;
+  --ca-white-rgb: 228, 237, 244;
+  --ca-black-rgb: 0, 1, 0;
+  --ca-text-rgb: 10, 186, 181;
+  --ca-body-bg-rgb: 10, 186, 181;
+  --ca-font-sans-serif: Euphorigenic, "Hand Typewriter", "Enjoy Writing", Avdira, "TELETYPE 1945-1985", Raylig, "Life Savers", "Glass Antiqua", sans-serif;
+  --ca-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --ca-gradient: linear-gradient(-120deg, rgba(10, 186, 181, 0.95), rgba(255, 204, 51, 0.65), rgba(168, 169, 173, 0.45), transparent, 95%);
+  --ca-body-font-family: Euphorigenic, Hand Typewriter, Enjoy Writing, Avdira, TELETYPE 1945-1985, Raylig, Life Savers, Glass Antiqua, sans-serif;
+  --ca-body-font-size: 1.15rem;
+  --ca-body-font-weight: 400;
+  --ca-line-height-body: line-height-md;
+  --ca-text: #0abab5;
+  --ca-body-bg: #0abab5;
+}
+
+/* Set a default font size, color, line-height, and font family for your body element and all input elements. These can get overridden later on in the stylesheet, but are useful as base styles. */
+/* Base/Default settings. */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+}
+
+/* Text elements */
+p {
+  margin-bottom: 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0 0 1.5em 3em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-bottom: 0;
+  margin-left: 1.5em;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0 1.5em;
+}
+
+pre {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  padding: 1.6em;
+  overflow: auto;
+  max-width: 100%;
+}
+
+code, kbd, tt, var {
+  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+
+figure {
+  margin: 0;
+}
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Form Elements */
+*:focus {
+  outline: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* Corrects font size not being inherited in all browsers */
+  margin: 0;
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+  vertical-align: baseline;
+  /* Improves appearance and consistency in all browsers */
+  *vertical-align: middle;
+  /* Improves appearance and consistency in all browsers */
+}
+
+button,
+input {
+  line-height: normal;
+  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+  *overflow: visible;
+  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+
+select {
+  line-height: normal;
+  padding: 0;
+  padding-left: 8px;
+}
+
+textarea {
+  overflow: auto;
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+  padding-left: 3px;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  width: 98%;
+  min-height: 4.6;
+  resize: vertical;
+}
+
+/* Gives a basic visual design to form elements */
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  border: 1px solid #ff555a;
+  border-color: #ff555a #ff555a #3e3e3e #ff555a;
+  border-radius: 3px;
+  background: #9a9a9a;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 85, 90, 0.5), inset 0 15px 17px rgba(255, 85, 90, 0.5), inset 0 -5px 12px rgba(0, 1, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 85, 90, 0.5), inset 0 15px 17px rgba(255, 85, 90, 0.5), inset 0 -5px 12px rgba(0, 1, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 85, 90, 0.5), inset 0 15px 17px rgba(255, 85, 90, 0.5), inset 0 -5px 12px rgba(0, 1, 0, 0.05);
+  color: rgba(0, 1, 0, 0.8);
+  cursor: pointer;
+  /* Improves usability and consistency of cursor style between image-type 'input' and others */
+  -webkit-appearance: button;
+  /* Corrects inability to style clickable 'input' types in iOS */
+  font-size: 12px;
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 1.12em 1.5em 1em;
+  text-shadow: 0 1px 0 rgba(255, 85, 90, 0.8);
+}
+
+button:hover,
+html input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover {
+  border-color: #ff555a #3e3e3e #9a9a9a #3e3e3e;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 85, 90, 0.8), inset 0 15px 17px rgba(255, 85, 90, 0.8), inset 0 -5px 12px rgba(0, 1, 0, 0.02);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 85, 90, 0.8), inset 0 15px 17px rgba(255, 85, 90, 0.8), inset 0 -5px 12px rgba(0, 1, 0, 0.02);
+  box-shadow: inset 0 1px 0 rgba(255, 85, 90, 0.8), inset 0 15px 17px rgba(255, 85, 90, 0.8), inset 0 -5px 12px rgba(0, 1, 0, 0.02);
+}
+
+button:focus,
+html input[type=button]:focus,
+input[type=reset]:focus,
+input[type=submit]:focus,
+button:active,
+html input[type=button]:active,
+input[type=reset]:active,
+input[type=submit]:active {
+  border-color: #9a9a9a #3e3e3e #3e3e3e #3e3e3e;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(255, 85, 90, 0.5), inset 0 2px 5px rgba(0, 1, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(255, 85, 90, 0.5), inset 0 2px 5px rgba(0, 1, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(255, 85, 90, 0.5), inset 0 2px 5px rgba(0, 1, 0, 0.15);
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  /* Addresses box sizing set to content-box in IE8/9 */
+  padding: 0;
+  /* Addresses excess padding in IE8/9 */
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* Addresses appearance set to searchfield in S5, Chrome */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+  box-sizing: content-box;
+}
+
+input[type=search]::-webkit-search-decoration {
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+  border: 0;
+  padding: 0;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+  background: rgba(228, 237, 244, 0.3);
+  border: 1px solid #ff555a;
+  border-radius: 3px;
+  padding: 6px;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+  background: #e4edf4;
+}
+
+/* Links */
+/* Assistive Tech –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/**
+ * Text meant only for screen readers. It's hidden due to the clip property, but
+ * visible in the page source. If you take a look back in the template files at
+ * the mark-up for our main menu and other navigation areas, you'll notice that
+ * we have headers such as "Menu" and "Site Navigation" wrapped in an
+ * <code>h1</code> tag with a class of "assistive-text". Screen readers will
+ * read this text aloud, making it easier for users to locate structural
+ * sections in your theme.
+ */
+.assistive-text,
+.screen-reader-text,
+.sr-only {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  word-wrap: normal !important;
+  border: 0;
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+}
+.assistive-text:focus,
+.screen-reader-text:focus,
+.sr-only:focus {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 100000;
+  top: 5px;
+  left: 5px;
+  display: block;
+  clip: auto !important;
+  width: auto;
+  height: auto;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: var(--border-radius-sm);
+  background-color: #f1f1f1;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+.skip-link:focus {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 100000;
+  top: 5px;
+  left: 5px;
+  display: block;
+  clip: auto !important;
+  width: auto;
+  height: auto;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  color: #21759b;
+  border-radius: 3px;
+  background-color: #f1f1f1;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  -webkit-clip-path: none;
+  clip-path: none;
+}
+
+.assistive-text {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
+}
+.align-text-left {
+  text-align: left;
+}
+
+.align-text-right {
+  text-align: right;
+}
+
+.align-text-center {
+  text-align: center;
+}
+
+.flex-fill {
+  flex: 1 1 auto !important;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.flex-column-reverse {
+  flex-direction: column-reverse !important;
+}
+
+.flex-grow-0 {
+  flex-grow: 0 !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.flex-shrink-1 {
+  flex-shrink: 1 !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse !important;
+}
+
+.alignleft,
+.float-left {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+img .alignleft,
+img .float-left {
+  margin-right: 1.15rem;
+}
+
+.alignright,
+.float-right {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+img .alignright,
+img .float-right {
+  margin-left: 1.2075;
+}
+
+.aligncenter,
+.float-center {
+  clear: both;
+  display: block;
+  margin-top: 1.5em;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+}
+img .aligncenter,
+img .float-center {
+  margin-bottom: 1.15rem;
+}
+
+.clearfix .row,
+.clearfix .clearfix {
+  zoom: 1;
+}
+.clearfix .row .clearfix:before,
+.clearfix .row .clearfix:after,
+.clearfix .row .row:before,
+.clearfix .row .row:after,
+.clearfix .clearfix .clearfix:before,
+.clearfix .clearfix .clearfix:after,
+.clearfix .clearfix .row:before,
+.clearfix .clearfix .row:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  table-layout: fixed;
+  content: " ";
+}
+.clearfix .row .clearfix::after,
+.clearfix .row .row::after,
+.clearfix .clearfix .clearfix::after,
+.clearfix .clearfix .row::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/**
+* Text aligments
+*/
+.fixed-top {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.fixed-bottom {
+  position: fixed;
+  z-index: 1030;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+.clearfix .row,
+.clearfix .clearfix {
+  zoom: 1;
+}
+.clearfix .row .clearfix:before,
+.clearfix .row .clearfix:after,
+.clearfix .row .row:before,
+.clearfix .row .row:after,
+.clearfix .clearfix .clearfix:before,
+.clearfix .clearfix .clearfix:after,
+.clearfix .clearfix .row:before,
+.clearfix .clearfix .row:after {
+  display: block;
+  visibility: hidden;
+  clear: both;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  table-layout: fixed;
+  content: " ";
+}
+.clearfix .row .clearfix::after,
+.clearfix .row .row::after,
+.clearfix .clearfix .clearfix::after,
+.clearfix .clearfix .row::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-inline-item {
+  display: inline-block;
+}
+.list-inline-item:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.list--unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+.visible-print-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-block {
+    display: block !important;
+  }
+}
+
+.visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+
+.visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
+
+.ratio {
+  position: relative;
+  width: 100%;
+}
+.ratio::before {
+  display: block;
+  padding-top: var(--ca-aspect-ratio);
+  content: "";
+}
+.ratio > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ratio-1x1 {
+  --ca-aspect-ratio: 100%;
+}
+
+.ratio-4x3 {
+  --ca-aspect-ratio: 75%;
+}
+
+.ratio-16x9 {
+  --ca-aspect-ratio: 56.25%;
+}
+
+.ratio-21x9 {
+  --ca-aspect-ratio: 42.8571428571%;
+}
+
+.container .span.col1 {
+  flex: 0 0;
+  width: 6.25%;
+}
+
+.container .span.col2 {
+  flex: 0 0;
+  width: 12.5%;
+}
+
+.container .span.col3 {
+  flex: 0 0;
+  width: 18.75%;
+}
+
+.container .span.col4 {
+  flex: 0 0;
+  width: 25%;
+}
+
+.container .span.col5 {
+  flex: 0 0;
+  width: 31.25%;
+}
+
+.container .span.col6 {
+  flex: 0 0;
+  width: 37.5%;
+}
+
+.container .span.col7 {
+  flex: 0 0;
+  width: 43.75%;
+}
+
+.container .span.col8 {
+  flex: 0 0;
+  width: 50%;
+}
+
+.container .span.col9 {
+  flex: 0 0;
+  width: 56.25%;
+}
+
+.container .span.col10 {
+  flex: 0 0;
+  width: 62.5%;
+}
+
+.container .span.col11 {
+  flex: 0 0;
+  width: 68.75%;
+}
+
+.container .span.col12 {
+  flex: 0 0;
+  width: 75%;
+}
+
+.container .span.col13 {
+  flex: 0 0;
+  width: 81.25%;
+}
+
+.container .span.col14 {
+  flex: 0 0;
+  width: 87.5%;
+}
+
+.container .span.col15 {
+  flex: 0 0;
+  width: 93.75%;
+}
+
+.container .span.col16 {
+  flex: 0 0;
+  width: 100%;
+}
+
+.container .span.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.container .span.row1 {
+  flex: 0 0;
+  height: 6.25%;
+}
+
+.container .span.row2 {
+  flex: 0 0;
+  height: 12.5%;
+}
+
+.container .span.row3 {
+  flex: 0 0;
+  height: 18.75%;
+}
+
+.container .span.row4 {
+  flex: 0 0;
+  height: 25%;
+}
+
+.container .span.row5 {
+  flex: 0 0;
+  height: 31.25%;
+}
+
+.container .span.row6 {
+  flex: 0 0;
+  height: 37.5%;
+}
+
+.container .span.row7 {
+  flex: 0 0;
+  height: 43.75%;
+}
+
+.container .span.row8 {
+  flex: 0 0;
+  height: 50%;
+}
+
+.container .span.row9 {
+  flex: 0 0;
+  height: 56.25%;
+}
+
+.container .span.row10 {
+  flex: 0 0;
+  height: 62.5%;
+}
+
+.container .span.row11 {
+  flex: 0 0;
+  height: 68.75%;
+}
+
+.container .span.row12 {
+  flex: 0 0;
+  height: 75%;
+}
+
+.container .span.row13 {
+  flex: 0 0;
+  height: 81.25%;
+}
+
+.container .span.row14 {
+  flex: 0 0;
+  height: 87.5%;
+}
+
+.container .span.row15 {
+  flex: 0 0;
+  height: 93.75%;
+}
+
+.container .span.row16 {
+  flex: 0 0;
+  height: 100%;
+}
+
+.container .span.row-fluid {
+  flex: 0 0 auto;
+  height: auto;
+}
+
+.hstack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: stretch;
+}
+
+.vstack {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* TEXT SELECTORS ___ */
+.vertical {
+  writing-mode: vertical-lr;
+  rotate: 90deg;
+}
+
+/**
+ * Elements visibility
+ */
+.visible-on-mobile {
+  display: none !important;
+}
+@media screen and (max-width: 576px) {
+  .visible-on-mobile {
+    display: block !important;
+  }
+}
+
+.visible-on-tablet {
+  display: none !important;
+}
+@media screen and (max-width: 768px) {
+  .visible-on-tablet {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .visible-on-tablet {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .visible-on-desktop {
+    display: none !important;
+  }
+}
+
+/* Visually hidden */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.visually-hidden:not(:focus):not(:focus-within) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.vr {
+  display: inline-block;
+  align-self: stretch;
+  width: 1px;
+  min-height: 1em;
+  background-color: currentColor;
+  opacity: 0.25;
+}
+
+/* If you want to give a common style to all of the titles in your theme, here's a place to do it (you can style them individually later) */
+/* __________________________________________________ EXTERIOR FACADE */
+*, *:after, *:before, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 25;
+  background-image: radial-gradient(circle at 30% 70%, #0abab5, #ffcc33, #a8a9ad, #e4edf4);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  animation: hue-rotate 3s linear infinite;
+}
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: hue-rotate(0);
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -webkit-filter: hue-rotate(360deg);
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+html *, body * {
+  box-sizing: inherit;
+}
+
+body {
+  max-height: 100vh;
+  max-width: 100vw;
+  border-bottom-left-radius: 1.911875rem;
+  border-top-left-radius: 1.911875rem;
+  z-index: 50;
+}
+
+.site {
+  /* The the outer-most container, wraps the entire site */
+}
+
+.site-header {
+  /* The container for the entire header area */
+}
+
+#main {
+  /* The container for #primary, #secondary, and #tertiary */
+}
+
+#primary {
+  /* The container for your primary content.*/
+}
+
+#content {
+  /* The container for your post and page content. */
+}
+
+#secondary {
+  /* Container for your first widget area */
+}
+
+#tertiary {
+  /* Container for your second widget area */
+}
+
+.site-footer {
+  /* Container for the entire site footer area */
+}
+
+/* =Site Header
+----------------------------------------------- */
+/* Style elements inside of the .site-header container */
+.site-header hgroup {
+  /* Container for site title and description */
+}
+
+.site-description {
+  /* This is the tagline */
+}
+
+/* =Menu
+----------------------------------------------- */
+/* Style your navigation menu, which is inside .site-header. A basic drop-down menu structure is provided. */
+.main-navigation {
+  /* wraps the entire navigation menu */
+}
+
+.main-navigation:after {
+  /* Clears the floats after the menu */
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.main-navigation ul {
+  /* The menu is an unordered list */
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.main-navigation li {
+  /* Makes the menu "list" items horizontal */
+  float: left;
+  margin: 0.5em 0;
+  position: relative;
+}
+
+.main-navigation a {
+  /* The individual list item links */
+  display: block;
+  text-decoration: none;
+}
+
+.main-navigation ul ul {
+  /* Submenu drop-down "box" */
+  display: none;
+  float: left;
+  position: absolute;
+  top: 1.2em;
+  left: 0;
+  z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+  /* 3rd+ level drop-down "box" */
+  left: 100%;
+  top: 0;
+}
+
+.main-navigation ul ul li {
+  /* List items inside the drop-down box */
+}
+
+.main-navigation ul ul a {
+  /* Menu links inside the drop-down "box" */
+  padding: 0 1.5em;
+  width: 200px;
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.current_page_item a,
+.main-navigation li.current-menu-item a,
+.main-navigation ul ul a:hover {
+  /* Hover styles for menu items */
+}
+
+.main-navigation ul li:hover > ul {
+  display: block;
+}
+
+/* Small menu toggle area for screens < 600 pixels wide. The small menu requires some simple JavaScript in order to take affect. See http://themeshaper.com/2012/10/31/the-wordpress-theme-header-template/ for instructions on setting up this script. */
+.menu-toggle {
+  cursor: pointer;
+}
+
+.main-small-navigation .menu {
+  display: none;
+}
+
+/* __________________________________________________ INTERIOR FINISH */
+/* Styles for posts and pages */
+.sticky {
+  /* Style your sticky posts. This class is applied to the same element as .hentry below. */
+}
+
+.hentry {
+  /* The wrapper for individual posts */
+  margin: 0 0 1.5em;
+  padding-bottom: 1.5em;
+}
+
+.entry-header {
+  /* Container for the entry title, byline and post date */
+}
+
+.entry-title,
+.entry-title a {
+  /* Post titles */
+}
+
+.page-title {
+  /* Page titles */
+}
+
+body.search .page-title,
+body.archive .page-title {
+  /* Optional, if you want your page titles to look different on search and archive pages */
+}
+
+.entry-meta {
+  /* Container for the entry metadata */
+  clear: both;
+}
+
+.byline {
+  /* By default, bylines are hidden */
+  display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+  /* Bylines are displayed on single posts and/or when there are multiple authors */
+  display: inline;
+}
+
+.cat-links {
+  /* Styles category links inside the entry meta */
+}
+
+.tag-links {
+  /* Styles links to tags inside the entry-meta */
+}
+
+.sep {
+  /* Separator between category links, cat links, comments links, etc */
+}
+
+.comments-link {
+  /* Link to leave a comment */
+}
+
+.edit-link {
+  /* Link to Edit the post (only shows up for admins)
+
+  }
+  .entry-content,
+  .entry-summary { /* Container for the post body/excerpt text */
+  margin: 1.5em 0 0;
+}
+
+/* Styling In-Post Tables */
+.entry-content table,
+.comment-content table {
+  border: 1px solid #000;
+  border-left-width: 0;
+  margin: 0 -0.083em 2.083em 0;
+  text-align: left;
+  width: 100%;
+}
+
+.entry-content tr th,
+.entry-content thead th,
+.comment-content tr th,
+.comment-content thead th {
+  border-left: 1px solid #000;
+  font-weight: bold;
+  padding: 0.5em 1.25em;
+}
+
+.entry-content tr td,
+.comment-content tr td {
+  border: 1px solid #000;
+  border-width: 1px 0 0 1px;
+  padding: 0.5em 1.25em;
+}
+
+.entry-content tr.odd td,
+.comment-content tr.odd td {
+  /* If you want to apply alternate styles to even/odd table rows */
+}
+
+.page-links {
+  /* Style the page numbers for multi-page posts (posts that have been split with <!--next-page -->. */
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* __________________________________________________ EXTERIOR DOORS/SEALANT */
+/* Just put ".format-aside" before any of the above classes to create special formatting for Aside posts */
+.format-aside .entry-content {
+  border-left: 4px solid #000;
+  padding-left: 1em;
+}
+
+/* =Media
+----------------------------------------------- */
+/* Styling for images and videos */
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+  max-width: 100%;
+  /* Fluid images for posts, comments, and widgets */
+}
+
+.site-header img,
+.entry-content img,
+.widget-img,
+img[class*=align],
+img[class*=wp-image-],
+.wp-caption img {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+.site-header img,
+.entry-content img,
+.widget img,
+img.size-full {
+  max-width: 100%;
+  width: auto;
+  /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+  /* Remove borders and backgrounds from WP smileys */
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+.wp-caption {
+  /* The container for image captions */
+  max-width: 100%;
+}
+
+.wp-caption.aligncenter,
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.alignnone {
+  /* Add spacing around captions and post text */
+  margin-bottom: 1.5em;
+}
+
+.wp-caption img {
+  /* The image inside the caption container */
+  display: block;
+  margin: 1.2% auto 0;
+  max-width: 98%;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+#content .gallery {
+  /* Container for image galleries */
+  margin-bottom: 1.5em;
+}
+
+.gallery-caption {
+  font-style: italic;
+}
+
+#content .gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%;
+}
+
+#content .gallery dd {
+  margin: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* =Navigation
+----------------------------------------------- */
+/* Older/Newer Post Navigation */
+.site-content .nav-previous {
+  float: left;
+  width: 50%;
+}
+
+.site-content .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+/* __________________________________________________ INTERIOR CLEANUP */
+#comments {
+  /* Container for the comments section */
+  clear: both;
+}
+
+.bypostauthor {
+  /* Gives post author comments thier own style */
+}
+
+.commentlist li {
+  list-style: none;
+}
+
+.commentlist,
+.children {
+  list-style: none;
+  margin: 0;
+}
+
+.children {
+  /* Nested comments */
+  margin: 0 0 0 6%;
+}
+
+.commentlist li.comment {
+  /* Individual top-level comments */
+}
+
+.commentlist li.pingback {
+  /* Individual top-level pingbacks */
+}
+
+.commentlist li:last-of-type {
+  /* Do you want to style the last comment differently, such as remove borders? */
+}
+
+.commentlist .children li {
+  /* Contains individual nested comments */
+}
+
+.children article.comment,
+.children li.pingback {
+  /* Nexted comments and pingbacks */
+  padding-top: 1em;
+}
+
+.comment .avatar {
+  /* Comment author's gravatar image */
+}
+
+.comment-author {
+  /* Comment author's name */
+}
+
+.comment-meta {
+  /* Comment date, time, etc */
+}
+
+.comment-content {
+  /* Actual comment text */
+}
+
+.comment .reply {
+  /* The "Reply" link under each comment */
+  text-align: right;
+}
+
+/* Comment Form */
+.required {
+  /* The little asterisk next to a required comment field */
+  color: #880000;
+}
+
+#commentform label {
+  /* The text next to each comment form field */
+  padding: 1em 0;
+}
+
+#commentform #comment {
+  /* The comment form textarea */
+}
+
+p.nocomments {
+  /* Message displayed when there are no comments */
+}
+
+/* __________________________________________________ LANDSCAPE */
+.widget-area {
+  /* All of the sidebar container divs get this common class */
+}
+
+.widget {
+  /* The individual widget */
+  margin: 0 0 1.5em;
+}
+
+.widget ul {
+  /* Unordered lists inside widgets */
+  list-style: none;
+  margin: 0;
+}
+
+.widget ul li {
+  /* Unordered list items inside widgets */
+  margin-bottom: 0.25em;
+}
+
+/* Search widget */
+#searchsubmit {
+  display: none;
+}
+
+/* Sub-Items in Menu & Categories Widgets. These classes are useful if you want to add special styling, such as indention, to sub-items in your menu and categories widgets. */
+.widget-area .sub-menu,
+.widget-area .children {
+  margin-left: 1.5em;
+}
+
+/* Text Widgets */
+/* Cloud Widgets */
+.wp_widget_tag_cloud div,
+.widget_tag_cloud div {
+  line-height: 1.5;
+  padding: 0.231em 0;
+}
+
+/* RSS Widget */
+.rsswidget img {
+  /* This is the orange RSS icon to the left of the RSS widget title */
+  margin: 0;
+  vertical-align: text-top;
+}
+
+/* Calendar Widget */
+#wp-calendar {
+  width: 100%;
+}
+
+#wp-calendar caption {
+  font-style: italic;
+}
+
+#wp-calendar thead th {
+  text-align: center;
+}
+
+#wp-calendar tbody,
+#wp-calendar tbody td {
+  border: 1px solid #000;
+}
+
+#wp-calendar tbody {
+  border-left-width: 0;
+}
+
+#wp-calendar tbody td {
+  border-width: 1px 0 0 0;
+}
+
+#wp-calendar tbody td a {
+  font-weight: bold;
+}
+
+#wp-calendar tfoot #next {
+  text-align: right;
+}
+
+#wp-calendar #today {
+  font-weight: bold;
+}
+
+/* __________________________________________________ WALK-THROUGH/INSPECTION */
+/* __________________________________________________ CLOSING */
+@media only screen and (max-width: 768px) {
+  #content,
+#primary,
+#secondary,
+#tertiary {
+    /* Remove floats on all structural elements for smaller screens */
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #primary,
+#secondary,
+#tertiary {
+    /* Make all structural elements full-width */
+    width: 100%;
+  }
+}
+/* =IE Styling
+----------------------------------------------- */
+/* If you have any IE-specific adjustments to make, add them here.
+
+For example:
+
+#ie8 body {
+	color #333;
+}
+
+Will make the sbody text #333 on IE8 only. In order for this to work, you need to set up conditionals to add an ID-selector to the HTML element when IE is detected. For instructions on how to set up the conditionals, see: http://themeshaper.com/2012/10/31/the-wordpress-theme-header-template/
+*/
+
+/*# sourceMappingURL=style.css.map */

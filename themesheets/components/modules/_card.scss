@@ -233,8 +233,8 @@ $card-footer-padding-vertical-l       : round(($offset-md * 0.5));
 .card-info {
   @include card-variant($info-color, $info-color);
 }
-.card-alert {
-  @include card-variant($alert-color, $alert-color);
+.card-invalid {
+  @include card-variant($invalid-color, $invalid-color);
 }
 .card-invaild {
   @include card-variant($invalid-color, $invalid-color);
@@ -253,8 +253,8 @@ $card-footer-padding-vertical-l       : round(($offset-md * 0.5));
 .card-valid-outline {
   @include card-outline-variant($valid-bg);
 }
-.card-alert-outline {
-  @include card-outline-variant($alert-bg);
+.card-invalid-outline {
+  @include card-outline-variant($invalid-bg);
 }
 .card-invalid-outline {
   @include card-outline-variant($invalid-bg);

@@ -16,7 +16,7 @@ $headings-font-style          : null;
 $headings-font-weight         : 600;
 $headings-line-height         : $lg;
 $headings-margin-bottom       : $md;
-$headings-color: shade-color($accent-color, $title-percentage);
+$headings-color: shade($accent, $title-percentage);
 // scss-docs-end headings-variables
 
 // scss-docs-start display-headings
