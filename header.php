@@ -1,46 +1,32 @@
-<?php /* TEMPLATE PART: Header */ ?>
+<?php
+	/*-----------------------------------------------------------------------------------*/
+	/* This template will be called by all other template files to begin
+	/* rendering the page and display the header/nav
+	/*-----------------------------------------------------------------------------------*/
+?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>
-<?php architecture_the_html_classes(); ?>>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
+<title>
+	<?php bloginfo('name'); ?> |
+	<?php is_front_page() ? bloginfo('description') : wp_title(''); ?>
+</title>
 
-	<head>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<script src="https://kit.fontawesome.com/a52bc36f18.js" crossorigin="anonymous"></script>
 
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-  		<meta name="HandheldFriendly" content="True" />
-  		<meta name="MobileOptimized" content="320" />
+<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
 
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php wp_head(); ?>
 
-		<script src="https://kit.fontawesome.com/a52bc36f18.js" crossorigin="anonymous"></script>
-		<?php wp_head(); ?>
+</head>
 
-		<?php // drop Google Analytics Here ?>
+<body class="<?php body_class();?>">
 
-	</head>
-
-<body <?php body_class(); ?> id="<?php the_ID(); ?>">
-	<header class="site-header">
-		<section id="masthead">
-			<div class="nameplate">
-				<sup class="the">the</sup>
-				<a class="site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>
-				</a>
-				<sub class="site-description">
-					<?php bloginfo( 'description' ); ?>
-				</sub>
-			</div>
-			<nav class="main-navigation" id="architecture">
-				<?php wp_nav_menu( array(
-					'theme_location' => 'primary',
-					'container_class' => 'architecture-menu' ) ); ?>
-				 <li class="widget_search alignright" id="s">
-					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-					<input type="search" class="form-control form-control-dark"   placeholder="Search..." aria-label="Search">
-					</form>
-				 </li>
-			 </nav>
-		</section>
-	</header>
+	<?php do_action( 'wp_body_open' ); ?>

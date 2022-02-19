@@ -1,0 +1,96 @@
+/**
+ * partials/wrapper
+ * ---
+ */
+ $wrapper-width: $grid-max-width;
+
+.wrapper-main {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  width: 100%;
+
+  padding-top: $horizontal-spacer;
+  padding-right: $vertical-spacer-lg;
+  padding-bottom: $horizontal-spacer;
+  padding-left: 9vw;
+
+  border: 2px solid black;
+}
+
+.content-wrapper {
+  @include make-container;
+}
+
+.wrapper-header {
+  position: fixed;
+  top: 0;
+  right: 95vw;
+  bottom: 0;
+  left: 1vw;
+
+  width: 2vw;
+
+  padding-top: 1.5vh;
+  padding-right: .5vw;
+  padding-bottom: 1.5vh;
+  padding-left: .5vw;
+}
+
+.wrapper-footer {
+  @include make-container;
+  position: fixed;
+  top: 94vh;
+  right: 12vw;
+  bottom: 3vh;
+  left: 0;
+  z-index: $z-index-footer;
+  padding-right: 1vw;
+}
+
+.wrapper-nav {
+   @include container-overflow;
+   position: relative;
+   top: 2vh;
+   right: 89vw;
+   bottom: 2vh;
+   left: 6vw;
+   z-index: $z-index-nav;
+
+   height: 100%;
+
+   background: blue;
+}
+
+#primary-search-wrapper .menu-toggle-wrapper {
+    padding: 0;
+}
+
+#wrapper {
+	width: 100%;
+	padding-left: 100px;
+	padding-right: 100px;
+	box-sizing: border-box;
+	float: left;
+	position: relative;
+	margin: 0;
+	z-index: 1;
+}
+
+.innerwrapper {
+	max-width: 900px;
+  margin: 0 auto;
+  padding-left: 30px;
+	padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.homewrapper {
+	max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}

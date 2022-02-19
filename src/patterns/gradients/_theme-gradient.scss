@@ -1,0 +1,71 @@
+/* THEME */
+$gradient-primary: linear-gradient(
+  190deg,
+  transparent,
+  rgba($primary, 0.25) 3%,
+  rgba($primary, 0.3) 15%,
+  rgba($primary, 0.45) 27%,
+  rgba($primary, 0.5) 39%,
+  rgba($primary, 0.6) 45%,
+  rgba($primary, 0.7) 51%,
+  rgba($primary, 0.8) 63%,
+  rgba($primary, 0.9) 75%,
+  rgba($primary, 1) 90%
+  );
+
+$gradient-secondary: linear-gradient(
+  290deg,
+  transparent,
+  rgba($white, .3) 40%,
+  rgba($primary, .5) 35%
+  rgba($accent, 0.4) 25%,
+  rgba($accent, 0.5) 40%,
+  rgba($secondary, 0.6) 45%,
+  rgba($secondary, 0.7) 55%,
+  rgba($secondary, 0.8) 65%,
+  rgba($secondary, 0.9) 70%,
+  rgba($secondary, 1) 90%,
+);
+
+$gradient-accent: linear-gradient( $secondary, $white );
+
+$gradient-chocolate: linear-gradient(
+  $white,
+  rgba($chocolate, .3) 40%,
+  rgba($chocolate, .5) 35%
+  rgba($chocolate, 0.4) 25%,
+  rgba($chocolate, 0.5) 40%,
+  rgba($chocolate, 0.6) 45%,
+  rgba($chocolate, 0.7) 55%,
+  rgba($chocolate, 0.8) 65%,
+  rgba($chocolate, 0.9) 80%,
+  rgba($chocolate, 1) 90%,
+);
+
+@mixin gradient-chocolate {
+  background-image: $gradient-chocolate;
+  background-size: cover;
+  height: 100vh;
+};
+
+@mixin gradient-accent {
+  background-image: $gradient-accent;
+  background-size: cover;
+  height: 100vh;
+};
+
+@mixin linear-gradient($color, $color2, $color3) {
+  background-image: linear-gradient(
+  290deg,
+  transparent,
+  rgba($white, .3) 40%,
+  rgba($color3, .5) 35%
+  rgba($color2, 0.4) 25%,
+  rgba($color2, 0.5) 40%,
+  rgba($color, 0.6) 45%,
+  rgba($color, 0.7) 55%,
+  rgba($color, 0.8) 65%,
+  rgba($color, 0.9) 80%,
+  rgba($color, 1) 90%
+  );
+}

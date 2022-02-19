@@ -1,0 +1,22 @@
+$duration: .7s;
+
+.main {
+  overflow: hidden;
+  transition: background-color $duration;
+  *zoom: 1;
+
+  :before,
+  :after {
+  display: table;
+  content: "";
+  line-height: 0;
+  }
+
+  :after {
+  clear: both;
+  }
+}
+
+.site-description {
+    font-family: $primary-font;
+}

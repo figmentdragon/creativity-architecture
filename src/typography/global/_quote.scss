@@ -1,0 +1,32 @@
+/* 3 */
+$blockquote-margin-y:         $spacer !default;
+$blockquote-font-size:        $font-size-base * 1.25 !default;
+$blockquote-footer-color:     $gray-600 !default;
+$blockquote-footer-font-size: $small-font-size !default;
+
+blockquote {
+	font-style: italic;
+	margin: 0 1.5em;
+}
+
+blockquote,
+q {
+	font-family: $accent-font;
+	background: $secondary-bg;
+	border-left: 10px solid $primary;
+	display: block;
+	padding: 1rem;
+  quotes: none;
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+blockquote p:first-child {
+	margin-top: 0;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}

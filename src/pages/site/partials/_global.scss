@@ -1,0 +1,148 @@
+@mixin container-body {
+  @include container-base;
+  margin: 0;
+  padding-top: .5vh;
+  padding-bottom: .5vh;
+}
+
+@mixin container-main {
+  @include container-base;
+  margin: 0;
+}
+
+@mixin container-foot {
+  @include container-base;
+}
+
+
+  
+body {
+  @include container-body;
+  @include elevation(15);
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-body;
+  
+  aside {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 5vw;
+    border: 2px solid blue;
+  }
+  
+  main {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-main;
+    
+    border: 2px solid red;
+    
+    h4 {
+      position: relative;
+    }
+    
+    img {
+      position: relative;
+      top: 0;
+      right: 1vw;
+    }
+    
+    article {
+      @include border-radius($border-radius-xxl);
+      position: relative;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      
+      border: 2px solid orange;
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 97vw;
+  bottom: 0;
+  left: 1vw;
+
+  padding-top: 1.75vh;
+  padding-bottom: 1.75vh;
+  z-index: $z-index-header;
+  @include elevation(5);
+  
+  hgroup {
+    position: relative;
+    top: 2vh;
+    right: 1vw;
+    bottom: 2vh;
+    left: 1vw;
+    
+    h1 {
+      position: fixed;
+      top: 2vh;
+      right: 95vw;
+      bottom: 3vh;
+      left: -3.25vw;
+      z-index: $z-index-site-title;
+    }
+    
+    nav #site-navigation .nav-primary {
+      position: relative;
+      top: 0;
+      left: .5vw;
+      z-index: $z-index-nav;
+      
+      padding-top: 4vh;
+      padding-bottom: 4vh;
+      
+      border: 2px solid red;
+      
+      ul .menu {
+        position: relative;
+        top: 0;
+        right: 0;
+        left: 0;
+        margin-right: 5vw;
+        margin-left: 0vw;
+        border: 2px solid purple;
+        
+        li a .menu-item  {
+          margin-right: 10vw;
+          margin-left: -1vw;
+          margin-bottom: .75vh;
+          
+          font-family: 'Raylig';
+          font-size: 1.25vw;
+          font-weight: bolder;
+
+          display: inline-block;
+          flex-flow: row;
+          text-transform: uppercase;
+          
+          border: 2px solid blue;
+        }
+      }
+    }
+  }
+}
+
+footer {
+
+  
+  small {
+
+  }
+  
+  address {
+    
+  }
+}

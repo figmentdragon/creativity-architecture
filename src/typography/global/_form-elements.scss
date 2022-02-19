@@ -1,0 +1,72 @@
+/* 8 */
+/* Form Elements */
+*:focus {
+  outline: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  vertical-align: middle;
+
+}
+
+button {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+
+button,
+input {
+  line-height: normal;
+  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+  overflow: visible;
+  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+
+select {
+  line-height: normal;
+  padding: 0 0 0 divide($offset, 2);
+  font-size: 14px;
+  border: 1px solid #CCC;
+  border-radius: 1px;
+  color: #404040;
+  height: 40px;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  /* Improves readability and alignment in all browsers */
+  padding: 6px 10px;
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  resize: vertical;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+legend {
+    border: 0;
+    padding: 0;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+form p {
+    margin-bottom: 15px;
+}

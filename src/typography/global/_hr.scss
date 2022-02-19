@@ -1,0 +1,14 @@
+$hr-margin-y:                 $spacer !default;
+$hr-color:                    inherit !default;
+$hr-bg-color:                 currentColor !default;
+$hr-base-width:             0 !default;
+$hr-height:                   $base-width !default;
+$hr-opacity:                  .25 !default;
+
+hr {
+  background: $body-bg;
+  border: 0;
+  height: 1px;
+  margin: 4rem 0;
+  box-sizing: content-box;
+}

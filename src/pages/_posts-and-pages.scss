@@ -1,0 +1,28 @@
+/* Styles for posts and pages */
+.sticky {
+	// This class is required to pass ThemeCheck.
+	/* Style your sticky posts. This class is applied to the same element as .hentry below. */
+	display: block;
+}
+
+.no-results.not-found > *:first-child {
+	margin-bottom: calc(3 * $vertical-offset);
+}
+
+// Styling for wp_link_pages.
+.page-links { /* Style the page numbers for multi-page posts (posts that have been split with <!--next-page -->. */
+	clear: both;
+	margin: 0 0 1.5em;
+
+	.post-page-numbers {
+		display: inline-block;
+		margin-left: calc(0.66 * $spacing-unit);
+		margin-right: calc(0.66 * $spacing-unit);
+		min-width: 44px;
+		min-height: 44px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}

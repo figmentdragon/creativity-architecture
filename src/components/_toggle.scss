@@ -1,0 +1,40 @@
+/* Dropdown Toggle */
+
+.dropdown-toggle {
+    background-image: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: block;
+    font-size: 18px;
+    font-size: 1.125rem;
+    right: 0;
+    line-height: 1.172;
+    margin: 0 auto;
+    padding: 14px 19px;
+    position: absolute;
+    text-shadow: none;
+    top: 0;
+}
+
+.site-footer-menu .dropdown-toggle {
+    display: none;
+}
+
+body button.dropdown-toggle:hover,
+body button.dropdown-toggle:focus {
+    background: transparent;
+    background-image: none;
+}
+
+.dropdown-toggle:focus {
+    outline: thin dotted;
+}
+
+.dropdown-toggle.toggled-on .icon {
+    -ms-transform: rotate(-180deg); /* IE 9 */
+    -webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
+    transform: rotate(-180deg);
+}

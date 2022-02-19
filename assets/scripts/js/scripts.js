@@ -1,5 +1,5 @@
 /*
- * Bones Scripts File
+ * MYTHEME Scripts File
  * Author: Eddie Machado
  *
  * This file should contain any js scripts you want to add to the site.
@@ -94,13 +94,11 @@ var timeToWaitForLast = 100;
  * then we can swap out those images since they are located in a data attribute.
 */
 function loadGravatars() {
-  // set the viewport using the function above
-  viewport = updateViewportDimensions();
-  // if the viewport is tablet or larger, we load in the gravatars
-  if (viewport.width >= 768) {
-  jQuery('.comment img[data-gravatar]').each(function(){
-    jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-  });
+	viewport = updateViewportDimensions();
+	if (viewport.width >= 768) {
+		jQuery('.comment img[data-gravatar]').each(function(){
+			jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
+		});
 	}
 } // end function
 
@@ -108,13 +106,10 @@ function loadGravatars() {
 /*
  * Put all your regular jQuery in here.
 */
-jQuery(document).ready(function($) {
+jQuery(document).ready(function($) {loadGravatars();});
+jQuery(function(){
+  jQuery('.topwidget').onScreen({toggleClass: 'animated fadeInLeftShort go'});
+  jQuery('.content, .type-post').onScreen({toggleClass: 'animated fadeIn go'});
+});
 
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
-
-
-}); /* end of as page load scripts */
+ /* end of as page load scripts */

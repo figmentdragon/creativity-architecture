@@ -1,15 +1,16 @@
-<?php /* TEMPLATE PART: Footer */ ?>
+<?php
+	/*-----------------------------------------------------------------------------------*/
+	/* This template will be called by all other template files to finish
+	/* rendering the page and display the footer area/content
+	/*-----------------------------------------------------------------------------------*/
+?>
 
-<footer id="site-info">
-    <section class="social-media">
-      scrolling social media updates
-    </section>
-    <secion class="contact">
-      <address class="email" id="email"><a href="">contact @email </address>
-      <small class="copyright" id="copyright">Works by <?php get_author_name( $auth_id = 'true', 'display' ); ?>are <?php echo architecture_copyright(); ?></small>
-    </section>
-</footer><!-- #colophon .site-footer -->
-
+</main><!-- / end page container, begun in the header -->
+	<footer>
+			<p>
+			&copy; <?php echo esc_html( date_i18n( __( 'Y', 'MYTHEME' ) ) ); ?> by <?php bloginfo( 'name' ); ?>. <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'MYTHEME' ) ); ?>">
+		</p>
+	</footer><!-- #colophon .site-footer -->
 <?php wp_footer(); ?>
 </body>
 </html>

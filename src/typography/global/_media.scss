@@ -1,0 +1,18 @@
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+img {
+    border: 0;
+}
+svg:not(:root) {
+    overflow: hidden;
+}

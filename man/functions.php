@@ -1,73 +1,73 @@
 <?php
 /*
 Author: Eddie Machado
-URL: http://themble.com/bones/
+URL: http://themble.com/MYTHEME/
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
 sidebars, comments, etc.
 */
 
-// LOAD architecture CORE (if you remove this, the theme will break)
-require_once( 'inc/architecture.php' );
+// LOAD MYTHEME CORE (if you remove this, the theme will break)
+require_once( 'inc/MYTHEME.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH architecture
+LAUNCH MYTHEME
 Let's get everything up and running.
 *********************/
 
-function architecture_setup() {
+function MYTHEME_setup() {
 
   add_editor_style( get_stylesheet_directory_uri() . '/assets/scripts/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  //load_theme_textdomain( 'architecture', get_template_directory() . '/library/translation' );
+  //load_theme_textdomain( 'MYTHEME', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'inc/custom-post-type.php' );
 
   // launching operation cleanup
-  add_action( 'init', 'architecture_head_cleanup' );
+  add_action( 'init', 'MYTHEME_head_cleanup' );
 	add_action( 'admin_menu' , 'front_page_on_pages_menu' );
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
-  add_filter( 'the_generator', 'architecture_rss_version' );
+  add_filter( 'the_generator', 'MYTHEME_rss_version' );
   // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'architecture_remove_wp_widget_recent_comments_style', 1 );
+  add_filter( 'wp_head', 'MYTHEME_remove_wp_widget_recent_comments_style', 1 );
   // clean up comment styles in the head
 	add_filter( 'show_admin_bar', '__return_false' );
-	add_filter('post_comments_feed_link', 'architecture_post_comments_feed_link');
-	add_filter('wp_nav_menu_args', 'architecture_nav_menu_args');
+	add_filter('post_comments_feed_link', 'MYTHEME_post_comments_feed_link');
+	add_filter('wp_nav_menu_args', 'MYTHEME_nav_menu_args');
 
-  add_action( 'wp_head', 'architecture_remove_recent_comments_style', 1 );
+  add_action( 'wp_head', 'MYTHEME_remove_recent_comments_style', 1 );
   // clean up gallery output in wp
-  add_filter( 'gallery_style', 'architecture_gallery_style' );
+  add_filter( 'gallery_style', 'MYTHEME_gallery_style' );
 
   // enqueue base scripts and styles
-	add_action( 'wp_enqueue_scripts', 'architecture_scripts' );
-  add_action( 'wp_enqueue_scripts', 'architecture_style' );
-  add_action( 'customize_preview_init', 'architecture_customize_preview_init' );
+	add_action( 'wp_enqueue_scripts', 'MYTHEME_scripts' );
+  add_action( 'wp_enqueue_scripts', 'MYTHEME_style' );
+  add_action( 'customize_preview_init', 'MYTHEME_customize_preview_init' );
   // launching this stuff after theme setup
-  architecture_theme_support();
+  MYTHEME_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'architecture_register_sidebars' );
+  add_action( 'widgets_init', 'MYTHEME_register_sidebars' );
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'architecture_filter_ptags_on_images' );
+  add_filter( 'the_content', 'MYTHEME_filter_ptags_on_images' );
   // cleaning up excerpt
-  add_filter( 'excerpt_more', 'architecture_excerpt_more' );
+  add_filter( 'excerpt_more', 'MYTHEME_excerpt_more' );
 
-	add_shortcode('button', 'architecture_button_shortcode');
+	add_shortcode('button', 'MYTHEME_button_shortcode');
 
-} /* end architecture ahoy */
+} /* end MYTHEME ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'architecture_setup' );
+add_action( 'after_setup_theme', 'MYTHEME_setup' );
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -77,8 +77,8 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'architecture-thumb-600', 600, 150, true );
-add_image_size( 'architecture-thumb-300', 300, 100, true );
+add_image_size( 'MYTHEME-thumb-600', 600, 150, true );
+add_image_size( 'MYTHEME-thumb-300', 300, 100, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -92,20 +92,20 @@ inside the thumbnail function.
 
 For example, to call the 300 x 100 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'architecture-thumb-300' ); ?>
+<?php the_post_thumbnail( 'MYTHEME-thumb-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'architecture-thumb-600' ); ?>
+<?php the_post_thumbnail( 'MYTHEME-thumb-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
-add_filter( 'image_size_names_choose', 'architecture_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'MYTHEME_custom_image_sizes' );
 
-function architecture_custom_image_sizes( $sizes ) {
+function MYTHEME_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'architecture-thumb-600' => __('600px by 150px'),
-        'architecture-thumb-300' => __('300px by 100px'),
+        'MYTHEME-thumb-600' => __('600px by 150px'),
+        'MYTHEME-thumb-300' => __('300px by 100px'),
     ) );
 }
 
@@ -133,7 +133,7 @@ new image size.
   - Create some boilerplate Sections, Controls and Settings
 */
 
-function architecture_theme_customizer($wp_customize) {
+function MYTHEME_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
   // Uncomment the below lines to remove the default customize sections
@@ -152,12 +152,12 @@ function architecture_theme_customizer($wp_customize) {
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action( 'customize_register', 'architecture_theme_customizer' );
+add_action( 'customize_register', 'MYTHEME_theme_customizer' );
 
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function architecture_register_sidebars() {
+function MYTHEME_register_sidebars() {
 	register_sidebar(array(				// Start a series of sidebars to register
 		'id' => 'sidebar', 					// Make an ID
 		'name' => 'Sidebar',				// Name it
@@ -181,8 +181,8 @@ function architecture_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'architecture' ),
-		'description' => __( 'The second (secondary) sidebar.', 'architecture' ),
+		'name' => __( 'Sidebar 2', 'MYTHEME' ),
+		'description' => __( 'The second (secondary) sidebar.', 'MYTHEME' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -203,7 +203,7 @@ function architecture_register_sidebars() {
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function architecture_comments( $comment, $args, $depth ) {
+function MYTHEME_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
     <article  class="cf">
@@ -221,13 +221,13 @@ function architecture_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'architecture' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'architecture' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'architecture' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'MYTHEME' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'MYTHEME' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'MYTHEME' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="invalid invalid-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'architecture' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'MYTHEME' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">
@@ -247,10 +247,10 @@ external fonts. If you're using Google Fonts, you
 can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
-function architecture_fonts() {
-  wp_enqueue_style('architecture_fontface');
+function MYTHEME_fonts() {
+  wp_enqueue_style('MYTHEME_fontface');
 }
 
-add_action('wp_enqueue_scripts', 'architecture_fonts');
+add_action('wp_enqueue_scripts', 'MYTHEME_fonts');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

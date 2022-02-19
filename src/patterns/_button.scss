@@ -1,0 +1,2 @@
+$button-link-color: tint($link-text, $button-percentage);
+$button-link-hover: tint($button-link-color, $hover-percentage);
