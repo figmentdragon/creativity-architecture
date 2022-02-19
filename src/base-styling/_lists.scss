@@ -1,0 +1,59 @@
+/* 2 */
+$list-inline-padding:         .5rem !default;
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+ol,
+ul {
+  list-style: none;
+	margin: 0 0 1.5em 1em;
+	padding: 0 0 0 1.5rem;
+	li {
+		line-height: 1.75;
+		list-style: none;
+		display: inline;
+	}
+}
+
+li {
+  > ol,
+  > ul {
+    margin-bottom: 0;
+  }
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+	margin: $horizontal-offset $vertical-offset;
+}
+
+ul li >  ul,
+ol li >  ol,
+ul li >  ol,
+ol li >  ul{
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+dl dd {
+	padding-left: $offset * 2;
+}
+
+menu {
+    padding: 0 0 0 40px;
+}

@@ -1,0 +1,22 @@
+/* ______________________________________________________ BACKGROUNDS */
+  /* Theme BG Colors */
+  $primary-bg                : tint($primary, $background-percentage);
+  $secondary-bg              : tint($secondary, $background-percentage);
+  $accent-bg                 : tint($accent, $background-percentage);
+  $valid-bg                  : tint($valid, $background-percentage);
+  $invalid-bg                : tint($invalid, $background-percentage);
+  $attention-bg              : tint($attention, $background-percentage);
+  $info-bg                   : tint($info, $background-percentage);
+
+  /* Background */
+  $body-bg                   : tint($primary-bg, $background-percentage);
+  $page-bg                   : tint($secondary-bg, $background-percentage);
+  $article-bg                : tint($accent-bg, $background-percentage);
+
+  $selection-bg : tint($page-bg, $background-percentage);
+  
+@mixin gradient-bg {
+    background-image: radial-gradient( circle in bottom left, $primary-bg, $secondary-bg, $accent-bg, transparent);
+    height: 100vh;
+    width: 3vw;
+  }

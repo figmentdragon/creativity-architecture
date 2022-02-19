@@ -1,0 +1,71 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  @include clearfix;
+  margin-bottom: $headings-margin-bottom;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+a .h1, a .h2, a .h3, a .h4, a .h5, a .h6 {
+	color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+.subheader {
+  color: tint($heading-text-color, $lead-percentage);
+}
+
+
+h1 {
+	font-family: "Euphorigenic";
+	text-transform: capitalize;
+	font-variant: small-caps;
+  line-height: 1rem;
+
+}
+
+h2 {
+	font-family: $primary-font;
+	color: $page-title-color;
+}
+
+h3 {
+	font-family: $secondary-font;
+	color: $heading-text-color;
+}
+
+h4 {
+	font-family: 'Raleway';
+  font-size: 1.75vw;
+  text-transform: lowercase;
+}
+
+
+h5 {
+	font-family: $tertiary-font;
+	color: $title-text-color;
+}
+
+h6 {
+	font-family: $lead-font;
+	font-weight: $lead-font-weight;
+	font-size: $lead-font-size;
+	color: $lead-text-color;
+  text-transform: capitalize;
+}
+
+h5,
+h6 {
+	text-transform: capitalize;
+}

@@ -1,0 +1,67 @@
+// Re-assigned maps
+//
+// Placed here so that others can override the default Sass maps and see automatic updates to utilities and more.
+
+$colors:               (
+  blue:                $blue,
+  indigo:              $indigo,
+  purple:              $purple,
+  pink:                $pink,
+  red:                 $red,
+  orange:              $orange,
+  yellow:              $yellow,
+  green:               $green,
+  teal:                $teal,
+  cyan:                $cyan
+);
+
+$colors-rgb:           (
+  'teal-rgb': $teal-rgb,
+  'yellow-rgb': $yellow-rgb,
+  'red-rgb': $red-rgb,
+  'orange-rgb': $orange-rgb,
+  'green-rgb': $green-rgb,
+  'blue-rgb': $blue-rgb,
+  'indigo-rgb': $indigo-rgb,
+  'purple-rgb': $purple-rgb,
+  'cyan-rgb': $cyan-rgb,
+  'pink-rgb': $pink-rgb,
+  'white-rgb': $white-rgb,
+  'black-rgb': $black-rgb,
+  'gray-rgb': $gray-600-rgb
+);
+
+
+$theme-colors: (
+'primary': $primary,
+'secondary': $secondary,
+'accent': $accent,
+'info': $info,
+'valid': $valid,
+'invalid': $invalid,
+'attention': $attention,
+'alert': $alert
+);
+
+$font-sizes: (
+  1: $h1-font-size,
+  2: $h2-font-size,
+  3: $h3-font-size,
+  4: $h4-font-size,
+  5: $h5-font-size,
+  6: $h6-font-size
+) !default;
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+) !default;
+
+// scss-docs-end utilities-bg-colors
+$negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
+
+$gutters: $spacers !default;
