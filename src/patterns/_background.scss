@@ -9,6 +9,8 @@
   $attention-bg              : tint($attention, $background-percentage);
   $info-bg                   : tint($info, $background-percentage);
 
+  $selection-bg: #04A4CC;
+
   /* Background */
   $body-bg                   : $primary;
   $page-bg                   : tint($secondary, $background-percentage);

@@ -1,28 +1,51 @@
-/* Styles for posts and pages */
-.sticky {
-	// This class is required to pass ThemeCheck.
-	/* Style your sticky posts. This class is applied to the same element as .hentry below. */
-	display: block;
+.blog .hentry,
+.archive .hentry {
+    padding: 30px;
+    background: #FFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+.byline,
+.updated:not(.published) {
+    display: none;
+}
+.single .byline,
+.group-blog .byline {
+    display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 15px 0 0;
 }
 
-.no-results.not-found > *:first-child {
-	margin-bottom: calc(3 * $vertical-offset);
+.page-template-tpl-home #content {
+    margin-bottom: 0;
 }
-
-// Styling for wp_link_pages.
-.page-links { /* Style the page numbers for multi-page posts (posts that have been split with <!--next-page -->. */
-	clear: both;
-	margin: 0 0 1.5em;
-
-	.post-page-numbers {
-		display: inline-block;
-		margin-left: calc(0.66 * $spacing-unit);
-		margin-right: calc(0.66 * $spacing-unit);
-		min-width: 44px;
-		min-height: 44px;
-
-		&:first-child {
-			margin-left: 0;
-		}
-	}
+#primary {
+    width: 70%;
+    padding: 30px;
+    float: left;
+    background: #FFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1)
+}
+.left_sidebar #primary {
+    float: right;
+}
+.no_sidebar #primary {
+    width: auto;
+    float: none;
+}
+.blog #primary,
+.archive #primary {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+#secondary {
+    width: 28%;
+    float: right;
+}
+.left_sidebar #secondary {
+    float: left;
 }

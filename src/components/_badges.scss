@@ -1,0 +1,32 @@
+.badge {
+  padding: ($offset * 6) ($offset * 8);
+  font-size: $font-size-base * 14;
+  background: ($dark, "200");
+  border-radius: $border-radius * 4;
+  user-select: none;
+
+  &.primary {
+    background: $primary;
+    color: #fff;
+  }
+
+  &.secondary {
+    background: $secondary;
+    color: #fff;
+  }
+
+  &.danger {
+    background: $invalid;
+    color: #fff;
+  }
+
+  &.success {
+    background: $valid;
+    color: #fff;
+  }
+
+  &.attention {
+    background: $attention;
+    color: #fff;
+  }
+}

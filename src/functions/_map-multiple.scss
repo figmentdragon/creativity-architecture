@@ -8,6 +8,7 @@
   }
   @return $result;
 }
+
 // Merge multiple maps
 @function map-merge-multiple($maps...) {
   $merged-maps: ();

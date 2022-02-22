@@ -1,0 +1,25 @@
+article {
+	@include border-radius($border-radius-xxl);
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background: orange;
+  width: 100vw;
+  max-width: 98vw;
+	padding-top: .5vh;
+	padding-right: .5vw;
+	padding-bottom: .5vh;
+	padding-left: 1.5vw;
+
+	&:hover {
+		@include elevation(15);
+		filter:blur(2px);
+	}
+	& > figure,
+	& > img {
+		max-width: 100%;
+	}
+}

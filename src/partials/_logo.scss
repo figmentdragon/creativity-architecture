@@ -1,0 +1,15 @@
+// logo
+
+.logo {
+  width: 12vw;
+  height: 20vh;
+  overflow: visible;
+
+  .logo-img {
+    width: 18vw;
+    height: 26vh;
+    filter: sepia(25%);
+    opacity: .5;
+    background-blend-mode: exclusion;
+  }
+}

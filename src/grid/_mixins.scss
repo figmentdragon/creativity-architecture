@@ -1,37 +1,4 @@
 /**
- * Grid loop mixin
- */
-
- /**
-  * Grid loop mixin
-  */
-
- @mixin grid-loop($name){
-     @for $i from 1 through $grid-columns {
-         @if $i != 1 {
-             .col-#{$name}-#{$i} {
-                 width: divide($i, $grid-columns);
-                 .row-flex & {
-                     flex-basis: divide($grid-columns, $i);
-                     max-width: divide($grid-columns, $i);
-                     width: auto;
-                     float: none;
-                 }
-             }
-         }
-         .col-#{$name}-offset-#{$i} {
-             margin-left: percentage($grid-columns);
-         }
-     }
- }
-
-
-@mixin grid-col {
-  float: left;
-  padding-right: 0.75em;
-}
-
-/**
  * Clearfix
  */
 
@@ -45,3 +12,11 @@
         clear: both;
     }
 }
+
+@import "mixins/cols";
+@import "mixins/css-grid";
+@import "mixins/grid-breakpoint";
+@import "mixins/grid-loop";
+@import "mixins/grid";
+@import "mixins/media-breakpoint";
+@import "mixins/rows";

@@ -4,12 +4,20 @@
 
 @import "grid/grid";
 
+/* 3 */
+@import "properties/change-percentage";
+@import "properties/features";
+@import "properties/escaped-characters";
+@import "properties/structure";
+@import "properties/positioning";
+@import "properties/aspect-ratio";
+
 /* 2 */
 @import "functions/assert-ascending";
 @import "functions/assert-at-zero";
-@import "functions/breakpoint";
-@import "colors/color-contrast";
+@import "functions/color-function";
 @import "functions/color-contrast";
+@import "functions/make-color-map";
 @import "functions/escape-svg";
 @import "functions/map-multiple";
 @import "functions/negativify-map";
@@ -25,56 +33,11 @@ $chocolate : #3F000F;
 @import "colors/rgba";
 @import "colors/contrast";
 
-/* 3 */
-@import "properties/change-percentage";
-@import "properties/features";
-@import "properties/escaped-characters";
-@import "properties/positioning";
-@import "properties/size";
-@import "properties/spacing";
-@import "properties/aspect-ratio";
-@import "properties/width";
-@import "properties/structure";
-@import "properties/zindex";
-
-@import "components/animation";
-@import "components/border";
-@import "components/caret";
-@import "components/link";
-@import "components/transition";
-@import "components/padding";
-
-@import "mixins/responsive";
-@import "mixins/backdrop";
-@import "mixins/border-box";
-@import "mixins/border-radius";
-@import "mixins/buttons";
-@import "mixins/cards";
-@import "mixins/caret";
-@import "mixins/center-block";
-@import "mixins/color-scheme";
-@import "mixins/container";
-@import "mixins/elevation";
-@import "mixins/font-size";
-@import "mixins/hover";
-@import "mixins/hue-rotate";
-@import "mixins/list";
-@import "mixins/list-padding";
-@import "mixins/ltr";
-@import "mixins/media";
-@import "mixins/navigation";
-@import "mixins/placeholder";
-@import "mixins/reset-box";
-@import "mixins/text-truncate";
-@import "mixins/transition";
-@import "mixins/visually-hidden";
-@import "mixins/clearfix";
-
-/* 2.2 */
+@import "patterns/patterns";
 @import "patterns/background";
 @import "patterns/text";
-@import "patterns/link";
 @import "patterns/button";
+@import "patterns/link";
 
 /* 2.2.2 */
 @import "patterns/gradient";
@@ -91,15 +54,54 @@ $chocolate : #3F000F;
   @import "patterns/shadows/button-shadow";
   @import "patterns/shadows/card-shadow";
 
-/* 4 */
+@import "properties/base-units";
+@import "properties/size";
+@import "properties/spacing";
+@import "properties/width";
+@import "properties/height";
+@import "properties/padding";
+@import "properties/border";
+@import "properties/zindex";
+
 @import "typography/typography";
 @import "typography/properties/heading-properties";
 @import "typography/properties/type-properties";
 @import "typography/properties/figure-properties";
+@import "typography/blockquote";
+@import "typography/display";
+@import "typography/headings";
+@import "typography/lead";
+@import "typography/type";
+@import "typography/misc";
 
-/* 6 */
-@import "utilities/maps";
-// @import "functions/make-color-map";
+@import "mixins/responsive";
+@import "mixins/backdrop";
+@import "mixins/border-box";
+@import "mixins/border-radius";
+@import "mixins/buttons";
+@import "mixins/cards";
+@import "mixins/caret";
+@import "mixins/center-block";
+@import "mixins/color-scheme";
+@import "mixins/container";
+@import "mixins/elevation";
+@import "mixins/flex";
+@import "mixins/font-size";
+@import "mixins/hover";
+@import "mixins/hue-rotate";
+@import "mixins/list";
+@import "mixins/list-padding";
+@import "mixins/ltr";
+@import "mixins/media";
+@import "mixins/navigation";
+@import "mixins/placeholder";
+@import "mixins/reset-box";
+@import "mixins/text-truncate";
+@import "mixins/transition";
+@import "mixins/visually-hidden";
+@import "mixins/clearfix";
+
+//@import "utilities/maps";
 // @import "utilities/map-merge";
 @import "utilities/colored-links";
 @import "utilities/media-query";
@@ -141,31 +143,151 @@ $chocolate : #3F000F;
 @import "helpers/visually-hidden";
 @import "helpers/vr";
 
-//@import "pages/structure/article";
-//@import "pages/structure/aside";
-//@import "pages/structure/body";
-//@import "pages/structure/container";
-//@import "pages/structure/div";
-//@import "pages/structure/footer";
-//@import "pages/structure/header";
-//@import "pages/structure/main";
-//@import "pages/structure/nav";
-//@import "pages/structure/section";
-//@import "pages/structure/wrapper";
-//
-//@import "pages/partials/article";
-//@import "pages/partials/background";
-//@import "pages/partials/icons";
-//@import "pages/partials/logo";
-//@import "pages/partials/menus";
-//@import "pages/partials/nav";
-//@import "pages/partials/normalize";
-//@import "pages/partials/padding-margin";
-//@import "pages/partials/sidebar";
-//@import "pages/partials/site-header";
-//@import "pages/partials/site-footer";
-//@import "pages/partials/social";
-//@import "pages/partials/social-menu-navigation";
+@import "components/alerts/alert-styles";
+@import "components/alerts/alerts";
+@import "components/appbar/appbar";
+@import "components/badges";
+@import "components/banners/banners";
 
-//@import "pages/sections/primary/loop";
-//@import "pages/sections/primary/headings";
+@import "components/buttons/buttons";
+@import "components/buttons/button-group";
+@import "components/buttons/chips";
+@import "components/buttons/fab";
+@import "components/buttons/icon";
+@import "components/cards/card";
+@import "components/cards/cards";
+@import "components/dialogs/dialog";
+@import "components/dialogs/snackbar";
+@import "components/dialogs/tooltip";
+@import "components/inputs/checkboxes";
+@import "components/inputs/menu";
+@import "components/inputs/radio";
+@import "components/inputs/sliders";
+@import "components/inputs/textfields";
+@import "components/inputs/toggle";
+@import "components/media";
+@import "components/nav";
+@import "components/navbar";
+@import "components/ripple";
+@import "components/tabs";
+
+@import "partials/reset";
+@import "partials/normalize";
+
+@import "structure/container";
+@import "structure/div";
+@import "structure/section";
+@import "structure/wrapper";
+
+@import "structure/body";
+@import "structure/header";
+@import "structure/nav";
+@import "structure/main";
+@import "structure/article";
+@import "structure/aside";
+@import "structure/footer";
+
+@import "partials/article";
+@import "partials/background";
+@import "partials/blog";
+@import "partials/icons";
+@import "partials/logo";
+@import "partials/menus";
+@import "partials/padding-margin";
+@import "partials/print";
+@import "partials/shortcodes";
+@import "partials/social";
+@import "partials/social-menu-navigation";
+@import "partials/utils";
+@import "partials/widgets";
+@import "partials/wordpress";
+
+@import "partials/article";
+@import "partials/header";
+@import "partials/nav";
+@import "partials/sidebar";
+@import "partials/site-header";
+@import "partials/site-footer";
+
+
+
+@import "section/primary/archives";
+@import "section/primary/comments";
+@import "section/primary/headings";
+@import "section/primary/loop";
+
+@import "section/secondary/widget";
+@import "section/secondary/widgets/widget-area";
+@import "section/secondary/widgets/widget-calendar";
+@import "section/secondary/widgets/widget-instagram";
+@import "section/secondary/widgets/widget-newsletter";
+@import "section/secondary/widgets/widget-recent-entries";
+@import "section/secondary/widgets/widget-rss";
+@import "section/secondary/widgets/widget-tagcloud";
+@import "section/secondary/widgets/widget-ui-tabs";
+@import "section/secondary/widgets/widget";
+
+@import "section/tertiary/newsletter";
+
+@import "section/content/content";
+@import "section/content/entry";
+@import "section/content/portfolio";
+
+@import "section/app-section";
+@import "section/blog";
+@import "section/breadcrumb";
+@import "section/category";
+@import "section/contact";
+@import "section/content";
+@import "section/countdown-section";
+@import "section/events";
+@import "section/facts";
+@import "section/faq";
+@import "section/feature-slider";
+@import "section/featured-content";
+@import "section/footer";
+@import "section/forms";
+@import "section/fp-slide";
+@import "section/gallery";
+@import "section/header";
+@import "section/hero-content";
+@import "section/hero";
+@import "section/in-post-tables";
+@import "section/logo-slider";
+@import "section/menu";
+@import "section/navigation";
+@import "section/navigation/header";
+@import "section/navigation/menus";
+@import "section/navigation/navigation";
+@import "section/navigation/next-previous";
+@import "section/navigation/posts-and-pages";
+@import "section/navigation/social-menu-navigation";
+@import "section/newsletter";
+@import "section/pagination";
+@import "section/playlist";
+@import "section/portfolio";
+@import "section/pricing";
+@import "section/promotional";
+@import "section/resume";
+@import "section/section";
+@import "section/service";
+@import "section/services";
+@import "section/site-footer";
+@import "section/skills";
+@import "section/stats";
+@import "section/team";
+@import "section/testimonials";
+@import "section/timeline";
+@import "section/widget";
+@import "section/woocommerce-copy";
+@import "section/woocommerce";
+
+@import "pages/404";
+@import "pages/about";
+@import "pages/archives";
+@import "pages/front-page";
+@import "pages/home";
+@import "pages/pages";
+@import "pages/posts-and-pages";
+@import "pages/search";
+@import "pages/single";

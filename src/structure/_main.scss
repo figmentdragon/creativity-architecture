@@ -1,0 +1,50 @@
+$duration: .7s;
+
+main {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: $z-index-main;
+  width: 100vw;
+
+  padding-top: 4vh;
+  padding-bottom: 0;
+
+  border: 2px solid red;
+
+  h4 {
+    margin-top: -1vh;
+    margin-right: 6vw;
+    margin-left: 50vh;
+
+    font-family: $primary-font;
+    text-alignt: right;
+
+    outline: 2px solid yellow;
+  }
+}
+
+
+.main {
+  overflow: hidden;
+  transition: background-color $duration;
+  *zoom: 1;
+
+  :before,
+  :after {
+  display: table;
+  content: "";
+  line-height: 0;
+  }
+
+  :after {
+  clear: both;
+  }
+}
+
+.site-description {
+    font-family: $primary-font;
+}

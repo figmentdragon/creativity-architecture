@@ -1,5 +1,5 @@
 .col {
-  @includ grid-col;
+  @include grid-col;
   box-sizing   : border-box;
   float        : left;
   padding-left : $grid-gutter;
@@ -16,7 +16,6 @@
 
 
 /* Columns generator */
-
 @each $breakpoint in $breakpoints {
     $name: nth($breakpoint, 1);
     $declaration: nth($breakpoint, 2);

@@ -5,15 +5,15 @@
 $button-transition: all 0.5s ease-in-out;
 
 a,
-.wp-playlist button,
+.playlist button,
 .contact-details .contact-details-icon-wrapper,
 #gallery-section .tiled-gallery .tiled-gallery-item a:before,
 #sticky-playlist-section,
-body .wp-playlist .wp-playlist-playing .wp-playlist-caption,
-body .wp-playlist .wp-playlist-playing .wp-playlist-caption .wp-playlist-item-title,
-body .wp-playlist .wp-playlist-playing .wp-playlist-caption .wp-playlist-item-artist,
-body .wp-playlist .wp-playlist-playing .wp-playlist-item-length,
-body .wp-playlist .wp-playlist-tracks > .wp-playlist-item {
+body .playlist .playlist-playing .playlist-caption,
+body .playlist .playlist-playing .playlist-caption .playlist-item-title,
+body .playlist .playlist-playing .playlist-caption .playlist-item-artist,
+body .playlist .playlist-playing .playlist-item-length,
+body .playlist .playlist-tracks > .playlist-item {
     -webkit-transition: all .25s ease-in-out;
     -moz-transition: all .25s ease-in-out;
     -o-transition: all .25s ease-in-out;

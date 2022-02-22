@@ -1,0 +1,75 @@
+/* =Site Header
+----------------------------------------------- */
+
+/* Style elements inside of the .site-header container */
+
+.site-header {
+  /* Container for site title and description */
+  display: inline;
+  height: 3.5rem;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  align-content: start;
+  align-items: start;
+  align-self: auto;
+  z-index: $z-index-header;
+  background-image: $gradient-primary;
+}
+
+/* Style elements inside of the .site-header container */
+.nameplate,
+.site-header hgroup { /* Container for site title and description */
+  margin-left: 12rem;
+  width: 100%;
+  max-width: 40vw;
+  border: 2px solid $red;
+}
+
+.site-title,
+.site-title a {
+}
+
+.site-description {
+  /* This is the tagline */
+  margin-left: 8rem;
+  margin-right: 0;
+  width: 30rem;
+}
+
+.site-header {
+  @include elevation(5);
+  @include gradient-accent;
+}
+
+.nameplate {
+  transition: all ease-in-out 0.5s;
+
+  justify-content: flex-start;
+  align-content: flex-start;
+  display: inline-block;
+}
+
+.site-title {
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $chocolate;
+  filter: drop-shadow(30px 20px 1px rgba($chocolate, 0.432));
+  filter: drop-shadow(20px 10px 1px rgba($primary, 0.765));
+  filter: drop-shadow(10px 5px 1px rgba($chocolate, 1));
+}
+
+.blur-leftside {
+  position: fixed;
+  top: 0;
+  right: 95vw;
+  bottom: 0;
+  left: 1vw;
+
+  width: 2vw;
+  filter: blur(15px);
+  @include elevation(10);
+  @include gradient-chocolate;
+}

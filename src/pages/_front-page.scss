@@ -4,9 +4,15 @@
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
-	
+
 	height: 100vh;
 	max-height: 100vh;
 	width: 100vw;
 	max-width: 100vw;
+}
+
+
+.cover-link {
+    display: block;
+    height: 100%;
 }

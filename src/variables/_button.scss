@@ -2,48 +2,48 @@
 //
 // For each of Bootstrap's buttons, define text, background, and border color.
 
-// scss-docs-start btn-variables
-$btn-padding-y:               $input-btn-padding-y !default;
-$btn-padding-x:               $input-btn-padding-x !default;
-$btn-font-family:             $input-btn-font-family !default;
-$btn-font-size:               $input-btn-font-size !default;
-$btn-line-height:             $input-btn-line-height !default;
-$btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
+// scss-docs-start button-variables
+#{$button-padding-y:               #{$input-button-padding-y !default;
+#{$button-padding-x:               #{$input-button-padding-x !default;
+#{$button-font-family:             #{$input-button-font-family !default;
+#{$button-font-size:               #{$input-button-font-size !default;
+#{$button-line-height:             #{$input-button-line-height !default;
+#{$button-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
 
-$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
-$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
-$btn-font-size-sm:            $input-btn-font-size-sm !default;
+#{$button-padding-y-sm:            #{$input-button-padding-y-sm !default;
+#{$button-padding-x-sm:            #{$input-button-padding-x-sm !default;
+#{$button-font-size-sm:            #{$input-button-font-size-sm !default;
 
-$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
-$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
-$btn-font-size-lg:            $input-btn-font-size-lg !default;
+#{$button-padding-y-lg:            #{$input-button-padding-y-lg !default;
+#{$button-padding-x-lg:            #{$input-button-padding-x-lg !default;
+#{$button-font-size-lg:            #{$input-button-font-size-lg !default;
 
-$btn-base-width:            $input-btn-base-width !default;
+#{$button-border-width:            #{$input-button-border-width !default;
 
-$btn-font-weight:             $font-weight-normal !default;
-$btn-box-shadow:              inset 0 1px 0 rgba($shadow-button-inset, .15), 0 1px 1px rgba($shadow-button-inset, .075) !default;
-$btn-focus-width:             $input-btn-focus-width !default;
-$btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
-$btn-disabled-opacity:        .65 !default;
-$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
+#{$button-font-weight:             #{$font-weight-normal !default;
+#{$button-box-shadow:              inset 0 1px 0 rgba(#{$shadow-button-inset, .15), 0 1px 1px rgba(#{$shadow-button-inset, .075) !default;
+#{$button-focus-width:             #{$input-button-focus-width !default;
+#{$button-focus-box-shadow:        #{$input-button-focus-box-shadow !default;
+#{$button-disabled-opacity:        .65 !default;
+#{$button-active-box-shadow:       inset 0 3px 5px rgba(#{$black, .125) !default;
 
-$btn-link-color:              $button-link-color !default;
-$btn-link-hover-color:        $button-link-hover !default;
-$btn-link-disabled-color:     $gray-600 !default;
+#{$button-link-color:              #{$button-link-color !default;
+#{$button-link-hover-color:        #{$button-link-hover !default;
+#{$button-link-disabled-color:     #{$gray-600 !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           $border-radius !default;
-$btn-border-radius-sm:        $border-radius-sm !default;
-$btn-border-radius-lg:        $border-radius-lg !default;
+#{$button-border-radius:           #{$border-radius !default;
+#{$button-border-radius-sm:        #{$border-radius-sm !default;
+#{$button-border-radius-lg:        #{$border-radius-lg !default;
 
-$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+#{$button-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-$btn-hover-bg-shade-amount:       15% !default;
-$btn-hover-bg-tint-amount:        15% !default;
-$btn-hover-border-shade-amount:   20% !default;
-$btn-hover-border-tint-amount:    10% !default;
-$btn-active-bg-shade-amount:      20% !default;
-$btn-active-bg-tint-amount:       20% !default;
-$btn-active-border-shade-amount:  25% !default;
-$btn-active-border-tint-amount:   10% !default;
-// scss-docs-end btn-variables
+#{$button-hover-bg-shade-amount:       15% !default;
+#{$button-hover-bg-tint-amount:        15% !default;
+#{$button-hover-border-shade-amount:   20% !default;
+#{$button-hover-border-tint-amount:    10% !default;
+#{$button-active-bg-shade-amount:      20% !default;
+#{$button-active-bg-tint-amount:       20% !default;
+#{$button-active-border-shade-amount:  25% !default;
+#{$button-active-border-tint-amount:   10% !default;
+// scss-docs-end button-variables
