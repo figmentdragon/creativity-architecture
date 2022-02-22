@@ -1,5 +1,5 @@
 <!-- pagination -->
 <div class="pagination">
-	<?php THEMENAMEwp_pagination(); ?>
+	<?php MYTHEMEwp_pagination(); ?>
 </div>
 <!-- /pagination -->

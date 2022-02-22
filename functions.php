@@ -1,6 +1,6 @@
 <?php
 /**
- * Website Basic functions
+ * MYTHEME's functions and definitions
  *
  * @package MYTHEME
  * @since MYTHEME 1.0
@@ -34,6 +34,7 @@ function setup() {
   require get_parent_theme_file_path( '/inc/classes/class-tgm-plugin-activation.php' );
 
   MYTHEME_theme_support();
+  MYTHEME_functions();
 
   add_action( 'init', 'MYTHEME_head_cleanup' );
 
@@ -104,7 +105,7 @@ function register_required_plugins() {
 	$plugins = array(
 		// Catch Web Tools.
 		array(
-			'name' => 'Catch Web Tools', // Plugin Name, translation not required.
+      'name' => 'Catch Web Tools', // Plugin Name, translation not required.
       'slug' => 'catch-web-tools',
 		),
 		// Catch IDs
@@ -119,10 +120,10 @@ function register_required_plugins() {
 		),
 		// Catch Gallery.
     array(
-			'name' => 'Catch Gallery', // Plugin Name, translation not required.
-			'slug' => 'catch-gallery',
-		),
-	);
+      'name' => 'Catch Gallery', // Plugin Name, translation not required.
+      'slug' => 'catch-gallery',
+    ),
+  );
 
 	if ( ! class_exists( 'Catch_Infinite_Scroll_Pro' ) ) {
 		$plugins[] = array(
@@ -163,8 +164,45 @@ function register_required_plugins() {
   tgmpa( $plugins, $config );
 }
 
+function reading_time() {
+  $content = get_post_field( 'post_content', $post->ID );
+  $word_count = str_word_count( strip_tags( $content ) );
+  $readingtime = ceil($word_count / 200);
+  if ($readingtime == 1) {
+    $timer = " minute";
+  } else {
+    $timer = " minutes";
+  } $totalreadingtime = $readingtime . $timer;
+  return $totalreadingtime;
+}
+
 function javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+}
+
+function wpb_copyright() {
+  global $wpdb;
+  $copyright_dates = $wpdb->get_results("
+  SELECT
+  YEAR(min(post_date_gmt)) AS firstdate,
+  YEAR(max(post_date_gmt)) AS lastdate
+  FROM
+  $wpdb->posts
+  WHERE
+  post_status = 'publish'
+  ");
+
+  $output = '';
+
+  if($copyright_dates) {
+    $copyright = "© " . $copyright_dates[0]->firstdate;
+    if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
+       $copyright .= '-' . $copyright_dates[0]->lastdate;
+    }
+
+    $output = $copyright;
+  }
+  return $output;
 }
 
 function enqueue_scripts_and_styles() {
@@ -178,13 +216,13 @@ function enqueue_scripts_and_styles() {
     $path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/scripts/js/lib/' : 'assets/scripts/js/';
 
     wp_register_script( 'html5', get_theme_file_uri() .'/assets/scripts/js/lib/html5.js' );
-    wp_register_script( 'MYTHEME-copyright', get_theme_file_uri( '/assets/scripts/js/css_comment.js' ), array(), null, true );
+    wp_register_script( 'MYTHEME-copyright', get_theme_file_uri() . '/assets/scripts/js/css_comment.js', array(), null, true );
     wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/assets/scripts/js/scripts.js', array( 'jquery' ), '', true );
-    wp_register_script( 'skip-link-focus-fix', get_theme_file_uri( $path . 'skip-link-focus-fix' . $min . '.js' ), array(), '201800703', true );
-
-    wp_enqueue_script( 'index', get_theme_file_uri())
-
+    wp_register_script( 'skip-link-focus-fix', get_theme_file_uri() . $path . 'skip-link-focus-fix' . $min . '.js', array(), '201800703', true );
+    wp_enqueue_script( 'MYTHEME-html5',  get_theme_file_uri( $path . 'html5' . $min . '.js' ), array(), '3.7.3' );
+    wp_enqueue_script( 'index', get_theme_file_uri() . '/assets/scripts/js/index.js' );
   }
+
 
   function enqueue_fonts() {
     wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
@@ -197,8 +235,7 @@ function enqueue_scripts_and_styles() {
     if ( is_singular() && wp_attachment_is_image() ) {
       wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/assets/scripts/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
     }
-    wp_enqueue_script( 'MYTHEME-html5',  get_theme_file_uri( $path . 'html5' . $min . '.js' ), array(), '3.7.3' );
-    wp_script_add_data( 'MYTHEME-html5', 'conditional', 'lt IE 9' );
+
 
   }
 
@@ -210,6 +247,8 @@ function enqueue_scripts_and_styles() {
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'MYTHEME-js' );
   wp_enqueue_script( 'MYTHEME-modernizr' );
+
+  wp_script_add_data( 'MYTHEME-html5', 'conditional', 'lt IE 9' );
 
 }
 

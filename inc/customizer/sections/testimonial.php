@@ -132,7 +132,7 @@ if ( ! function_exists( 'MYTHEME_is_testimonial_active' ) ) :
 	/**
 	* Return true if testimonial is active
 	*
-	* @since MYTHEME Pro 1.0
+	* @since MYTHEME 1.0
 	*/
 	function MYTHEME_is_testimonial_active( $control ) {
 		$enable = $control->manager->get_setting( 'MYTHEME_testimonial_option' )->value();

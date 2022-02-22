@@ -73,7 +73,7 @@ final class MYTHEME_Upgrade_Pro_Customize {
 				$manager,
 				'upgrade_button',
 				array(
-					'title'    => esc_html__( 'MYTHEME Pro', 'MYTHEME' ),
+					'title'    => esc_html__( 'MYTHEME', 'MYTHEME' ),
 					'pro_text' => esc_html__( 'Upgrade Now', 'MYTHEME' ),
 					'pro_url'  => 'https://catchthemes.com/themes/MYTHEME-pro',
 					'priority' => 1

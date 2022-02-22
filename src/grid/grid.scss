@@ -12,11 +12,18 @@
  * Grid scaffolding
  */
 
-.container {
+ .container,
+ .container-fluid,
+ .container-xxl,
+ .container-xl,
+ .container-lg,
+ .container-md,
+ .container-sm {
     @include clearfix;
+    width: 100%;
     max-width: $grid-max-width;
     margin: 0 auto;
-    padding: 0 $grid-gutter;
+    padding: 0 $gutter-x;
 }
 
 // the last column

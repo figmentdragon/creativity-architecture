@@ -166,12 +166,20 @@ add_filter( 'post_class', 'MYTHEME_post_classes', 10, 3 );
 
 add_filter( 'the_content_more_link', 'MYTHEME_move_more_link' );
 
-	function MYTHEME_move_more_link() {
+function MYTHEME_move_more_link() {
 
 	return '<p><a class="more-link" href="'. esc_url(get_permalink()) . '">' . esc_html__( 'Continue Reading', 'MYTHEME' ) . '</a></p>';
 
 }
 
+function MYTHEME_template_redirect() {
+  $layout = MYTHEME_get_theme_layout();
+
+  if ( 'no-sidebar-full-width' === $layout ) {
+    $GLOBALS['content_width'] = 1510;
+  }
+}
+$deps[] = 'jquery';
 
 
 
@@ -277,7 +285,7 @@ if ( ! function_exists( 'MYTHEME_content_nav' ) ) :
 	/**
 	 * Display navigation/pagination when applicable
 	 *
-	 * @since MYTHEME Pro 1.0
+	 * @since MYTHEME 1.0
 	 */
 	function MYTHEME_content_nav() {
 		global $wp_query;
@@ -304,14 +312,7 @@ if ( ! function_exists( 'MYTHEME_content_nav' ) ) :
 	}
 endif; // MYTHEME_content_nav
 
-/**
- * Check if a section is enabled or not based on the $value parameter
- * @param  string $value Value of the section that is to be checked
- * @return boolean return true if section is enabled otherwise false
- */
-function MYTHEME_check_section( $value ) {
-	return ( 'entire-site' == $value  || ( is_front_page() && 'homepage' === $value ) );
-}
+
 
 /**
  * Return the first image in a post. Works inside a loop.
@@ -320,7 +321,7 @@ function MYTHEME_check_section( $value ) {
  * @param [string/array] $attr Query string or array of attributes.
  * @return [string] image html
  *
- * @since MYTHEME Pro 1.0
+ * @since MYTHEME 1.0
  */
 function MYTHEME_get_first_image( $postID, $size, $attr, $src = false ) {
 	ob_start();
@@ -373,7 +374,7 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 	 *
 	 * If the first `$max_characters` of the string does not contain a space character, an empty string will be returned.
 	 *
-	 * @since MYTHEME Pro 1.0
+	 * @since MYTHEME 1.0
 	 *
 	 * @param string $text            A string to be shortened.
 	 * @param integer $max_characters The maximum number of characters to return.
@@ -402,7 +403,7 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 	 *
 	 * Strips out tags and shortcodes, limits the output to `$max_char` characters, and appends an ellipsis and more link to the end.
 	 *
-	 * @since MYTHEME Pro 1.0
+	 * @since MYTHEME 1.0
 	 *
 	 * @param integer $max_characters The maximum number of characters to return.
 	 * @param string  $more_link_text Optional. Text of the more link. Default is "(more...)".
@@ -444,7 +445,7 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 	 * To override this in a child theme
 	 * simply fabulous-fluid your own MYTHEME_content_image(), and that function will be used instead.
 	 *
-	 * @since MYTHEME Pro 1.0
+	 * @since MYTHEME 1.0
 	 */
 	function MYTHEME_content_image() {
 		if ( has_post_thumbnail() && MYTHEME_jetpack_featured_image_display() && is_singular() ) {
@@ -680,36 +681,6 @@ function MYTHEME_excerpt_more_for_manual_excerpts( $excerpt ) {
 
 add_filter( 'get_the_excerpt', 'MYTHEME_excerpt_more_for_manual_excerpts' );
 
-
-function MYTHEME_excerpt_length( $length ) {
-
-
-
-	if ( is_admin() ) {
-
-		return $length;
-
-	}
-
-
-
-	// Get excerpt length from database.
-
-	$excerpt_length = esc_attr(get_theme_mod( 'MYTHEME_excerpt_length', '35' ) );
-
-	// Return excerpt text.
-
-	if ( $excerpt_length >= 0 ) :
-
-		return absint( $excerpt_length );
-
-	else :
-
-		return 35; // Number of words.
-
-	endif;
-
-}
 
 add_filter( 'excerpt_length', 'MYTHEME_excerpt_length' );
 
@@ -1050,7 +1021,7 @@ function MYTHEME_get_sidebar_layout()  {
  * @param [string/array] $attr Query string or array of attributes.
  * @return [string] image html
  *
- * @since MYTHEME Pro 1.0
+ * @since MYTHEME 1.0
  */
 function MYTHEME_get_sidebar_id() {
 	$sidebar = $id = '';
@@ -1111,7 +1082,7 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 	 *
 	 * If the first `$max_characters` of the string does not contain a space character, an empty string will be returned.
 	 *
-	 * @since MYTHEME Pro 1.0
+	 * @since MYTHEME 1.0
 	 *
 	 * @param string $text            A string to be shortened.
 	 * @param integer $max_characters The maximum number of characters to return.

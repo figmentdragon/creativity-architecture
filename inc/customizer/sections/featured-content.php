@@ -131,7 +131,7 @@ if ( ! function_exists( 'MYTHEME_is_featured_content_active' ) ) :
 	/**
 	* Return true if featured content is active
 	*
-	* @since MYTHEME Pro 1.0
+	* @since MYTHEME 1.0
 	*/
 	function MYTHEME_is_featured_content_active( $control ) {
 		$enable = $control->manager->get_setting( 'MYTHEME_featured_content_option' )->value();

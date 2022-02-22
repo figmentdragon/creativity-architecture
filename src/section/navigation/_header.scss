@@ -16,11 +16,7 @@ body:not(.home) .custom-header .scroll-down {
 	display: none;
 }
 
-.slider-logo,
-.site-header-logo {
-	margin: 21px 0;
-    max-width: 270px;
-}
+
 
 .site-header-logo ~ .section-title-wrapper {
     margin-top: 21px;
@@ -40,14 +36,6 @@ body:not(.home) .custom-header .scroll-down {
 	position: relative;
 }
 
-.custom-logo {
-	display: block;
-	width: 120px;
-}
-
-.custom-logo .custom-logo-link {
-	display: block;
-}
 
 .site-header-menu {
 	align-items: center;
@@ -62,24 +50,6 @@ body:not(.home) .custom-header .scroll-down {
 	position: relative;
 
 }
-
-.site-branding {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	margin: 0px auto 0px 0;
-	max-width: 100%;
-	min-width: 0;
-	text-align: left;
-	overflow: hidden;
-	max-width: 80%;
-	width: auto;
-}
-
-
 
 .color-scheme-music .site-title,
 .color-scheme-corporate .site-title,

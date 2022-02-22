@@ -1,10 +1,10 @@
 
 .row {
-  margin-left : $grid-gutter;
+  margin : $gutter-x $gutter-y;
   list-style  : none;
   align-content: space-between;
 
-  &:not(.row--flex) {
+  &:not(.row-flex) {
     @include clearfix;
   }
 
@@ -12,8 +12,8 @@
     margin-left : 0;
   }
 
-  &.row--flex {
-    display   : flex;
-    flex-wrap : wrap;
+  &.row-flex {
+    flex-wrap: wrap;
+    display: flex;
   }
 }

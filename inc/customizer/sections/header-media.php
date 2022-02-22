@@ -216,7 +216,7 @@ if ( ! function_exists( 'MYTHEME_is_header_media_logo_active' ) ) :
 	/**
 	* Return true if header logo is active
 	*
-	* @since MYTHEME Pro 1.0
+	* @since MYTHEME 1.0
 	*/
 	function MYTHEME_is_header_media_logo_active( $control ) {
 		$logo = $control->manager->get_setting( 'MYTHEME_header_media_logo' )->value();

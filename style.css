@@ -1,11 +1,10 @@
-/* Error: Undefined variable.
+/* Error: unmatched "}".
  *    ,
- * 10 |         margin-right: $base-unit;
- *    |                       ^^^^^^^^^^
+ * 25 | }
+ *    | ^
  *    '
- *   src/helpers/alignments/_float.scss 10:17  @import
- *   src/helpers/_alignment.scss 4:3           @import
- *   src/style.scss 130:9                      root stylesheet */
+ *   src/structure/_header.scss 25:1  @import
+ *   src/style.scss 183:9             root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -15,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 10 \2502          margin-right: $base-unit;\a    \2502                        ^^^^^^^^^^\a    \2575 \a   src/helpers/alignments/_float.scss 10:17  @import\a   src/helpers/_alignment.scss 4:3           @import\a   src/style.scss 130:9                      root stylesheet";
+  content: 'Error: unmatched "}".\a    \2577 \a 25 \2502  }\a    \2502  ^\a    \2575 \a   src/structure/_header.scss 25:1  @import\a   src/style.scss 183:9             root stylesheet';
 }

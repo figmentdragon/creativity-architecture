@@ -2,16 +2,16 @@
 /*
  * Template Name: Home
  *
- * @package THEMENAME
+ * @package MYTHEME
  *
  */
 get_header();
 ?>
-<div id="fullpage" class="THEMENAME-home">
-    <div class="THEMENAME-main-section" data-anchor="home">
+<div id="fullpage" class="MYTHEME-home">
+    <div class="MYTHEME-main-section" data-anchor="home">
         <?php
-        $section_id = esc_attr(get_theme_mod( 'THEMENAME_section_home', '' ));
-        $slider_cat = absint(get_theme_mod( 'THEMENAME_slider_category', 0 ));
+        $section_id = esc_attr(get_theme_mod( 'MYTHEME_section_home', '' ));
+        $slider_cat = absint(get_theme_mod( 'MYTHEME_slider_category', 0 ));
         ?>
         <section id="home" data-anchor="<?php echo esc_attr($section_id); ?>" class="sec-slide slider-section" data-index="1">
             <?php if( isset( $slider_cat ) && $slider_cat != 0 ): ?>
@@ -20,7 +20,7 @@ get_header();
                 $cat_query = new WP_Query( $cat_args );
                 if( $cat_query->have_posts() ) {
 
-                    echo '<ul class="THEMENAME-slider">';
+                    echo '<ul class="MYTHEME-slider">';
 
                     while( $cat_query->have_posts() ) {
                         $cat_query->the_post();
@@ -29,7 +29,7 @@ get_header();
                         ?>
                         <div class="slide-bg" style="background-image:url(<?php echo esc_url($post_thumb[0]); ?>)"></div>
 
-                        <?php if( esc_attr(get_theme_mod( 'THEMENAME_slider_caption', 'yes' )) == 'yes' ): ?>
+                        <?php if( esc_attr(get_theme_mod( 'MYTHEME_slider_caption', 'yes' )) == 'yes' ): ?>
                             <div class="slide-caption slideInUp animated">
                                 <div class="slide-title">
                                     <?php echo wp_kses_post(get_the_title()); ?>
@@ -50,7 +50,7 @@ get_header();
                 endif; ?>
             <div class="h-logo">
                 <?php
-                $h_logo = esc_url(get_theme_mod( 'THEMENAME_home_logo', '' ));
+                $h_logo = esc_url(get_theme_mod( 'MYTHEME_home_logo', '' ));
                 if( $h_logo ){
                     ?>
                     <img src="<?php echo esc_url($h_logo); ?>" >
@@ -63,15 +63,15 @@ get_header();
         <?php
         $data_index = 1; // For section data-index
         for( $i=1; $i<=7; $i++ ) {
-            if(!get_theme_mod( 'THEMENAME_section_'.$i.'_disable')){
-            $section_id = sanitize_title(get_theme_mod( 'THEMENAME_section_'.$i, '' ));
-            $section_type = sanitize_text_field(get_theme_mod( 'THEMENAME_section_'.$i.'_type', 'page' ));
+            if(!get_theme_mod( 'MYTHEME_section_'.$i.'_disable')){
+            $section_id = sanitize_title(get_theme_mod( 'MYTHEME_section_'.$i, '' ));
+            $section_type = sanitize_text_field(get_theme_mod( 'MYTHEME_section_'.$i.'_type', 'page' ));
 
             if($section_type == 'page') {
                 $section = 'page';
-                $page_id = absint(get_theme_mod( 'THEMENAME_section_page_'.$i));
+                $page_id = absint(get_theme_mod( 'MYTHEME_section_page_'.$i));
             } else {
-                $section = sanitize_text_field(get_theme_mod('THEMENAME_section_layout'.$i, 'services'));
+                $section = sanitize_text_field(get_theme_mod('MYTHEME_section_layout'.$i, 'services'));
             }
 
             $class = $section.'-section';
@@ -80,27 +80,27 @@ get_header();
                     <?php
                         switch ($section) {
                             case 'page' :
-                                THEMENAME_slide_page($page_id);
+                                MYTHEME_slide_page($page_id);
                                 break;
 
                             case 'services' :
-                                THEMENAME_slide_service();
+                                MYTHEME_slide_service();
                                 break;
 
                             case 'portfolio' :
-                                THEMENAME_slide_portfolio();
+                                MYTHEME_slide_portfolio();
                                 break;
 
                             case 'clients' :
-                                THEMENAME_slide_clients();
+                                MYTHEME_slide_clients();
                                 break;
 
                             case 'contact' :
-                                THEMENAME_slide_contact();
+                                MYTHEME_slide_contact();
                                 break;
 
                             case 'blog' :
-                                THEMENAME_slide_blog();
+                                MYTHEME_slide_blog();
                                 break;
 
                             default :
@@ -114,7 +114,7 @@ get_header();
         } // end of for
         ?>
         <div class="scme_fulpg_arrow">
-            <?php $tpl_color = get_theme_mod('THEMENAME_tpl_color', '#DF2C45'); ?>
+            <?php $tpl_color = get_theme_mod('MYTHEME_tpl_color', '#DF2C45'); ?>
             <span id="moveLeft" class="fp-controlArrow fp-prev">
                 <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
                  <g>

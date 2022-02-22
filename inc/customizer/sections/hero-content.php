@@ -147,7 +147,7 @@ if ( ! function_exists( 'MYTHEME_is_hero_content_active' ) ) :
 	/**
 	* Return true if hero content is active
 	*
-	* @since MYTHEME Pro 1.0
+	* @since MYTHEME 1.0
 	*/
 	function MYTHEME_is_hero_content_active( $control ) {
 		$enable = $control->manager->get_setting( 'MYTHEME_hero_content_visibility' )->value();

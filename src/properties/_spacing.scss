@@ -39,7 +39,7 @@
 
     $block-spacer:         1.5rem;
 
-    $vertical-spacer:      divide(100, 1080);
+    $vertical-spacer:      divide(screen, $width);
     $vertical-spacer-md:   $vertical-spacer * $md;
     $vertical-spacer-lg:   $vertical-spacer * $lg;
     $horizontal-spacer:    divide(100, 1920);

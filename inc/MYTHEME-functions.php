@@ -6,76 +6,22 @@
 function MYTHEME_functions() {
   add_action( 'after_switch_theme', 'MYTHEME_setup_options' );
   add_action( 'template_redirect', 'MYTHEME_template_redirect' );
-  add_action( 'wp_enqueue_scripts', 'MYTHEME_scripts' );
+
 
   add_filter( 'excerpt_length', 'MYTHEME_excerpt_length', 999 );
   add_filter( 'excerpt_more', 'MYTHEME_excerpt_more' );
   add_filter( 'the_content_more_link', 'MYTHEME_more_link', 10, 2 );
 }
-function MYTHEME_template_redirect() {
-  $layout = MYTHEME_get_theme_layout();
 
-  if ( 'no-sidebar-full-width' === $layout ) {
-    $GLOBALS['content_width'] = 1510;
-  }
+/**
+ * Check if a section is enabled or not based on the $value parameter
+ * @param  string $value Value of the section that is to be checked
+ * @return boolean return true if section is enabled otherwise false
+ */
+
+function MYTHEME_check_section( $value ) {
+	return ( 'entire-site' == $value  || ( is_front_page() && 'homepage' === $value ) );
 }
-$deps[] = 'jquery';
-
-$enable_portfolio = get_theme_mod( 'MYTHEME_portfolio_option', 'disabled' );
-
-if ( MYTHEME_check_section( $enable_portfolio ) ) {
-  $deps[] = 'jquery-masonry';
-}
-
-$enable_featured_content = get_theme_mod( 'MYTHEME_featured_content_option', 'disabled' );
-
-//Slider Scripts
-$enable_slider      = MYTHEME_check_section( get_theme_mod( 'MYTHEME_slider_option', 'disabled' ) );
-
-$enable_testimonial_slider      = MYTHEME_check_section( get_theme_mod( 'MYTHEME_testimonial_option', 'disabled' ) ) && get_theme_mod( 'MYTHEME_testimonial_slider', 1 );
-
-if ( $enable_slider || $enable_testimonial_slider ) {
-  // Enqueue owl carousel css. Must load CSS before JS.
-  wp_enqueue_style( 'owl-carousel-core', get_theme_file_uri( 'assets/scripts/css/owl-carousel/owl.carousel.min.css' ), null, '2.3.4' );
-  wp_enqueue_style( 'owl-carousel-default', get_theme_file_uri( 'assets/scripts/css/owl-carousel/owl.theme.default.min.css' ), null, '2.3.4' );
-
-  // Enqueue script
-  wp_enqueue_script( 'owl-carousel', get_theme_file_uri( $path . 'owl.carousel' . $min . '.js' ), array( 'jquery' ), '2.3.4', true );
-
-  $deps[] = 'owl-carousel';
-
-}
-$enable_testimonial_slider      = MYTHEME_check_section( get_theme_mod( 'MYTHEME_testimonial_option', 'disabled' ) ) && get_theme_mod( 'MYTHEME_testimonial_slider', 1 );
-}
-
-wp_enqueue_script( 'MYTHEME_script', get_theme_file_uri( $path . 'functions' . $min . '.js' ), $deps, '201800703', true );
-
-wp_localize_script( 'MYTHEME-script', 'MYTHEMEOptions', array(
-  'screenReaderText' => array(
-    'expand'   => esc_html__( 'expand child menu', 'MYTHEME' ),
-    'collapse' => esc_html__( 'collapse child menu', 'MYTHEME' ),
-    'icon'     => MYTHEME_get_svg( array(
-        'icon'     => 'angle-down',
-        'fallback' => true,
-      )
-    ),
-  ),
-  'iconNavPrev'     => MYTHEME_get_svg( array(
-      'icon'     => 'angle-left',
-      'fallback' => true,
-    )
-  ),
-  'iconNavNext'     => MYTHEME_get_svg( array(
-      'icon'     => 'angle-right',
-      'fallback' => true,
-    )
-  ),
-  'iconTestimonialNavPrev'     => '<span>' . esc_html__( 'PREV', 'MYTHEME' ) . '</span>',
-  'iconTestimonialNavNext'     => '<span>' . esc_html__( 'NEXT', 'MYTHEME' ) . '</span>',
-  'rtl' => is_rtl(),
-  'dropdownIcon'     => MYTHEME_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) ),
-) );
-
 function MYTHEME_custom_image_sizes( $sizes ) {
     return array_merge( $sizes,
       array(

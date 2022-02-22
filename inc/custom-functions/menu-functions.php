@@ -24,10 +24,11 @@
  * @param object $args   Nav menu args.
  * @return string Nav menu item start element.
  */
- 
+
 function MYTHEME_menu() {
 	add_filter( 'nav_menu_item_args', 'MYTHEME_add_menu_description_args', 10, 3 );
 	add_filter( 'walker_nav_menu_start_el', 'MYTHEME_add_sub_menu_toggle', 10, 4 );
+  add_filter( 'wp_page_menu_args', 'MYTHEME_page_menu_args' );
 }
 add_action( 'after_setup_theme', 'MYTHEME_menu' );
 
@@ -43,7 +44,6 @@ function MYTHEME_add_sub_menu_toggle( $output, $item, $depth, $args ) {
 	}
 	return $output;
 }
-
 /**
  * Detects the social network from a URL and returns the SVG code for its icon.
  *
@@ -56,7 +56,6 @@ function MYTHEME_add_sub_menu_toggle( $output, $item, $depth, $args ) {
 function MYTHEME_get_social_link_svg( $uri, $size = 24 ) {
 	return MYTHEME_SVG_Icons::get_social_link_svg( $uri, $size );
 }
-
 /**
  * Filters the arguments for a single nav menu item.
  *
@@ -74,4 +73,13 @@ function MYTHEME_add_menu_description_args( $args, $item, $depth ) {
 		$args->link_after = '<p class="menu-item-description"><span>' . $item->description . '</span></p>';
 	}
 	return $args;
+}
+/**
+ * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
+ *
+ * @since MYTHEME 1.0
+ */
+function MYTHEME_page_menu_args( $args ) {
+    $args['show_home'] = true;
+    return $args;
 }

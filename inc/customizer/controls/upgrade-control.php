@@ -17,7 +17,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
     <div class="upgrade-pro-version">		
 
-    <p class="rp-pro-heading"><?php esc_html_e('MYTHEME Pro - Save $10', 'MYTHEME') ?></p>
+    <p class="rp-pro-heading"><?php esc_html_e('MYTHEME - Save $10', 'MYTHEME') ?></p>
     <p class="rp-discount"><?php esc_html_e('Save $10 (Limited Time Offer!) if you purchase the Pro version with this discount code on checkout:', 'MYTHEME') ?>
         <span class="rp-discount-code"><?php esc_html_e('MYTHEME10', 'MYTHEME') ?></span></p>
     <p class="rp-pro-title"><?php esc_html_e('Pro Features:', 'MYTHEME') ?></p>

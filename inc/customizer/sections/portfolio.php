@@ -132,7 +132,7 @@ if ( ! function_exists( 'MYTHEME_is_portfolio_active' ) ) :
 	/**
 	* Return true if portfolio is active
 	*
-	* @since MYTHEME Pro 1.0
+	* @since MYTHEME 1.0
 	*/
 	function MYTHEME_is_portfolio_active( $control ) {
 		$enable = $control->manager->get_setting( 'MYTHEME_portfolio_option' )->value();

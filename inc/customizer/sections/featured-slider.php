@@ -81,7 +81,7 @@ if ( ! function_exists( 'MYTHEME_is_slider_active' ) ) :
 	/**
 	* Return true if slider is active
 	*
-	* @since MYTHEME Pro 1.0
+	* @since MYTHEME 1.0
 	*/
 	function MYTHEME_is_slider_active( $control ) {
 		$enable = $control->manager->get_setting( 'MYTHEME_slider_option' )->value();

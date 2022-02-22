@@ -217,7 +217,7 @@
  /**
   * Returns an array of avaliable fonts registered for MYTHEME
   *
-  * @since MYTHEME Pro 1.0
+  * @since MYTHEME 1.0
   */
  function MYTHEME_avaliable_fonts() {
  	$avaliable_fonts = array(
@@ -468,7 +468,7 @@
  	/**
  	* Return true if infinite scroll functionality exists
  	*
- 	* @since MYTHEME Pro 1.0
+ 	* @since MYTHEME 1.0
  	*/
  	function MYTHEME_scroll_plugins_inactive( $control ) {
  		if ( ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) || class_exists( 'Catch_Infinite_Scroll' ) ) {
@@ -484,7 +484,7 @@
  	/**
  	* Return true if A Static Page is enabled
  	*
- 	* @since MYTHEME Pro 1.1.2
+ 	* @since MYTHEME 1.1.2
  	*/
  	function MYTHEME_is_static_page_enabled( $control ) {
  		$enable = $control->manager->get_setting( 'show_on_front' )->value();

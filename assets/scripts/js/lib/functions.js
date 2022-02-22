@@ -1,16 +1,16 @@
- /* global darcieOptions */
+ /* global MYTHEMEOptions */
  /*
  * Custom scripts
- * Description: Custom scripts for Darcie Pro
+ * Description: Custom scripts for MYTHEME
  */
 
 ( function( $ ) {
-	$( window ).on( 'load.darcie resize.darcie', function () {
+	$( window ).on( 'load.MYTHEME resize.MYTHEME', function () {
 		// Owl Carousel.
 		if ( typeof $.fn.owlCarousel === "function" ) {
 			// Featured Slider
 			var sliderOptions = {
-				rtl:darcieOptions.rtl ? true : false,
+				rtl:MYTHEMEOptions.rtl ? true : false,
 				autoHeight:true,
 				margin: 0,
 				items: 1,
@@ -24,14 +24,14 @@
 						items:1
 					},
 				},
-				navText: [darcieOptions.iconNavPrev,darcieOptions.iconNavNext]
+				navText: [MYTHEMEOptions.iconNavPrev,MYTHEMEOptions.iconNavNext]
 			};
 
 			$(".main-slider").owlCarousel(sliderOptions);
 
 			// Testimonial Section
 			var testimonialOptions = {
-				rtl:darcieOptions.rtl ? true : false,
+				rtl:MYTHEMEOptions.rtl ? true : false,
 				autoHeight: true,
 				margin: 0,
 				items: 1,
@@ -49,7 +49,7 @@
 						items:2
 					},
 				},
-				navText: [darcieOptions.iconTestimonialNavPrev,darcieOptions.iconTestimonialNavNext],
+				navText: [MYTHEMEOptions.iconTestimonialNavPrev,MYTHEMEOptions.iconTestimonialNavNext],
 				dotsContainer: '#slider-dots',
 				navContainer: '#slider-nav'
 			};
@@ -140,11 +140,11 @@ $( document ).ready( function() {
 
 		// Add dropdown toggle that displays child menu items.
 		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( darcieOptions.dropdownIcon )
-			.append( $( '<span />', { 'class': 'screen-reader-text', text: darcieOptions.screenReaderText.expand }) );
+			.append( MYTHEMEOptions.dropdownIcon )
+			.append( $( '<span />', { 'class': 'screen-reader-text', text: MYTHEMEOptions.screenReaderText.expand }) );
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).append( darcieOptions.dropdownIcon );
+		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).append( MYTHEMEOptions.dropdownIcon );
 
 		// Toggle buttons and submenu items with active children menu items.
 		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
@@ -164,7 +164,7 @@ $( document ).ready( function() {
 			// jscs:disable
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			// jscs:enable
-			screenReaderSpan.text( screenReaderSpan.text() === darcieOptions.screenReaderText.expand ? darcieOptions.screenReaderText.collapse : darcieOptions.screenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === MYTHEMEOptions.screenReaderText.expand ? MYTHEMEOptions.screenReaderText.collapse : MYTHEMEOptions.screenReaderText.expand );
 		} );
 	}
 
@@ -373,7 +373,7 @@ $( document ).ready( function() {
     jQuery( document ).ready( function() {
 		body = jQuery( document.body );
 		jQuery( window )
-			.on( 'load.darcie resize.darcie', function() {
+			.on( 'load.MYTHEME resize.MYTHEME', function() {
 			if ( window.innerWidth < 1024 ) {
 				jQuery('#primary-menu-wrapper').on('focusout', function () {
 					var $elem = jQuery(this);
