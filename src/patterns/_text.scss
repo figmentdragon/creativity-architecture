@@ -1,4 +1,6 @@
-$body-text:          shade($primary, $text-percentage);
+
+
+$body-text:          tint($primary, $text-percentage);
 $text-muted:         tint($body-text, $muted-percentage);
 
 $quote-text-color:   tint($accent, $quote-percentage);

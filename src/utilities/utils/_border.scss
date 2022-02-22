@@ -4,22 +4,22 @@
   class: border,
   values: map-merge($theme-color, ("white": $white))
 ),
-"base-width": (
-  property: base-width,
+"border-width": (
+  property: border-width,
   class: border,
-  values: $base-widths
+  values: $border-widths
 ),
 "border": (
   property: border,
   values: (
-    null: $base-width solid $border-color,
+    null: $border-width solid $border-color,
     0: 0,
   )
 ),
 "border-top": (
   property: border-top,
   values: (
-    null: $base-width solid $border-color,
+    null: $border-width solid $border-color,
     0: 0,
   )
 ),
@@ -27,14 +27,14 @@
   property: border-right,
   class: border-end,
   values: (
-    null: $base-width solid $border-color,
+    null: $border-width solid $border-color,
     0: 0,
   )
 ),
 "border-bottom": (
   property: border-bottom,
   values: (
-    null: $base-width solid $border-color,
+    null: $border-width solid $border-color,
     0: 0,
   )
 ),
@@ -42,7 +42,7 @@
   property: border-left,
   class: border-start,
   values: (
-    null: $base-width solid $border-color,
+    null: $border-width solid $border-color,
     0: 0,
   )
 ),

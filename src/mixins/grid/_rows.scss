@@ -22,7 +22,7 @@
 @mixin row-cols($name) {
   @for $i from 0 through $grid-columns {
   @if $i != 0 {
-    .row-col-#{$i} {
+    .row-col-$i {
     float: left;
     width: calc(divide($width, $grid-columns) * $i);
     padding-right: .75em;

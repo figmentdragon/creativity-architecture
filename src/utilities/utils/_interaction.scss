@@ -1,7 +1,7 @@
 "gradient": (
   property: background-image,
   class: bg,
-  values: (gradient: var(--#{$variable-prefix}gradient))
+  values: (gradient: var($variable-prefixgradient))
 ),
 // scss-docs-start utils-interaction
 "user-select": (

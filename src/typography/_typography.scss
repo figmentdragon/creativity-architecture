@@ -109,3 +109,11 @@ p {
        -o-font-feature-settings: "liga", "dlig";
           font-feature-settings: "liga", "dlig";
 }
+.drop-cap:first-letter {
+    float: left;
+    font-size: 92px;
+    font-size: 5.75rem;
+    font-weight: bold;
+    line-height: 0.6;
+    margin: 14px 16px 4px -3px;
+}

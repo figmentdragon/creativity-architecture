@@ -2,7 +2,7 @@
 @mixin grid-loop($name) {
   @for $i from 0 through $grid-columns {
     @if $i != 0 {
-      .col--#{$name}-#{$i} {
+      .col$name-$i {
         width : percentage(math.div($i, $grid-columns));
 
         .row--flex & {
@@ -13,7 +13,7 @@
         }
       }
     }
-    .col--#{$name}-offset-#{$i} {
+    .col$name-offset-$i {
       margin-left : percentage(math.div($i, $grid-columns));
     }
   }
@@ -36,7 +36,7 @@
 {
     @if mobile-only == $res
     {
-        @media only screen and (max-width: #{$grid-breakpoint-sm - 1})
+        @media only screen and (max-width: $grid-breakpoint-sm - 1)
         {
             @content;
         }
@@ -44,7 +44,7 @@
 
     @if mobile == $res
     {
-        @media only screen and (min-width: #{$grid-breakpoint-sm})
+        @media only screen and (min-width: $grid-breakpoint-sm)
         {
             @content;
         }
@@ -52,7 +52,7 @@
 
     @if tablet-only == $res
     {
-        @media only screen and (max-width: #{$grid-breakpoint-md - 1})
+        @media only screen and (max-width: $grid-breakpoint-md - 1)
         {
             @content;
         }
@@ -60,7 +60,7 @@
 
     @if tablet == $res
     {
-        @media only screen and (min-width: #{$grid-breakpoint-md})
+        @media only screen and (min-width: $grid-breakpoint-md)
         {
             @content;
         }
@@ -68,7 +68,7 @@
 
     @if laptop-only == $res
     {
-        @media only screen and (max-width: #{$grid-breakpoint-lg - 1})
+        @media only screen and (max-width: $grid-breakpoint-lg - 1)
         {
             @content;
         }
@@ -76,7 +76,7 @@
 
     @if laptop == $res
     {
-        @media only screen and (min-width: #{$grid-breakpoint-lg})
+        @media only screen and (min-width: $grid-breakpoint-lg)
         {
             @content;
         }
@@ -84,7 +84,7 @@
 
     @if desktop-only == $res
     {
-        @media only screen and (max-width: #{$grid-breakpoint-xl - 1})
+        @media only screen and (max-width: $grid-breakpoint-xl - 1)
         {
             @content;
         }
@@ -92,7 +92,7 @@
 
     @if desktop == $res
     {
-        @media only screen and (min-width: #{$grid-breakpoint-xl})
+        @media only screen and (min-width: $grid-breakpoint-xl)
         {
             @content;
         }
@@ -100,7 +100,7 @@
 
     @if wide-only == $res
     {
-        @media only screen and (max-width: #{$grid-breakpoint-xxl - 1})
+        @media only screen and (max-width: $grid-breakpoint-xxl - 1)
         {
             @content;
         }
@@ -108,7 +108,7 @@
 
     @if wide == $res
     {
-        @media only screen and (min-width: #{$grid-breakpoint-xxl})
+        @media only screen and (min-width: $grid-breakpoint-xxl)
         {
             @content;
         }

@@ -77,14 +77,14 @@ $utilities: map-merge(
     "border": (
       property: border,
       values: (
-        null: $base-width solid $border-color,
+        null: $border-width solid $border-color,
         0: 0,
       )
     ),
     "border-top": (
       property: border-top,
       values: (
-        null: $base-width solid $border-color,
+        null: $border-width solid $border-color,
         0: 0,
       )
     ),
@@ -92,14 +92,14 @@ $utilities: map-merge(
       property: border-right,
       class: border-end,
       values: (
-        null: $base-width solid $border-color,
+        null: $border-width solid $border-color,
         0: 0,
       )
     ),
     "border-bottom": (
       property: border-bottom,
       values: (
-        null: $base-width solid $border-color,
+        null: $border-width solid $border-color,
         0: 0,
       )
     ),
@@ -107,7 +107,7 @@ $utilities: map-merge(
       property: border-left,
       class: border-start,
       values: (
-        null: $base-width solid $border-color,
+        null: $border-width solid $border-color,
         0: 0,
       )
     ),
@@ -116,10 +116,10 @@ $utilities: map-merge(
       class: border,
       values: map-merge($theme-colors, ("white": $white))
     ),
-    "base-width": (
-      property: base-width,
+    "border-width": (
+      property: border-width,
       class: border,
-      values: $base-widths
+      values: $border-widths
     ),
     // scss-docs-end utils-borders
     // Sizing utilities

@@ -4,12 +4,12 @@
 // scss-docs-start form-validation-mixins
 @mixin form-validation-state-selector($state) {
   @if ($state == "valid" or $state == "invalid") {
-    .was-validated #{if(&, "&", "")}:#{$state},
-    #{if(&, "&", "")}.is-#{$state} {
+    .was-validated if(&, "&", ""):$state},
+    if(&, "&", "").is-$state} {
       @content;
     }
   } @else {
-    #{if(&, "&", "")}.is-#{$state} {
+    if(&, "&", "").is-$state} {
       @content;
     }
   }
@@ -21,9 +21,9 @@
   $icon,
   $tooltip-color: color-contrast($color),
   $tooltip-background: rgba($color, $form-feedback-tooltip-opacity),
-  $focus-box-shadow: 0 0 $input-btn-focus-blur $input-focus-width rgba($color, $input-btn-focus-color-opacity)
+  $focus-box-shadow: 0 0 $input-button-focus-blur $input-focus-width rgba($color, $input-button-focus-color-opacity)
 ) {
-  .#{$state}-feedback {
+  .$state}-feedback {
     display: none;
     width: 100%;
     margin-top: $form-feedback-margin-top;
@@ -32,7 +32,7 @@
     color: $color;
   }
 
-  .#{$state}-tooltip {
+  .$state}-tooltip {
     position: absolute;
     top: 100%;
     z-index: 5;
@@ -48,8 +48,8 @@
   }
 
   @include form-validation-state-selector($state) {
-    ~ .#{$state}-feedback,
-    ~ .#{$state}-tooltip {
+    ~ .$state}-feedback,
+    ~ .$state}-tooltip {
       display: block;
     }
   }
@@ -122,7 +122,7 @@
     }
   }
   .form-check-inline .form-check-input {
-    ~ .#{$state}-feedback {
+    ~ .$state}-feedback {
       margin-left: .5em;
     }
   }

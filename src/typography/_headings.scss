@@ -49,12 +49,13 @@ h4 {
 	font-family: 'Raleway';
   font-size: 1.75vw;
   text-transform: lowercase;
+  color: $post-title-color;
 }
 
 
 h5 {
 	font-family: $tertiary-font;
-	color: $title-text-color;
+	color: $heading-text-color;
 }
 
 h6 {

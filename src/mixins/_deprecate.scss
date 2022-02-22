@@ -5,6 +5,6 @@
 // some deprecated mixins to suppress the attention (for example if the mixin is still be used in the current version of Bootstrap)
 @mixin deprecate($name, $deprecate-version, $remove-version, $ignore-attention: false) {
   @if ($enable-deprecation-messages != false and $ignore-attention != true) {
-    @warn "#{$name} has been deprecated as of #{$deprecate-version}. It will be removed entirely in #{$remove-version}.";
+    @warn "$name has been deprecated as of $deprecate-version}. It will be removed entirely in $remove-version}.";
   }
 }

@@ -5,7 +5,7 @@
  * @package MYTHEME
  */
 
-$enable_content = get_theme_mod( 'MYTHEME_featured_content_option', 'enabled' );
+$enable_content = get_theme_mod( 'MYTHEME_featured_content_option', 'disabled' );
 
 if ( ! MYTHEME_check_section( $enable_content ) ) {
 	// Bail if featured content is disabled.

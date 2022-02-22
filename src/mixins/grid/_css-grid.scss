@@ -5,7 +5,7 @@
     @include media-breakpoint-up($breakpoint, $breakpoints) {
       @if $columns > 0 {
         @for $i from 1 through $columns {
-          .g-col#{$infix}-#{$i} {
+          .g-col$infix}-$i {
             grid-column: auto / span $i;
           }
         }
@@ -13,7 +13,7 @@
         // Start with `1` because `0` is and invalid value.
         // Ends with `$columns - 1` because offsetting by the width of an entire row isn't possible.
         @for $i from 1 through ($columns - 1) {
-          .g-start#{$infix}-#{$i} {
+          .g-start$infix}-$i {
             grid-column-start: $i;
           }
         }

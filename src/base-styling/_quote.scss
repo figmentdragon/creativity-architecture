@@ -1,12 +1,5 @@
 /* 3 */
 
-$quote-font-family: $accent-font;
-
-$blockquote-margin-y:         $spacer !default;
-$blockquote-font-size:        $font-size-base * 1.25 !default;
-$blockquote-footer-color:     $gray-600 !default;
-$blockquote-footer-font-size: $small-font-size !default;
-
 blockquote {
 	font-style: italic;
 	margin: 0 1.5em;

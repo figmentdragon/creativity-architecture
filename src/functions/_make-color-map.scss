@@ -17,34 +17,20 @@ $colors : ();
     $colors : map-merge($colors-map, $map);
 }
 
-@debug $colors;
-
-$theme-colors : ();
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'accent': $accent,
-  'info': $info,
-  'valid': $valid,
-  'invalid': $invalid,
-  'attention': $attention,
-  'alert': $alert
-);
-
-@function create_color_map($color, $percentage, $opacity) {
-    $map  : (
-    base  : $color,
-    light : lighten($color, $percentage),
-    dark  : shade-color($color, $percentage),
-    trans : transparentize($color, $opacity)
+$theme-colors: ();
+@function create_color_map($theme-colors, $percentage, $opacity) {
+    $theme-colors-map  : (
+    base  : $theme-colors,
+    light : lighten($theme-colors, $percentage),
+    dark  : shade-color($theme-colors, $percentage),
+    trans : transparentize($theme-colors, $opacity)
     );
-    @return $map;
+    @return $theme-colors-map;
 }
 
-@each $key, $value in $colors {
+@each $key, $value in $theme-colors {
     $map    : ();
-    $map    : map-merge($map, ($key:
-    create_color_map($value, 15%, 0.5)) );
-    $colors : map-merge($colors-map, $map);
+    $theme-colors    : map-merge($map, $key,
+    create_color_map($value, 5%, 0.5));
+    $theme-colors-map : map-merge($theme-colors, $map);
 }
-@debug $theme-colors;

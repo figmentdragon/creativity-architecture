@@ -27,6 +27,6 @@
 
 </head>
 
-<body class="<?php body_class();?>">
+<body "<?php body_class();?>">
 
 	<?php do_action( 'wp_body_open' ); ?>

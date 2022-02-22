@@ -4,7 +4,7 @@
 @mixin grid-loop($name) {
   @for $i from 0 through $grid-columns {
     @if $i != 0 {
-      .col--#{$name}-#{$i} {
+      .col$name-$i {
         width : percentage(math.div($i, $grid-columns));
 
         .row--flex & {
@@ -15,7 +15,7 @@
         }
       }
     }
-    .col--#{$name}-offset-#{$i} {
+    .col$name-offset-$i {
       margin-left : percentage(math.div($i, $grid-columns));
     }
   }
@@ -34,6 +34,12 @@
 /* Default variables and helper mixins */
 
 /* Grid scaffolding */
+.container {
+  @include    clearfix;
+  max-width : $grid-max-width;
+  margin    : 0 auto;
+  padding   : 0 $grid-gutter;
+}
 
 .row {
   margin-left : $grid-gutter;
@@ -67,10 +73,10 @@
 
 @each $breakpoint in $breakpoints {
   $name        : nth($breakpoint, 1);
-  $declaration : nth($breakpoint, 2);
+  ($declaration) : nth($breakpoint, 2);
   @media
       only screen
-    and (and #{$declaration} : and #{$declaration}) {
+    and (and ($declaration) : and ($declaration)) {
     @include grid-loop($name);
   }
 }

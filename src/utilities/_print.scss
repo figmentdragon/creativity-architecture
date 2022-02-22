@@ -6,7 +6,7 @@
 * Author: CJM Termini
 * Stylesheet: Print Stylsheet
 *
-* Adding print support. The print styles are based on the the great work of *MYTHEMEas Hecht* in
+* Adding print support. The print styles are based on the the great work of *Andreas Hecht* in
 * https://www.jotform.com/blog/css-perfect-print-stylesheet-98272/.
 *
 * Import this
@@ -45,7 +45,7 @@
 
   pre,
   blockquote {
-    border: $base-width solid #999;
+    border: $border-width solid #999;
     page-break-inside: avoid;
   }
 
@@ -80,14 +80,14 @@
   .navbar {
     display: none;
   }
-  .btn,
-  .dropup > .btn {
+  .button,
+  .dropup > .button {
     > .caret {
       border-top-color: #000 !important;
     }
   }
   .label {
-    border: $base-width solid #000;
+    border: $border-width solid #000;
   }
 
   .table {
@@ -263,9 +263,9 @@ a[href^='javascript:']:after {
   content : '';
 }
 
-//a[href]:after {
-//  content : ' (' attr(href) ')';
-//}
+a[href]:after {
+  content : ' (' attr(href) ')';
+}
 
 a:after > img {
   content : '';
@@ -325,7 +325,7 @@ a:not(:local-link):after {
 .page-navigation,
 .respond-form,
 .sidebar,
-.wp-prev-next,
+.prev-next,
 nav {
   display : none;
 }

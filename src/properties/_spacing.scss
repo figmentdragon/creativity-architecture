@@ -1,6 +1,6 @@
 /* _____________________________________ spacer */
   /* Base Number */
-  $spacer:                 1rem;
+  $spacer:                 $margin; //16.8px
   /* Map */
   $spacers:                (
     0:                     0,
@@ -35,7 +35,7 @@
     80:                    $spacer * 80
     );
 
-    $negative-numbers:     negativify-map($spacers);
+    $negative-spacers:     negativify-map($spacers);
 
     $block-spacer:         1.5rem;
 

@@ -1,10 +1,7 @@
 // container mixins
 @mixin container-base {
   @include clearfix;
-  @include box-sizing($type: border-box);
-  max-width : $grid-max-width;
-  margin    : 0 auto;
-  padding   : 0 $grid-gutter;
+  @include border-box;
 }
 
 @mixin container($body-text) {

@@ -21,7 +21,7 @@
     $name: nth($breakpoint, 1);
     $declaration: nth($breakpoint, 2);
 
-    @media only screen and #{$declaration} {
+    @media only screen and ($declaration) {
         @include grid-loop($name);
     }
 }

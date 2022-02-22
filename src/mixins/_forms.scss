@@ -69,7 +69,7 @@
 // element gets special love because it's special, and that's a fact!
 
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-  #{$parent} {
+  $parent} {
     height: $input-height;
     padding: $padding-vertical $padding-horizontal;
     font-size: $font-size;
@@ -77,13 +77,13 @@
     @include border-radius($border-radius);
   }
 
-  select#{$parent} {
+  select$parent} {
     height: $input-height;
     line-height: $input-height;
   }
 
-  textarea#{$parent},
-  select[multiple]#{$parent} {
+  textarea$parent},
+  select[multiple]$parent} {
     height: auto;
   }
 }

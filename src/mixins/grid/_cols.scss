@@ -16,8 +16,8 @@
 @mixin make-col($size: false, $columns: $grid-columns) {
   @if $size {
     @for $i from 1 through $grid-columns {
-      .col-#{$size}-#{$i} {
-        width: calc(divide($width, $columns) * #{$i});
+      .col-$size}-$i {
+        width: calc(divide($width, $columns) * $i);
       }
     }
   } @else {

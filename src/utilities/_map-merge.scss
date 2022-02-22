@@ -1,24 +1,4 @@
 //@import "../../node_modules/bootstrap/scss/variables";
-$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value") !default;
-$utilities-colors: $theme-colors-rgb !default;
-
-$utilities-text: map-merge(
-  $utilities-colors,
-  (
-    "black": to-rgb($black),
-    "white": to-rgb($white),
-    "body": to-rgb($body-text)
-  )
-);
-
-$utilities-bg: map-merge(
-  $utilities-colors,
-  (
-    "black": to-rgb($black),
-    "white": to-rgb($white),
-    "body": to-rgb($body-bg)
-  )
-);
 
 $grid-colors: map-merge($theme-colors, (
     'primary-dark' : shade-color($blue, 20%),

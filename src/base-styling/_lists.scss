@@ -10,13 +10,22 @@ nav ol {
 ol,
 ul {
   list-style: none;
-	margin: 0 0 1.5em 1em;
-	padding: 0 0 0 1.5rem;
+  margin: 0 0 1.75em 1.5em;
+  padding: 0;
 	li {
 		line-height: 1.75;
 		list-style: none;
 		display: inline;
 	}
+}
+
+ul {
+    list-style: disc;
+}
+
+
+ol {
+    list-style: decimal;
 }
 
 li {
@@ -43,15 +52,18 @@ ol li >  ul{
 }
 
 dt {
-	font-weight: bold;
+    font-weight: 700;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+    margin: 0 1.5em 1.75em;
 }
 
-dl dd {
-	padding-left: $offset * 2;
+dl {
+  margin: 0 0 1.75em;
+  dd {
+  	padding-left: $offset * 2;
+  }
 }
 
 menu {

@@ -14,7 +14,7 @@ img {
     border: 0;
     max-width: 100%;
     height: auto;
-
+    vertical-align: middle;
     .scale-with-grid {
       max-width: 100%;
       height: auto;
@@ -22,4 +22,19 @@ img {
 }
 svg:not(:root) {
     overflow: hidden;
+}
+
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+p > embed,
+p > iframe,
+p > object,
+p > video {
+    margin-bottom: 0;
 }

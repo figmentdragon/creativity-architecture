@@ -4,5 +4,5 @@
 
 @mixin font-size($px) {
     font-size: $px + px;
-    font-size: #{$px / 16}rem;
+    font-size: divide($px, 16px);
 }

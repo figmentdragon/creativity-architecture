@@ -40,7 +40,7 @@
 
 @mixin typl8-headings() {
   @each $name, $size in $typl8-scale {
-    .#{$name} {
+    .$name {
       @extend %typl8-hN;
       @include typl8-typescale(
         $size,
@@ -54,8 +54,8 @@
 
 @mixin typl8-headings-style() {
   @each $h, $size in $typl8-headings {
-    #{$h} {
-      @extend .#{$size};
+    $h} {
+      @extend .$size};
     }
   }
 }
@@ -71,7 +71,7 @@
 
 @mixin typl8-hyphens($val) {
   @each $prefix in $typl8-prefixes {
-    #{$prefix}hyphens: $val;
+    $prefixhyphens: $val;
   }
 }
 
@@ -87,7 +87,7 @@
 
 @mixin typl8-smallcaps($color, $font-weight) {
   @each $prefix in $typl8-prefixes {
-    #{$prefix}font-variant: small-caps;
+    $prefixfont-variant: small-caps;
   }
   font-weight: $font-weight;
   text-transform: lowercase;
@@ -127,7 +127,7 @@
 @mixin typl8-blockquote($citation-flourish) {
   p {
     &:last-of-type {
-      margin-bottom: -#{$typl8-line-height/2}em;
+      margin-bottom: -$typl8-line-height/2}em;
     }
   }
 
@@ -214,7 +214,7 @@
 
 @mixin typl8-white-space($wrap-space) {
   @if $wrap-space == 'pre-wrap' {
-    white-space: #{-moz-}$wrap-space;
+    white-space: -moz-}$wrap-space;
     white-space: $wrap-space;
   } @else {
     white-space: $wrap-space;
