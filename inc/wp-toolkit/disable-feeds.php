@@ -5,21 +5,21 @@
  * Credits: https://wordpress.stackexchange.com/a/47087
  */
 
-add_action( 'wp_head', __NAMESPACE__.'\\MYTHEME_wp_head', 1 );
+add_action( 'wp_head', __NAMESPACE__.'\\THEMENAME_wp_head', 1 );
 /**
  * Remove feed links from wp_head
  */
-function MYTHEME_wp_head()
+function THEMENAME_wp_head()
 {
   remove_action( 'wp_head', 'feed_links', 2 );
   remove_action( 'wp_head', 'feed_links_extra', 3 );
 }
 
-add_action( 'init', __NAMESPACE__.'\\MYTHEME_kill_feed_endpoint', 99 );
+add_action( 'init', __NAMESPACE__.'\\THEMENAME_kill_feed_endpoint', 99 );
 /**
  * Remove the `feed` endpoint
  */
-function MYTHEME_kill_feed_endpoint()
+function THEMENAME_kill_feed_endpoint()
 {
   // This is extremely brittle.
   // $wp_rewrite->feeds is public right now, but later versions of WP
@@ -33,7 +33,7 @@ function MYTHEME_kill_feed_endpoint()
 
 foreach( array( 'rdf', 'rss', 'rss2', 'atom' ) as $feed )
 {
-  add_action( 'do_feed_' . $feed, __NAMESPACE__.'\\MYTHEME_remove_feeds', 1 );
+  add_action( 'do_feed_' . $feed, __NAMESPACE__.'\\THEMENAME_remove_feeds', 1 );
 }
 unset( $feed );
 
@@ -42,7 +42,7 @@ unset( $feed );
  * prefect actions from firing on feeds when the `do_feed` function is
  * called
  */
-function MYTHEME_remove_feeds()
+function THEMENAME_remove_feeds()
 {
   // redirect the feeds! don't just kill them
   wp_redirect( home_url(), 302 );

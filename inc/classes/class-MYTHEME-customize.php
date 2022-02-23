@@ -3,22 +3,22 @@
  * Customizer settings for this theme.
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
-if ( ! class_exists( 'MYTHEME_Customize' ) ) {
+if ( ! class_exists( 'THEMENAME_Customize' ) ) {
 	/**
 	 * Customizer Settings.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 */
-	class MYTHEME_Customize {
+	class THEMENAME_Customize {
 
 		/**
 		 * Constructor. Instantiate the object.
 		 *
-		 * @since MYTHEME 1.0
+		 * @since THEMENAME 1.0
 		 */
 		public function __construct() {
 			add_action( 'customize_register', array( $this, 'register' ) );
@@ -27,7 +27,7 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 		/**
 		 * Register customizer options.
 		 *
-		 * @since MYTHEME 1.0
+		 * @since THEMENAME 1.0
 		 *
 		 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 		 * @return void
@@ -72,7 +72,7 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 				array(
 					'type'    => 'checkbox',
 					'section' => 'title_tagline',
-					'label'   => esc_html__( 'Display Site Title & Tagline', 'MYTHEME' ),
+					'label'   => esc_html__( 'Display Site Title & Tagline', 'THEMENAME' ),
 				)
 			);
 
@@ -82,7 +82,7 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 			$wp_customize->add_section(
 				'excerpt_settings',
 				array(
-					'title'    => esc_html__( 'Excerpt Settings', 'MYTHEME' ),
+					'title'    => esc_html__( 'Excerpt Settings', 'THEMENAME' ),
 					'priority' => 120,
 				)
 			);
@@ -103,20 +103,20 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 				array(
 					'type'    => 'radio',
 					'section' => 'excerpt_settings',
-					'label'   => esc_html__( 'On Archive Pages, posts show:', 'MYTHEME' ),
+					'label'   => esc_html__( 'On Archive Pages, posts show:', 'THEMENAME' ),
 					'choices' => array(
-						'excerpt' => esc_html__( 'Summary', 'MYTHEME' ),
-						'full'    => esc_html__( 'Full text', 'MYTHEME' ),
+						'excerpt' => esc_html__( 'Summary', 'THEMENAME' ),
+						'full'    => esc_html__( 'Full text', 'THEMENAME' ),
 					),
 				)
 			);
 
 			// Background color.
 			// Include the custom control class.
-			include_once get_theme_file_path( '/inc/classes/class-MYTHEME-customize-color-control.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			include_once get_theme_file_path( '/inc/classes/class-THEMENAME-customize-color-control.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Register the custom control.
-			$wp_customize->register_control_type( 'MYTHEME_Customize_Color_Control' );
+			$wp_customize->register_control_type( 'THEMENAME_Customize_Color_Control' );
 
 			// Get the palette from theme-supports.
 			$palette = get_theme_support( 'editor-color-palette' );
@@ -131,11 +131,11 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 
 			// Add the control. Overrides the default background-color control.
 			$wp_customize->add_control(
-				new MYTHEME_Customize_Color_Control(
+				new THEMENAME_Customize_Color_Control(
 					$wp_customize,
 					'background_color',
 					array(
-						'label'   => esc_html_x( 'Background color', 'Customizer control', 'MYTHEME' ),
+						'label'   => esc_html_x( 'Background color', 'Customizer control', 'THEMENAME' ),
 						'section' => 'colors',
 						'palette' => $colors,
 					)
@@ -146,7 +146,7 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 		/**
 		 * Sanitize boolean for checkbox.
 		 *
-		 * @since MYTHEME 1.0
+		 * @since THEMENAME 1.0
 		 *
 		 * @param bool $checked Whether or not a box is checked.
 		 * @return bool
@@ -158,7 +158,7 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 		/**
 		 * Render the site title for the selective refresh partial.
 		 *
-		 * @since MYTHEME 1.0
+		 * @since THEMENAME 1.0
 		 *
 		 * @return void
 		 */
@@ -169,7 +169,7 @@ if ( ! class_exists( 'MYTHEME_Customize' ) ) {
 		/**
 		 * Render the site tagline for the selective refresh partial.
 		 *
-		 * @since MYTHEME 1.0
+		 * @since THEMENAME 1.0
 		 *
 		 * @return void
 		 */

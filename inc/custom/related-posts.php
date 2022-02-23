@@ -1,6 +1,6 @@
 <?php
-// Related Posts Function, matches posts by tags - call using the_MYTHEME_related_posts(); )
-function the_MYTHEME_related_posts() {
+// Related Posts Function, matches posts by tags - call using the_THEMENAME_related_posts(); )
+function the_THEMENAME_related_posts() {
 	global $post;
 	$tag_arr = '';
 	$tags = wp_get_post_tags( $post->ID );
@@ -15,8 +15,8 @@ function the_MYTHEME_related_posts() {
 		);
 		$related_posts = get_posts( $args );
 		if($related_posts) {
-		echo __( '<h4>Related Posts</h4>', 'the_MYTHEME' );
-		echo '<ul class="the_MYTHEME-related-posts">';
+		echo __( '<h4>Related Posts</h4>', 'the_THEMENAME' );
+		echo '<ul class="the_THEMENAME-related-posts">';
 			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
 				<li class="related_post">
 					<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
@@ -26,4 +26,4 @@ function the_MYTHEME_related_posts() {
 			}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end the_MYTHEME related posts function */
+} /* end the_THEMENAME related posts function */

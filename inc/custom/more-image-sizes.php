@@ -5,7 +5,7 @@
  *
  * @version 1.0
  * @date    21.06.2016
- * @author  MYTHEME
+ * @author  THEMENAME
  *
  */
 

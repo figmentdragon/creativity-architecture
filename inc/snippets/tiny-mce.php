@@ -1,25 +1,25 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: MYTHEME
+ * User: THEMENAME
  * Date: 11/02/17
  * Time: 19:58
  */
 
-function MYTHEME_mce_buttons_2($buttons)
+function THEMENAME_mce_buttons_2($buttons)
 {
   array_unshift($buttons, 'styleselect');
 
   return $buttons;
 }
 
-add_filter('mce_buttons_2', __NAMESPACE__.'\\MYTHEME_mce_buttons_2');
+add_filter('mce_buttons_2', __NAMESPACE__.'\\THEMENAME_mce_buttons_2');
 
 /*
 * Callback function to filter the MCE settings
 */
 
-function MYTHEME_mce_before_init_insert_formats($init_array)
+function THEMENAME_mce_before_init_insert_formats($init_array)
 {
   // Define the style_formats array
 
@@ -148,4 +148,4 @@ function MYTHEME_mce_before_init_insert_formats($init_array)
 }
 
 // Attach callback to 'tiny_mce_before_init'
-add_filter('tiny_mce_before_init', __NAMESPACE__.'\\MYTHEME_mce_before_init_insert_formats');
+add_filter('tiny_mce_before_init', __NAMESPACE__.'\\THEMENAME_mce_before_init_insert_formats');

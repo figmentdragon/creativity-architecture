@@ -1,12 +1,12 @@
 <?php
-class MYTHEME_Recent_Post_Widget extends WP_Widget {
+class THEMENAME_Recent_Post_Widget extends WP_Widget {
 
 	function __construct() {
 	
 		parent::__construct(
-			'MYTHEME_recent_posts', // Base ID
-			esc_html__('MYTHEME - Recent Posts', 'MYTHEME'), // Name
-			array( 'description' => esc_html__( 'The most recent posts on your blog.', 'MYTHEME' ), ) // Args
+			'THEMENAME_recent_posts', // Base ID
+			esc_html__('THEMENAME - Recent Posts', 'THEMENAME'), // Name
+			array( 'description' => esc_html__( 'The most recent posts on your blog.', 'THEMENAME' ), ) // Args
 		);
 	}
 	
@@ -17,33 +17,33 @@ class MYTHEME_Recent_Post_Widget extends WP_Widget {
 	 $offset      = isset($instance['offset']) ? esc_attr( $instance['offset'] ) : '0';
 ?>
 	<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>"><?php esc_html_e('Title', 'MYTHEME'); ?>:</label>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'title' )); ?>"><?php esc_html_e('Title', 'THEMENAME'); ?>:</label>
 		<input type="text" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" value="<?php echo $title; ?>" class="widefat" />
 	</p>
 	
 	<p>
 		<input class="checkbox" type="checkbox" <?php if(isset($instance['ignore_sticky'])): checked( esc_attr($instance['ignore_sticky']), 1 ); endif; ?> id="<?php echo esc_attr($this->get_field_id( 'ignore_sticky' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'ignore_sticky' )); ?>" value="1" />
 		<label for="<?php echo esc_attr($this->get_field_id( 'ignore_sticky' )); ?>">
-			<?php esc_html_e( 'Ignore sticky posts', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Ignore sticky posts', 'THEMENAME' ); ?>
 		</label>
 	</p>
 	
 	<p>
-		<label for="<?php echo esc_attr($this->get_field_id( 'limit' )); ?>"><?php esc_html_e('Show up to', 'MYTHEME'); ?>:</label><br />
-		<input type="number" step="1" min="-1" id="<?php echo esc_attr($this->get_field_id( 'limit' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'limit' )); ?>" value="<?php echo $limit; ?>" class="widefat" style="width:50px!important" /> <?php esc_html_e('posts', 'MYTHEME'); ?>
+		<label for="<?php echo esc_attr($this->get_field_id( 'limit' )); ?>"><?php esc_html_e('Show up to', 'THEMENAME'); ?>:</label><br />
+		<input type="number" step="1" min="-1" id="<?php echo esc_attr($this->get_field_id( 'limit' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'limit' )); ?>" value="<?php echo $limit; ?>" class="widefat" style="width:50px!important" /> <?php esc_html_e('posts', 'THEMENAME'); ?>
 	</p>
 	
 	<p>
 		<label for="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>">
-			<?php esc_html_e( 'Offset', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Offset', 'THEMENAME' ); ?>
 		</label>
 		<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'offset' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'offset' )); ?>" type="number" step="1" min="0" value="<?php echo $offset ; ?>" />
-		<small><?php esc_html_e( 'The number of posts to skip', 'MYTHEME' ); ?></small>
+		<small><?php esc_html_e( 'The number of posts to skip', 'THEMENAME' ); ?></small>
 	</p>
 	
 	<p>
 		<label for="<?php echo esc_attr($this->get_field_id( 'post_status' )); ?>">
-			<?php esc_html_e( 'Post Status', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Post Status', 'THEMENAME' ); ?>
 		</label>
 		<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'post_status' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'post_status' )); ?>" style="width:100%;">
 			<?php foreach ( get_available_post_statuses() as $status_value => $status_label ) { ?>
@@ -54,48 +54,48 @@ class MYTHEME_Recent_Post_Widget extends WP_Widget {
 	
 	<p>
 		<label for="<?php echo esc_attr($this->get_field_id( 'order' )); ?>">
-			<?php esc_html_e( 'Order', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Order', 'THEMENAME' ); ?>
 		</label>
 		<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'order' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'order' )); ?>" style="width:100%;">
-			<option value="<?php echo esc_attr('DESC')?>" <?php if(isset($instance['order'])): selected( $instance['order'], 'DESC' ); endif; ?>><?php esc_html_e( 'Descending', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('ASC')?>" <?php if(isset($instance['order'])): selected( $instance['order'], 'ASC' ); endif; ?>><?php esc_html_e( 'Ascending', 'MYTHEME' ) ?></option>
+			<option value="<?php echo esc_attr('DESC')?>" <?php if(isset($instance['order'])): selected( $instance['order'], 'DESC' ); endif; ?>><?php esc_html_e( 'Descending', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('ASC')?>" <?php if(isset($instance['order'])): selected( $instance['order'], 'ASC' ); endif; ?>><?php esc_html_e( 'Ascending', 'THEMENAME' ) ?></option>
 		</select>
 	</p>
 
 	<p>
 		<label for="<?php echo esc_attr($this->get_field_id( 'orderby')); ?>">
-			<?php esc_html_e( 'Orderby', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Orderby', 'THEMENAME' ); ?>
 		</label>
 		<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'orderby')); ?>" name="<?php echo esc_attr($this->get_field_name( 'orderby' )); ?>" style="width:100%;">
-			<option value="<?php echo esc_attr('ID')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'ID' ); endif; ?>><?php esc_html_e( 'ID', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('author')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'author' );  endif; ?>><?php esc_html_e( 'Author', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('title')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'title' );  endif; ?>><?php esc_html_e( 'Title', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('date')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'date' ); endif; ?>><?php esc_html_e( 'Date', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('modified')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'modified' ); endif; ?>><?php esc_html_e( 'Modified', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('rand')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'rand' ); endif; ?>><?php esc_html_e( 'Random', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('comment_count')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'comment_count' ); endif; ?>><?php esc_html_e( 'Comment Count', 'MYTHEME' ) ?></option>
-			<option value="<?php echo esc_attr('menu_order')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'menu_order' ); endif; ?>><?php esc_html_e( 'Menu Order', 'MYTHEME' ) ?></option>
+			<option value="<?php echo esc_attr('ID')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'ID' ); endif; ?>><?php esc_html_e( 'ID', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('author')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'author' );  endif; ?>><?php esc_html_e( 'Author', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('title')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'title' );  endif; ?>><?php esc_html_e( 'Title', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('date')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'date' ); endif; ?>><?php esc_html_e( 'Date', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('modified')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'modified' ); endif; ?>><?php esc_html_e( 'Modified', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('rand')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'rand' ); endif; ?>><?php esc_html_e( 'Random', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('comment_count')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'comment_count' ); endif; ?>><?php esc_html_e( 'Comment Count', 'THEMENAME' ) ?></option>
+			<option value="<?php echo esc_attr('menu_order')?>" <?php if(isset($instance['orderby'])): selected( $instance['orderby'], 'menu_order' ); endif; ?>><?php esc_html_e( 'Menu Order', 'THEMENAME' ) ?></option>
 		</select>
 	</p>
 	
 	<p>
 		<input id="<?php echo esc_attr($this->get_field_id( 'show_cat' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_cat' )); ?>" type="checkbox" value="<?php echo esc_attr('1')?>" <?php if(isset($instance['show_cat'])): checked( esc_attr($instance['show_cat']), 1 ); endif; ?>/>
 		<label for="<?php echo esc_attr($this->get_field_id( 'show_cat')); ?>">
-			<?php esc_html_e( 'Display post category(ies)', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Display post category(ies)', 'THEMENAME' ); ?>
 		</label>
 	</p>
 
 	<p>
 		<input id="<?php echo esc_attr($this->get_field_id( 'show_author' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_author' )); ?>" type="checkbox" value="<?php echo esc_attr('1')?>"<?php if(isset($instance['show_author'])): checked( esc_attr($instance['show_author']), 1 ); endif; ?>/>
 		<label for="<?php echo esc_attr($this->get_field_id( 'show_author' )); ?>">
-			<?php esc_html_e( 'Display post author(s)', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Display post author(s)', 'THEMENAME' ); ?>
 		</label>
 	</p>
 	
 	<p>
 		<input id="<?php echo esc_attr($this->get_field_id( 'show_date' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_date' )); ?>" type="checkbox" value="<?php echo esc_attr('1')?>" <?php if(isset($instance['show_date'])): checked( esc_attr($instance['show_date']), 1 ); endif; ?>/>
 		<label for="<?php echo esc_attr($this->get_field_id( 'show_date' )); ?>">
-			<?php esc_html_e( 'Display Date', 'MYTHEME' ); ?>
+			<?php esc_html_e( 'Display Date', 'THEMENAME' ); ?>
 		</label>
 	</p>
 	
@@ -165,7 +165,7 @@ class MYTHEME_Recent_Post_Widget extends WP_Widget {
 				
 					echo '<article class="entry">';
 						
-						MYTHEME_featured_image(get_the_ID(), 'thumbnail');
+						THEMENAME_featured_image(get_the_ID(), 'thumbnail');
 						
 							if(isset($instance['show_cat']) && $instance['show_cat'] == 1):
 								echo '<div class="entry-meta">';
@@ -174,18 +174,18 @@ class MYTHEME_Recent_Post_Widget extends WP_Widget {
 							endif;
 						
 						
-						echo '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'MYTHEME' ), the_title_attribute( 'echo=0' )) . '" rel="bookmark">' .  get_the_title() . '</a></h4>';
+						echo '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'THEMENAME' ), the_title_attribute( 'echo=0' )) . '" rel="bookmark">' .  get_the_title() . '</a></h4>';
 						
 						if((isset($instance['show_author']) && $instance['show_author'] == 1) || 
 						(isset($instance['show_date']) && $instance['show_date'] == 1)):
 						echo '<div class="entry-meta">';
 							if(isset($instance['show_author']) && $instance['show_author'] == 1):
 								
-								echo '<span class="entry-author">'.__('By','MYTHEME').' <a itemprop="name" href="'. get_author_posts_url(get_the_author_meta('ID')).'">'.get_the_author_meta('display_name').'</a> </span>';
+								echo '<span class="entry-author">'.__('By','THEMENAME').' <a itemprop="name" href="'. get_author_posts_url(get_the_author_meta('ID')).'">'.get_the_author_meta('display_name').'</a> </span>';
 							endif;
 							if(isset($instance['show_date']) && $instance['show_date'] == 1):	
 							
-								echo '<span class="entry-date">'.__('on','MYTHEME').' <a href="'.get_month_link(get_the_time('Y'), get_the_time('m')).'">'.get_the_time($date_format).'</a> </span>';
+								echo '<span class="entry-date">'.__('on','THEMENAME').' <a href="'.get_month_link(get_the_time('Y'), get_the_time('m')).'">'.get_the_time($date_format).'</a> </span>';
 							
 							endif;
 							
@@ -196,7 +196,7 @@ class MYTHEME_Recent_Post_Widget extends WP_Widget {
 				endwhile;
 			echo '</div>';
 		else:
-			echo '<p>'.esc_html__('No post found.', 'MYTHEME').'</p>'."\n";
+			echo '<p>'.esc_html__('No post found.', 'THEMENAME').'</p>'."\n";
 		endif;
 		// Restore original Post Data.
 		wp_reset_postdata();
@@ -204,6 +204,6 @@ class MYTHEME_Recent_Post_Widget extends WP_Widget {
 	}
 	
 }
-register_widget( 'MYTHEME_Recent_Post_Widget' );
+register_widget( 'THEMENAME_Recent_Post_Widget' );
 
 ?>

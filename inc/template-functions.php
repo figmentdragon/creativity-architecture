@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 /**
@@ -15,7 +15,7 @@
  * @param array $classes Classes for the body element.
  * @return array (Maybe) filtered body classes.
  */
-function MYTHEME_body_classes( $classes ) {
+function THEMENAME_body_classes( $classes ) {
 	// Adds a class of custom-background-image to sites with a custom background image.
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
@@ -47,8 +47,8 @@ function MYTHEME_body_classes( $classes ) {
 	$classes[] = 'navigation-default';
 
 	// Adds a class with respect to layout selected.
-	$layout  = MYTHEME_get_theme_layout();
-	$sidebar = MYTHEME_get_sidebar_id();
+	$layout  = THEMENAME_get_theme_layout();
+	$sidebar = THEMENAME_get_sidebar_id();
 
 	$layout_class = "no-sidebar content-width-layout";
 	
@@ -64,9 +64,9 @@ function MYTHEME_body_classes( $classes ) {
 
 	$classes['color-scheme'] = esc_attr( 'color-scheme-' . get_theme_mod( 'color_scheme', 'default' ) );
 
-	$enable_slider = MYTHEME_check_section( get_theme_mod( 'MYTHEME_slider_option', 'disabled' ) );
+	$enable_slider = THEMENAME_check_section( get_theme_mod( 'THEMENAME_slider_option', 'disabled' ) );
 
-	$header_image = MYTHEME_featured_overall_image();
+	$header_image = THEMENAME_featured_overall_image();
 
 	if ( 'disable' !== $header_image || $enable_slider ) {
 		if ( 'disable' !== $header_image ) {
@@ -82,29 +82,29 @@ function MYTHEME_body_classes( $classes ) {
 	}
 
 	// Add a class if there is header media text.
-	if ( MYTHEME_has_header_media_text() ) {
+	if ( THEMENAME_has_header_media_text() ) {
 		$classes[] = 'has-header-text';
 	}
 
 	return $classes;
 }
-add_filter( 'body_class', 'MYTHEME_body_classes' );
+add_filter( 'body_class', 'THEMENAME_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function MYTHEME_pingback_header() {
+function THEMENAME_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'MYTHEME_pingback_header' );
+add_action( 'wp_head', 'THEMENAME_pingback_header' );
 
 /**
  * Adds custom overlay for Promotion Headline Background Image
  */
-function MYTHEME_promo_head_bg_image_overlay_css() {
-	$overlay = get_theme_mod( 'MYTHEME_promo_head_background_image_opacity', '0' );
+function THEMENAME_promo_head_bg_image_overlay_css() {
+	$overlay = get_theme_mod( 'THEMENAME_promo_head_background_image_opacity', '0' );
 
 	$css = '';
 
@@ -116,15 +116,15 @@ function MYTHEME_promo_head_bg_image_overlay_css() {
 			    } '; // Dividing by 100 as the option is shown as % for user
 	}
 
-	wp_add_inline_style( 'MYTHEME-style', $css );
+	wp_add_inline_style( 'THEMENAME-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'MYTHEME_promo_head_bg_image_overlay_css', 11 );
+add_action( 'wp_enqueue_scripts', 'THEMENAME_promo_head_bg_image_overlay_css', 11 );
 
 /**
  * Adds custom overlay for Header Media
  */
-function MYTHEME_header_media_image_overlay_css() {
-	$overlay = get_theme_mod( 'MYTHEME_header_media_image_opacity' );
+function THEMENAME_header_media_image_overlay_css() {
+	$overlay = get_theme_mod( 'THEMENAME_header_media_image_opacity' );
 
 	$css = '';
 
@@ -136,16 +136,16 @@ function MYTHEME_header_media_image_overlay_css() {
     } '; // Dividing by 100 as the option is shown as % for user
 }
 
-	wp_add_inline_style( 'MYTHEME-style', $css );
+	wp_add_inline_style( 'THEMENAME-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'MYTHEME_header_media_image_overlay_css', 11 );
+add_action( 'wp_enqueue_scripts', 'THEMENAME_header_media_image_overlay_css', 11 );
 
 /**
  * Remove first post from blog as it is already show via recent post template
  */
-function MYTHEME_alter_home( $query ) {
+function THEMENAME_alter_home( $query ) {
 	if ( $query->is_home() && $query->is_main_query() ) {
-		$cats = get_theme_mod( 'MYTHEME_front_page_category' );
+		$cats = get_theme_mod( 'THEMENAME_front_page_category' );
 
 		if ( is_array( $cats ) && ! in_array( '0', $cats ) ) {
 			$query->query_vars['category__in'] = $cats;
@@ -153,15 +153,15 @@ function MYTHEME_alter_home( $query ) {
 
 	}
 }
-add_action( 'pre_get_posts', 'MYTHEME_alter_home' );
+add_action( 'pre_get_posts', 'THEMENAME_alter_home' );
 
-if ( ! function_exists( 'MYTHEME_content_nav' ) ) :
+if ( ! function_exists( 'THEMENAME_content_nav' ) ) :
 	/**
 	 * Display navigation/pagination when applicable
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_content_nav() {
+	function THEMENAME_content_nav() {
 		global $wp_query;
 
 		// Don't print empty markup in archives if there's only one page.
@@ -169,29 +169,29 @@ if ( ! function_exists( 'MYTHEME_content_nav' ) ) :
 			return;
 		}
 
-		$pagination_type = get_theme_mod( 'MYTHEME_pagination_type', 'default' );
+		$pagination_type = get_theme_mod( 'THEMENAME_pagination_type', 'default' );
 
 		if ( ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) || class_exists( 'Catch_Infinite_Scroll' ) ) {
 			// Support infinite scroll plugins.
 			the_posts_navigation();
 		} elseif ( 'numeric' === $pagination_type && function_exists( 'the_posts_pagination' ) ) {
 			the_posts_pagination( array(
-				'prev_text'          => '<span>' . esc_html__( 'Prev', 'MYTHEME' ) . '</span>',
-				'next_text'          => '<span>' . esc_html__( 'Next', 'MYTHEME' ) . '</span>',
-				'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'MYTHEME' ) . ' </span>',
+				'prev_text'          => '<span>' . esc_html__( 'Prev', 'THEMENAME' ) . '</span>',
+				'next_text'          => '<span>' . esc_html__( 'Next', 'THEMENAME' ) . '</span>',
+				'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'THEMENAME' ) . ' </span>',
 			) );
 		} else {
 			the_posts_navigation();
 		}
 	}
-endif; // MYTHEME_content_nav
+endif; // THEMENAME_content_nav
 
 /**
  * Check if a section is enabled or not based on the $value parameter
  * @param  string $value Value of the section that is to be checked
  * @return boolean return true if section is enabled otherwise false
  */
-function MYTHEME_check_section( $value ) {
+function THEMENAME_check_section( $value ) {
 	return ( 'entire-site' == $value  || ( is_front_page() && 'homepage' === $value ) );
 }
 
@@ -204,7 +204,7 @@ function MYTHEME_check_section( $value ) {
  *
  * @since 1.0
  */
-function MYTHEME_get_first_image( $postID, $size, $attr, $src = false ) {
+function THEMENAME_get_first_image( $postID, $size, $attr, $src = false ) {
 	ob_start();
 
 	ob_end_clean();
@@ -228,7 +228,7 @@ function MYTHEME_get_first_image( $postID, $size, $attr, $src = false ) {
 	return false;
 }
 
-function MYTHEME_get_theme_layout() {
+function THEMENAME_get_theme_layout() {
 	$layout = '';
 
 	if ( is_page_template( 'templates/no-sidebar.php' ) ) {
@@ -236,20 +236,20 @@ function MYTHEME_get_theme_layout() {
 	} elseif ( is_page_template( 'templates/right-sidebar.php' ) ) {
 		$layout = 'right-sidebar';
 	} else {
-		$layout = get_theme_mod( 'MYTHEME_default_layout', 'right-sidebar' );
+		$layout = get_theme_mod( 'THEMENAME_default_layout', 'right-sidebar' );
 
 		if ( is_home() || is_archive() ) {
-			$layout = get_theme_mod( 'MYTHEME_homepage_archive_layout', 'right-sidebar' );
+			$layout = get_theme_mod( 'THEMENAME_homepage_archive_layout', 'right-sidebar' );
 		}
 	}
 
 	return $layout;
 }
 
-function MYTHEME_get_sidebar_id() {
+function THEMENAME_get_sidebar_id() {
 	$sidebar = $id = '';
 
-	$layout = MYTHEME_get_theme_layout();
+	$layout = THEMENAME_get_theme_layout();
 
 	if ( 'no-sidebar' === $layout ) {
 		return $sidebar;
@@ -262,7 +262,7 @@ function MYTHEME_get_sidebar_id() {
 	return $sidebar;
 }
 
-if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
+if ( ! function_exists( 'THEMENAME_truncate_phrase' ) ) :
 	/**
 	 * Return a phrase shortened in length to a maximum number of characters.
 	 *
@@ -278,7 +278,7 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 	 *
 	 * @return string Truncated string
 	 */
-	function MYTHEME_truncate_phrase( $text, $max_characters ) {
+	function THEMENAME_truncate_phrase( $text, $max_characters ) {
 
 		$text = trim( $text );
 
@@ -292,9 +292,9 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 
 		return $text;
 	}
-endif; //MYTHEME_truncate_phrase
+endif; //THEMENAME_truncate_phrase
 
-if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
+if ( ! function_exists( 'THEMENAME_get_the_content_limit' ) ) :
 	/**
 	 * Return content stripped down and limited content.
 	 *
@@ -308,7 +308,7 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 	 *
 	 * @return string Limited content.
 	 */
-	function MYTHEME_get_the_content_limit( $max_characters, $more_link_text = '(more...)', $stripteaser = false ) {
+	function THEMENAME_get_the_content_limit( $max_characters, $more_link_text = '(more...)', $stripteaser = false ) {
 
 		$content = get_the_content( '', $stripteaser );
 
@@ -319,7 +319,7 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 		$content = trim( preg_replace( '#<(s(cript|tyle)).*?</\1>#si', '', $content ) );
 
 		// Truncate $content to $max_char
-		$content = MYTHEME_truncate_phrase( $content, $max_characters );
+		$content = THEMENAME_truncate_phrase( $content, $max_characters );
 
 		// More link?
 		if ( $more_link_text ) {
@@ -330,22 +330,22 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 			$link = '';
 		}
 
-		return apply_filters( 'MYTHEME_get_the_content_limit', $output, $content, $link, $max_characters );
+		return apply_filters( 'THEMENAME_get_the_content_limit', $output, $content, $link, $max_characters );
 
 	}
-endif; //MYTHEME_get_the_content_limit
+endif; //THEMENAME_get_the_content_limit
 
-if ( ! function_exists( 'MYTHEME_content_image' ) ) :
+if ( ! function_exists( 'THEMENAME_content_image' ) ) :
 	/**
 	 * Template for Featured Image in Archive Content
 	 *
 	 * To override this in a child theme
-	 * simply fabulous-fluid your own MYTHEME_content_image(), and that function will be used instead.
+	 * simply fabulous-fluid your own THEMENAME_content_image(), and that function will be used instead.
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_content_image() {
-		if ( has_post_thumbnail() && MYTHEME_jetpack_featured_image_display() && is_singular() ) {
+	function THEMENAME_content_image() {
+		if ( has_post_thumbnail() && THEMENAME_jetpack_featured_image_display() && is_singular() ) {
 			global $post, $wp_query;
 
 			// Get Page ID outside Loop.
@@ -355,9 +355,9 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 		 		if ( is_attachment() ) {
 					$parent = $post->post_parent;
 
-					$individual_featured_image = get_post_meta( $parent, 'MYTHEME-featured-image', true );
+					$individual_featured_image = get_post_meta( $parent, 'THEMENAME-featured-image', true );
 				} else {
-					$individual_featured_image = get_post_meta( $page_id, 'MYTHEME-featured-image', true );
+					$individual_featured_image = get_post_meta( $page_id, 'THEMENAME-featured-image', true );
 				}
 			}
 
@@ -377,7 +377,7 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 					$image_size = $individual_featured_image;
 					$class[]    = 'from-metabox';
 				} else {
-					$layout = MYTHEME_get_theme_layout();
+					$layout = THEMENAME_get_theme_layout();
 
 					if ( 'no-sidebar-full-width' === $layout ) {
 						$image_size = 'post-thumbnail';
@@ -395,13 +395,13 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 			}
 		} // End if ().
 	}
-endif; // MYTHEME_content_image.
+endif; // THEMENAME_content_image.
 
-if ( ! function_exists( 'MYTHEME_sections' ) ) :
+if ( ! function_exists( 'THEMENAME_sections' ) ) :
 	/**
-	 * Display Sections on header and footer with respect to the section option set in MYTHEME_sections_sort
+	 * Display Sections on header and footer with respect to the section option set in THEMENAME_sections_sort
 	 */
-	function MYTHEME_sections( $selector = 'header' ) {
+	function THEMENAME_sections( $selector = 'header' ) {
 		get_template_part( 'template-parts/header/header-media' );
 		get_template_part( 'template-parts/slider/display-slider' );
 		get_template_part( 'template-parts/portfolio/display-portfolio' );
@@ -412,14 +412,14 @@ if ( ! function_exists( 'MYTHEME_sections' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_post_thumbnail' ) ) :
+if ( ! function_exists( 'THEMENAME_post_thumbnail' ) ) :
 	/**
 	 * $image_size post thumbnail size
 	 * $type html, html-with-bg, url
 	 * $echo echo true/false
 	 * $no_thumb display no-thumb image or not
 	 */
-	function MYTHEME_post_thumbnail( $image_size = 'post-thumbnail', $type = 'html', $echo = true, $no_thumb = false ) {
+	function THEMENAME_post_thumbnail( $image_size = 'post-thumbnail', $type = 'html', $echo = true, $no_thumb = false ) {
 		$image = $image_url = '';
 
 		if ( has_post_thumbnail() ) {
@@ -442,7 +442,7 @@ if ( ! function_exists( 'MYTHEME_post_thumbnail' ) ) :
 			}
 
 			// Get the first image in page, returns false if there is no image.
-			$first_image_url = MYTHEME_get_first_image( get_the_ID(), $image_size, '', true );
+			$first_image_url = THEMENAME_get_first_image( get_the_ID(), $image_size, '', true );
 
 			// Set value of image as first image if there is an image present in the page.
 			if ( $first_image_url ) {

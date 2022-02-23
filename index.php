@@ -1,19 +1,20 @@
-<?php /* Template Name: Index */
+<?php /* Template Name: Index */ ?>
+<?php get_header(); ?>
 
-get_header(); ?>
+	<main role="main" aria-label="Content">
+		<!-- section -->
+		<section>
 
-<div class="wrapper-header">
-  <header class="site-header">
-    <hgroup class="nameplate">
-        <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-        <?php get_template_part( 'template-parts/navigation/navigation', 'primary' );
+			<h1><?php esc_html_e( 'Latest Posts', 'THEMENAME' ); ?></h1>
 
-        get_template_part( 'template-parts/navigation/primary', 'search' ); ?>
-    </hgroup>
-  </header>
+			<?php get_template_part( 'loop' ); ?>
 
-</div>
+			<?php get_template_part( 'pagination' ); ?>
 
+		</section>
+		<!-- /section -->
+	</main>
 
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

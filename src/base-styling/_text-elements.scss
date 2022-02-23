@@ -16,7 +16,7 @@ p {
 	.lead {
 		font-size: 21px;
 		line-height: .75rem;
-		color: $lead-text-color;
+		color: tint($headings-color, $lead-percentage);
 	}
 }
 
@@ -39,7 +39,7 @@ mark, ins {
 	text-decoration: none;
 }
 cite {
-    font-family: "Georgia", serif;
+    font-family: $accent-font;
     font-style: italic;
     font-weight: bold;
     margin-top: 1rem;

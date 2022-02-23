@@ -20,7 +20,7 @@
 
 <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/assests/scripts/js/html5.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assests/scripts/js/lib/html5.js" type="text/javascript"></script>
 <![endif]-->
 
 <?php wp_head(); ?>
@@ -30,3 +30,7 @@
 <body "<?php body_class();?>">
 
 	<?php do_action( 'wp_body_open' ); ?>
+
+	<div class="wrapper-header">
+
+	</div>

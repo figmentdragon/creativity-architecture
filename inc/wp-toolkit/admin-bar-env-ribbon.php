@@ -10,12 +10,12 @@
 
 function admin_bar_ribbon_style()
 {
-  $show_ribbon_admin_bar = apply_filters('MYTHEME/toolkit/ribbon_admin_bar/enable', get_current_user_id() == 1);
+  $show_ribbon_admin_bar = apply_filters('THEMENAME/toolkit/ribbon_admin_bar/enable', get_current_user_id() == 1);
 
   if ($show_ribbon_admin_bar) { // only show to first admin (e.g. a developer?)
 
     $danger_theme = apply_filters(
-      'MYTHEME/toolkit/ribbon_admin_bar/themes/danger',
+      'THEMENAME/toolkit/ribbon_admin_bar/themes/danger',
       [
         'rgba_1' => '255,255,255,.5',
         'rgba_2' => '255,0,0,.4',
@@ -23,7 +23,7 @@ function admin_bar_ribbon_style()
     );
 
     $warning_theme = apply_filters(
-      'MYTHEME/toolkit/ribbon_admin_bar/themes/warning',
+      'THEMENAME/toolkit/ribbon_admin_bar/themes/warning',
       [
         'rgba_1' => '255,235,59,.45',
         'rgba_2' => '0,0,0,0',
@@ -31,7 +31,7 @@ function admin_bar_ribbon_style()
     );
 
     $notice_theme = apply_filters(
-      'MYTHEME/toolkit/ribbon_admin_bar/themes/notice',
+      'THEMENAME/toolkit/ribbon_admin_bar/themes/notice',
       [
         'rgba_1' => '255,255,255,.125',
         'rgba_2' => '0,0,0,0',
@@ -48,7 +48,7 @@ function admin_bar_ribbon_style()
       $env = getenv('WP_ENV');
     }
 
-    $env = apply_filters('MYTHEME/toolkit/ribbon_admin_bar/env', $env);
+    $env = apply_filters('THEMENAME/toolkit/ribbon_admin_bar/env', $env);
 
     switch ($env) {
       case 'stage':
@@ -63,7 +63,7 @@ function admin_bar_ribbon_style()
         // leave unchanged
     }
 
-    $current_theme = apply_filters('MYTHEME/toolkit/ribbon_admin_bar/themes/current', $current_theme);
+    $current_theme = apply_filters('THEMENAME/toolkit/ribbon_admin_bar/themes/current', $current_theme);
 
     echo <style>#wpadminbar {
     background-image: linear-gradient(315deg, rgba('.$current_theme['rgba_1'].') 0%, rgba('.$current_theme['rgba_1'].') 20%, rgba('.$current_theme['rgba_2'].') 20%, rgba('.$current_theme['rgba_2'].') 40%, rgba('.$current_theme['rgba_1'].') 40%, rgba('.$current_theme['rgba_1'].') 60%, rgba('.$current_theme['rgba_2'].') 60%, rgba('.$current_theme['rgba_2'].') 80%, rgba('.$current_theme['rgba_1'].') 80%, rgba('.$current_theme['rgba_1'].') 100%);

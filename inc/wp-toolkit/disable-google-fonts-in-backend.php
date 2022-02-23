@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: MYTHEME
+ * User: THEMENAME
  * Date: 08/05/17
  * Time: 12:31
  */
 
-function MYTHEME_dequeue_google_fonts()
+function THEMENAME_dequeue_google_fonts()
 {
   wp_dequeue_style('twentyfifteen-fonts');
   wp_dequeue_style('woocommerce_de_admin');
@@ -16,4 +16,4 @@ function MYTHEME_dequeue_google_fonts()
   }
 }
 
-add_action('wp_enqueue_scripts', __NAMESPACE__.'\\MYTHEME_dequeue_google_fonts', 0);
+add_action('wp_enqueue_scripts', __NAMESPACE__.'\\THEMENAME_dequeue_google_fonts', 0);

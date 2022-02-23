@@ -8,7 +8,7 @@
 		<!-- section -->
 		<section>
 
-			<h2><?php esc_html_e( 'Archives', 'MYTHEME' ); ?></h2>
+			<h2><?php esc_html_e( 'Archives', 'THEMENAME' ); ?></h2>
 
 			<?php get_template_part( 'loop' ); ?>
 

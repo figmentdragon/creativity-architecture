@@ -16,7 +16,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 /**
  * Remove junk
  */
-function MYTHEME_head_cleanup() {
+function THEMENAME_head_cleanup() {
   remove_action('set_comment_cookies', 'wp_set_comment_cookies');
   remove_action('wp_head', 'adjacent_posts_rel_link_wp_head');
   remove_action('wp_head', 'feed_links_extra', 3);
@@ -37,24 +37,24 @@ function MYTHEME_head_cleanup() {
   remove_action('wp_print_styles', 'print_emoji_styles');
 
   add_filter('the_generator', '__return_false');
-  add_filter( 'style_loader_src', 'MYTHEME_remove_wp_ver_css_js', 9999 );
-  add_filter( 'script_loader_src', 'MYTHEME_remove_wp_ver_css_js', 9999 );
+  add_filter( 'style_loader_src', 'THEMENAME_remove_wp_ver_css_js', 9999 );
+  add_filter( 'script_loader_src', 'THEMENAME_remove_wp_ver_css_js', 9999 );
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   
-  if (!empty ($GLOBALS['MYTHEME'])) {
+  if (!empty ($GLOBALS['THEMENAME'])) {
     add_action(
       'wp_head',
       function () {
         remove_action(
           current_filter(),
-          [$GLOBALS['MYTHEME'], 'meta_generator_tag']
+          [$GLOBALS['THEMENAME'], 'meta_generator_tag']
         );
       },
       0
     );
   }
 }
-add_action('after_setup_theme', 'MYTHEME_head_cleanup');
+add_action('after_setup_theme', 'THEMENAME_head_cleanup');
 
 
 function rw_title( $title, $sep, $seplocation )

@@ -1,6 +1,6 @@
 <?php
 
-function MYTHEME_custom_admin_columns_projects($columns)
+function THEMENAME_custom_admin_columns_projects($columns)
 {
   $columns = ([
     'cb'        => '<input type="checkbox" />',
@@ -29,4 +29,4 @@ function my_custom_columns($column)
 }
 
 add_action( 'manage_my_project_custom_column',  'my_custom_columns' );
-add_filter( 'manage_edit-page_columns',  'MYTHEME_custom_admin_columns_projects' );
+add_filter( 'manage_edit-page_columns',  'THEMENAME_custom_admin_columns_projects' );

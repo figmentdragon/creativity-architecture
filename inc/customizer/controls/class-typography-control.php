@@ -8,35 +8,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Typography_Customize_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'THEMENAME_Typography_Customize_Control' ) ) {
 	/**
 	 * Create the typography elements control.
 	 *
 	 */
-	class MYTHEME_Typography_Customize_Control extends WP_Customize_Control {
-		public $type = 'MYTHEME-customizer-typography';
+	class THEMENAME_Typography_Customize_Control extends WP_Customize_Control {
+		public $type = 'THEMENAME-customizer-typography';
 
 		public function enqueue() {
-			wp_enqueue_script( 'MYTHEME-typography-selectWoo', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/js/selectWoo.min.js', array( 'customize-controls', 'jquery' ), MYTHEME_VERSION, true );
-			wp_enqueue_style( 'MYTHEME-typography-selectWoo', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/css/selectWoo.min.css', array(), MYTHEME_VERSION );
+			wp_enqueue_script( 'THEMENAME-typography-selectWoo', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/js/selectWoo.min.js', array( 'customize-controls', 'jquery' ), THEMENAME_VERSION, true );
+			wp_enqueue_style( 'THEMENAME-typography-selectWoo', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/css/selectWoo.min.css', array(), THEMENAME_VERSION );
 
-			wp_enqueue_script( 'MYTHEME-typography-customizer', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/js/typography-customizer.js', array( 'customize-controls', 'MYTHEME-typography-selectWoo' ), MYTHEME_VERSION, true );
-			wp_enqueue_style( 'MYTHEME-typography-customizer', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/css/typography-customizer.css', array(), MYTHEME_VERSION );
+			wp_enqueue_script( 'THEMENAME-typography-customizer', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/js/typography-customizer.js', array( 'customize-controls', 'THEMENAME-typography-selectWoo' ), THEMENAME_VERSION, true );
+			wp_enqueue_style( 'THEMENAME-typography-customizer', trailingslashit( get_template_directory_uri() )  . 'inc/customizer/controls/css/typography-customizer.css', array(), THEMENAME_VERSION );
 		}
 
 		public function to_json() {
 			parent::to_json();
 
-			$number_of_fonts = apply_filters( 'MYTHEME_number_of_fonts', 200 );
-			$this->json[ 'default_fonts_title'] = __( 'System fonts', 'MYTHEME' );
-			$this->json[ 'google_fonts_title'] = __( 'Google fonts', 'MYTHEME' );
-			$this->json[ 'google_fonts' ] = apply_filters( 'MYTHEME_typography_customize_list', MYTHEME_get_all_google_fonts( $number_of_fonts ) );
-			$this->json[ 'default_fonts' ] = MYTHEME_typography_default_fonts();
-			$this->json[ 'family_title' ] = esc_html__( 'Font family', 'MYTHEME' );
-			$this->json[ 'weight_title' ] = esc_html__( 'Font weight', 'MYTHEME' );
-			$this->json[ 'transform_title' ] = esc_html__( 'Text transform', 'MYTHEME' );
+			$number_of_fonts = apply_filters( 'THEMENAME_number_of_fonts', 200 );
+			$this->json[ 'default_fonts_title'] = __( 'System fonts', 'THEMENAME' );
+			$this->json[ 'google_fonts_title'] = __( 'Google fonts', 'THEMENAME' );
+			$this->json[ 'google_fonts' ] = apply_filters( 'THEMENAME_typography_customize_list', THEMENAME_get_all_google_fonts( $number_of_fonts ) );
+			$this->json[ 'default_fonts' ] = THEMENAME_typography_default_fonts();
+			$this->json[ 'family_title' ] = esc_html__( 'Font family', 'THEMENAME' );
+			$this->json[ 'weight_title' ] = esc_html__( 'Font weight', 'THEMENAME' );
+			$this->json[ 'transform_title' ] = esc_html__( 'Text transform', 'THEMENAME' );
 			$this->json[ 'category_title' ] = '';
-			$this->json[ 'variant_title' ] = esc_html__( 'Variants', 'MYTHEME' );
+			$this->json[ 'variant_title' ] = esc_html__( 'Variants', 'THEMENAME' );
 
 			foreach ( $this->settings as $setting_key => $setting_id ) {
 				$this->json[ $setting_key ] = array(
@@ -62,7 +62,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Typograp
 				<span class="customize-control-title">{{ data.label }}</span>
 			<# } #>
 			<# if ( 'undefined' !== typeof ( data.family ) ) { #>
-				<div class="MYTHEME-font-family">
+				<div class="THEMENAME-font-family">
 					<label>
 						<select {{{ data.family.link }}} data-category="{{{ data.category.id }}}" data-variants="{{{ data.variant.id }}}" style="width:100%;">
 							<optgroup label="{{ data.default_fonts_title }}">
@@ -97,7 +97,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Typograp
 					data.variant.value = data.variant.default;
 				}
 				#>
-				<div id={{{ data.variant.id }}}" class="MYTHEME-font-variant" data-saved-value="{{ data.variant.value }}">
+				<div id={{{ data.variant.id }}}" class="THEMENAME-font-variant" data-saved-value="{{ data.variant.value }}">
 					<label>
 						<select name="{{{ data.variant.id }}}" multiple class="typography-multi-select" style="width:100%;" {{{ data.variant.link }}}>
 							<# _.each( variants, function( label, choice ) { #>
@@ -113,9 +113,9 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Typograp
 			<# } #>
 
 			<# if ( 'undefined' !== typeof ( data.category ) ) { #>
-				<div class="MYTHEME-font-category">
+				<div class="THEMENAME-font-category">
 					<label>
-							<input name="{{{ data.category.id }}}" type="hidden" {{{ data.category.link }}} value="{{{ data.category.value }}}" class="MYTHEME-hidden-input" />
+							<input name="{{{ data.category.id }}}" type="hidden" {{{ data.category.link }}} value="{{{ data.category.value }}}" class="THEMENAME-hidden-input" />
 						<# if ( '' !== data.category_title ) { #>
 							<p class="description">{{ data.category_title }}</p>
 						<# } #>
@@ -124,7 +124,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Typograp
 			<# } #>
 
 			<# if ( 'undefined' !== typeof ( data.weight ) ) { #>
-				<div class="MYTHEME-font-weight">
+				<div class="THEMENAME-font-weight">
 					<label>
 						<select {{{ data.weight.link }}}>
 
@@ -143,7 +143,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Typograp
 			<# } #>
 
 			<# if ( 'undefined' !== typeof ( data.transform ) ) { #>
-				<div class="MYTHEME-font-transform">
+				<div class="THEMENAME-font-transform">
 					<label>
 						<select {{{ data.transform.link }}}>
 

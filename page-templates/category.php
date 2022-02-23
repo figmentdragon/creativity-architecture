@@ -5,7 +5,7 @@
 		<!-- section -->
 		<section>
 
-			<h2><?php esc_html_e( 'Category: ', 'MYTHEME' ); single_cat_title(); ?></h2>
+			<h1><?php esc_html_e( 'Category: ', 'THEMENAME' ); single_cat_title(); ?></h1>
 
 			<?php get_template_part( 'loop' ); ?>
 

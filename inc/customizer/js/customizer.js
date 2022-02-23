@@ -19,7 +19,7 @@
 	/**
 	 * Real-time preview of the footer site information text.
 	 */
-	wp.customize( 'MYTHEME_footer_text', function( value ) {
+	wp.customize( 'THEMENAME_footer_text', function( value ) {
 		value.bind( function( to ) {
 			$( '.footer-site-info' ).html( to );
 		} );
@@ -28,7 +28,7 @@
 	/**
 	 * Real-time preview of the site title.
 	 */
-	wp.customize( 'MYTHEME_site_title', function( value ) {
+	wp.customize( 'THEMENAME_site_title', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.site-title' ).css( {
@@ -49,7 +49,7 @@
 	/**
 	 * Real-time preview of the site tagline.
 	 */
-	wp.customize( 'MYTHEME_site_tagline', function( value ) {
+	wp.customize( 'THEMENAME_site_tagline', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.site-description' ).css( {
@@ -70,7 +70,7 @@
 	/**
 	 * Real-time preview of the navigation menu background color.
 	 */
-	wp.customize( 'MYTHEME_colors_nav', function( value ) {
+	wp.customize( 'THEMENAME_colors_nav', function( value ) {
 		value.bind( function( to ) {
 			$('#nav-bar, .menu ul.sub-menu, .menu ul.children').css('background-color', to );
 			$('#nav-bar').colourBrightness();
@@ -90,7 +90,7 @@
 	/**
 	 * Real-time preview of the link color.
 	 */
-	wp.customize( 'MYTHEME_colors_links', function( value ) {
+	wp.customize( 'THEMENAME_colors_links', function( value ) {
 		value.bind( function( to ) {
 			$('.container p a, .container li a, .container table a').css('color', to );
 		} );
@@ -99,7 +99,7 @@
 	/**
 	 * Real-time preview of the heading link color.
 	 */
-	wp.customize( 'MYTHEME_colors_heading_links', function( value ) {
+	wp.customize( 'THEMENAME_colors_heading_links', function( value ) {
 		value.bind( function( to ) {
 			$('.container h1 a, .container h2 a, .container h3 a, .container h4 a, .container h5 a, .container h6 a').css('color', to );
 		} );
@@ -108,7 +108,7 @@
 	/**
 	 * Real-time preview of the button background color.
 	 */
-	wp.customize( 'MYTHEME_colors_button', function( value ) {
+	wp.customize( 'THEMENAME_colors_button', function( value ) {
 		value.bind( function( to ) {
 			$('.container button, .button, a.more-link, .reply a, #searchsubmit, #prevLink a, #nextLink a, input#submit').css('background-color', to );
 		} );

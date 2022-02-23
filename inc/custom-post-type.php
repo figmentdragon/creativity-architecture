@@ -1,5 +1,5 @@
 <?php
-/* MYTHEME Custom Post Type Example
+/* THEMENAME Custom Post Type Example
 This page walks you through creating 
 a custom post type and taxonomies. You
 can edit this one or copy the following code 
@@ -11,14 +11,14 @@ and change things if they are concentrated
 in their own file.
 
 Developed by: Eddie Machado
-URL: http://themble.com/MYTHEME/
+URL: http://themble.com/THEMENAME/
 */
 
 // Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'MYTHEME_flush_rewrite_rules' );
+add_action( 'after_switch_theme', 'THEMENAME_flush_rewrite_rules' );
 
 // Flush your rewrite rules
-function MYTHEME_flush_rewrite_rules() {
+function THEMENAME_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
@@ -28,21 +28,21 @@ function custom_post_example() {
 	register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
 		array( 'labels' => array(
-			'name' => __( 'Custom Types', 'MYTHEME' ), /* This is the Title of the Group */
-			'singular_name' => __( 'Custom Post', 'MYTHEME' ), /* This is the individual type */
-			'all_items' => __( 'All Custom Posts', 'MYTHEME' ), /* the all items menu item */
-			'add_new' => __( 'Add New', 'MYTHEME' ), /* The add new menu item */
-			'add_new_item' => __( 'Add New Custom Type', 'MYTHEME' ), /* Add New Display Title */
-			'edit' => __( 'Edit', 'MYTHEME' ), /* Edit Dialog */
-			'edit_item' => __( 'Edit Post Types', 'MYTHEME' ), /* Edit Display Title */
-			'new_item' => __( 'New Post Type', 'MYTHEME' ), /* New Display Title */
-			'view_item' => __( 'View Post Type', 'MYTHEME' ), /* View Display Title */
-			'search_items' => __( 'Search Post Type', 'MYTHEME' ), /* Search Custom Type Title */ 
-			'not_found' =>  __( 'Nothing found in the Database.', 'MYTHEME' ), /* This displays if there are no entries yet */ 
-			'not_found_in_trash' => __( 'Nothing found in Trash', 'MYTHEME' ), /* This displays if there is nothing in the trash */
+			'name' => __( 'Custom Types', 'THEMENAME' ), /* This is the Title of the Group */
+			'singular_name' => __( 'Custom Post', 'THEMENAME' ), /* This is the individual type */
+			'all_items' => __( 'All Custom Posts', 'THEMENAME' ), /* the all items menu item */
+			'add_new' => __( 'Add New', 'THEMENAME' ), /* The add new menu item */
+			'add_new_item' => __( 'Add New Custom Type', 'THEMENAME' ), /* Add New Display Title */
+			'edit' => __( 'Edit', 'THEMENAME' ), /* Edit Dialog */
+			'edit_item' => __( 'Edit Post Types', 'THEMENAME' ), /* Edit Display Title */
+			'new_item' => __( 'New Post Type', 'THEMENAME' ), /* New Display Title */
+			'view_item' => __( 'View Post Type', 'THEMENAME' ), /* View Display Title */
+			'search_items' => __( 'Search Post Type', 'THEMENAME' ), /* Search Custom Type Title */ 
+			'not_found' =>  __( 'Nothing found in the Database.', 'THEMENAME' ), /* This displays if there are no entries yet */ 
+			'not_found_in_trash' => __( 'Nothing found in Trash', 'THEMENAME' ), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
-			'description' => __( 'This is the example custom post type', 'MYTHEME' ), /* Custom Type Description */
+			'description' => __( 'This is the example custom post type', 'THEMENAME' ), /* Custom Type Description */
 			'public' => true,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
@@ -79,16 +79,16 @@ function custom_post_example() {
 		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => true,     /* if this is true, it acts like categories */
 			'labels' => array(
-				'name' => __( 'Custom Categories', 'MYTHEME' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Category', 'MYTHEME' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Categories', 'MYTHEME' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Categories', 'MYTHEME' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Category', 'MYTHEME' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Category:', 'MYTHEME' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Custom Category', 'MYTHEME' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Custom Category', 'MYTHEME' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Custom Category', 'MYTHEME' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Custom Category Name', 'MYTHEME' ) /* name title for taxonomy */
+				'name' => __( 'Custom Categories', 'THEMENAME' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Custom Category', 'THEMENAME' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Custom Categories', 'THEMENAME' ), /* search title for taxomony */
+				'all_items' => __( 'All Custom Categories', 'THEMENAME' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Custom Category', 'THEMENAME' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Custom Category:', 'THEMENAME' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Custom Category', 'THEMENAME' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Custom Category', 'THEMENAME' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Custom Category', 'THEMENAME' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Custom Category Name', 'THEMENAME' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true, 
 			'show_ui' => true,
@@ -102,16 +102,16 @@ function custom_post_example() {
 		array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => false,    /* if this is false, it acts like tags */
 			'labels' => array(
-				'name' => __( 'Custom Tags', 'MYTHEME' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Custom Tag', 'MYTHEME' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Custom Tags', 'MYTHEME' ), /* search title for taxomony */
-				'all_items' => __( 'All Custom Tags', 'MYTHEME' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Tag', 'MYTHEME' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Tag:', 'MYTHEME' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Custom Tag', 'MYTHEME' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Custom Tag', 'MYTHEME' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Custom Tag', 'MYTHEME' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Custom Tag Name', 'MYTHEME' ) /* name title for taxonomy */
+				'name' => __( 'Custom Tags', 'THEMENAME' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Custom Tag', 'THEMENAME' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Custom Tags', 'THEMENAME' ), /* search title for taxomony */
+				'all_items' => __( 'All Custom Tags', 'THEMENAME' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Custom Tag', 'THEMENAME' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Custom Tag:', 'THEMENAME' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Custom Tag', 'THEMENAME' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Custom Tag', 'THEMENAME' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Custom Tag', 'THEMENAME' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Custom Tag Name', 'THEMENAME' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true,
 			'show_ui' => true,

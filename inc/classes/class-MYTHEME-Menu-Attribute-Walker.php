@@ -1,5 +1,5 @@
 <?php
-class MYTHEME_Menu_Attribute_Walker extends Walker_Nav_Menu
+class THEMENAME_Menu_Attribute_Walker extends Walker_Nav_Menu
 {
     function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
     {

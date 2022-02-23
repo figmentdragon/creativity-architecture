@@ -1,10 +1,10 @@
 ( function( api ) {
 
-	api.controlConstructor['MYTHEME-customizer-typography'] = api.Control.extend( {
+	api.controlConstructor['THEMENAME-customizer-typography'] = api.Control.extend( {
 		ready: function() {
 			var control = this;
 
-			control.container.on( 'change', '.MYTHEME-font-family select',
+			control.container.on( 'change', '.THEMENAME-font-family select',
 				function() {
 					var _this = jQuery( this ),
 						_value = _this.val(),
@@ -20,13 +20,13 @@
 					}
 
 					setTimeout( function() {
-						// Send our request to the MYTHEME_get_all_google_fonts_ajax function
+						// Send our request to the THEMENAME_get_all_google_fonts_ajax function
 						var response = jQuery.getJSON({
 							type: 'POST',
 							url: ajaxurl,
 							data: {
-								action: 'MYTHEME_get_all_google_fonts_ajax',
-								MYTHEME_customize_nonce: MYTHEME_customize.nonce
+								action: 'THEMENAME_get_all_google_fonts_ajax',
+								THEMENAME_customize_nonce: THEMENAME_customize.nonce
 							},
 							async: false,
 							dataType: 'json',
@@ -43,19 +43,19 @@
 
 							// Get existing variants if this font is already selected
 							var got_variants = false;
-							jQuery( '.MYTHEME-font-family select' ).not( _this ).each( function( key, select ) {
-								var parent = jQuery( this ).closest( '.MYTHEME-font-family' );
+							jQuery( '.THEMENAME-font-family select' ).not( _this ).each( function( key, select ) {
+								var parent = jQuery( this ).closest( '.THEMENAME-font-family' );
 
 								if ( _value == jQuery( select ).val() && _this.data( 'category' ) !== jQuery( select ).data( 'category' ) ) {
 									if ( ! got_variants ) {
-										updated_variants = jQuery( parent.next( '.MYTHEME-font-variant' ).find( 'select' ) ).val();
+										updated_variants = jQuery( parent.next( '.THEMENAME-font-variant' ).find( 'select' ) ).val();
 										got_variants = true;
 									}
 								}
 							} );
 
 							// We're using a Google font, so show the variants field
-							_this.closest( '.MYTHEME-font-family' ).next( 'div' ).show();
+							_this.closest( '.THEMENAME-font-family' ).next( 'div' ).show();
 
 							// Remove existing variants
 							jQuery( 'select[name="' + _variantsID + '"]' ).find( 'option' ).remove();
@@ -76,7 +76,7 @@
 							control.settings[ 'category' ].set( fonts[ id ].category );
 							jQuery( 'input[name="' + _categoryID + '"' ).val( fonts[ id ].category );
 						} else {
-							_this.closest( '.MYTHEME-font-family' ).next( 'div' ).hide();
+							_this.closest( '.THEMENAME-font-family' ).next( 'div' ).hide();
 							control.settings[ 'category' ].set( '' )
 							control.settings[ 'variant' ].set( '' )
 							jQuery( 'input[name="' + _categoryID + '"' ).val( '' );
@@ -86,16 +86,16 @@
 				}
 			);
 
-			control.container.on( 'change', '.MYTHEME-font-variant select',
+			control.container.on( 'change', '.THEMENAME-font-variant select',
 				function() {
 					var _this = jQuery( this );
 					var variants = _this.val();
 
 					control.settings['variant'].set( variants );
 
-					jQuery( '.MYTHEME-font-variant select' ).each( function( key, value ) {
+					jQuery( '.THEMENAME-font-variant select' ).each( function( key, value ) {
 						var this_control = jQuery( this ).closest( 'li' ).attr( 'id' ).replace( 'customize-control-', '' );
-						var parent = jQuery( this ).closest( '.MYTHEME-font-variant' );
+						var parent = jQuery( this ).closest( '.THEMENAME-font-variant' );
 						var font_val = api.control( this_control ).settings['family'].get();
 
 						if ( font_val == control.settings['family'].get() && _this.attr( 'name' ) !== jQuery( value ).attr( 'name' ) ) {
@@ -106,19 +106,19 @@
 				}
 			);
 
-			control.container.on( 'change', '.MYTHEME-font-category input',
+			control.container.on( 'change', '.THEMENAME-font-category input',
 				function() {
 					control.settings['category'].set( jQuery( this ).val() );
 				}
 			);
 
-			control.container.on( 'change', '.MYTHEME-font-weight select',
+			control.container.on( 'change', '.THEMENAME-font-weight select',
 				function() {
 					control.settings['weight'].set( jQuery( this ).val() );
 				}
 			);
 
-			control.container.on( 'change', '.MYTHEME-font-transform select',
+			control.container.on( 'change', '.THEMENAME-font-transform select',
 				function() {
 					control.settings['transform'].set( jQuery( this ).val() );
 				}
@@ -131,8 +131,8 @@
 
 jQuery( document ).ready( function($) {
 
-	jQuery( '.MYTHEME-font-family select' ).selectWoo();
-	jQuery( '.MYTHEME-font-variant' ).each( function( key, value ) {
+	jQuery( '.THEMENAME-font-family select' ).selectWoo();
+	jQuery( '.THEMENAME-font-variant' ).each( function( key, value ) {
 		var _this = $( this );
 		var value = _this.data( 'saved-value' );
 		if ( value ) {
@@ -141,10 +141,10 @@ jQuery( document ).ready( function($) {
 		_this.find( 'select' ).selectWoo().val( value ).trigger( 'change.select2' );
 	} );
 
-	$( ".MYTHEME-font-family" ).each( function( key, value ) {
+	$( ".THEMENAME-font-family" ).each( function( key, value ) {
 		var _this = $( this );
 		if ( $.inArray( _this.find( 'select' ).val(), typography_defaults ) !== -1 ) {
-			_this.next( '.MYTHEME-font-variant' ).hide();
+			_this.next( '.THEMENAME-font-variant' ).hide();
 		}
 	});
 

@@ -1,4 +1,4 @@
-wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.extend({
+wp.customize.controlConstructor['THEMENAME-range-slider'] = wp.customize.Control.extend({
 
 	ready: function() {
 
@@ -9,11 +9,11 @@ wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.e
 		    thisInput,
 		    inputDefault,
 		    changeAction,
-			controlClass = '.customize-control-MYTHEME-range-slider',
+			controlClass = '.customize-control-THEMENAME-range-slider',
 			footerActions = jQuery( '#customize-footer-actions' );
 		
 		// Set up the sliders
-		jQuery( '.MYTHEME-slider' ).each( function() {
+		jQuery( '.THEMENAME-slider' ).each( function() {
 			var _this = jQuery( this );
 			var _input = _this.closest( 'label' ).find( 'input[type="number"]' );
 			var _text = _input.next( '.value' );
@@ -30,21 +30,21 @@ wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.e
 		});
 		
 		// Update the range value based on the input value
-		jQuery( controlClass + ' .MYTHEME_range_value input[type=number]' ).on( 'input', function() {
+		jQuery( controlClass + ' .THEMENAME_range_value input[type=number]' ).on( 'input', function() {
 			value = jQuery( this ).attr( 'value' );
 			if ( '' == value ) {
 				value = -1;
 			}
-			jQuery( this ).closest( 'label' ).find( '.MYTHEME-slider' ).slider( 'value', parseFloat(value)).change();
+			jQuery( this ).closest( 'label' ).find( '.THEMENAME-slider' ).slider( 'value', parseFloat(value)).change();
 		});
 
 		// Handle the reset button
-		jQuery( controlClass + ' .MYTHEME-reset' ).on( 'click', function() {
+		jQuery( controlClass + ' .THEMENAME-reset' ).on( 'click', function() {
 			var icon = jQuery( this ),
-				visible_area = icon.closest( '.MYTHEME-range-title-area' ).next( '.MYTHEME-range-slider-areas' ).children( 'label:visible' ),
+				visible_area = icon.closest( '.THEMENAME-range-title-area' ).next( '.THEMENAME-range-slider-areas' ).children( 'label:visible' ),
 				input = visible_area.find( 'input[type=number]' ),
-				slider_value = visible_area.find( '.MYTHEME-slider' ),
-				visual_value = visible_area.find( '.MYTHEME_range_value' ),
+				slider_value = visible_area.find( '.THEMENAME-slider' ),
+				visual_value = visible_area.find( '.THEMENAME_range_value' ),
 				reset_value = input.attr( 'data-reset_value' );
 			
 			input.val( reset_value ).change();
@@ -59,17 +59,17 @@ wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.e
 		});
 		
 		// Figure out which device icon to make active on load
-		jQuery( controlClass + ' .MYTHEME-range-slider-control' ).each( function() {
+		jQuery( controlClass + ' .THEMENAME-range-slider-control' ).each( function() {
 			var _this = jQuery( this );
-			_this.find( '.MYTHEME-device-controls' ).children( 'span:first-child' ).addClass( 'selected' );
+			_this.find( '.THEMENAME-device-controls' ).children( 'span:first-child' ).addClass( 'selected' );
 			_this.find( '.range-option-area:first-child' ).show();
 		});
 		
 		// Do stuff when device icons are clicked
-		jQuery( controlClass + ' .MYTHEME-device-controls > span' ).on( 'click', function( event ) {
+		jQuery( controlClass + ' .THEMENAME-device-controls > span' ).on( 'click', function( event ) {
 			var device = jQuery( this ).data( 'option' );
 			
-			jQuery( controlClass + ' .MYTHEME-device-controls span' ).each( function() {
+			jQuery( controlClass + ' .THEMENAME-device-controls span' ).each( function() {
 				var _this = jQuery( this );
 				if ( device == _this.attr( 'data-option' ) ) {
 					_this.addClass( 'selected' );
@@ -77,7 +77,7 @@ wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.e
 				}
 			});
 			
-			jQuery( controlClass + ' .MYTHEME-range-slider-areas label' ).each( function() {
+			jQuery( controlClass + ' .THEMENAME-range-slider-areas label' ).each( function() {
 				var _this = jQuery( this );
 				if ( device == _this.attr( 'data-option' ) ) {
 					_this.show();
@@ -92,7 +92,7 @@ wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.e
 		// Set the selected devices in our control when the Customizer devices are clicked
 		footerActions.find( '.devices button' ).on( 'click', function() {
 			var device = jQuery( this ).data( 'device' );
-			jQuery( controlClass + ' .MYTHEME-device-controls span' ).each( function() {
+			jQuery( controlClass + ' .THEMENAME-device-controls span' ).each( function() {
 				var _this = jQuery( this );
 				if ( device == _this.attr( 'data-option' ) ) {
 					_this.addClass( 'selected' );
@@ -100,7 +100,7 @@ wp.customize.controlConstructor['MYTHEME-range-slider'] = wp.customize.Control.e
 				}
 			});
 			
-			jQuery( controlClass + ' .MYTHEME-range-slider-areas label' ).each( function() {
+			jQuery( controlClass + ' .THEMENAME-range-slider-areas label' ).each( function() {
 				var _this = jQuery( this );
 				if ( device == _this.attr( 'data-option' ) ) {
 					_this.show();

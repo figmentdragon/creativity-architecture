@@ -3,15 +3,15 @@
  * Google Fonts Implementation
  *
  * @package Portfolio
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
 
 /**
  * Register Google Font URLs
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_fonts_url() {
+function THEMENAME_fonts_url() {
 	$fonts_url = '';
 
 	/*
@@ -20,13 +20,13 @@ function MYTHEME_fonts_url() {
 	* into your own language.
 	*/
 
-	$raleway     = _x( 'on', 'Raleway font: on or off', 'MYTHEME' );
-	$roboto      = _x( 'on', 'Roboto font: on or off', 'MYTHEME' );
-	$open_sans   = _x( 'on', 'Open Sans font: on or off', 'MYTHEME' );
-	$montserrat  = _x( 'on', 'Montserrat font: on or off', 'MYTHEME' );
-	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'MYTHEME' );
-	$cabin       = _x( 'on', 'Cabin font: on or off', 'MYTHEME' );
-	$lato        = _x( 'on', 'Lato font: on or off', 'MYTHEME' );
+	$raleway     = _x( 'on', 'Raleway font: on or off', 'THEMENAME' );
+	$roboto      = _x( 'on', 'Roboto font: on or off', 'THEMENAME' );
+	$open_sans   = _x( 'on', 'Open Sans font: on or off', 'THEMENAME' );
+	$montserrat  = _x( 'on', 'Montserrat font: on or off', 'THEMENAME' );
+	$droid_serif = _x( 'on', 'Droid Serif font: on or off', 'THEMENAME' );
+	$cabin       = _x( 'on', 'Cabin font: on or off', 'THEMENAME' );
+	$lato        = _x( 'on', 'Lato font: on or off', 'THEMENAME' );
 
 	if ( 'off' !== $raleway || 'off' !== $roboto || 'off' !== $open_sans || 'off' !== $montserrat || 'off' !== $droid_serif || 'off' !== $cabin || 'off' !== $lato ) {
 
@@ -74,32 +74,32 @@ function MYTHEME_fonts_url() {
 /**
  * Enqueue Google Fonts on Front End
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_scripts_styles() {
-	wp_enqueue_style( 'MYTHEME-fonts', MYTHEME_fonts_url(), array(), '1.0' );
+function THEMENAME_scripts_styles() {
+	wp_enqueue_style( 'THEMENAME-fonts', THEMENAME_fonts_url(), array(), '1.0' );
 }
-add_action( 'wp_enqueue_scripts', 'MYTHEME_scripts_styles' );
+add_action( 'wp_enqueue_scripts', 'THEMENAME_scripts_styles' );
 
 /**
  * Add Google Scripts for use with the editor
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_editor_styles() {
-	add_editor_style( array( 'style.css', MYTHEME_fonts_url() ) );
+function THEMENAME_editor_styles() {
+	add_editor_style( array( 'style.css', THEMENAME_fonts_url() ) );
 }
-add_action( 'after_setup_theme', 'MYTHEME_editor_styles' );
+add_action( 'after_setup_theme', 'THEMENAME_editor_styles' );
 
-if ( ! function_exists( 'MYTHEME_block_editor_styles' ) ) {
+if ( ! function_exists( 'THEMENAME_block_editor_styles' ) ) {
 
 	/**
 	 * Add Google Scripts for use with the block editor
 	 *
 	 * @since Organic Origin 1.0
 	 */
-	function MYTHEME_block_editor_styles() {
-		wp_enqueue_style( 'MYTHEME-fonts', MYTHEME_fonts_url(), array(), '1.0' );
+	function THEMENAME_block_editor_styles() {
+		wp_enqueue_style( 'THEMENAME-fonts', THEMENAME_fonts_url(), array(), '1.0' );
 	}
 }
-add_action( 'enqueue_block_editor_assets', 'MYTHEME_block_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'THEMENAME_block_editor_styles' );

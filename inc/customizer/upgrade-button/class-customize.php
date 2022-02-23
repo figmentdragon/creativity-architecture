@@ -5,7 +5,7 @@
  * @since  1.0.0
  * @access public
  */
-final class MYTHEME_Upgrade_Pro_Customize {
+final class THEMENAME_Upgrade_Pro_Customize {
 
 	/**
 	 * Returns the instance.
@@ -65,17 +65,17 @@ final class MYTHEME_Upgrade_Pro_Customize {
 		require get_parent_theme_file_path( '/inc/customizer/upgrade-button/section-pro.php' );
 
 		// Register custom section types.
-		$manager->register_section_type( 'MYTHEME_Upgrade_Pro_Customize_Section_Pro' );
+		$manager->register_section_type( 'THEMENAME_Upgrade_Pro_Customize_Section_Pro' );
 
 		// Register sections.
 		$manager->add_section(
-			new MYTHEME_Upgrade_Pro_Customize_Section_Pro(
+			new THEMENAME_Upgrade_Pro_Customize_Section_Pro(
 				$manager,
 				'upgrade_button',
 				array(
-					'title'    => esc_html__( 'MYTHEME', 'MYTHEME' ),
-					'pro_text' => esc_html__( 'Upgrade Now', 'MYTHEME' ),
-					'pro_url'  => 'https://catchthemes.com/themes/MYTHEME-pro',
+					'title'    => esc_html__( 'THEMENAME', 'THEMENAME' ),
+					'pro_text' => esc_html__( 'Upgrade Now', 'THEMENAME' ),
+					'pro_url'  => 'https://catchthemes.com/themes/THEMENAME-pro',
 					'priority' => 1
 				)
 			)
@@ -91,11 +91,11 @@ final class MYTHEME_Upgrade_Pro_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'MYTHEME-upgrade-button-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'inc/customizer/upgrade-button/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'THEMENAME-upgrade-button-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'inc/customizer/upgrade-button/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'MYTHEME-upgrade-button-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'inc/customizer/upgrade-button/customize-controls.css' );
+		wp_enqueue_style( 'THEMENAME-upgrade-button-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'inc/customizer/upgrade-button/customize-controls.css' );
 	}
 }
 
 // Doing this customizer thang!
-MYTHEME_Upgrade_Pro_Customize::get_instance();
+THEMENAME_Upgrade_Pro_Customize::get_instance();

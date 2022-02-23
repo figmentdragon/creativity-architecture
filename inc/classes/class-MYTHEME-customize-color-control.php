@@ -3,31 +3,31 @@
  * Customize API: WP_Customize_Color_Control class
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
  * Customize Color Control class.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @see WP_Customize_Control
  */
-class MYTHEME_Customize_Color_Control extends WP_Customize_Color_Control {
+class THEMENAME_Customize_Color_Control extends WP_Customize_Color_Control {
 	/**
 	 * The control type.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @var string
 	 */
-	public $type = 'MYTHEME-color';
+	public $type = 'THEMENAME-color';
 
 	/**
 	 * Colorpicker palette
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @var array
 	 */
@@ -36,7 +36,7 @@ class MYTHEME_Customize_Color_Control extends WP_Customize_Color_Control {
 	/**
 	 * Enqueue control related scripts/styles.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -45,7 +45,7 @@ class MYTHEME_Customize_Color_Control extends WP_Customize_Color_Control {
 
 		// Enqueue the script.
 		wp_enqueue_script(
-			'MYTHEME-control-color',
+			'THEMENAME-control-color',
 			get_theme_file_uri( 'assets/scripts/js/palette-colorpicker.js' ),
 			array( 'customize-controls', 'jquery', 'customize-base', 'wp-color-picker' ),
 			wp_get_theme()->get( 'Version' ),
@@ -56,7 +56,7 @@ class MYTHEME_Customize_Color_Control extends WP_Customize_Color_Control {
 	/**
 	 * Refresh the parameters passed to the JavaScript via JSON.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @uses WP_Customize_Control::to_json()
 	 *

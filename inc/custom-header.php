@@ -13,8 +13,8 @@
 	<?php } // if ( ! empty( $header_image ) ); ?>
 
  *
- * @package MYTHEME
- * @since MYTHEME 1.0
+ * @package THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
@@ -25,26 +25,30 @@
  * Use feature detection of wp_get_theme() which was introduced
  * in WordPress 3.4.
  *
- * @uses MYTHEME_header_style()
- * @uses MYTHEME_admin_header_style()
- * @uses MYTHEME_admin_header_image()
+ * @uses THEMENAME_header_style()
+ * @uses THEMENAME_admin_header_style()
+ * @uses THEMENAME_admin_header_image()
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
-function MYTHEME_custom_header_setup() {
+function THEMENAME_custom_header_setup() {
 	$args = array(
-		'default-image' 			=> '',
+		'default-image' 			=> get_template_directory_uri() . '/assets/images/backgrounds/mobile/7.png',
+		'header-text'					=> true,
 		'default-text-color' 		=> '000',
+		'flex-width' 			=> true,
 		'width' 					=> '1000',
+		'flex-height'			=> true,
 		'height' 					=> '250',
 		'flex-height' 				=> true,
-		'wp-head-callback' 			=> 'MYTHEME_header_style',
+		'random-default'			=> true,
+		'wp-head-callback' 			=> 'THEMENAME_header_style',
 		'admin-head-callback' 		=> 'wp_admin_header_style',
 		'admin-preview-callback' 	=> 'wp_admin_header_image',
 	);
-	
-	$args = apply_filters( 'MYTHEME_custom_header_args', $args );
-	
+
+	$args = apply_filters( 'THEMENAME_custom_header_args', $args );
+
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-header', $args );
 	} else {
@@ -56,7 +60,7 @@ function MYTHEME_custom_header_setup() {
 		add_custom_image_header( $args['wp-head-callback'], $args['admin-head-callback'], $args['admin-preview-callback'] );
 	}
 }
-add_action( 'after_setup_theme', 'MYTHEME_custom_header_setup' );
+add_action( 'after_setup_theme', 'THEMENAME_custom_header_setup' );
 
 /**
  * Shiv for get_custom_header().
@@ -69,8 +73,8 @@ add_action( 'after_setup_theme', 'MYTHEME_custom_header_setup' );
  * @todo Remove this function when WordPress 3.6 is released.
  * @return stdClass All properties represent attributes of the current header image.
  *
- * @package MYTHEME
- * @since MYTHEME 1.0
+ * @package THEMENAME
+ * @since THEMENAME 1.0
  */
 
 if ( ! function_exists( 'get_custom_header' ) ) {
@@ -84,18 +88,13 @@ if ( ! function_exists( 'get_custom_header' ) ) {
 	}
 }
 
-if ( ! function_exists( 'MYTHEME_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the site
- *
- * @see MYTHEME_custom_header_setup().
- *
- * @since MYTHEME 1.0
- */
-function MYTHEME_header_style() {
-	
+if ( ! function_exists( 'THEMENAME_header_style' ) ) :
+	/**
+	 * Style for site title and tagline.
+	 */
+function THEMENAME_header_style() {
 	// If no custom options for text are set, let's bail.
-	// get_header_textcolo() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value.
+	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value.
 	if ( HEADER_TEXTCOLOR == get_header_textcolor() && '' == get_header_image() )
 		return;
 	// If we get this far, we have custom styles. Let's do this.
@@ -110,7 +109,6 @@ function MYTHEME_header_style() {
 			margin: 1.5em auto 0;
 			}
 	<?php endif;
-		
 		// Has the text been hidden?
 		if ( 'blank' == get_header_textcolor() ) :
 	?>
@@ -136,17 +134,17 @@ function MYTHEME_header_style() {
     </style>
     <?php
 }
-endif; // MYTHEME_header_style
+endif; // THEMENAME_header_style
 
-if (! function_exists( 'MYTHEME_admin_header_style' ) ) :
+if (! function_exists( 'THEMENAME_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see MYTHEME_custom_header_setup().
+ * @see THEMENAME_custom_header_setup().
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_admin_header_style() {
+function THEMENAME_admin_header_style() {
 ?>
 	<style type="text/css">
     .appearance_page_custom-header #headimg { /* This is the container for the Custom header preview */
@@ -172,17 +170,17 @@ function MYTHEME_admin_header_style() {
     </style>
 <?php
 }
-endif; // MYTHEME_admin_header_style
+endif; // THEMENAME_admin_header_style
 
-if ( ! function_exists( 'MYTHEME_admin_header_image' ) ) :
+if ( ! function_exists( 'THEMENAME_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see MYTHEME_custom_header_setup().
+ * @see THEMENAME_custom_header_setup().
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_admin_header_image() { ?>
+function THEMENAME_admin_header_image() { ?>
 	<div id="headimg">
     	<?php
 		if ( 'blank' == get_header_textcolor || '' == get_header_textcolor() )
@@ -198,4 +196,4 @@ function MYTHEME_admin_header_image() { ?>
 		<?php endif; ?>
     </div>
 <?php }
-endif; // MYTHEME_admin_header_image
+endif; // THEMENAME_admin_header_image

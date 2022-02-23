@@ -1,4 +1,4 @@
-MYTHEME WP Toolkit
+THEMENAME WP Toolkit
 ===============
 
 @version 0.1.1
@@ -8,9 +8,9 @@ Useful tools & snippets for WP theme development.
 Installation
 ------------
 
-Clone this repository to a subfolder in your theme folder. Copy "MYTHEME_wp_toolkit.example.php" to a location outside of this folder but within your theme folder. Include it i.e. by using `require_once('MYTHEME_wp_toolkit.php')` in your functions.php file. 
+Clone this repository to a subfolder in your theme folder. Copy "THEMENAME_wp_toolkit.example.php" to a location outside of this folder but within your theme folder. Include it i.e. by using `require_once('THEMENAME_wp_toolkit.php')` in your functions.php file. 
 
-Adjust the paths and comment those components from your "my_MYTHEME_wp_toolkit.php" that you don't need.
+Adjust the paths and comment those components from your "my_THEMENAME_wp_toolkit.php" that you don't need.
 
 To include snippets copy the respective .example.php files from snippets/ to a location in your theme folder and change their content according to your needs.
 

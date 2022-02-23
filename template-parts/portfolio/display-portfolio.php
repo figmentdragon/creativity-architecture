@@ -2,37 +2,37 @@
 /**
  * The template for displaying portfolio items
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
-$enable = get_theme_mod( 'MYTHEME_portfolio_option', 'disabled' );
+$enable = get_theme_mod( 'THEMENAME_portfolio_option', 'disabled' );
 
-if ( ! MYTHEME_check_section( $enable ) ) {
+if ( ! THEMENAME_check_section( $enable ) ) {
 	// Bail if portfolio section is disabled.
 	return;
 }
 
-$MYTHEME_title = get_option( 'jetpack_portfolio_title', esc_html__( 'Projects', 'MYTHEME' ) );
+$THEMENAME_title = get_option( 'jetpack_portfolio_title', esc_html__( 'Projects', 'THEMENAME' ) );
 $sub_title    = get_option( 'jetpack_portfolio_content' );
 
 $classes[] = 'layout-three';
 $classes[] = 'jetpack-portfolio';
 $classes[] = 'section';
 
-if( !$MYTHEME_title && !$sub_title ) {
+if( !$THEMENAME_title && !$sub_title ) {
 	$classes[] = 'no-section-heading';
 }
 ?>
 
 <div id="portfolio-content-section" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div class="wrapper">
-		<?php if ( $MYTHEME_title || $sub_title ) : ?>
+		<?php if ( $THEMENAME_title || $sub_title ) : ?>
 			<div class="section-heading-wrapper portfolio-section-headline">
 				
 				<div class="heading-wrapper">
-					<?php if ( $MYTHEME_title ) : ?>
+					<?php if ( $THEMENAME_title ) : ?>
 						<div class="section-title-wrapper">
-							<h2 class="section-title"><?php echo wp_kses_post( $MYTHEME_title ); ?></h2>
+							<h2 class="section-title"><?php echo wp_kses_post( $THEMENAME_title ); ?></h2>
 						</div><!-- .section-title-wrapper -->
 					<?php endif; ?>
 

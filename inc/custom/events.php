@@ -1,36 +1,36 @@
 <?php
 /**
  * The template for displaying the Events
- *MYTHEME_events_bg_image
- * @package MYTHEME
+ *THEMENAME_events_bg_image
+ * @package THEMENAME
  */
 
 
-if ( ! function_exists( 'MYTHEME_events_display' ) ) :
+if ( ! function_exists( 'THEMENAME_events_display' ) ) :
 	/**
 	* Add Events
 	*
-	* @uses action hook MYTHEME_before_content.
+	* @uses action hook THEMENAME_before_content.
 	*
 	* @since 1.0
 	*/
-	function MYTHEME_events_display() {
-		$enable = get_theme_mod( 'MYTHEME_events_option', 'disabled' );
-		$background_image = get_theme_mod( 'MYTHEME_events_bg_image' ); 
+	function THEMENAME_events_display() {
+		$enable = get_theme_mod( 'THEMENAME_events_option', 'disabled' );
+		$background_image = get_theme_mod( 'THEMENAME_events_bg_image' ); 
 
-		if ( MYTHEME_check_section( $enable ) ) {
-			$content_select = get_theme_mod( 'MYTHEME_events_type', 'category' );
+		if ( THEMENAME_check_section( $enable ) ) {
+			$content_select = get_theme_mod( 'THEMENAME_events_type', 'category' );
 			if( 'ect-event' == $content_select ) {
-				$MYTHEME_title    = get_option( 'ect_event_title', esc_html__( 'Events', 'MYTHEME' ) );
-				$MYTHEME_subtitle = get_option( 'ect_event_content' );
+				$THEMENAME_title    = get_option( 'ect_event_title', esc_html__( 'Events', 'THEMENAME' ) );
+				$THEMENAME_subtitle = get_option( 'ect_event_content' );
 			} else {
-				$MYTHEME_title    = get_theme_mod( 'MYTHEME_events_title' );
-				$MYTHEME_subtitle = get_theme_mod( 'MYTHEME_events_subtitle' );
+				$THEMENAME_title    = get_theme_mod( 'THEMENAME_events_title' );
+				$THEMENAME_subtitle = get_theme_mod( 'THEMENAME_events_subtitle' );
 			}
 
 			$classes[] = $content_select;
 
-			if ( ! $MYTHEME_title && ! $MYTHEME_subtitle ) {
+			if ( ! $THEMENAME_title && ! $THEMENAME_subtitle ) {
 				$classes[] = 'no-section-heading';
 			}
 
@@ -45,15 +45,15 @@ if ( ! function_exists( 'MYTHEME_events_display' ) ) :
 			$output ='
 				<div id="events-section" class="events-section section ' . esc_attr( implode( ' ', $classes ) ) . '">
 					<div class="wrapper">';
-						if ( $MYTHEME_title || $MYTHEME_subtitle ) {
+						if ( $THEMENAME_title || $THEMENAME_subtitle ) {
 							$output .='<div class="section-heading-wrapper">';
 
-							if ( $MYTHEME_title ) {
-								$output .='<div class="section-title-wrapper"><h2 class="section-title">' . wp_kses_post( $MYTHEME_title ) . '</h2></div>';
+							if ( $THEMENAME_title ) {
+								$output .='<div class="section-title-wrapper"><h2 class="section-title">' . wp_kses_post( $THEMENAME_title ) . '</h2></div>';
 							}
 							
-							if( $MYTHEME_subtitle ) {
-								$output .='<div class="section-description"><p>' . wp_kses_post( $MYTHEME_subtitle ) . '</p></div>';
+							if( $THEMENAME_subtitle ) {
+								$output .='<div class="section-description"><p>' . wp_kses_post( $THEMENAME_subtitle ) . '</p></div>';
 							}
 
 							$output .='</div><!-- .section-heading-wrap -->';
@@ -63,17 +63,17 @@ if ( ! function_exists( 'MYTHEME_events_display' ) ) :
 						<div class="section-content-wrapper">';
 
 							if ( 'post' === $content_select || 'page' === $content_select || 'category' === $content_select || 'ect-event' === $content_select ) {
-								$output .= MYTHEME_post_page_category_events();
+								$output .= THEMENAME_post_page_category_events();
 							} elseif ( 'custom' === $content_select ) {
-								$output .= MYTHEME_custom_events();
+								$output .= THEMENAME_custom_events();
 							}
 
 
 						$output .='</div><!-- .section-content-wrap -->';
 
-			$target    = get_theme_mod( 'MYTHEME_events_target' ) ? '_blank': '_self';
-			$link      = get_theme_mod( 'MYTHEME_events_link' );
-			$more_text = get_theme_mod( 'MYTHEME_events_text');
+			$target    = get_theme_mod( 'THEMENAME_events_target' ) ? '_blank': '_self';
+			$link      = get_theme_mod( 'THEMENAME_events_link' );
+			$more_text = get_theme_mod( 'THEMENAME_events_text');
 
 			if ( $more_text ) {
 				$output .= '
@@ -89,19 +89,19 @@ if ( ! function_exists( 'MYTHEME_events_display' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
+if ( ! function_exists( 'THEMENAME_post_page_category_events' ) ) :
 	/**
 	 * Display Page/Post/Category Events
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_post_page_category_events() {
+	function THEMENAME_post_page_category_events() {
 		global $post;
 
-		$quantity   = get_theme_mod( 'MYTHEME_events_number', 4 );
+		$quantity   = get_theme_mod( 'THEMENAME_events_number', 4 );
 		$no_of_post = 0; // for number of posts
 		$post_list  = array();// list of valid post/page ids
-		$MYTHEME_type = get_theme_mod( 'MYTHEME_events_type', 'category' );
+		$THEMENAME_type = get_theme_mod( 'THEMENAME_events_type', 'category' );
 		$output     = '';
 
 		$args = array(
@@ -110,16 +110,16 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 		);
 
 		//Get valid number of posts
-		if ( 'post' == $MYTHEME_type || 'page' == $MYTHEME_type || 'ect-event' == $MYTHEME_type ) {
+		if ( 'post' == $THEMENAME_type || 'page' == $THEMENAME_type || 'ect-event' == $THEMENAME_type ) {
 			for( $i = 1; $i <= $quantity; $i++ ){
 				$post_id = '';
 
-				if ( 'post' == $MYTHEME_type ) {
-					$post_id = get_theme_mod( 'MYTHEME_events_post_' . $i );
-				} elseif ( 'page' == $MYTHEME_type ) {
-					$post_id = get_theme_mod( 'MYTHEME_events_page_' . $i ) ;
-				} elseif ( 'ect-event' === $MYTHEME_type ) {
-					$post_id = get_theme_mod( 'MYTHEME_events_cpt_' . $i );
+				if ( 'post' == $THEMENAME_type ) {
+					$post_id = get_theme_mod( 'THEMENAME_events_post_' . $i );
+				} elseif ( 'page' == $THEMENAME_type ) {
+					$post_id = get_theme_mod( 'THEMENAME_events_page_' . $i ) ;
+				} elseif ( 'ect-event' === $THEMENAME_type ) {
+					$post_id = get_theme_mod( 'THEMENAME_events_cpt_' . $i );
 				}
 
 				if ( $post_id ) {
@@ -131,11 +131,11 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 
 			$args['post__in'] = $post_list;
 			$args['orderby'] = 'post__in';
-		} elseif ( 'category' == $MYTHEME_type ) {
+		} elseif ( 'category' == $THEMENAME_type ) {
 			$no_of_post = $quantity;
 
-			if ( get_theme_mod( 'MYTHEME_events_select_category' ) ) {
-				$args['category__in'] = (array) get_theme_mod( 'MYTHEME_events_select_category' );
+			if ( get_theme_mod( 'THEMENAME_events_select_category' ) ) {
+				$args['category__in'] = (array) get_theme_mod( 'THEMENAME_events_select_category' );
 			}
 
 			$args['post_type'] = 'post';
@@ -158,13 +158,13 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 
 			$output .= '<div class="entry-container">';
 
-			if ( get_theme_mod( 'MYTHEME_events_display_date', 1 ) ) {
+			if ( get_theme_mod( 'THEMENAME_events_display_date', 1 ) ) {
 				$event_date_day        = get_the_date( 'j' );
 				$event_date_month      = get_the_date( 'F' );
 				$event_date_year       = get_the_date( 'Y' );
-				$event_date_day_meta   = get_post_meta( $post->ID, 'MYTHEME-event-date-day', true );
-				$event_date_month_meta = get_post_meta( $post->ID, 'MYTHEME-event-date-month', true );
-				$event_date_year_meta  = get_post_meta( $post->ID, 'MYTHEME-event-date-year', true );
+				$event_date_day_meta   = get_post_meta( $post->ID, 'THEMENAME-event-date-day', true );
+				$event_date_month_meta = get_post_meta( $post->ID, 'THEMENAME-event-date-month', true );
+				$event_date_year_meta  = get_post_meta( $post->ID, 'THEMENAME-event-date-year', true );
 
 				if ( '' !== $event_date_day_meta ) {
 					$event_date_day = $event_date_day_meta;
@@ -179,7 +179,7 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 					$event_date_year = $event_date_year_meta;
 				}
 
-				if( 'ect-event' == $MYTHEME_type ) {
+				if( 'ect-event' == $THEMENAME_type ) {
 					$ect_event_date = get_post_meta( get_the_ID(), 'ect_event_date', true );
 					$date_string      = strtotime( $ect_event_date );
 					$event_date_month = gmdate( 'M', $date_string );
@@ -204,7 +204,7 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 
 			$output .= '<div class="entry-header">';
 
-			if ( get_theme_mod( 'MYTHEME_events_enable_title', 1 ) ) {
+			if ( get_theme_mod( 'THEMENAME_events_enable_title', 1 ) ) {
 				$output .= '
 					<h2 class="entry-title">
 						' . the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a>', false ) . '
@@ -213,26 +213,26 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 
 			$output .= '</div>';
 
-			$location_text = get_theme_mod( 'MYTHEME_events_location_text_' . absint( $loop->current_post + 1 ) ); 
-			$time_text 	   = get_theme_mod( 'MYTHEME_events_time_' . absint( $loop->current_post + 1 ) );
+			$location_text = get_theme_mod( 'THEMENAME_events_location_text_' . absint( $loop->current_post + 1 ) ); 
+			$time_text 	   = get_theme_mod( 'THEMENAME_events_time_' . absint( $loop->current_post + 1 ) );
  	
  			if( $location_text ) {
  				$output .= '<div class="location">
- 								' . MYTHEME_get_svg( array( 'icon' => 'location', 'fallback' => true, ) ) . '
+ 								' . THEMENAME_get_svg( array( 'icon' => 'location', 'fallback' => true, ) ) . '
  								' . esc_html( $location_text ) . ' 	
  							</div>';
  			}
 			
  			if( $time_text ) {
 				$output .= '<div class="time">
-								' . MYTHEME_get_svg( array( 'icon' => 'clock-o', 'fallback' => true, ) ) . '
+								' . THEMENAME_get_svg( array( 'icon' => 'clock-o', 'fallback' => true, ) ) . '
 								' . esc_html( $time_text ) . ' 	
 							</div>';
 			}			
 
 			$output .= '</div><!-- .event-title -->';
 
-			$more_text    = get_theme_mod( 'MYTHEME_events_individual_text_' . absint( $loop->current_post + 1 )  );
+			$more_text    = get_theme_mod( 'THEMENAME_events_individual_text_' . absint( $loop->current_post + 1 )  );
 			
 			if ( $more_text ) {
 				$output .= '<div class="event-button"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark" class="button ghost-button"><span>' . esc_html( $more_text ) . '</span></a></div>';
@@ -250,46 +250,46 @@ if ( ! function_exists( 'MYTHEME_post_page_category_events' ) ) :
 
 		return $output;
 	}
-endif; // MYTHEME_post_page_category_events
+endif; // THEMENAME_post_page_category_events
 
 
-if ( ! function_exists( 'MYTHEME_custom_events' ) ) :
+if ( ! function_exists( 'THEMENAME_custom_events' ) ) :
 	/**
 	 * Display Custom Events
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_custom_events() {
-		$quantity = get_theme_mod( 'MYTHEME_events_number', 4 );
+	function THEMENAME_custom_events() {
+		$quantity = get_theme_mod( 'THEMENAME_events_number', 4 );
 		$output   = '';
 
 		for ( $i = 1; $i <= $quantity; $i++ ) {
-			$target = get_theme_mod( 'MYTHEME_events_target_' . $i ) ? '_blank' : '_self';
-			$more_text= get_theme_mod( 'MYTHEME_events_individual_text_' . $i );
-			$link = get_theme_mod( 'MYTHEME_events_link_' . $i, '#' );
+			$target = get_theme_mod( 'THEMENAME_events_target_' . $i ) ? '_blank' : '_self';
+			$more_text= get_theme_mod( 'THEMENAME_events_individual_text_' . $i );
+			$link = get_theme_mod( 'THEMENAME_events_link_' . $i, '#' );
 
 			//support qTranslate plugin
 			if ( function_exists( 'qtrans_convertURL' ) ) {
 				$link = qtrans_convertURL( $link );
 			}
 
-			$MYTHEME_title   = get_theme_mod( 'MYTHEME_events_title_' . $i );
+			$THEMENAME_title   = get_theme_mod( 'THEMENAME_events_title_' . $i );
 
 			if ( class_exists( 'Polylang' ) ) {
-				$MYTHEME_title = pll__( $MYTHEME_title );
+				$THEMENAME_title = pll__( $THEMENAME_title );
 			}
 
-			$date_day = get_theme_mod( 'MYTHEME_events_date_day_' . $i );
+			$date_day = get_theme_mod( 'THEMENAME_events_date_day_' . $i );
 
-			$date_month = get_theme_mod( 'MYTHEME_events_date_month_' . $i );
+			$date_month = get_theme_mod( 'THEMENAME_events_date_month_' . $i );
 
-			$date_year = get_theme_mod( 'MYTHEME_events_date_year_' . $i, '2019' );
+			$date_year = get_theme_mod( 'THEMENAME_events_date_year_' . $i, '2019' );
 
 			if ( $date_month  ) {
 				$date_month = date( 'F', mktime(0, 0, 0, $date_month, 10 ) );
 			}
 
-			$image = get_theme_mod( 'MYTHEME_events_image_' . $i );
+			$image = get_theme_mod( 'THEMENAME_events_image_' . $i );
 
 			$output .= '
 				<article id="event-post-' . esc_html( $i ) . '" class="event-list-item post hentry image">
@@ -310,38 +310,38 @@ if ( ! function_exists( 'MYTHEME_custom_events' ) ) :
 						</a></span></div>';
 					}
 
-					if ( $MYTHEME_title || $more_text ) {
+					if ( $THEMENAME_title || $more_text ) {
 						$output .= '<div class="event-list-description">';
 						$output .= '<div class="event-title-wrap">';
 					}
 
-					if ( $MYTHEME_title ) {
+					if ( $THEMENAME_title ) {
 						$output .= '
 								<div class="event-title">
 									<h2 class="entry-title">
-										' . wp_kses_post( $MYTHEME_title ) . '
+										' . wp_kses_post( $THEMENAME_title ) . '
 									</h2>
 								</div>';
 					}
 
-					$location_text = get_theme_mod( 'MYTHEME_events_location_text_' . $i ); 
-					$time_text 	   = get_theme_mod( 'MYTHEME_events_time_' . $i );
+					$location_text = get_theme_mod( 'THEMENAME_events_location_text_' . $i ); 
+					$time_text 	   = get_theme_mod( 'THEMENAME_events_time_' . $i );
 
 		 			if( $location_text ) {
 		 				$output .= '<div class="location">
-		 								' . MYTHEME_get_svg( array( 'icon' => 'location', 'fallback' => true, ) ) . '
+		 								' . THEMENAME_get_svg( array( 'icon' => 'location', 'fallback' => true, ) ) . '
 		 								' . esc_html( $location_text ) . ' 	
 		 							</div>';
 		 			}
 					
 		 			if( $time_text ) {
 						$output .= '<div class="time">
-										' . MYTHEME_get_svg( array( 'icon' => 'clock-o', 'fallback' => true, ) ) . '
+										' . THEMENAME_get_svg( array( 'icon' => 'clock-o', 'fallback' => true, ) ) . '
 										' . esc_html( $time_text ) . ' 	
 									</div>';
 					}
 
-					if ( $MYTHEME_title ) {
+					if ( $THEMENAME_title ) {
 
 						$output .= '</div><!-- .event-list-description -->';
 					}
@@ -358,4 +358,4 @@ if ( ! function_exists( 'MYTHEME_custom_events' ) ) :
 		}
 		return $output;
 	}
-endif; //MYTHEME_custom_events
+endif; //THEMENAME_custom_events

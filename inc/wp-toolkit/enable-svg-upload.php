@@ -1,11 +1,11 @@
 <?php
 
-if (!function_exists('MYTHEME_mime_types')) {
-  function MYTHEME_mime_types($mimes)
+if (!function_exists('THEMENAME_mime_types')) {
+  function THEMENAME_mime_types($mimes)
   {
     $mimes['svg'] = 'image/svg+xml';
 
     return $mimes;
   }
 }
-add_filter('upload_mimes', 'MYTHEME_mime_types', 99, 1);
+add_filter('upload_mimes', 'THEMENAME_mime_types', 99, 1);

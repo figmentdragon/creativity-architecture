@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages.
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
 									<?php
 									wp_link_pages(
 										array(
-											'before' => '<p><strong>' . esc_html__( 'Pages:', 'MYTHEME' ) . '</strong> ',
+											'before' => '<p><strong>' . esc_html__( 'Pages:', 'THEMENAME' ) . '</strong> ',
 											'after'  => '</p>',
 											'next_or_number' => 'number',
 										)

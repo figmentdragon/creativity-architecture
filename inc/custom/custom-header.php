@@ -1,31 +1,51 @@
 <?php
 /**
- * Sample implementation of the Custom Header feature
+ * Sample implementation of the Custom header feature
+ * http://codex.wordpress.org/Custom_Headers
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php the_header_image_tag(); ?>
+	<?php the_header_image_tag();
+	if ( ! empty( $header_image ) ) { ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+		</a>
+	<?php } // if ( ! empty( $header_image ) ); ?>
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package MYTHEME
+ * @package THEMENAME
+ *
+ *
+ * Setup the WordPress core custom header feature.
+ *
+ * Use add_theme_support to register support for WordPress 3.4+
+ * as well as provide backward compatibility for previous versions.
+ * Use feature detection of wp_get_theme() which was introduced
+ * in WordPress 3.4.
+ *
+ * @uses THEMENAME_header_style()
+ * @uses THEMENAME_admin_header_style()
+ * @uses THEMENAME_admin_header_image()
+ *
+ * @package THEMENAME
  */
 
-if ( ! function_exists( 'MYTHEME_header_style' ) ) :
+if ( ! function_exists( 'THEMENAME_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see MYTHEME_custom_header_setup().
+	 * @see THEMENAME_custom_header_setup().
 	 */
-	function MYTHEME_header_style() {
-		$header_image = MYTHEME_featured_overall_image();
+	function THEMENAME_header_style() {
+		$header_image = THEMENAME_featured_overall_image();
 
 	    if ( 'disable' !== $header_image ) :
 	    	/**
 	    	 * Image Position CSS
 	    	 */
-			$image_position_mobile  = get_theme_mod( 'MYTHEME_header_media_image_position_mobile', 'center center' );
-			$image_position_desktop = get_theme_mod( 'MYTHEME_header_media_image_position_desktop' , 'center center' );
+			$image_position_mobile  = get_theme_mod( 'THEMENAME_header_media_image_position_mobile', 'center center' );
+			$image_position_desktop = get_theme_mod( 'THEMENAME_header_media_image_position_desktop' , 'center center' );
 
 			?>
 	        <style type="text/css" rel="header-image">
@@ -85,16 +105,16 @@ if ( ! function_exists( 'MYTHEME_header_style' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_featured_image' ) ) :
+if ( ! function_exists( 'THEMENAME_featured_image' ) ) :
 	/**
 	 * Template for Featured Header Image from theme options
 	 *
 	 * To override this in a child theme
-	 * simply create your own MYTHEME_featured_image(), and that function will be used instead.
+	 * simply create your own THEMENAME_featured_image(), and that function will be used instead.
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_featured_image() {
+	function THEMENAME_featured_image() {
 		if ( is_header_video_active() && has_header_video() ) {
 			return true;
 		}
@@ -139,133 +159,133 @@ if ( ! function_exists( 'MYTHEME_featured_image' ) ) :
 		} else {
 			return get_header_image();
 		}
-	} // MYTHEME_featured_image
+	} // THEMENAME_featured_image
 endif;
 
-if ( ! function_exists( 'MYTHEME_featured_page_post_image' ) ) :
+if ( ! function_exists( 'THEMENAME_featured_page_post_image' ) ) :
 	/**
 	 * Template for Featured Header Image from Post and Page
 	 *
 	 * To override this in a child theme
-	 * simply create your own MYTHEME_featured_imaage_pagepost(), and that function will be used instead.
+	 * simply create your own THEMENAME_featured_imaage_pagepost(), and that function will be used instead.
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_featured_page_post_image() {
-		$thumbnail = 'MYTHEME-single-post-page';
+	function THEMENAME_featured_page_post_image() {
+		$thumbnail = 'THEMENAME-single-post-page';
 
 		if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 			if ( ! has_post_thumbnail( absint( get_option( 'woocommerce_shop_page_id' ) ) ) ) {
-				return MYTHEME_featured_image();
+				return THEMENAME_featured_image();
 			}
 		} elseif ( is_home() && $blog_id = get_option('page_for_posts') ) {
 			if ( has_post_thumbnail( $blog_id  ) ) {
 		    	return get_the_post_thumbnail_url( $blog_id, $thumbnail );
 			} else {
-				return  MYTHEME_featured_image();
+				return  THEMENAME_featured_image();
 			}
 		} elseif ( ! has_post_thumbnail() ) {
-			return  MYTHEME_featured_image();
+			return  THEMENAME_featured_image();
 		} elseif ( is_home() && is_front_page() ) {
-			return  MYTHEME_featured_image();
+			return  THEMENAME_featured_image();
 		}
 
-		$shop_header = get_theme_mod( 'MYTHEME_shop_page_header_image' );
-		if ( class_exists( 'WooCommerce' ) && is_shop() ) { 
+		$shop_header = get_theme_mod( 'THEMENAME_shop_page_header_image' );
+		if ( class_exists( 'WooCommerce' ) && is_shop() ) {
 			return get_the_post_thumbnail_url( absint( get_option( 'woocommerce_shop_page_id' ) ), $thumbnail );
-		}elseif ( class_exists( 'WooCommerce' ) && is_product () ) { 
-			if (  $shop_header ){ 
+		}elseif ( class_exists( 'WooCommerce' ) && is_product () ) {
+			if (  $shop_header ){
 				return get_the_post_thumbnail_url( get_the_id(), $thumbnail );
 			} else {
-				return MYTHEME_featured_image();
+				return THEMENAME_featured_image();
 			}
-		}else { 
+		}else {
 			return get_the_post_thumbnail_url( get_the_id(), $thumbnail );
 		}
-	} // MYTHEME_featured_page_post_image
+	} // THEMENAME_featured_page_post_image
 endif;
 
-if ( ! function_exists( 'MYTHEME_featured_overall_image' ) ) :
+if ( ! function_exists( 'THEMENAME_featured_overall_image' ) ) :
 	/**
 	 * Template for Featured Header Image from theme options
 	 *
 	 * To override this in a child theme
-	 * simply create your own MYTHEME_featured_pagepost_image(), and that function will be used instead.
+	 * simply create your own THEMENAME_featured_pagepost_image(), and that function will be used instead.
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_featured_overall_image() {
+	function THEMENAME_featured_overall_image() {
 		global $post;
-		$enable = get_theme_mod( 'MYTHEME_header_media_option', 'entire-site' );
+		$enable = get_theme_mod( 'THEMENAME_header_media_option', 'entire-site' );
 
 		// Check Enable/Disable header image in Page/Post Meta box
 		if ( is_singular() ) {
 			//Individual Page/Post Image Setting
-			$individual_featured_image = get_post_meta( $post->ID, 'MYTHEME-single-post-page', true );
+			$individual_featured_image = get_post_meta( $post->ID, 'THEMENAME-single-post-page', true );
 
 			if ( 'disable' === $individual_featured_image || ( 'default' === $individual_featured_image && 'disable' === $enable ) ) {
 				return 'disable' ;
 			} elseif ( 'enable' == $individual_featured_image && 'disable' === $enable ) {
-				return MYTHEME_featured_page_post_image();
+				return THEMENAME_featured_page_post_image();
 			}
 		}
 
 		// Check Homepage
 		if ( 'homepage' === $enable ) {
 			if ( is_front_page() ) {
-				return MYTHEME_featured_image();
+				return THEMENAME_featured_image();
 			}
 		} elseif ( 'exclude-home' === $enable ) {
 			// Check Excluding Homepage
-			if ( ! is_front_page() ) { 
-				return MYTHEME_featured_image();
+			if ( ! is_front_page() ) {
+				return THEMENAME_featured_image();
 			}
 		} elseif ( 'exclude-home-page-post' === $enable ) {
 			if ( is_front_page() ) {
 				return 'disable';
 			} elseif ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
-				return MYTHEME_featured_page_post_image();
+				return THEMENAME_featured_page_post_image();
 			} else {
-				return MYTHEME_featured_image();
+				return THEMENAME_featured_image();
 			}
 		} elseif ( 'entire-site' === $enable ) {
 			// Check Entire Site
-			return MYTHEME_featured_image();
+			return THEMENAME_featured_image();
 		} elseif ( 'entire-site-page-post' === $enable ) {
 			// Check Entire Site (Post/Page)
 			if ( is_singular() || ( class_exists( 'WooCommerce' ) && is_shop() ) || ( is_home() && ! is_front_page() ) ) {
-				return MYTHEME_featured_page_post_image();
+				return THEMENAME_featured_page_post_image();
 			} else {
-				return MYTHEME_featured_image();
+				return THEMENAME_featured_image();
 			}
 		} elseif ( 'pages-posts' === $enable ) {
 			// Check Page/Post
 			if ( is_singular() ) {
-				return MYTHEME_featured_page_post_image();
+				return THEMENAME_featured_page_post_image();
 			}
 		}
-		
+
 		return 'disable';
-	} // MYTHEME_featured_overall_image
+	} // THEMENAME_featured_overall_image
 endif;
 
-if ( ! function_exists( 'MYTHEME_header_media_text' ) ):
+if ( ! function_exists( 'THEMENAME_header_media_text' ) ):
 	/**
 	 * Display Header Media Text
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_header_media_text() {
+	function THEMENAME_header_media_text() {
 
-		if ( ! MYTHEME_has_header_media_text() ) {
+		if ( ! THEMENAME_has_header_media_text() ) {
 			// Bail early if header media text is disabled on front page
 			return get_header_image();
 		}
 
-		$content_alignment = get_theme_mod( 'MYTHEME_header_media_content_alignment', 'content-align-right' );
-		$text_alignment = get_theme_mod( 'MYTHEME_header_media_text_alignment', 'text-align-left' );
+		$content_alignment = get_theme_mod( 'THEMENAME_header_media_content_alignment', 'content-align-right' );
+		$text_alignment = get_theme_mod( 'THEMENAME_header_media_text_alignment', 'text-align-left' );
 
-		$header_media_logo = get_theme_mod( 'MYTHEME_header_media_logo' );
+		$header_media_logo = get_theme_mod( 'THEMENAME_header_media_logo' );
 
 		$classes = array();
 		if( is_front_page() ) {
@@ -277,14 +297,14 @@ if ( ! function_exists( 'MYTHEME_header_media_text' ) ):
 		<div class="custom-header-content sections header-media-section <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 			<div class="custom-header-content-wrapper">
 				<?php
-				$header_media_subtitle = get_theme_mod( 'MYTHEME_header_media_sub_title' );
-				$enable_homepage_logo = get_theme_mod( 'MYTHEME_header_media_logo_option', 'homepage' );
+				$header_media_subtitle = get_theme_mod( 'THEMENAME_header_media_sub_title' );
+				$enable_homepage_logo = get_theme_mod( 'THEMENAME_header_media_logo_option', 'homepage' );
 
 				if( is_front_page() ) : ?>
 					<div class="section-subtitle"> <?php echo esc_html( $header_media_subtitle ); ?> </div>
 				<?php endif;
 
-				if ( MYTHEME_check_section( $enable_homepage_logo ) && $header_media_logo ) {  ?>
+				if ( THEMENAME_check_section( $enable_homepage_logo ) && $header_media_logo ) {  ?>
 					<div class="site-header-logo">
 						<img src="<?php echo esc_url( $header_media_logo ); ?>" title="<?php echo esc_url( home_url( '/' ) ); ?>" />
 					</div><!-- .site-header-logo -->
@@ -297,44 +317,44 @@ if ( ! function_exists( 'MYTHEME_header_media_text' ) ):
 					$tag = 'h1';
 				}
 
-				MYTHEME_header_title( '<div class="section-title-wrapper"><' . $tag . ' class="section-title entry-title">', '</' . $tag . '></div>' );
+				THEMENAME_header_title( '<div class="section-title-wrapper"><' . $tag . ' class="section-title entry-title">', '</' . $tag . '></div>' );
 				?>
 
-				<?php MYTHEME_header_description( '<div class="site-header-text">', '</div>' ); ?>
+				<?php THEMENAME_header_description( '<div class="site-header-text">', '</div>' ); ?>
 
 				<?php if ( is_front_page() ) :
-					$header_media_url_text = get_theme_mod( 'MYTHEME_header_media_url_text' );
-					
-					if ( $header_media_url_text ) : 
-						$header_media_url = get_theme_mod( 'MYTHEME_header_media_url', '#' );
+					$header_media_url_text = get_theme_mod( 'THEMENAME_header_media_url_text' );
+
+					if ( $header_media_url_text ) :
+						$header_media_url = get_theme_mod( 'THEMENAME_header_media_url', '#' );
 						?>
 						<span class="more-link">
-							<a href="<?php echo esc_url( $header_media_url ); ?>" target="<?php echo esc_attr( get_theme_mod( 'MYTHEME_header_url_target' ) ? '_blank' : '_self' ); ?>" class="readmore"><?php echo esc_html( $header_media_url_text ); ?></a>
+							<a href="<?php echo esc_url( $header_media_url ); ?>" target="<?php echo esc_attr( get_theme_mod( 'THEMENAME_header_url_target' ) ? '_blank' : '_self' ); ?>" class="readmore"><?php echo esc_html( $header_media_url_text ); ?></a>
 						</span>
 					<?php endif;
 				endif; ?>
 			</div><!-- .custom-header-content-wrapper -->
 		</div><!-- .custom-header-content -->
 		<?php
-	} // MYTHEME_header_media_text.
+	} // THEMENAME_header_media_text.
 endif;
 
-if ( ! function_exists( 'MYTHEME_has_header_media_text' ) ):
+if ( ! function_exists( 'THEMENAME_has_header_media_text' ) ):
 	/**
 	 * Return Header Media Text fro front page
 	 *
 	 * @since 1.0
 	 */
-	function MYTHEME_has_header_media_text() {
-		$header_image = MYTHEME_featured_overall_image();
+	function THEMENAME_has_header_media_text() {
+		$header_image = THEMENAME_featured_overall_image();
 
 		if ( is_front_page() ) {
-			$header_media_subtitle = get_theme_mod( 'MYTHEME_header_media_sub_title' );
-			$header_media_logo     = get_theme_mod( 'MYTHEME_header_media_logo' );
-			$header_media_title    = get_theme_mod( 'MYTHEME_header_media_title' );
-			$header_media_text     = get_theme_mod( 'MYTHEME_header_media_text' );
-			$header_media_url      = get_theme_mod( 'MYTHEME_header_media_url', '#' );
-			$header_media_url_text = get_theme_mod( 'MYTHEME_header_media_url_text' );
+			$header_media_subtitle = get_theme_mod( 'THEMENAME_header_media_sub_title' );
+			$header_media_logo     = get_theme_mod( 'THEMENAME_header_media_logo' );
+			$header_media_title    = get_theme_mod( 'THEMENAME_header_media_title' );
+			$header_media_text     = get_theme_mod( 'THEMENAME_header_media_text' );
+			$header_media_url      = get_theme_mod( 'THEMENAME_header_media_url', '#' );
+			$header_media_url_text = get_theme_mod( 'THEMENAME_header_media_url_text' );
 
 			if ( ! $header_media_logo && ! $header_media_subtitle && ! $header_media_title && ! $header_media_text && ! $header_media_url && ! $header_media_url_text ) {
 				// Bail early if header media text is disabled
@@ -345,35 +365,35 @@ if ( ! function_exists( 'MYTHEME_has_header_media_text' ) ):
 		}
 
 		return true;
-	} // MYTHEME_has_header_media_text.
+	} // THEMENAME_has_header_media_text.
 endif;
 
-if ( ! function_exists( 'MYTHEME_header_title' ) ) :
+if ( ! function_exists( 'THEMENAME_header_title' ) ) :
 	/**
 	 * Display header media text
 	 */
-	function MYTHEME_header_title( $before = '', $after = '' ) {
+	function THEMENAME_header_title( $before = '', $after = '' ) {
 		if ( is_front_page() ) {
-			$header_media_title = get_theme_mod( 'MYTHEME_header_media_title' );
+			$header_media_title = get_theme_mod( 'THEMENAME_header_media_title' );
 			if ( $header_media_title ) {
 				echo $before . wp_kses_post( $header_media_title ) . $after;
 			}
 		} else if ( is_home() ) {
-			$header_media_title = get_theme_mod( 'MYTHEME_static_page_heading','Archives' );
+			$header_media_title = get_theme_mod( 'THEMENAME_static_page_heading','Archives' );
 			if ( $header_media_title ) {
 				echo $before . wp_kses_post( $header_media_title ) . $after;
 			}
 		} elseif ( is_singular() ) {
 			if ( is_page() ) {
-				the_title( $before, $after );				
+				the_title( $before, $after );
 			} else {
 				the_title( $before, $after );
 			}
 		} elseif ( is_404() ) {
-			echo $before . esc_html__( 'Nothing Found', 'MYTHEME' ) . $after;
+			echo $before . esc_html__( 'Nothing Found', 'THEMENAME' ) . $after;
 		} elseif ( is_search() ) {
 			/* translators: %s: search query. */
-			echo $before . sprintf( esc_html__( 'Search Results for: %s', 'MYTHEME' ), '<span>' . get_search_query() . '</span>' ) . $after;
+			echo $before . sprintf( esc_html__( 'Search Results for: %s', 'THEMENAME' ), '<span>' . get_search_query() . '</span>' ) . $after;
 		} elseif( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
 			echo $before . esc_html( woocommerce_page_title( false ) ) . $after;
 		}
@@ -383,19 +403,19 @@ if ( ! function_exists( 'MYTHEME_header_title' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_header_description' ) ) :
+if ( ! function_exists( 'THEMENAME_header_description' ) ) :
 	/**
 	 * Display header media description
 	 */
-	function MYTHEME_header_description( $before = '', $after = '' ) {
+	function THEMENAME_header_description( $before = '', $after = '' ) {
 		if ( is_front_page() ) {
-			echo $before . '<p>' . wp_kses_post( get_theme_mod( 'MYTHEME_header_media_text' ) ) . '</p>' . $after;
+			echo $before . '<p>' . wp_kses_post( get_theme_mod( 'THEMENAME_header_media_text' ) ) . '</p>' . $after;
 		} elseif ( is_singular() && ! is_page() ) {
 			echo $before . '<div class="entry-header"><div class="entry-meta">';
-				MYTHEME_posted_on();
+				THEMENAME_posted_on();
 			echo '</div><!-- .entry-meta --></div>' . $after;
 		} elseif ( is_404() ) {
-			echo $before . '<p>' . esc_html__( 'Oops! That page can&rsquo;t be found', 'MYTHEME' ) . '</p>' . $after;
+			echo $before . '<p>' . esc_html__( 'Oops! That page can&rsquo;t be found', 'THEMENAME' ) . '</p>' . $after;
 		} else {
 			the_archive_description( $before, $after );
 		}
@@ -405,9 +425,9 @@ endif;
 /**
  * Customize video play/pause button in the custom header.
  */
-function MYTHEME_video_controls( $settings ) {
-	$settings['l10n']['play'] = '<span class="screen-reader-text">' . esc_html__( 'Play background video', 'MYTHEME' ) . '</span>' . MYTHEME_get_svg( array( 'icon' => 'play' ) );
-	$settings['l10n']['pause'] = '<span class="screen-reader-text">' . esc_html__( 'Pause background video', 'MYTHEME' ) . '</span>' . MYTHEME_get_svg( array( 'icon' => 'pause' ) );
+function THEMENAME_video_controls( $settings ) {
+	$settings['l10n']['play'] = '<span class="screen-reader-text">' . esc_html__( 'Play background video', 'THEMENAME' ) . '</span>' . THEMENAME_get_svg( array( 'icon' => 'play' ) );
+	$settings['l10n']['pause'] = '<span class="screen-reader-text">' . esc_html__( 'Pause background video', 'THEMENAME' ) . '</span>' . THEMENAME_get_svg( array( 'icon' => 'pause' ) );
 	return $settings;
 }
-add_filter( 'header_video_settings', 'MYTHEME_video_controls' );
+add_filter( 'header_video_settings', 'THEMENAME_video_controls' );

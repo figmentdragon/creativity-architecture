@@ -1,6 +1,6 @@
 <?php
 
-add_filter('sanitize_file_name', 'MYTHEME_sanitize_filename');
+add_filter('sanitize_file_name', 'THEMENAME_sanitize_filename');
 
 /**
  * Removes/replaces special characters from filenames while uploading in order
@@ -17,7 +17,7 @@ add_filter('sanitize_file_name', 'MYTHEME_sanitize_filename');
  * @return string
  */
 
-function MYTHEME_sanitize_filename($file)
+function THEMENAME_sanitize_filename($file)
 {
   $file_array = explode('.', $file);
   $ext = end($file_array);

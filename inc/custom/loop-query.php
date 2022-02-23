@@ -1,13 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: MYTHEME
+ * User: THEMENAME
  * Date: 14.08.17
  * Time: 13:48
  */
 
 // My function to modify the main query object
-function MYTHEME_loop_query($query)
+function THEMENAME_loop_query($query)
 {
   if ($query->is_home() && $query->is_main_query()) { // Run only on the homepage
     $query->query_vars['cat'] = -2; // Exclude my featured category because I display that elsewhere
@@ -23,11 +23,11 @@ function MYTHEME_loop_query($query)
       $post_type = $query->query_vars['post_type'];
     }
 
-    if (strpos($post_type, 'MYTHEME_projects') !== false) {
+    if (strpos($post_type, 'THEMENAME_projects') !== false) {
       $query->query_vars['post_status'] = 'publish';
     }
   }
 }
 
 // Hook my above function to the pre_get_posts action
-add_action('pre_get_posts', 'MYTHEME_loop_query');
+add_action('pre_get_posts', 'THEMENAME_loop_query');

@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages.
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 get_header(); ?>
@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="container clearfix">
 		<div id="primary" class="content-area">
 					<header class="page-header">
-						<h1 class="page-title"><?php /* translators: %s : search keyword */ printf( esc_html__( 'Search Results for: %s', 'MYTHEME' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+						<h1 class="page-title"><?php /* translators: %s : search keyword */ printf( esc_html__( 'Search Results for: %s', 'THEMENAME' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 					</header><!-- .page-header -->
 					<?php if ( have_posts() ) : ?>
 						<?php /* Start the Loop */ ?>

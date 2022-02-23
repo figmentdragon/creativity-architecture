@@ -23,7 +23,7 @@ $date_format = 'l, F j, Y';
 		
 	   ?>
 		<div class="entry-meta">
-			<span class="entry-author"><?php echo __('By', 'MYTHEME'); ?> <?php the_author_posts_link(); ?> </span>
-			<span class="entry-date"><?php echo __('on', 'MYTHEME'); ?> <a href="<?php echo get_month_link(get_the_time('Y'), get_the_time('m')); ?>"><?php the_time($date_format); ?></a></span>
+			<span class="entry-author"><?php echo __('By', 'THEMENAME'); ?> <?php the_author_posts_link(); ?> </span>
+			<span class="entry-date"><?php echo __('on', 'THEMENAME'); ?> <a href="<?php echo get_month_link(get_the_time('Y'), get_the_time('m')); ?>"><?php the_time($date_format); ?></a></span>
 		</div>
 	</div>

@@ -2,7 +2,7 @@
 /**
  * Theme Options
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 /**
@@ -10,66 +10,66 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function MYTHEME_theme_options( $wp_customize ) {
-	$wp_customize->add_panel( 'MYTHEME_theme_options', array(
-		'title'    => esc_html__( 'Theme Options', 'MYTHEME' ),
+function THEMENAME_theme_options( $wp_customize ) {
+	$wp_customize->add_panel( 'THEMENAME_theme_options', array(
+		'title'    => esc_html__( 'Theme Options', 'THEMENAME' ),
 		'priority' => 130,
 	) );
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_latest_posts_title',
-			'default'           => esc_html__( 'News', 'MYTHEME' ),
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_latest_posts_title',
+			'default'           => esc_html__( 'News', 'THEMENAME' ),
 			'sanitize_callback' => 'wp_kses_post',
-			'label'             => esc_html__( 'Latest Posts Title', 'MYTHEME' ),
-			'section'           => 'MYTHEME_theme_options',
+			'label'             => esc_html__( 'Latest Posts Title', 'THEMENAME' ),
+			'section'           => 'THEMENAME_theme_options',
 		)
 	);
 
 	// Layout Options
-	$wp_customize->add_section( 'MYTHEME_layout_options', array(
-		'title' => esc_html__( 'Layout Options', 'MYTHEME' ),
-		'panel' => 'MYTHEME_theme_options',
+	$wp_customize->add_section( 'THEMENAME_layout_options', array(
+		'title' => esc_html__( 'Layout Options', 'THEMENAME' ),
+		'panel' => 'THEMENAME_theme_options',
 		)
 	);
 
 	/* Default Layout */
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_default_layout',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_default_layout',
 			'default'           => 'right-sidebar',
-			'sanitize_callback' => 'MYTHEME_sanitize_select',
-			'label'             => esc_html__( 'Default Layout', 'MYTHEME' ),
-			'section'           => 'MYTHEME_layout_options',
+			'sanitize_callback' => 'THEMENAME_sanitize_select',
+			'label'             => esc_html__( 'Default Layout', 'THEMENAME' ),
+			'section'           => 'THEMENAME_layout_options',
 			'type'              => 'radio',
 			'choices'           => array(
-				'right-sidebar'         => esc_html__( 'Right Sidebar ( Content, Primary Sidebar )', 'MYTHEME' ),
-				'no-sidebar'            => esc_html__( 'No Sidebar', 'MYTHEME' ),
+				'right-sidebar'         => esc_html__( 'Right Sidebar ( Content, Primary Sidebar )', 'THEMENAME' ),
+				'no-sidebar'            => esc_html__( 'No Sidebar', 'THEMENAME' ),
 			),
 		)
 	);
 
 	/* Homepage/Archive Layout */
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_homepage_archive_layout',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_homepage_archive_layout',
 			'default'           => 'right-sidebar',
-			'sanitize_callback' => 'MYTHEME_sanitize_select',
-			'label'             => esc_html__( 'Homepage/Archive Layout', 'MYTHEME' ),
-			'section'           => 'MYTHEME_layout_options',
+			'sanitize_callback' => 'THEMENAME_sanitize_select',
+			'label'             => esc_html__( 'Homepage/Archive Layout', 'THEMENAME' ),
+			'section'           => 'THEMENAME_layout_options',
 			'type'              => 'radio',
 			'choices'           => array(
-				'right-sidebar'         => esc_html__( 'Right Sidebar ( Content, Primary Sidebar )', 'MYTHEME' ),
-				'no-sidebar'            => esc_html__( 'No Sidebar', 'MYTHEME' ),
+				'right-sidebar'         => esc_html__( 'Right Sidebar ( Content, Primary Sidebar )', 'THEMENAME' ),
+				'no-sidebar'            => esc_html__( 'No Sidebar', 'THEMENAME' ),
 			),
 		)
 	);
 
 	// Excerpt Options.
-	$wp_customize->add_section( 'MYTHEME_excerpt_options', array(
-		'panel'     => 'MYTHEME_theme_options',
-		'title'     => esc_html__( 'Excerpt Options', 'MYTHEME' ),
+	$wp_customize->add_section( 'THEMENAME_excerpt_options', array(
+		'panel'     => 'THEMENAME_theme_options',
+		'title'     => esc_html__( 'Excerpt Options', 'THEMENAME' ),
 	) );
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_excerpt_length',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_excerpt_length',
 			'default'           => '20',
 			'sanitize_callback' => 'absint',
 			'input_attrs' => array(
@@ -78,67 +78,67 @@ function MYTHEME_theme_options( $wp_customize ) {
 				'step'  => 5,
 				'style' => 'width: 60px;',
 			),
-			'label'    => esc_html__( 'Excerpt Length (words)', 'MYTHEME' ),
-			'section'  => 'MYTHEME_excerpt_options',
+			'label'    => esc_html__( 'Excerpt Length (words)', 'THEMENAME' ),
+			'section'  => 'THEMENAME_excerpt_options',
 			'type'     => 'number',
 		)
 	);
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_excerpt_more_text',
-			'default'           => esc_html__( 'Continue reading', 'MYTHEME' ),
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_excerpt_more_text',
+			'default'           => esc_html__( 'Continue reading', 'THEMENAME' ),
 			'sanitize_callback' => 'sanitize_text_field',
-			'label'             => esc_html__( 'Read More Text', 'MYTHEME' ),
-			'section'           => 'MYTHEME_excerpt_options',
+			'label'             => esc_html__( 'Read More Text', 'THEMENAME' ),
+			'section'           => 'THEMENAME_excerpt_options',
 			'type'              => 'text',
 		)
 	);
 
 	// Excerpt Options.
-	$wp_customize->add_section( 'MYTHEME_search_options', array(
-		'panel'     => 'MYTHEME_theme_options',
-		'title'     => esc_html__( 'Search Options', 'MYTHEME' ),
+	$wp_customize->add_section( 'THEMENAME_search_options', array(
+		'panel'     => 'THEMENAME_theme_options',
+		'title'     => esc_html__( 'Search Options', 'THEMENAME' ),
 	) );
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_search_text',
-			'default'           => esc_html__( 'Search', 'MYTHEME' ),
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_search_text',
+			'default'           => esc_html__( 'Search', 'THEMENAME' ),
 			'sanitize_callback' => 'sanitize_text_field',
-			'label'             => esc_html__( 'Search Text', 'MYTHEME' ),
-			'section'           => 'MYTHEME_search_options',
+			'label'             => esc_html__( 'Search Text', 'THEMENAME' ),
+			'section'           => 'THEMENAME_search_options',
 			'type'              => 'text',
 		)
 	);
 
 	// Homepage / Frontpage Options.
-	$wp_customize->add_section( 'MYTHEME_homepage_options', array(
-		'description' => esc_html__( 'Only posts that belong to the categories selected here will be displayed on the front page', 'MYTHEME' ),
-		'panel'       => 'MYTHEME_theme_options',
-		'title'       => esc_html__( 'Homepage / Frontpage Options', 'MYTHEME' ),
+	$wp_customize->add_section( 'THEMENAME_homepage_options', array(
+		'description' => esc_html__( 'Only posts that belong to the categories selected here will be displayed on the front page', 'THEMENAME' ),
+		'panel'       => 'THEMENAME_theme_options',
+		'title'       => esc_html__( 'Homepage / Frontpage Options', 'THEMENAME' ),
 	) );
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_static_page_heading',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_static_page_heading',
 			'sanitize_callback' => 'sanitize_text_field',
-			'active_callback'	=> 'MYTHEME_is_static_page_enabled',
-			'default'           => esc_html__( 'Archives', 'MYTHEME' ),
-			'label'             => esc_html__( 'Posts Page Header Text', 'MYTHEME' ),
-			'section'           => 'MYTHEME_homepage_options',
+			'active_callback'	=> 'THEMENAME_is_static_page_enabled',
+			'default'           => esc_html__( 'Archives', 'THEMENAME' ),
+			'label'             => esc_html__( 'Posts Page Header Text', 'THEMENAME' ),
+			'section'           => 'THEMENAME_homepage_options',
 		)
 	);
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_front_page_category',
-			'sanitize_callback' => 'MYTHEME_sanitize_category_list',
-			'custom_control'    => 'MYTHEME_Multi_Cat',
-			'label'             => esc_html__( 'Categories', 'MYTHEME' ),
-			'section'           => 'MYTHEME_homepage_options',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_front_page_category',
+			'sanitize_callback' => 'THEMENAME_sanitize_category_list',
+			'custom_control'    => 'THEMENAME_Multi_Cat',
+			'label'             => esc_html__( 'Categories', 'THEMENAME' ),
+			'section'           => 'THEMENAME_homepage_options',
 			'type'              => 'dropdown-categories',
 		)
 	);
 
 	// Pagination Options.
-	$pagination_type = get_theme_mod( 'MYTHEME_pagination_type', 'default' );
+	$pagination_type = get_theme_mod( 'THEMENAME_pagination_type', 'default' );
 
 	$nav_desc = '';
 
@@ -147,7 +147,7 @@ function MYTHEME_theme_options( $wp_customize ) {
 	*/
 	$nav_desc = sprintf(
 		wp_kses(
-			__( 'For infinite scrolling, use %1$sCatch Infinite Scroll Plugin%2$s with Infinite Scroll module Enabled.', 'MYTHEME' ),
+			__( 'For infinite scrolling, use %1$sCatch Infinite Scroll Plugin%2$s with Infinite Scroll module Enabled.', 'THEMENAME' ),
 			array(
 				'a' => array(
 					'href' => array(),
@@ -160,29 +160,29 @@ function MYTHEME_theme_options( $wp_customize ) {
 		'</a>'
 	);
 
-	$wp_customize->add_section( 'MYTHEME_pagination_options', array(
+	$wp_customize->add_section( 'THEMENAME_pagination_options', array(
 		'description'     => $nav_desc,
-		'panel'           => 'MYTHEME_theme_options',
-		'title'           => esc_html__( 'Pagination Options', 'MYTHEME' ),
-		'active_callback' => 'MYTHEME_scroll_plugins_inactive'
+		'panel'           => 'THEMENAME_theme_options',
+		'title'           => esc_html__( 'Pagination Options', 'THEMENAME' ),
+		'active_callback' => 'THEMENAME_scroll_plugins_inactive'
 	) );
 
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_pagination_type',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_pagination_type',
 			'default'           => 'default',
-			'sanitize_callback' => 'MYTHEME_sanitize_select',
-			'choices'           => MYTHEME_get_pagination_types(),
-			'label'             => esc_html__( 'Pagination type', 'MYTHEME' ),
-			'section'           => 'MYTHEME_pagination_options',
+			'sanitize_callback' => 'THEMENAME_sanitize_select',
+			'choices'           => THEMENAME_get_pagination_types(),
+			'label'             => esc_html__( 'Pagination type', 'THEMENAME' ),
+			'section'           => 'THEMENAME_pagination_options',
 			'type'              => 'select',
 		)
 	);
 
-	// For WooCommerce layout: MYTHEME_woocommerce_layout, check woocommerce-options.php.
+	// For WooCommerce layout: THEMENAME_woocommerce_layout, check woocommerce-options.php.
 	/* Scrollup Options */
-	$wp_customize->add_section( 'MYTHEME_scrollup', array(
-		'panel'    => 'MYTHEME_theme_options',
-		'title'    => esc_html__( 'Scrollup Options', 'MYTHEME' ),
+	$wp_customize->add_section( 'THEMENAME_scrollup', array(
+		'panel'    => 'THEMENAME_theme_options',
+		'title'    => esc_html__( 'Scrollup Options', 'THEMENAME' ),
 	) );
 
 	$action = 'install-plugin';
@@ -200,32 +200,32 @@ function MYTHEME_theme_options( $wp_customize ) {
 	);
 
 	// Add note to Scroll up Section
-    MYTHEME_register_option( $wp_customize, array(
-            'name'              => 'MYTHEME_to_top_note',
+    THEMENAME_register_option( $wp_customize, array(
+            'name'              => 'THEMENAME_to_top_note',
             'sanitize_callback' => 'sanitize_text_field',
-            'custom_control'    => 'MYTHEME_Note_Control',
-            'active_callback'   => 'MYTHEME_is_to_top_inactive',
+            'custom_control'    => 'THEMENAME_Note_Control',
+            'active_callback'   => 'THEMENAME_is_to_top_inactive',
             /* translators: 1: <a>/link tag start, 2: </a>/link tag close. */
-            'label'             => sprintf( esc_html__( 'For Scroll Up, install %1$sTo Top%2$s Plugin', 'MYTHEME' ),
+            'label'             => sprintf( esc_html__( 'For Scroll Up, install %1$sTo Top%2$s Plugin', 'THEMENAME' ),
                 '<a target="_blank" href="' . esc_url( $install_url ) . '">',
                 '</a>'
 
             ),
-           'section'            => 'MYTHEME_scrollup',
+           'section'            => 'THEMENAME_scrollup',
             'type'              => 'description',
             'priority'          => 1,
         )
 	);
 }
-add_action( 'customize_register', 'MYTHEME_theme_options' );
+add_action( 'customize_register', 'THEMENAME_theme_options' );
 
 
 /**
- * Returns an array of avaliable fonts registered for MYTHEME
+ * Returns an array of avaliable fonts registered for THEMENAME
  *
  * @since 1.0
  */
-function MYTHEME_avaliable_fonts() {
+function THEMENAME_avaliable_fonts() {
 	$avaliable_fonts = array(
 		'arial-black' => array(
 			'value' => 'arial-black',
@@ -465,18 +465,18 @@ function MYTHEME_avaliable_fonts() {
 		),
 	);
 
-	return apply_filters( 'MYTHEME_avaliable_fonts', $avaliable_fonts );
+	return apply_filters( 'THEMENAME_avaliable_fonts', $avaliable_fonts );
 }
 
 /** Active Callback Functions */
 
-if ( ! function_exists( 'MYTHEME_scroll_plugins_inactive' ) ) :
+if ( ! function_exists( 'THEMENAME_scroll_plugins_inactive' ) ) :
 	/**
 	* Return true if infinite scroll functionality exists
 	*
 	* @since 1.0
 	*/
-	function MYTHEME_scroll_plugins_inactive( $control ) {
+	function THEMENAME_scroll_plugins_inactive( $control ) {
 		if ( ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) || class_exists( 'Catch_Infinite_Scroll' ) ) {
 			// Support infinite scroll plugins.
 			return false;
@@ -486,13 +486,13 @@ if ( ! function_exists( 'MYTHEME_scroll_plugins_inactive' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_is_static_page_enabled' ) ) :
+if ( ! function_exists( 'THEMENAME_is_static_page_enabled' ) ) :
 	/**
 	* Return true if A Static Page is enabled
 	*
 	* @since 1.0
 	*/
-	function MYTHEME_is_static_page_enabled( $control ) {
+	function THEMENAME_is_static_page_enabled( $control ) {
 		$enable = $control->manager->get_setting( 'show_on_front' )->value();
 		if ( 'page' === $enable ) {
 			return true;
@@ -501,13 +501,13 @@ if ( ! function_exists( 'MYTHEME_is_static_page_enabled' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_is_to_top_inactive' ) ) :
+if ( ! function_exists( 'THEMENAME_is_to_top_inactive' ) ) :
     /**
     * Return true if featured_content is active
     *
     * @since 1.0
     */
-    function MYTHEME_is_to_top_inactive( $control ) {
+    function THEMENAME_is_to_top_inactive( $control ) {
         return ! ( class_exists( 'To_Top' ) );
     }
 endif;

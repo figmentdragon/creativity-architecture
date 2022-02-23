@@ -8,20 +8,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Customize_Misc_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'THEMENAME_Customize_Misc_Control' ) ) {
 	/**
 	 * Create our in-section upsell controls.
 	 * Escape your URL in the Customizer using esc_url().
 	 *
 	 */
-	class MYTHEME_Customize_Misc_Control extends WP_Customize_Control {
+	class THEMENAME_Customize_Misc_Control extends WP_Customize_Control {
 		public $description = '';
 		public $url = '';
 		public $type = 'addon';
 		public $label = '';
 
 		public function enqueue() {
-			wp_enqueue_style( 'MYTHEME-customizer-controls-css', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/css/upsell-customizer.css', array(), MYTHEME_VERSION );
+			wp_enqueue_style( 'THEMENAME-customizer-controls-css', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/css/upsell-customizer.css', array(), THEMENAME_VERSION );
 		}
 
 		public function to_json() {

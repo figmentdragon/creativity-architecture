@@ -1,4 +1,6 @@
-<?php /* Template Name: Demo Page Template */ get_header(); ?>
+<?php /* Template Name: Demo Page Template */
+
+get_header(); ?>
 
 	<main role="main" aria-label="Content">
 		<!-- section -->
@@ -29,7 +31,7 @@
 			<!-- article -->
 			<article>
 
-				<h2><?php esc_html_e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+				<h2><?php esc_html_e( 'Sorry, nothing to display.', 'THEMENAME' ); ?></h2>
 
 			</article>
 			<!-- /article -->

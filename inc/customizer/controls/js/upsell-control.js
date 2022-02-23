@@ -1,5 +1,5 @@
 ( function( $, api ) {
-	api.sectionConstructor['MYTHEME-upsell-section'] = api.Section.extend( {
+	api.sectionConstructor['THEMENAME-upsell-section'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},

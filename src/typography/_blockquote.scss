@@ -1,7 +1,7 @@
 // Blockquotes
 $quote-font-family: $accent-font;
 
-$blockquote-margin-y:         $spacer !default;
+$blockquote-margin-y:         $horizontal-spacer !default;
 $blockquote-font-size:        $font-size-base * 1.25 !default;
 $blockquote-border-color:     shade($quote, $border-percentage);
 
@@ -11,8 +11,8 @@ $blockquote-footer-font-size: $small-font-size !default;
 
 .blockquote {
   font-family: $accent-font;
-  padding: divide($base-value, 2) $base-value;
-  margin-bottom: $base-value 0;
+  padding: divide($offset-x, 2) $offset-y;
+  margin-bottom: $blockquote-margin-y;
   font-size: $blockquote-font-size;
   border-left: .25 solid $blockquote-border-color;
   p:last-child{
@@ -48,7 +48,7 @@ $blockquote-footer-font-size: $small-font-size !default;
 // Opposite alignment of blockquote
 .blockquote-reverse {
   font-family: $accent-font;
-  padding-right: $offset;
+  padding-right: $offset-y;
   padding-left: 0;
   text-align: right;
   border-right: .25 solid $blockquote-border-color;

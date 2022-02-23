@@ -2,28 +2,28 @@
 /**
  * Adds Theme page
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
-function MYTHEME_about_admin_style( $hook ) {
-	if ( 'appearance_page_MYTHEME-about' === $hook ) {
-		wp_enqueue_style( 'MYTHEME-about-admin', get_theme_file_uri( 'assets/css/about-admin.css' ), null, '1.0' );
+function THEMENAME_about_admin_style( $hook ) {
+	if ( 'appearance_page_THEMENAME-about' === $hook ) {
+		wp_enqueue_style( 'THEMENAME-about-admin', get_theme_file_uri( 'assets/css/about-admin.css' ), null, '1.0' );
 	}
 }
-add_action( 'admin_enqueue_scripts', 'MYTHEME_about_admin_style' );
+add_action( 'admin_enqueue_scripts', 'THEMENAME_about_admin_style' );
 
 /**
  * Add theme page
  */
-function MYTHEME_menu() {
-	add_theme_page( esc_html__( 'About Theme', 'MYTHEME' ), esc_html__( 'About Theme', 'MYTHEME' ), 'edit_theme_options', 'MYTHEME-about', 'MYTHEME_about_display' );
+function THEMENAME_menu() {
+	add_theme_page( esc_html__( 'About Theme', 'THEMENAME' ), esc_html__( 'About Theme', 'THEMENAME' ), 'edit_theme_options', 'THEMENAME-about', 'THEMENAME_about_display' );
 }
-add_action( 'admin_menu', 'MYTHEME_menu' );
+add_action( 'admin_menu', 'THEMENAME_menu' );
 
 /**
  * Display About page
  */
-function MYTHEME_about_display() {
+function THEMENAME_about_display() {
 	$theme = wp_get_theme();
 	?>
 	<div class="wrap about-wrap full-width-layout">
@@ -42,11 +42,11 @@ function MYTHEME_about_display() {
 					echo esc_html( $description . '.' );
 				?></p>
 				<p class="actions">
-					<a href="<?php echo esc_url( 'https://catchthemes.com/themes/MYTHEME-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'MYTHEME' ); ?></a>
+					<a href="<?php echo esc_url( 'https://catchthemes.com/themes/THEMENAME-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'THEMENAME' ); ?></a>
 
-					<a href="https://catchthemes.com/themes/MYTHEME-pro/#theme-instructions" class="button button-primary" target="_blank"><?php esc_html_e( 'Theme Instructions', 'MYTHEME' ); ?></a>
+					<a href="https://catchthemes.com/themes/THEMENAME-pro/#theme-instructions" class="button button-primary" target="_blank"><?php esc_html_e( 'Theme Instructions', 'THEMENAME' ); ?></a>
 
-					<a href="https://catchthemes.com/demo/MYTHEME" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Demo', 'MYTHEME' ); ?></a>
+					<a href="https://catchthemes.com/demo/THEMENAME" class="button button-secondary" target="_blank"><?php esc_html_e( 'View Demo', 'THEMENAME' ); ?></a>
 				</p>
 			</div>
 
@@ -56,35 +56,35 @@ function MYTHEME_about_display() {
 
 		</div>
 
-		<nav class="nav-tab-wrapper wp-clearfix" aria-label="<?php esc_attr_e( 'Secondary menu', 'MYTHEME' ); ?>">
-			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'MYTHEME-about' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['page'] ) && 'MYTHEME-about' === $_GET['page'] && ! isset( $_GET['tab'] ) ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'About', 'MYTHEME' ); ?></a>
+		<nav class="nav-tab-wrapper wp-clearfix" aria-label="<?php esc_attr_e( 'Secondary menu', 'THEMENAME' ); ?>">
+			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'THEMENAME-about' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['page'] ) && 'THEMENAME-about' === $_GET['page'] && ! isset( $_GET['tab'] ) ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'About', 'THEMENAME' ); ?></a>
 
-			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'MYTHEME-about', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['tab'] ) && 'free_vs_pro' === $_GET['tab'] ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'Free Vs Pro', 'MYTHEME' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'THEMENAME-about', 'tab' => 'free_vs_pro' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['tab'] ) && 'free_vs_pro' === $_GET['tab'] ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'Free Vs Pro', 'THEMENAME' ); ?></a>
 
-			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'MYTHEME-about', 'tab' => 'changelog' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['tab'] ) && 'changelog' === $_GET['tab'] ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'Changelog', 'MYTHEME' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'THEMENAME-about', 'tab' => 'changelog' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['tab'] ) && 'changelog' === $_GET['tab'] ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'Changelog', 'THEMENAME' ); ?></a>
 
-			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'MYTHEME-about', 'tab' => 'import_demo' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['tab'] ) && 'import_demo' === $_GET['tab'] ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'Import Demo', 'MYTHEME' ); ?></a>
+			<a href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'THEMENAME-about', 'tab' => 'import_demo' ), 'themes.php' ) ) ); ?>" class="nav-tab<?php echo ( isset( $_GET['tab'] ) && 'import_demo' === $_GET['tab'] ) ?' nav-tab-active' : ''; ?>"><?php esc_html_e( 'Import Demo', 'THEMENAME' ); ?></a>
 		</nav>
 
 		<?php
-			MYTHEME_main_screen();
+			THEMENAME_main_screen();
 
-			MYTHEME_free_vs_pro_screen();
+			THEMENAME_free_vs_pro_screen();
 
-			MYTHEME_changelog_screen();
+			THEMENAME_changelog_screen();
 
-			MYTHEME_import_demo();
+			THEMENAME_import_demo();
 
-			do_action( 'MYTHEME_about_after' );
+			do_action( 'THEMENAME_about_after' );
 		?>
 
 		<div class="return-to-dashboard">
 			<?php if ( current_user_can( 'update_core' ) && isset( $_GET['updated'] ) ) : ?>
 				<a href="<?php echo esc_url( self_admin_url( 'update-core.php' ) ); ?>">
-					<?php is_multisite() ? esc_html_e( 'Return to Updates', 'MYTHEME' ) : esc_html_e( 'Return to Dashboard &rarr; Updates', 'MYTHEME' ); ?>
+					<?php is_multisite() ? esc_html_e( 'Return to Updates', 'THEMENAME' ) : esc_html_e( 'Return to Dashboard &rarr; Updates', 'THEMENAME' ); ?>
 				</a> |
 			<?php endif; ?>
-			<a href="<?php echo esc_url( self_admin_url() ); ?>"><?php is_blog_admin() ? esc_html_e( 'Go to Dashboard &rarr; Home', 'MYTHEME' ) : esc_html_e( 'Go to Dashboard', 'MYTHEME' ); ?></a>
+			<a href="<?php echo esc_url( self_admin_url() ); ?>"><?php is_blog_admin() ? esc_html_e( 'Go to Dashboard &rarr; Home', 'THEMENAME' ) : esc_html_e( 'Go to Dashboard', 'THEMENAME' ); ?></a>
 		</div>
 	</div>
 	<?php
@@ -93,20 +93,20 @@ function MYTHEME_about_display() {
 /**
  * Output the main about screen.
  */
-function MYTHEME_main_screen() {
-	if ( isset( $_GET['page'] ) && 'MYTHEME-about' === $_GET['page'] && ! isset( $_GET['tab'] ) ) {
+function THEMENAME_main_screen() {
+	if ( isset( $_GET['page'] ) && 'THEMENAME-about' === $_GET['page'] && ! isset( $_GET['tab'] ) ) {
 	?>
 		<div class="feature-section two-col">
 			<div class="col card">
-				<h2 class="title"><?php esc_html_e( 'Theme Customizer', 'MYTHEME' ); ?></h2>
-				<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'MYTHEME' ) ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Customize', 'MYTHEME' ); ?></a></p>
+				<h2 class="title"><?php esc_html_e( 'Theme Customizer', 'THEMENAME' ); ?></h2>
+				<p><?php esc_html_e( 'All Theme Options are available via Customize screen.', 'THEMENAME' ) ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Customize', 'THEMENAME' ); ?></a></p>
 			</div>
 
 			<div class="col card">
-				<h2 class="title"><?php esc_html_e( 'Got theme support question?', 'MYTHEME' ); ?></h2>
-				<p><?php esc_html_e( 'Get genuine support from genuine people. Whether it\'s customization or compatibility, our seasoned developers deliver tailored solutions to your queries.', 'MYTHEME' ) ?></p>
-				<p><a href="<?php echo esc_url( 'https://catchthemes.com/support-forum' ); ?>" class="button button-primary"><?php esc_html_e( 'Support Forum', 'MYTHEME' ); ?></a></p>
+				<h2 class="title"><?php esc_html_e( 'Got theme support question?', 'THEMENAME' ); ?></h2>
+				<p><?php esc_html_e( 'Get genuine support from genuine people. Whether it\'s customization or compatibility, our seasoned developers deliver tailored solutions to your queries.', 'THEMENAME' ) ?></p>
+				<p><a href="<?php echo esc_url( 'https://catchthemes.com/support-forum' ); ?>" class="button button-primary"><?php esc_html_e( 'Support Forum', 'THEMENAME' ); ?></a></p>
 			</div>
 		</div>
 	<?php
@@ -116,7 +116,7 @@ function MYTHEME_main_screen() {
 /**
  * Output the changelog screen.
  */
-function MYTHEME_free_vs_pro_screen() {
+function THEMENAME_free_vs_pro_screen() {
 	if ( isset( $_GET['tab'] ) && 'free_vs_pro' === $_GET['tab'] ) {
 	?>
 		<div class="wrap about-wrap vs-theme-table">
@@ -632,19 +632,19 @@ function MYTHEME_free_vs_pro_screen() {
 /**
  * Output the changelog screen.
  */
-function MYTHEME_changelog_screen() {
+function THEMENAME_changelog_screen() {
 	if ( isset( $_GET['tab'] ) && 'changelog' === $_GET['tab'] ) {
 		global $wp_filesystem;
 	?>
 		<div class="wrap about-wrap">
 			<?php
-				$changelog_file = apply_filters( 'MYTHEME_changelog_file', get_template_directory() . '/readme.txt' );
+				$changelog_file = apply_filters( 'THEMENAME_changelog_file', get_template_directory() . '/readme.txt' );
 
 				// Check if the changelog file exists and is readable.
 				if ( $changelog_file && is_readable( $changelog_file ) ) {
 					WP_Filesystem();
 					$changelog = $wp_filesystem->get_contents( $changelog_file );
-					$changelog_list = MYTHEME_parse_changelog( $changelog );
+					$changelog_list = THEMENAME_parse_changelog( $changelog );
 
 					echo wp_kses_post( $changelog_list );
 				}
@@ -659,7 +659,7 @@ function MYTHEME_changelog_screen() {
  * @param  string $content
  * @return string
  */
-function MYTHEME_parse_changelog( $content ) {
+function THEMENAME_parse_changelog( $content ) {
 	// Explode content with ==  to juse separate main content to array of headings.
 	$content = explode ( '== ', $content );
 
@@ -699,16 +699,16 @@ function MYTHEME_parse_changelog( $content ) {
 /**
  * Import Demo data for theme using catch themes demo import plugin
  */
-function MYTHEME_import_demo() {
+function THEMENAME_import_demo() {
 	if ( isset( $_GET['tab'] ) && 'import_demo' === $_GET['tab'] ) {
 	?>
 		<div class="wrap about-wrap demo-import-wrap">
 			<div class="feature-section one-col">
 			<?php if ( class_exists( 'CatchThemesDemoImportPlugin' ) ) { ?>
 				<div class="col card">
-					<h2 class="title"><?php esc_html_e( 'Import Demo', 'MYTHEME' ); ?></h2>
-					<p><?php esc_html_e( 'You can easily import the demo content using the Catch Themes Demo Import Plugin.', 'MYTHEME' ) ?></p>
-					<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=catch-themes-demo-import' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Import Demo', 'MYTHEME' ); ?></a></p>
+					<h2 class="title"><?php esc_html_e( 'Import Demo', 'THEMENAME' ); ?></h2>
+					<p><?php esc_html_e( 'You can easily import the demo content using the Catch Themes Demo Import Plugin.', 'THEMENAME' ) ?></p>
+					<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=catch-themes-demo-import' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Import Demo', 'THEMENAME' ); ?></a></p>
 				</div>
 				<?php } 
 				else {
@@ -725,9 +725,9 @@ function MYTHEME_import_demo() {
 						    $action . '_' . $slug
 						); ?>
 					<div class="col card">
-					<h2 class="title"><?php esc_html_e( 'Install Catch Themes Demo Import Plugin', 'MYTHEME' ); ?></h2>
-					<p><?php esc_html_e( 'You can easily import the demo content using the Catch Themes Demo Import Plugin.', 'MYTHEME' ) ?></p>
-					<p><a href="<?php echo esc_url( $install_url ); ?>" class="button button-primary"><?php esc_html_e( 'Install Plugin', 'MYTHEME' ); ?></a></p>
+					<h2 class="title"><?php esc_html_e( 'Install Catch Themes Demo Import Plugin', 'THEMENAME' ); ?></h2>
+					<p><?php esc_html_e( 'You can easily import the demo content using the Catch Themes Demo Import Plugin.', 'THEMENAME' ) ?></p>
+					<p><a href="<?php echo esc_url( $install_url ); ?>" class="button button-primary"><?php esc_html_e( 'Install Plugin', 'THEMENAME' ); ?></a></p>
 				</div>
 				<?php } ?>
 			</div>

@@ -11,13 +11,13 @@
  * @since Twenty Twenty 1.0
  */
 
-if ( ! class_exists( 'MYTHEME_Script_Loader' ) ) {
+if ( ! class_exists( 'THEMENAME_Script_Loader' ) ) {
 	/**
 	 * A class that provides a way to add `async` or `defer` attributes to scripts.
 	 *
 	 * @since Twenty Twenty 1.0
 	 */
-	class MYTHEME_Script_Loader {
+	class THEMENAME_Script_Loader {
 
 		/**
 		 * Adds async/defer attributes to enqueued / registered scripts.

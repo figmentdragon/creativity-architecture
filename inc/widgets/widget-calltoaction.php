@@ -3,24 +3,24 @@
 /**
  * Call to Action Widget
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
-add_action('widgets_init', 'MYTHEME_register_cta_simple_widget');
+add_action('widgets_init', 'THEMENAME_register_cta_simple_widget');
 
-function MYTHEME_register_cta_simple_widget() {
-    register_widget('MYTHEME_Cta_Simple');
+function THEMENAME_register_cta_simple_widget() {
+    register_widget('THEMENAME_Cta_Simple');
 }
 
-class MYTHEME_Cta_Simple extends WP_Widget {
+class THEMENAME_Cta_Simple extends WP_Widget {
 
     /**
      * Register widget with WordPress.
      */
     public function __construct() {
         parent::__construct(
-            'MYTHEME_Cta_Simple', 'AP :  Call to Action', array(
-                'description' => __('A widget that shows Simple Call to Action', 'MYTHEME')
+            'THEMENAME_Cta_Simple', 'AP :  Call to Action', array(
+                'description' => __('A widget that shows Simple Call to Action', 'THEMENAME')
             )
         );
     }
@@ -32,19 +32,19 @@ class MYTHEME_Cta_Simple extends WP_Widget {
     private function widget_fields() {
         $fields = array(
             'cta_simple_title' => array(
-                'MYTHEME_widgets_name' => 'cta_simple_title',
-                'MYTHEME_widgets_title' => __('Title', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'cta_simple_title',
+                'THEMENAME_widgets_title' => __('Title', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'cta_simple_button_text' => array(
-                'MYTHEME_widgets_name' => 'cta_simple_button_text',
-                'MYTHEME_widgets_title' => __('Button Text', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'cta_simple_button_text',
+                'THEMENAME_widgets_title' => __('Button Text', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'cta_simple_button_url' => array(
-                'MYTHEME_widgets_name' => 'cta_simple_button_url',
-                'MYTHEME_widgets_title' => __('Button Url', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text'
+                'THEMENAME_widgets_name' => 'cta_simple_button_url',
+                'THEMENAME_widgets_title' => __('Button Url', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text'
 
             )
 
@@ -91,7 +91,7 @@ class MYTHEME_Cta_Simple extends WP_Widget {
      * @param	array	$new_instance	Values just sent to be saved.
      * @param	array	$old_instance	Previously saved values from database.
      *
-     * @uses	MYTHEME_widgets_updated_field_value()		defined in widget-fields.php
+     * @uses	THEMENAME_widgets_updated_field_value()		defined in widget-fields.php
      *
      * @return	array Updated safe values to be saved.
      */
@@ -106,7 +106,7 @@ class MYTHEME_Cta_Simple extends WP_Widget {
             extract($widget_field);
 
             // Use helper function to get updated field values
-            $instance[$MYTHEME_widgets_name] = MYTHEME_widgets_updated_field_value($widget_field, $new_instance[$MYTHEME_widgets_name]);
+            $instance[$THEMENAME_widgets_name] = THEMENAME_widgets_updated_field_value($widget_field, $new_instance[$THEMENAME_widgets_name]);
         }
 
         return $instance;
@@ -119,7 +119,7 @@ class MYTHEME_Cta_Simple extends WP_Widget {
      *
      * @param	array $instance Previously saved values from database.
      *
-     * @uses	MYTHEME_widgets_show_widget_field()		defined in widget-fields.php
+     * @uses	THEMENAME_widgets_show_widget_field()		defined in widget-fields.php
      */
     public function form($instance) {
         $widget_fields = $this->widget_fields();
@@ -129,8 +129,8 @@ class MYTHEME_Cta_Simple extends WP_Widget {
 
             // Make array elements available as variables
             extract($widget_field);
-            $MYTHEME_widgets_field_value = !empty($instance[$MYTHEME_widgets_name]) ? esc_attr($instance[$MYTHEME_widgets_name]) : '';
-            MYTHEME_widgets_show_widget_field($this, $widget_field, $MYTHEME_widgets_field_value);
+            $THEMENAME_widgets_field_value = !empty($instance[$THEMENAME_widgets_name]) ? esc_attr($instance[$THEMENAME_widgets_name]) : '';
+            THEMENAME_widgets_show_widget_field($this, $widget_field, $THEMENAME_widgets_field_value);
         }
     }
 

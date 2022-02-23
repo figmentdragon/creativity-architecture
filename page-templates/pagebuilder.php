@@ -3,7 +3,7 @@
  * Template Name: For Page Builders
  * Template Post Type: page
  * Description: A template for several page builders.
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 get_header(); ?>

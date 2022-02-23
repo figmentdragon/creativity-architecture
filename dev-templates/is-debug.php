@@ -1,3 +1,3 @@
 <?php
-    define('MYTHEME_DEBUG', <%= is_debug %>);
+    define('THEMENAME_DEBUG', <%= is_debug %>);
 ?>

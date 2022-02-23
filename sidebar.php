@@ -2,8 +2,8 @@
 /**
 * The Sidebar containing the main widget areas.
 *
-* @package MYTHEME
-* @since MYTHEME 1.0
+* @package THEMENAME
+* @since THEMENAME 1.0
 */
 ?>
 

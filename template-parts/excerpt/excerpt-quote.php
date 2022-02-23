@@ -5,17 +5,17 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 $content = get_the_content();
 
 // If there is no quote or pullquote print the content.
 if ( has_block( 'core/quote', $content ) ) {
-	MYTHEME_print_first_instance_of_block( 'core/quote', $content );
+	THEMENAME_print_first_instance_of_block( 'core/quote', $content );
 } elseif ( has_block( 'core/pullquote', $content ) ) {
-	MYTHEME_print_first_instance_of_block( 'core/pullquote', $content );
+	THEMENAME_print_first_instance_of_block( 'core/pullquote', $content );
 } else {
 	the_excerpt();
 }

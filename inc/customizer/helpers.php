@@ -3,7 +3,7 @@
 /**
  * Function to register control and setting
  */
-function MYTHEME_register_option( $wp_customize, $option ) {
+function THEMENAME_register_option( $wp_customize, $option ) {
 
 	// Initialize Setting.
 	$wp_customize->add_setting( $option['name'], array(
@@ -56,9 +56,9 @@ function MYTHEME_register_option( $wp_customize, $option ) {
  *
  * @param  wp_customize object $wp_customize wp_customize object.
  */
-function MYTHEME_sort_sections_list( $wp_customize ) {
+function THEMENAME_sort_sections_list( $wp_customize ) {
 	foreach ( $wp_customize->sections() as $section_key => $section_object ) {
-		if ( false !== strpos( $section_key, 'MYTHEME_' ) && 'MYTHEME_important_links' !== $section_key ) {
+		if ( false !== strpos( $section_key, 'THEMENAME_' ) && 'THEMENAME_important_links' !== $section_key ) {
 			$options[] = $section_key;
 		}
 	}
@@ -70,21 +70,21 @@ function MYTHEME_sort_sections_list( $wp_customize ) {
 		$wp_customize->get_section( $option )->priority = $priority++;
 	}
 }
-add_action( 'customize_register', 'MYTHEME_sort_sections_list', 99 );
+add_action( 'customize_register', 'THEMENAME_sort_sections_list', 99 );
 
 /**
  * Returns an array of visibility options for featured sections
  *
  * @since 1.0
  */
-function MYTHEME_section_visibility_options() {
+function THEMENAME_section_visibility_options() {
 	$options = array(
-		'homepage'    => esc_html__( 'Homepage / Frontpage', 'MYTHEME' ),
-		'entire-site' => esc_html__( 'Entire Site', 'MYTHEME' ),
-		'disabled'    => esc_html__( 'Disabled', 'MYTHEME' ),
+		'homepage'    => esc_html__( 'Homepage / Frontpage', 'THEMENAME' ),
+		'entire-site' => esc_html__( 'Entire Site', 'THEMENAME' ),
+		'disabled'    => esc_html__( 'Disabled', 'THEMENAME' ),
 	);
 
-	return apply_filters( 'MYTHEME_section_visibility_options', $options );
+	return apply_filters( 'THEMENAME_section_visibility_options', $options );
 }
 
 /**
@@ -92,15 +92,15 @@ function MYTHEME_section_visibility_options() {
  *
  * @since 1.0
  */
-function MYTHEME_sections_layout_options() {
+function THEMENAME_sections_layout_options() {
 	$options = array(
-		'layout-one'   => esc_html__( '1 column', 'MYTHEME' ),
-		'layout-two'   => esc_html__( '2 columns', 'MYTHEME' ),
-		'layout-three' => esc_html__( '3 columns', 'MYTHEME' ),
-		'layout-four'  => esc_html__( '4 columns', 'MYTHEME' ),
+		'layout-one'   => esc_html__( '1 column', 'THEMENAME' ),
+		'layout-two'   => esc_html__( '2 columns', 'THEMENAME' ),
+		'layout-three' => esc_html__( '3 columns', 'THEMENAME' ),
+		'layout-four'  => esc_html__( '4 columns', 'THEMENAME' ),
 	);
 
-	return apply_filters( 'MYTHEME_sections_layout_options', $options );
+	return apply_filters( 'THEMENAME_sections_layout_options', $options );
 }
 
 /**
@@ -108,15 +108,15 @@ function MYTHEME_sections_layout_options() {
  *
  * @since 1.0
  */
-function MYTHEME_section_type_options() {
+function THEMENAME_section_type_options() {
 	$options = array(
-		'post'     => esc_html__( 'Post', 'MYTHEME' ),
-		'page'     => esc_html__( 'Page', 'MYTHEME' ),
-		'category' => esc_html__( 'Category', 'MYTHEME' ),
-		'custom'   => esc_html__( 'Custom', 'MYTHEME' ),
+		'post'     => esc_html__( 'Post', 'THEMENAME' ),
+		'page'     => esc_html__( 'Page', 'THEMENAME' ),
+		'category' => esc_html__( 'Category', 'THEMENAME' ),
+		'custom'   => esc_html__( 'Custom', 'THEMENAME' ),
 	);
 
-	return apply_filters( 'MYTHEME_section_type_options', $options );
+	return apply_filters( 'THEMENAME_section_type_options', $options );
 }
 
 /**
@@ -124,13 +124,13 @@ function MYTHEME_section_type_options() {
  *
  * @since 1.0
  */
-function MYTHEME_get_pagination_types() {
+function THEMENAME_get_pagination_types() {
 	$pagination_types = array(
-		'default' => esc_html__( 'Default(Older Posts/Newer Posts)', 'MYTHEME' ),
-		'numeric' => esc_html__( 'Numeric', 'MYTHEME' ),
+		'default' => esc_html__( 'Default(Older Posts/Newer Posts)', 'THEMENAME' ),
+		'numeric' => esc_html__( 'Numeric', 'THEMENAME' ),
 	);
 
-	return apply_filters( 'MYTHEME_get_pagination_types', $pagination_types );
+	return apply_filters( 'THEMENAME_get_pagination_types', $pagination_types );
 }
 
 /**
@@ -139,7 +139,7 @@ function MYTHEME_get_pagination_types() {
  * @param  string $post_type post type.
  * @return post_array
  */
-function MYTHEME_generate_post_array( $post_type = 'post' ) {
+function THEMENAME_generate_post_array( $post_type = 'post' ) {
 	$output = array();
 	$posts = get_posts( array(
 		'post_type'        => $post_type,
@@ -149,21 +149,21 @@ function MYTHEME_generate_post_array( $post_type = 'post' ) {
 		)
 	);
 
-	$output['0']= esc_html__( '-- Select --', 'MYTHEME' );
+	$output['0']= esc_html__( '-- Select --', 'THEMENAME' );
 
 	foreach ( $posts as $post ) {
-		$output[ $post->ID ] = ! empty( $post->post_title ) ? $post->post_title : sprintf( __( '#%d (no title)', 'MYTHEME' ), $post->ID );
+		$output[ $post->ID ] = ! empty( $post->post_title ) ? $post->post_title : sprintf( __( '#%d (no title)', 'THEMENAME' ), $post->ID );
 	}
 
 	return $output;
 }
 
-if ( ! function_exists( 'MYTHEME_get_default_sections_value' ) ) :
+if ( ! function_exists( 'THEMENAME_get_default_sections_value' ) ) :
 	/**
 	 * Returns default sections value
 	 */
-	function MYTHEME_get_default_sections_value() {
-		$sections = MYTHEME_get_sortable_sections();
+	function THEMENAME_get_default_sections_value() {
+		$sections = THEMENAME_get_sortable_sections();
 		$value    = array_keys( $sections );
 		$value    = implode( ',', $value );
 
@@ -176,7 +176,7 @@ endif;
  *
  * @since 1.0
  */
-function MYTHEME_transition_effects() {
+function THEMENAME_transition_effects() {
 	$options = array(
 		'default'            => 'default',
 		'bounce'             => 'bounce',
@@ -258,7 +258,7 @@ function MYTHEME_transition_effects() {
 		'heartBeat'          => 'heartBeat',
 	);
 
-	return apply_filters( 'MYTHEME_transition_effects', $options );
+	return apply_filters( 'THEMENAME_transition_effects', $options );
 }
 
 
@@ -267,13 +267,13 @@ function MYTHEME_transition_effects() {
  *
  * @since 1.0
  */
-function MYTHEME_content_show() {
+function THEMENAME_content_show() {
 	$options = array(
-		'excerpt'      => esc_html__( 'Show Excerpt', 'MYTHEME' ),
-		'full-content' => esc_html__( 'Full Content', 'MYTHEME' ),
-		'hide-content' => esc_html__( 'Hide Content', 'MYTHEME' ),
+		'excerpt'      => esc_html__( 'Show Excerpt', 'THEMENAME' ),
+		'full-content' => esc_html__( 'Full Content', 'THEMENAME' ),
+		'hide-content' => esc_html__( 'Hide Content', 'THEMENAME' ),
 	);
-	return apply_filters( 'MYTHEME_content_show', $options );
+	return apply_filters( 'THEMENAME_content_show', $options );
 }
 
 
@@ -282,10 +282,10 @@ function MYTHEME_content_show() {
  *
  * @since 1.0
  */
-function MYTHEME_meta_show() {
+function THEMENAME_meta_show() {
 	$options = array(
-		'show-meta' => esc_html__( 'Show Meta', 'MYTHEME' ),
-		'hide-meta' => esc_html__( 'Hide Meta', 'MYTHEME' ),
+		'show-meta' => esc_html__( 'Show Meta', 'THEMENAME' ),
+		'hide-meta' => esc_html__( 'Hide Meta', 'THEMENAME' ),
 	);
-	return apply_filters( 'MYTHEME_meta_show', $options );
+	return apply_filters( 'THEMENAME_meta_show', $options );
 }

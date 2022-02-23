@@ -2,7 +2,7 @@
 /**
  * The template for displaying Archive pages.
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 get_header(); ?>
@@ -22,7 +22,7 @@ get_header(); ?>
 				<?php the_posts_pagination(); ?>
 			<?php else : ?>
 				<h2 class="center">
-					<?php esc_html_e( 'Not Found', 'MYTHEME' ); ?>
+					<?php esc_html_e( 'Not Found', 'THEMENAME' ); ?>
 				</h2>
 			<?php endif; ?>
 		</div>

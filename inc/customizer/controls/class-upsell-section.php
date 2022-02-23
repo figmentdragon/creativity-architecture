@@ -8,14 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'MYTHEME_Upsell_Section' ) ) {
+if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'THEMENAME_Upsell_Section' ) ) {
 	/**
 	 * Create our upsell section.
 	 * Escape your URL in the Customizer using esc_url().
 	 *
 	 */
-	class MYTHEME_Upsell_Section extends WP_Customize_Section {
-		public $type = 'MYTHEME-upsell-section';
+	class THEMENAME_Upsell_Section extends WP_Customize_Section {
+		public $type = 'THEMENAME-upsell-section';
 		public $pro_url = '';
 		public $pro_text = '';
 		public $id = '';
@@ -30,7 +30,7 @@ if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'MYTHEME_Upsell_S
 
 		protected function render_template() {
 			?>
-			<li id="accordion-section-{{ data.id }}" class="MYTHEME-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
+			<li id="accordion-section-{{ data.id }}" class="THEMENAME-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
 				<h3><a href="{{{ data.pro_url }}}" target="_blank">{{ data.pro_text }}</a></h3>
 			</li>
 			<?php
@@ -38,14 +38,14 @@ if ( class_exists( 'WP_Customize_Section' ) && ! class_exists( 'MYTHEME_Upsell_S
 	}
 }
 
-if ( ! function_exists( 'MYTHEME_customizer_controls_css' ) ) {
-	add_action( 'customize_controls_enqueue_scripts', 'MYTHEME_customizer_controls_css' );
+if ( ! function_exists( 'THEMENAME_customizer_controls_css' ) ) {
+	add_action( 'customize_controls_enqueue_scripts', 'THEMENAME_customizer_controls_css' );
 	/**
 	 * Add CSS for our controls
 	 *
 	 */
-	function MYTHEME_customizer_controls_css() {
-		wp_enqueue_style( 'MYTHEME-customizer-controls-css', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/css/upsell-customizer.css', array(), MYTHEME_VERSION );
-		wp_enqueue_script( 'MYTHEME-upsell', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/upsell-control.js', array( 'customize-controls' ), false, true );
+	function THEMENAME_customizer_controls_css() {
+		wp_enqueue_style( 'THEMENAME-customizer-controls-css', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/css/upsell-customizer.css', array(), THEMENAME_VERSION );
+		wp_enqueue_script( 'THEMENAME-upsell', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/upsell-control.js', array( 'customize-controls' ), false, true );
 	}
 }

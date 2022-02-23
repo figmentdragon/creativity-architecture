@@ -8,19 +8,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Slider_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'THEMENAME_Range_Slider_Control' ) ) {
 	/**
 	 * Create a range slider control.
 	 * This control allows you to add responsive settings.
 	 *
 	 */
-	class MYTHEME_Range_Slider_Control extends WP_Customize_Control {
+	class THEMENAME_Range_Slider_Control extends WP_Customize_Control {
 		/**
 		 * The control type.
 		 *
 		 * @var string
 		 */
-		public $type = 'MYTHEME-range-slider';
+		public $type = 'THEMENAME-range-slider';
 
 		public $description = '';
 		/**
@@ -48,10 +48,10 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 				);
 			}
 
-			$this->json['desktop_label'] = __( 'Desktop','MYTHEME' );
-			$this->json['tablet_label'] = __( 'Tablet','MYTHEME' );
-			$this->json['mobile_label'] = __( 'Mobile','MYTHEME' );
-			$this->json['reset_label'] = __( 'Reset','MYTHEME' );
+			$this->json['desktop_label'] = __( 'Desktop','THEMENAME' );
+			$this->json['tablet_label'] = __( 'Tablet','THEMENAME' );
+			$this->json['mobile_label'] = __( 'Mobile','THEMENAME' );
+			$this->json['reset_label'] = __( 'Reset','THEMENAME' );
 
 			$this->json['description'] = $this->description;
 		}
@@ -61,8 +61,8 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 		 *
 		 */
 		public function enqueue() {
-			wp_enqueue_script( 'MYTHEME-range-slider', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/slider-control.js', array( 'jquery', 'customize-base', 'jquery-ui-slider' ), false, true );
-			wp_enqueue_style( 'MYTHEME-range-slider-css', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/css/slider-customizer.css', null );
+			wp_enqueue_script( 'THEMENAME-range-slider', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/js/slider-control.js', array( 'jquery', 'customize-base', 'jquery-ui-slider' ), false, true );
+			wp_enqueue_style( 'THEMENAME-range-slider-css', trailingslashit( get_template_directory_uri() ) . 'inc/customizer/controls/css/slider-customizer.css', null );
 		}
 
 		/**
@@ -77,10 +77,10 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 		 */
 		protected function content_template() {
 			?>
-			<div class="MYTHEME-range-slider-control">
-				<div class="MYTHEME-range-title-area">
+			<div class="THEMENAME-range-slider-control">
+				<div class="THEMENAME-range-title-area">
 					<# if ( data.label || data.description ) { #>
-						<div class="MYTHEME-range-title-info">
+						<div class="THEMENAME-range-title-info">
 							<# if ( data.label ) { #>
 								<span class="customize-control-title">{{{ data.label }}}</span>
 							<# } #>
@@ -91,30 +91,30 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 						</div>
 					<# } #>
 
-					<div class="MYTHEME-range-slider-controls">
-						<span class="MYTHEME-device-controls">
+					<div class="THEMENAME-range-slider-controls">
+						<span class="THEMENAME-device-controls">
 							<# if ( 'undefined' !== typeof ( data.desktop ) ) { #>
-								<span class="MYTHEME-device-desktop dashicons dashicons-desktop" data-option="desktop" title="{{ data.desktop_label }}"></span>
+								<span class="THEMENAME-device-desktop dashicons dashicons-desktop" data-option="desktop" title="{{ data.desktop_label }}"></span>
 							<# } #>
 
 							<# if ( 'undefined' !== typeof (data.tablet) ) { #>
-								<span class="MYTHEME-device-tablet dashicons dashicons-tablet" data-option="tablet" title="{{ data.tablet_label }}"></span>
+								<span class="THEMENAME-device-tablet dashicons dashicons-tablet" data-option="tablet" title="{{ data.tablet_label }}"></span>
 							<# } #>
 
 							<# if ( 'undefined' !== typeof (data.mobile) ) { #>
-								<span class="MYTHEME-device-mobile dashicons dashicons-smartphone" data-option="mobile" title="{{ data.mobile_label }}"></span>
+								<span class="THEMENAME-device-mobile dashicons dashicons-smartphone" data-option="mobile" title="{{ data.mobile_label }}"></span>
 							<# } #>
 						</span>
 
-						<span title="{{ data.reset_label }}" class="MYTHEME-reset dashicons dashicons-image-rotate"></span>
+						<span title="{{ data.reset_label }}" class="THEMENAME-reset dashicons dashicons-image-rotate"></span>
 					</div>
 				</div>
 
-				<div class="MYTHEME-range-slider-areas">
+				<div class="THEMENAME-range-slider-areas">
 					<# if ( 'undefined' !== typeof ( data.desktop ) ) { #>
 						<label class="range-option-area" data-option="desktop" style="display: none;">
 							<div class="wrapper <# if ( '' !== data.choices['desktop']['unit'] ) { #>has-unit<# } #>">
-								<div class="MYTHEME_range_value <# if ( '' == data.choices['desktop']['unit'] && ! data.choices['desktop']['edit'] ) { #>hide-value<# } #>">
+								<div class="THEMENAME_range_value <# if ( '' == data.choices['desktop']['unit'] && ! data.choices['desktop']['edit'] ) { #>hide-value<# } #>">
 									<input <# if ( data.choices['desktop']['edit'] ) { #>style="display:inline-block;"<# } else { #>style="display:none;"<# } #> type="number" step="{{ data.choices['desktop']['step'] }}" class="desktop-range value" value="{{ data.desktop.value }}" min="{{ data.choices['desktop']['min'] }}" max="{{ data.choices['desktop']['max'] }}" {{{ data.desktop.link }}} data-reset_value="{{ data.desktop.default }}" />
 									<span <# if ( ! data.choices['desktop']['edit'] ) { #>style="display:inline-block;"<# } else { #>style="display:none;"<# } #> class="value">{{ data.desktop.value }}</span>
 
@@ -122,7 +122,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 										<span class="unit">{{ data.choices['desktop']['unit'] }}</span>
 									<# } #>
 								</div>
-								<div class="MYTHEME-slider" data-step="{{ data.choices['desktop']['step'] }}" data-min="{{ data.choices['desktop']['min'] }}" data-max="{{ data.choices['desktop']['max'] }}"></div>
+								<div class="THEMENAME-slider" data-step="{{ data.choices['desktop']['step'] }}" data-min="{{ data.choices['desktop']['min'] }}" data-max="{{ data.choices['desktop']['max'] }}"></div>
 							</div>
 						</label>
 					<# } #>
@@ -130,7 +130,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 					<# if ( 'undefined' !== typeof ( data.tablet ) ) { #>
 						<label class="range-option-area" data-option="tablet" style="display:none">
 							<div class="wrapper <# if ( '' !== data.choices['tablet']['unit'] ) { #>has-unit<# } #>">
-								<div class="MYTHEME_range_value <# if ( '' == data.choices['tablet']['unit'] && ! data.choices['desktop']['edit'] ) { #>hide-value<# } #>">
+								<div class="THEMENAME_range_value <# if ( '' == data.choices['tablet']['unit'] && ! data.choices['desktop']['edit'] ) { #>hide-value<# } #>">
 									<input <# if ( data.choices['tablet']['edit'] ) { #>style="display:inline-block;"<# } else { #>style="display:none;"<# } #> type="number" step="{{ data.choices['tablet']['step'] }}" class="tablet-range value" value="{{ data.tablet.value }}" min="{{ data.choices['tablet']['min'] }}" max="{{ data.choices['tablet']['max'] }}" {{{ data.tablet.link }}} data-reset_value="{{ data.tablet.default }}" />
 									<span <# if ( ! data.choices['tablet']['edit'] ) { #>style="display:inline-block;"<# } else { #>style="display:none;"<# } #> class="value">{{ data.tablet.value }}</span>
 
@@ -138,7 +138,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 										<span class="unit">{{ data.choices['tablet']['unit'] }}</span>
 									<# } #>
 								</div>
-								<div class="MYTHEME-slider" data-step="{{ data.choices['tablet']['step'] }}" data-min="{{ data.choices['tablet']['min'] }}" data-max="{{ data.choices['tablet']['max'] }}"></div>
+								<div class="THEMENAME-slider" data-step="{{ data.choices['tablet']['step'] }}" data-min="{{ data.choices['tablet']['min'] }}" data-max="{{ data.choices['tablet']['max'] }}"></div>
 							</div>
 						</label>
 					<# } #>
@@ -146,7 +146,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 					<# if ( 'undefined' !== typeof ( data.mobile ) ) { #>
 						<label class="range-option-area" data-option="mobile" style="display:none;">
 							<div class="wrapper <# if ( '' !== data.choices['mobile']['unit'] ) { #>has-unit<# } #>">
-								<div class="MYTHEME_range_value <# if ( '' == data.choices['mobile']['unit'] && ! data.choices['desktop']['edit'] ) { #>hide-value<# } #>">
+								<div class="THEMENAME_range_value <# if ( '' == data.choices['mobile']['unit'] && ! data.choices['desktop']['edit'] ) { #>hide-value<# } #>">
 									<input <# if ( data.choices['mobile']['edit'] ) { #>style="display:inline-block;"<# } else { #>style="display:none;"<# } #> type="number" step="{{ data.choices['mobile']['step'] }}" class="mobile-range value" value="{{ data.mobile.value }}" min="{{ data.choices['mobile']['min'] }}" max="{{ data.choices['mobile']['max'] }}" {{{ data.mobile.link }}} data-reset_value="{{ data.mobile.default }}" />
 									<span <# if ( ! data.choices['mobile']['edit'] ) { #>style="display:inline-block;"<# } else { #>style="display:none;"<# } #> class="value">{{ data.mobile.value }}</span>
 
@@ -154,7 +154,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'MYTHEME_Range_Sl
 										<span class="unit">{{ data.choices['mobile']['unit'] }}</span>
 									<# } #>
 								</div>
-								<div class="MYTHEME-slider" data-step="{{ data.choices['mobile']['step'] }}" data-min="{{ data.choices['mobile']['min'] }}" data-max="{{ data.choices['mobile']['max'] }}"></div>
+								<div class="THEMENAME-slider" data-step="{{ data.choices['mobile']['step'] }}" data-min="{{ data.choices['mobile']['min'] }}" data-max="{{ data.choices['mobile']['max'] }}"></div>
 							</div>
 						</label>
 					<# } #>

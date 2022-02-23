@@ -5,7 +5,7 @@
  * Registration Custom Post Types "Portfolio"
  *
  */
-function MYTHEME_custom_portfolio_type()
+function THEMENAME_custom_portfolio_type()
 {
   $labels = [
     'name'               => 'Projects',
@@ -47,18 +47,18 @@ function MYTHEME_custom_portfolio_type()
     'menu_icon'           => 'dashicons-hammer',
     'taxonomies'          => ['category', 'post_tag'],
   ];
-  register_post_type( 'MYTHEME_project', $args);
+  register_post_type( 'THEMENAME_project', $args);
 }
 
 // Hook into the 'init' action
-add_action( 'init', __NAMESPACE__.'\\MYTHEME_custom_portfolio_type', 20);
+add_action( 'init', __NAMESPACE__.'\\THEMENAME_custom_portfolio_type', 20);
 
 /**
  *
  * Registration unseres Custom Post Types "Directors"
  *
  */
-function MYTHEME_custom_portfolio_type_directors()
+function THEMENAME_custom_portfolio_type_directors()
 {
   $labels = [
     'name'               => 'Directors',
@@ -100,8 +100,8 @@ function MYTHEME_custom_portfolio_type_directors()
     'menu_icon'           => 'dashicons-businessman',
     'taxonomies'          => ['category', 'post_tag'],
   ];
-  register_post_type( 'MYTHEME_director', $args);
+  register_post_type( 'THEMENAME_director', $args);
 }
 
 // Hook into the 'init' action
-add_action( 'init', __NAMESPACE__.'\\MYTHEME_custom_portfolio_type_directors', 20 );
+add_action( 'init', __NAMESPACE__.'\\THEMENAME_custom_portfolio_type_directors', 20 );

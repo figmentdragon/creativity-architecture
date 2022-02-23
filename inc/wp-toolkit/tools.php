@@ -4,7 +4,7 @@
  *
  */
 
-namespace MYTHEME;
+namespace THEMENAME;
 
 function emailize($text, $link_class = '')
 {
@@ -35,7 +35,7 @@ function urlize($text, $link_class = '', $target = '_blank', $url_only = false)
  *
  * @return bool|mixed
  */
-function MYTHEME_get_attachment_src_url($attachment_id, $size = null, $icon = null)
+function THEMENAME_get_attachment_src_url($attachment_id, $size = null, $icon = null)
 {
   if (is_array($attachment_id) && isset($attachment_id['ID'])) {
     $attachment_id = $attachment_id['ID'];

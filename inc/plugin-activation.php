@@ -10,14 +10,14 @@
  *
  * @package    TGM-Plugin-Activation
  * @subpackage Example
- * @version    2.6.1 for parent theme MYTHEME
+ * @version    2.6.1 for parent theme THEMENAME
  * @author     Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright  Copyright (c) 2011, Thomas Griffin
  * @license    http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  * @link       https://github.com/TGMPA/TGM-Plugin-Activation
  */
 
-add_action( 'tgmpa_register', 'MYTHEME_register_required_plugins' );
+add_action( 'tgmpa_register', 'THEMENAME_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
@@ -36,7 +36,7 @@ add_action( 'tgmpa_register', 'MYTHEME_register_required_plugins' );
  *
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function MYTHEME_register_required_plugins() {
+function THEMENAME_register_required_plugins() {
 		/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -72,7 +72,7 @@ function MYTHEME_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'MYTHEME',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'THEMENAME',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.

@@ -26,4 +26,4 @@
 
   *Note — This is very project-specific and is likely to be non-existent on many projects.*
 
-  Reference: [Sass Guidelines](http://sass-guidelin.es/) > [MYTHEME](http://sass-guidelin.es/#MYTHEME) > [Themes folder](http://sass-guidelin.es/#themes-folder)
+  Reference: [Sass Guidelines](http://sass-guidelin.es/) > [THEMENAME](http://sass-guidelin.es/#THEMENAME) > [Themes folder](http://sass-guidelin.es/#themes-folder)

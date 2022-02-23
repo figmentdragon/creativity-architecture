@@ -8,15 +8,15 @@
  * @link https://make.wordpress.org/themes/2020/07/06/printing-navigation-block-html-from-a-legacy-menu-in-themes/
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
  * Add a button to top-level menu items that has sub-menus.
  * An icon is added using CSS depending on the value of aria-expanded.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param string $output Nav menu item start element.
  * @param object $item   Nav menu item.
@@ -25,21 +25,21 @@
  * @return string Nav menu item start element.
  */
 
-function MYTHEME_menu() {
-	add_filter( 'nav_menu_item_args', 'MYTHEME_add_menu_description_args', 10, 3 );
-	add_filter( 'walker_nav_menu_start_el', 'MYTHEME_add_sub_menu_toggle', 10, 4 );
-  add_filter( 'wp_page_menu_args', 'MYTHEME_page_menu_args' );
+function THEMENAME_menu() {
+	add_filter( 'nav_menu_item_args', 'THEMENAME_add_menu_description_args', 10, 3 );
+	add_filter( 'walker_nav_menu_start_el', 'THEMENAME_add_sub_menu_toggle', 10, 4 );
+  add_filter( 'wp_page_menu_args', 'THEMENAME_page_menu_args' );
 }
-add_action( 'after_setup_theme', 'MYTHEME_menu' );
+add_action( 'after_setup_theme', 'THEMENAME_menu' );
 
-function MYTHEME_add_sub_menu_toggle( $output, $item, $depth, $args ) {
+function THEMENAME_add_sub_menu_toggle( $output, $item, $depth, $args ) {
 	if ( 0 === $depth && in_array( 'menu-item-has-children', $item->classes, true ) ) {
 
 		// Add toggle button.
-		$output .= '<button class="sub-menu-toggle" aria-expanded="false" onClick="MYTHEMEExpandSubMenu(this)">';
-		$output .= '<span class="icon-plus">' . MYTHEME_get_icon_svg( 'ui', 'plus', 18 ) . '</span>';
-		$output .= '<span class="icon-minus">' . MYTHEME_get_icon_svg( 'ui', 'minus', 18 ) . '</span>';
-		$output .= '<span class="screen-reader-text">' . esc_html__( 'Open menu', 'MYTHEME' ) . '</span>';
+		$output .= '<button class="sub-menu-toggle" aria-expanded="false" onClick="THEMENAMEExpandSubMenu(this)">';
+		$output .= '<span class="icon-plus">' . THEMENAME_get_icon_svg( 'ui', 'plus', 18 ) . '</span>';
+		$output .= '<span class="icon-minus">' . THEMENAME_get_icon_svg( 'ui', 'minus', 18 ) . '</span>';
+		$output .= '<span class="screen-reader-text">' . esc_html__( 'Open menu', 'THEMENAME' ) . '</span>';
 		$output .= '</button>';
 	}
 	return $output;
@@ -47,26 +47,26 @@ function MYTHEME_add_sub_menu_toggle( $output, $item, $depth, $args ) {
 /**
  * Detects the social network from a URL and returns the SVG code for its icon.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param string $uri  Social link.
  * @param int    $size The icon size in pixels.
  * @return string
  */
-function MYTHEME_get_social_link_svg( $uri, $size = 24 ) {
-	return MYTHEME_SVG_Icons::get_social_link_svg( $uri, $size );
+function THEMENAME_get_social_link_svg( $uri, $size = 24 ) {
+	return THEMENAME_SVG_Icons::get_social_link_svg( $uri, $size );
 }
 /**
  * Filters the arguments for a single nav menu item.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param stdClass $args  An object of wp_nav_menu() arguments.
  * @param WP_Post  $item  Menu item data object.
  * @param int      $depth Depth of menu item. Used for padding.
  * @return stdClass
  */
-function MYTHEME_add_menu_description_args( $args, $item, $depth ) {
+function THEMENAME_add_menu_description_args( $args, $item, $depth ) {
 	$args->link_after = '';
 	if ( 0 === $depth && isset( $item->description ) && $item->description ) {
 		// The extra <span> element is here for styling purposes: Allows the description to not be underlined on hover.
@@ -77,9 +77,9 @@ function MYTHEME_add_menu_description_args( $args, $item, $depth ) {
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_page_menu_args( $args ) {
+function THEMENAME_page_menu_args( $args ) {
     $args['show_home'] = true;
     return $args;
 }

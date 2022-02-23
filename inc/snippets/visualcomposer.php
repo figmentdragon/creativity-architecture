@@ -11,14 +11,14 @@ if (function_exists('vc_add_param')) {
       vc_set_shortcodes_templates_dir(get_template_directory().'/vc-elements');
     }
 
-    require_once(get_template_directory().'/vc-elements/MYTHEME_post_slider.php');
+    require_once(get_template_directory().'/vc-elements/THEMENAME_post_slider.php');
   }
 
   $attributes = [
     //    'type' => 'dropdown',
     'heading'     => "Column Styles",
     'type'        => 'checkbox',
-    'param_name'  => 'MYTHEME_style',
+    'param_name'  => 'THEMENAME_style',
     'value'       => [
       "rote Box"         => "red_box",
       'transparente Box' => 'default_box',
@@ -35,7 +35,7 @@ if (function_exists('vc_add_param')) {
   $attributes = [
     'type'        => 'dropdown',
     'heading'     => "vertikale Ausrichtung",
-    'param_name'  => 'MYTHEME_vertical_align',
+    'param_name'  => 'THEMENAME_vertical_align',
     'value'       => [
       "oben"  => "top",
       'mitte' => 'center',
@@ -50,7 +50,7 @@ if (function_exists('vc_add_param')) {
     'type'        => 'checkbox',
     //    'type' => 'dropdown',
     'heading'     => "Row Styles",
-    'param_name'  => 'MYTHEME_style',
+    'param_name'  => 'THEMENAME_style',
     'value'       => [
       "Schatten oben"  => "shadow_top",
       "Schatten unten" => "shadow_bottom",

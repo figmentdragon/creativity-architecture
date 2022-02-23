@@ -1,73 +1,73 @@
 <?php
 /*
 Author: Eddie Machado
-URL: http://themble.com/MYTHEME/
+URL: http://themble.com/THEMENAME/
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
 sidebars, comments, etc.
 */
 
-// LOAD MYTHEME CORE (if you remove this, the theme will break)
-require_once( 'inc/MYTHEME.php' );
+// LOAD THEMENAME CORE (if you remove this, the theme will break)
+require_once( 'inc/THEMENAME.php' );
 
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH MYTHEME
+LAUNCH THEMENAME
 Let's get everything up and running.
 *********************/
 
-function MYTHEME_setup() {
+function THEMENAME_setup() {
 
   add_editor_style( get_stylesheet_directory_uri() . '/assets/scripts/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  //load_theme_textdomain( 'MYTHEME', get_template_directory() . '/library/translation' );
+  //load_theme_textdomain( 'THEMENAME', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'inc/custom-post-type.php' );
 
   // launching operation cleanup
-  add_action( 'init', 'MYTHEME_head_cleanup' );
+  add_action( 'init', 'THEMENAME_head_cleanup' );
 	add_action( 'admin_menu' , 'front_page_on_pages_menu' );
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
-  add_filter( 'the_generator', 'MYTHEME_rss_version' );
+  add_filter( 'the_generator', 'THEMENAME_rss_version' );
   // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'MYTHEME_remove_wp_widget_recent_comments_style', 1 );
+  add_filter( 'wp_head', 'THEMENAME_remove_wp_widget_recent_comments_style', 1 );
   // clean up comment styles in the head
 	add_filter( 'show_admin_bar', '__return_false' );
-	add_filter('post_comments_feed_link', 'MYTHEME_post_comments_feed_link');
-	add_filter('wp_nav_menu_args', 'MYTHEME_nav_menu_args');
+	add_filter('post_comments_feed_link', 'THEMENAME_post_comments_feed_link');
+	add_filter('wp_nav_menu_args', 'THEMENAME_nav_menu_args');
 
-  add_action( 'wp_head', 'MYTHEME_remove_recent_comments_style', 1 );
+  add_action( 'wp_head', 'THEMENAME_remove_recent_comments_style', 1 );
   // clean up gallery output in wp
-  add_filter( 'gallery_style', 'MYTHEME_gallery_style' );
+  add_filter( 'gallery_style', 'THEMENAME_gallery_style' );
 
   // enqueue base scripts and styles
-	add_action( 'wp_enqueue_scripts', 'MYTHEME_scripts' );
-  add_action( 'wp_enqueue_scripts', 'MYTHEME_style' );
-  add_action( 'customize_preview_init', 'MYTHEME_customize_preview_init' );
+	add_action( 'wp_enqueue_scripts', 'THEMENAME_scripts' );
+  add_action( 'wp_enqueue_scripts', 'THEMENAME_style' );
+  add_action( 'customize_preview_init', 'THEMENAME_customize_preview_init' );
   // launching this stuff after theme setup
-  MYTHEME_theme_support();
+  THEMENAME_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'MYTHEME_register_sidebars' );
+  add_action( 'widgets_init', 'THEMENAME_register_sidebars' );
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'MYTHEME_filter_ptags_on_images' );
+  add_filter( 'the_content', 'THEMENAME_filter_ptags_on_images' );
   // cleaning up excerpt
-  add_filter( 'excerpt_more', 'MYTHEME_excerpt_more' );
+  add_filter( 'excerpt_more', 'THEMENAME_excerpt_more' );
 
-	add_shortcode('button', 'MYTHEME_button_shortcode');
+	add_shortcode('button', 'THEMENAME_button_shortcode');
 
-} /* end MYTHEME ahoy */
+} /* end THEMENAME ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'MYTHEME_setup' );
+add_action( 'after_setup_theme', 'THEMENAME_setup' );
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -77,8 +77,8 @@ if ( ! isset( $content_width ) ) $content_width = 900;
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'MYTHEME-thumb-600', 600, 150, true );
-add_image_size( 'MYTHEME-thumb-300', 300, 100, true );
+add_image_size( 'THEMENAME-thumb-600', 600, 150, true );
+add_image_size( 'THEMENAME-thumb-300', 300, 100, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -92,20 +92,20 @@ inside the thumbnail function.
 
 For example, to call the 300 x 100 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'MYTHEME-thumb-300' ); ?>
+<?php the_post_thumbnail( 'THEMENAME-thumb-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'MYTHEME-thumb-600' ); ?>
+<?php the_post_thumbnail( 'THEMENAME-thumb-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
 */
 
-add_filter( 'image_size_names_choose', 'MYTHEME_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'THEMENAME_custom_image_sizes' );
 
-function MYTHEME_custom_image_sizes( $sizes ) {
+function THEMENAME_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'MYTHEME-thumb-600' => __('600px by 150px'),
-        'MYTHEME-thumb-300' => __('300px by 100px'),
+        'THEMENAME-thumb-600' => __('600px by 150px'),
+        'THEMENAME-thumb-300' => __('300px by 100px'),
     ) );
 }
 
@@ -133,7 +133,7 @@ new image size.
   - Create some boilerplate Sections, Controls and Settings
 */
 
-function MYTHEME_theme_customizer($wp_customize) {
+function THEMENAME_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
   // Uncomment the below lines to remove the default customize sections
@@ -152,12 +152,12 @@ function MYTHEME_theme_customizer($wp_customize) {
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action( 'customize_register', 'MYTHEME_theme_customizer' );
+add_action( 'customize_register', 'THEMENAME_theme_customizer' );
 
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function MYTHEME_register_sidebars() {
+function THEMENAME_register_sidebars() {
 	register_sidebar(array(				// Start a series of sidebars to register
 		'id' => 'sidebar', 					// Make an ID
 		'name' => 'Sidebar',				// Name it
@@ -181,8 +181,8 @@ function MYTHEME_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'MYTHEME' ),
-		'description' => __( 'The second (secondary) sidebar.', 'MYTHEME' ),
+		'name' => __( 'Sidebar 2', 'THEMENAME' ),
+		'description' => __( 'The second (secondary) sidebar.', 'THEMENAME' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -203,7 +203,7 @@ function MYTHEME_register_sidebars() {
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function MYTHEME_comments( $comment, $args, $depth ) {
+function THEMENAME_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
     <article  class="cf">
@@ -221,13 +221,13 @@ function MYTHEME_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'MYTHEME' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'MYTHEME' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'MYTHEME' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'THEMENAME' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'THEMENAME' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'THEMENAME' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="invalid invalid-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'MYTHEME' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'THEMENAME' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">
@@ -247,10 +247,10 @@ external fonts. If you're using Google Fonts, you
 can replace these fonts, change it in your scss files
 and be up and running in seconds.
 */
-function MYTHEME_fonts() {
-  wp_enqueue_style('MYTHEME_fontface');
+function THEMENAME_fonts() {
+  wp_enqueue_style('THEMENAME_fontface');
 }
 
-add_action('wp_enqueue_scripts', 'MYTHEME_fonts');
+add_action('wp_enqueue_scripts', 'THEMENAME_fonts');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

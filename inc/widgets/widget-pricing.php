@@ -2,24 +2,24 @@
 /**
  * Pricing Widget
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
-add_action('widgets_init', 'MYTHEME_register_pricing_widget');
+add_action('widgets_init', 'THEMENAME_register_pricing_widget');
 
-function MYTHEME_register_pricing_widget() {
-    register_widget('MYTHEME_pricing');
+function THEMENAME_register_pricing_widget() {
+    register_widget('THEMENAME_pricing');
 }
 
-class MYTHEME_Pricing extends WP_Widget {
+class THEMENAME_Pricing extends WP_Widget {
 
     /**
      * Register widget with WordPress.
      */
     public function __construct() {
         parent::__construct(
-            'MYTHEME_pricing', 'AP : Pricing Table', array(
-                'description' => __('A widget that shows Pricing Table', 'MYTHEME')
+            'THEMENAME_pricing', 'AP : Pricing Table', array(
+                'description' => __('A widget that shows Pricing Table', 'THEMENAME')
             )
         );
     }
@@ -33,118 +33,118 @@ class MYTHEME_Pricing extends WP_Widget {
             // This widget has no title
             // Other fields
             'pricing_plan' => array(
-                'MYTHEME_widgets_name' => 'pricing_plan',
-                'MYTHEME_widgets_title' => __('Plan Name', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_plan',
+                'THEMENAME_widgets_title' => __('Plan Name', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_plan_sub_text' => array(
-                'MYTHEME_widgets_name' => 'pricing_plan_sub_text',
-                'MYTHEME_widgets_title' => __('Sub Text', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_plan_sub_text',
+                'THEMENAME_widgets_title' => __('Sub Text', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_price_currency' => array(
-                'MYTHEME_widgets_name' => 'pricing_price_currency',
-                'MYTHEME_widgets_title' => __('Currency', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_price_currency',
+                'THEMENAME_widgets_title' => __('Currency', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
 
             'pricing_price' => array(
-                'MYTHEME_widgets_name' => 'pricing_price',
-                'MYTHEME_widgets_title' => __('Price', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_price',
+                'THEMENAME_widgets_title' => __('Price', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_price_decimal' => array(
-                'MYTHEME_widgets_name' => 'pricing_price_decimal',
-                'MYTHEME_widgets_title' => __('Decimal Value', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_price_decimal',
+                'THEMENAME_widgets_title' => __('Decimal Value', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_price_per' => array(
-                'MYTHEME_widgets_name' => 'pricing_price_per',
-                'MYTHEME_widgets_title' => __('Price Per', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_price_per',
+                'THEMENAME_widgets_title' => __('Price Per', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature1' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature1',
-                'MYTHEME_widgets_title' => __('Feature 1', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature1',
+                'THEMENAME_widgets_title' => __('Feature 1', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature1_font_a' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature1_font_a',
-                'MYTHEME_widgets_title' => __('Feature 1 Font Awesome', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature1_font_a',
+                'THEMENAME_widgets_title' => __('Feature 1 Font Awesome', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature2' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature2',
-                'MYTHEME_widgets_title' => __('Feature 2', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature2',
+                'THEMENAME_widgets_title' => __('Feature 2', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature2_font_a' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature2_font_a',
-                'MYTHEME_widgets_title' => __('Feature 2 Font Awesome', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature2_font_a',
+                'THEMENAME_widgets_title' => __('Feature 2 Font Awesome', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature3' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature3',
-                'MYTHEME_widgets_title' => __('Feature 3', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature3',
+                'THEMENAME_widgets_title' => __('Feature 3', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature3_font_a' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature3_font_a',
-                'MYTHEME_widgets_title' => __('Feature 3 Font Awesome', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature3_font_a',
+                'THEMENAME_widgets_title' => __('Feature 3 Font Awesome', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature4' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature4',
-                'MYTHEME_widgets_title' => __('Feature 4', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature4',
+                'THEMENAME_widgets_title' => __('Feature 4', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature4_font_a' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature4_font_a',
-                'MYTHEME_widgets_title' => __('Feature 4 Font Awesome', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature4_font_a',
+                'THEMENAME_widgets_title' => __('Feature 4 Font Awesome', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature5' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature5',
-                'MYTHEME_widgets_title' => __('Feature 5', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature5',
+                'THEMENAME_widgets_title' => __('Feature 5', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature5_font_a' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature5_font_a',
-                'MYTHEME_widgets_title' => __('Feature 5 Font Awesome', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature5_font_a',
+                'THEMENAME_widgets_title' => __('Feature 5 Font Awesome', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature6' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature6',
-                'MYTHEME_widgets_title' => __('Feature 6', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature6',
+                'THEMENAME_widgets_title' => __('Feature 6', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_feature6_font_a' => array(
-                'MYTHEME_widgets_name' => 'pricing_feature6_font_a',
-                'MYTHEME_widgets_title' => __('Feature 6 Font Awesome', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_feature6_font_a',
+                'THEMENAME_widgets_title' => __('Feature 6 Font Awesome', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
 
             'pricing_desc' => array(
-                'MYTHEME_widgets_name' => 'pricing_desc',
-                'MYTHEME_widgets_title' => __( 'Description', 'MYTHEME' ),
-                'MYTHEME_widgets_field_type' => 'textarea',
-                'MYTHEME_widgets_row' => '6'
+                'THEMENAME_widgets_name' => 'pricing_desc',
+                'THEMENAME_widgets_title' => __( 'Description', 'THEMENAME' ),
+                'THEMENAME_widgets_field_type' => 'textarea',
+                'THEMENAME_widgets_row' => '6'
             ),
             'pricing_button_text' => array(
-                'MYTHEME_widgets_name' => 'pricing_button_text',
-                'MYTHEME_widgets_title' => __('Button Text', 'MYTHEME'),
-                'MYTHEME_widgets_desc' => __('Leave Empty not to show', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'text',
+                'THEMENAME_widgets_name' => 'pricing_button_text',
+                'THEMENAME_widgets_title' => __('Button Text', 'THEMENAME'),
+                'THEMENAME_widgets_desc' => __('Leave Empty not to show', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'text',
             ),
             'pricing_button_link' => array(
-                'MYTHEME_widgets_name' => 'pricing_button_link',
-                'MYTHEME_widgets_title' => __('Button Link', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'url',
+                'THEMENAME_widgets_name' => 'pricing_button_link',
+                'THEMENAME_widgets_title' => __('Button Link', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'url',
             ),
             'pricing_featured' => array(
-                'MYTHEME_widgets_name' => 'pricing_featured',
-                'MYTHEME_widgets_title' => __('Featured', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'checkbox',
+                'THEMENAME_widgets_name' => 'pricing_featured',
+                'THEMENAME_widgets_title' => __('Featured', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'checkbox',
             ),
         );
 
@@ -261,7 +261,7 @@ class MYTHEME_Pricing extends WP_Widget {
      * @param	array	$new_instance	Values just sent to be saved.
      * @param	array	$old_instance	Previously saved values from database.
      *
-     * @uses	MYTHEME_widgets_updated_field_value()		defined in widget-fields.php
+     * @uses	THEMENAME_widgets_updated_field_value()		defined in widget-fields.php
      *
      * @return	array Updated safe values to be saved.
      */
@@ -276,7 +276,7 @@ class MYTHEME_Pricing extends WP_Widget {
             extract($widget_field);
 
             // Use helper function to get updated field values
-            $instance[$MYTHEME_widgets_name] = MYTHEME_widgets_updated_field_value($widget_field, $new_instance[$MYTHEME_widgets_name]);
+            $instance[$THEMENAME_widgets_name] = THEMENAME_widgets_updated_field_value($widget_field, $new_instance[$THEMENAME_widgets_name]);
         }
 
         return $instance;
@@ -289,7 +289,7 @@ class MYTHEME_Pricing extends WP_Widget {
      *
      * @param	array $instance Previously saved values from database.
      *
-     * @uses	MYTHEME_widgets_show_widget_field()		defined in widget-fields.php
+     * @uses	THEMENAME_widgets_show_widget_field()		defined in widget-fields.php
      */
     public function form($instance) {
         $widget_fields = $this->widget_fields();
@@ -299,8 +299,8 @@ class MYTHEME_Pricing extends WP_Widget {
 
             // Make array elements available as variables
             extract($widget_field);
-            $MYTHEME_widgets_field_value = !empty($instance[$MYTHEME_widgets_name]) ? esc_attr($instance[$MYTHEME_widgets_name]) : '';
-            MYTHEME_widgets_show_widget_field($this, $widget_field, $MYTHEME_widgets_field_value);
+            $THEMENAME_widgets_field_value = !empty($instance[$THEMENAME_widgets_name]) ? esc_attr($instance[$THEMENAME_widgets_name]) : '';
+            THEMENAME_widgets_show_widget_field($this, $widget_field, $THEMENAME_widgets_field_value);
         }
     }
 

@@ -2,12 +2,12 @@
 /**
  * The template used for displaying slider
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
-$enable_slider = get_theme_mod( 'MYTHEME_slider_option', 'disabled' );
+$enable_slider = get_theme_mod( 'THEMENAME_slider_option', 'disabled' );
 
-if ( ! MYTHEME_check_section( $enable_slider ) ) {
+if ( ! THEMENAME_check_section( $enable_slider ) ) {
 	return;
 }
 
@@ -20,8 +20,8 @@ if ( ! MYTHEME_check_section( $enable_slider ) ) {
 		</div><!-- .main-slider -->
 
 		<div class="scroll-down">
-			<span><?php esc_html_e( 'Scroll', 'MYTHEME' ); ?></span>
-			<?php echo MYTHEME_get_svg( array( 'icon' => 'angle-down' ) ); ?>
+			<span><?php esc_html_e( 'Scroll', 'THEMENAME' ); ?></span>
+			<?php echo THEMENAME_get_svg( array( 'icon' => 'angle-down' ) ); ?>
 		</div><!-- .scroll-down -->
 	</div><!-- .wrapper -->
 </div><!-- #feature-slider -->

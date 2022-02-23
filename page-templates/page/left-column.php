@@ -3,7 +3,7 @@
  * Template Name: Page Left Sidebar
  * Template Post Type: page
  * Description: Displays a page with a left sidebar.
- * @package MYTHEME
+ * @package THEMENAME
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

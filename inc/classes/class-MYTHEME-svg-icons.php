@@ -3,8 +3,8 @@
  * SVG Icons class
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
@@ -17,14 +17,14 @@
  * All icons are assumed to have equal width and height, hence the option
  * to only specify a `$size` parameter in the svg methods.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-class MYTHEME_SVG_Icons {
+class THEMENAME_SVG_Icons {
 
 	/**
 	 * User Interface icons – svg sources.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @var array
 	 */
@@ -40,7 +40,7 @@ class MYTHEME_SVG_Icons {
 	/**
 	 * Social Icons – svg sources.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @var array
 	 */
@@ -91,7 +91,7 @@ class MYTHEME_SVG_Icons {
 	 * By default, each Icon ID is matched against a .com TLD. To override this behavior,
 	 * specify all the domains it covers (including the .com TLD too, if applicable).
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @var array
 	 */
@@ -144,7 +144,7 @@ class MYTHEME_SVG_Icons {
 	 *
 	 * @static
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $group The icon group.
 	 * @param string $icon  The icon.
@@ -162,16 +162,16 @@ class MYTHEME_SVG_Icons {
 		}
 
 		/**
-		 * Filters MYTHEMEs's array of icons.
+		 * Filters THEMENAMEs's array of icons.
 		 *
 		 * The dynamic portion of the hook name, `$group`, refers to
 		 * the name of the group of icons, either "ui" or "social".
 		 *
-		 * @since MYTHEME 1.0
+		 * @since THEMENAME 1.0
 		 *
 		 * @param array $arr Array of icons.
 		 */
-		$arr = apply_filters( "MYTHEME_svg_icons_{$group}", $arr );
+		$arr = apply_filters( "THEMENAME_svg_icons_{$group}", $arr );
 
 		$svg = '';
 		if ( array_key_exists( $icon, $arr ) ) {
@@ -189,7 +189,7 @@ class MYTHEME_SVG_Icons {
 	 *
 	 * @static
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $uri  Social link.
 	 * @param int    $size The icon-size in pixels.
@@ -202,25 +202,25 @@ class MYTHEME_SVG_Icons {
 			$regex_map = array();
 
 			/**
-			 * Filters MYTHEMEs's array of domain mappings for social icons.
+			 * Filters THEMENAMEs's array of domain mappings for social icons.
 			 *
 			 * By default, each Icon ID is matched against a .com TLD. To override this behavior,
 			 * specify all the domains it covers (including the .com TLD too, if applicable).
 			 *
-			 * @since MYTHEME 1.0
+			 * @since THEMENAME 1.0
 			 *
 			 * @param array $social_icons_map Array of default social icons.
 			 */
-			$map = apply_filters( 'MYTHEME_social_icons_map', self::$social_icons_map );
+			$map = apply_filters( 'THEMENAME_social_icons_map', self::$social_icons_map );
 
 			/**
-			 * Filters MYTHEME's array of social icons.
+			 * Filters THEMENAME's array of social icons.
 			 *
-			 * @since MYTHEME 1.0
+			 * @since THEMENAME 1.0
 			 *
 			 * @param array $social_icons Array of default social icons.
 			 */
-			$social_icons = apply_filters( 'MYTHEME_svg_icons_social', self::$social_icons );
+			$social_icons = apply_filters( 'THEMENAME_svg_icons_social', self::$social_icons );
 
 			foreach ( array_keys( $social_icons ) as $icon ) {
 				$domains            = array_key_exists( $icon, $map ) ? $map[ $icon ] : array( sprintf( '%s.com', $icon ) );

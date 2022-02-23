@@ -2,7 +2,7 @@
 /**
  * Social Icons Widget
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 
@@ -11,7 +11,7 @@
  *
  * @since 1.0
  */
-class MYTHEME_Social_Icons_Widget extends WP_Widget {
+class THEMENAME_Social_Icons_Widget extends WP_Widget {
 
 	/**
 	 * Holds widget settings defaults, populated in constructor.
@@ -30,7 +30,7 @@ class MYTHEME_Social_Icons_Widget extends WP_Widget {
 
 		$widget_ops = array(
 			'classname'   => 'ct-social-widget ctsocialwidget social-navigation',
-			'description' => esc_html__( 'Use this widget to add short information and Social Menu', 'MYTHEME' ),
+			'description' => esc_html__( 'Use this widget to add short information and Social Menu', 'THEMENAME' ),
 		);
 
 		$control_ops = array(
@@ -39,7 +39,7 @@ class MYTHEME_Social_Icons_Widget extends WP_Widget {
 
 		parent::__construct(
 			'ct-social', // Base ID
-			esc_html__( 'CT: Social Icons', 'MYTHEME' ), // Name
+			esc_html__( 'CT: Social Icons', 'THEMENAME' ), // Name
 			$widget_ops,
 			$control_ops
 		);
@@ -65,7 +65,7 @@ class MYTHEME_Social_Icons_Widget extends WP_Widget {
 			'menu_class'  => 'social-links-menu',
 			'depth'       => 1,
 			'link_before' => '<span class="screen-reader-text">',
-			'link_after'  => '</span>' . MYTHEME_get_svg( array( 'icon' => 'chain' ) ),
+			'link_after'  => '</span>' . THEMENAME_get_svg( array( 'icon' => 'chain' ) ),
 			'menu'        => $nav_menu
 		);
 
@@ -108,18 +108,18 @@ class MYTHEME_Social_Icons_Widget extends WP_Widget {
 
 		// If no menus exists, direct the user to go and create some.
 		if ( !$menus ) {
-			echo '<p>'. sprintf( __('No menus have been created yet. <a href="%s">Create some</a>.', 'MYTHEME' ), esc_url( admin_url('nav-menus.php') ) ) . '</p>';
+			echo '<p>'. sprintf( __('No menus have been created yet. <a href="%s">Create some</a>.', 'THEMENAME' ), esc_url( admin_url('nav-menus.php') ) ) . '</p>';
 			return;
 		}
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e( 'Title', 'MYTHEME' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id('title') ); ?>"><?php esc_html_e( 'Title', 'THEMENAME' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('nav_menu') ); ?>"><?php esc_html_e( 'Select Menu:', 'MYTHEME' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id('nav_menu') ); ?>"><?php esc_html_e( 'Select Menu:', 'THEMENAME' ); ?></label>
 			<select id="<?php echo esc_attr( $this->get_field_id('nav_menu') ); ?>" name="<?php echo esc_attr( $this->get_field_name('nav_menu') ); ?>">
-				<option value="0"><?php esc_html_e( '&mdash; Select &mdash;', 'MYTHEME' ); ?></option>
+				<option value="0"><?php esc_html_e( '&mdash; Select &mdash;', 'THEMENAME' ); ?></option>
 		<?php
 			foreach ( $menus as $menu ) {
 				echo '<option value="' . esc_attr( $menu->term_id ) . '"'
@@ -137,7 +137,7 @@ class MYTHEME_Social_Icons_Widget extends WP_Widget {
 /**
  * Initialize Social Icons Widget
  */
-function MYTHEME_social_icons_init() {
-	register_widget( 'MYTHEME_Social_Icons_Widget' );
+function THEMENAME_social_icons_init() {
+	register_widget( 'THEMENAME_Social_Icons_Widget' );
 }
-add_action( 'widgets_init', 'MYTHEME_social_icons_init' );
+add_action( 'widgets_init', 'THEMENAME_social_icons_init' );

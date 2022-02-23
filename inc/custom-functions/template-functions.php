@@ -3,19 +3,19 @@
  * Functions which enhance the theme by hooking into WordPress
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
  * Adds custom classes to the array of body classes.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param array $classes Classes for the body element.
  * @return array
  */
-function MYTHEME_body_classes( $classes ) {
+function THEMENAME_body_classes( $classes ) {
 	if ( get_background_image() ) {
 		$classes[] = 'custom-background-image';
 	}
@@ -67,8 +67,8 @@ function MYTHEME_body_classes( $classes ) {
 	$classes[] = 'navigation-default';
 
 	// Adds a class with respect to layout selected.
-	$layout  = MYTHEME_get_theme_layout();
-	$sidebar = MYTHEME_get_sidebar_id();
+	$layout  = THEMENAME_get_theme_layout();
+	$sidebar = THEMENAME_get_sidebar_id();
 
 	$layout_class = "no-sidebar content-width-layout";
 
@@ -84,7 +84,7 @@ function MYTHEME_body_classes( $classes ) {
 
 	$classes['color-scheme'] = esc_attr( 'color-scheme-' . get_theme_mod( 'color_scheme', 'default' ) );
 
-	$enable_slider = MYTHEME_check_section( get_theme_mod( 'MYTHEME_slider_option', 'disabled' ) );
+	$enable_slider = THEMENAME_check_section( get_theme_mod( 'THEMENAME_slider_option', 'disabled' ) );
 
 	// Add a class if there is a custom header.
 	if ( has_header_image() ) {
@@ -93,7 +93,7 @@ function MYTHEME_body_classes( $classes ) {
 
 	// Full post thumbnail disabled
 
-	if ( is_single() && true == esc_attr(get_theme_mod( 'MYTHEME_show_single_image', false ) ) ) {
+	if ( is_single() && true == esc_attr(get_theme_mod( 'THEMENAME_show_single_image', false ) ) ) {
 
 		$classes[] = 'hide-thumbnail';
 
@@ -103,13 +103,13 @@ function MYTHEME_body_classes( $classes ) {
 
 	// Set blog Style.
 
-	$MYTHEME_blog_layout = esc_attr(get_theme_mod( 'MYTHEME_blog_layout', 'default' ) );
+	$THEMENAME_blog_layout = esc_attr(get_theme_mod( 'THEMENAME_blog_layout', 'default' ) );
 
 
 
 	if ( is_home() || is_archive() && !is_single() ) {
 
-		if ( 'large' === $MYTHEME_blog_layout ) {
+		if ( 'large' === $THEMENAME_blog_layout ) {
 
 			$classes[] = 'blog-large';
 
@@ -127,11 +127,11 @@ function MYTHEME_body_classes( $classes ) {
 
 	// Set Full Post Style
 
-	$MYTHEME_single_layout = esc_attr(get_theme_mod( 'MYTHEME_single_layout', 'single-default' ) );
+	$THEMENAME_single_layout = esc_attr(get_theme_mod( 'THEMENAME_single_layout', 'single-default' ) );
 
 	if ( is_single() ) {
 
-		if  ( 'single-centered' === $MYTHEME_single_layout ) {
+		if  ( 'single-centered' === $THEMENAME_single_layout ) {
 
 			$classes[] = 'single-centered';
 
@@ -145,35 +145,35 @@ function MYTHEME_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'MYTHEME_body_classes' );
+add_filter( 'body_class', 'THEMENAME_body_classes' );
 
 /**
  * Adds custom class to the array of posts classes.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param array $classes An array of CSS classes.
  * @return array
  */
-function MYTHEME_post_classes( $classes ) {
+function THEMENAME_post_classes( $classes ) {
 	$classes[] = 'entry';
 
 	return $classes;
 }
-add_filter( 'post_class', 'MYTHEME_post_classes', 10, 3 );
+add_filter( 'post_class', 'THEMENAME_post_classes', 10, 3 );
 
 //	Move the read more link outside of the post summary paragraph
 
-add_filter( 'the_content_more_link', 'MYTHEME_move_more_link' );
+add_filter( 'the_content_more_link', 'THEMENAME_move_more_link' );
 
-function MYTHEME_move_more_link() {
+function THEMENAME_move_more_link() {
 
-	return '<p><a class="more-link" href="'. esc_url(get_permalink()) . '">' . esc_html__( 'Continue Reading', 'MYTHEME' ) . '</a></p>';
+	return '<p><a class="more-link" href="'. esc_url(get_permalink()) . '">' . esc_html__( 'Continue Reading', 'THEMENAME' ) . '</a></p>';
 
 }
 
-function MYTHEME_template_redirect() {
-  $layout = MYTHEME_get_theme_layout();
+function THEMENAME_template_redirect() {
+  $layout = THEMENAME_get_theme_layout();
 
   if ( 'no-sidebar-full-width' === $layout ) {
     $GLOBALS['content_width'] = 1510;
@@ -186,51 +186,51 @@ $deps[] = 'jquery';
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @return void
  */
-function MYTHEME_pingback_header() {
+function THEMENAME_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'MYTHEME_pingback_header' );
+add_action( 'wp_head', 'THEMENAME_pingback_header' );
 
 /**
  * Remove the `no-js` class from body if JS is supported.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @return void
  */
-function MYTHEME_supports_js() {
+function THEMENAME_supports_js() {
 	echo '<script>document.body.classList.remove("no-js");</script>';
 }
-add_action( 'wp_footer', 'MYTHEME_supports_js' );
+add_action( 'wp_footer', 'THEMENAME_supports_js' );
 
 /**
  * Changes comment form default fields.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param array $defaults The form defaults.
  * @return array
  */
-function MYTHEME_comment_form_defaults( $defaults ) {
+function THEMENAME_comment_form_defaults( $defaults ) {
 
 	// Adjust height of comment form.
 	$defaults['comment_field'] = preg_replace( '/rows="\d+"/', 'rows="5"', $defaults['comment_field'] );
 
 	return $defaults;
 }
-add_filter( 'comment_form_defaults', 'MYTHEME_comment_form_defaults' );
+add_filter( 'comment_form_defaults', 'THEMENAME_comment_form_defaults' );
 
 /**
  * Adds custom overlay for Promotion Headline Background Image
  */
-function MYTHEME_promo_head_bg_image_overlay_css() {
-	$overlay = get_theme_mod( 'MYTHEME_promo_head_background_image_opacity', '0' );
+function THEMENAME_promo_head_bg_image_overlay_css() {
+	$overlay = get_theme_mod( 'THEMENAME_promo_head_background_image_opacity', '0' );
 
 	$css = '';
 
@@ -242,15 +242,15 @@ function MYTHEME_promo_head_bg_image_overlay_css() {
 			    } '; // Dividing by 100 as the option is shown as % for user
 	}
 
-	wp_add_inline_style( 'MYTHEME-style', $css );
+	wp_add_inline_style( 'THEMENAME-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'MYTHEME_promo_head_bg_image_overlay_css', 11 );
+add_action( 'wp_enqueue_scripts', 'THEMENAME_promo_head_bg_image_overlay_css', 11 );
 
 /**
  * Adds custom overlay for Header Media
  */
-function MYTHEME_header_media_image_overlay_css() {
-	$overlay = get_theme_mod( 'MYTHEME_header_media_image_opacity' );
+function THEMENAME_header_media_image_overlay_css() {
+	$overlay = get_theme_mod( 'THEMENAME_header_media_image_opacity' );
 
 	$css = '';
 
@@ -262,16 +262,16 @@ function MYTHEME_header_media_image_overlay_css() {
     } '; // Dividing by 100 as the option is shown as % for user
 }
 
-	wp_add_inline_style( 'MYTHEME-style', $css );
+	wp_add_inline_style( 'THEMENAME-style', $css );
 }
-add_action( 'wp_enqueue_scripts', 'MYTHEME_header_media_image_overlay_css', 11 );
+add_action( 'wp_enqueue_scripts', 'THEMENAME_header_media_image_overlay_css', 11 );
 
 /**
  * Remove first post from blog as it is already show via recent post template
  */
-function MYTHEME_alter_home( $query ) {
+function THEMENAME_alter_home( $query ) {
 	if ( $query->is_home() && $query->is_main_query() ) {
-		$cats = get_theme_mod( 'MYTHEME_front_page_category' );
+		$cats = get_theme_mod( 'THEMENAME_front_page_category' );
 
 		if ( is_array( $cats ) && ! in_array( '0', $cats ) ) {
 			$query->query_vars['category__in'] = $cats;
@@ -279,15 +279,15 @@ function MYTHEME_alter_home( $query ) {
 
 	}
 }
-add_action( 'pre_get_posts', 'MYTHEME_alter_home' );
+add_action( 'pre_get_posts', 'THEMENAME_alter_home' );
 
-if ( ! function_exists( 'MYTHEME_content_nav' ) ) :
+if ( ! function_exists( 'THEMENAME_content_nav' ) ) :
 	/**
 	 * Display navigation/pagination when applicable
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 */
-	function MYTHEME_content_nav() {
+	function THEMENAME_content_nav() {
 		global $wp_query;
 
 		// Don't print empty markup in archives if there's only one page.
@@ -295,22 +295,22 @@ if ( ! function_exists( 'MYTHEME_content_nav' ) ) :
 			return;
 		}
 
-		$pagination_type = get_theme_mod( 'MYTHEME_pagination_type', 'default' );
+		$pagination_type = get_theme_mod( 'THEMENAME_pagination_type', 'default' );
 
 		if ( ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) || class_exists( 'Catch_Infinite_Scroll' ) ) {
 			// Support infinite scroll plugins.
 			the_posts_navigation();
 		} elseif ( 'numeric' === $pagination_type && function_exists( 'the_posts_pagination' ) ) {
 			the_posts_pagination( array(
-				'prev_text'          => '<span>' . esc_html__( 'Prev', 'MYTHEME' ) . '</span>',
-				'next_text'          => '<span>' . esc_html__( 'Next', 'MYTHEME' ) . '</span>',
-				'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'MYTHEME' ) . ' </span>',
+				'prev_text'          => '<span>' . esc_html__( 'Prev', 'THEMENAME' ) . '</span>',
+				'next_text'          => '<span>' . esc_html__( 'Next', 'THEMENAME' ) . '</span>',
+				'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'THEMENAME' ) . ' </span>',
 			) );
 		} else {
 			the_posts_navigation();
 		}
 	}
-endif; // MYTHEME_content_nav
+endif; // THEMENAME_content_nav
 
 
 
@@ -321,9 +321,9 @@ endif; // MYTHEME_content_nav
  * @param [string/array] $attr Query string or array of attributes.
  * @return [string] image html
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_get_first_image( $postID, $size, $attr, $src = false ) {
+function THEMENAME_get_first_image( $postID, $size, $attr, $src = false ) {
 	ob_start();
 
 	ob_end_clean();
@@ -347,7 +347,7 @@ function MYTHEME_get_first_image( $postID, $size, $attr, $src = false ) {
 	return false;
 }
 
-function MYTHEME_get_theme_layout() {
+function THEMENAME_get_theme_layout() {
 	$layout = '';
 
 	if ( is_page_template( 'templates/no-sidebar.php' ) ) {
@@ -355,17 +355,17 @@ function MYTHEME_get_theme_layout() {
 	} elseif ( is_page_template( 'templates/right-sidebar.php' ) ) {
 		$layout = 'right-sidebar';
 	} else {
-		$layout = get_theme_mod( 'MYTHEME_default_layout', 'right-sidebar' );
+		$layout = get_theme_mod( 'THEMENAME_default_layout', 'right-sidebar' );
 
 		if ( is_home() || is_archive() ) {
-			$layout = get_theme_mod( 'MYTHEME_homepage_archive_layout', 'right-sidebar' );
+			$layout = get_theme_mod( 'THEMENAME_homepage_archive_layout', 'right-sidebar' );
 		}
 	}
 
 	return $layout;
 }
 
-if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
+if ( ! function_exists( 'THEMENAME_truncate_phrase' ) ) :
 	/**
 	 * Return a phrase shortened in length to a maximum number of characters.
 	 *
@@ -374,14 +374,14 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 	 *
 	 * If the first `$max_characters` of the string does not contain a space character, an empty string will be returned.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $text            A string to be shortened.
 	 * @param integer $max_characters The maximum number of characters to return.
 	 *
 	 * @return string Truncated string
 	 */
-	function MYTHEME_truncate_phrase( $text, $max_characters ) {
+	function THEMENAME_truncate_phrase( $text, $max_characters ) {
 
 		$text = trim( $text );
 
@@ -395,15 +395,15 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 
 		return $text;
 	}
-endif; //MYTHEME_truncate_phrase
+endif; //THEMENAME_truncate_phrase
 
-if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
+if ( ! function_exists( 'THEMENAME_get_the_content_limit' ) ) :
 	/**
 	 * Return content stripped down and limited content.
 	 *
 	 * Strips out tags and shortcodes, limits the output to `$max_char` characters, and appends an ellipsis and more link to the end.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param integer $max_characters The maximum number of characters to return.
 	 * @param string  $more_link_text Optional. Text of the more link. Default is "(more...)".
@@ -411,7 +411,7 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 	 *
 	 * @return string Limited content.
 	 */
-	function MYTHEME_get_the_content_limit( $max_characters, $more_link_text = '(more...)', $stripteaser = false ) {
+	function THEMENAME_get_the_content_limit( $max_characters, $more_link_text = '(more...)', $stripteaser = false ) {
 
 		$content = get_the_content( '', $stripteaser );
 
@@ -422,7 +422,7 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 		$content = trim( preg_replace( '#<(s(cript|tyle)).*?</\1>#si', '', $content ) );
 
 		// Truncate $content to $max_char
-		$content = MYTHEME_truncate_phrase( $content, $max_characters );
+		$content = THEMENAME_truncate_phrase( $content, $max_characters );
 
 		// More link?
 		if ( $more_link_text ) {
@@ -433,22 +433,22 @@ if ( ! function_exists( 'MYTHEME_get_the_content_limit' ) ) :
 			$link = '';
 		}
 
-		return apply_filters( 'MYTHEME_get_the_content_limit', $output, $content, $link, $max_characters );
+		return apply_filters( 'THEMENAME_get_the_content_limit', $output, $content, $link, $max_characters );
 
 	}
-endif; //MYTHEME_get_the_content_limit
+endif; //THEMENAME_get_the_content_limit
 
-if ( ! function_exists( 'MYTHEME_content_image' ) ) :
+if ( ! function_exists( 'THEMENAME_content_image' ) ) :
 	/**
 	 * Template for Featured Image in Archive Content
 	 *
 	 * To override this in a child theme
-	 * simply fabulous-fluid your own MYTHEME_content_image(), and that function will be used instead.
+	 * simply fabulous-fluid your own THEMENAME_content_image(), and that function will be used instead.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 */
-	function MYTHEME_content_image() {
-		if ( has_post_thumbnail() && MYTHEME_jetpack_featured_image_display() && is_singular() ) {
+	function THEMENAME_content_image() {
+		if ( has_post_thumbnail() && THEMENAME_jetpack_featured_image_display() && is_singular() ) {
 			global $post, $wp_query;
 
 			// Get Page ID outside Loop.
@@ -458,9 +458,9 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 		 		if ( is_attachment() ) {
 					$parent = $post->post_parent;
 
-					$individual_featured_image = get_post_meta( $parent, 'MYTHEME-featured-image', true );
+					$individual_featured_image = get_post_meta( $parent, 'THEMENAME-featured-image', true );
 				} else {
-					$individual_featured_image = get_post_meta( $page_id, 'MYTHEME-featured-image', true );
+					$individual_featured_image = get_post_meta( $page_id, 'THEMENAME-featured-image', true );
 				}
 			}
 
@@ -480,7 +480,7 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 					$image_size = $individual_featured_image;
 					$class[]    = 'from-metabox';
 				} else {
-					$layout = MYTHEME_get_theme_layout();
+					$layout = THEMENAME_get_theme_layout();
 
 					if ( 'no-sidebar-full-width' === $layout ) {
 						$image_size = 'post-thumbnail';
@@ -498,13 +498,13 @@ if ( ! function_exists( 'MYTHEME_content_image' ) ) :
 			}
 		} // End if ().
 	}
-endif; // MYTHEME_content_image.
+endif; // THEMENAME_content_image.
 
-if ( ! function_exists( 'MYTHEME_sections' ) ) :
+if ( ! function_exists( 'THEMENAME_sections' ) ) :
 	/**
-	 * Display Sections on header and footer with respect to the section option set in MYTHEME_sections_sort
+	 * Display Sections on header and footer with respect to the section option set in THEMENAME_sections_sort
 	 */
-	function MYTHEME_sections( $selector = 'header' ) {
+	function THEMENAME_sections( $selector = 'header' ) {
 		get_template_part( 'template-parts/header/header-media' );
 		get_template_part( 'template-parts/slider/display-slider' );
 		get_template_part( 'template-parts/portfolio/display-portfolio' );
@@ -515,14 +515,14 @@ if ( ! function_exists( 'MYTHEME_sections' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'MYTHEME_post_thumbnail' ) ) :
+if ( ! function_exists( 'THEMENAME_post_thumbnail' ) ) :
 	/**
 	 * $image_size post thumbnail size
 	 * $type html, html-with-bg, url
 	 * $echo echo true/false
 	 * $no_thumb display no-thumb image or not
 	 */
-	function MYTHEME_post_thumbnail( $image_size = 'post-thumbnail', $type = 'html', $echo = true, $no_thumb = false ) {
+	function THEMENAME_post_thumbnail( $image_size = 'post-thumbnail', $type = 'html', $echo = true, $no_thumb = false ) {
 		$image = $image_url = '';
 
 		if ( has_post_thumbnail() ) {
@@ -545,7 +545,7 @@ if ( ! function_exists( 'MYTHEME_post_thumbnail' ) ) :
 			}
 
 			// Get the first image in page, returns false if there is no image.
-			$first_image_url = MYTHEME_get_first_image( get_the_ID(), $image_size, '', true );
+			$first_image_url = THEMENAME_get_first_image( get_the_ID(), $image_size, '', true );
 
 			// Set value of image as first image if there is an image present in the page.
 			if ( $first_image_url ) {
@@ -592,20 +592,20 @@ endif;
 /**
  * Determines if post thumbnail can be displayed.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @return bool
  */
-function MYTHEME_can_show_post_thumbnail() {
+function THEMENAME_can_show_post_thumbnail() {
 	/**
 	 * Filters whether post thumbnail can be displayed.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param bool $show_post_thumbnail Whether to show post thumbnail.
 	 */
 	return apply_filters(
-		'MYTHEME_can_show_post_thumbnail',
+		'THEMENAME_can_show_post_thumbnail',
 		! post_password_required() && ! is_attachment() && has_post_thumbnail()
 	);
 }
@@ -613,23 +613,23 @@ function MYTHEME_can_show_post_thumbnail() {
 /**
  * Returns the size for avatars used in the theme.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @return int
  */
-function MYTHEME_get_avatar_size() {
+function THEMENAME_get_avatar_size() {
 	return 60;
 }
 
 /**
  * Creates continue reading text.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_continue_reading_text() {
+function THEMENAME_continue_reading_text() {
 	$continue_reading = sprintf(
 		/* translators: %s: Name of current post. */
-		esc_html__( 'Continue reading %s', 'MYTHEME' ),
+		esc_html__( 'Continue reading %s', 'THEMENAME' ),
 		the_title( '<span class="screen-reader-text">', '</span>', false )
 	);
 
@@ -639,29 +639,29 @@ function MYTHEME_continue_reading_text() {
 /**
  * Creates the continue reading link for excerpt.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_continue_reading_link_excerpt() {
+function THEMENAME_continue_reading_link_excerpt() {
 	if ( ! is_admin() ) {
-		return '&hellip; <a class="more-link" href="' . esc_url( get_permalink() ) . '">' . MYTHEME_continue_reading_text() . '</a>';
+		return '&hellip; <a class="more-link" href="' . esc_url( get_permalink() ) . '">' . THEMENAME_continue_reading_text() . '</a>';
 	}
 }
 
 /**
  * Creates the continue reading link.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_continue_reading_link() {
+function THEMENAME_continue_reading_link() {
 	if ( ! is_admin() ) {
-		return '<div class="more-link-container"><a class="more-link" href="' . esc_url( get_permalink() ) . '#more-' . esc_attr( get_the_ID() ) . '">' . MYTHEME_continue_reading_text() . '</a></div>';
+		return '<div class="more-link-container"><a class="more-link" href="' . esc_url( get_permalink() ) . '#more-' . esc_attr( get_the_ID() ) . '">' . THEMENAME_continue_reading_text() . '</a></div>';
 	}
 }
 
 // Filter the excerpt more link.
-add_filter( 'the_content_more_link', 'MYTHEME_continue_reading_link' );
+add_filter( 'the_content_more_link', 'THEMENAME_continue_reading_link' );
 
-function MYTHEME_excerpt_more_for_manual_excerpts( $excerpt ) {
+function THEMENAME_excerpt_more_for_manual_excerpts( $excerpt ) {
 
     global $post;
 
@@ -669,7 +669,7 @@ function MYTHEME_excerpt_more_for_manual_excerpts( $excerpt ) {
 
     if ( has_excerpt( $post->ID ) ) {
 
-        $excerpt .= MYTHEME_excerpt_more( '&hellip;' );
+        $excerpt .= THEMENAME_excerpt_more( '&hellip;' );
 
     }
 
@@ -679,69 +679,69 @@ function MYTHEME_excerpt_more_for_manual_excerpts( $excerpt ) {
 
 }
 
-add_filter( 'get_the_excerpt', 'MYTHEME_excerpt_more_for_manual_excerpts' );
+add_filter( 'get_the_excerpt', 'THEMENAME_excerpt_more_for_manual_excerpts' );
 
 
-add_filter( 'excerpt_length', 'MYTHEME_excerpt_length' );
+add_filter( 'excerpt_length', 'THEMENAME_excerpt_length' );
 
 
 
 
-if ( ! function_exists( 'MYTHEME_post_title' ) ) {
+if ( ! function_exists( 'THEMENAME_post_title' ) ) {
 	/**
 	 * Adds a title to posts and pages that are missing titles.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $title The title.
 	 * @return string
 	 */
-	function MYTHEME_post_title( $title ) {
-		return '' === $title ? esc_html_x( 'Untitled', 'Added to posts and pages that are missing titles', 'MYTHEME' ) : $title;
+	function THEMENAME_post_title( $title ) {
+		return '' === $title ? esc_html_x( 'Untitled', 'Added to posts and pages that are missing titles', 'THEMENAME' ) : $title;
 	}
 }
-add_filter( 'the_title', 'MYTHEME_post_title' );
+add_filter( 'the_title', 'THEMENAME_post_title' );
 
 /**
  * Gets the SVG code for a given icon.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param string $group The icon group.
  * @param string $icon  The icon.
  * @param int    $size  The icon size in pixels.
  * @return string
  */
-function MYTHEME_get_icon_svg( $group, $icon, $size = 24 ) {
-	return MYTHEME_SVG_Icons::get_svg( $group, $icon, $size );
+function THEMENAME_get_icon_svg( $group, $icon, $size = 24 ) {
+	return THEMENAME_SVG_Icons::get_svg( $group, $icon, $size );
 }
 
 /**
  * Changes the default navigation arrows to svg icons
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param string $calendar_output The generated HTML of the calendar.
  * @return string
  */
-function MYTHEME_change_calendar_nav_arrows( $calendar_output ) {
-	$calendar_output = str_replace( '&laquo; ', is_rtl() ? MYTHEME_get_icon_svg( 'ui', 'arrow_right' ) : MYTHEME_get_icon_svg( 'ui', 'arrow_left' ), $calendar_output );
-	$calendar_output = str_replace( ' &raquo;', is_rtl() ? MYTHEME_get_icon_svg( 'ui', 'arrow_left' ) : MYTHEME_get_icon_svg( 'ui', 'arrow_right' ), $calendar_output );
+function THEMENAME_change_calendar_nav_arrows( $calendar_output ) {
+	$calendar_output = str_replace( '&laquo; ', is_rtl() ? THEMENAME_get_icon_svg( 'ui', 'arrow_right' ) : THEMENAME_get_icon_svg( 'ui', 'arrow_left' ), $calendar_output );
+	$calendar_output = str_replace( ' &raquo;', is_rtl() ? THEMENAME_get_icon_svg( 'ui', 'arrow_left' ) : THEMENAME_get_icon_svg( 'ui', 'arrow_right' ), $calendar_output );
 	return $calendar_output;
 }
-add_filter( 'get_calendar', 'MYTHEME_change_calendar_nav_arrows' );
+add_filter( 'get_calendar', 'THEMENAME_change_calendar_nav_arrows' );
 
 /**
  * Get custom CSS.
  *
  * Return CSS for non-latin language, if available, or null
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param string $type Whether to return CSS for the "front-end", "block-editor", or "classic-editor".
  * @return string
  */
-function MYTHEME_get_non_latin_css( $type = 'front-end' ) {
+function THEMENAME_get_non_latin_css( $type = 'front-end' ) {
 
 	// Fetch site locale.
 	$locale = get_bloginfo( 'language' );
@@ -749,12 +749,12 @@ function MYTHEME_get_non_latin_css( $type = 'front-end' ) {
 	/**
 	 * Filters the fallback fonts for non-latin languages.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param array $font_family An array of locales and font families.
 	 */
 	$font_family = apply_filters(
-		'MYTHEME_get_localized_font_family_types',
+		'THEMENAME_get_localized_font_family_types',
 		array(
 
 			// Arabic.
@@ -825,12 +825,12 @@ function MYTHEME_get_non_latin_css( $type = 'front-end' ) {
 	/**
 	 * Filters the elements to apply fallback fonts to.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param array $elements An array of elements for "front-end", "block-editor", or "classic-editor".
 	 */
 	$elements = apply_filters(
-		'MYTHEME_get_localized_font_family_elements',
+		'THEMENAME_get_localized_font_family_elements',
 		array(
 			'front-end'      => array( 'body', 'input', 'textarea', 'button', '.button', '.faux-button', '.button__link', '.file__button', '.has-drop-cap:not(:focus)::first-letter', '.has-drop-cap:not(:focus)::first-letter', '.entry-content .archives', '.entry-content .categories', '.entry-content .cover-image', '.entry-content .latest-comments', '.entry-content .latest-posts', '.entry-content .pullquote', '.entry-content .quote.is-large', '.entry-content .quote.is-style-large', '.entry-content .archives *', '.entry-content .categories *', '.entry-content .latest-posts *', '.entry-content .latest-comments *', '.entry-content p', '.entry-content ol', '.entry-content ul', '.entry-content dl', '.entry-content dt', '.entry-content cite', '.entry-content figcaption', '.entry-content .wp-caption-text', '.comment-content p', '.comment-content ol', '.comment-content ul', '.comment-content dl', '.comment-content dt', '.comment-content cite', '.comment-content figcaption', '.comment-content .wp-caption-text', '.widget_text p', '.widget_text ol', '.widget_text ul', '.widget_text dl', '.widget_text dt', '.widget-content .rssSummary', '.widget-content cite', '.widget-content figcaption', '.widget-content .wp-caption-text' ),
 			'block-editor'   => array( '.editor-styles-wrapper > *', '.editor-styles-wrapper p', '.editor-styles-wrapper ol', '.editor-styles-wrapper ul', '.editor-styles-wrapper dl', '.editor-styles-wrapper dt', '.editor-post-title__block .editor-post-title__input', '.editor-styles-wrapper .wp-block h1', '.editor-styles-wrapper .wp-block h2', '.editor-styles-wrapper .wp-block h3', '.editor-styles-wrapper .wp-block h4', '.editor-styles-wrapper .wp-block h5', '.editor-styles-wrapper .wp-block h6', '.editor-styles-wrapper .has-drop-cap:not(:focus)::first-letter', '.editor-styles-wrapper cite', '.editor-styles-wrapper figcaption', '.editor-styles-wrapper .wp-caption-text' ),
@@ -844,12 +844,12 @@ function MYTHEME_get_non_latin_css( $type = 'front-end' ) {
 	}
 
 	// Include file if function doesn't exist.
-	if ( ! function_exists( 'MYTHEME_generate_css' ) ) {
+	if ( ! function_exists( 'THEMENAME_generate_css' ) ) {
 		require_once get_theme_file_path( 'inc/custom/custom-css.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
 	// Return the specified styles.
-	return MYTHEME_generate_css( // @phpstan-ignore-line.
+	return THEMENAME_generate_css( // @phpstan-ignore-line.
 		implode( ',', $elements[ $type ] ),
 		'font-family',
 		implode( ',', $font_family[ $locale ] ),
@@ -862,7 +862,7 @@ function MYTHEME_get_non_latin_css( $type = 'front-end' ) {
 /**
  * Print the first instance of a block in the content, and then break away.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param string      $block_name The full block type name, or a partial match.
  *                                Example: `core/image`, `core-embed/*`.
@@ -870,7 +870,7 @@ function MYTHEME_get_non_latin_css( $type = 'front-end' ) {
  * @param int         $instances  How many instances of the block will be printed (max). Default  1.
  * @return bool Returns true if a block was located & printed, otherwise false.
  */
-function MYTHEME_print_first_instance_of_block( $block_name, $content = null, $instances = 1 ) {
+function THEMENAME_print_first_instance_of_block( $block_name, $content = null, $instances = 1 ) {
 	$instances_count = 0;
 	$blocks_content  = '';
 
@@ -925,7 +925,7 @@ function MYTHEME_print_first_instance_of_block( $block_name, $content = null, $i
 /**
  * Filters the list of attachment image attributes.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @param array        $attr       Array of attribute values for the image markup, keyed by attribute name.
  *                                 See wp_get_attachment_image().
@@ -934,7 +934,7 @@ function MYTHEME_print_first_instance_of_block( $block_name, $content = null, $i
  *                                 (in that order). Default 'thumbnail'.
  * @return array
  */
-function MYTHEME_get_attachment_image_attributes( $attr, $attachment, $size ) {
+function THEMENAME_get_attachment_image_attributes( $attr, $attachment, $size ) {
 
 	if ( is_admin() ) {
 		return $attr;
@@ -967,12 +967,12 @@ function MYTHEME_get_attachment_image_attributes( $attr, $attachment, $size ) {
 
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'MYTHEME_get_attachment_image_attributes', 10, 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'THEMENAME_get_attachment_image_attributes', 10, 3 );
 
 // Remove current class on hash menu
-add_filter('nav_menu_css_class', 'MYTHEME_remove_current_class_hash', 10, 2 );
+add_filter('nav_menu_css_class', 'THEMENAME_remove_current_class_hash', 10, 2 );
 
-function MYTHEME_remove_current_class_hash($classes, $item) {
+function THEMENAME_remove_current_class_hash($classes, $item) {
 	$class_names = array( 'current-menu-item', 'current-menu-ancestor', 'current-menu-parent', 'current_page_parent',  'current_page_ancestor', 'current_page_item' );
 	if( strpos( $item->url, '#' ) !== false ) {
 		foreach( $class_names as $class_name ) {
@@ -988,28 +988,28 @@ function MYTHEME_remove_current_class_hash($classes, $item) {
 /**
  * Custom Search Form
  */
-function MYTHEME_search_form( $form ) {
+function THEMENAME_search_form( $form ) {
 	$form = '<form role="search" method="get" class="search-form" action="' . home_url( '/' ) . '" >
-	<div><label class="screen-reader-text" for="s">' . __( 'Search for:', 'MYTHEME' ) . '</label>
-	<input type="search" class="search-field" placeholder="'. __('Search..', 'MYTHEME').'" value="' . get_search_query() . '" name="s" id="s" />
-	<input type="submit" id="search-submit" value="'. __('Search..', 'MYTHEME').'" />
+	<div><label class="screen-reader-text" for="s">' . __( 'Search for:', 'THEMENAME' ) . '</label>
+	<input type="search" class="search-field" placeholder="'. __('Search..', 'THEMENAME').'" value="' . get_search_query() . '" name="s" id="s" />
+	<input type="submit" id="search-submit" value="'. __('Search..', 'THEMENAME').'" />
 	</div>
 	</form>';
 
 	return $form;
 }
 
-add_filter( 'get_search_form', 'MYTHEME_search_form' );
+add_filter( 'get_search_form', 'THEMENAME_search_form' );
 
 /**
  * Sidebar Layout Class
  */
-function MYTHEME_get_sidebar_layout()  {
+function THEMENAME_get_sidebar_layout()  {
 	global $post;
 	$post_sidebar = 'right_sidebar';
 
 	if( is_singular() ) {
-		$post_sidebar = get_post_meta( $post->ID, 'MYTHEME_sidebar_layout', true );
+		$post_sidebar = get_post_meta( $post->ID, 'THEMENAME_sidebar_layout', true );
 	}
 
 	return $post_sidebar;
@@ -1021,12 +1021,12 @@ function MYTHEME_get_sidebar_layout()  {
  * @param [string/array] $attr Query string or array of attributes.
  * @return [string] image html
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  */
-function MYTHEME_get_sidebar_id() {
+function THEMENAME_get_sidebar_id() {
 	$sidebar = $id = '';
 
-	$layout = MYTHEME_get_theme_layout();
+	$layout = THEMENAME_get_theme_layout();
 
 	if ( 'no-sidebar' === $layout ) {
 		return $sidebar;
@@ -1043,18 +1043,18 @@ function MYTHEME_get_sidebar_id() {
 /**
 	* Woo Commerce Number of row filter Function
 **/
-add_filter('loop_shop_columns', 'MYTHEME_loop_columns');
-if (!function_exists('MYTHEME_loop_columns')) {
-   function MYTHEME_loop_columns() {
+add_filter('loop_shop_columns', 'THEMENAME_loop_columns');
+if (!function_exists('THEMENAME_loop_columns')) {
+   function THEMENAME_loop_columns() {
        $xr = 3;
        return $xr;
    }
 }
 
-add_action( 'body_class', 'MYTHEME_woo_body_class');
-if (!function_exists('MYTHEME_woo_body_class')) {
-   function MYTHEME_woo_body_class( $class ) {
-          $class[] = 'columns-'.MYTHEME_loop_columns();
+add_action( 'body_class', 'THEMENAME_woo_body_class');
+if (!function_exists('THEMENAME_woo_body_class')) {
+   function THEMENAME_woo_body_class( $class ) {
+          $class[] = 'columns-'.THEMENAME_loop_columns();
           return $class;
    }
 }
@@ -1065,15 +1065,15 @@ function woo_related_products_limit() {
 		$args['posts_per_page'] = 6;
 		return $args;
 	}
-add_filter( 'woocommerce_output_related_products_args', 'MYTHEME_related_products_args' );
+add_filter( 'woocommerce_output_related_products_args', 'THEMENAME_related_products_args' );
 
-function MYTHEME_related_products_args( $args ) {
+function THEMENAME_related_products_args( $args ) {
 	$args['posts_per_page'] = 4; // 4 related products
 	$args['columns'] = 3; // arranged in 2 columns
 	return $args;
 }
 
-if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
+if ( ! function_exists( 'THEMENAME_truncate_phrase' ) ) :
 	/**
 	 * Return a phrase shortened in length to a maximum number of characters.
 	 *
@@ -1082,14 +1082,14 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 	 *
 	 * If the first `$max_characters` of the string does not contain a space character, an empty string will be returned.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $text            A string to be shortened.
 	 * @param integer $max_characters The maximum number of characters to return.
 	 *
 	 * @return string Truncated string
 	 */
-	function MYTHEME_truncate_phrase( $text, $max_characters ) {
+	function THEMENAME_truncate_phrase( $text, $max_characters ) {
 
 		$text = trim( $text );
 
@@ -1103,4 +1103,4 @@ if ( ! function_exists( 'MYTHEME_truncate_phrase' ) ) :
 
 		return $text;
 	}
-endif; //MYTHEME_truncate_phrase
+endif; //THEMENAME_truncate_phrase

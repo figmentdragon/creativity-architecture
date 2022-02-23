@@ -1,6 +1,6 @@
 <?php
 
-function MYTHEME_clean_up()
+function THEMENAME_clean_up()
 {
   remove_action('wp_head', 'wp_generator');                // #1
   remove_action('wp_head', 'wlwmanifest_link');            // #2

@@ -1,35 +1,20 @@
-<?php /* Template Name: Search */
-/**
- * The template for displaying Search Results pages.
- *
- * @package MYTHEME
- */
+<?php /* Template Name: Search */ ?>
+<?php get_header(); ?>
 
-get_header(); ?>
+	<main role="main" aria-label="Content">
+		<!-- section -->
+		<section>
 
-<div id="wrapper">
-	<div class="innerwrapper">
-		<div id="contentwrapper" class="content">
-			<h1 class="entry-title">
-				<?php
-				/* translators: %s: Search Results for */
-				printf( esc_html__( 'Search Results for: %s', 'MYTHEME' ), '<span>' . get_search_query() . '</span>' );
-				?>
-			</h1>
-			<?php if ( have_posts() ) : ?>
-				<?php
-				while ( have_posts() ) :
-					the_post();
-								get_template_part( 'content', get_post_format() );
-						endwhile;
-				?>
-				<?php the_posts_pagination(); ?>
-			<?php else : ?>
-				<p class="center">
-					<?php esc_html_e( 'No results.', 'MYTHEME' ); ?>
-				</p>
-			<?php endif; ?>
-		</div>
-	</div>
-</div>
+			<h1><?php echo sprintf( __( '%s Search Results for ', 'THEMENAME' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+
+			<?php get_template_part( 'loop' ); ?>
+
+			<?php get_template_part( 'pagination' ); ?>
+
+		</section>
+		<!-- /section -->
+	</main>
+
+<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

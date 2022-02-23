@@ -5,7 +5,7 @@
  * This template is used to display full-width pages.
  *
  * @package Portfolio
- * @since Portfolio Lite 1.0
+ * @since THEMENAME 1.0
  */
 
 get_header(); ?>

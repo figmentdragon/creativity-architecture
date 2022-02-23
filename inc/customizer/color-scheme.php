@@ -2,7 +2,7 @@
 /**
  * Customizer functionality
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 /**
@@ -10,14 +10,14 @@
  *
  * @since 1.0
  *
- * @see MYTHEME_header_style()
+ * @see THEMENAME_header_style()
  */
-function MYTHEME_custom_header_and_bg() {
+function THEMENAME_custom_header_and_bg() {
 	$default_background_color = '#000000';
 	$default_text_color = '#999999';
 
 	/**
-	 * Filter the arguments used when adding 'custom-background' support in MYTHEME.
+	 * Filter the arguments used when adding 'custom-background' support in THEMENAME.
 	 *
 	 * @since 1.0
 	 *
@@ -27,12 +27,12 @@ function MYTHEME_custom_header_and_bg() {
 	 *     @type string $default-color Default color of the background.
 	 * }
 	 */
-	add_theme_support( 'custom-background', apply_filters( 'MYTHEME_custom_bg_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'THEMENAME_custom_bg_args', array(
 		'default-color' => $default_background_color,
 	) ) );
 
 	/**
-	 * Filter the arguments used when adding 'custom-header' support in MYTHEME.
+	 * Filter the arguments used when adding 'custom-header' support in THEMENAME.
 	 *
 	 * @since 1.0
 	 *
@@ -47,13 +47,13 @@ function MYTHEME_custom_header_and_bg() {
 	 *                                      displayed on the blog.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'MYTHEME_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'THEMENAME_custom_header_args', array(
 		'default-image'      => get_parent_theme_file_uri( '/assets/images/header-image.jpg' ),
 		'default-text-color' => $default_text_color,
 		'width'              => 1920,
 		'height'             => 822,
 		'flex-height'        => true,
-		'wp-head-callback'   => 'MYTHEME_header_style',
+		'wp-head-callback'   => 'THEMENAME_header_style',
 		'video'              => true,
 	) ) );
 
@@ -61,11 +61,11 @@ function MYTHEME_custom_header_and_bg() {
 		'default-image' => array(
 			'url'           => '%s/assets/images/header-image.jpg',
 			'thumbnail_url' => '%s/assets/images/header-image-275x155.jpg',
-			'description'   => esc_html__( 'Default Header Image', 'MYTHEME' ),
+			'description'   => esc_html__( 'Default Header Image', 'THEMENAME' ),
 		)
 	) );
 }
-add_action( 'after_setup_theme', 'MYTHEME_custom_header_and_bg' );
+add_action( 'after_setup_theme', 'THEMENAME_custom_header_and_bg' );
 
 /**
  * Binds the JS listener to make Customizer color_scheme control.
@@ -74,10 +74,10 @@ add_action( 'after_setup_theme', 'MYTHEME_custom_header_and_bg' );
  *
  * @since 1.0
  */
-function MYTHEME_customize_control_js() {
+function THEMENAME_customize_control_js() {
 	$min  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	$path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/js/source/' : 'assets/js/';
 
-	wp_enqueue_style( 'MYTHEME-custom-controls-css', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'assets/css/customizer.css' );
+	wp_enqueue_style( 'THEMENAME-custom-controls-css', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'assets/css/customizer.css' );
 }
-add_action( 'customize_controls_enqueue_scripts', 'MYTHEME_customize_control_js' );
+add_action( 'customize_controls_enqueue_scripts', 'THEMENAME_customize_control_js' );

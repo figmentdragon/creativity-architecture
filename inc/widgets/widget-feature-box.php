@@ -2,26 +2,26 @@
 /**
  * Featured Box widget
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 /**
- * Adds MYTHEME_Feature Textbox widget.
+ * Adds THEMENAME_Feature Textbox widget.
  */
-add_action('widgets_init', 'MYTHEME_register_feature_box_widget');
+add_action('widgets_init', 'THEMENAME_register_feature_box_widget');
 
-function MYTHEME_register_feature_box_widget() {
-    register_widget('MYTHEME_feature_box');
+function THEMENAME_register_feature_box_widget() {
+    register_widget('THEMENAME_feature_box');
 }
 
-class MYTHEME_Feature_Box extends WP_Widget {
+class THEMENAME_Feature_Box extends WP_Widget {
 
     /**
      * Register widget with WordPress.
      */
     public function __construct() {
         parent::__construct(
-            'MYTHEME_feature_box', 'AP : Feature Textbox', array(
-                'description' => __('A widget to display feature textbox', 'MYTHEME')
+            'THEMENAME_feature_box', 'AP : Feature Textbox', array(
+                'description' => __('A widget to display feature textbox', 'THEMENAME')
             )
         );
     }
@@ -33,29 +33,29 @@ class MYTHEME_Feature_Box extends WP_Widget {
     private function widget_fields() {
         $fields = array(
             'featurebox_title' => array(
-                'MYTHEME_widgets_name' => 'featurebox_title',
-                'MYTHEME_widgets_title' => __('Title', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'textfield',
+                'THEMENAME_widgets_name' => 'featurebox_title',
+                'THEMENAME_widgets_title' => __('Title', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'textfield',
             ),
             'featurebox_image' => array(
-                'MYTHEME_widgets_name' => 'featurebox_image',
-                'MYTHEME_widgets_title' => __('Image', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'upload',
+                'THEMENAME_widgets_name' => 'featurebox_image',
+                'THEMENAME_widgets_title' => __('Image', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'upload',
             ),
             'featurebox_content' => array(
-                'MYTHEME_widgets_name' => 'featurebox_content',
-                'MYTHEME_widgets_title' => __('Content', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'textarea',
+                'THEMENAME_widgets_name' => 'featurebox_content',
+                'THEMENAME_widgets_title' => __('Content', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'textarea',
             ),
             'featurebox_link' => array(
-                'MYTHEME_widgets_name' => 'featurebox_link',
-                'MYTHEME_widgets_title' => __('Link URL', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'url',
+                'THEMENAME_widgets_name' => 'featurebox_link',
+                'THEMENAME_widgets_title' => __('Link URL', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'url',
             ),
             'featurebox_innewtab' => array(
-                'MYTHEME_widgets_name' => 'featurebox_innewtab',
-                'MYTHEME_widgets_title' => __('Open Link new tab.', 'MYTHEME'),
-                'MYTHEME_widgets_field_type' => 'checkbox',
+                'THEMENAME_widgets_name' => 'featurebox_innewtab',
+                'THEMENAME_widgets_title' => __('Open Link new tab.', 'THEMENAME'),
+                'THEMENAME_widgets_field_type' => 'checkbox',
             ),
         );
 
@@ -81,7 +81,7 @@ class MYTHEME_Feature_Box extends WP_Widget {
         $featurebox_innewtab = isset($instance['featurebox_innewtab']) ? $instance['featurebox_innewtab'] : 0;
         
         $attachment_id = attachment_url_to_postid($featurebox_image);
-        $image_array = wp_get_attachment_image_src($attachment_id, 'MYTHEME-featbox-image');
+        $image_array = wp_get_attachment_image_src($attachment_id, 'THEMENAME-featbox-image');
         
         echo wp_kses_post($before_widget);
         ?>
@@ -134,7 +134,7 @@ class MYTHEME_Feature_Box extends WP_Widget {
      * @param	array	$new_instance	Values just sent to be saved.
      * @param	array	$old_instance	Previously saved values from database.
      *
-     * @uses	MYTHEME_widgets_updated_field_value()		defined in widget-fields.php
+     * @uses	THEMENAME_widgets_updated_field_value()		defined in widget-fields.php
      *
      * @return	array Updated safe values to be saved.
      */
@@ -148,9 +148,9 @@ class MYTHEME_Feature_Box extends WP_Widget {
 
             extract($widget_field);
 
-            if(isset($new_instance[$MYTHEME_widgets_name])){
+            if(isset($new_instance[$THEMENAME_widgets_name])){
             // Use helper function to get updated field values
-                $instance[$MYTHEME_widgets_name] = MYTHEME_widgets_updated_field_value($widget_field, $new_instance[$MYTHEME_widgets_name]);
+                $instance[$THEMENAME_widgets_name] = THEMENAME_widgets_updated_field_value($widget_field, $new_instance[$THEMENAME_widgets_name]);
             }
         }
 
@@ -164,7 +164,7 @@ class MYTHEME_Feature_Box extends WP_Widget {
      *
      * @param	array $instance Previously saved values from database.
      *
-     * @uses	MYTHEME_widgets_show_widget_field()		defined in widget-fields.php
+     * @uses	THEMENAME_widgets_show_widget_field()		defined in widget-fields.php
      */
     public function form($instance) {
         $widget_fields = $this->widget_fields();
@@ -174,8 +174,8 @@ class MYTHEME_Feature_Box extends WP_Widget {
 
             // Make array elements available as variables
             extract($widget_field);
-            $MYTHEME_widgets_field_value = !empty($instance[$MYTHEME_widgets_name]) ? esc_attr($instance[$MYTHEME_widgets_name]) : '';
-            MYTHEME_widgets_show_widget_field($this, $widget_field, $MYTHEME_widgets_field_value);
+            $THEMENAME_widgets_field_value = !empty($instance[$THEMENAME_widgets_name]) ? esc_attr($instance[$THEMENAME_widgets_name]) : '';
+            THEMENAME_widgets_show_widget_field($this, $widget_field, $THEMENAME_widgets_field_value);
         }
     }
 

@@ -2,34 +2,34 @@
 /**
  * Primary Menu Template
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 ?>
 <div id="site-header-menu" class="site-header-menu">
 	<div id="primary-menu-wrapper" class="menu-wrapper">
 		<div class="menu-toggle-wrapper">
-			<button id="menu-toggle"  class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo MYTHEME_get_svg( array( 'icon' => 'bars' ) ); echo MYTHEME_get_svg( array( 'icon' => 'close' ) ); ?><span class="menu-label"><?php echo esc_html_e( 'Menu', 'MYTHEME' ); ?></span></button>
+			<button id="menu-toggle"  class="menu-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo THEMENAME_get_svg( array( 'icon' => 'bars' ) ); echo THEMENAME_get_svg( array( 'icon' => 'close' ) ); ?><span class="menu-label"><?php echo esc_html_e( 'Menu', 'THEMENAME' ); ?></span></button>
 		</div><!-- .menu-toggle-wrapper -->
 
 		<?php
-		if ( get_theme_mod( 'MYTHEME_header_cart_enable', 0 ) && function_exists( 'MYTHEME_cart_link' ) ) {
-			MYTHEME_cart_link();
+		if ( get_theme_mod( 'THEMENAME_header_cart_enable', 0 ) && function_exists( 'THEMENAME_cart_link' ) ) {
+			THEMENAME_cart_link();
 		}
 		?>
 
 
 		<?php
-		if ( get_theme_mod( 'MYTHEME_header_cart_enable', 0 ) && function_exists( 'MYTHEME_myaccount_icon_link' ) ) {
-			MYTHEME_myaccount_icon_link();
+		if ( get_theme_mod( 'THEMENAME_header_cart_enable', 0 ) && function_exists( 'THEMENAME_myaccount_icon_link' ) ) {
+			THEMENAME_myaccount_icon_link();
 		}
 		?>
 
 		<div class="menu-inside-wrapper">
-			<button id="menu-toggle"  class="close-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo MYTHEME_get_svg( array( 'icon' => 'close' ) ); ?><span class="menu-label"><?php echo esc_html_e( 'Close', 'MYTHEME' ); ?></span></button>
+			<button id="menu-toggle"  class="close-toggle" aria-controls="top-menu" aria-expanded="false"><?php echo THEMENAME_get_svg( array( 'icon' => 'close' ) ); ?><span class="menu-label"><?php echo esc_html_e( 'Close', 'THEMENAME' ); ?></span></button>
 			
 			<?php if ( has_nav_menu( 'primary-menu' ) ) : ?>
-				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'MYTHEME' ); ?>">
+				<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'THEMENAME' ); ?>">
 					<?php
 						wp_nav_menu( array(
 								'container'      => '',
@@ -41,7 +41,7 @@
 					?>
 				</nav><!-- .main-navigation -->
 			<?php else : ?>
-				<nav id="site-navigation" class="main-navigation default-page-menu" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'MYTHEME' ); ?>">
+				<nav id="site-navigation" class="main-navigation default-page-menu" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'THEMENAME' ); ?>">
 					<?php wp_page_menu(
 						array(
 							'menu_class' => 'primary-menu-container',
@@ -54,7 +54,7 @@
 
 			<div class="mobile-social-search">
 				<?php if ( has_nav_menu( 'social-menu' ) ) : ?>
-					 <nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Menu', 'MYTHEME' ); ?>">
+					 <nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Menu', 'THEMENAME' ); ?>">
 					 <?php
 						 wp_nav_menu( array(
 							 'theme_location'  => 'social-menu',
@@ -63,7 +63,7 @@
 							 'container_class' => 'menu-social-container',
 							 'depth'           => 1,
 							 'link_before'     => '<span class="screen-reader-text">',
-							 'link_after'      => '</span>' . MYTHEME_get_svg( array( 'icon' => 'chain' ) ),
+							 'link_after'      => '</span>' . THEMENAME_get_svg( array( 'icon' => 'chain' ) ),
 						 ) );
 					 ?>
 				<?php endif; ?>

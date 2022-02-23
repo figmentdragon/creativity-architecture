@@ -2,8 +2,8 @@
 /*************************************************/
 ## Handles output of featured content for different post formats (e.g. images, audio, video, et cetera).
 /*************************************************/
-if ( ! function_exists ( 'MYTHEME_featured_image' ) ) {
-function MYTHEME_featured_image( $post_id = NULL, $thmbSize = '', $attr=NULL ) {
+if ( ! function_exists ( 'THEMENAME_featured_image' ) ) {
+function THEMENAME_featured_image( $post_id = NULL, $thmbSize = '', $attr=NULL ) {
 
     if ( has_post_thumbnail($post_id) ) {
 	
@@ -20,7 +20,7 @@ function MYTHEME_featured_image( $post_id = NULL, $thmbSize = '', $attr=NULL ) {
 		
 		printf('<div  class="entry-media" >
 					<a href="%1$s" class="entry-thumb" title="%2$s">%3$s</a>
-				</div>',esc_url(get_permalink($post_id)), esc_attr(sprintf( __( 'Permalink to: "%s"', 'MYTHEME' ), get_the_title($post_id) ) ), $thumb );
+				</div>',esc_url(get_permalink($post_id)), esc_attr(sprintf( __( 'Permalink to: "%s"', 'THEMENAME' ), get_the_title($post_id) ) ), $thumb );
 		
     }
 }

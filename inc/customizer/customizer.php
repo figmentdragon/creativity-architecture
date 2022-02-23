@@ -2,7 +2,7 @@
 /**
  * Theme Customizer
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 /**
@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function MYTHEME_customize_register( $wp_customize ) {
+function THEMENAME_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport              = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport       = 'postMessage';
@@ -23,45 +23,45 @@ function MYTHEME_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector' => '.site-title a',
 			'container_inclusive' => false,
-			'render_callback' => 'MYTHEME_customize_partial_blogname',
+			'render_callback' => 'THEMENAME_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector' => '.site-description',
 			'container_inclusive' => false,
-			'render_callback' => 'MYTHEME_customize_partial_blogdescription',
+			'render_callback' => 'THEMENAME_customize_partial_blogdescription',
 		) );
 	}
 
 	// Important Links.
-	$wp_customize->add_section( 'MYTHEME_important_links', array(
+	$wp_customize->add_section( 'THEMENAME_important_links', array(
 		'priority'      => 999,
-		'title'         => esc_html__( 'Important Links', 'MYTHEME' ),
+		'title'         => esc_html__( 'Important Links', 'THEMENAME' ),
 	) );
 
 	// Has dummy Sanitizaition function as it contains no value to be sanitized.
-	MYTHEME_register_option( $wp_customize, array(
-			'name'              => 'MYTHEME_important_links',
+	THEMENAME_register_option( $wp_customize, array(
+			'name'              => 'THEMENAME_important_links',
 			'sanitize_callback' => 'sanitize_text_field',
-			'custom_control'    => 'MYTHEME_Important_Links_Control',
-			'label'             => esc_html__( 'Important Links', 'MYTHEME' ),
-			'section'           => 'MYTHEME_important_links',
-			'type'              => 'MYTHEME_important_links',
+			'custom_control'    => 'THEMENAME_Important_Links_Control',
+			'label'             => esc_html__( 'Important Links', 'THEMENAME' ),
+			'section'           => 'THEMENAME_important_links',
+			'type'              => 'THEMENAME_important_links',
 		)
 	);
 	// Important Links End.
 }
-add_action( 'customize_register', 'MYTHEME_customize_register', 11 );
+add_action( 'customize_register', 'THEMENAME_customize_register', 11 );
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function MYTHEME_customize_preview_js() {
+function THEMENAME_customize_preview_js() {
 	$min  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-	$path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/js/source/' : 'assets/js/';
+	$path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/scripts/js/lib/customizer' : 'assets/scripts/js/';
 
-	wp_enqueue_script( 'MYTHEME-customize-preview', trailingslashit( esc_url ( get_template_directory_uri() ) ) . $path . 'customize-preview' . $min . '.js', array( 'customize-preview' ), date( 'Ymd-Gis', filemtime( get_template_directory() . '/' . $path . 'customize-preview' . $min . '.js' ) ), true );
+	wp_enqueue_script( 'THEMENAME-customize-preview', trailingslashit( esc_url ( get_template_directory_uri() ) ) . $path . 'customize-preview' . $min . '.js', array( 'customize-preview' ), date( 'Ymd-Gis', filemtime( get_template_directory() . '/' . $path . 'customize-preview' . $min . '.js' ) ), true );
 }
-add_action( 'customize_preview_init', 'MYTHEME_customize_preview_js' );
+add_action( 'customize_preview_init', 'THEMENAME_customize_preview_js' );
 
 /**
  * Include Custom Controls

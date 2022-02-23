@@ -3,7 +3,7 @@
  * Template Name: Front Page Splash
  * Template Post Type: page
  * Description: Display a page a full window photo
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 
@@ -18,16 +18,16 @@ get_header( 'splash' ); ?>
         <?php the_custom_logo(); ?>
         <?php endif; ?>
 
-        <?php if ( esc_attr(get_theme_mod( 'MYTHEME_show_site_title', true ) ) ) : ?>
+        <?php if ( esc_attr(get_theme_mod( 'THEMENAME_show_site_title', true ) ) ) : ?>
         <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                 <?php bloginfo( 'name' ); ?></a></h1>
         <?php endif; ?>
 
-        <?php	if (esc_attr(get_theme_mod( 'MYTHEME_show_site_desc', true ) ) ) :
-				$MYTHEME_description = get_bloginfo( 'description', 'display' );
-					if ( $MYTHEME_description || is_customize_preview() ) : ?>
+        <?php	if (esc_attr(get_theme_mod( 'THEMENAME_show_site_desc', true ) ) ) :
+				$THEMENAME_description = get_bloginfo( 'description', 'display' );
+					if ( $THEMENAME_description || is_customize_preview() ) : ?>
         <p class="site-description">
-            <?php echo esc_html( $MYTHEME_description );  ?>
+            <?php echo esc_html( $THEMENAME_description );  ?>
         </p>
         <?php 
 					endif;

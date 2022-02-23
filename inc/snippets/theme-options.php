@@ -10,7 +10,7 @@
 
 namespace Roots\Sage\Init;
 
-function MYTHEME_customize_register($wp_customize)
+function THEMENAME_customize_register($wp_customize)
 {
   /**
    * Project Settings
@@ -18,7 +18,7 @@ function MYTHEME_customize_register($wp_customize)
 
   // first declare settings
   $wp_customize->add_setting(
-    'MYTHEME_projects_page_id',
+    'THEMENAME_projects_page_id',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -26,7 +26,7 @@ function MYTHEME_customize_register($wp_customize)
   );
 
   $wp_customize->add_setting(
-    'MYTHEME_social_fb_url',
+    'THEMENAME_social_fb_url',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -34,7 +34,7 @@ function MYTHEME_customize_register($wp_customize)
   );
 
   $wp_customize->add_setting(
-    'MYTHEME_social_xing_url',
+    'THEMENAME_social_xing_url',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -42,7 +42,7 @@ function MYTHEME_customize_register($wp_customize)
   );
 
   $wp_customize->add_setting(
-    'MYTHEME_social_linkedin_url',
+    'THEMENAME_social_linkedin_url',
     [
       'default'   => 0,
       'transport' => 'refresh',
@@ -51,17 +51,17 @@ function MYTHEME_customize_register($wp_customize)
 
   // declare sections
   $wp_customize->add_section(
-    'MYTHEME_projects_section',
+    'THEMENAME_projects_section',
     [
-      'title'    => __('Projects', 'MYTHEME'),
+      'title'    => __('Projects', 'THEMENAME'),
       'priority' => 30,
     ]
   );
 
   $wp_customize->add_section(
-    'MYTHEME_social_section',
+    'THEMENAME_social_section',
     [
-      'title'    => __('Social Media', 'MYTHEME'),
+      'title'    => __('Social Media', 'THEMENAME'),
       'priority' => 30,
     ]
   );
@@ -70,11 +70,11 @@ function MYTHEME_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'MYTHEME_projects_page_id',
+      'THEMENAME_projects_page_id',
       [
-        'label'    => __('Side "Project":', 'MYTHEME'),
-        'section'  => 'MYTHEME_projects_section',
-        'settings' => 'MYTHEME_projects_page_id',
+        'label'    => __('Side "Project":', 'THEMENAME'),
+        'section'  => 'THEMENAME_projects_section',
+        'settings' => 'THEMENAME_projects_page_id',
         'type'     => 'dropdown-pages',
       ]
     )
@@ -83,11 +83,11 @@ function MYTHEME_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'MYTHEME_social_fb_url',
+      'THEMENAME_social_fb_url',
       [
-        'label'    => __('URL Facebook', 'MYTHEME'),
-        'section'  => 'MYTHEME_social_section',
-        'settings' => 'MYTHEME_social_fb_url',
+        'label'    => __('URL Facebook', 'THEMENAME'),
+        'section'  => 'THEMENAME_social_section',
+        'settings' => 'THEMENAME_social_fb_url',
         'type'     => 'text',
       ]
     )
@@ -96,11 +96,11 @@ function MYTHEME_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'MYTHEME_social_xing_url',
+      'THEMENAME_social_xing_url',
       [
-        'label'    => __('URL XING', 'MYTHEME'),
-        'section'  => 'MYTHEME_social_section',
-        'settings' => 'MYTHEME_social_xing_url',
+        'label'    => __('URL XING', 'THEMENAME'),
+        'section'  => 'THEMENAME_social_section',
+        'settings' => 'THEMENAME_social_xing_url',
         'type'     => 'text',
       ]
     )
@@ -109,15 +109,15 @@ function MYTHEME_customize_register($wp_customize)
   $wp_customize->add_control(
     new \WP_Customize_Control(
       $wp_customize,
-      'MYTHEME_social_linkedin_url',
+      'THEMENAME_social_linkedin_url',
       [
-        'label'    => __('URL LinkedIn', 'MYTHEME'),
-        'section'  => 'MYTHEME_social_section',
-        'settings' => 'MYTHEME_social_linkedin_url',
+        'label'    => __('URL LinkedIn', 'THEMENAME'),
+        'section'  => 'THEMENAME_social_section',
+        'settings' => 'THEMENAME_social_linkedin_url',
         'type'     => 'text',
       ]
     )
   );
 }
 
-add_action('customize_register', __NAMESPACE__.'\\MYTHEME_customize_register');
+add_action('customize_register', __NAMESPACE__.'\\THEMENAME_customize_register');

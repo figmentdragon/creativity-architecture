@@ -2,7 +2,7 @@
 /**
  * Custom Controls
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 /**
@@ -10,41 +10,41 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function MYTHEME_custom_controls( $wp_customize ) {
+function THEMENAME_custom_controls( $wp_customize ) {
 	// Custom control for Important Links.
-	class MYTHEME_Important_Links_Control extends WP_Customize_Control {
+	class THEMENAME_Important_Links_Control extends WP_Customize_Control {
 		public $type = 'important-links';
 
 		public function render_content() {
 			// Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links.
 			$important_links = array(
 				'theme_instructions' => array(
-					'link'  => esc_url( 'https://catchthemes.com/MYTHEME-pro/#theme-instructions' ),
-					'text'  => esc_html__( 'Theme Instructions', 'MYTHEME' ),
+					'link'  => esc_url( 'https://catchthemes.com/THEMENAME-pro/#theme-instructions' ),
+					'text'  => esc_html__( 'Theme Instructions', 'THEMENAME' ),
 					),
 				'support' => array(
 					'link'  => esc_url( 'https://catchthemes.com/support/' ),
-					'text'  => esc_html__( 'Support', 'MYTHEME' ),
+					'text'  => esc_html__( 'Support', 'THEMENAME' ),
 					),
 				'changelog' => array(
-					'link'  => esc_url( 'https://catchthemes.com/changelogs/MYTHEME-theme/' ),
-					'text'  => esc_html__( 'Changelog', 'MYTHEME' ),
+					'link'  => esc_url( 'https://catchthemes.com/changelogs/THEMENAME-theme/' ),
+					'text'  => esc_html__( 'Changelog', 'THEMENAME' ),
 					),
 				'facebook' => array(
 					'link'  => esc_url( 'https://www.facebook.com/catchthemes/' ),
-					'text'  => esc_html__( 'Facebook', 'MYTHEME' ),
+					'text'  => esc_html__( 'Facebook', 'THEMENAME' ),
 					),
 				'twitter' => array(
 					'link'  => esc_url( 'https://twitter.com/catchthemes/' ),
-					'text'  => esc_html__( 'Twitter', 'MYTHEME' ),
+					'text'  => esc_html__( 'Twitter', 'THEMENAME' ),
 					),
 				'gplus' => array(
 					'link'  => esc_url( 'https://plus.google.com/+Catchthemes/' ),
-					'text'  => esc_html__( 'Google+', 'MYTHEME' ),
+					'text'  => esc_html__( 'Google+', 'THEMENAME' ),
 					),
 				'pinterest' => array(
 					'link'  => esc_url( 'http://www.pinterest.com/catchthemes/' ),
-					'text'  => esc_html__( 'Pinterest', 'MYTHEME' ),
+					'text'  => esc_html__( 'Pinterest', 'THEMENAME' ),
 					),
 			);
 
@@ -55,7 +55,7 @@ function MYTHEME_custom_controls( $wp_customize ) {
 	}
 
 	// Custom control for dropdown category multiple select.
-	class MYTHEME_Multi_Cat extends WP_Customize_Control {
+	class THEMENAME_Multi_Cat extends WP_Customize_Control {
 		public $type = 'dropdown-categories';
 
 		public function render_content() {
@@ -66,7 +66,7 @@ function MYTHEME_custom_controls( $wp_customize ) {
 					'hide_empty'       => false,
 					'show_option_none' => false,
 					'hide_if_empty'    => false,
-					'show_option_all'  => esc_html__( 'All Categories', 'MYTHEME' ),
+					'show_option_all'  => esc_html__( 'All Categories', 'THEMENAME' ),
 				)
 			);
 
@@ -78,19 +78,19 @@ function MYTHEME_custom_controls( $wp_customize ) {
 				$dropdown
 			);
 
-			echo '<p class="description">' . esc_html__( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'MYTHEME' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'THEMENAME' ) . '</p>';
 		}
 	}
 
 	// Custom control for dropdown Jetpack Portfolio Type taxonomy multiple select.
-	class MYTHEME_Multi_Cat_Project_Type extends WP_Customize_Control {
+	class THEMENAME_Multi_Cat_Project_Type extends WP_Customize_Control {
 		public $type = 'dropdown-project-types';
 
 		public function render_content() {
 			$taxonomy = 'jetpack-portfolio-type';
 
 			if ( ! taxonomy_exists( $taxonomy ) ) {
-				echo '<p class="description">' . esc_html__( 'CPT Project Type does not exist. Make sure Essential Content Types plugin is activated with Portfolio CPT enabled.', 'MYTHEME' ) . '</p>';
+				echo '<p class="description">' . esc_html__( 'CPT Project Type does not exist. Make sure Essential Content Types plugin is activated with Portfolio CPT enabled.', 'THEMENAME' ) . '</p>';
 
 				return;
 			}
@@ -102,7 +102,7 @@ function MYTHEME_custom_controls( $wp_customize ) {
 					'hide_empty'       => false,
 					'show_option_none' => false,
 					'hide_if_empty'    => false,
-					'show_option_all'  => esc_html__( 'All Categories', 'MYTHEME' ),
+					'show_option_all'  => esc_html__( 'All Categories', 'THEMENAME' ),
 					'taxonomy'         => $taxonomy,
 
 				)
@@ -116,12 +116,12 @@ function MYTHEME_custom_controls( $wp_customize ) {
 				$dropdown
 			);
 
-			echo '<p class="description">' . esc_html__( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'MYTHEME' ) . '</p>';
+			echo '<p class="description">' . esc_html__( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'THEMENAME' ) . '</p>';
 		}
 	}
 
 	// Custom control for any note, use label as output description.
-	class MYTHEME_Note_Control extends WP_Customize_Control {
+	class THEMENAME_Note_Control extends WP_Customize_Control {
 		public $type = 'description';
 
 		public function render_content() {
@@ -129,7 +129,7 @@ function MYTHEME_custom_controls( $wp_customize ) {
 		}
 	}
 
-	class MYTHEME_Sortable_Custom_Control extends WP_Customize_Control {
+	class THEMENAME_Sortable_Custom_Control extends WP_Customize_Control {
 		public $type = 'sortable';
 
 		public $sortable_sections =array();
@@ -150,7 +150,7 @@ function MYTHEME_custom_controls( $wp_customize ) {
 			parent::__construct( $manager, $id, $args );
 
 			// Set Sortable Sections
-			$sortable_sections = MYTHEME_get_sortable_sections();
+			$sortable_sections = THEMENAME_get_sortable_sections();
 			$this->sortable_sections = apply_filters( 'customizer_sortable_sections', $sortable_sections, $id );
 
 		}
@@ -168,19 +168,19 @@ function MYTHEME_custom_controls( $wp_customize ) {
 					echo '<li id="' . esc_attr( $key ) . '" >';
 					echo '<span class="label">' . esc_html( $value['label'] ) . '</span>';
 					if ( isset( $value['section'] ) ) {
-						echo '<a href="javascript:wp.customize.section( \'' . esc_attr( $value['section'] ) . '\' ).focus();">' . esc_html__( 'Edit', 'MYTHEME' ) . '</a>';
+						echo '<a href="javascript:wp.customize.section( \'' . esc_attr( $value['section'] ) . '\' ).focus();">' . esc_html__( 'Edit', 'THEMENAME' ) . '</a>';
 					}
 					echo '</li>';
 				}
 			    ?>
 			</ul>
 
-			<input id="MYTHEME_sortable_value" type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
+			<input id="THEMENAME_sortable_value" type="hidden" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" />
 		<?php
 		}
 	}
 
-	class MYTHEME_Toggle_Control extends WP_Customize_Control {
+	class THEMENAME_Toggle_Control extends WP_Customize_Control {
 		public $type = 'light';
 
 		/**
@@ -207,4 +207,4 @@ function MYTHEME_custom_controls( $wp_customize ) {
 		}
 	}
 }
-add_action( 'customize_register', 'MYTHEME_custom_controls', 1 );
+add_action( 'customize_register', 'THEMENAME_custom_controls', 1 );

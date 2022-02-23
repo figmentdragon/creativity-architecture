@@ -3,19 +3,19 @@
  * Dark Mode Class
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
  * This class is in charge of Dark Mode.
  */
-class MYTHEME_Dark_Mode {
+class THEMENAME_Dark_Mode {
 
 	/**
 	 * Instantiate the object.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 */
 	public function __construct() {
 
@@ -32,7 +32,7 @@ class MYTHEME_Dark_Mode {
 		add_action( 'customize_register', array( $this, 'customizer_controls' ) );
 
 		// Add HTML classes.
-		add_filter( 'MYTHEME_html_classes', array( $this, 'html_classes' ) );
+		add_filter( 'THEMENAME_html_classes', array( $this, 'html_classes' ) );
 
 		// Add classes to <body> in the dashboard.
 		add_filter( 'admin_body_class', array( $this, 'admin_body_classes' ) );
@@ -47,7 +47,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Editor custom color variables & scripts.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -57,15 +57,15 @@ class MYTHEME_Dark_Mode {
 		}
 		$background_color            = get_theme_mod( 'background_color', 'D1E4DD' );
 		$should_respect_color_scheme = get_theme_mod( 'respect_user_color_preference', false );
-		if ( $should_respect_color_scheme && MYTHEME_Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
+		if ( $should_respect_color_scheme && THEMENAME_Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
 			// Add Dark Mode variable overrides.
 			wp_add_inline_style(
-				'MYTHEME-custom-color-overrides',
+				'THEMENAME-custom-color-overrides',
 				'.is-dark-theme.is-dark-theme .editor-styles-wrapper { --global--color-background: var(--global--color-dark-gray); --global--color-primary: var(--global--color-light-gray); --global--color-secondary: var(--global--color-light-gray); --button--color-text: var(--global--color-background); --button--color-text-hover: var(--global--color-secondary); --button--color-text-active: var(--global--color-secondary); --button--color-background: var(--global--color-secondary); --button--color-background-active: var(--global--color-background); --global--color-border: #9ea1a7; --table--stripes-border-color: rgba(240, 240, 240, 0.15); --table--stripes-background-color: rgba(240, 240, 240, 0.15); }'
 			);
 		}
 		wp_enqueue_script(
-			'MYTHEME-dark-mode-support-toggle',
+			'THEMENAME-dark-mode-support-toggle',
 			get_template_directory_uri() . '/assets/scripts/js/dark-mode-toggler.js',
 			array(),
 			'1.0.0',
@@ -73,9 +73,9 @@ class MYTHEME_Dark_Mode {
 		);
 
 		wp_enqueue_script(
-			'MYTHEME-editor-dark-mode-support',
+			'THEMENAME-editor-dark-mode-support',
 			get_template_directory_uri() . '/assets/scripts/js/editor-dark-mode-support.js',
-			array( 'MYTHEME-dark-mode-support-toggle' ),
+			array( 'THEMENAME-dark-mode-support-toggle' ),
 			'1.0.0',
 			true
 		);
@@ -84,7 +84,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Enqueue scripts and styles.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -96,13 +96,13 @@ class MYTHEME_Dark_Mode {
 		if ( is_rtl() ) {
 			$url = get_template_directory_uri() . '/assets/scripts/css/style-dark-mode-rtl.css';
 		}
-		wp_enqueue_style( 'tt1-dark-mode', $url, array( 'MYTHEME-style' ), wp_get_theme()->get( 'Version' ) ); // @phpstan-ignore-line. Version is always a string.
+		wp_enqueue_style( 'tt1-dark-mode', $url, array( 'THEMENAME-style' ), wp_get_theme()->get( 'Version' ) ); // @phpstan-ignore-line. Version is always a string.
 	}
 
 	/**
 	 * Enqueue scripts for the customizer.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -111,9 +111,9 @@ class MYTHEME_Dark_Mode {
 			return;
 		}
 		wp_enqueue_script(
-			'MYTHEME-customize-controls',
+			'THEMENAME-customize-controls',
 			get_template_directory_uri() . '/assets/scripts/js/customize.js',
-			array( 'customize-base', 'customize-controls', 'underscore', 'jquery', 'MYTHEME-customize-helpers' ),
+			array( 'customize-base', 'customize-controls', 'underscore', 'jquery', 'THEMENAME-customize-helpers' ),
 			'1.0.0',
 			true
 		);
@@ -122,7 +122,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Register customizer options.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 * @return void
@@ -131,11 +131,11 @@ class MYTHEME_Dark_Mode {
 
 		$colors_section = $wp_customize->get_section( 'colors' );
 		if ( is_object( $colors_section ) ) {
-			$colors_section->title = __( 'Colors & Dark Mode', 'MYTHEME' );
+			$colors_section->title = __( 'Colors & Dark Mode', 'THEMENAME' );
 		}
 
 		// Custom notice control.
-		include_once get_theme_file_path( 'classes/class-MYTHEME-customize-notice-control.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		include_once get_theme_file_path( 'classes/class-THEMENAME-customize-notice-control.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 		$wp_customize->add_setting(
 			'respect_user_color_preference_notice',
@@ -147,14 +147,14 @@ class MYTHEME_Dark_Mode {
 		);
 
 		$wp_customize->add_control(
-			new MYTHEME_Customize_Notice_Control(
+			new THEMENAME_Customize_Notice_Control(
 				$wp_customize,
 				'respect_user_color_preference_notice',
 				array(
 					'section'         => 'colors',
 					'priority'        => 100,
 					'active_callback' => static function() {
-						return 127 >= MYTHEME_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
+						return 127 >= THEMENAME_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
 					},
 				)
 			)
@@ -173,23 +173,23 @@ class MYTHEME_Dark_Mode {
 
 		$description  = '<p>';
 		$description .= sprintf(
-			/* translators: %s: MYTHEME support article URL. */
-			__( 'Dark Mode is a device setting. If a visitor to your site requests it, your site will be shown with a dark background and light text. <a href="%s">Learn more about Dark Mode.</a>', 'MYTHEME' ),
-			esc_url( __( 'https://wordpress.org/support/article/MYTHEME/#dark-mode-support', 'MYTHEME' ) )
+			/* translators: %s: THEMENAME support article URL. */
+			__( 'Dark Mode is a device setting. If a visitor to your site requests it, your site will be shown with a dark background and light text. <a href="%s">Learn more about Dark Mode.</a>', 'THEMENAME' ),
+			esc_url( __( 'https://wordpress.org/support/article/THEMENAME/#dark-mode-support', 'THEMENAME' ) )
 		);
 		$description .= '</p>';
-		$description .= '<p>' . __( 'Dark Mode can also be turned on and off with a button that you can find in the bottom corner of the page.', 'MYTHEME' ) . '</p>';
+		$description .= '<p>' . __( 'Dark Mode can also be turned on and off with a button that you can find in the bottom corner of the page.', 'THEMENAME' ) . '</p>';
 
 		$wp_customize->add_control(
 			'respect_user_color_preference',
 			array(
 				'type'            => 'checkbox',
 				'section'         => 'colors',
-				'label'           => esc_html__( 'Dark Mode support', 'MYTHEME' ),
+				'label'           => esc_html__( 'Dark Mode support', 'THEMENAME' ),
 				'priority'        => 110,
 				'description'     => $description,
 				'active_callback' => static function( $value ) {
-					return 127 < MYTHEME_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
+					return 127 < THEMENAME_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) );
 				},
 			)
 		);
@@ -211,7 +211,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Calculate classes for the main <html> element.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $classes The classes for <html> element.
 	 * @return string
@@ -223,7 +223,7 @@ class MYTHEME_Dark_Mode {
 
 		$background_color            = get_theme_mod( 'background_color', 'D1E4DD' );
 		$should_respect_color_scheme = get_theme_mod( 'respect_user_color_preference', false );
-		if ( $should_respect_color_scheme && 127 <= MYTHEME_Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
+		if ( $should_respect_color_scheme && 127 <= THEMENAME_Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
 			return ( $classes ) ? ' respect-color-scheme-preference' : 'respect-color-scheme-preference';
 		}
 
@@ -233,7 +233,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Adds a class to the <body> element in the editor to accommodate dark-mode.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param string $classes The admin body-classes.
 	 * @return string
@@ -252,8 +252,8 @@ class MYTHEME_Dark_Mode {
 			$should_respect_color_scheme = get_theme_mod( 'respect_user_color_preference', false );
 			$background_color            = get_theme_mod( 'background_color', 'D1E4DD' );
 
-			if ( $should_respect_color_scheme && MYTHEME_Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
-				$classes .= ' MYTHEME-supports-dark-theme';
+			if ( $should_respect_color_scheme && THEMENAME_Custom_Colors::get_relative_luminance_from_hex( $background_color ) > 127 ) {
+				$classes .= ' THEMENAME-supports-dark-theme';
 			}
 		}
 
@@ -263,7 +263,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Determine if we want to print the dark-mode switch or not.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return bool
 	 */
@@ -272,14 +272,14 @@ class MYTHEME_Dark_Mode {
 		return (
 			get_theme_mod( 'respect_user_color_preference', false ) &&
 			! $is_IE &&
-			127 <= MYTHEME_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) )
+			127 <= THEMENAME_Custom_Colors::get_relative_luminance_from_hex( get_theme_mod( 'background_color', 'D1E4DD' ) )
 		);
 	}
 
 	/**
 	 * Add night/day switch.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -296,7 +296,7 @@ class MYTHEME_Dark_Mode {
 	 *
 	 * Inspired from https://codepen.io/aaroniker/pen/KGpXZo (MIT-licensed)
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param array $attrs The attributes to add to our <button> element.
 	 * @return void
@@ -318,7 +318,7 @@ class MYTHEME_Dark_Mode {
 		echo '>';
 		printf(
 			/* translators: %s: On/Off */
-			esc_html__( 'Dark Mode: %s', 'MYTHEME' ),
+			esc_html__( 'Dark Mode: %s', 'THEMENAME' ),
 			'<span aria-hidden="true"></span>'
 		);
 		echo '</button>';
@@ -328,10 +328,10 @@ class MYTHEME_Dark_Mode {
 				margin-<?php echo is_rtl() ? 'right' : 'left'; ?>: 5px;
 			}
 			#dark-mode-toggler > span::before {
-				content: '<?php esc_attr_e( 'Off', 'MYTHEME' ); ?>';
+				content: '<?php esc_attr_e( 'Off', 'THEMENAME' ); ?>';
 			}
 			#dark-mode-toggler[aria-pressed="true"] > span::before {
-				content: '<?php esc_attr_e( 'On', 'MYTHEME' ); ?>';
+				content: '<?php esc_attr_e( 'On', 'THEMENAME' ); ?>';
 			}
 			<?php if ( is_admin() || wp_is_json_request() ) : ?>
 				.components-editor-notices__pinned ~ .edit-post-visual-editor #dark-mode-toggler {
@@ -354,7 +354,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Print the dark-mode switch script.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -367,7 +367,7 @@ class MYTHEME_Dark_Mode {
 	/**
 	 * Adds information to the privacy policy.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @return void
 	 */
@@ -375,10 +375,10 @@ class MYTHEME_Dark_Mode {
 		if ( ! function_exists( 'wp_add_privacy_policy_content' ) ) {
 			return;
 		}
-		$content = '<p class="privacy-policy-tutorial">' . __( 'MYTHEME uses LocalStorage when Dark Mode support is enabled.', 'MYTHEME' ) . '</p>'
-				. '<strong class="privacy-policy-tutorial">' . __( 'Suggested text:', 'MYTHEME' ) . '</strong> '
-				. __( 'This website uses LocalStorage to save the setting when Dark Mode support is turned on or off.<br> LocalStorage is necessary for the setting to work and is only used when a user clicks on the Dark Mode button.<br> No data is saved in the database or transferred.', 'MYTHEME' );
-		wp_add_privacy_policy_content( 'MYTHEME', wp_kses_post( wpautop( $content, false ) ) );
+		$content = '<p class="privacy-policy-tutorial">' . __( 'THEMENAME uses LocalStorage when Dark Mode support is enabled.', 'THEMENAME' ) . '</p>'
+				. '<strong class="privacy-policy-tutorial">' . __( 'Suggested text:', 'THEMENAME' ) . '</strong> '
+				. __( 'This website uses LocalStorage to save the setting when Dark Mode support is turned on or off.<br> LocalStorage is necessary for the setting to work and is only used when a user clicks on the Dark Mode button.<br> No data is saved in the database or transferred.', 'THEMENAME' );
+		wp_add_privacy_policy_content( 'THEMENAME', wp_kses_post( wpautop( $content, false ) ) );
 	}
 
 }

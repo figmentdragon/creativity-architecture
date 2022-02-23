@@ -2,16 +2,16 @@
 /**
  * Reset Theme Options
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
-if ( ! class_exists( 'MYTHEME_Customizer_Reset' ) ) {
+if ( ! class_exists( 'THEMENAME_Customizer_Reset' ) ) {
 	/**
 	 * Adds Reset button to customizer
 	 */
-	final class MYTHEME_Customizer_Reset {
+	final class THEMENAME_Customizer_Reset {
 		/**
-		 * @var MYTHEME_Customizer_Reset
+		 * @var THEMENAME_Customizer_Reset
 		 */
 		private static $instance = null;
 
@@ -38,16 +38,16 @@ if ( ! class_exists( 'MYTHEME_Customizer_Reset' ) ) {
 			$min  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/js/source/' : 'assets/js/';
 
-			wp_enqueue_script( 'MYTHEME-customizer-reset', get_theme_file_uri( $path . 'customizer-reset' . $min . '.js' ), array( 'jquery' ), '20190207', true );
+			wp_enqueue_script( 'THEMENAME-customizer-reset', get_theme_file_uri( $path . 'customizer-reset' . $min . '.js' ), array( 'jquery' ), '20190207', true );
 			
-			wp_localize_script( 'MYTHEME-customizer-reset', 'MYTHEMECustomizerReset', array(
-				'reset'          => esc_html__( 'Reset', 'MYTHEME' ),
-				'confirm'        => esc_html__( "Caution: Reset all settings to default. Process is irreversible.", 'MYTHEME' ),
+			wp_localize_script( 'THEMENAME-customizer-reset', 'THEMENAMECustomizerReset', array(
+				'reset'          => esc_html__( 'Reset', 'THEMENAME' ),
+				'confirm'        => esc_html__( "Caution: Reset all settings to default. Process is irreversible.", 'THEMENAME' ),
 				'nonce'          => array(
-					'reset' => wp_create_nonce( 'MYTHEME-customizer-reset' ),
+					'reset' => wp_create_nonce( 'THEMENAME-customizer-reset' ),
 				),
-				'resetSection'   => esc_html__( 'Reset section', 'MYTHEME' ),
-				'confirmSection' => esc_html__( "Caution: Reset section settings to default. Process is irreversible.", 'MYTHEME' ),
+				'resetSection'   => esc_html__( 'Reset section', 'THEMENAME' ),
+				'confirmSection' => esc_html__( "Caution: Reset section settings to default. Process is irreversible.", 'THEMENAME' ),
 			) );
 		}
 
@@ -65,7 +65,7 @@ if ( ! class_exists( 'MYTHEME_Customizer_Reset' ) ) {
 				wp_send_json_error( 'not_preview' );
 			}
 
-			if ( ! check_ajax_referer( 'MYTHEME-customizer-reset', 'nonce', false ) ) {
+			if ( ! check_ajax_referer( 'THEMENAME-customizer-reset', 'nonce', false ) ) {
 				wp_send_json_error( 'invalid_nonce' );
 			}
 
@@ -89,4 +89,4 @@ if ( ! class_exists( 'MYTHEME_Customizer_Reset' ) ) {
 	}
 }
 
-MYTHEME_Customizer_Reset::get_instance();
+THEMENAME_Customizer_Reset::get_instance();

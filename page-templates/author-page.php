@@ -3,7 +3,7 @@
  * This template is used to display the author page content.
  *
  * @package Portfolio
- * @since Portfolio Lite 1.0
+ * @since THEMENAME 1.0
  */
 
 ?>
@@ -25,19 +25,19 @@
 
 			<?php $website = get_the_author_meta( 'user_url' ); ?>
 			<?php if ( ! empty( $website ) ) : ?>
-				<h6><?php esc_html_e( 'Website:', 'MYTHEME' ); ?></h6>
-				<p><a href="<?php echo esc_url( $website ); ?>" rel="bookmark" title="<?php esc_attr_e( 'Link to author page', 'MYTHEME' ); ?>" target="_blank"><?php echo esc_url( $website ); ?></a></p>
+				<h6><?php esc_html_e( 'Website:', 'THEMENAME' ); ?></h6>
+				<p><a href="<?php echo esc_url( $website ); ?>" rel="bookmark" title="<?php esc_attr_e( 'Link to author page', 'THEMENAME' ); ?>" target="_blank"><?php echo esc_url( $website ); ?></a></p>
 			<?php endif; ?>
 
 			<?php $description = get_the_author_meta( 'description' ); ?>
 			<?php if ( ! empty( $description ) ) : ?>
-				<h6><?php esc_html_e( 'Profile:', 'MYTHEME' ); ?></h6>
+				<h6><?php esc_html_e( 'Profile:', 'THEMENAME' ); ?></h6>
 				<p><?php echo wp_kses_post( $description ); ?></p>
 			<?php endif; ?>
 
 			<?php if ( have_posts() ) : ?>
 
-			<h6><?php printf( esc_html__( 'Posts by %1$s:', 'MYTHEME' ), get_the_author() );  ?></h6>
+			<h6><?php printf( esc_html__( 'Posts by %1$s:', 'THEMENAME' ), get_the_author() );  ?></h6>
 
 			<ul class="author-posts">
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -46,12 +46,12 @@
 			</ul>
 
 			<?php the_posts_pagination( array(
-				'prev_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Previous Page', 'MYTHEME' ) . ' </span>&laquo;',
-				'next_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Next Page', 'MYTHEME' ) . ' </span>&raquo;',
+				'prev_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Previous Page', 'THEMENAME' ) . ' </span>&laquo;',
+				'next_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Next Page', 'THEMENAME' ) . ' </span>&raquo;',
 			) ); ?>
 
 			<?php else : ?>
-				<p><?php esc_html_e( 'No posts by this author.', 'MYTHEME' ); ?></p>
+				<p><?php esc_html_e( 'No posts by this author.', 'THEMENAME' ); ?></p>
 			<?php endif; ?>
 
 		<!-- END .author-column -->

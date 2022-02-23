@@ -1,45 +1,37 @@
 <?php
 /**
- * MYTHEME's functions and definitions
+ * THEMENAME's functions and definitions
  *
- * @package MYTHEME
- * @since MYTHEME 1.0
+ * @package THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
  * Set Content Width
  */
 
- if ( ! isset( $content_width ) ) {
-   $content_width = 1380; /* pixels */
- }
+function THEMENAME_setup() {
+  global $content_width;
+	if ( ! isset( $content_width ) ) {
+			$content_width = 1600;
+	}
 
-function setup() {
-  require_once( get_template_directory() . '/inc/MYTHEME-support.php' );
-  require_once( get_template_directory() . '/inc/MYTHEME-cleanup.php' );
-  require_once( get_template_directory() . '/inc/MYTHEME-functions.php' );
+  require_once 'dev-templates/is-debug.php';
 
-  require( get_template_directory() . '/inc/custom-functions/template-tags.php' );
-  require( get_template_directory() . '/inc/custom-functions/template-functions.php' );
-  require get_parent_theme_file_path( '/inc/custom-functions/icon-functions.php' );
+  require_once( get_template_directory() . '/inc/THEMENAME-support.php' );
+  require_once( get_template_directory() . '/inc/THEMENAME-extra-controls.php' );
+  require_once( get_template_directory() . '/inc/THEMENAME-functions.php' );
 
-  require get_parent_theme_file_path( '/inc/custom/events.php' );
-  require get_parent_theme_file_path( '/inc/custom/color-scheme.php' );
-  require get_parent_theme_file_path( '/inc/custom/custom-header.php' );
+  require get_template_directory() . '/inc/custom-header.php';
+  require get_template_directory() . '/inc/extras.php';
+  require get_template_directory() . '/inc/customizer.php';
+  require get_template_directory() . '/inc/icon-functions.php';
 
-  require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 
-  require get_parent_theme_file_path( '/inc/widgets/widget-social-icons.php' );
-
-  require get_parent_theme_file_path( '/inc/classes/class-tgm-plugin-activation.php' );
-
-  MYTHEME_theme_support();
-  MYTHEME_functions();
-
-  add_action( 'init', 'MYTHEME_head_cleanup' );
+  add_action( 'get_header', 'enable_threaded_comments' );
+  add_action( 'init', 'html5wp_pagination' ); // Add our HTML5 Pagination
 
   add_action( 'tgmpa_register', 'register_required_plugins' );
-  add_action( 'template_redirect', 'MYTHEME_template_redirect' );
 
   add_action( 'widgets_init', 'widgets_init' );
   add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
@@ -49,34 +41,47 @@ function setup() {
   add_action( 'wp_enqueue_scripts', 'enqueue_conditional_styles' );
   add_action( 'wp_enqueue_scripts', 'enqueue_vendor_scripts_and_styles' );
   add_action( 'wp_head', 'javascript_detection', 0 );
-
-  add_filter( 'excerpt_more', 'MYTHEME_excerpt_more' );
-  add_filter( 'gallery_style', 'MYTHEME_gallery_style' );
-  add_filter( 'image_size_names_choose', 'MYTHEME_custom_image_sizes' );
-  add_filter( 'the_content', 'MYTHEME_filter_ptags_on_images' );
-  add_filter( 'the_generator', 'MYTHEME_rss_version' );
+  add_action( 'wp_print_scripts', 'html5blank_conditional_scripts' ); // Add Conditional Page Scripts
+  add_filter( 'excerpt_more', 'THEMENAME_excerpt_more' );
+  add_filter( 'gallery_style', 'THEMENAME_gallery_style' );
+  add_filter( 'image_size_names_choose', 'THEMENAME_custom_image_sizes' );
+  add_filter( 'show_admin_bar', 'remove_admin_bar' );
+  add_filter( 'style_loader_tag', 'html5_style_remove' );
+  add_filter( 'the_content', 'THEMENAME_filter_ptags_on_images' );
   add_filter( 'widget_text', 'do_shortcode' );
-  add_action( 'wp_head', 'MYTHEME_remove_recent_comments_style', 1 );
-  add_filter( 'wp_head', 'MYTHEME_remove_wp_widget_recent_comments_style', 1 );
+  add_filter( 'widget_text', 'shortcode_unautop' ); // Remove <p> tags in Dynamic Sidebars (better!)
   add_filter( 'wp_title', 'rw_title', 10, 3 );
 
+  // Remove Actions
+  remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+  remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+  remove_action( 'wp_head', 'rsd_link' ); // Display the link to the Really Simple Discovery service endpoint, EditURI link
+  remove_action( 'wp_head', 'wlwmanifest_link' ); // Display the link to the Windows Live Writer manifest file.
+  remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
+  remove_action( 'wp_head', 'rel_canonical' );
+  remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+
+
+  THEMENAME_theme_support();
+  THEMENAME_functions();
+
 }
-add_action( 'after_setup_theme', 'setup' );
+add_action( 'after_setup_theme', 'THEMENAME_setup' );
 
 // This theme uses wp_nav_menu() in one location.
 function nav_menus() {
   register_nav_menus(
-    array(
-      'primary-menu'    => esc_html__( 'Primary', 'MYTHEME' ),
-      'social-menu'     => esc_html__( 'Floating Social Menu', 'MYTHEME' ),
-    )
-  );
+		array(
+			'main-menu' => esc_html__( 'Primary Menu', 'THEMENAME' ),
+			'social'    => esc_html__( 'Social Menu', 'THEMENAME' ),
+		)
+	);
 }
 
 function widgets_init() {
   register_sidebar(
     array(
-      'name' => __( 'Primary Widget Area', 'MYTHEME' ),
+      'name' => __( 'Primary Widget Area', 'THEMENAME' ),
       'id' => 'sidebar-1',
       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
       'after_widget' => '</aside>',
@@ -87,7 +92,7 @@ function widgets_init() {
 
   register_sidebar(
     array(
-      'name' => __( 'Secondary Widget Area', 'MYTHEME' ),
+      'name' => __( 'Secondary Widget Area', 'THEMENAME' ),
       'id' => 'sidebar-2',
       'before_widget' => '<aside id="%1$s" class="widget %2$s">',
       'after_widget' => '</aside>',
@@ -151,7 +156,7 @@ function register_required_plugins() {
 	}
 
 	$config = array(
-		'id'           => 'MYTHEME',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'THEMENAME',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'has_notices'  => true,                    // Show admin notices or not.
@@ -205,9 +210,22 @@ function wpb_copyright() {
   return $output;
 }
 
+function remove_admin_bar() {
+    return false;
+}
+
+function enable_threaded_comments() {
+    if ( ! is_admin() ) {
+        if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1 ) ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
+    }
+}
+
 function enqueue_scripts_and_styles() {
   function enqueue_styles() {
     wp_enqueue_style( 'style', get_template_directory() . '/style.css' );
+	  wp_enqueue_style( 'animate-style', get_template_directory_uri() . '/assets/scripts/css/animate.css', array(), '1', 'screen' );
 
   }
 
@@ -216,13 +234,11 @@ function enqueue_scripts_and_styles() {
     $path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/scripts/js/lib/' : 'assets/scripts/js/';
 
     wp_register_script( 'html5', get_theme_file_uri() .'/assets/scripts/js/lib/html5.js' );
-    wp_register_script( 'MYTHEME-copyright', get_theme_file_uri() . '/assets/scripts/js/css_comment.js', array(), null, true );
+    wp_register_script( 'copyright', get_theme_file_uri() . '/assets/scripts/js/css_comment.js', array(), null, true );
     wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/assets/scripts/js/scripts.js', array( 'jquery' ), '', true );
     wp_register_script( 'skip-link-focus-fix', get_theme_file_uri() . $path . 'skip-link-focus-fix' . $min . '.js', array(), '201800703', true );
-    wp_enqueue_script( 'MYTHEME-html5',  get_theme_file_uri( $path . 'html5' . $min . '.js' ), array(), '3.7.3' );
     wp_enqueue_script( 'index', get_theme_file_uri() . '/assets/scripts/js/index.js' );
   }
-
 
   function enqueue_fonts() {
     wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
@@ -233,28 +249,29 @@ function enqueue_scripts_and_styles() {
       wp_enqueue_script( 'comment-reply' );
     }
     if ( is_singular() && wp_attachment_is_image() ) {
-      wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/assets/scripts/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+      wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/assets/scripts/js/lib/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
     }
 
 
   }
 
   function enqueue_vendor_scripts_and_styles() {
-    wp_enqueue_script( 'MYTHEME-fitvid', get_template_directory_uri() . '/assets/scripts/js/jquery.fitvids.js', array( 'jquery' ), true );
-    wp_register_script( 'MYTHEME-modernizr', get_stylesheet_directory_uri() . '/assets/scripts/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+    $path = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? 'assets/scripts/js/lib/' : 'assets/scripts/js/';
+
+    wp_enqueue_script( 'fitvid', get_template_directory_uri() . '/assets/scripts/js/lib/jquery/fitvids.js', array( 'jquery' ), true );
+  	wp_enqueue_script( 'animate', get_template_directory_uri() . $path . 'animate.js', array( 'jquery' ), '0.1.0', true );
 
   }
   wp_enqueue_script( 'jquery' );
-  wp_enqueue_script( 'MYTHEME-js' );
-  wp_enqueue_script( 'MYTHEME-modernizr' );
+  wp_enqueue_script( 'THEMENAME-js' );
 
-  wp_script_add_data( 'MYTHEME-html5', 'conditional', 'lt IE 9' );
+  wp_script_add_data( 'THEMENAME-html5', 'conditional', 'lt IE 9' );
 
 }
 
 /************* COMMENT LAYOUT *********************/
 // Comment Layout
-function MYTHEME_comments( $comment, $args, $depth ) {
+function THEMENAME_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
     <article  class="cf">
@@ -272,13 +289,13 @@ function MYTHEME_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'MYTHEME' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'MYTHEME' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'MYTHEME' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'THEMENAME' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'THEMENAME' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'THEMENAME' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'MYTHEME' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'THEMENAME' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">

@@ -1,14 +1,14 @@
 <?php
 /**
  * @version     0.1.0
- * @author      Florian Eickhorst <eickhorst@MYTHEMEmedia.de>
+ * @author      Florian Eickhorst <eickhorst@THEMENAMEmedia.de>
  *
  * @description This file is derrived from https://wordpress.stackexchange.com/a/33495.
  *              It allows to add custom menu fields to menu items in the menu editor in the WP admin area.
  *
- *              You can add fields by using filter 'MYTHEME_custom_menu_fields' like so:
+ *              You can add fields by using filter 'THEMENAME_custom_menu_fields' like so:
  *
- * @example     add_filter('MYTHEME_custom_menu_fields', function($custom_menu_fields) {
+ * @example     add_filter('THEMENAME_custom_menu_fields', function($custom_menu_fields) {
  * $custom_menu_fields['my_custom_field'] = array(
  * 'label' = 'My Custom Field'
  * );
@@ -257,7 +257,7 @@ class Walker_Nav_Menu_Edit_Custom extends Walker_Nav_Menu
        * This is the added field
        */
 
-      $custom_menu_fields = apply_filters('MYTHEME_custom_menu_fields', [], 10);
+      $custom_menu_fields = apply_filters('THEMENAME_custom_menu_fields', [], 10);
 
       foreach ($custom_menu_fields as $idx => $custom_menu_field):
 

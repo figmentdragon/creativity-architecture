@@ -2,6 +2,8 @@
  * Default variables and helper mixins
  */
 
+  $enable-container-classes :    true;
+
 @import
   'functions',
   'variables',
@@ -12,30 +14,14 @@
  * Grid scaffolding
  */
 
- .container,
- .container-fluid,
- .container-xxl,
- .container-xl,
- .container-lg,
- .container-md,
- .container-sm {
-    @include clearfix;
-    width: 100%;
-    max-width: $grid-max-width;
-    margin: 0 auto;
-    padding: 0 $gutter-x;
-}
-
-// the last column
-.last-col {
-  float: right;
-  padding-right: 0 !important;
-}
-
+@import "container";
 
 @import "rows";
-
 @import "col";
+@import "helpers/row-cols";
+@import "helpers/offset";
+@import "helpers/gutters";
+@import "helpers/media";
 
 /*
 Mobile Grid Styles

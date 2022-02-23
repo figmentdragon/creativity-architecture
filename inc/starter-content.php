@@ -1,24 +1,24 @@
 <?php
 /**
- * MYTHEME Starter Content
+ * THEMENAME Starter Content
  *
  * @link https://make.wordpress.org/core/2016/11/30/starter-content-for-themes-in-4-7/
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 /**
  * Function to return the array of starter content for the theme.
  *
- * Passes it through the `MYTHEME_starter_content` filter before returning.
+ * Passes it through the `THEMENAME_starter_content` filter before returning.
  *
- * @since MYTHEME 1.0
+ * @since THEMENAME 1.0
  *
  * @return array A filtered array of args for the starter_content.
  */
-function MYTHEME_get_starter_content() {
+function THEMENAME_get_starter_content() {
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
@@ -27,28 +27,28 @@ function MYTHEME_get_starter_content() {
 		'posts'     => array(
 			'front' => array(
 				'post_type'    => 'page',
-				'post_title'   => esc_html_x( 'Create your website with blocks', 'Theme starter content', 'MYTHEME' ),
+				'post_title'   => esc_html_x( 'Create your website with blocks', 'Theme starter content', 'THEMENAME' ),
 				'post_content' => '
 					<!-- wp:heading {"align":"wide","fontSize":"gigantic","style":{"typography":{"lineHeight":"1.1"}}} -->
-					<h2 class="alignwide has-text-align-wide has-gigantic-font-size" style="line-height:1.1">' . esc_html_x( 'Create your website with blocks', 'Theme starter content', 'MYTHEME' ) . '</h2>
+					<h2 class="alignwide has-text-align-wide has-gigantic-font-size" style="line-height:1.1">' . esc_html_x( 'Create your website with blocks', 'Theme starter content', 'THEMENAME' ) . '</h2>
 					<!-- /wp:heading -->
 
 					<!-- wp:spacer -->
 					<div style="height:100px" aria-hidden="true" class="spacer"></div>
 					<!-- /wp:spacer -->
 
-					<!-- wp:columns {"verticalAlignment":"center","align":"wide","className":"is-style-MYTHEME-columns-overlap"} -->
-					<div class="columns alignwide are-vertically-aligned-center is-style-MYTHEME-columns-overlap"><!-- wp:column {"verticalAlignment":"center"} -->
+					<!-- wp:columns {"verticalAlignment":"center","align":"wide","className":"is-style-THEMENAME-columns-overlap"} -->
+					<div class="columns alignwide are-vertically-aligned-center is-style-THEMENAME-columns-overlap"><!-- wp:column {"verticalAlignment":"center"} -->
 					<div class="column is-vertically-aligned-center"><!-- wp:image {"align":"full","sizeSlug":"large"} -->
-					<figure class="image alignfull size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/roses-tremieres-hollyhocks-1884.jpg" alt="' . esc_attr__( '&#8220;Roses Trémières&#8221; by Berthe Morisot', 'MYTHEME' ) . '"/></figure>
+					<figure class="image alignfull size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/roses-tremieres-hollyhocks-1884.jpg" alt="' . esc_attr__( '&#8220;Roses Trémières&#8221; by Berthe Morisot', 'THEMENAME' ) . '"/></figure>
 					<!-- /wp:image -->
 
 					<!-- wp:spacer -->
 					<div style="height:100px" aria-hidden="true" class="spacer"></div>
 					<!-- /wp:spacer -->
 
-					<!-- wp:image {"align":"full","sizeSlug":"large","className":"is-style-MYTHEME-image-frame"} -->
-					<figure class="image alignfull size-large is-style-MYTHEME-image-frame"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/in-the-bois-de-boulogne.jpg" alt="' . esc_attr__( '&#8220;In the Bois de Boulogne&#8221; by Berthe Morisot', 'MYTHEME' ) . '"/></figure>
+					<!-- wp:image {"align":"full","sizeSlug":"large","className":"is-style-THEMENAME-image-frame"} -->
+					<figure class="image alignfull size-large is-style-THEMENAME-image-frame"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/in-the-bois-de-boulogne.jpg" alt="' . esc_attr__( '&#8220;In the Bois de Boulogne&#8221; by Berthe Morisot', 'THEMENAME' ) . '"/></figure>
 					<!-- /wp:image --></div>
 					<!-- /wp:column -->
 
@@ -57,8 +57,8 @@ function MYTHEME_get_starter_content() {
 					<div style="height:100px" aria-hidden="true" class="spacer"></div>
 					<!-- /wp:spacer -->
 
-					<!-- wp:image {"sizeSlug":"large","className":"alignfull size-full is-style-MYTHEME-border"} -->
-					<figure class="image size-large alignfull size-full is-style-MYTHEME-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/young-woman-in-mauve.jpg" alt="' . esc_attr__( '&#8220;Young Woman in Mauve&#8221; by Berthe Morisot', 'MYTHEME' ) . '"/></figure>
+					<!-- wp:image {"sizeSlug":"large","className":"alignfull size-full is-style-THEMENAME-border"} -->
+					<figure class="image size-large alignfull size-full is-style-THEMENAME-border"><img src="' . esc_url( get_template_directory_uri() ) . '/assets/images/young-woman-in-mauve.jpg" alt="' . esc_attr__( '&#8220;Young Woman in Mauve&#8221; by Berthe Morisot', 'THEMENAME' ) . '"/></figure>
 					<!-- /wp:image --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->
@@ -70,31 +70,31 @@ function MYTHEME_get_starter_content() {
 					<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 					<div class="columns alignwide are-vertically-aligned-top"><!-- wp:column {"verticalAlignment":"top"} -->
 					<div class="column is-vertically-aligned-top"><!-- wp:heading {"level":3} -->
-					<h3>' . esc_html_x( 'Add block patterns', 'Theme starter content', 'MYTHEME' ) . '</h3>
+					<h3>' . esc_html_x( 'Add block patterns', 'Theme starter content', 'THEMENAME' ) . '</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'Block patterns are pre-designed groups of blocks. To add one, select the Add Block button [+] in the toolbar at the top of the editor. Switch to the Patterns tab underneath the search bar, and choose a pattern.', 'Theme starter content', 'MYTHEME' ) . '</p>
+					<p>' . esc_html_x( 'Block patterns are pre-designed groups of blocks. To add one, select the Add Block button [+] in the toolbar at the top of the editor. Switch to the Patterns tab underneath the search bar, and choose a pattern.', 'Theme starter content', 'THEMENAME' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column {"verticalAlignment":"top"} -->
 					<div class="column is-vertically-aligned-top"><!-- wp:heading {"level":3} -->
-					<h3>' . esc_html_x( 'Frame your images', 'Theme starter content', 'MYTHEME' ) . '</h3>
+					<h3>' . esc_html_x( 'Frame your images', 'Theme starter content', 'THEMENAME' ) . '</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'MYTHEME includes stylish borders for your content. With an Image block selected, open the "Styles" panel within the Editor sidebar. Select the "Frame" block style to activate it.', 'Theme starter content', 'MYTHEME' ) . '</p>
+					<p>' . esc_html_x( 'THEMENAME includes stylish borders for your content. With an Image block selected, open the "Styles" panel within the Editor sidebar. Select the "Frame" block style to activate it.', 'Theme starter content', 'THEMENAME' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column {"verticalAlignment":"top"} -->
 					<div class="column is-vertically-aligned-top"><!-- wp:heading {"level":3} -->
-					<h3>' . esc_html_x( 'Overlap columns', 'Theme starter content', 'MYTHEME' ) . '</h3>
+					<h3>' . esc_html_x( 'Overlap columns', 'Theme starter content', 'THEMENAME' ) . '</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph -->
-					<p>' . esc_html_x( 'MYTHEME also includes an overlap style for column blocks. With a Columns block selected, open the "Styles" panel within the Editor sidebar. Choose the "Overlap" block style to try it out.', 'Theme starter content', 'MYTHEME' ) . '</p>
+					<p>' . esc_html_x( 'THEMENAME also includes an overlap style for column blocks. With a Columns block selected, open the "Styles" panel within the Editor sidebar. Choose the "Overlap" block style to try it out.', 'Theme starter content', 'THEMENAME' ) . '</p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->
@@ -103,13 +103,13 @@ function MYTHEME_get_starter_content() {
 					<div style="height:100px" aria-hidden="true" class="spacer"></div>
 					<!-- /wp:spacer -->
 
-					<!-- wp:cover {"overlayColor":"green","contentPosition":"center center","align":"wide","className":"is-style-MYTHEME-border"} -->
-					<div class="cover alignwide has-green-background-color has-background-dim is-style-MYTHEME-border"><div class="cover__inner-container"><!-- wp:spacer {"height":20} -->
+					<!-- wp:cover {"overlayColor":"green","contentPosition":"center center","align":"wide","className":"is-style-THEMENAME-border"} -->
+					<div class="cover alignwide has-green-background-color has-background-dim is-style-THEMENAME-border"><div class="cover__inner-container"><!-- wp:spacer {"height":20} -->
 					<div style="height:20px" aria-hidden="true" class="spacer"></div>
 					<!-- /wp:spacer -->
 
 					<!-- wp:paragraph {"fontSize":"huge"} -->
-					<p class="has-huge-font-size">' . esc_html_x( 'Need help?', 'Theme starter content', 'MYTHEME' ) . '</p>
+					<p class="has-huge-font-size">' . esc_html_x( 'Need help?', 'Theme starter content', 'THEMENAME' ) . '</p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:spacer {"height":75} -->
@@ -119,13 +119,13 @@ function MYTHEME_get_starter_content() {
 					<!-- wp:columns -->
 					<div class="columns"><!-- wp:column -->
 					<div class="column"><!-- wp:paragraph -->
-					<p><a href="https://wordpress.org/support/article/MYTHEME/">' . esc_html_x( 'Read the Theme Documentation', 'Theme starter content', 'MYTHEME' ) . '</a></p>
+					<p><a href="https://wordpress.org/support/article/THEMENAME/">' . esc_html_x( 'Read the Theme Documentation', 'Theme starter content', 'THEMENAME' ) . '</a></p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column -->
 					<div class="column"><!-- wp:paragraph -->
-					<p><a href="https://wordpress.org/support/article/MYTHEME/">' . esc_html_x( 'Check out the Support Forums', 'Theme starter content', 'MYTHEME' ) . '</a></p>
+					<p><a href="https://wordpress.org/support/article/THEMENAME/">' . esc_html_x( 'Check out the Support Forums', 'Theme starter content', 'THEMENAME' ) . '</a></p>
 					<!-- /wp:paragraph --></div>
 					<!-- /wp:column --></div>
 					<!-- /wp:columns -->
@@ -151,7 +151,7 @@ function MYTHEME_get_starter_content() {
 		'nav_menus' => array(
 			// Assign a menu to the "primary" location.
 			'primary' => array(
-				'name'  => esc_html__( 'Primary menu', 'MYTHEME' ),
+				'name'  => esc_html__( 'Primary menu', 'THEMENAME' ),
 				'items' => array(
 					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
 					'page_about',
@@ -162,7 +162,7 @@ function MYTHEME_get_starter_content() {
 
 			// Assign a menu to the "footer" location.
 			'footer'  => array(
-				'name'  => esc_html__( 'Secondary menu', 'MYTHEME' ),
+				'name'  => esc_html__( 'Secondary menu', 'THEMENAME' ),
 				'items' => array(
 					'link_facebook',
 					'link_twitter',
@@ -176,9 +176,9 @@ function MYTHEME_get_starter_content() {
 	/**
 	 * Filters the array of starter content.
 	 *
-	 * @since MYTHEME 1.0
+	 * @since THEMENAME 1.0
 	 *
 	 * @param array $starter_content Array of starter content.
 	 */
-	return apply_filters( 'MYTHEME_starter_content', $starter_content );
+	return apply_filters( 'THEMENAME_starter_content', $starter_content );
 }

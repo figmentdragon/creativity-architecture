@@ -1,8 +1,8 @@
 <?php
 /**
- * MYTHEME Theme Options Sanitization Functions
+ * THEMENAME Theme Options Sanitization Functions
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @since 1.0
  */
-function MYTHEME_sanitize_project_type( $input ) {
+function THEMENAME_sanitize_project_type( $input ) {
     if ( '' != $input ) {
         if ( in_array( 0, $input ) ) {
             return '0';
@@ -42,7 +42,7 @@ function MYTHEME_sanitize_project_type( $input ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
-function MYTHEME_sanitize_select( $input, $setting ) {
+function THEMENAME_sanitize_select( $input, $setting ) {
     // Get list of choices from the control associated with the setting.
     $choices = $setting->manager->get_control( $setting->id )->choices;
 
@@ -59,7 +59,7 @@ function MYTHEME_sanitize_select( $input, $setting ) {
  * @param bool $checked Whether the checkbox is checked.
  * @return bool Whether the checkbox is checked.
  */
-function MYTHEME_sanitize_checkbox( $checked ) {
+function THEMENAME_sanitize_checkbox( $checked ) {
     // Boolean check.
     return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
@@ -69,7 +69,7 @@ function MYTHEME_sanitize_checkbox( $checked ) {
  * @param  $input raw page/post id
  * @return sanitized page/post id
  */
-function MYTHEME_sanitize_post( $input ) {
+function THEMENAME_sanitize_post( $input ) {
     // Ensure $input is an absolute integer.
     $page_id = absint( $input );
     // If $page_id is an ID of a published page, return it; otherwise, return false
@@ -91,7 +91,7 @@ function MYTHEME_sanitize_post( $input ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string The image filename if the extension is allowed; otherwise, the setting default.
  */
-function MYTHEME_sanitize_image( $image, $setting ) {
+function THEMENAME_sanitize_image( $image, $setting ) {
     /*
      * Array of valid image file types.
      *
@@ -118,7 +118,7 @@ function MYTHEME_sanitize_image( $image, $setting ) {
  *
  * @since 1.0
  */
-function MYTHEME_sanitize_category_list( $input ) {
+function THEMENAME_sanitize_category_list( $input ) {
     if ( is_array( $input ) && '' != $input ) {
         if ( in_array( 0, $input ) ) {
             return '0';
@@ -170,7 +170,7 @@ function MYTHEME_sanitize_category_list( $input ) {
  * @return int|string The number, if it is zero or greater and falls within the defined range; otherwise,
  *                    the setting default.
  */
-function MYTHEME_sanitize_number_range( $number, $setting ) {
+function THEMENAME_sanitize_number_range( $number, $setting ) {
 
     // Ensure input is an absolute integer.
     $number = absint( $number );
@@ -192,32 +192,32 @@ function MYTHEME_sanitize_number_range( $number, $setting ) {
     return ( $min <= $number && $number <= $max && is_int( $number / $step ) ? $number : $setting->default );
 }
 
-function MYTHEME_sanitize_events_bg_position( $value, $setting ) {
-    if ( 'MYTHEME_events_bg_position_x' === $setting->id ) {
+function THEMENAME_sanitize_events_bg_position( $value, $setting ) {
+    if ( 'THEMENAME_events_bg_position_x' === $setting->id ) {
         if ( ! in_array( $value, array( 'left', 'center', 'right' ), true ) ) {
-            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position X.', 'MYTHEME' ) );
+            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position X.', 'THEMENAME' ) );
         }
-    } elseif ( 'MYTHEME_events_bg_position_y' === $setting->id ) {
+    } elseif ( 'THEMENAME_events_bg_position_y' === $setting->id ) {
         if ( ! in_array( $value, array( 'top', 'center', 'bottom' ), true ) ) {
-            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position Y.', 'MYTHEME' ) );
+            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position Y.', 'THEMENAME' ) );
         }
     } else {
-        return new WP_Error( 'unrecognized_setting', esc_html__( 'Unrecognized background setting.', 'MYTHEME' ) );
+        return new WP_Error( 'unrecognized_setting', esc_html__( 'Unrecognized background setting.', 'THEMENAME' ) );
     }
     return $value;
 }
 
-function MYTHEME_sanitize_events_fg_position( $value, $setting ) {
-    if ( 'MYTHEME_events_fg_position_x' === $setting->id ) {
+function THEMENAME_sanitize_events_fg_position( $value, $setting ) {
+    if ( 'THEMENAME_events_fg_position_x' === $setting->id ) {
         if ( ! in_array( $value, array( 'left', 'center', 'right' ), true ) ) {
-            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position X.', 'MYTHEME' ) );
+            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position X.', 'THEMENAME' ) );
         }
-    } elseif ( 'MYTHEME_events_fg_position_y' === $setting->id ) {
+    } elseif ( 'THEMENAME_events_fg_position_y' === $setting->id ) {
         if ( ! in_array( $value, array( 'top', 'center', 'bottom' ), true ) ) {
-            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position Y.', 'MYTHEME' ) );
+            return new WP_Error( 'invalid_value', esc_html__( 'Invalid value for background position Y.', 'THEMENAME' ) );
         }
     } else {
-        return new WP_Error( 'unrecognized_setting', esc_html__( 'Unrecognized background setting.', 'MYTHEME' ) );
+        return new WP_Error( 'unrecognized_setting', esc_html__( 'Unrecognized background setting.', 'THEMENAME' ) );
     }
     return $value;
 }
@@ -228,7 +228,7 @@ function MYTHEME_sanitize_events_fg_position( $value, $setting ) {
  * @param $input
  * @return string
  */
-function MYTHEME_sanitize_date_time( $input ) {
+function THEMENAME_sanitize_date_time( $input ) {
     $date = new DateTime( $input );
     
     return $date->format('Y-m-d h:m:s');

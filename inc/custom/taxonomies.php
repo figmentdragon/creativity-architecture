@@ -1,6 +1,6 @@
 <?php
 
-function MYTHEME_create_expertise_taxonomy()
+function THEMENAME_create_expertise_taxonomy()
 {
   $labels = [
     'name'               => 'Expertisen (Taxonomie)',
@@ -31,11 +31,11 @@ function MYTHEME_create_expertise_taxonomy()
   );
   register_taxonomy_for_object_type('tax_expertise', 'page');
   register_taxonomy_for_object_type('tax_expertise', 'post');
-  register_taxonomy_for_object_type('tax_expertise', 'MYTHEME_case');
-  register_taxonomy_for_object_type('tax_expertise', 'MYTHEME_job');
+  register_taxonomy_for_object_type('tax_expertise', 'THEMENAME_case');
+  register_taxonomy_for_object_type('tax_expertise', 'THEMENAME_job');
 }
 
-add_action('init', __NAMESPACE__ . '\\MYTHEME_create_expertise_taxonomy');
+add_action('init', __NAMESPACE__ . '\\THEMENAME_create_expertise_taxonomy');
 
 function ev_unregister_taxonomy() {
   register_taxonomy('post_tag', []);
@@ -54,17 +54,17 @@ add_action('admin_menu', __NAMESPACE__.'\\remove_menus');
 
 // Add Taxonomy to Media (Attachments)
 
-function MYTHEME_add_taxonomies_to_attachments() {
-  register_taxonomy_for_object_type('MYTHEME_expertise', 'attachment');
+function THEMENAME_add_taxonomies_to_attachments() {
+  register_taxonomy_for_object_type('THEMENAME_expertise', 'attachment');
 }
 
-add_action( 'init' , __NAMESPACE__ . '\\MYTHEME_add_taxonomies_to_attachments' );
+add_action( 'init' , __NAMESPACE__ . '\\THEMENAME_add_taxonomies_to_attachments' );
 
 /**
  * Remove Meta Boxes
  */
-function MYTHEME_remove_meta_boxes() {
+function THEMENAME_remove_meta_boxes() {
   // remove taxonomy meta box for my_expertise b/c for attachment this has to be done through ACF
   remove_meta_box('custom-post-type-onomies-my_expertise', 'attachment', 'normal');
 }
-add_action( 'admin_menu', 'MYTHEME_remove_meta_boxes' );
+add_action( 'admin_menu', 'THEMENAME_remove_meta_boxes' );

@@ -1,5 +1,5 @@
 <?php
-    function MYTHEME_slide_page($page_id) {
+    function THEMENAME_slide_page($page_id) {
         if($page_id){
             $pg_query = new WP_Query( array( 'page_id' => $page_id, 'posts_per_page' => 1 ) );
             if($pg_query->have_posts()) :
@@ -24,19 +24,19 @@
         }
     }
 
-    function MYTHEME_slide_service() {
+    function THEMENAME_slide_service() {
         ?>
         <div class="s-panel-inner">
             <div class="container">
             <header class="entry-header">
-                <?php $service_title = MYTHEME_allow_span(get_theme_mod('MYTHEME_service_title', 'We Are Expert - <span>In Our Service</span>')); ?>
+                <?php $service_title = THEMENAME_allow_span(get_theme_mod('THEMENAME_service_title', 'We Are Expert - <span>In Our Service</span>')); ?>
                 <h1 class="entry-title"><?php echo wp_kses_post($service_title); ?></h1>
             </header><!-- .entry-header -->
 
             <div class="service-tab-wrap">
             <?php
                 for ($i = 1; $i <= 4; $i++) :
-                    $service_page = absint(get_theme_mod( 'MYTHEME_service_block_'.$i.'_page'));
+                    $service_page = absint(get_theme_mod( 'THEMENAME_service_block_'.$i.'_page'));
                     if($service_page):
                         $args = array( 'page_id'=>$service_page );
                         $query = new WP_Query($args);
@@ -63,7 +63,7 @@
             <div class="service-content-wrap">
             <?php
                 for ($i = 1; $i <= 4; $i++) :
-                    $service_page = absint(get_theme_mod( 'MYTHEME_service_block_'.$i.'_page'));
+                    $service_page = absint(get_theme_mod( 'THEMENAME_service_block_'.$i.'_page'));
                     if($service_page):
                         $args = array( 'page_id'=>$service_page );
                         $query = new WP_Query($args);
@@ -90,22 +90,22 @@
         <?php
     }
 
-    function MYTHEME_slide_portfolio() {
+    function THEMENAME_slide_portfolio() {
         ?>
         <div class="s-panel-inner">
             <div class="container">
                 <header class="entry-header">
-                    <?php $section_title = MYTHEME_allow_span(get_theme_mod('MYTHEME_portfolio_title', 'What we have done - <span>Our Works</span>')); ?>
+                    <?php $section_title = THEMENAME_allow_span(get_theme_mod('THEMENAME_portfolio_title', 'What we have done - <span>Our Works</span>')); ?>
                     <h1 class="entry-title"><?php echo wp_kses_post($section_title); ?></h1>
                 </header><!-- .entry-header -->
 
 
-                <?php $MYTHEME_page = absint(get_theme_mod( 'MYTHEME_portfolio_page' )); ?>
-                <?php if( isset( $MYTHEME_page ) && $MYTHEME_page != 0  ) : ?>
+                <?php $THEMENAME_page = absint(get_theme_mod( 'THEMENAME_portfolio_page' )); ?>
+                <?php if( isset( $THEMENAME_page ) && $THEMENAME_page != 0  ) : ?>
                 <div id="portfolio-wrap">
                     <?php
                         $cat_args = array(
-                            'cat' => $MYTHEME_page,
+                            'cat' => $THEMENAME_page,
                             'order' => 'ASC',
                             'posts_per_page' => -1,
                             'post_status' => 'publish'
@@ -124,7 +124,7 @@
                                     if( $i == 2 || $i == 5 || $i == 9 || $i == 13 ) {
                                         $mas_class = 'wide';
                                     }
-                                    $img_crop = 'MYTHEME-grid-large';
+                                    $img_crop = 'THEMENAME-grid-large';
 
                                     $img_src = wp_get_attachment_image_src( get_post_thumbnail_id(), $img_crop );
                                     $img_src_full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
@@ -168,18 +168,18 @@
         <?php
     }
 
-    function MYTHEME_slide_clients() {
+    function THEMENAME_slide_clients() {
         ?>
         <div class="s-panel-inner">
             <div class="container">
                 <header class="entry-header">
-                    <?php $section_title = MYTHEME_allow_span(get_theme_mod('MYTHEME_client_title', 'We Have Some - <span>Great Clients</span>')); ?>
+                    <?php $section_title = THEMENAME_allow_span(get_theme_mod('THEMENAME_client_title', 'We Have Some - <span>Great Clients</span>')); ?>
                     <h1 class="entry-title"><?php echo wp_kses_post($section_title); ?></h1>
                 </header><!-- .entry-header -->
                 <?php
-                $MYTHEME_page = absint(get_theme_mod('MYTHEME_clients_category'));
-                if (isset($MYTHEME_page) && $MYTHEME_page != 0) {
-                    $cat_args = array('cat' => $MYTHEME_page, 'posts_per_page' => -1);
+                $THEMENAME_page = absint(get_theme_mod('THEMENAME_clients_category'));
+                if (isset($THEMENAME_page) && $THEMENAME_page != 0) {
+                    $cat_args = array('cat' => $THEMENAME_page, 'posts_per_page' => -1);
                     $cat_query = new WP_Query($cat_args);
                     if ($cat_query->have_posts()) {
                         echo '<div class="client-slider clearfix">';
@@ -193,7 +193,7 @@
                                 <div class="client-sub">
                                     <div class="client-sub-inner">
                                         <div class="client-table-outer">
-                                            <?php $link_to_inpage = esc_attr(get_theme_mod('MYTHEME_linkto_inpage', 1)); ?>
+                                            <?php $link_to_inpage = esc_attr(get_theme_mod('THEMENAME_linkto_inpage', 1)); ?>
 
                                             <?php if($link_to_inpage) : ?>
                                             <a href="<?php the_permalink(); ?>">
@@ -225,8 +225,8 @@
         <?php
     }
 
-    function MYTHEME_slide_contact() {
-        $con_page = absint(get_theme_mod('MYTHEME_contact_page', 0));
+    function THEMENAME_slide_contact() {
+        $con_page = absint(get_theme_mod('THEMENAME_contact_page', 0));
 
         $pg_query = new WP_Query( array( 'post_type' => 'page', 'post__in' => array( $con_page ), 'posts_per_page' => 1 ) );
         if($pg_query->have_posts()) :
@@ -236,9 +236,9 @@
 
             <div class="container">
                 <div class="clearfix">
-                    <?php if(is_dynamic_sidebar('MYTHEME-gmap')) : ?>
-                    <div id="MYTHEME-map-canvas">
-                        <?php dynamic_sidebar('MYTHEME-gmap'); ?>
+                    <?php if(is_dynamic_sidebar('THEMENAME-gmap')) : ?>
+                    <div id="THEMENAME-map-canvas">
+                        <?php dynamic_sidebar('THEMENAME-gmap'); ?>
                     </div>
                     <?php endif; ?>
 
@@ -252,14 +252,14 @@
                             <?php the_content(); ?>
                             <?php
                             wp_link_pages(array(
-                                'before' => '<div class="page-links">' . esc_html__('Pages:', 'MYTHEME'),
+                                'before' => '<div class="page-links">' . esc_html__('Pages:', 'THEMENAME'),
                                 'after' => '</div>',
                             ));
                             ?>
                         </div><!-- .entry-content -->
 
                         <footer class="entry-footer">
-                            <?php edit_post_link(esc_html__('Edit', 'MYTHEME'), '<span class="edit-link">', '</span>'); ?>
+                            <?php edit_post_link(esc_html__('Edit', 'THEMENAME'), '<span class="edit-link">', '</span>'); ?>
                         </footer><!-- .entry-footer -->
                     </article><!-- #post-## -->
                 </div>
@@ -270,18 +270,18 @@
         endif; // $pg_query if end
     }
 
-    function MYTHEME_slide_blog() {
+    function THEMENAME_slide_blog() {
         ?>
         <div class="s-panel-inner">
             <div class="container">
                 <header class="entry-header">
-                    <?php $section_title = MYTHEME_allow_span(get_theme_mod('MYTHEME_blog_title', 'Know What We Are - <span>Upto</span>')); ?>
+                    <?php $section_title = THEMENAME_allow_span(get_theme_mod('THEMENAME_blog_title', 'Know What We Are - <span>Upto</span>')); ?>
                     <h1 class="entry-title"><?php echo wp_kses_post($section_title); ?></h1>
                 </header><!-- .entry-header -->
 
                 <?php
-                    $blog_cat = absint(get_theme_mod('MYTHEME_blog_cat', 0));
-                    $blog_readmore_txt = sanitize_text_field(get_theme_mod('MYTHEME_blog_readmore_txt', 'Read More'));
+                    $blog_cat = absint(get_theme_mod('THEMENAME_blog_cat', 0));
+                    $blog_readmore_txt = sanitize_text_field(get_theme_mod('THEMENAME_blog_readmore_txt', 'Read More'));
                 ?>
                 <?php if(isset($blog_cat) || $blog_cat != 0) : ?>
                     <?php
@@ -296,7 +296,7 @@
                         <?php while($blog_query->have_posts()) : $blog_query->the_post(); ?>
                             <div class="sl-blog-post-wrap">
                                 <?php if(has_post_thumbnail()) : ?>
-                                <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'MYTHEME-bpost-image'); $img_src = $img[0]; ?>
+                                <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'THEMENAME-bpost-image'); $img_src = $img[0]; ?>
                                 <div class="sl-blog-post-img">
                                     <a href="<?php the_permalink(); ?>">
                                         <img src="<?php echo esc_url($img_src); ?>" alt="<?php the_title_attribute(); ?>" title="<?php the_title_attribute(); ?>" />
@@ -333,7 +333,7 @@
     }
 
 
-function MYTHEME_is_realy_woocommerce_page () {
+function THEMENAME_is_realy_woocommerce_page () {
         if(  function_exists ( "is_woocommerce" ) && is_woocommerce()){
                 return true;
         }

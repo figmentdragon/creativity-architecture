@@ -1,10 +1,10 @@
-.MYTHEME-font-weight,
-.MYTHEME-font-transform {
+.THEMENAME-font-weight,
+.THEMENAME-font-transform {
     float: left;
     width: 50%
 }
 
-.MYTHEME-font-weight select {
+.THEMENAME-font-weight select {
     border-right: 0;
 }
 
