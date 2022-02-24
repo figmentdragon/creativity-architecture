@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1 for parent theme THEMENAME Pro for publication on WordPress.org
+ * @version   2.6.1 for parent theme Givingpress Lite for publication on WordPress.org
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -385,7 +385,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'return'                          => __( 'Return to Required Plugins Installer', 'THEMENAME' ),
 				'dashboard'                       => __( 'Return to the Dashboard', 'THEMENAME' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'THEMENAME' ),
-				'activated_successfully'          => __( 'This plugin was activated successfully:', 'THEMENAME' ),
+				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'THEMENAME' ),
 				/* translators: 1: plugin name. */
 				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'THEMENAME' ),
 				/* translators: 1: plugin name. */
@@ -2339,7 +2339,6 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			return sprintf(
 				/* translators: 1: install status, 2: update status */
-				_x( '%1$s, %2$s', 'Install/Update Status', 'THEMENAME' ),
 				_x( '%1$secondary, %2$s', 'Install/Update Status', 'THEMENAME' ),
 				$install_status,
 				$update_status
@@ -2950,7 +2949,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 					printf( // WPCS: xss ok.
 						'<div id="message" class="updated"><p>%1$s %2$s.</p></div>',
-						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully', $count, 'THEMENAME' ) ),
+						esc_html( _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'THEMENAME' ) ),
 						$imploded
 					);
 

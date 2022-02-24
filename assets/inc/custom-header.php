@@ -32,6 +32,7 @@
  * @package THEMENAME
  */
 function THEMENAME_custom_header_setup() {
+<<<<<<< HEAD:assets/inc/custom-header.php
 	add_theme_support( 'custom-header',
 		$args = array(
 			'default-image'          => get_theme_file_path() . '/assets/images/backgrounds/mobile/7.png',
@@ -45,6 +46,21 @@ function THEMENAME_custom_header_setup() {
 			'admin-head-callback'    => 'adminhead_cb',
 			'admin-preview-callback' => 'adminpreview_cb'
 		)
+=======
+	$args = array(
+		'default-image' 			=> get_template_directory_uri() . '/assets/images/backgrounds/mobile/7.png',
+		'header-text'					=> true,
+		'default-text-color' 		=> '000',
+		'flex-width' 			=> true,
+		'width' 					=> '1000',
+		'flex-height'			=> true,
+		'height' 					=> '250',
+		'flex-height' 				=> true,
+		'random-default'			=> true,
+		'wp-head-callback' 			=> 'THEMENAME_header_style',
+		'admin-head-callback' 		=> 'wp_admin_header_style',
+		'admin-preview-callback' 	=> 'wp_admin_header_image',
+>>>>>>> ff3e4c46347454edb5e6fb34a0d248a6dc0dabb1:inc/custom-header.php
 	);
 
 	$args = apply_filters( 'THEMENAME_custom_header_args', $args );
