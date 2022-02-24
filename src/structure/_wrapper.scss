@@ -2,7 +2,8 @@
  * partials/wrapper
  * ---
  */
- $wrapper-width: $grid-max-width;
+ $wrapper-width: $max-content-width;
+ $duration: .7s;
 
 .wrapper-main {
   margin-top: 0;
@@ -30,14 +31,14 @@
   right: 95vw;
   bottom: 0;
   left: 1vw;
+  z-index: $z-index-header;
 
-  width: 2vw;
+  width: 4vw;
+  height: 100vh;
 
-  padding-top: 1.5vh;
-  padding-right: .5vw;
-  padding-bottom: 1.5vh;
-  padding-left: .5vw;
   border: 2px solid black;
+
+  @include box-sizing($type: border-box);
 }
 
 .wrapper-footer {

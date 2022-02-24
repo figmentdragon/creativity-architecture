@@ -5,7 +5,7 @@ Template Name: Blog
  * This template is used to display a blog page.
  *
  * @package Portfolio
- * @since Portfolio Lite 1.0
+ * @since THEMENAME 1.0
  */
 
 get_header(); ?>

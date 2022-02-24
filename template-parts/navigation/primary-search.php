@@ -2,7 +2,7 @@
 /**
  * Primary Menu Template
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 ?>
 <div class="search-inside-wrapper">
@@ -10,11 +10,11 @@
 		<div class="search-container">
 			<?php 
 			$unique_id   = esc_attr( uniqid( 'search-form-' ) );
-			$search_text = get_theme_mod( 'MYTHEME_search_text', esc_html__( 'Search', 'MYTHEME' ) );
+			$search_text = get_theme_mod( 'THEMENAME_search_text', esc_html__( 'Search', 'THEMENAME' ) );
 			
 			get_search_form(); ?>
 
-			<button class="close-submit"><?php echo MYTHEME_get_svg( array( 'icon' => 'close' ) ); ?></button>
+			<button class="close-submit"><?php echo THEMENAME_get_svg( array( 'icon' => 'close' ) ); ?></button>
 
 		</div>
 	</div>

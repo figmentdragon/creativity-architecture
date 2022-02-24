@@ -1,5 +1,4 @@
 article {
-	@include border-radius($border-radius-xxl);
   position: relative;
   top: 0;
   right: 0;
@@ -16,7 +15,6 @@ article {
 
 	&:hover {
 		@include elevation(15);
-		filter:blur(2px);
 	}
 	& > figure,
 	& > img {

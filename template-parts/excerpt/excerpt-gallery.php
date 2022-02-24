@@ -5,14 +5,14 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 // Print the 1st gallery found.
 if ( has_block( 'core/gallery', get_the_content() ) ) {
 
-	MYTHEME_print_first_instance_of_block( 'core/gallery', get_the_content() );
+	THEMENAME_print_first_instance_of_block( 'core/gallery', get_the_content() );
 }
 
 the_excerpt();

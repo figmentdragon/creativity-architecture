@@ -5,27 +5,12 @@
   @include border-box;
 }
 
-@mixin make-container($gutter: $container-padding-x) {
-  @include container-base;
-  --#{$variable-prefix}gutter-x: #{$gutter};
-  --#{$variable-prefix}gutter-y: 0;
-  width: 100%;
-  padding-right: calc(var(--#{$variable-prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
-  padding-left: calc(var(--#{$variable-prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
-  margin-right: auto;
-  margin-left: auto;
-}
-
-
-
-
 // container mixins
 @mixin make-container {
   @include container-base;
   display: inline-block;
   overflow: hidden;
 }
-
 
 @mixin container($body-text) {
   @include container-base;
@@ -35,7 +20,6 @@
   padding-bottom: $offset-y;
 
 }
-
 
 @mixin container-overflow {
   @include container-base;

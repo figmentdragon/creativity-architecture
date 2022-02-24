@@ -3,23 +3,23 @@
 ## Slider section for home page.
 /***********************************************************/
 
-$slider_status = esc_attr(get_theme_mod('MYTHEME_slider_enable', 'enable'));
+$slider_status = esc_attr(get_theme_mod('THEMENAME_slider_enable', 'enable'));
 
 if( $slider_status == 'enable'):
 
-	$slider_meta_status  = esc_attr(get_theme_mod('MYTHEME_slider_content_meta', 'enable'));
-	$posts_per_page      = esc_attr(get_theme_mod('MYTHEME_slider_posts', '5'));
-	$slider_content_type = esc_attr(get_theme_mod('MYTHEME_slider_content', 'category'));
+	$slider_meta_status  = esc_attr(get_theme_mod('THEMENAME_slider_content_meta', 'enable'));
+	$posts_per_page      = esc_attr(get_theme_mod('THEMENAME_slider_posts', '5'));
+	$slider_content_type = esc_attr(get_theme_mod('THEMENAME_slider_content', 'category'));
 		
 	if($slider_content_type == 'category'){
-		$slider_post_cats = esc_attr(get_theme_mod('MYTHEME_slider_post_cats'));
+		$slider_post_cats = esc_attr(get_theme_mod('THEMENAME_slider_post_cats'));
 		if($slider_post_cats != ''){
 			$categories = explode(',',$slider_post_cats);
 		}else{
 			$categories = '';
 		}
 		
-		$MYTHEME_slider_args = array(
+		$THEMENAME_slider_args = array(
 			'post_type'    => 'post',
 			'category__in' => $categories,
 			'meta_query'   => array(
@@ -35,7 +35,7 @@ if( $slider_status == 'enable'):
 		);
 		
 	} else {
-		$MYTHEME_slider_args = array(
+		$THEMENAME_slider_args = array(
 			'post_type' => 'post',
 			'meta_query' => array(
 				array(
@@ -50,11 +50,11 @@ if( $slider_status == 'enable'):
 		);
 	}
 	
-	$MYTHEME_slider_data = new WP_Query($MYTHEME_slider_args);
+	$THEMENAME_slider_data = new WP_Query($THEMENAME_slider_args);
 	
-	if($MYTHEME_slider_data->have_posts()):
+	if($THEMENAME_slider_data->have_posts()):
 	
-	$slider_display_type = esc_attr(get_theme_mod('MYTHEME_slider_display_type'));
+	$slider_display_type = esc_attr(get_theme_mod('THEMENAME_slider_display_type'));
 ?>
 	<div class="site-banner<?php if( $slider_display_type == 'fluid'){ ?> banner-fluid<?php }else{ ?> banner-non-fluid<?php }?>">
         <div class="<?php if($slider_display_type == 'fluid') { ?>site-container-fluid no-padding <?php } else{ ?> site-container <?php }?> ">
@@ -62,14 +62,14 @@ if( $slider_status == 'enable'):
                 <div class="site-column-12">
 					<div class="site-banner-carousel" id="site-banner-carousel">
 						<?php  
-						$MYTHEME_slider_counter=0;
+						$THEMENAME_slider_counter=0;
 						
-						while($MYTHEME_slider_data->have_posts()): 
-						$MYTHEME_slider_data->the_post(); 
+						while($THEMENAME_slider_data->have_posts()): 
+						$THEMENAME_slider_data->the_post(); 
 						if(has_post_thumbnail()) : 
-						$src =  wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID()), 'MYTHEME-slider');
+						$src =  wp_get_attachment_image_src(get_post_thumbnail_id( get_the_ID()), 'THEMENAME-slider');
 						
-						$MYTHEME_slider_counter++;
+						$THEMENAME_slider_counter++;
 						
 						?>
 						<div class="banner-item">
@@ -83,7 +83,7 @@ if( $slider_status == 'enable'):
 									<?php endif; ?>
 									<?php the_title( '<h2 class="banner-text-title"><a href="' . esc_url( get_permalink() ) . '">', '</a></h2>' ) ?>
 									<?php if($slider_meta_status == 'enable'): ?>
-										<span class="banner-text-author"><?php echo __('By', 'MYTHEME') ?> <?php the_author_posts_link() ?></span>
+										<span class="banner-text-author"><?php echo __('By', 'THEMENAME') ?> <?php the_author_posts_link() ?></span>
 									<?php endif; ?>
 									
 								</div>

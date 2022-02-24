@@ -12,7 +12,7 @@
   $selection-bg: #04A4CC;
 
   /* Background */
-  $body-bg                   : $primary;
+  $body-bg                   : tint($primary, $background-percentage);
   $page-bg                   : tint($secondary, $background-percentage);
   $main-bg                   : tint($accent, $background-percentage);
 

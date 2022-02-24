@@ -32,7 +32,7 @@
 }
 
 // Responsive breakpoints mixin
-@mixin media( $res )
+@mixin media-breakpoints( $res )
 {
     @if mobile-only == $res
     {

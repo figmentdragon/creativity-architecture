@@ -3,7 +3,7 @@
  * This template is used to display the theme slider gallery.
  *
  * @package Portfolio
- * @since Portfolio Lite 1.0
+ * @since THEMENAME 1.0
  */
 
 ?>

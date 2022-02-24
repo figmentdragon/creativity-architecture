@@ -5,15 +5,15 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 // If there are paragraph blocks, print up to two.
 // Otherwise this is legacy content, so print the excerpt.
 if ( has_block( 'core/paragraph', get_the_content() ) ) {
 
-	MYTHEME_print_first_instance_of_block( 'core/paragraph', get_the_content(), 2 );
+	THEMENAME_print_first_instance_of_block( 'core/paragraph', get_the_content(), 2 );
 } else {
 
 	the_excerpt();

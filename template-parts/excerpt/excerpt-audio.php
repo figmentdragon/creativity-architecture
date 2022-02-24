@@ -5,18 +5,18 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage MYTHEME
- * @since MYTHEME 1.0
+ * @subpackage THEMENAME
+ * @since THEMENAME 1.0
  */
 
 $content = get_the_content();
 
 if ( has_block( 'core/audio', $content ) ) {
-	MYTHEME_print_first_instance_of_block( 'core/audio', $content );
+	THEMENAME_print_first_instance_of_block( 'core/audio', $content );
 } elseif ( has_block( 'core/embed', $content ) ) {
-	MYTHEME_print_first_instance_of_block( 'core/embed', $content );
+	THEMENAME_print_first_instance_of_block( 'core/embed', $content );
 } else {
-	MYTHEME_print_first_instance_of_block( 'core-embed/*', $content );
+	THEMENAME_print_first_instance_of_block( 'core-embed/*', $content );
 }
 
 // Add the excerpt.

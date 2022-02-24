@@ -7,12 +7,13 @@
  */
 
 ( function( $ ) {
-	api = wp.customize;
+  "use strict";
+  api = api;
 
 	// Site title and description.
 	api( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+			$( '.site-title' ).text( to );
 		} );
 	} );
 	api( 'blogdescription', function( value ) {
@@ -25,12 +26,12 @@
 	api( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
+				$( '.site-title, .site-description' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
 			} else {
-				$( '.absolute-header .site-title a, .absolute-header .site-description' ).css( {
+				$( '.absolute-header .site-title a, a h1.site-title, h1.site-title a, .absolute-header h2.site-description, .site-description' ).css( {
 					'clip': 'auto',
 					'position': 'relative',
 					'color' : to
@@ -38,5 +39,14 @@
 			}
 		} );
 	} );
-
+  api( 'carousel_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.carousel-title' ).text( to );
+		} );
+	} );
+  api( 'featured_title', function( value ) {
+		value.bind( function( to ) {
+			$( '.featured-title' ).text( to );
+		} );
+	} );
 } )( jQuery );

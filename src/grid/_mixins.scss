@@ -1,6 +1,7 @@
-/**
- * Clearfix
- */
+@mixin border-box{
+  box-sizing: border-box;
+}
+
 
 @mixin clearfix {
     &:before,
@@ -20,3 +21,4 @@
 @import "mixins/grid";
 @import "mixins/media-breakpoint";
 @import "mixins/rows";
+@import "mixins/container";

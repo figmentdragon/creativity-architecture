@@ -7,13 +7,13 @@
 
 		<?php if ( have_posts() ): the_post(); ?>
 
-			<h2><?php esc_html_e( 'Author Archives for ', 'MYTHEME' ); echo get_the_author(); ?></h2>
+			<h1><?php esc_html_e( 'Author Archives for ', 'THEMENAME' ); echo get_the_author(); ?></h1>
 
 		<?php if ( get_the_author_meta( 'description' ) ) : ?>
 
 		<?php echo get_avatar( get_the_author_meta( 'user_email' ) ); ?>
 
-			<h2><?php esc_html_e( 'About ', 'MYTHEME' ); echo get_the_author(); ?></h2>
+			<h2><?php esc_html_e( 'About ', 'THEMENAME' ); echo get_the_author(); ?></h2>
 
 			<?php echo wpautop( get_the_author_meta( 'description' ) ); ?>
 
@@ -44,11 +44,11 @@
 						<?php the_date(); ?> <?php the_time(); ?>
 					</time>
 				</span>
-				<span class="author"><?php esc_html_e( 'Published by', 'MYTHEME' ); ?> <?php the_author_posts_link(); ?></span>
-				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'MYTHEME' ), __( '1 Comment', 'MYTHEME' ), __( '% Comments', 'MYTHEME' ) ); ?></span>
+				<span class="author"><?php esc_html_e( 'Published by', 'THEMENAME' ); ?> <?php the_author_posts_link(); ?></span>
+				<span class="comments"><?php comments_popup_link( __( 'Leave your thoughts', 'THEMENAME' ), __( '1 Comment', 'THEMENAME' ), __( '% Comments', 'THEMENAME' ) ); ?></span>
 				<!-- /post details -->
 
-				<?php MYTHEME_wp__excerpt( 'MYTHEME_wp__index' ); // Build your custom callback length in functions.php. ?>
+				<?php THEMENAME_wp_excerpt( 'THEMENAME_wp_index' ); // Build your custom callback length in functions.php. ?>
 
 				<br class="clear">
 
@@ -64,7 +64,7 @@
 			<!-- article -->
 			<article>
 
-				<h2><?php esc_html_e( 'Sorry, nothing to display.', 'MYTHEME' ); ?></h2>
+				<h2><?php esc_html_e( 'Sorry, nothing to display.', 'THEMENAME' ); ?></h2>
 
 			</article>
 			<!-- /article -->

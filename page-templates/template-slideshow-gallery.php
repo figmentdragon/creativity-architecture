@@ -1,11 +1,11 @@
 <?php
 /**
-Template Name: Gallery Slideshow
+ * Template Name: Gallery Slideshow
  *
  * This template is used to display a page with a gallery slideshow.
  *
  * @package Portfolio
- * @since Portfolio Lite 1.0
+ * @since THEMENAME 1.0
  */
 
 get_header(); ?>

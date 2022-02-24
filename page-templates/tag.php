@@ -5,7 +5,7 @@
 		<!-- section -->
 		<section>
 
-			<h2><?php esc_html_e( 'Tag Archive: ', 'MYTHEME' ); echo single_tag_title( '', false ); ?></h2>
+			<h1><?php esc_html_e( 'Tag Archive: ', 'THEMENAME' ); echo single_tag_title( '', false ); ?></h1>
 
 			<?php get_template_part( 'loop' ); ?>
 

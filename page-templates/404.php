@@ -1,21 +1,25 @@
-<?php
-/**
- * The template for displaying 404 pages (Not Found).
- *
- * @package MYTHEME
- */
+<?php /* Template Name: 404 */ ?>
+<?php get_header(); ?>
 
-get_header(); ?>
+	<main role="main" aria-label="Content">
+		<!-- section -->
+		<section>
 
-<div id="wrapper">
-	<div class="innerwrapper">
-		<div id="contentwrapper" class="content">
-			<h1 class="entry-title">
-				<?php esc_html_e( 'Oops! That page can&rsquo;t be found', 'MYTHEME' ); ?>
-			</h1>
-			<h2 class="fourzerofour">404</h2>
-			<?php get_search_form(); ?>
-		</div>
-	</div>
-</div>
+			<!-- article -->
+			<article id="post-404">
+
+				<h1><?php esc_html_e( 'Page not found', 'THEMENAME' ); ?></h1>
+				<h2>
+					<a href="<?php echo esc_url( home_url() ); ?>"><?php esc_html_e( 'Return home?', 'THEMENAME' ); ?></a>
+				</h2>
+
+			</article>
+			<!-- /article -->
+
+		</section>
+		<!-- /section -->
+	</main>
+
+<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

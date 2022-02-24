@@ -2,7 +2,7 @@
 /**
  * Template Name: Home Page
  *
- * @package andre
+ * @package THEMENAME
  */
 
 get_header(); ?>

@@ -27,43 +27,133 @@ a .h1, a .h2, a .h3, a .h4, a .h5, a .h6 {
 }
 
 
-h1 {
+h1, .h1 {
 	font-family: "Euphorigenic";
 	text-transform: capitalize;
 	font-variant: small-caps;
+  font-weight: bolder;
   line-height: 1rem;
 
+  a {
+    outline: none;
+    &:active,
+    &.active {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+
+      }
+      &:visited {
+
+      }
+    }
+    &:disabled,
+    &.disabled {
+
+    }
+  }
 }
 
-h2 {
+h2, .h2 {
 	font-family: $primary-font;
 	color: $page-title-color;
+  a {
+    outline: none;
+    &:active,
+    &.active {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+
+      }
+      &:visited {
+
+      }
+    }
+    &:disabled,
+    &.disabled {
+
+    }
+  }
 }
 
-h3 {
+h3, .h3 {
 	font-family: $secondary-font;
 	color: $heading-text-color;
+  a {
+    outline: none;
+    &:active,
+    &.active {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+
+      }
+      &:visited {
+
+      }
+    }
+    &:disabled,
+    &.disabled {
+
+    }
+  }
 }
 
-h4 {
+h4, .h4 {
 	font-family: 'Raleway';
   font-size: 1.75vw;
   text-transform: lowercase;
   color: $post-title-color;
+  a {
+    outline: none;
+    &:active,
+    &.active {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+
+      }
+      &:visited {
+
+      }
+    }
+    &:disabled,
+    &.disabled {
+
+    }
+  }
 }
 
 
-h5 {
+h5, .h5 {
 	font-family: $tertiary-font;
 	color: $heading-text-color;
+  a {
+    outline: none;
+    &:active,
+    &.active {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+
+      }
+      &:visited {
+
+      }
+    }
+    &:disabled,
+    &.disabled {
+
+    }
+  }
 }
 
-h6 {
+h6, .h6 {
 	font-family: $lead-font;
 	font-weight: $lead-font-weight;
 	font-size: $lead-font-size;
 	color: $lead-text-color;
-  text-transform: capitalize;
 }
 
 h5,

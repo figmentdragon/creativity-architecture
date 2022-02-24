@@ -3,7 +3,7 @@
  * This template displays the page loop.
  *
  * @package Portfolio
- * @since Portfolio Lite 1.0
+ * @since THEMENAME 1.0
  */
 
 ?>

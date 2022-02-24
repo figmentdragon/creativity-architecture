@@ -3,7 +3,7 @@
  * Template Name: Page Right Sidebar
  * Template Post Type: page
  * Description: Displays a page with a right sidebar.
- * @package MYTHEME
+ * @package THEMENAME
  */
  
 if ( ! defined( 'ABSPATH' ) ) {

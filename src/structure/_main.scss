@@ -35,13 +35,13 @@ main {
 
   :before,
   :after {
-  display: table;
-  content: "";
-  line-height: 0;
+    display: table;
+    content: "";
+    line-height: 0;
   }
 
   :after {
-  clear: both;
+    clear: both;
   }
 }
 

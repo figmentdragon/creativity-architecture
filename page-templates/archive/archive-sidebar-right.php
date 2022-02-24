@@ -2,7 +2,7 @@
 /**
  * The template for displaying archive pages.
  *
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 get_header(); ?>

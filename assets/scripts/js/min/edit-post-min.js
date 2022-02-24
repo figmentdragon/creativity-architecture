@@ -1,0 +1,1 @@
+"use strict";!function(e){var t=document.querySelector(".themename-layout-custom-width-field-wrapper");function o(){document.querySelector("#layout-custom-width").checked?t.classList.remove("themename-is-hidden"):t.classList.add("themename-is-hidden")}e(".themename-layout-option").on("change",o)}(jQuery);

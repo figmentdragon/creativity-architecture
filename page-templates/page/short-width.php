@@ -3,7 +3,7 @@
  * Template Name: Short Width No Sidebars
  * Template Post Type: page
  * Description: Display a page with a shorter width and no left or right sidebars.
- * @package MYTHEME
+ * @package THEMENAME
  */
 
 get_header(); ?>

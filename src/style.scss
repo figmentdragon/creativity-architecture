@@ -6,7 +6,7 @@
 
 /* 3 */
 @import "properties/change-percentage";
-@import "properties/features";
+@import "properties/options";
 @import "properties/escaped-characters";
 @import "properties/structure";
 @import "properties/positioning";
@@ -24,7 +24,6 @@
 @import "functions/replace-search";
 @import "functions/valid-calc";
 
-/* 3 */
 @import "colors/gray-scale";
 @import "colors/base";
 $silver : #c0c0c0;
@@ -33,6 +32,26 @@ $chocolate : #3F000F;
 @import "colors/rgba";
 @import "colors/contrast";
 
+@import "qualities/base-units";
+@import "qualities/size";
+@import "qualities/spacing";
+@import "qualities/width";
+@import "qualities/height";
+@import "qualities/padding";
+@import "qualities/border";
+@import "qualities/zindex";
+
+//@import "utilities/maps";
+// @import "utilities/map-merge";
+@import "utilities/colored-links";
+
+@import "utilities/responsive";
+@import "utilities/rfs";
+@import "utilities/utilities-generator";
+@import "utilities/utilities";
+@import "utilities/api";
+
+/* 3 */
 @import "patterns/patterns";
 @import "patterns/background";
 @import "patterns/text";
@@ -54,14 +73,6 @@ $chocolate : #3F000F;
   @import "patterns/shadows/button-shadow";
   @import "patterns/shadows/card-shadow";
 
-@import "properties/base-units";
-@import "properties/size";
-@import "properties/spacing";
-@import "properties/width";
-@import "properties/height";
-@import "properties/padding";
-@import "properties/border";
-@import "properties/zindex";
 
 @import "typography/typography";
 @import "typography/properties/heading-properties";
@@ -73,6 +84,10 @@ $chocolate : #3F000F;
 @import "typography/lead";
 @import "typography/type";
 @import "typography/misc";
+
+@import "root";
+@import "responsive-style";
+@import "media-query";
 
 @import "mixins/responsive";
 @import "mixins/backdrop";
@@ -101,32 +116,24 @@ $chocolate : #3F000F;
 @import "mixins/visually-hidden";
 @import "mixins/clearfix";
 
-//@import "utilities/maps";
-// @import "utilities/map-merge";
-@import "utilities/colored-links";
-@import "utilities/media-query";
-@import "utilities/responsive";
-@import "utilities/rfs";
-@import "utilities/utilities-generator";
-@import "utilities/utilities";
-@import "utilities/api";
 
-@import "base-styling/html";
-@import "base-styling/base";
-@import "base-styling/text-elements";
-@import "base-styling/headings";
-@import "base-styling/emphasis";
-@import "base-styling/quote";
-@import "base-styling/links";
-@import "base-styling/lists";
-@import "base-styling/code";
-@import "base-styling/figure";
-@import "base-styling/form-elements";
-@import "base-styling/input";
-@import "base-styling/table";
-@import "base-styling/media";
-@import "base-styling/hr";
-@import "base-styling/misc";
+
+@import "elements/html";
+//@import "elements/base";
+//@import "elements/text-elements";
+//@import "elements/headings";
+//@import "elements/emphasis";
+//@import "elements/quote";
+@import "elements/links";
+@import "elements/lists";
+//@import "elements/code";
+//@import "elements/figure";
+//@import "elements/form-elements";
+//@import "elements/input";
+//@import "elements/table";
+//@import "elements/media";
+@import "elements/hr";
+//@import "elements/misc";
 
 @import "helpers/a11y";
 @import "helpers/alignment";
@@ -174,7 +181,6 @@ $chocolate : #3F000F;
 @import "partials/reset";
 @import "partials/normalize";
 
-@import "structure/container";
 @import "structure/div";
 @import "structure/section";
 @import "structure/wrapper";
@@ -193,7 +199,7 @@ $chocolate : #3F000F;
 //@import "partials/icons";
 @import "partials/logo";
 //@import "partials/menus";
-//@import "partials/padding-margin";
+@import "partials/padding-margin";
 //@import "partials/print";
 //@import "partials/shortcodes";
 //@import "partials/social";
@@ -203,7 +209,7 @@ $chocolate : #3F000F;
 //@import "partials/wordpress";
 
 //@import "partials/article";
-@import "partials/header";
+@import "partials/headings";
 //@import "partials/nav";
 //@import "partials/sidebar";
 @import "partials/site-header";
@@ -211,7 +217,6 @@ $chocolate : #3F000F;
 
 //@import "section/primary/archives";
 //@import "section/primary/comments";
-//@import "section/primary/headings";
 //@import "section/primary/loop";
 
 //@import "section/secondary/widget";
