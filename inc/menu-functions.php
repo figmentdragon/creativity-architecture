@@ -21,9 +21,33 @@ function menu_functions_and_filters() {
 
 	add_filter( 'walker_nav_menu_start_el', 'add_sub_menu_toggle', 10, 4 );
 	add_filter( 'walker_nav_menu_start_el', 'mobile_sub_menu_indicators', 10, 4 );
+	add_filter( 'walker_nav_menu_start_el', 'nav_description', 10, 4 );
 	add_filter( 'wp_page_menu_args', 'page_menu_args' );
 }
-add_action( 'after_setup_theme', 'menu_functions_and_filters' );
+
+
+function nav() {
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'header-menu',
+			'menu'            => '',
+			'container'       => 'div',
+			'container_class' => 'menu-{menu slug}-container',
+			'container_id'    => '',
+			'menu_class'      => 'menu',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul>%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => '',
+		)
+	);
+}
 
 function nav_menus() {
 	register_nav_menus(
@@ -169,7 +193,6 @@ function menu_alignment() {
 }
 
 function menu_hover_effect() {
-
 	$menu_effect           = get_theme_mod( 'menu_effect', 'none' );
 	$menu_effect_animation = get_theme_mod( 'menu_effect_animation', 'fade' );
 	$menu_effect_alignment = get_theme_mod( 'menu_effect_alignment', 'center' );
@@ -179,7 +202,6 @@ function menu_hover_effect() {
 	$hover_effect .= ' menu-align-' . $menu_effect_alignment;
 
 	return $hover_effect;
-
 }
 
 function navigation_attributes() {
@@ -189,4 +211,35 @@ function navigation_attributes() {
 
 	echo apply_filters( 'navigation_attributes', $navigation_attributes );
 
+}
+
+function nav_description( $item_output, $item, $depth, $args ) {
+	if ( ! empty( $item->description ) ) {
+		$item_output = str_replace( $args->link_after . '</a>', '<span class="menu-item-description">' . $item->description . '</span>' . $args->link_after . '</a>', $item_output );
+	}
+	return $item_output;
+}
+
+function content_nav() {
+	global $wp_query;
+
+	// Don't print empty markup in archives if there's only one page.
+	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) ) {
+		return;
+	}
+
+	$pagination_type = get_theme_mod( 'pagination_type', 'default' );
+
+	if ( ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) || class_exists( 'Catch_Infinite_Scroll' ) ) {
+		// Support infinite scroll plugins.
+		the_posts_navigation();
+	} elseif ( 'numeric' === $pagination_type && function_exists( 'the_posts_pagination' ) ) {
+		the_posts_pagination( array(
+			'prev_text'          => '<span>' . esc_html__( 'Prev', '__THEMENAE__' ) . '</span>',
+			'next_text'          => '<span>' . esc_html__( 'Next', '__THEMENAE__' ) . '</span>',
+			'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', '__THEMENAE__' ) . ' </span>',
+		) );
+	} else {
+		the_posts_navigation();
+	}
 }

@@ -1,5 +1,6 @@
 <!--sidebar-->
 
+<div id="sidebar-wrapper">
 <div class="wrapper-header">
   <header>
     <hgroup>
@@ -7,4 +8,5 @@
 
     </hgroup>
   </header>
+</div>
 </div>

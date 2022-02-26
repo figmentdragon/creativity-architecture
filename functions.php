@@ -10,29 +10,19 @@
 
 
 
-
-
  add_action( 'after_setup_theme', 'THEMENAE_setup' );
 
  function THEMENAE_setup() {
-   global $path;
-    $path = defined( get_template_directory() );
-   global $version;
-    $version = defined( wp_get_theme( '__THEMENAE__' )->get( 'VERSION' ) );
-    global $uri_path;
-      $uri_path = defined( get_template_directory_uri() );
-    global $font_url;
-      $font_url = defined( esc_attr(get_theme_mod('font_url')));
-    global $slider_status;
-      $sliders_status = defined( esc_attr(get_theme_mod('slider_enable', 'enable')) );
+  global $path;
+    define( $path, 'get_template_directory()' );
 
-   require $path . 'inc/theme-support.php';
-   require $path . 'dev-templates/is-debug.php';
-   require $path . 'inc/theme-functions.php';
-   require $path . 'inc/menu-functions.php';
-   require $path . 'inc/custom-header.php';
-   require $path . 'inc/template-functions.php';
-   require $path . 'inc/customizer.php';
+  require $path . 'dev-templates/is-debug.php';
+  require $path . 'inc/custom-header.php';
+  require $path . 'inc/customizer.php';
+  require $path . 'inc/menu-functions.php';
+  require $path . 'inc/template-functions.php';
+  require $path . 'inc/theme-functions.php';
+  require $path . 'inc/theme-support.php';
 
    global $content_width;
    if ( !isset( $content_width ) ) { $content_width = 1920; }
@@ -40,34 +30,44 @@
    add_action( 'after_setup_theme', 'theme_support' );
    add_action( 'after_setup_theme', 'theme_setup' );
    add_action( 'after_setup_theme', 'custom_logo_setup' );
+   add_action( 'after_setup_theme', 'custom_header_setup' );
+   add_action( 'after_setup_theme', 'menu_functions_and_filters' );
+
 
    add_action( 'admin_notices', 'admin_notice' );
    add_action( 'admin_init', 'notice_dismissed' );
    add_action( 'comment_form_before', 'enqueue_comment_reply_script' );
+   add_action( 'comment_form_before', 'enqueue_comments_reply' );
+   add_action( 'customize_preview_init', 'customize_preview_js' );
+   add_action( 'customize_register', 'customize_register' );
    add_action( 'get_header', 'enable_threaded_comments' );
    add_action( 'widgets_init', 'widgets_init' );
    add_action( 'wp_body_open', 'skip_link', 5 );
 
-   add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
-   add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
-   add_action( 'wp_enqueue_scripts', 'enqueue_vendor_scripts_and_styles' );
-   add_action( 'wp_head', 'enqueue_conditional_scripts' );
-   add_action( 'wp_head', 'enqueue_fonts' );
-   add_action( 'wp_head', 'enqueue_scripts' );
-   add_action( 'wp_head', 'enqueue_support_scripts_and_styles' );
-   add_action( 'wp_head', 'javascript_detection', 0 );
-   add_action( 'wp_head', 'pingback_header' );
-   add_action( 'wp_footer', 'footer' );
+  add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
+  add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
+  add_action( 'wp_enqueue_scripts', 'enqueue_vendor_scripts_and_styles' );
+  add_action( 'wp_enqueue_scripts', 'header_style' );
+  add_action( 'wp_head', 'enqueue_conditional_scripts' );
+  add_action( 'wp_head', 'enqueue_fonts' );
+  add_action( 'wp_head', 'enqueue_scripts' );
+  add_action( 'wp_head', 'enqueue_support_scripts_and_styles' );
+  add_action( 'wp_head', 'javascript_detection', 0 );
+  add_action( 'wp_head', 'pingback_header' );
+  add_action( 'wp_footer', 'footer' );
 
-   add_filter( 'big_image_size_threshold', '__return_false' );
-   add_filter( 'document_title_separator', 'document_title_separator' );
-   add_filter( 'excerpt_more', 'excerpt_read_more_link' );
-   add_filter( 'get_comments_number', 'comment_count', 0 );
-   add_filter( 'get_the_archive_title', 'get_the_archive_title', 10, 1 );
-   add_filter( 'intermediate_image_sizes_advanced', 'image_insert_override' );
-   add_filter( 'nav_menu_link_attributes', 'schema_url', 10 );
-   add_filter( 'show_admin_bar', 'remove_admin_bar' );
-   add_filter( 'the_content_more_link', 'read_more_link' );
+  add_filter( 'big_image_size_threshold', '__return_false' );
+  add_filter( 'document_title_separator', 'document_title_separator' );
+  add_filter( 'excerpt_length', 'new_excerpt_length' );
+  add_filter( 'excerpt_more', 'excerpt_read_more_link' );
+  add_filter( 'excerpt_more', 'trim_excerpt' );
+  add_filter( 'get_comments_number', 'comment_count', 0 );
+  add_filter( 'get_the_archive_title', 'get_the_archive_title', 10, 1 );
+  add_filter( 'intermediate_image_sizes_advanced', 'image_insert_override' );
+  add_filter( 'nav_menu_link_attributes', 'schema_url', 10 );
+  add_filter( 'show_admin_bar', 'remove_admin_bar' );
+  add_filter( 'the_content_more_link', 'read_more_link' );
+  add_filter( 'the_excerpt', 'read_more_custom_excerpt' );
    add_filter( 'the_title', 'title' );
  }
 
@@ -215,7 +215,7 @@
  function widgets_init() {
    register_sidebar(
      array(
-       'name'          => esc_html__( 'Sidebar', 'andre-lite' ),
+       'name'          => esc_html__( 'Sidebar', '__THEMENAE__' ),
        'id'            => 'sidebar-1',
        'description'   => '',
        'before_widget' => '<div id="%1$s" class="widget">',
@@ -227,7 +227,7 @@
 
    register_sidebar(
      array(
-       'name'          => esc_html__( 'Top Widget', 'andre-lite' ),
+       'name'          => esc_html__( 'Top Widget', '__THEMENAE__' ),
        'id'            => 'sidebar-2',
        'description'   => '',
        'before_widget' => '<div id="%1$s" class="widget">',

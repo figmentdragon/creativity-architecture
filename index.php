@@ -4,7 +4,7 @@ get_header(); ?>
 <?php get_sidebar( 'header' ); ?>
 
 <div id="wrapper">
-	<main id="main" class="inner-wrapper" role="main" aria-label="Content">
+	<main class="main" role="main" aria-label="Content">
 		<h2 class="page-title"><?php the_title(); ?></h2>
 			<div id="contentwrapper" class="content">
 				<!-- section -->

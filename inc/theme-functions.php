@@ -5,8 +5,8 @@
 
 function functions() {
   add_action( 'after_switch_theme', 'setup_options' );
-  add_action( 'init', 'nav' ); // Add THEMENAEMenu
-  add_action( 'init', 'create_post_type' ); // Add our THEMENAECustom Post Type
+  add_action( 'init', 'nav' ); //
+  add_action( 'init', 'create_post_type' ); //
   add_action( 'init', 'wp_pagination' );
   add_action( 'widgets_init', 'remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
 
@@ -84,28 +84,6 @@ function more_link( $more_link, $more_link_text ) {
 	return ' &hellip; ' . str_replace( $more_link_text, wp_kses_data( $more_tag_text ), $more_link );
 }
 
-function nav() {
-    wp_nav_menu(
-    array(
-        'theme_location'  => 'header-menu',
-        'menu'            => '',
-        'container'       => 'div',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => 'menu',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '<ul>%3$s</ul>',
-        'depth'           => 0,
-        'walker'          => '',
-        )
-    );
-}
 
 function remove_recent_comments_style() {
     global $wp_widget_factory;

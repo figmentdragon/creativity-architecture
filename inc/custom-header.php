@@ -23,7 +23,6 @@ function custom_header_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'custom_header_setup' );
 
 if ( ! function_exists( 'header_style' ) ) :
 	/**
@@ -46,6 +45,6 @@ if ( ! function_exists( 'header_style' ) ) :
 		}
 		wp_add_inline_style( 'style', $custom_css );
 	}
-	add_action( 'wp_enqueue_scripts', 'header_style' );
+
 
 endif;

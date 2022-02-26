@@ -30,16 +30,17 @@
   add_theme_support( 'custom-header' );
   add_theme_support( 'custom-line-height' );
 
-  $logo_width  = 250;
-  $logo_height = 250;
+  $logo_width  = 500;
+  $logo_height = 500;
   add_theme_support( 'custom-logo',
    array(
-     'width'       => $logo_width,
-     'height'      => $logo_height,
-     'flex-width'           => true,
-     'flex-height'          => true,
-  		'header-text' => array( 'site-title', 'site-description' ),
-     'unlink-homepage-logo' => true,));
+    'width'       => $logo_width,
+    'height'      => $logo_height,
+    'flex-width'           => true,
+    'flex-height'          => true,
+    'header-text' => array( 'site-title', 'site-description' ),
+    'unlink-homepage-logo' => true,));
+
 
   add_theme_support( 'custom-spacing' );
   add_theme_support( 'custom-units' );

@@ -34,12 +34,4 @@
 
 	<?php do_action( 'wp_body_open' ); ?>
 
-	<?php
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-	if ( has_custom_logo() ) {
-	        echo '<img src="http://localhost:10004/wp-content/uploads/2022/02/logo-architect.png" alt="creativity architect" class="logo logo-img"; ?>';
-				} else {
-	        echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
-	}
-	?>
+	<?php get_custom_logo(); ?>

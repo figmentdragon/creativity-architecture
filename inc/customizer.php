@@ -126,7 +126,7 @@ function customize_register( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', 'customize_register' );
+
 
 /**
  * Change colors.
@@ -164,4 +164,3 @@ add_action( 'wp_head', 'customizer_css' );
 function customize_preview_js() {
 	wp_enqueue_script( 'customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'customize_preview_js' );
