@@ -2,10 +2,10 @@
 /**
  * The template used for displaying slider
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$quantity     = get_theme_mod( 'THEMENAME_slider_number', 4 );
+$quantity     = get_theme_mod( '__THEMENAE___slider_number', 4 );
 $no_of_post   = 0; // for number of posts
 $post_list    = array(); // list of valid post/page ids
 
@@ -17,12 +17,12 @@ $args = array(
 //Get valid number of posts
 
 for ( $i = 1; $i <= $quantity; $i++ ) {
-	$THEMENAME_post_id = '';
+	$__THEMENAE___post_id = '';
 
-	$THEMENAME_post_id = get_theme_mod( 'THEMENAME_slider_page_' . $i );
+	$__THEMENAE___post_id = get_theme_mod( '__THEMENAE___slider_page_' . $i );
 
-	if ( $THEMENAME_post_id && '' !== $THEMENAME_post_id ) {
-		$post_list = array_merge( $post_list, array( $THEMENAME_post_id ) );
+	if ( $__THEMENAE___post_id && '' !== $__THEMENAE___post_id ) {
+		$post_list = array_merge( $post_list, array( $__THEMENAE___post_id ) );
 
 		$no_of_post++;
 	}
@@ -43,12 +43,12 @@ while ( $loop->have_posts() ) :
 
 	$classes = 'post post-' . get_the_ID() . ' hentry slides';
 
-	$slider_logo = get_theme_mod( 'THEMENAME_slider_logo_image_' . ( absint( $loop ->current_post ) + 1 ) );
+	$slider_logo = get_theme_mod( '__THEMENAE___slider_logo_image_' . ( absint( $loop ->current_post ) + 1 ) );
 
 	?>
 	<article class="<?php echo esc_attr( $classes ); ?>">
 		<div class="hentry-inner">
-			<?php THEMENAME_post_thumbnail( 'THEMENAME-slider', 'html', true, true ); ?>
+			<?php __THEMENAE___post_thumbnail( '__THEMENAE__-slider', 'html', true, true ); ?>
 			
 			<div class="entry-container">
 				<div class="content-wrapper">

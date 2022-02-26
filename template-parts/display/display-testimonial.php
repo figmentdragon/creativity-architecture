@@ -2,17 +2,17 @@
 /**
  * The template for displaying testimonial items
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$enable = get_theme_mod( 'THEMENAME_testimonial_option', 'disabled' );
+$enable = get_theme_mod( '__THEMENAE___testimonial_option', 'disabled' );
 
-if ( ! THEMENAME_check_section( $enable ) ) {
+if ( ! __THEMENAE___check_section( $enable ) ) {
 	// Bail if featured content is disabled
 	return;
 }
 
-$headline    = get_option( 'jetpack_testimonial_title', esc_html__( 'Testimonials', 'THEMENAME' ) );
+$headline    = get_option( 'jetpack_testimonial_title', esc_html__( 'Testimonials', '__THEMENAE__' ) );
 $subheadline = get_option( 'jetpack_testimonial_content' );
 
 

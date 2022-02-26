@@ -2,7 +2,7 @@
 /**
  * Custom mobile menu.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

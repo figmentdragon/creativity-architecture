@@ -1,8 +1,8 @@
 <?php
 /**
- * THEMENAME: Customizer
+ * __THEMENAE__: Customizer
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
 /**
@@ -10,16 +10,16 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function THEMENAME_customize_register( $wp_customize ) {
+function customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	$wp_customize->add_section(
-		'THEMENAME_theme_options',
+		'theme_options',
 		array(
-			'title'    => esc_html__( 'Theme Options', 'THEMENAME' ),
+			'title'    => esc_html__( 'Theme Options', '__THEMENAE__' ),
 			'priority' => 125,
 		)
 	);
@@ -36,8 +36,8 @@ function THEMENAME_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'copyright_text',
 		array(
-			'label'   => esc_html__( 'Add copyright text in the footer.', 'THEMENAME' ),
-			'section' => 'THEMENAME_theme_options',
+			'label'   => esc_html__( 'Add copyright text in the footer.', '__THEMENAE__' ),
+			'section' => 'theme_options',
 			'type'    => 'textarea',
 		)
 	);
@@ -55,7 +55,7 @@ function THEMENAME_customize_register( $wp_customize ) {
 			$wp_customize,
 			'text-color',
 			array(
-				'label'    => esc_html__( 'General text color', 'THEMENAME' ),
+				'label'    => esc_html__( 'General text color', '__THEMENAE__' ),
 				'section'  => 'colors',
 				'settings' => 'text-color',
 				'priority' => 8,
@@ -76,7 +76,7 @@ function THEMENAME_customize_register( $wp_customize ) {
 			$wp_customize,
 			'menu-links',
 			array(
-				'label'    => esc_html__( 'Menu links', 'THEMENAME' ),
+				'label'    => esc_html__( 'Menu links', '__THEMENAE__' ),
 				'section'  => 'colors',
 				'settings' => 'menu-links',
 				'priority' => 10,
@@ -97,7 +97,7 @@ function THEMENAME_customize_register( $wp_customize ) {
 			$wp_customize,
 			'secondary-color',
 			array(
-				'label'    => esc_html__( 'Change the theme red color throughout', 'THEMENAME' ),
+				'label'    => esc_html__( 'Change the theme red color throughout', '__THEMENAE__' ),
 				'section'  => 'colors',
 				'settings' => 'secondary-color',
 				'priority' => 12,
@@ -118,7 +118,7 @@ function THEMENAME_customize_register( $wp_customize ) {
 			$wp_customize,
 			'title-color',
 			array(
-				'label'    => esc_html__( 'Titles color', 'THEMENAME' ),
+				'label'    => esc_html__( 'Titles color', '__THEMENAE__' ),
 				'section'  => 'colors',
 				'settings' => 'title-color',
 				'priority' => 14,
@@ -126,12 +126,12 @@ function THEMENAME_customize_register( $wp_customize ) {
 		)
 	);
 }
-add_action( 'customize_register', 'THEMENAME_customize_register' );
+add_action( 'customize_register', 'customize_register' );
 
 /**
  * Change colors.
  */
-function THEMENAME_customizer_css() {
+function customizer_css() {
 	?>
 	<style type="text/css">
 		body {
@@ -156,12 +156,12 @@ function THEMENAME_customizer_css() {
 	</style>
 	<?php
 }
-add_action( 'wp_head', 'THEMENAME_customizer_css' );
+add_action( 'wp_head', 'customizer_css' );
 
 /**
  * Load dynamic logic for the customizer controls area.
  */
-function THEMENAME_customize_preview_js() {
-	wp_enqueue_script( 'THEMENAME_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+function customize_preview_js() {
+	wp_enqueue_script( 'customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'THEMENAME_customize_preview_js' );
+add_action( 'customize_preview_init', 'customize_preview_js' );

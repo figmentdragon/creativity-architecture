@@ -1,19 +1,15 @@
 $duration: .7s;
 
-main {
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  z-index: $z-index-main;
-  width: 100vw;
+#page.wrapper-site main {
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 
   padding-top: 4vh;
   padding-bottom: 0;
 
-  border: 2px solid red;
+  background: $accent;
 
   h4 {
     margin-top: -1vh;

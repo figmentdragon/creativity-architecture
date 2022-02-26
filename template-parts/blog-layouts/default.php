@@ -2,7 +2,7 @@
 /**
  * Blog Layout | Default.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 
@@ -46,7 +46,7 @@ $post_classes[]         = 'post-style-' . $style;
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'THEMENAME' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', '__THEMENAE__' ),
 			'after'  => '</div>',
 		) );
 		?>

@@ -2,13 +2,13 @@
 /**
  * The template used for displaying credits
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 ?>
 
 <?php
 /**
- * THEMENAME_credits hook
- * @hooked THEMENAME_footer_content - 10
+ * __THEMENAE___credits hook
+ * @hooked __THEMENAE___footer_content - 10
  */
-do_action( 'THEMENAME_credits' );
+do_action( '__THEMENAE___credits' );

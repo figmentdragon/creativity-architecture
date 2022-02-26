@@ -4,7 +4,7 @@
  *
  * Renders tags on archives.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 
@@ -15,4 +15,4 @@ if ( 'post' !== get_post_type() ) {
 	return;
 }
 
-the_tags( '<p class="footer-tags"><span class="tags-title">' . apply_filters( 'tags_title', __( 'Tags:', 'THEMENAME' ) ) . '</span> ', ', ', '</p>' );
+the_tags( '<p class="footer-tags"><span class="tags-title">' . apply_filters( 'tags_title', __( 'Tags:', '__THEMENAE__' ) ) . '</span> ', ', ', '</p>' );

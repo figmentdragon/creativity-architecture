@@ -1,13 +1,14 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+<!-- footer -->
+	<div class="wrapper-footer">
+		<footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
-			    <?php
-				    printf( '<p class="copyright">' . __( '&copy; %1$s Copyright %2$s. Powered by <a href="%3$s" title="WordPress">WordPress</a> &amp; <a href="%4$s" title="THEMENAME">THEMENAME</a>.', 'THEMENAME' ) . '</p>',
-				    	date( 'Y'),
-				    	esc_html( get_bloginfo( 'name' ) ),
-				    	'//wordpress.org',
-				    	'//THEMENAME.com'
+			<!-- copyright -->
+		    <?php
+			    printf( '<p class="copyright">' . __( '&copy; %1$s Copyright %2$s. Powered by <a href="%3$s" title="WordPress">WordPress</a> &amp; <a href="%4$s" title="THEMENAME">THEMENAME</a>.', 'THEMENAME' ) . '</p>',
+					date( 'Y'),
+					esc_html( get_bloginfo( 'name' ) ),
+					'//wordpress.org',
+					'//THEMENAME.com'
 					);
 				?>
 				<!-- /copyright -->

@@ -2,7 +2,7 @@
 /**
  * Add WooCommerce Elements in header
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
 if ( ! class_exists( 'WooCommerce' ) ) {
@@ -10,6 +10,6 @@ if ( ! class_exists( 'WooCommerce' ) ) {
     return;
 }
 
-if ( get_theme_mod( 'THEMENAME_header_cart_enable', 0 ) && function_exists( 'THEMENAME_header_cart' ) ) {
-	THEMENAME_header_cart();
+if ( get_theme_mod( '__THEMENAE___header_cart_enable', 0 ) && function_exists( '__THEMENAE___header_cart' ) ) {
+	__THEMENAE___header_cart();
 }

@@ -4,7 +4,7 @@
  *
  * Construct the theme header.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

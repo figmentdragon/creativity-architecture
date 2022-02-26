@@ -2,7 +2,7 @@
 /**
  * Full screen menu.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 
@@ -28,15 +28,15 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 
 				<?php if ( svg_enabled() ) { ?>
 
-					<button id="menu-toggle" class="nav-item menu-toggle" aria-label="<?php _e( 'Site Navigation', 'THEMENAME' ); ?>" aria-controls="navigation" aria-expanded="false" aria-haspopup="true">
-						<span class="screen-reader-text"><?php _e( 'Menu Toggle', 'THEMENAME' ); ?></span>
+					<button id="menu-toggle" class="nav-item menu-toggle" aria-label="<?php _e( 'Site Navigation', '__THEMENAE__' ); ?>" aria-controls="navigation" aria-expanded="false" aria-haspopup="true">
+						<span class="screen-reader-text"><?php _e( 'Menu Toggle', '__THEMENAE__' ); ?></span>
 						<?php echo svg( 'hamburger' ); ?>
 					</button>
 
 				<?php } else { ?>
 
-					<button id="menu-toggle" class="nav-item menu-toggle themenamef themenamef-hamburger" aria-label="<?php _e( 'Site Navigation', 'THEMENAME' ); ?>" aria-controls="navigation" aria-expanded="false" aria-haspopup="true">
-						<span class="screen-reader-text"><?php _e( 'Menu Toggle', 'THEMENAME' ); ?></span>
+					<button id="menu-toggle" class="nav-item menu-toggle __THEMENAE__f __THEMENAE__f-hamburger" aria-label="<?php _e( 'Site Navigation', '__THEMENAE__' ); ?>" aria-controls="navigation" aria-expanded="false" aria-haspopup="true">
+						<span class="screen-reader-text"><?php _e( 'Menu Toggle', '__THEMENAE__' ); ?></span>
 					</button>
 
 				<?php } ?>
@@ -72,7 +72,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 			<?php echo svg( 'times' ); ?>
 		</div>
 	<?php } else { ?>
-		<i class="close themenamef themenamef-times" aria-hidden="true"></i>
+		<i class="close __THEMENAE__f __THEMENAE__f-times" aria-hidden="true"></i>
 	<?php } ?>
 
 </div>

@@ -2,32 +2,32 @@
 /**
  * The template for displaying featured content
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$enable_content = get_theme_mod( 'THEMENAME_featured_content_option', 'disabled' );
+$enable_content = get_theme_mod( '__THEMENAE___featured_content_option', 'disabled' );
 
-if ( ! THEMENAME_check_section( $enable_content ) ) {
+if ( ! __THEMENAE___check_section( $enable_content ) ) {
 	// Bail if featured content is disabled.
 	return;
 }
 
-$THEMENAME_title = get_option( 'featured_content_title', esc_html__( 'Contents', 'THEMENAME' ) );
+$__THEMENAE___title = get_option( 'featured_content_title', esc_html__( 'Contents', '__THEMENAE__' ) );
 $sub_title    = get_option( 'featured_content_content' );
 
 
-if( !$THEMENAME_title && !$sub_title ) {
+if( !$__THEMENAE___title && !$sub_title ) {
 	$classes[] = 'no-section-heading';
 }
 ?>
 
 <div id="featured-content-section" class="section featured-content layout-three">
 	<div class="wrapper">
-		<?php if ( $THEMENAME_title || $sub_title ) : ?>
+		<?php if ( $__THEMENAE___title || $sub_title ) : ?>
 			<div class="section-heading-wrapper featured-section-headline">
-				<?php if ( $THEMENAME_title ) : ?>
+				<?php if ( $__THEMENAE___title ) : ?>
 					<div class="section-title-wrapper">
-						<h2 class="section-title"><?php echo wp_kses_post( $THEMENAME_title ); ?></h2>
+						<h2 class="section-title"><?php echo wp_kses_post( $__THEMENAE___title ); ?></h2>
 					</div><!-- .section-title-wrapper -->
 				<?php endif; ?>
 

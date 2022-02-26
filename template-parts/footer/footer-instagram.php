@@ -2,7 +2,7 @@
 /**
  * Displays footer instagram widget
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 ?>
 

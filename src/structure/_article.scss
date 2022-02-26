@@ -1,17 +1,12 @@
-article {
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  background: orange;
-  width: 100vw;
-  max-width: 98vw;
+main article {
+  background: blue;
+  width: 98vw;
 	padding-top: .5vh;
 	padding-right: .5vw;
 	padding-bottom: .5vh;
 	padding-left: 1.5vw;
+
+  height: 100%;
 
 	&:hover {
 		@include elevation(15);
@@ -20,4 +15,13 @@ article {
 	& > img {
 		max-width: 100%;
 	}
+}
+
+.content {
+	width: 100%;
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-top: 120px;
+	opacity: 0;
 }

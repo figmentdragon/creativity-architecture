@@ -2,23 +2,23 @@
 /**
  * The template used for displaying hero content
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$experience_title = get_theme_mod( 'THEMENAME_hero_experience_title' );
-$date_one         = get_theme_mod( 'THEMENAME_hero_date_one' );
-$date_two         = get_theme_mod( 'THEMENAME_hero_date_two' );
-$date_three       = get_theme_mod( 'THEMENAME_hero_date_three' );
-$date_four        = get_theme_mod( 'THEMENAME_hero_date_four' );
-$experience_one   = get_theme_mod( 'THEMENAME_hero_experience_one' );
-$experience_two   = get_theme_mod( 'THEMENAME_hero_experience_two' );
-$experience_three = get_theme_mod( 'THEMENAME_hero_experience_three' );
-$experience_four  = get_theme_mod( 'THEMENAME_hero_experience_four');
+$experience_title = get_theme_mod( '__THEMENAE___hero_experience_title' );
+$date_one         = get_theme_mod( '__THEMENAE___hero_date_one' );
+$date_two         = get_theme_mod( '__THEMENAE___hero_date_two' );
+$date_three       = get_theme_mod( '__THEMENAE___hero_date_three' );
+$date_four        = get_theme_mod( '__THEMENAE___hero_date_four' );
+$experience_one   = get_theme_mod( '__THEMENAE___hero_experience_one' );
+$experience_two   = get_theme_mod( '__THEMENAE___hero_experience_two' );
+$experience_three = get_theme_mod( '__THEMENAE___hero_experience_three' );
+$experience_four  = get_theme_mod( '__THEMENAE___hero_experience_four');
 
 
 
-$THEMENAME_id = get_theme_mod( 'THEMENAME_hero_content' );
-$args['page_id'] = absint( $THEMENAME_id );
+$__THEMENAE___id = get_theme_mod( '__THEMENAE___hero_content' );
+$args['page_id'] = absint( $__THEMENAE___id );
 
 
 // If $args is empty return false
@@ -37,7 +37,7 @@ if ( $hero_query->have_posts() ) :
 				<div class="section-content-wrapper hero-content-wrapper">
 					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<div class="hentry-inner">
-							<?php $post_thumbnail = THEMENAME_post_thumbnail( 'full-image', 'html-with-bg', false ); // THEMENAME_post_thumbnail( $image_size, $THEMENAME_type = 'html', $echo = true, $no_thumb = false ).
+							<?php $post_thumbnail = __THEMENAE___post_thumbnail( 'full-image', 'html-with-bg', false ); // __THEMENAE___post_thumbnail( $image_size, $__THEMENAE___type = 'html', $echo = true, $no_thumb = false ).
 
 						if ( $post_thumbnail ) :
 							echo $post_thumbnail;
@@ -47,7 +47,7 @@ if ( $hero_query->have_posts() ) :
 							<div class="entry-container full-width">
 						<?php endif; 
 						
-							$THEMENAME_sub_title = get_theme_mod( 'THEMENAME_hero_content_sub_title' ); ?>
+							$__THEMENAE___sub_title = get_theme_mod( '__THEMENAE___hero_content_sub_title' ); ?>
 							
 							<div class="section-heading-wrapper">										
 								
@@ -55,9 +55,9 @@ if ( $hero_query->have_posts() ) :
 									<?php the_title( '<h2 class="entry-title section-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h2>' ); ?>
 								</header><!-- .entry-header -->
 
-								<?php if ( $THEMENAME_sub_title ) : ?>
+								<?php if ( $__THEMENAE___sub_title ) : ?>
 									<div class="section-description">
-										<p><?php echo wp_kses_post( $THEMENAME_sub_title ); ?></p>
+										<p><?php echo wp_kses_post( $__THEMENAE___sub_title ); ?></p>
 									</div><!-- .section-description-wrapper -->
 								<?php endif; ?>
 							</div>	
@@ -114,11 +114,11 @@ if ( $hero_query->have_posts() ) :
 									<?php
 
 									wp_link_pages( array(
-										'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'THEMENAME' ) . '</span>',
+										'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', '__THEMENAE__' ) . '</span>',
 										'after'       => '</div>',
 										'link_before' => '<span class="page-number">',
 										'link_after'  => '</span>',
-										'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'THEMENAME' ) . ' </span>%',
+										'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', '__THEMENAE__' ) . ' </span>%',
 										'separator'   => '<span class="screen-reader-text">, </span>',
 									) );
 								?>
@@ -131,7 +131,7 @@ if ( $hero_query->have_posts() ) :
 											edit_post_link(
 												sprintf(
 													/* translators: %s: Name of current post */
-													esc_html__( 'Edit %s', 'THEMENAME' ),
+													esc_html__( 'Edit %s', '__THEMENAE__' ),
 													the_title( '<span class="screen-reader-text">"', '"</span>', false )
 												),
 												'<span class="edit-link">',

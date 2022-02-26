@@ -2,7 +2,7 @@
 /**
  * Vertical menu left.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

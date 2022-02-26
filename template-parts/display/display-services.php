@@ -2,23 +2,23 @@
 /**
  * The template for displaying services content
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$enable_content = get_theme_mod( 'THEMENAME_service_option', 'disabled' );
+$enable_content = get_theme_mod( '__THEMENAE___service_option', 'disabled' );
 
-if ( ! THEMENAME_check_section( $enable_content ) ) {
+if ( ! __THEMENAE___check_section( $enable_content ) ) {
 	// Bail if services content is disabled.
 	return;
 }
 
-$THEMENAME_title = get_option( 'ect_service_title', esc_html__( 'We design & build brands', 'THEMENAME' ) );
+$__THEMENAE___title = get_option( 'ect_service_title', esc_html__( 'We design & build brands', '__THEMENAE__' ) );
 $sub_title    = get_option( 'ect_service_content' );
 
 $classes[] = 'services-section';
 $classes[] = 'section';
 
-if ( ! $THEMENAME_title && ! $sub_title ) {
+if ( ! $__THEMENAE___title && ! $sub_title ) {
 	$classes[] = 'no-section-heading';
 }
 
@@ -27,11 +27,11 @@ if ( ! $THEMENAME_title && ! $sub_title ) {
 <div id="services-section" class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 	<div class="wrapper">
 		<div class="service-content-area">
-			<?php if ( $THEMENAME_title || $sub_title ) : ?>
+			<?php if ( $__THEMENAE___title || $sub_title ) : ?>
 				<div class="section-heading-wrapper">
-					<?php if ( $THEMENAME_title ) : ?>
+					<?php if ( $__THEMENAE___title ) : ?>
 						<div class="section-title-wrapper">
-							<h2 class="section-title"><?php echo wp_kses_post( $THEMENAME_title ); ?></h2>
+							<h2 class="section-title"><?php echo wp_kses_post( $__THEMENAE___title ); ?></h2>
 						</div><!-- .page-title-wrapper -->
 					<?php endif;  
 

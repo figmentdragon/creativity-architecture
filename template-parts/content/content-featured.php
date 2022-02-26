@@ -2,7 +2,7 @@
 /**
  * The template for displaying featured posts on the front page
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 ?>
 
@@ -10,7 +10,7 @@
 	<div class="hentry-inner">
 		<?php
 		if( has_post_thumbnail() ) {
-			THEMENAME_post_thumbnail( array(767, 575) );			
+			__THEMENAE___post_thumbnail( array(767, 575) );			
 		}
 		?>
 
@@ -20,7 +20,7 @@
 				
 				<?php if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta">
-					<?php THEMENAME_posted_on(); ?>
+					<?php __THEMENAE___posted_on(); ?>
 
 				</div><!-- .entry-meta -->
 				<?php

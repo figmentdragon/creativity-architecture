@@ -2,10 +2,10 @@
 /**
  * The template for displaying featured content items
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$number = get_theme_mod( 'THEMENAME_service_number', 4 );
+$number = get_theme_mod( '__THEMENAE___service_number', 4 );
 
 if ( ! $number ) {
 	// If number is 0, then this section is disabled
@@ -24,17 +24,17 @@ $no_of_post = 0; // for number of posts
 $args['post_type'] = 'ect-service';
 
 for ( $i = 1; $i <= $number; $i++ ) {
-	$THEMENAME_post_id = '';
+	$__THEMENAE___post_id = '';
 
-	$THEMENAME_post_id =  get_theme_mod( 'THEMENAME_service_cpt_' . $i );
+	$__THEMENAE___post_id =  get_theme_mod( '__THEMENAE___service_cpt_' . $i );
 
-	if ( $THEMENAME_post_id && '' !== $THEMENAME_post_id ) {
+	if ( $__THEMENAE___post_id && '' !== $__THEMENAE___post_id ) {
 		// Polylang Support.
 		if ( class_exists( 'Polylang' ) ) {
-			$THEMENAME_post_id = pll_get_post( $THEMENAME_post_id, pll_current_language() );
+			$__THEMENAE___post_id = pll_get_post( $__THEMENAE___post_id, pll_current_language() );
 		}
 
-		$post_list = array_merge( $post_list, array( $THEMENAME_post_id ) );
+		$post_list = array_merge( $post_list, array( $__THEMENAE___post_id ) );
 
 		$no_of_post++;
 	}

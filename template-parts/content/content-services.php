@@ -2,7 +2,7 @@
 /**
  * The template for displaying services posts on the front page
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 ?>
 
@@ -10,19 +10,19 @@
 	<div class="hentry-inner">
 		<?php
 		if( has_post_thumbnail() ) {
-			THEMENAME_post_thumbnail( array(80, 80), 'html', true, false ); 
+			__THEMENAE___post_thumbnail( array(80, 80), 'html', true, false ); 
 		}?>
 
 		<div class="entry-container">
 			<header class="entry-header">
 				<div class="entry-category">
-					<?php THEMENAME_cat_list(); ?>
+					<?php __THEMENAE___cat_list(); ?>
 				</div>
 
 				<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">','</a></h2>' ); ?>
 
 				<div class="entry-meta">
-					<?php THEMENAME_posted_on(); ?>
+					<?php __THEMENAE___posted_on(); ?>
 				</div><!-- .entry-meta -->
 
 			</header>

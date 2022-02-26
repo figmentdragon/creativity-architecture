@@ -1,16 +1,24 @@
 // logo
 
 .logo {
-  width: 12vw;
-  height: 20vh;
+  position: absolute;
+  top: 0;
+  left:  0;
+
+  z-index: 600;
+  width: 28vw;
+  height: 39vh;
   overflow: visible;
 
   .logo-img {
-    width: 18vw;
-    height: 26vh;
+    width: 36vw;
+    height: auto;
     filter: sepia(25%);
+    border-radius: 50%;
+    transform: scale(2) translate(-100%, -100%);
     opacity: .5;
     background-blend-mode: exclusion;
+    outline: 2px solid black;
   }
 }
 

@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage THEMENAME
- * @since THEMENAME 1.0
+ * @subpackage __THEMENAE__
+ * @since __THEMENAE__ 1.0
  */
 
 ?>
@@ -20,6 +20,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer default-max-width">
-		<?php THEMENAME_entry_meta_footer(); ?>
+		<?php __THEMENAE___entry_meta_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-${ID} -->

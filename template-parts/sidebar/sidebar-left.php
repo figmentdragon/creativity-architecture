@@ -2,17 +2,17 @@
 /**
  * The Left sidebar containing the main widget area.
  *
- * @package THEMENAME
+ * @package THEMENAE
  */
 
-if ( ! is_active_sidebar( 'THEMENAME-sidebar-left' ) ) {
+if ( ! is_active_sidebar( 'THEMENAE-sidebar-left' ) ) {
     return;
 }
 ?>
 
-<?php if( THEMENAME_get_sidebar_layout() == "left_sidebar" ) : ?>
+<?php if( THEMENAE_get_sidebar_layout() == "left_sidebar" ) : ?>
     <div id="secondary" class="widget-area">
-        <?php dynamic_sidebar( 'THEMENAME-sidebar-left' ); ?>
+        <?php dynamic_sidebar( 'THEMENAE-sidebar-left' ); ?>
     </div><!-- #secondary -->
 <?php endif;
 

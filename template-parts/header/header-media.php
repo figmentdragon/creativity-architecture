@@ -2,14 +2,14 @@
 /**
  * Display Header Media
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-if ( 'disable' === get_theme_mod( 'THEMENAME_header_media_option', 'entire-site' ) ) {
+if ( 'disable' === get_theme_mod( '__THEMENAE___header_media_option', 'entire-site' ) ) {
 	return;
 }
 
-$header_image = THEMENAME_featured_overall_image();
+$header_image = __THEMENAE___featured_overall_image();
 
 if ( 'disable' !== $header_image || $enable_slider ) {
 	if ( 'disable' !== $header_image ) {
@@ -33,12 +33,12 @@ if ( ( ( is_header_video_active() && has_header_video() ) || 'disable' !== $head
 				echo '<div id="wp-custom-header" class="wp-custom-header"><img src="' . esc_url( $header_image ) . '"/></div>	';
 			}
 			?>
-			<?php THEMENAME_header_media_text(); ?>
+			<?php __THEMENAE___header_media_text(); ?>
 
-			<?php if ( get_theme_mod( 'THEMENAME_header_media_scroll_down', 1 ) ) : ?>
+			<?php if ( get_theme_mod( '__THEMENAE___header_media_scroll_down', 1 ) ) : ?>
 					<div class="scroll-down">
-						<span><?php esc_html_e( 'Scroll', 'THEMENAME' ); ?></span>
-						<?php echo THEMENAME_get_svg( array( 'icon' => 'angle-down' ) ); ?>
+						<span><?php esc_html_e( 'Scroll', '__THEMENAE__' ); ?></span>
+						<?php echo __THEMENAE___get_svg( array( 'icon' => 'angle-down' ) ); ?>
 					</div><!-- .scroll-down -->
 			<?php endif; ?>
 

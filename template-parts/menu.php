@@ -1,7 +1,7 @@
 <?php 
 /**
  * @package WordPress
- * @subpackage THEMENAME
+ * @subpackage __THEMENAE__
  */
 ?>
   <div class="header">  

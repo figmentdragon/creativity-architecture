@@ -4,7 +4,7 @@
  *
  * Renders the featured image on posts & pages.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

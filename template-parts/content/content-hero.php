@@ -2,12 +2,12 @@
 /**
  * The template used for displaying hero content
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$enable_section = get_theme_mod( 'THEMENAME_hero_content_visibility', 'disabled' );
+$enable_section = get_theme_mod( '__THEMENAE___hero_content_visibility', 'disabled' );
 
-if ( ! THEMENAME_check_section( $enable_section ) ) {
+if ( ! __THEMENAE___check_section( $enable_section ) ) {
 	// Bail if hero content is not enabled
 	return;
 }

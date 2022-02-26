@@ -4,7 +4,7 @@
  *
  * Renders author/post meta on posts.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

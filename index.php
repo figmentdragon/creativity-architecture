@@ -1,20 +1,30 @@
-<?php /* Template Name: Index */ ?>
-<?php get_header(); ?>
+<?php /* Template Name: Index */
+get_header(); ?>
 
-	<main role="main" aria-label="Content">
-		<!-- section -->
-		<section>
+<?php get_sidebar( 'header' ); ?>
 
-			<h1><?php esc_html_e( 'Latest Posts', 'THEMENAME' ); ?></h1>
+<div id="wrapper">
+	<main id="main" class="inner-wrapper" role="main" aria-label="Content">
+		<h2 class="page-title"><?php the_title(); ?></h2>
+			<div id="contentwrapper" class="content">
+				<!-- section -->
+					<section>
+						<?php if ( is_front_page() && is_home() ) {
+							get_template_part( 'template-parts/loop/loop' );
+							} elseif ( is_front_page() ) {
+								get_page_template( 'front-page' );
+							} elseif ( is_home() ) {
+								get_page_template( 'home' );
+							} else {
+								get_page_template( 'search' );
+							} ?>
 
-			<?php get_template_part( 'loop' ); ?>
-
-			<?php get_template_part( 'pagination' ); ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
-
+						<?php get_template_part( 'pagination' ); ?>
+					</section>
+					<!-- /section -->
+			</main>
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+</div>
 <?php get_footer(); ?>

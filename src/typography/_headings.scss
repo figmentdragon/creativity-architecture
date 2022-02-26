@@ -31,7 +31,7 @@ h1, .h1 {
 	font-family: "Euphorigenic";
 	text-transform: capitalize;
 	font-variant: small-caps;
-  font-weight: bolder;
+  font-weight: $headings-font-weight;
   line-height: 1rem;
 
   a {
@@ -55,8 +55,28 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-family: $primary-font;
+	font-family: $page-title-font;
 	color: $page-title-color;
+  font-weight: $headings-font-weight;
+  .page-title{
+    a {
+      outline: none;
+      &:active,
+      &.active {
+        text-decoration: none;
+        &:hover,
+        &:focus {
+
+        }
+        &:visited {
+
+        }
+      }
+      &:disabled,
+      &.disabled {
+      }
+    }
+  }
   a {
     outline: none;
     &:active,
@@ -78,8 +98,9 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-family: $secondary-font;
-	color: $heading-text-color;
+	font-family: $post-title-font;
+	color: $post-title-color;
+  font-weigh: 700;
   a {
     outline: none;
     &:active,
@@ -101,10 +122,10 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	font-family: 'Raleway';
+	font-family: $tertiary-font;
   font-size: 1.75vw;
   text-transform: lowercase;
-  color: $post-title-color;
+  color: shade($accent, $heading-percentage);
   a {
     outline: none;
     &:active,
@@ -159,4 +180,5 @@ h6, .h6 {
 h5,
 h6 {
 	text-transform: capitalize;
+  font-weight: 300;
 }

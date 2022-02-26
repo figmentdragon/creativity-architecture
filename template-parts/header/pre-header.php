@@ -2,7 +2,7 @@
 /**
  * Pre header.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 
@@ -13,8 +13,8 @@ $layout                       = 'one' === $pre_header_layout ? ' pre-header-one-
 $inner_layout                 = 'one' === $pre_header_layout ? 'inner-pre-header-content' : 'inner-pre-header-left';
 $pre_header_hook_open         = 'one' === $pre_header_layout ? 'pre_header_open' : 'pre_header_left_open';
 $pre_header_hook_close        = 'one' === $pre_header_layout ? 'pre_header_close' : 'pre_header_left_close';
-$pre_header_column_one        = get_theme_mod( 'pre_header_column_one', __( 'Column 1', 'THEMENAME' ) );
-$pre_header_column_two        = get_theme_mod( 'pre_header_column_two', __( 'Column 2', 'THEMENAME' ) );
+$pre_header_column_one        = get_theme_mod( 'pre_header_column_one', __( 'Column 1', '__THEMENAE__' ) );
+$pre_header_column_two        = get_theme_mod( 'pre_header_column_two', __( 'Column 2', '__THEMENAE__' ) );
 $pre_header_column_one_layout = get_theme_mod( 'pre_header_column_one_layout', 'text' );
 $pre_header_column_two_layout = get_theme_mod( 'pre_header_column_two_layout', 'text' );
 

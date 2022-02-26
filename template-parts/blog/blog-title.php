@@ -4,7 +4,7 @@
  *
  * Renders post title on archives.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

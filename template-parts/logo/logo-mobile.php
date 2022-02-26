@@ -2,7 +2,7 @@
 /**
  * Mobile logo.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

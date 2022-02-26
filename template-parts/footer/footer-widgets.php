@@ -2,7 +2,7 @@
 /**
  * Displays footer widgets if assigned
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
 ?>
@@ -15,7 +15,7 @@ if (
 	 is_active_sidebar( 'sidebar-5' ) ) :
 ?>
 
-<aside <?php THEMENAME_footer_sidebar_class(); ?> role="complementary">
+<aside <?php __THEMENAE___footer_sidebar_class(); ?> role="complementary">
 	<div class="wrapper">
 		<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 			<div class="widget-column footer-widget-1">

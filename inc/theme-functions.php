@@ -3,28 +3,28 @@
  * Custom Functions
  */
 
-function THEMENAME_functions() {
-  add_action( 'after_switch_theme', 'THEMENAME_setup_options' );
-  add_action( 'init', 'THEMENAME_nav' ); // Add THEMENAME Menu
-  add_action( 'init', 'create_post_type_THEMENAME' ); // Add our THEMENAME Custom Post Type
-  add_action( 'init', 'THEMENAME_wp_pagination' );
-  add_action( 'widgets_init', 'THEMENAME_remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
+function functions() {
+  add_action( 'after_switch_theme', 'setup_options' );
+  add_action( 'init', 'nav' ); // Add THEMENAEMenu
+  add_action( 'init', 'create_post_type' ); // Add our THEMENAECustom Post Type
+  add_action( 'init', 'wp_pagination' );
+  add_action( 'widgets_init', 'remove_recent_comments_style' ); // Remove inline Recent Comment Styles from wp_head()
 
 
   // Add Filters
-  add_filter( 'avatar_defaults', 'THEMENAME_gravatar' ); // Custom Gravatar in Settings > Discussion
+  add_filter( 'avatar_defaults', 'gravatar' ); // Custom Gravatar in Settings > Discussion
   add_filter( 'body_class', 'add_slug_to_body_class' ); // Add slug to body class (Starkers build)
-  add_filter( 'excerpt_length', 'THEMENAME_excerpt_length', 999 );
-  add_filter( 'excerpt_more', 'THEMENAME_excerpt_more' );
-  add_filter( 'gallery_style', 'THEMENAME_gallery_style' );
-  add_filter( 'image_size_names_choose', 'THEMENAME_custom_image_sizes' );
-  add_filter( 'style_loader_tag', 'THEMENAME_style_remove' );
-  add_filter( 'the_content_more_link', 'THEMENAME_more_link', 10, 2 );
+  add_filter( 'excerpt_length', 'excerpt_length', 999 );
+  add_filter( 'excerpt_more', 'excerpt_more' );
+  add_filter( 'gallery_style', 'gallery_style' );
+  add_filter( 'image_size_names_choose', 'custom_image_sizes' );
+  add_filter( 'style_loader_tag', 'style_remove' );
+  add_filter( 'the_content_more_link', 'more_link', 10, 2 );
   add_filter( 'the_excerpt', 'shortcode_unautop' ); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
-  add_filter( 'wp_nav_menu_args', 'THEMENAME_nav_menu_args' ); // Remove  surrounding <div> from WP Navigation
+  add_filter( 'wp_nav_menu_args', 'nav_menu_args' ); // Remove  surrounding <div> from WP Navigation
 
-  add_shortcode( 'THEMENAME_shortcode_demo', 'THEMENAME_shortcode_demo' ); // You can place [THEMENAME_shortcode_demo] in Pages, Posts now.
-  add_shortcode( 'THEMENAME_shortcode_demo_2', 'THEMENAME_shortcode_demo_2' );
+  add_shortcode( 'shortcode_demo', 'shortcode_demo' ); // You can place [shortcode_demo] in Pages, Posts now.
+  add_shortcode( 'shortcode_demo_2', 'shortcode_demo_2' );
 }
 
 function add_slug_to_body_class( $classes ) {
@@ -57,34 +57,34 @@ function remove_width_attribute( $html ) {
     return $html;
 }
 
-function THEMENAME_gravatar ( $avatar_defaults ) {
+function gravatar ( $avatar_defaults ) {
     $myavatar                   = get_template_directory_uri() . '/img/gravatar.jpg';
     $avatar_defaults[$myavatar] = 'Custom Gravatar';
     return $avatar_defaults;
 }
 
-function THEMENAME_check_section( $value ) {
+function check_section( $value ) {
 	return ( 'entire-site' == $value  || ( is_front_page() && 'homepage' === $value ) );
 }
-function THEMENAME_attributes_filter( $var ) {
+function attributes_filter( $var ) {
     return is_array( $var ) ? array() : '';
 }
 
-function THEMENAME_custom_image_sizes( $sizes ) {
+function custom_image_sizes( $sizes ) {
     return array_merge( $sizes,
       array(
-        'THEMENAME-thumb-600' => __('600px by 150px'),
-        'THEMENAME-thumb-300' => __('300px by 100px'),
+        'thumb-600' => __('600px by 150px'),
+        'thumb-300' => __('300px by 100px'),
       )
     );
   }
 
-function THEMENAME_more_link( $more_link, $more_link_text ) {
-	$more_tag_text = get_theme_mod( 'THEMENAME_excerpt_more_text', esc_html__( 'Continue reading', 'THEMENAME' ) );
+function more_link( $more_link, $more_link_text ) {
+	$more_tag_text = get_theme_mod( 'excerpt_more_text', esc_html__( 'Continue reading', '__THEMENAE__' ) );
 	return ' &hellip; ' . str_replace( $more_link_text, wp_kses_data( $more_tag_text ), $more_link );
 }
 
-function THEMENAME_nav() {
+function nav() {
     wp_nav_menu(
     array(
         'theme_location'  => 'header-menu',
@@ -107,7 +107,7 @@ function THEMENAME_nav() {
     );
 }
 
-function THEMENAME_remove_recent_comments_style() {
+function remove_recent_comments_style() {
     global $wp_widget_factory;
 
     if ( isset( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'] ) ) {
@@ -118,29 +118,29 @@ function THEMENAME_remove_recent_comments_style() {
     }
 }
 
-function THEMENAME_shortcode_demo( $atts, $content = null ) {
+function shortcode_demo( $atts, $content = null ) {
     return '<div class="shortcode-demo">' . do_shortcode( $content ) . '</div>'; // do_shortcode allows for nested Shortcodes
 }
 
 // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-function THEMENAME_shortcode_demo_2( $atts, $content = null ) {
+function shortcode_demo_2( $atts, $content = null ) {
     return '<h2>' . $content . '</h2>';
 }
 
-function THEMENAME_style_remove( $tag ) {
+function style_remove( $tag ) {
     return preg_replace( '~\s+type=["\'][^"\']++["\']~', '', $tag );
 }
 
-function THEMENAME_view_article( $more ) {
+function view_article( $more ) {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink( $post->ID ) . '">' . esc_html_e( 'View Article', 'THEMENAME' ) . '</a>';
+    return '... <a class="view-article" href="' . get_permalink( $post->ID ) . '">' . esc_html_e( 'View Article', '__THEMENAE__' ) . '</a>';
 }
 
-function THEMENAME_wp_custom_post( $length ) {
+function wp_custom_post( $length ) {
     return 40;
 }
 
-function THEMENAME_wp_excerpt( $length_callback = '', $more_callback = '' ) {
+function wp_excerpt( $length_callback = '', $more_callback = '' ) {
     global $post;
     if ( function_exists( $length_callback ) ) {
         add_filter( 'excerpt_length', $length_callback );
@@ -155,17 +155,16 @@ function THEMENAME_wp_excerpt( $length_callback = '', $more_callback = '' ) {
     echo esc_html( $output );
 }
 
-function THEMENAME_wp_index( $length ) {
+function wp_index( $length ) {
     return 20;
 }
 
-
-function THEMENAME_nav_menu_args( $args = '' ) {
+function nav_menu_args( $args = '' ) {
     $args['container'] = false;
     return $args;
 }
 
-function THEMENAME_wp_pagination() {
+function wp_pagination() {
     global $wp_query;
     $big = 999999999;
     echo paginate_links( array(
@@ -176,24 +175,24 @@ function THEMENAME_wp_pagination() {
     ) );
 }
 
-function create_post_type_THEMENAME() {
-    register_taxonomy_for_object_type( 'category', 'THEMENAME' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', 'THEMENAME' );
-    register_post_type( 'THEMENAME', // Register Custom Post Type
+function create_post_type() {
+    register_taxonomy_for_object_type( 'category', '__THEMENAE__' ); // Register Taxonomies for Category
+    register_taxonomy_for_object_type( 'post_tag', '__THEMENAE__' );
+    register_post_type( '__THEMENAE__', // Register Custom Post Type
         array(
         'labels'       => array(
-            'name'               => esc_html( 'THEMENAME Custom Post', 'THEMENAME' ), // Rename these to suit
-            'singular_name'      => esc_html( 'THEMENAME Custom Post', 'THEMENAME' ),
-            'add_new'            => esc_html( 'Add New', 'THEMENAME' ),
-            'add_new_item'       => esc_html( 'Add New THEMENAME Custom Post', 'THEMENAME' ),
-            'edit'               => esc_html( 'Edit', 'THEMENAME' ),
-            'edit_item'          => esc_html( 'Edit THEMENAME Custom Post', 'THEMENAME' ),
-            'new_item'           => esc_html( 'New THEMENAME Custom Post', 'THEMENAME' ),
-            'view'               => esc_html( 'View THEMENAME Custom Post', 'THEMENAME' ),
-            'view_item'          => esc_html( 'View THEMENAME Custom Post', 'THEMENAME' ),
-            'search_items'       => esc_html( 'Search THEMENAME Custom Post', 'THEMENAME' ),
-            'not_found'          => esc_html( 'No THEMENAME Custom Posts found', 'THEMENAME' ),
-            'not_found_in_trash' => esc_html( 'No THEMENAME Custom Posts found in Trash', 'THEMENAME' ),
+            'name'               => esc_html( 'Custom Post', '__THEMENAE__' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Custom Post', '__THEMENAE__' ),
+            'add_new'            => esc_html( 'Add New', '__THEMENAE__' ),
+            'add_new_item'       => esc_html( 'Add New Custom Post', '__THEMENAE__' ),
+            'edit'               => esc_html( 'Edit', '__THEMENAE__' ),
+            'edit_item'          => esc_html( 'Edit Custom Post', '__THEMENAE__' ),
+            'new_item'           => esc_html( 'New Custom Post', '__THEMENAE__' ),
+            'view'               => esc_html( 'View Custom Post', '__THEMENAE__' ),
+            'view_item'          => esc_html( 'View Custom Post', '__THEMENAE__' ),
+            'search_items'       => esc_html( 'Search Custom Post', '__THEMENAE__' ),
+            'not_found'          => esc_html( 'No Custom Posts found', '__THEMENAE__' ),
+            'not_found_in_trash' => esc_html( 'No Custom Posts found in Trash', '__THEMENAE__' ),
         ),
         'public'       => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -203,7 +202,7 @@ function create_post_type_THEMENAME() {
             'editor',
             'excerpt',
             'thumbnail'
-        ), // Go to Dashboard Custom THEMENAME post for supports
+        ), // Go to Dashboard Custom THEMENAEpost for supports
         'can_export'   => true, // Allows export in Tools > Export
         'taxonomies'   => array(
             'post_tag',
@@ -212,7 +211,7 @@ function create_post_type_THEMENAME() {
     ) );
 }
 
-function THEMENAME_comments( $comment, $args, $depth ) {
+function comments( $comment, $args, $depth ) {
   $GLOBALS['comment'] = $comment;
   extract( $args, EXTR_SKIP );
   if ( 'div' == $args['style'] ) {

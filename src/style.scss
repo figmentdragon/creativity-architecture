@@ -116,8 +116,10 @@ $chocolate : #3F000F;
 @import "mixins/visually-hidden";
 @import "mixins/clearfix";
 
+@import "partials/reset";
+@import "partials/normalize";
 
-
+/* Elements - basic building blocks */
 @import "elements/html";
 //@import "elements/base";
 //@import "elements/text-elements";
@@ -150,36 +152,34 @@ $chocolate : #3F000F;
 @import "helpers/visually-hidden";
 @import "helpers/vr";
 
-@import "components/alerts/alert-styles";
-@import "components/alerts/alerts";
-@import "components/appbar/appbar";
-@import "components/badges";
-@import "components/banners/banners";
+/* Components */
+//@import "components/alerts/alert-styles";
+//@import "components/alerts/alerts";
+//@import "components/appbar/appbar";
+//@import "components/badges";
+//@import "components/banners/banners";
 
-@import "components/buttons/buttons";
-@import "components/buttons/button-group";
-@import "components/buttons/chips";
-@import "components/buttons/fab";
-@import "components/buttons/icon";
-@import "components/cards/card";
-@import "components/cards/cards";
-@import "components/dialogs/dialog";
-@import "components/dialogs/snackbar";
-@import "components/dialogs/tooltip";
-@import "components/inputs/checkboxes";
-@import "components/inputs/menu";
-@import "components/inputs/radio";
-@import "components/inputs/sliders";
-@import "components/inputs/textfields";
-@import "components/inputs/toggle";
-@import "components/media";
-@import "components/nav";
-@import "components/navbar";
-@import "components/ripple";
-@import "components/tabs";
-
-@import "partials/reset";
-@import "partials/normalize";
+//@import "components/buttons/buttons";
+//@import "components/buttons/button-group";
+//@import "components/buttons/chips";
+//@import "components/buttons/fab";
+//@import "components/buttons/icon";
+//@import "components/cards/card";
+//@import "components/cards/cards";
+//@import "components/dialogs/dialog";
+//@import "components/dialogs/snackbar";
+//@import "components/dialogs/tooltip";
+//@import "components/inputs/checkboxes";
+//@import "components/inputs/menu";
+//@import "components/inputs/radio";
+//@import "components/inputs/sliders";
+//@import "components/inputs/textfields";
+//@import "components/inputs/toggle";
+//@import "components/media";
+//@import "components/nav";
+//@import "components/navbar";
+//@import "components/ripple";
+//@import "components/tabs";
 
 @import "structure/div";
 @import "structure/section";

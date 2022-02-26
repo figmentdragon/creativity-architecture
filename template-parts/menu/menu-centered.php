@@ -2,7 +2,7 @@
 /**
  * Centered menu.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 
@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 
 	<?php do_action( 'before_main_menu' ); ?>
 
-	<nav id="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" aria-label="<?php _e( 'Site Navigation', 'THEMENAME' ); ?>">
+	<nav id="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" aria-label="<?php _e( 'Site Navigation', '__THEMENAE__' ); ?>">
 
 		<?php do_action( 'main_menu_open' ); ?>
 

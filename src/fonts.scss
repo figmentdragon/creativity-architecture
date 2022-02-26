@@ -22,7 +22,7 @@
 
   @font-face {
     font-family: "Avdira";
-    src: local("theme/properties/typography/fonts/avdira/Avdira_R.woff")
+    src: local("assets/fonts/avdira/Avdira_R.woff")
         format("woff");
     font-weight: normal;
     font-style: normal;
@@ -30,6 +30,10 @@
 
   @font-face {
     font-family: "Enjoy Writing";
+    src: local( "./assets/fonts/enjoy-writing/enjoywrting.woff")
+      format("woff");
+      font-weight: normal;
+      font-style: normal;
     src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot");
     src: url("//db.onlinewebfonts.com/t/a5313a199faa43110612b9c31601538d.eot?#iefix")
         format("embedded-opentype"),
@@ -52,6 +56,10 @@
 
   @font-face {
     font-family: "Glass Antiqua";
+    src: local( "./assets/fonts/glass-antqiua/glassantiqua.woff")
+      format("woff");
+      font-weight: normal;
+      font-style: normal;
     src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot");
     src: url("//db.onlinewebfonts.com/t/9d7b0fb304409fabceb9c59a1de12720.eot?#iefix")
         format("embedded-opentype"),
@@ -68,6 +76,10 @@
 
   @font-face {
     font-family: "Hand TypeWriter";
+    src: local( "./assets/fonts/hand-typerwriter/handtypewriter.woff")
+      format("woff");
+      font-weight: normal;
+      font-style: normal;
     src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot");
     src: url("//db.onlinewebfonts.com/t/59b5808e3dd8a15eb3774dbe8d4f686f.eot?#iefix")
         format("embedded-opentype"),
@@ -84,6 +96,10 @@
 
   @font-face {
     font-family: "Life Savers";
+    src: local( "./assets/fonts/lifesavers.woff")
+      format("woff");
+      font-weight: normal;
+      font-style: normal;
     src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot");
     src: url("//db.onlinewebfonts.com/t/a0dca3ed6f9e5098522a6bab3efbce65.eot?#iefix")
         format("embedded-opentype"),
@@ -100,6 +116,14 @@
 
   @font-face {
     font-family: "Raleway";
+    src: local( "./assets/fonts/raleway/raleway.woff")
+      format("woff");
+      font-weight: normal;
+      font-style: normal;
+    src: local( "./assets/fonts/hand-typerwriter/handtypewriter.woff2")
+        format("woff2");
+        font-weight: normal;
+        font-style: normal;
     src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot");
     src: url("//db.onlinewebfonts.com/t/8b452e2cb91e248f5beff9174a1327dc.eot?#iefix")
         format("embedded-opentype"),
@@ -118,18 +142,20 @@
       font-family: "Raylig";
       font-style: normal;
       font-weight: 600;
-      src: local("Raylig"), url("https://fonts.cdnfonts.com/s/70312/RayligSemibold-Wy9mE.woff") format("woff");
+      src: url("https://fonts.cdnfonts.com/s/70312/RayligSemibold-Wy9mE.woff") format("woff");
   }
 
   @font-face {
     font-family: "TELETYPE 1945-1985";
+    src: local( "./assets/fonts/teletype_1945_1985/TELETYPE1945-1985.woff")
+      format("woff");
+      font-weight: normal;
+      font-style: normal;
     src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot");
     src: url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.eot?#iefix")
         format("embedded-opentype"),
       url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.woff2")
         format("woff2"),
-      url("./assets/fonts/teletype_1945_1985/TELETYPE1945-1985.woff")
-        format("woff"),
       url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.ttf")
         format("truetype"),
       url("//db.onlinewebfonts.com/t/83dc401685732778308fc7cdfe8af34e.svg#TELETYPE 1945-1985")

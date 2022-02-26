@@ -2,10 +2,10 @@
 /**
  * The template for displaying testimonial items
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
-$number = get_theme_mod( 'THEMENAME_testimonial_number', 3 );
+$number = get_theme_mod( '__THEMENAE___testimonial_number', 3 );
 
 if ( ! $number ) {
 	// If number is 0, then this section is disabled
@@ -21,18 +21,18 @@ $post_list  = array();// list of valid post/page ids
 $args['post_type'] = 'jetpack-testimonial';
 
 for ( $i = 1; $i <= $number; $i++ ) {
-	$THEMENAME_post_id = '';
+	$__THEMENAE___post_id = '';
 
-	$THEMENAME_post_id =  get_theme_mod( 'THEMENAME_testimonial_cpt_' . $i );
+	$__THEMENAE___post_id =  get_theme_mod( '__THEMENAE___testimonial_cpt_' . $i );
 
 
-	if ( $THEMENAME_post_id && '' !== $THEMENAME_post_id ) {
+	if ( $__THEMENAE___post_id && '' !== $__THEMENAE___post_id ) {
 		// Polylang Support.
 		if ( class_exists( 'Polylang' ) ) {
-			$THEMENAME_post_id = pll_get_post( $THEMENAME_post_id, pll_current_language() );
+			$__THEMENAE___post_id = pll_get_post( $__THEMENAE___post_id, pll_current_language() );
 		}
 
-		$post_list = array_merge( $post_list, array( $THEMENAME_post_id ) );
+		$post_list = array_merge( $post_list, array( $__THEMENAE___post_id ) );
 
 	}
 }

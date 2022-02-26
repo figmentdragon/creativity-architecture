@@ -5,17 +5,17 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage THEMENAME
- * @since THEMENAME 1.0
+ * @subpackage __THEMENAE__
+ * @since __THEMENAE__ 1.0
  */
 
 // If there is no featured-image, print the first image block found.
 if (
-	! THEMENAME_can_show_post_thumbnail() &&
+	! __THEMENAE___can_show_post_thumbnail() &&
 	has_block( 'core/image', get_the_content() )
 ) {
 
-	THEMENAME_print_first_instance_of_block( 'core/image', get_the_content() );
+	__THEMENAE___print_first_instance_of_block( 'core/image', get_the_content() );
 }
 
 the_excerpt();

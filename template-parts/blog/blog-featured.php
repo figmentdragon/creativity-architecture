@@ -4,7 +4,7 @@
  *
  * Renders featured image on archives.
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  * @subpackage Template Parts
  */
 

@@ -2,7 +2,7 @@
 /**
  * Displays footer widgets if assigned
  *
- * @package THEMENAME
+ * @package __THEMENAE__
  */
 
 if ( ! is_active_sidebar( 'sidebar-newsletter' ) ) {
