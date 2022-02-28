@@ -6,7 +6,7 @@ function create_expertise_taxonomy()
     'name'               => 'Expertisen (Taxonomie)',
     'singular_name'      => 'Expertise (Taxonomie)',
     'menu_name'          => 'Expertisen (Taxonomie)',
-    'parent_item_colon'  => '',
+    'item_colon'  => '',
     'all_items'          => 'Alle Expertisen (Taxonomie)',
     'view_item'          => 'Expertise (Taxonomie) anzeigen',
     'add_new_item'       => 'Neue Expertise (Taxonomie)',

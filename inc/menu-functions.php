@@ -129,24 +129,18 @@ function is_off_canvas_menu() {
 
 function sub_menu_indicators( $title, $item, $args, $depth ) {
 
-	// Let's stop if menu is not meant to have sub-menu's.
 	if ( strpos( $args->menu_class, 'sub-menu' ) === false ) {
 		return $title;
 	}
 
-	// Add arrow icon if menu item has children.
 	if ( isset( $item->classes ) && in_array( 'menu-item-has-children', $item->classes ) ) {
-
 		if ( svg_enabled() ) {
 			$title .= ' ' . svg( 'arrow-down' );
 		} else {
 			$title .= ' <i class="THEMENAEf THEMENAEf-arrow-down" aria-hidden="true"></i>';
 		}
-
 	}
-
 	return $title;
-
 }
 
 function mobile_sub_menu_indicators( $item_output, $item, $depth, $args ) {
@@ -219,6 +213,28 @@ function nav_description( $item_output, $item, $depth, $args ) {
 	}
 	return $item_output;
 }
+
+if ( ! function_exists( 'navigation_button' ) ) {
+	add_filter( 'wp_nav_menu_items', 'navigation_button', 11, 2 );
+	/**
+	 * Add the extra button to the navigation.
+	 *
+	 */
+	function navigation_button( $nav, $args ) {
+		// Get Customizer settings
+		$settings = get_option( 'settings' );
+
+		// If our primary menu is set, add the extra button.
+		if ( ( isset( $settings['nav_btn_url'] ) ) && ( isset( $settings['nav_btn_text'] ) ) && ( isset( $args->theme_location ) ) ) {
+			if ( ( $args->theme_location == 'primary' ) && ( $settings['nav_btn_url'] != '' ) ) {
+				return $nav . '<li class="wpkoi-nav-btn-h"><div class="nav-btn-border"><a class="wpkoi-nav-btn button" href="' . esc_url( $settings['nav_btn_url'] ) . '">' . esc_html( $settings['nav_btn_text'] ) . '</a></div></li>';
+			}
+		}
+
+	    return $nav;
+	}
+}
+
 
 function content_nav() {
 	global $wp_query;

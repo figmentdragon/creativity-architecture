@@ -3864,6 +3864,17 @@ p {
   margin: 14px 16px 4px -3px;
 }
 
+@media (max-width: 500px) {
+  body {
+    font-size: 80%;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    float: none !important;
+  }
+}
 .blockquote {
   font-family: "GlassAntiqua-Regular", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 1 41.58vw;
@@ -3964,16 +3975,16 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-a .h1, a .h2, a .h3, a .h4, a .h5, a .h6 {
+a.h1, a.h2, a.h3, a.h4, a.h5, a.h6 {
   color: inherit;
   text-decoration: none;
 }
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover,
-a .h1:hover, a .h2:hover, a .h3:hover, a .h4:hover, a .h5:hover, a .h6:hover {
+a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.h5:hover, a.h6:hover {
   text-decoration: none;
 }
 h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited,
-a .h1:visited, a .h2:visited, a .h3:visited, a .h4:visited, a .h5:visited, a .h6:visited {
+a.h1:visited, a.h2:visited, a.h3:visited, a.h4:visited, a.h5:visited, a.h6:visited {
   text-decoration: none;
 }
 
@@ -3981,80 +3992,137 @@ a .h1:visited, a .h2:visited, a .h3:visited, a .h4:visited, a .h5:visited, a .h6
   color: tint(tint(tint(#0abab5, 5%), 16%), 6%);
 }
 
-h1, .h1 {
+h1, .h1,
+h1.site-title {
   font-family: "Euphorigenic";
   text-transform: capitalize;
   font-variant: small-caps;
   font-weight: bolder;
   line-height: 1rem;
+  margin: 1.4285714286 0 0.4761904762;
 }
-h1 a, .h1 a {
+h1 a, .h1 a,
+h1.site-title a {
   outline: none;
 }
-h1 a:active, h1 a.active, .h1 a:active, .h1 a.active {
+h1 a:active, h1 a.active, .h1 a:active, .h1 a.active,
+h1.site-title a:active,
+h1.site-title a.active {
   text-decoration: none;
 }
-h2, .h2 {
+h1 a:active:visited, h1 a.active:visited, .h1 a:active:visited, .h1 a.active:visited,
+h1.site-title a:active:visited,
+h1.site-title a.active:visited {
+  text-decoration: none;
+}
+h2, .h2,
+h2.page-title {
   font-family: "Hand Typewriter", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: tint(tint(tint(#0abab5, 5%), 16%), 36%);
   font-weight: bolder;
+  margin: 0.9523809524 0 0.4761904762;
 }
-h2 .page-title a, .h2 .page-title a {
+h2 a, .h2 a,
+h2.page-title a {
   outline: none;
 }
-h2 .page-title a:active, h2 .page-title a.active, .h2 .page-title a:active, .h2 .page-title a.active {
+h2 a:active, h2 a.active, .h2 a:active, .h2 a.active,
+h2.page-title a:active,
+h2.page-title a.active {
   text-decoration: none;
 }
-h2 a, .h2 a {
-  outline: none;
-}
-h2 a:active, h2 a.active, .h2 a:active, .h2 a.active {
+h2 a:active:visited, h2 a.active:visited, .h2 a:active:visited, .h2 a.active:visited,
+h2.page-title a:active:visited,
+h2.page-title a.active:visited {
   text-decoration: none;
 }
-h3, .h3 {
+h3, .h3,
+h3.post-title {
   font-family: "Enjoy Writing", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: tint(tint(tint(#0abab5, 5%), 16%), 26%);
-  font-weigh: 700;
+  font-weight: 700;
 }
-h3 a, .h3 a {
+h3 a, .h3 a,
+h3.post-title a {
   outline: none;
 }
-h3 a:active, h3 a.active, .h3 a:active, .h3 a.active {
+h3 a:active, h3 a.active, .h3 a:active, .h3 a.active,
+h3.post-title a:active,
+h3.post-title a.active {
   text-decoration: none;
 }
-h4, .h4 {
+h3 a:active:visited, h3 a.active:visited, .h3 a:active:visited, .h3 a.active:visited,
+h3.post-title a:active:visited,
+h3.post-title a.active:visited {
+  text-decoration: none;
+}
+h4, .h4,
+h4.site-description,
+h4.tagline,
+h4.page-title {
   font-family: "Raleway", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.75vw;
   text-transform: lowercase;
   color: shade(#c0c0c0, 16%);
+  margin: 1 0 0.1904761905;
 }
-h4 a, .h4 a {
+h4 a, .h4 a,
+h4.site-description a,
+h4.tagline a,
+h4.page-title a {
   outline: none;
 }
-h4 a:active, h4 a.active, .h4 a:active, .h4 a.active {
+h4 a:active, h4 a.active, .h4 a:active, .h4 a.active,
+h4.site-description a:active,
+h4.site-description a.active,
+h4.tagline a:active,
+h4.tagline a.active,
+h4.page-title a:active,
+h4.page-title a.active {
   text-decoration: none;
 }
-h5, .h5 {
+h4 a:active:visited, h4 a.active:visited, .h4 a:active:visited, .h4 a.active:visited,
+h4.site-description a:active:visited,
+h4.site-description a.active:visited,
+h4.tagline a:active:visited,
+h4.tagline a.active:visited,
+h4.page-title a:active:visited,
+h4.page-title a.active:visited {
+  text-decoration: none;
+}
+h5, .h5,
+h5.heading {
   font-family: "Raleway", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   color: tint(tint(#0abab5, 5%), 16%);
+  margin: 0.9523809524 0 0.9523809524;
 }
-h5 a, .h5 a {
+h5 a, .h5 a,
+h5.heading a {
   outline: none;
 }
-h5 a:active, h5 a.active, .h5 a:active, .h5 a.active {
+h5 a:active, h5 a.active, .h5 a:active, .h5 a.active,
+h5.heading a:active,
+h5.heading a.active {
   text-decoration: none;
 }
-h6, .h6 {
+h5 a:active:visited, h5 a.active:visited, .h5 a:active:visited, .h5 a.active:visited,
+h5.heading a:active:visited,
+h5.heading a.active:visited {
+  text-decoration: none;
+}
+h6, .h6,
+h6.lead {
   font-family: "Raylig", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 1.25rem;
   color: tint(tint(tint(#0abab5, 5%), 16%), 6%);
+  margin: 0.9523809524 0 0.9523809524;
 }
 
-h5,
-h6 {
+h5, .h5,
+h6, .h6 {
   text-transform: capitalize;
-  font-weight: 300;
 }
 
 .lead {
@@ -4075,6 +4143,28 @@ body {
 
 /* Text elements */
 p {
+  text-align: left;
+  font-size: 100%;
+  margin-bottom: 1.5em;
+}
+p + p {
+  margin: 0;
+  text-indent: 1.5em;
+}
+p .lead {
+  font-size: 150%;
+  margin: 1em 0;
+}
+p .lead + p {
+  text-indent: 0;
+}
+
+p > code {
+  padding: 0.25em;
+  background: #eee;
+}
+
+p + ul, p + ol, p + dl {
   margin-bottom: 1.5em;
 }
 
@@ -5035,11 +5125,12 @@ a {
   color: tint(tint(#0abab5, 5%), 17%);
   background-color: transparent;
   font-family: "GlassAntiqua-Regular", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
 }
 a:active {
   color: tint(tint(tint(#0abab5, 5%), 17%), 7%);
   text-decoration: underline;
-  outline: 0;
+  outline: none;
 }
 a:active:hover {
   color: shift(tint(tint(tint(#0abab5, 5%), 17%), 7%), 27%);
@@ -5071,6 +5162,10 @@ nav ul,
 nav ol {
   list-style: none;
   list-style-image: none;
+}
+
+ul, ol, dl {
+  text-align: left;
 }
 
 ol,
@@ -5116,7 +5211,7 @@ ol li > ul {
 }
 
 dt {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 dd {
@@ -5137,7 +5232,7 @@ menu {
 hr {
   background: currentColor;
   color: inherit;
-  border: 0;
+  border: 0 solid #eee;
   box-sizing: content-box;
   height: 1px;
   margin: 0 0 16.8rem;
@@ -6049,20 +6144,6 @@ img .float-center {
 }
 
 /* Components */
-div {
-  display: flex;
-  float: left;
-  justify-content: space-evenly;
-}
-
-/*--------------------------------------------------------------
-# Sections HTML Element
---------------------------------------------------------------*/
-section {
-  padding: 60px 0;
-  overflow: hidden;
-}
-
 /**
  * partials/wrapper
  * ---
@@ -6086,6 +6167,8 @@ section {
   margin-bottom: 0;
   margin-left: 0;
   z-index: 35;
+  height: 100%;
+  width: 100%;
   border: 2px solid #a900a9;
   background: transparent;
   box-sizing: border-box;
@@ -6241,6 +6324,10 @@ section {
   width: 100%;
 }
 
+*:fullscreen #main p {
+  background: #3880ff;
+}
+
 *,
 *::after,
 *::before,
@@ -6308,12 +6395,6 @@ body.custom-background {
   background-size: auto;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-.page,
-.post,
-.search .archive-content-wrap {
-  margin: 0;
 }
 
 #page {
@@ -6569,7 +6650,9 @@ main {
   height: 100%;
   background: #c0c0c0;
 }
-main h4 {
+main h4.page-title,
+main h4.site-description,
+main h4.tag {
   margin-top: -1vh;
   margin-right: 6vw;
   margin-left: 50vh;
@@ -6646,6 +6729,20 @@ footer p {
   font-family: "GlassAntiqua-Regular", ca- "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   color: black;
+}
+
+/*--------------------------------------------------------------
+# Sections HTML Element
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+div {
+  display: flex;
+  float: left;
+  justify-content: space-evenly;
 }
 
 .logo {

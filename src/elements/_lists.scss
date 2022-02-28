@@ -7,6 +7,11 @@ nav ol {
     list-style-image: none;
 }
 
+ul, ol, dl {
+  text-align:left;
+}
+
+
 ol,
 ul {
   list-style: none;
@@ -51,7 +56,7 @@ ol li >  ul{
 }
 
 dt {
-    font-weight: 700;
+    font-weight: bold;
 }
 
 dd {

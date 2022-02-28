@@ -13,6 +13,9 @@ $kbd-bg:                            $gray-900 !default;
 $pre-color:                         null !default;
 
 pre {
+  font-family: $code-font;
+  text-align: left;
+  font-size: $font-size-base;
   line-height: 1.6;
   margin-bottom: 1.6em;
 

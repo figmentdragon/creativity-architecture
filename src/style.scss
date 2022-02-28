@@ -59,11 +59,12 @@ $chocolate : #3F000F;
 
 /* 2.2.2 */
 @import "patterns/gradient";
+@import "patterns/gradients/global-gradient";
+@import "patterns/gradients/theme-gradient";
   @import "patterns/gradients/mixins/gradient-mixins";
-  @import "patterns/gradients/mixins/global-gradient";
   @import "patterns/gradients/mixins/css-gradient";
-  @import "patterns/gradients/global-gradient";
-  @import "patterns/gradients/theme-gradient";
+  @import "patterns/gradients/mixins/global-gradient";
+  @import "patterns/gradients/mixins/theme-mixins";
 
 /* 2.2.3 */
 @import "patterns/shadow";
@@ -71,7 +72,6 @@ $chocolate : #3F000F;
   @import "patterns/shadows/box-shadow";
   @import "patterns/shadows/button-shadow";
   @import "patterns/shadows/card-shadow";
-
 
 @import "typography/typography";
 @import "typography/properties/heading-properties";
@@ -180,17 +180,21 @@ $chocolate : #3F000F;
 //@import "components/ripple";
 //@import "components/tabs";
 
-@import "structure/div";
-@import "structure/section";
-@import "structure/wrapper";
+@import "base/wrapper";
 
-@import "structure/body";
-@import "structure/header";
-@import "structure/nav";
-@import "structure/main";
-@import "structure/article";
-@import "structure/aside";
-@import "structure/footer";
+@import "html/index";
+@import "html/body";
+
+@import "html/layout/header";
+@import "html/layout/nav";
+@import "html/layout/main";
+@import "html/layout/article";
+@import "html/layout/aside";
+@import "html/layout/footer";
+@import "html/layout/section";
+
+@import "html/wrappers/div";
+@import "html/wrappers/span";
 
 //@import "partials/article";
 //@import "partials/background";

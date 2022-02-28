@@ -15,6 +15,7 @@ $blockquote-footer-font-size: $small-font-size !default;
   margin-bottom: $blockquote-margin-y;
   font-size: $blockquote-font-size;
   border-left: .25 solid $blockquote-border-color;
+  
   p:last-child{
     padding-bottom: 0;
   }

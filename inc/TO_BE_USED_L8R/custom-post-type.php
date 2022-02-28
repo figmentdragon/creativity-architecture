@@ -35,7 +35,7 @@ function custom_post_example() {
 			'search_items' => __( 'Search Post Type', '__THEMENAE__' ), /* Search Custom Type Title */
 			'not_found' =>  __( 'Nothing found in the Database.', '__THEMENAE__' ), /* This displays if there are no entries yet */
 			'not_found_in_trash' => __( 'Nothing found in Trash', '__THEMENAE__' ), /* This displays if there is nothing in the trash */
-			'parent_item_colon' => ''
+			'item_colon' => ''
 			), /* end of arrays */
 			'description' => __( 'This is the example custom post type', '__THEMENAE__' ), /* Custom Type Description */
 			'public' => true,
@@ -78,8 +78,8 @@ function custom_post_example() {
 				'singular_name' => __( 'Custom Category', '__THEMENAE__' ), /* single taxonomy name */
 				'search_items' =>  __( 'Search Custom Categories', '__THEMENAE__' ), /* search title for taxomony */
 				'all_items' => __( 'All Custom Categories', '__THEMENAE__' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Category', '__THEMENAE__' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Category:', '__THEMENAE__' ), /* parent taxonomy title */
+				'item' => __( 'Parent Custom Category', '__THEMENAE__' ), /* parent title for taxonomy */
+				'item_colon' => __( 'Parent Custom Category:', '__THEMENAE__' ), /* parent taxonomy title */
 				'edit_item' => __( 'Edit Custom Category', '__THEMENAE__' ), /* edit custom taxonomy title */
 				'update_item' => __( 'Update Custom Category', '__THEMENAE__' ), /* update title for taxonomy */
 				'add_new_item' => __( 'Add New Custom Category', '__THEMENAE__' ), /* add new title for taxonomy */
@@ -101,8 +101,8 @@ function custom_post_example() {
 				'singular_name' => __( 'Custom Tag', '__THEMENAE__' ), /* single taxonomy name */
 				'search_items' =>  __( 'Search Custom Tags', '__THEMENAE__' ), /* search title for taxomony */
 				'all_items' => __( 'All Custom Tags', '__THEMENAE__' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Custom Tag', '__THEMENAE__' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Custom Tag:', '__THEMENAE__' ), /* parent taxonomy title */
+				'item' => __( 'Parent Custom Tag', '__THEMENAE__' ), /* parent title for taxonomy */
+				'item_colon' => __( 'Parent Custom Tag:', '__THEMENAE__' ), /* parent taxonomy title */
 				'edit_item' => __( 'Edit Custom Tag', '__THEMENAE__' ), /* edit custom taxonomy title */
 				'update_item' => __( 'Update Custom Tag', '__THEMENAE__' ), /* update title for taxonomy */
 				'add_new_item' => __( 'Add New Custom Tag', '__THEMENAE__' ), /* add new title for taxonomy */

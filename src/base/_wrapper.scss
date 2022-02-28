@@ -29,6 +29,9 @@
 
   z-index: $z-index-body;
 
+  height: 100%;
+  width: 100%;
+
   border: 2px solid lighten(purple, $background-percentage);
   background: transparent;
   @include border-box;

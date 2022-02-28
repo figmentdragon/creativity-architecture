@@ -2,7 +2,10 @@
 
 blockquote {
 	font-style: italic;
-	margin: 0 1.5em;
+	border-left: 5px solid shade(#eee, $border-percentage);
+	padding-left: 1.5em;
+	margin: 1em 0 1.5em;
+
 	small {
 		display: block;
 		line-height: 1.7em;

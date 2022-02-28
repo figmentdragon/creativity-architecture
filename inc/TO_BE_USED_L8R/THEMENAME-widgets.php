@@ -42,4 +42,4 @@ require get_template_directory() . '/inc/widgets/widget-pricing.php';
 
 require get_template_directory() . '/inc/widgets/widget-recent-posts.php' ;
 
-require get_parent_theme_file_path( '/inc/widgets/widget-social-icons.php' );
+require get_theme_file_path( '/inc/widgets/widget-social-icons.php' );

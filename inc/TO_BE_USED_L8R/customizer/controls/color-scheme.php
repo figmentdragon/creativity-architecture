@@ -48,7 +48,7 @@ function custom_header_and_bg() {
 	 * }
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'custom_header_args', array(
-		'default-image'      => get_parent_theme_file_uri( '/assets/images/header-image.jpg' ),
+		'default-image'      => get_theme_file_uri( '/assets/images/header-image.jpg' ),
 		'default-text-color' => $default_text_color,
 		'width'              => 1920,
 		'height'             => 822,

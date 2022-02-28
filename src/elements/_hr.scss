@@ -8,7 +8,7 @@ $hr-opacity:                  .25 !default;
 hr {
   background: $hr-bg-color;
   color: $hr-color;
-  border: $hr-border-width;
+  border: $hr-border-width solid #eee;
   box-sizing: content-box;
 
   height: $hr-height;

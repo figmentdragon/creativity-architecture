@@ -272,3 +272,8 @@ p {
     line-height: 0.6;
     margin: 14px 16px 4px -3px;
 }
+
+@media (max-width:500px) {
+  body {font-size:80%;}
+  img {max-width:100% !important; height:auto !important; float:none !important;}
+}

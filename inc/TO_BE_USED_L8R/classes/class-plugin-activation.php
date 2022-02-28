@@ -146,7 +146,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @var string
 		 */
-		public $parent_slug = 'themes.php';
+		public $slug = 'themes.php';
 
 		/**
 		 * Capability needed to view the plugin installation menu item.
@@ -613,7 +613,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$args = apply_filters(
 				'tgmpa_admin_menu_args',
 				array(
-					'parent_slug' => $this->parent_slug,                     // Parent Menu slug.
+					'slug' => $this->slug,                     // Parent Menu slug.
 					'page_title'  => $this->strings['page_title'],           // Page title.
 					'menu_title'  => $this->strings['menu_title'],           // Menu title.
 					'capability'  => $this->capability,                      // Capability.
@@ -1140,7 +1140,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			}
 
 			// Admin options pages already output settings_errors, so this is to avoid duplication.
-			if ( 'options-general' !== $GLOBALS['current_screen']->parent_base ) {
+			if ( 'options-general' !== $GLOBALS['current_screen']->base ) {
 				$this->display_settings_errors();
 			}
 		}
@@ -1387,7 +1387,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'dismissable',
 				'dismiss_msg',
 				'menu',
-				'parent_slug',
+				'slug',
 				'capability',
 				'is_automatic',
 				'message',
@@ -1663,7 +1663,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			static $url;
 
 			if ( ! isset( $url ) ) {
-				$parent = $this->parent_slug;
+				$parent = $this->slug;
 				if ( false === strpos( $parent, '.php' ) ) {
 					$parent = 'admin.php';
 				}
@@ -2046,11 +2046,11 @@ if ( ! function_exists( 'tgmpa' ) ) {
 				}
 			}
 
-			if ( isset( $config['parent_menu_slug'] ) ) {
-				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_menu_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
+			if ( isset( $config['menu_slug'] ) ) {
+				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `menu_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
 			}
-			if ( isset( $config['parent_url_slug'] ) ) {
-				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_url_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
+			if ( isset( $config['url_slug'] ) ) {
+				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `url_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
 			}
 
 			call_user_func( array( $instance, 'config' ), $config );

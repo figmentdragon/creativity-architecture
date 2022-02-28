@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-a .h1, a .h2, a .h3, a .h4, a .h5, a .h6 {
+a.h1, a.h2, a.h3, a.h4, a.h5, a.h6 {
 	color: inherit;
   text-decoration: none;
   &:hover {
@@ -26,13 +26,14 @@ a .h1, a .h2, a .h3, a .h4, a .h5, a .h6 {
   color: tint($heading-text-color, $lead-percentage);
 }
 
-
-h1, .h1 {
+h1, .h1,
+h1.site-title, {
 	font-family: "Euphorigenic";
 	text-transform: capitalize;
 	font-variant: small-caps;
   font-weight: $headings-font-weight;
   line-height: 1rem;
+  margin: ($horizontal-spacer * 1.5) 0 ($horizontal-spacer * .5);
 
   a {
     outline: none;
@@ -44,6 +45,7 @@ h1, .h1 {
 
       }
       &:visited {
+        text-decoration: none;
 
       }
     }
@@ -54,29 +56,13 @@ h1, .h1 {
   }
 }
 
-h2, .h2 {
+h2, .h2,
+h2.page-title {
 	font-family: $page-title-font;
 	color: $page-title-color;
   font-weight: $headings-font-weight;
-  .page-title{
-    a {
-      outline: none;
-      &:active,
-      &.active {
-        text-decoration: none;
-        &:hover,
-        &:focus {
+  margin: $horizontal-spacer 0 ($horizontal-spacer * .5);
 
-        }
-        &:visited {
-
-        }
-      }
-      &:disabled,
-      &.disabled {
-      }
-    }
-  }
   a {
     outline: none;
     &:active,
@@ -87,6 +73,7 @@ h2, .h2 {
 
       }
       &:visited {
+        text-decoration: none;
 
       }
     }
@@ -97,10 +84,12 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+h3, .h3,
+h3.post-title {
 	font-family: $post-title-font;
 	color: $post-title-color;
-  font-weigh: 700;
+  font-weight: 700;
+
   a {
     outline: none;
     &:active,
@@ -111,6 +100,7 @@ h3, .h3 {
 
       }
       &:visited {
+        text-decoration: none;
 
       }
     }
@@ -121,11 +111,16 @@ h3, .h3 {
   }
 }
 
-h4, .h4 {
+h4, .h4,
+h4.site-description,
+h4.tagline,
+h4.page-title {
 	font-family: $tertiary-font;
   font-size: 1.75vw;
   text-transform: lowercase;
   color: shade($accent, $heading-percentage);
+  margin: ($horizontal-spacer * 1.05) 0 ($horizontal-spacer * .2);
+
   a {
     outline: none;
     &:active,
@@ -136,6 +131,7 @@ h4, .h4 {
 
       }
       &:visited {
+        text-decoration: none;
 
       }
     }
@@ -146,10 +142,13 @@ h4, .h4 {
   }
 }
 
-
-h5, .h5 {
+h5, .h5,
+h5.heading {
 	font-family: $tertiary-font;
+  font-weight: $font-weight-base;
 	color: $heading-text-color;
+  margin: $horizontal-spacer 0 $horizontal-spacer;
+
   a {
     outline: none;
     &:active,
@@ -160,6 +159,7 @@ h5, .h5 {
 
       }
       &:visited {
+        text-decoration: none;
 
       }
     }
@@ -170,15 +170,16 @@ h5, .h5 {
   }
 }
 
-h6, .h6 {
+h6, .h6,
+h6.lead {
 	font-family: $lead-font;
 	font-weight: $lead-font-weight;
 	font-size: $lead-font-size;
 	color: $lead-text-color;
+  margin: $horizontal-spacer 0 $horizontal-spacer;
 }
 
-h5,
-h6 {
+h5, .h5,
+h6, .h6 {
 	text-transform: capitalize;
-  font-weight: 300;
 }

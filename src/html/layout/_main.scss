@@ -14,7 +14,9 @@ main {
 
   background: $accent;
 
-  h4 {
+  h4.page-title,
+  h4.site-description,
+  h4.tag {
     margin-top: -1vh;
     margin-right: 6vw;
     margin-left: 50vh;

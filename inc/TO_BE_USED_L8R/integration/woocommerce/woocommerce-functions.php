@@ -412,8 +412,8 @@ function woo_loop_category() {
 
 		$categories = strip_tags( $categories );
 		if ( $categories ) {
-			list( $parent_category ) = explode( ',', $categories );
-			echo esc_html( $parent_category );
+			list( $category ) = explode( ',', $categories );
+			echo esc_html( $category );
 		}
 		?>
 	</span>

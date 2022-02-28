@@ -11,19 +11,41 @@ body {
 }
 
 /* Text elements */
-    p {
-    	margin-bottom: 1.5em;
-    }
-    b, strong {
-    	font-weight: bold;
-    }
-    dfn, cite, em, i {
-    	font-style: italic;
-    }
+p {
+  text-align:left;
+  font-size:100%;
+	margin-bottom: 1.5em;
 
-    address {
-    	margin: 0 0 1.5em;
+  + p {
+    margin:0;
+    text-indent: 1.5em;
+  }
+
+  .lead {
+    font-size:150%;
+    margin:1em 0;
+
+    + p {
+      text-indent:0;
     }
+  }
+}
+
+p > code {padding:0.25em; background:#eee;}
+
+p + ul, p + ol, p + dl {margin-bottom:1.5em;}
+
+b, strong {
+	font-weight: bold;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
 
 
 

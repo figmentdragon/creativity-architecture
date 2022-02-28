@@ -1,0 +1,11 @@
+/* hide the "new posts" button for admin */
+
+.wp-admin.post-type-post a.page-title-action {
+    display: none;
+}
+
+img#previewimage_defheaderimg {
+    object-fit: cover;
+    width: 640px;
+    height: auto;
+}

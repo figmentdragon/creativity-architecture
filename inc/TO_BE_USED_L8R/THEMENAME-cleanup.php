@@ -37,7 +37,7 @@ function head_cleanup() {
 	// windows live writer
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	// previous link
-	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+	remove_action( 'wp_head', 'post_rel_link', 10, 0 );
 	// start link
 	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
 	// links for adjacent posts

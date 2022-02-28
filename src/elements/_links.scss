@@ -13,10 +13,13 @@ a {
   color: $link-text;
   background-color: transparent;
   font-family: $link-text-family;
+  font-weight: $font-weight-bold;
+
   &:active {
     color: $link-text-active;
     text-decoration: $link-decoration;
-    outline: 0;
+    outline:none;
+
     &:hover {
       color: shift($link-text-active, $hover-percentage);
       text-decoration: $hover-decoration;

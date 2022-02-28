@@ -7,56 +7,99 @@
  */
 
  defined( 'ABSPATH' ) || die( "Can't access directly" );
-
+ global $path;
+ define( $path, 'get_template_directory()' );
 
 
  add_action( 'after_setup_theme', 'THEMENAE_setup' );
 
  function THEMENAE_setup() {
-  global $path;
-    define( $path, 'get_template_directory()' );
 
-  require $path . 'dev-templates/is-debug.php';
-  require $path . 'inc/custom-header.php';
-  require $path . 'inc/customizer.php';
-  require $path . 'inc/menu-functions.php';
-  require $path . 'inc/template-functions.php';
-  require $path . 'inc/theme-functions.php';
-  require $path . 'inc/theme-support.php';
+  require get_template_directory() . '/dev-templates/is-debug.php';
+  require get_template_directory() . '/inc/admin-options.php';
+  require get_template_directory() . '/inc/template-functions.php';
+  require get_template_directory() . '/inc/body-classes.php';
+  require get_template_directory() . '/inc/custom-theme-functions.php';
+  require get_template_directory() . '/inc/customizer.php';
+  require get_template_directory() . '/inc/edit-link.php';
+  require get_template_directory() . '/inc/helpers.php';
+  require get_template_directory() . '/inc/licences.php';
+  require get_template_directory() . '/inc/menu-functions.php';
+  require get_template_directory() . '/inc/setup.php';
+  require get_template_directory() . '/inc/splot-plugins.php';
+
+  require get_template_directory() . '/inc/theme-functions.php';
+  require get_template_directory() . '/inc/theme-support.php';
+  require get_template_directory() . '/inc/tools.php';
+
+
+  require get_template_directory() . '/inc/classes-theme-options.php';
+
 
    global $content_width;
    if ( !isset( $content_width ) ) { $content_width = 1920; }
 
+   add_action( 'after_setup_theme', 'autologin' );
+   add_action( 'after_setup_theme', 'background_setup' );
+   add_action('after_switch_theme', 'custom_theme_functions');
+   add_action( 'after_setup_theme', 'theme_functions' );
    add_action( 'after_setup_theme', 'theme_support' );
    add_action( 'after_setup_theme', 'theme_setup' );
    add_action( 'after_setup_theme', 'custom_logo_setup' );
    add_action( 'after_setup_theme', 'custom_header_setup' );
    add_action( 'after_setup_theme', 'menu_functions_and_filters' );
+   add_action( 'after_setup_theme', 'load_theme_options', 9 );
+   add_action('after_setup_theme', 'remove_admin_bar');
 
 
+   add_action( 'add_meta_boxes', 'editlink_meta_box' );
+   add_action( 'admin_enqueue_scripts', 'custom_admin_styles' );
    add_action( 'admin_notices', 'admin_notice' );
    add_action( 'admin_init', 'notice_dismissed' );
+   add_action( 'admin_menu', 'change_post_label' );
+   add_action( 'admin_menu', 'drafts_menu');
+   add_action( 'after_switch_theme', 'setup' );
+
    add_action( 'comment_form_before', 'enqueue_comment_reply_script' );
    add_action( 'comment_form_before', 'enqueue_comments_reply' );
    add_action( 'customize_preview_init', 'customize_preview_js' );
    add_action( 'customize_register', 'customize_register' );
+   add_action( 'customize_register', 'register_theme_customizer' );
    add_action( 'get_header', 'enable_threaded_comments' );
+   add_action( 'init', 'change_post_object' );
+   add_action( 'login_enqueue_scripts', 'login_logo' );
+   add_action( 'pre_get_posts', 'show_drafts' );
+   add_action(  'publish_post',  'publish', 10, 2 );
+   add_action( 'rest_api_init', 'create_api_posts_meta_field' );
    add_action( 'widgets_init', 'widgets_init' );
+
+   add_action( 'wp_ajax_nopriv_ajax_tag_search', 'ajax_tag_search' ); //allow on front-end
+   add_action( 'wp_ajax_ajax_tag_search', 'ajax_tag_search' );
+   add_action( 'wp_ajax_nopriv_upload_action', 'upload_action' ); //allow on front-end
+   add_action( 'wp_ajax_upload_action', 'upload_action' );
+   add_action( 'wp_before_admin_bar_render', 'options_to_admin' );
    add_action( 'wp_body_open', 'skip_link', 5 );
 
+  add_action( 'wp_enqueue_scripts', 'add_scripts');
   add_action( 'wp_enqueue_scripts', 'enqueue_scripts_and_styles' );
   add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
   add_action( 'wp_enqueue_scripts', 'enqueue_vendor_scripts_and_styles' );
-  add_action( 'wp_enqueue_scripts', 'header_style' );
   add_action( 'wp_head', 'enqueue_conditional_scripts' );
   add_action( 'wp_head', 'enqueue_fonts' );
+  add_action('wp_head', 'no_featured_image');
+
   add_action( 'wp_head', 'enqueue_scripts' );
   add_action( 'wp_head', 'enqueue_support_scripts_and_styles' );
   add_action( 'wp_head', 'javascript_detection', 0 );
   add_action( 'wp_head', 'pingback_header' );
   add_action( 'wp_footer', 'footer' );
 
+  add_filter('admin_footer_text', 'remove_footer_admin');
+  add_filter( 'auth_cookie_expiration', 'cookie_expiration', 99, 3 );
   add_filter( 'big_image_size_threshold', '__return_false' );
+  add_filter('comment_form_defaults', 'comment_mod');
+  add_filter( 'comment_notification_recipients', 'comment_notification_recipients', 15, 2 );
+  add_filter( 'comment_notification_text', 'comment_notification_text', 20, 2 );
   add_filter( 'document_title_separator', 'document_title_separator' );
   add_filter( 'excerpt_length', 'new_excerpt_length' );
   add_filter( 'excerpt_more', 'excerpt_read_more_link' );
@@ -64,12 +107,38 @@
   add_filter( 'get_comments_number', 'comment_count', 0 );
   add_filter( 'get_the_archive_title', 'get_the_archive_title', 10, 1 );
   add_filter( 'intermediate_image_sizes_advanced', 'image_insert_override' );
+  add_filter( 'login_headerurl', 'login_link' );
+  add_filter('login_message', 'add_login_message');
+  add_filter( 'login_headertext', 'login_logo_url_title' );
+
   add_filter( 'nav_menu_link_attributes', 'schema_url', 10 );
+  add_filter( 'pre_option_image_default_size', 'my_default_image_size' );
+  add_filter( 'query_vars', 'tqueryvars' );
   add_filter( 'show_admin_bar', 'remove_admin_bar' );
   add_filter( 'the_content_more_link', 'read_more_link' );
+  add_filter( 'the_content', 'firstview' );
   add_filter( 'the_excerpt', 'read_more_custom_excerpt' );
-   add_filter( 'the_title', 'title' );
+  add_filter( 'the_generator', 'devfnctn_remove_version' );
+  add_filter( 'the_posts', 'reveal_previews', 10, 2 );
+  add_filter( 'the_title', 'title' );
+  add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+
+	remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
+
+  add_shortcode('count', 'count');
+  add_shortcode("taglist", "taglist");
  }
+
+
+ function devfnctn_remove_version() {
+   return '';
+ }
+
+ function remove_footer_admin () {
+    echo 'Fueled by <a href="http://www.wordpress.org" target="_blank">WordPress</a> | WordPress Tutorials: <a href="https://deardorffassociatesweb.wordpress.com/" target="_blank">Dev</a></p>';
+  }
+
+
 
  function admin_notice() {
    $user_id = get_current_user_id();
@@ -391,7 +460,6 @@
        <?php
      }
    }
-
 
  function customize_controls_enqueue_scripts() {
    wp_enqueue_script(

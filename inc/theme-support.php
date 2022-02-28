@@ -15,6 +15,7 @@
   if ( 127 > Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
     add_theme_support( 'dark-editor-style' );
   }
+function background_setup() {
   add_theme_support( 'custom-background',
     $defaults = array(
       'default-color' => $background_color,
@@ -24,8 +25,13 @@
       'default-position-y' => 'top',
       'default-size'       => 'auto',
       'default-attachment' => 'scroll',
+      'wp-head-callback'       => '_custom_background_cb',
+      'admin-head-callback'    => '',
+      'admin-preview-callback' => ''
     )
   );
+}
+
   add_theme_support( 'custom-background', $defaults );
   add_theme_support( 'custom-header' );
   add_theme_support( 'custom-line-height' );

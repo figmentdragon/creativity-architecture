@@ -77,24 +77,24 @@ add_action( 'customize_register', 'customizer_setup', 20 );
 /**
  * Include Custom Controls
  */
-require get_parent_theme_file_path( 'inc/customizer/controls/custom-controls.php' );
+require get_theme_file_path( 'inc/customizer/controls/custom-controls.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/settings/theme-options.php' );
+require get_theme_file_path( 'inc/customizer/settings/theme-options.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/settings/helpers.php' );
+require get_theme_file_path( 'inc/customizer/settings/helpers.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/settings/reset.php' );
+require get_theme_file_path( 'inc/customizer/settings/reset.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/portfolio.php' );
+require get_theme_file_path( 'inc/customizer/sections/portfolio.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/testimonial.php' );
+require get_theme_file_path( 'inc/customizer/sections/testimonial.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/featured-content.php' );
+require get_theme_file_path( 'inc/customizer/sections/featured-content.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/service.php' );
+require get_theme_file_path( 'inc/customizer/sections/service.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/hero-content.php' );
+require get_theme_file_path( 'inc/customizer/sections/hero-content.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/featured-slider.php' );
+require get_theme_file_path( 'inc/customizer/sections/featured-slider.php' );
 
-require get_parent_theme_file_path( 'inc/customizer/sections/header-media.php' );
+require get_theme_file_path( 'inc/customizer/sections/header-media.php' );

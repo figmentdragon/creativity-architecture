@@ -23,7 +23,7 @@ function head_cleanup() {
 
   remove_action('wp_head', 'index_rel_link');
 
-  remove_action('wp_head', 'parent_post_rel_link', 10, 0 );
+  remove_action('wp_head', 'post_rel_link', 10, 0 );
   remove_action('wp_head', 'print_emoji_detection_script', 7);
 
   remove_action('wp_head', 'rsd_link');
