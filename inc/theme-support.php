@@ -11,11 +11,24 @@
   add_theme_support( 'align-wide' );
   add_theme_support( 'automatic-feed-links' );
 
+  add_theme_support( 'catch-sticky-menu', apply_filters( 'catch_wedding_sticky_menu_args', array(
+    'sticky_desktop_menu_selector' => '#masthead',
+    'sticky_mobile_menu_selector'  => '#masthead',
+    'sticky_background_color'      => '#ffffff',
+    'sticky_text_color'            => '#000000',
+  ) ) );
+
+  add_theme_support( 'catch-breadcrumb',
+    array(
+      'content_selector'   => '.custom-header .entry-header',
+      'breadcrumb_dynamic' => 'after',
+    )
+  );
+
   $background_color = get_theme_mod( 'background_color', '000100' );
-  if ( 127 > Custom_Colors::get_relative_luminance_from_hex( $background_color ) ) {
-    add_theme_support( 'dark-editor-style' );
-  }
-function background_setup() {
+    if ( 127 > Custom_Colors::get_relative_luminance_from_hex( $background_color ) )
+    { add_theme_support( 'dark-editor-style' ); }
+  function background_setup() {
   add_theme_support( 'custom-background',
     $defaults = array(
       'default-color' => $background_color,
@@ -54,8 +67,7 @@ function background_setup() {
   add_theme_support( 'editor-styles' );
 	add_theme_support( 'ew-newsletter-image' );
   add_theme_support( 'experimental-link-color' );
-  add_theme_support(
-    'html5',
+  add_theme_support( 'html5',
     array(
       'caption',
       'comment-form',
@@ -67,6 +79,8 @@ function background_setup() {
     )
   );
 
+  add_theme_support( 'menu-descriptions' );
+	add_theme_support( 'portfolio' );
   add_theme_support( 'post-formats',
     array(
       'aside',

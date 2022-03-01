@@ -1,21 +1,37 @@
-jQuery(function(s) {
-    var e = [
-        ["#customize-theme-controls", "all", "ct-reset", "ct-reset-main", CustomizerReset.confirm, CustomizerReset.reset]
+/* global jQuery, CustomizerReset, ajaxurl, wp */
+
+jQuery(function ($) {
+  var sections = [
+      [ '#customize-theme-controls', 'all', 'ct-reset', 'ct-reset-main', CustomizerReset.confirm, CustomizerReset.reset ]
     ];
-    s.each(e, function(e, o) {
-        var t = s(o[0]),
-            c = s('<input type="submit" name="' + o[2] + '" id="' + o[2] + '" class="ct-reset ' + o[3] + ' button-secondary button">').attr("value", o[5]);
-        c.on("click", function(e) {
-            e.preventDefault();
-            var t = {
-                wp_customize: "on",
-                action: "customizer_reset",
-                nonce: CustomizerReset.nonce.reset,
-                section: o[1]
-            };
-            confirm(o[4]) && (s(".spinner").css("visibility", "visible"), c.attr("disabled", "disabled"), s.post(ajaxurl, t, function() {
-                wp.customize.state("saved").set(!0), location.reload()
-            }))
-        }), t.after(c)
-    })
-});
+    $.each( sections, function( key, value ) {
+      var $container = $(value[0]);
+
+    var $button = $('<input type="submit" name="' + value[2] + '" id="' + value[2] + '" class="ct-reset ' + value[3] + ' button-secondary button">')
+    .attr('value', value[5]);
+
+    $button.on('click', function (event) {
+        event.preventDefault();
+
+      var data = {
+        wp_customize: "on",
+        action: "customizer_reset",
+        nonce: CustomizerReset.nonce.reset,
+        section: value[1]
+      };
+
+      var r = confirm(value[4]);
+
+      if (!r) return; &&
+
+      $(".spinner").css('visibility', 'visible');
+
+      $button.attr('disabled', 'disabled');
+
+      s.post(ajaxurl, t, function() {
+        wp.customize.state("saved").set(true); location.reload()
+      });
+    });
+        $container.after($button);
+      });
+  });

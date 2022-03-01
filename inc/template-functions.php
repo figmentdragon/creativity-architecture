@@ -212,6 +212,57 @@ if ( ! function_exists( 'has_header_media_text' ) ):
 	} // has_header_media_text.
 endif;
 
+// Overwrite parent theme's blog header function
+add_action( 'after_header', 'blog_header_image', 11 );
+function blog_header_image() {
+
+	if ( ( is_front_page() && is_home() ) || ( is_home() ) ) {
+		$blog_header_image 			=  get_setting( 'blog_header_image' );
+		$blog_header_title 			=  get_setting( 'blog_header_title' );
+		$blog_header_text 			=  get_setting( 'blog_header_text' );
+		$blog_header_button_text 	=  get_setting( 'blog_header_button_text' );
+		$blog_header_button_url 	=  get_setting( 'blog_header_button_url' );
+		if ( $blog_header_image != '' ) { ?>
+		<div class="page-header-image grid-parent page-header-blog" style="background-image: url('<?php echo esc_url($blog_header_image); ?>') !important;">
+        	<div class="page-header-noiseoverlay"></div>
+        	<div class="page-header-blog-inner">
+                <div class="page-header-blog-content-h grid-container">
+                    <div class="page-header-blog-content">
+                    <?php if ( $blog_header_title != '' ) { ?>
+                        <div class="page-header-blog-text">
+                            <?php if ( $blog_header_title != '' ) { ?>
+                            <h2><?php echo wp_kses_post( $blog_header_title ); ?></h2>
+                            <div class="clearfix"></div>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                    </div>
+                </div>
+                <div class="page-header-blog-content page-header-blog-content-b">
+                	<?php if ( $blog_header_text != '' ) { ?>
+                	<div class="page-header-blog-text">
+						<?php if ( $blog_header_title != '' ) { ?>
+                        <p><?php echo wp_kses_post( $blog_header_text ); ?></p>
+                        <div class="clearfix"></div>
+                        <?php } ?>
+                    </div>
+                    <?php } ?>
+                    <div class="page-header-blog-button">
+                        <?php if ( $blog_header_button_text != '' ) { ?>
+                        <a class="read-more button" href="<?php echo esc_url( $blog_header_button_url ); ?>"><?php echo esc_html( $blog_header_button_text ); ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<?php
+		}
+	}
+}
+
+
+
+
 
 
 function content_image() {

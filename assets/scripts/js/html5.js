@@ -90,10 +90,10 @@
    */
   function addElements(newElements, ownerDocument) {
     var elements = html5.elements;
-    if (typeof elements != 'string'){
+    if(typeof elements != 'string'){
       elements = elements.join(' ');
     }
-    if (typeof newElements != 'string'){
+    if(typeof newElements != 'string'){
       newElements = newElements.join(' ');
     }
     html5.elements = elements +' '+ newElements;
@@ -128,7 +128,7 @@
     if (!ownerDocument) {
         ownerDocument = document;
     }
-    if (supportsUnknownElements){
+    if(supportsUnknownElements){
         return ownerDocument.createElement(nodeName);
     }
     if (!data) {
@@ -164,7 +164,7 @@
     if (!ownerDocument) {
         ownerDocument = document;
     }
-    if (supportsUnknownElements){
+    if(supportsUnknownElements){
         return ownerDocument.createDocumentFragment();
     }
     data = data || getExpandoData(ownerDocument);
@@ -319,7 +319,7 @@
   // shiv the document
   shivDocument(document);
 
-  if (typeof module == 'object' && module.exports){
+  if(typeof module == 'object' && module.exports){
     module.exports = html5;
   }
 

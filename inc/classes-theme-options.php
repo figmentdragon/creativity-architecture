@@ -43,32 +43,32 @@ class Theme_Options {
 
 	/* Add page(s) to be available as tabs */
 	public function add_pages() {
-		add_theme_page( 'Options', '__THEMENAE__ Options', 'manage_options', 'options', array( &$this, 'display_options_page' ) );
+		add_theme_page( 'Options', ' Options', 'manage_options', 'options', array( &$this, 'display_options_page' ) );
 
 		// import/export settings page
-		add_theme_page( 'Import/Export', 'Import/Export __THEMENAE__ Options', 'manage_options', 'splot-settings', array( &$this, 'display_import_export_settings' ) );
+		add_theme_page( 'Import/Export', 'Import/Export  Options', 'manage_options', 'settings', array( &$this, 'display_import_export_settings' ) );
 	}
 
 	/* Display theme options page */
 	public function display_options_page() {
 		echo '<div class="wrap">
-		<h1>__THEMENAE__ Options</h1>';
+		<h1> Options</h1>';
 
 		// check for notices
 		if ( isset( $_GET['settings-updated'] ) && $_GET['settings-updated'] == true ) {
 			// for settings updates
-			echo '<div class="updated fade"><p>' . __( '__THEMENAE__ settings updated.' ) . '</p></div>';
+			echo '<div class="updated fade"><p>' . __( ' settings updated.' ) . '</p></div>';
 
 		} elseif ( isset( $_GET['settings-imported'] ) && $_GET['settings-imported'] == true ) {
 			// notice for successful import of settings
-			echo '<div class="updated fade"><p>' . __( '__THEMENAE__ settings successfully imported. Double check the Writing Form page (contnt will not be imported) and the default category.' ) . '</p></div>';
+			echo '<div class="updated fade"><p>' . __( ' settings successfully imported. Double check the Writing Form page (contnt will not be imported) and the default category.' ) . '</p></div>';
 		}
 
 		echo '<form action="options.php" method="post" enctype="multipart/form-data">';
 
 		settings_fields( 'options' );
 
-		echo  '<h2 class="nav-tab-wrapper"><a class="nav-tab nav-tab-active" href="?page=options">Settings</a><a class="nav-tab" href="?page=splot-settings">Import/Export</a></h2>';
+		echo  '<h2 class="nav-tab-wrapper"><a class="nav-tab nav-tab-active" href="?page=options">Settings</a><a class="nav-tab" href="?page=settings">Import/Export</a></h2>';
 
 		do_settings_sections( $_GET['page'] );
 
@@ -114,20 +114,20 @@ class Theme_Options {
 		// ------h/t https://pippinsplugins.com/building-settings-import-export-feature/
 
 	 	echo '<div class="wrap">
-		<h1>Import and Export __THEMENAE__ Settings</h1>';
+		<h1>Import and Export Settings</h1>';
 
 		// first the export button
 		echo '<form method="post">
 
 		<h2 class="nav-tab-wrapper">
 		<a class="nav-tab" href="?page=options">Settings</a>
-		<a class="nav-tab nav-tab-active" href="?page=splot-settings">Import/Export</a></h2><h3>Export Settings</h3><p>Export the __THEMENAE__ settings for this site as a .json file. This allows you to easily import the configuration into another site. </p><p><input type="hidden" name="action" value="export_settings" /></p>
+		<a class="nav-tab nav-tab-active" href="?page=settings">Import/Export</a></h2><h3>Export Settings</h3><p>Export the  settings for this site as a .json file. This allows you to easily import the configuration into another site. </p><p><input type="hidden" name="action" value="export_settings" /></p>
 			<p>';
 			wp_nonce_field( 'settings_export_nonce', 'settings_export_nonce' );
 			submit_button( __( 'Export Settings' ), 'secondary', 'do_export_settings', false );
 
 		// next the import interface
-		echo '</form><h3>Import Settings</h3><p>Import the __THEMENAE__ settings from a .json file. This file can be obtained by exporting the settings on another site using the export method above. <strong>This will override the current settings except for the page for the Writing Form and the default category..</strong></p>
+		echo '</form><h3>Import Settings</h3><p>Import the  settings from a .json file. This file can be obtained by exporting the settings on another site using the export method above. <strong>This will override the current settings except for the page for the Writing Form and the default category..</strong></p>
 		<form method="post" enctype="multipart/form-data">
 		<input type="file" name="import_settings"/>
 		<input type="hidden" name="action" value="import_settings" />';
@@ -589,7 +589,7 @@ Edit this to be more appropriate for your onw site as sample starting content.',
 	public function display_general() {
 		// section heading for general setttings
 
-		echo '<p>These settings manage the behavior and appearance of your __THEMENAE__ site. See the <a href="https://github.com/cogdog/__THEMENAE__" target="_blank">the documentation at the theme source on GitHub</a> (a new SPLOT documentation site is in development) .</p><p>If this kind of stuff has any value to you, please consider supporting me so I can do more!</p><p style="text-align:center"><a href="https://patreon.com/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-patreon.png" alt="donate on patreon"></a> &nbsp; <a href="https://paypal.me/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-paypal.png" alt="donate on paypal"></a></p> ';
+		echo '<p>These settings manage the behavior and appearance of your  site. See the <a href="https://github.com/cogdog/" target="_blank">the documentation at the theme source on GitHub</a> (a new SPLOT documentation site is in development) .</p><p>If this kind of stuff has any value to you, please consider supporting me so I can do more!</p><p style="text-align:center"><a href="https://patreon.com/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-patreon.png" alt="donate on patreon"></a> &nbsp; <a href="https://paypal.me/cogdog" target="_blank"><img src="https://cogdog.github.io/images/badge-paypal.png" alt="donate on paypal"></a></p> ';
 	}
 
 
@@ -734,7 +734,7 @@ Edit this to be more appropriate for your onw site as sample starting content.',
 		if ( $options["defheaderimg"] ) $options["defheaderimg"] = wp_get_attachment_url($options["defheaderimg"]);
 
 		// add a key name to validate on import
-		$options["splotname"] = "__THEMENAE__";
+		$options["%s"] = "{% Blog_Name %}";
 
 		// start json output to download
 		nocache_headers();
@@ -772,7 +772,7 @@ Edit this to be more appropriate for your onw site as sample starting content.',
 		$settings = (array) json_decode( file_get_contents( $import_file ) );
 
 		if (!$settings["splotname"] or $settings["splotname"] != "__THEMENAE__") {
-			wp_die( __( 'This does not appear to be a __THEMENAE__ export file. Missing splotname.' ) );
+			wp_die( __( 'This does not appear to be a  export file. Missing splotname.' ) );
 		}
 
 		//  discard the validation key
