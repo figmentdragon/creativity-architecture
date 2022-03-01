@@ -48,6 +48,8 @@ function customize_register( $wp_customize ) {
         array(
           'priority' => 25,
           'title' => __( 'Layout', '__THEMENAE__' ),
+          'description' => esc_html__( 'Page Layouts' ),
+          'capability' => 'edit_theme_options',
         )
       );
     }
@@ -86,8 +88,11 @@ function customize_register( $wp_customize ) {
 		) );
   $wp_customize->add_section( 'theme_options',
     array(
-      'title'    => esc_html__( 'Theme Options', '__THEMENAE__' ),
+      'title'    => __( 'Theme Options' ),
+      'description' => esc_html__( 'Theme Options' ),
       'priority' => 125,
+      'capability' => 'edit_theme_options',
+      'description_hidden' => 'false',
     )
   );
   $wp_customize->add_section( 'layout_effects',

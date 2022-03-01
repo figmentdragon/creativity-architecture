@@ -28,15 +28,15 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Typography_Custo
 			parent::to_json();
 
 			$number_of_fonts = apply_filters( 'number_of_fonts', 200 );
-			$this->json[ 'default_fonts_title'] = __( 'System fonts', 'lalita' );
-			$this->json[ 'google_fonts_title'] = __( 'Google fonts', 'lalita' );
+			$this->json[ 'default_fonts_title'] = __( 'System fonts', '__THEMENAE__' );
+			$this->json[ 'google_fonts_title'] = __( 'Google fonts', '__THEMENAE__' );
 			$this->json[ 'google_fonts' ] = apply_filters( 'typography_customize_list', get_all_google_fonts( $number_of_fonts ) );
 			$this->json[ 'default_fonts' ] = typography_default_fonts();
-			$this->json[ 'family_title' ] = esc_html__( 'Font family', 'lalita' );
-			$this->json[ 'weight_title' ] = esc_html__( 'Font weight', 'lalita' );
-			$this->json[ 'transform_title' ] = esc_html__( 'Text transform', 'lalita' );
+			$this->json[ 'family_title' ] = esc_html__( 'Font family', '__THEMENAE__' );
+			$this->json[ 'weight_title' ] = esc_html__( 'Font weight', '__THEMENAE__' );
+			$this->json[ 'transform_title' ] = esc_html__( 'Text transform', '__THEMENAE__' );
 			$this->json[ 'category_title' ] = '';
-			$this->json[ 'variant_title' ] = esc_html__( 'Variants', 'lalita' );
+			$this->json[ 'variant_title' ] = esc_html__( 'Variants', '__THEMENAE__' );
 
 			foreach ( $this->settings as $setting_key => $setting_id ) {
 				$this->json[ $setting_key ] = array(
@@ -58,34 +58,34 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Typography_Custo
 
 		public function content_template() {
 			?>
-			<# if ( '' !== data.label ) { #>
+			<?php if ( '' !== data.label ) { ?>
 				<span class="customize-control-title">{{ data.label }}</span>
-			<# } #>
-			<# if ( 'undefined' !== typeof ( data.family ) ) { #>
+			<?php } ?>
+			<?php if ( 'undefined' !== typeof ( data.family ) ) { ?>
 				<div class="font-family">
 					<label>
 						<select {{{ data.family.link }}} data-category="{{{ data.category.id }}}" data-variants="{{{ data.variant.id }}}" style="width:100%;">
 							<optgroup label="{{ data.default_fonts_title }}">
-								<# for ( var key in data.default_fonts ) { #>
-									<# var name = data.default_fonts[ key ].split(',')[0]; #>
-									<option value="{{ data.default_fonts[ key ] }}"  <# if ( data.default_fonts[ key ] === data.family.value ) { #>selected="selected"<# } #>>{{ name }}</option>
-								<# } #>
+								<?php foreach ( $key in data.default_fonts ) { ?>
+									<?php var name = data.default_fonts[ key ].split(',')[0]; ?>
+									<option value="{{ data.default_fonts[ key ] }}"  <?php if ( data.default_fonts[ key ] === data.family.value ) { ?>selected="selected"<?php } ?>>{{ name }}</option>
+								<?php } ?>
 							</optgroup>
 							<optgroup label="{{ data.google_fonts_title }}">
-								<# for ( var key in data.google_fonts ) { #>
-									<option value="{{ data.google_fonts[ key ].name }}"  <# if ( data.google_fonts[ key ].name === data.family.value ) { #>selected="selected"<# } #>>{{ data.google_fonts[ key ].name }}</option>
-								<# } #>
+								<?php for ( var key in data.google_fonts ) { ?>
+									<option value="{{ data.google_fonts[ key ].name }}"  <?php if ( data.google_fonts[ key ].name === data.family.value ) { ?>selected="selected"<?php } ?>>{{ data.google_fonts[ key ].name }}</option>
+								<?php } ?>
 							</optgroup>
 						</select>
-						<# if ( '' !== data.family_title ) { #>
+						<?php if ( '' !== data.family_title ) { ?>
 							<p class="description">{{ data.family_title }}</p>
-						<# } #>
+						<?php } ?>
 					</label>
 				</div>
-			<# } #>
+			<?php } ?>
 
-			<# if ( 'undefined' !== typeof ( data.variant ) ) { #>
-				<#
+			<?php if ( 'undefined' !== typeof ( data.variant ) ) { ?>
+				<?php
 				var id = data.family.value.split(' ').join('_').toLowerCase();
 				var font_data = data.google_fonts[id];
 				var variants = '';
@@ -96,70 +96,70 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Typography_Custo
 				if ( null === data.variant.value ) {
 					data.variant.value = data.variant.default;
 				}
-				#>
+				?>
 				<div id={{{ data.variant.id }}}" class="font-variant" data-saved-value="{{ data.variant.value }}">
 					<label>
 						<select name="{{{ data.variant.id }}}" multiple class="typography-multi-select" style="width:100%;" {{{ data.variant.link }}}>
-							<# _.each( variants, function( label, choice ) { #>
+							<?php _.each( variants, function( label, choice ) { ?>
 								<option value="{{ label }}">{{ label }}</option>
-							<# } ) #>
+							<?php } ) ?>
 						</select>
 
-						<# if ( '' !== data.variant_title ) { #>
+						<?php if ( '' !== data.variant_title ) { ?>
 							<p class="description">{{ data.variant_title }}</p>
-						<# } #>
+						<?php } ?>
 					</label>
 				</div>
-			<# } #>
+			<?php } ?>
 
-			<# if ( 'undefined' !== typeof ( data.category ) ) { #>
+			<?php if ( 'undefined' !== typeof ( data.category ) ) { ?>
 				<div class="font-category">
 					<label>
 							<input name="{{{ data.category.id }}}" type="hidden" {{{ data.category.link }}} value="{{{ data.category.value }}}" class="hidden-input" />
-						<# if ( '' !== data.category_title ) { #>
+						<?php if ( '' !== data.category_title ) { ?>
 							<p class="description">{{ data.category_title }}</p>
-						<# } #>
+						<?php } ?>
 					</label>
 				</div>
-			<# } #>
+			<?php } ?>
 
-			<# if ( 'undefined' !== typeof ( data.weight ) ) { #>
+			<?php if ( 'undefined' !== typeof ( data.weight ) ) { ?>
 				<div class="font-weight">
 					<label>
 						<select {{{ data.weight.link }}}>
 
-							<# _.each( data.weight.choices, function( label, choice ) { #>
+							<?php _.each( data.weight.choices, function( label, choice ) { ?>
 
-								<option value="{{ choice }}" <# if ( choice === data.weight.value ) { #> selected="selected" <# } #>>{{ label }}</option>
+								<option value="{{ choice }}" <?php if ( choice === data.weight.value ) { ?> selected="selected" <?php } ?>>{{ label }}</option>
 
-							<# } ) #>
+							<?php } ) ?>
 
 						</select>
-						<# if ( '' !== data.weight_title ) { #>
+						<?php if ( '' !== data.weight_title ) { ?>
 							<p class="description">{{ data.weight_title }}</p>
-						<# } #>
+						<?php } ?>
 					</label>
 				</div>
-			<# } #>
+			<?php } ?>
 
-			<# if ( 'undefined' !== typeof ( data.transform ) ) { #>
+			<?php if ( 'undefined' !== typeof ( data.transform ) ) { ?>
 				<div class="font-transform">
 					<label>
 						<select {{{ data.transform.link }}}>
 
-							<# _.each( data.transform.choices, function( label, choice ) { #>
+							<?php _.each( data.transform.choices, function( label, choice ) { ?>
 
-								<option value="{{ choice }}" <# if ( choice === data.transform.value ) { #> selected="selected" <# } #>>{{ label }}</option>
+								<option value="{{ choice }}" <?php if ( choice === data.transform.value ) { ?> selected="selected" <?php } ?>>{{ label }}</option>
 
-							<# } ) #>
+							<?php } ) ?>
 
 						</select>
-						<# if ( '' !== data.transform_title ) { #>
+						<?php if ( '' !== data.transform_title ) { ?>
 							<p class="description">{{ data.transform_title }}</p>
-						<# } #>
+						<?php } ?>
 					</label>
 				</div>
-			<# } #>
+			<?php } ?>
 			<?php
 		}
 
