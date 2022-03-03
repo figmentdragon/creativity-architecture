@@ -4,48 +4,48 @@
 @import "grid/grid";
 
 /* 3 */
-@import "01-tools/properties/change-percentage";
-@import "01-tools/properties/options";
-@import "01-tools/properties/escaped-characters";
-@import "01-tools/properties/structure";
-@import "01-tools/properties/positioning";
-@import "01-tools/properties/aspect-ratio";
+@import "02-tools/properties/change-percentage";
+@import "02-tools/properties/options";
+@import "02-tools/properties/escaped-characters";
+@import "02-tools/properties/structure";
+@import "02-tools/properties/positioning";
+@import "02-tools/properties/aspect-ratio";
 
 /* 2 */
-@import "01-tools/functions/assert-ascending";
-@import "01-tools/functions/assert-at-zero";
-@import "01-tools/functions/color-function";
-@import "01-tools/functions/color-contrast";
-@import "01-tools/functions/make-color-map";
-@import "01-tools/functions/escape-svg";
-@import "01-tools/functions/map-multiple";
-@import "01-tools/functions/negativify-map";
-@import "01-tools/functions/replace-search";
-@import "01-tools/functions/valid-calc";
+@import "02-tools/functions/assert-ascending";
+@import "02-tools/functions/assert-at-zero";
+@import "02-tools/functions/color-function";
+@import "02-tools/functions/color-contrast";
+@import "02-tools/functions/make-color-map";
+@import "02-tools/functions/escape-svg";
+@import "02-tools/functions/map-multiple";
+@import "02-tools/functions/negativify-map";
+@import "02-tools/functions/replace-search";
+@import "02-tools/functions/valid-calc";
 
-@import "01-tools/qualities/base-units";
-@import "01-tools/qualities/size";
-@import "01-tools/qualities/spacing";
-@import "01-tools/qualities/width";
-@import "01-tools/qualities/height";
-@import "01-tools/qualities/padding";
-@import "01-tools/qualities/border";
-@import "01-tools/qualities/zindex";
+@import "02-tools/qualities/base-units";
+@import "02-tools/qualities/size";
+@import "02-tools/qualities/spacing";
+@import "02-tools/qualities/width";
+@import "02-tools/qualities/height";
+@import "02-tools/qualities/padding";
+@import "02-tools/qualities/border";
+@import "02-tools/qualities/zindex";
 
-@import "02-variables/colors/gray-scale";
-@import "02-variables/colors/base";
+@import "01-variables/colors/gray-scale";
+@import "01-variables/colors/base";
 $silver : #c0c0c0;
 $chocolate : #3F000F;
-@import "02-variables/colors/theme";
-@import "02-variables/colors/rgba";
-@import "02-variables/colors/contrast";
+@import "01-variables/colors/theme";
+@import "01-variables/colors/rgba";
+@import "01-variables/colors/contrast";
 
-@import "01-tools/utilities/colored-links";
-@import "01-tools/utilities/responsive";
-@import "01-tools/utilities/rfs";
-@import "01-tools/utilities/utilities-generator";
-@import "01-tools/utilities/utilities";
-@import "01-tools/utilities/api";
+@import "02-tools/utilities/colored-links";
+@import "02-tools/utilities/responsive";
+@import "02-tools/utilities/rfs";
+@import "02-tools/utilities/utilities-generator";
+@import "02-tools/utilities/utilities";
+@import "02-tools/utilities/api";
 
 /* 3 */
 @import "patterns/patterns";
