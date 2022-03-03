@@ -1,17 +1,12 @@
 /* 1 */
 @import "banner";
 
-@import "grid/grid";
+$variable-prefix: ca-;
 
-/* 3 */
-@import "02-tools/properties/change-percentage";
-@import "02-tools/properties/options";
-@import "02-tools/properties/escaped-characters";
-@import "02-tools/properties/structure";
-@import "02-tools/properties/positioning";
-@import "02-tools/properties/aspect-ratio";
+@import "05-wrappers-containers/grid/grid";
 
-/* 2 */
+/* 2.0 Tools */
+/* 2.0 Functions */
 @import "02-tools/functions/assert-ascending";
 @import "02-tools/functions/assert-at-zero";
 @import "02-tools/functions/color-function";
@@ -23,6 +18,14 @@
 @import "02-tools/functions/replace-search";
 @import "02-tools/functions/valid-calc";
 
+@import "02-tools/properties/change-percentage";
+@import "02-tools/properties/options";
+@import "02-tools/properties/escaped-characters";
+@import "02-tools/properties/structure";
+@import "02-tools/properties/positioning";
+@import "02-tools/properties/aspect-ratio";
+
+/* 2.0 Qualities */
 @import "02-tools/qualities/base-units";
 @import "02-tools/qualities/size";
 @import "02-tools/qualities/spacing";
@@ -32,6 +35,8 @@
 @import "02-tools/qualities/border";
 @import "02-tools/qualities/zindex";
 
+/* 1.0 Variables */
+/* 1.1 Colors */
 @import "01-variables/colors/gray-scale";
 @import "01-variables/colors/base";
 $silver : #c0c0c0;
@@ -40,6 +45,19 @@ $chocolate : #3F000F;
 @import "01-variables/colors/rgba";
 @import "01-variables/colors/contrast";
 
+@import "01-variables/link";
+
+/* 1.2 Typography */
+@import "01-variables/typography/typography";
+@import "01-variables/typography/properties/heading-properties";
+@import "01-variables/typography/properties/type-properties";
+
+
+
+/* 2.0 Properties */
+
+
+/* 2.0 Utilities */
 @import "02-tools/utilities/colored-links";
 @import "02-tools/utilities/responsive";
 @import "02-tools/utilities/rfs";
@@ -47,113 +65,100 @@ $chocolate : #3F000F;
 @import "02-tools/utilities/utilities";
 @import "02-tools/utilities/api";
 
-/* 3 */
-@import "patterns/patterns";
-@import "patterns/background";
-@import "patterns/text";
-@import "patterns/button";
-@import "patterns/link";
+/* 3.0 Global*/
+/* 3.0 Patterns*/
+@import "03-global/patterns/patterns";
 
-/* 2.2.2 */
-@import "patterns/gradient";
-@import "patterns/gradients/global-gradient";
-@import "patterns/gradients/theme-gradient";
-  @import "patterns/gradients/mixins/gradient-mixins";
-  @import "patterns/gradients/mixins/css-gradient";
-  @import "patterns/gradients/mixins/global-gradient";
-  @import "patterns/gradients/mixins/theme-mixins";
 
-/* 2.2.3 */
-@import "patterns/shadow";
-  @import "patterns/shadows/helper-shadow";
-  @import "patterns/shadows/box-shadow";
-  @import "patterns/shadows/button-shadow";
-  @import "patterns/shadows/card-shadow";
+/* 2.0 Mixins */
+@import "02-tools/mixins/responsive";
+@import "02-tools/mixins/backdrop";
+@import "02-tools/mixins/border-box";
+@import "02-tools/mixins/border-radius";
+@import "02-tools/mixins/buttons";
+@import "02-tools/mixins/cards";
+@import "02-tools/mixins/caret";
+@import "02-tools/mixins/center-block";
+@import "02-tools/mixins/color-scheme";
+@import "02-tools/mixins/container";
+@import "02-tools/mixins/elevation";
+@import "02-tools/mixins/flex";
+@import "02-tools/mixins/font-size";
+@import "02-tools/mixins/hover";
+@import "02-tools/mixins/hue-rotate";
+@import "02-tools/mixins/links";
+@import "02-tools/mixins/list";
+@import "02-tools/mixins/list-padding";
+@import "02-tools/mixins/ltr";
+@import "02-tools/mixins/media";
+@import "02-tools/mixins/navigation";
+@import "02-tools/mixins/placeholder";
+@import "02-tools/mixins/reset-box";
+@import "02-tools/mixins/text-truncate";
+@import "02-tools/mixins/transition";
+@import "02-tools/mixins/visually-hidden";
+@import "02-tools/mixins/clearfix";
 
-@import "mixins/responsive";
-@import "mixins/backdrop";
-@import "mixins/border-box";
-@import "mixins/border-radius";
-@import "mixins/buttons";
-@import "mixins/cards";
-@import "mixins/caret";
-@import "mixins/center-block";
-@import "mixins/color-scheme";
-@import "mixins/container";
-@import "mixins/elevation";
-@import "mixins/flex";
-@import "mixins/font-size";
-@import "mixins/hover";
-@import "mixins/hue-rotate";
-@import "mixins/links";
-@import "mixins/list";
-@import "mixins/list-padding";
-@import "mixins/ltr";
-@import "mixins/media";
-@import "mixins/navigation";
-@import "mixins/placeholder";
-@import "mixins/reset-box";
-@import "mixins/text-truncate";
-@import "mixins/transition";
-@import "mixins/visually-hidden";
-@import "mixins/clearfix";
+/* 2.0 Helpers */
+@import "02-tools/helpers/a11y";
+@import "02-tools/helpers/alignment";
+@import "02-tools/helpers/borders";
+@import "02-tools/helpers/clearfix";
+@import "02-tools/helpers/lists";
+@import "02-tools/helpers/misc";
+@import "02-tools/helpers/ratio";
+@import "02-tools/helpers/span";
+@import "02-tools/helpers/stacks";
+@import "02-tools/helpers/stretched-link";
+@import "02-tools/helpers/text-truncation";
+@import "02-tools/helpers/type";
+@import "02-tools/helpers/visibility";
+@import "02-tools/helpers/visually-hidden";
+@import "02-tools/helpers/vr";
 
-@import "typography/typography";
-@import "typography/properties/heading-properties";
-@import "typography/properties/type-properties";
-@import "typography/blockquote";
-@import "typography/body";
-@import "typography/display";
-@import "typography/emphasis";
-@import "typography/figure";
-@import "typography/headings";
-@import "typography/lead";
-@import "typography/type";
 
-@import "03-layout/base/root";
-@import "03-layout/base/responsive-style";
-@import "03-layout/base/media-query";
 
-@import "03-layout/base/reset";
-@import "03-layout/base/normalize";
 
-@import "03-layout/base/wrapper";
-@import "03-layout/base/section";
-@import "03-layout/base/div";
-@import "03-layout/base/span";
+/* 3.0 Base*/
+@import "03-global/base/root";
+@import "03-global/base/responsive-style";
+@import "03-global/base/media-query";
 
-@import "03-layout/html/index";
-@import "03-layout/html/body";
-@import "03-layout/html/header";
-@import "03-layout/html/nav";
-@import "03-layout/html/main";
-@import "03-layout/html/article";
-@import "03-layout/html/aside";
-@import "03-layout/html/footer";
+@import "03-global/base/reset";
+@import "03-global/base/normalize";
 
-/* Elements - basic non-text building blocks */
-@import "elements/links";
-@import "elements/lists";
-@import "elements/hr";
+@import "03-global/base/wrapper";
+@import "03-global/base/section";
+@import "03-global/base/div";
+@import "03-global/base/span";
 
-@import "helpers/a11y";
-@import "helpers/alignment";
-@import "helpers/borders";
-@import "helpers/clearfix";
-@import "helpers/lists";
-@import "helpers/misc";
-@import "helpers/ratio";
-@import "helpers/span";
-@import "helpers/stacks";
-@import "helpers/stretched-link";
-@import "helpers/text-truncation";
-@import "helpers/type";
-@import "helpers/visibility";
-@import "helpers/visually-hidden";
-@import "helpers/vr";
+/* 4.0 Bare Elements*/
+/* 4.0 HTML*/
+@import "04-bare_elements/html/index";
+@import "04-bare_elements/html/body";
+@import "04-bare_elements/html/header";
+@import "04-bare_elements/html/nav";
+@import "04-bare_elements/html/main";
+@import "04-bare_elements/html/article";
+@import "04-bare_elements/html/aside";
+@import "04-bare_elements/html/footer";
 
+/* 4.0 Bare Type*/
+@import "04-bare_elements/type/blockquote";
+@import "04-bare_elements/type/body";
+@import "04-bare_elements/type/display";
+@import "04-bare_elements/type/emphasis";
+@import "04-bare_elements/type/figure";
+@import "04-bare_elements/type/headings";
+@import "04-bare_elements/type/lead";
+@import "04-bare_elements/type/type";
 
 @import "partials/logo";
 @import "partials/headings";
 @import "partials/site-header";
 @import "partials/site-footer";
+
+/* Elements - basic non-text building blocks */
+@import "elements/links";
+@import "elements/lists";
+@import "elements/hr";
