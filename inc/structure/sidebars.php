@@ -8,13 +8,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__construct_sidebars' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectconstruct_sidebars' ) ) {
 	/**
 	 * Construct the sidebars.
 	 *
 	 */
-	function __THEMENAE__construct_sidebars() {
-		$layout = __THEMENAE__get_layout();
+	function TheCreativityArchitectconstruct_sidebars() {
+		$layout = TheCreativityArchitectget_layout();
 
 		// When to show the right sidebar.
 		$rs = array( 'right-sidebar', 'both-sidebars', 'both-right', 'both-left' );

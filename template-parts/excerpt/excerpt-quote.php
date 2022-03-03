@@ -5,17 +5,17 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 $content = get_the_content();
 
 // If there is no quote or pullquote print the content.
 if ( has_block( 'core/quote', $content ) ) {
-	__THEMENAE___print_first_instance_of_block( 'core/quote', $content );
+	TheCreativityArchitect_print_first_instance_of_block( 'core/quote', $content );
 } elseif ( has_block( 'core/pullquote', $content ) ) {
-	__THEMENAE___print_first_instance_of_block( 'core/pullquote', $content );
+	TheCreativityArchitect_print_first_instance_of_block( 'core/pullquote', $content );
 } else {
 	the_excerpt();
 }

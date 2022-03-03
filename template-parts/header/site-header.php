@@ -3,8 +3,8 @@
  * Displays the site header.
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 $wrapper_classes  = 'site-header';

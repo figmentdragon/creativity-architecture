@@ -238,7 +238,7 @@ if ( ! function_exists( 'beaver_builder_css' ) ) {
 					padding:0;
 				}';
 				$css = str_replace(array("\r", "\n", "\t"), '', $css);
-				wp_add_inline_style( '__THEMENAE-style', $css );
+				wp_add_inline_style( 'TheCreativityArchitect-style', $css );
 			}
 		}
 	}

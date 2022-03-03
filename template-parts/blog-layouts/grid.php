@@ -2,7 +2,7 @@
 /**
  * Blog Layout | Grid.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 
@@ -48,7 +48,7 @@ $post_classes[]         = 'post-style-' . $style;
 
 			<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '__THEMENAE__' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'TheCreativityArchitect' ),
 				'after'  => '</div>',
 			) );
 			?>

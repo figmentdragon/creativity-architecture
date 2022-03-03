@@ -1,0 +1,41 @@
+#wrapper-footer {
+  position: fixed;
+  right: 0;
+  bottom: 1vh;
+  left: 0;
+  z-index: $z-index-footer;
+
+  height: 2vh;
+  width: 100%;
+
+  margin-top: 0;
+  margin-right: 1vw;
+  margin-bottom: 3vh;
+  margin-left: 10vw;
+
+  footer {
+    padding-right: 2vw;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    @include links;
+    @include border-box;
+    @include footer-gradient;
+  }
+}
+
+#site-info.site-footer {
+      text-align: right;
+      color: $body-text;
+      text-shadow: 0 1px .5px $black, 1px 0px .5px $black;
+      display: inline;
+      align-items: baseline;
+      margin: 0 auto 2vh auto;
+      :hover {
+        @include elevation(5);
+      }
+    }

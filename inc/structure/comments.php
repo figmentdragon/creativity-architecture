@@ -8,20 +8,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__comment' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectcomment' ) ) {
 	/**
 	 * Template for comments and pingbacks.
 	 *
 	 * Used as a callback by wp_list_comments() for displaying the comments.
 	 */
-	function __THEMENAE__comment( $comment, $args, $depth ) {
-		$args['avatar_size'] = apply_filters( '__THEMENAE__comment_avatar_size', 50 );
+	function TheCreativityArchitectcomment( $comment, $args, $depth ) {
+		$args['avatar_size'] = apply_filters( 'TheCreativityArchitectcomment_avatar_size', 50 );
 
 		if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 
 		<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<div class="comment-body">
-				<?php esc_html_e( 'Pingback:', '__THEMENAE__' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', '__THEMENAE__' ), '<span class="edit-link">', '</span>' ); ?>
+				<?php esc_html_e( 'Pingback:', 'TheCreativityArchitect' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'TheCreativityArchitect' ), '<span class="edit-link">', '</span>' ); ?>
 			</div>
 
 		<?php else : ?>
@@ -40,13 +40,13 @@ if ( ! function_exists( '__THEMENAE__comment' ) ) {
 								<time datetime="<?php comment_time( 'c' ); ?>" itemprop="datePublished">
 									<?php printf( 
 										/* translators: 1: date, 2: time */
-										esc_html_x( '%1$s at %2$s', '1: date, 2: time', '__THEMENAE__' ),
+										esc_html_x( '%1$s at %2$s', '1: date, 2: time', 'TheCreativityArchitect' ),
 										esc_html( get_comment_date() ),
 										esc_html( get_comment_time() )
 									); ?>
 								</time>
 							</a>
-							<?php edit_comment_link( __( 'Edit', '__THEMENAE__' ), '<span class="edit-link">| ', '</span>' ); ?>
+							<?php edit_comment_link( __( 'Edit', 'TheCreativityArchitect' ), '<span class="edit-link">| ', '</span>' ); ?>
 							<?php
 							comment_reply_link( array_merge( $args, array(
 								'add_below' => 'div-comment',
@@ -60,7 +60,7 @@ if ( ! function_exists( '__THEMENAE__comment' ) ) {
 					</div><!-- .comment-author-info -->
 
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', '__THEMENAE__' ); // WPCS: XSS OK. ?></p>
+						<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'TheCreativityArchitect' ); // WPCS: XSS OK. ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 
@@ -73,19 +73,19 @@ if ( ! function_exists( '__THEMENAE__comment' ) ) {
 	}
 }
 
-add_filter( 'comment_form_default_fields', '__THEMENAE__filter_comment_fields' );
+add_filter( 'comment_form_default_fields', 'TheCreativityArchitectfilter_comment_fields' );
 /**
  * Customizes the existing comment fields.
  *
  * @param array $fields
  * @return array
  */
-function __THEMENAE__filter_comment_fields( $fields ) {
+function TheCreativityArchitectfilter_comment_fields( $fields ) {
 	$commenter = wp_get_current_commenter();
 
-	$fields['author'] = '<label for="author" class="screen-reader-text">' . esc_html__( 'Name', '__THEMENAE__' ) . '</label><input placeholder="' . esc_attr__( 'Name', '__THEMENAE__' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />';
-	$fields['email'] = '<label for="email" class="screen-reader-text">' . esc_html__( 'Email', '__THEMENAE__' ) . '</label><input placeholder="' . esc_attr__( 'Email', '__THEMENAE__' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" />';
-	$fields['url'] = '<label for="url" class="screen-reader-text">' . esc_html__( 'Website', '__THEMENAE__' ) . '</label><input placeholder="' . esc_attr__( 'Website', '__THEMENAE__' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />';
+	$fields['author'] = '<label for="author" class="screen-reader-text">' . esc_html__( 'Name', 'TheCreativityArchitect' ) . '</label><input placeholder="' . esc_attr__( 'Name', 'TheCreativityArchitect' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" />';
+	$fields['email'] = '<label for="email" class="screen-reader-text">' . esc_html__( 'Email', 'TheCreativityArchitect' ) . '</label><input placeholder="' . esc_attr__( 'Email', 'TheCreativityArchitect' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" />';
+	$fields['url'] = '<label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'TheCreativityArchitect' ) . '</label><input placeholder="' . esc_attr__( 'Website', 'TheCreativityArchitect' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />';
 
 	return $fields;
 }

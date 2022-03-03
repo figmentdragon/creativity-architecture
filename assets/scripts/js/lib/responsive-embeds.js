@@ -7,7 +7,7 @@
 /**
  * Add max-width & max-height to <iframe> elements, depending on their width & height props.
  *
- * @since _THEMENAE_ 1.0
+ * @since TheCreativityArchitect 1.0
  *
  * @return {void}
  */

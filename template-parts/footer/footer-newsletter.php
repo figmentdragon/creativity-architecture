@@ -2,7 +2,7 @@
 /**
  * Displays footer widgets if assigned
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  */
 
 if ( ! is_active_sidebar( 'sidebar-newsletter' ) ) {

@@ -4,7 +4,7 @@
  *
  * Construct the theme header.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 

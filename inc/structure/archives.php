@@ -8,20 +8,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__archive_title' ) ) {
-	add_action( '__THEMENAE__archive_title', '__THEMENAE__archive_title' );
+if ( ! function_exists( 'TheCreativityArchitectarchive_title' ) ) {
+	add_action( 'TheCreativityArchitectarchive_title', 'TheCreativityArchitectarchive_title' );
 	/**
 	 * Build the archive title
 	 *
 	 */
-	function __THEMENAE__archive_title() { ?>
+	function TheCreativityArchitectarchive_title() { ?>
 		<header class="page-header<?php if ( is_author() ) echo ' clearfix';?>">
 			<?php
 			/**
-			 * __THEMENAE__before_archive_title hook.
+			 * TheCreativityArchitectbefore_archive_title hook.
 			 *
 			 */
-			do_action( '__THEMENAE__before_archive_title' );
+			do_action( 'TheCreativityArchitectbefore_archive_title' );
 			?>
 
 			<h1 class="page-title">
@@ -30,10 +30,10 @@ if ( ! function_exists( '__THEMENAE__archive_title' ) ) {
 
 			<?php
 			/**
-			 * __THEMENAE__after_archive_title hook.
+			 * TheCreativityArchitectafter_archive_title hook.
 			 *
 			 */
-			do_action( '__THEMENAE__after_archive_title' );
+			do_action( 'TheCreativityArchitectafter_archive_title' );
 
 			// Show an optional term description.
 			$term_description = term_description();
@@ -46,17 +46,17 @@ if ( ! function_exists( '__THEMENAE__archive_title' ) ) {
 			}
 
 			/**
-			 * __THEMENAE__after_archive_description hook.
+			 * TheCreativityArchitectafter_archive_description hook.
 			 *
 			 */
-			do_action( '__THEMENAE__after_archive_description' ); ?>
+			do_action( 'TheCreativityArchitectafter_archive_description' ); ?>
 		</header><!-- .page-header -->
 		<?php
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__filter_the_archive_title' ) ) {
-	add_filter( 'get_the_archive_title', '__THEMENAE__filter_the_archive_title' );
+if ( ! function_exists( 'TheCreativityArchitectfilter_the_archive_title' ) ) {
+	add_filter( 'get_the_archive_title', 'TheCreativityArchitectfilter_the_archive_title' );
 	/**
 	 * Alter the_archive_title() function to match our original archive title function
 	 *
@@ -64,7 +64,7 @@ if ( ! function_exists( '__THEMENAE__filter_the_archive_title' ) ) {
 	 * @param string $title The archive title
 	 * @return string The altered archive title
 	 */
-	function __THEMENAE__filter_the_archive_title( $title ) {
+	function TheCreativityArchitectfilter_the_archive_title( $title ) {
 		if ( is_category() ) {
 			$title = single_cat_title( '', false );
 		} elseif ( is_tag() ) {

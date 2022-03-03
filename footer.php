@@ -1,17 +1,18 @@
 <!-- footer -->
-	<div class="wrapper-footer">
-		<footer class="footer" role="contentinfo">
-
-			<!-- copyright -->
-			<p class="copyright">
-				<?php echo copyright(); ?>
-			</p>
+	<div id="wrapper-footer">
+		 <footer id="site-info" class="site-footer" role="contentinfo">
+			     <!-- copyright -->
+			   <small class="copyright">
+				    <?php echo copyright(); ?>
+              <?php bloginfo( 'name' ); ?>  &
+            <address>
+              <?php the_author_meta( $auth_id = true ); ?>
+            </address>
+			   </small>
 				<!-- /copyright -->
-
-			</footer>
+    </footer>
 			<!-- /footer -->
-
-		</div>
+	</div>
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>

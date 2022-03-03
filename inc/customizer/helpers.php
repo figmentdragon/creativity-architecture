@@ -26,7 +26,7 @@ if ( ! function_exists( 'is_side_padding_active' ) ) {
 	function is_side_padding_active() {
 		$settings = wp_parse_args(
 			get_option( 'spacing_settings', array() ),
-			__THEMENAE___spacing_get_defaults()
+			TheCreativityArchitect_spacing_get_defaults()
 		);
 
 		if ( ( $settings[ 'side_top' ] == 0 ) && ( $settings[ 'side_right' ] == 0 ) && ( $settings[ 'side_bottom' ] == 0 ) && ( $settings[ 'side_left' ] == 0 ) ) {
@@ -73,7 +73,7 @@ if ( ! function_exists( 'hidden_navigation' ) && function_exists( 'is_customize_
 		if ( is_customize_preview() && function_exists( 'navigation_position' ) ) {
 			?>
 			<div style="display:none;">
-				<?php __THEMENAE___navigation_position(); ?>
+				<?php TheCreativityArchitect_navigation_position(); ?>
 			</div>
 			<?php
 		}
@@ -153,7 +153,7 @@ if ( ! function_exists( 'sanitize_checkbox' ) ) {
 if ( ! function_exists( 'sanitize_blog_excerpt' ) ) {
 	/**
 	 * Sanitize blog excerpt.
-	 * Needed because __THEMENAE__ Premium calls the control ID which is different from the settings ID.
+	 * Needed because TheCreativityArchitect Premium calls the control ID which is different from the settings ID.
 	 *
 	 */
 	function sanitize_blog_excerpt( $input ) {

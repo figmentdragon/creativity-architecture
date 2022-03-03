@@ -771,7 +771,7 @@ Edit this to be more appropriate for your onw site as sample starting content.',
 		// Retrieve the settings from the file and convert the json object to an array.
 		$settings = (array) json_decode( file_get_contents( $import_file ) );
 
-		if (!$settings["splotname"] or $settings["splotname"] != "__THEMENAE__") {
+		if (!$settings["splotname"] or $settings["splotname"] != "TheCreativityArchitect") {
 			wp_die( __( 'This does not appear to be a  export file. Missing splotname.' ) );
 		}
 

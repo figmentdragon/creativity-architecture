@@ -4,7 +4,7 @@
  *
  * Construct the theme footer.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 
@@ -18,7 +18,7 @@ if ( 'none' === get_theme_mod( 'footer_layout' ) ) {
 $theme_author = apply_filters(
 	'theme_author',
 	array(
-		'name' => __( '__THEMENAE__', '__THEMENAE__' ),
+		'name' => __( 'TheCreativityArchitect', 'TheCreativityArchitect' ),
 		'url'  => 'https://wp-pagebuilderframework.com/',
 	)
 );

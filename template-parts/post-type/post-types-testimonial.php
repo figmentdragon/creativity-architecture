@@ -2,10 +2,10 @@
 /**
  * The template for displaying testimonial items
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  */
 
-$number = get_theme_mod( '__THEMENAE___testimonial_number', 3 );
+$number = get_theme_mod( 'TheCreativityArchitect_testimonial_number', 3 );
 
 if ( ! $number ) {
 	// If number is 0, then this section is disabled
@@ -21,18 +21,18 @@ $post_list  = array();// list of valid post/page ids
 $args['post_type'] = 'jetpack-testimonial';
 
 for ( $i = 1; $i <= $number; $i++ ) {
-	$__THEMENAE___post_id = '';
+	$TheCreativityArchitect_post_id = '';
 
-	$__THEMENAE___post_id =  get_theme_mod( '__THEMENAE___testimonial_cpt_' . $i );
+	$TheCreativityArchitect_post_id =  get_theme_mod( 'TheCreativityArchitect_testimonial_cpt_' . $i );
 
 
-	if ( $__THEMENAE___post_id && '' !== $__THEMENAE___post_id ) {
+	if ( $TheCreativityArchitect_post_id && '' !== $TheCreativityArchitect_post_id ) {
 		// Polylang Support.
 		if ( class_exists( 'Polylang' ) ) {
-			$__THEMENAE___post_id = pll_get_post( $__THEMENAE___post_id, pll_current_language() );
+			$TheCreativityArchitect_post_id = pll_get_post( $TheCreativityArchitect_post_id, pll_current_language() );
 		}
 
-		$post_list = array_merge( $post_list, array( $__THEMENAE___post_id ) );
+		$post_list = array_merge( $post_list, array( $TheCreativityArchitect_post_id ) );
 
 	}
 }

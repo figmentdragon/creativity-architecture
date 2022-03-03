@@ -82,7 +82,7 @@ function custom_image_sizes( $sizes ) {
   }
 
 function more_link( $more_link, $more_link_text ) {
-	$more_tag_text = get_theme_mod( 'excerpt_more_text', esc_html__( 'Continue reading', '__THEMENAE__' ) );
+	$more_tag_text = get_theme_mod( 'excerpt_more_text', esc_html__( 'Continue reading', 'TheCreativityArchitect' ) );
 	return ' &hellip; ' . str_replace( $more_link_text, wp_kses_data( $more_tag_text ), $more_link );
 }
 
@@ -112,7 +112,7 @@ function style_remove( $tag ) {
 
 function view_article( $more ) {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink( $post->ID ) . '">' . esc_html_e( 'View Article', '__THEMENAE__' ) . '</a>';
+    return '... <a class="view-article" href="' . get_permalink( $post->ID ) . '">' . esc_html_e( 'View Article', 'TheCreativityArchitect' ) . '</a>';
 }
 
 function wp_custom_post( $length ) {
@@ -155,23 +155,23 @@ function wp_pagination() {
 }
 
 function create_post_type() {
-    register_taxonomy_for_object_type( 'category', '__THEMENAE__' ); // Register Taxonomies for Category
-    register_taxonomy_for_object_type( 'post_tag', '__THEMENAE__' );
-    register_post_type( '__THEMENAE__', // Register Custom Post Type
+    register_taxonomy_for_object_type( 'category', 'TheCreativityArchitect' ); // Register Taxonomies for Category
+    register_taxonomy_for_object_type( 'post_tag', 'TheCreativityArchitect' );
+    register_post_type( 'TheCreativityArchitect', // Register Custom Post Type
         array(
         'labels'       => array(
-            'name'               => esc_html( 'Custom Post', '__THEMENAE__' ), // Rename these to suit
-            'singular_name'      => esc_html( 'Custom Post', '__THEMENAE__' ),
-            'add_new'            => esc_html( 'Add New', '__THEMENAE__' ),
-            'add_new_item'       => esc_html( 'Add New Custom Post', '__THEMENAE__' ),
-            'edit'               => esc_html( 'Edit', '__THEMENAE__' ),
-            'edit_item'          => esc_html( 'Edit Custom Post', '__THEMENAE__' ),
-            'new_item'           => esc_html( 'New Custom Post', '__THEMENAE__' ),
-            'view'               => esc_html( 'View Custom Post', '__THEMENAE__' ),
-            'view_item'          => esc_html( 'View Custom Post', '__THEMENAE__' ),
-            'search_items'       => esc_html( 'Search Custom Post', '__THEMENAE__' ),
-            'not_found'          => esc_html( 'No Custom Posts found', '__THEMENAE__' ),
-            'not_found_in_trash' => esc_html( 'No Custom Posts found in Trash', '__THEMENAE__' ),
+            'name'               => esc_html( 'Custom Post', 'TheCreativityArchitect' ), // Rename these to suit
+            'singular_name'      => esc_html( 'Custom Post', 'TheCreativityArchitect' ),
+            'add_new'            => esc_html( 'Add New', 'TheCreativityArchitect' ),
+            'add_new_item'       => esc_html( 'Add New Custom Post', 'TheCreativityArchitect' ),
+            'edit'               => esc_html( 'Edit', 'TheCreativityArchitect' ),
+            'edit_item'          => esc_html( 'Edit Custom Post', 'TheCreativityArchitect' ),
+            'new_item'           => esc_html( 'New Custom Post', 'TheCreativityArchitect' ),
+            'view'               => esc_html( 'View Custom Post', 'TheCreativityArchitect' ),
+            'view_item'          => esc_html( 'View Custom Post', 'TheCreativityArchitect' ),
+            'search_items'       => esc_html( 'Search Custom Post', 'TheCreativityArchitect' ),
+            'not_found'          => esc_html( 'No Custom Posts found', 'TheCreativityArchitect' ),
+            'not_found_in_trash' => esc_html( 'No Custom Posts found in Trash', 'TheCreativityArchitect' ),
         ),
         'public'       => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -252,7 +252,7 @@ function get_layout() {
   $layout = $settings['layout_setting'];
 
   // Get the individual page/post sidebar metabox value
-  $layout_meta = ( isset( $post ) ) ? get_post_meta( $post->ID, '___THEMENAE-sidebar-layout-meta', true ) : '';
+  $layout_meta = ( isset( $post ) ) ? get_post_meta( $post->ID, '_TheCreativityArchitect-sidebar-layout-meta', true ) : '';
 
   // Set up BuddyPress variable
   $buddypress = false;
@@ -296,7 +296,7 @@ function get_footer_widgets() {
   $widgets = $settings['footer_widget_setting'];
 
   // Get the individual footer widget metabox value
-  $widgets_meta = ( isset( $post ) ) ? get_post_meta( $post->ID, '___THEMENAE-footer-widget-meta', true ) : '';
+  $widgets_meta = ( isset( $post ) ) ? get_post_meta( $post->ID, '_TheCreativityArchitect-footer-widget-meta', true ) : '';
 
   // If we're not on a single page or post, the metabox hasn't been set
   if ( ! is_singular() ) {

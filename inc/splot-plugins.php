@@ -54,8 +54,8 @@ class Theme_Plugin_Enhancements {
 				'slug'    => 'reading-time-wp',
 				'name'    => 'Reading Time WP',
 				'message' => sprintf(
-					esc_html__( 'The %1$s is recommended to add estimated reading times to published pieces.', '__THEMENAE__' ),
-					'<strong>' . esc_html__( 'Reading Time WP plugin', '__THEMENAE__' ) . '</strong>' ),
+					esc_html__( 'The %1$s is recommended to add estimated reading times to published pieces.', 'TheCreativityArchitect' ),
+					'<strong>' . esc_html__( 'Reading Time WP plugin', 'TheCreativityArchitect' ) . '</strong>' ),
 			),
 		);
 
@@ -124,9 +124,9 @@ class Theme_Plugin_Enhancements {
 			if ( 'to-activate' === $plugin['status'] ) {
 				$activate_url = $this->plugin_activate_url( $plugin['slug'] );
 				$notice .= sprintf(
-					esc_html__( ' To do this, activate %1$s. %2$s', '__THEMENAE__' ),
+					esc_html__( ' To do this, activate %1$s. %2$s', 'TheCreativityArchitect' ),
 					esc_html( $plugin['name'] ),
-					( $activate_url ) ? '<a href="' . $activate_url . '">' . esc_html__( 'Activate Now', '__THEMENAE__' ) . '</a>' : ''
+					( $activate_url ) ? '<a href="' . $activate_url . '">' . esc_html__( 'Activate Now', 'TheCreativityArchitect' ) . '</a>' : ''
 				);
 			}
 
@@ -134,9 +134,9 @@ class Theme_Plugin_Enhancements {
 			if ( 'to-install' === $plugin['status'] ) {
 				$install_url = $this->plugin_install_url( $plugin['slug'] );
 				$notice .= sprintf(
-					esc_html__( ' To do this, install %1$s. %2$s', '__THEMENAE__' ),
+					esc_html__( ' To do this, install %1$s. %2$s', 'TheCreativityArchitect' ),
 					esc_html( $plugin['name'] ),
-					( $install_url ) ? '<a href="' . $install_url . '">' . esc_html__( 'Install Now', '__THEMENAE__' ) . '</a>' : ''
+					( $install_url ) ? '<a href="' . $install_url . '">' . esc_html__( 'Install Now', 'TheCreativityArchitect' ) . '</a>' : ''
 				);
 			}
 
@@ -232,14 +232,14 @@ add_action( 'admin_enqueue_scripts', 'enqueue_plugin_scripts' );
 function dismiss_admin_notice() {
 	// Verify the security nonce and die if it fails
 	if ( ! isset( $_POST['admin_nonce'] ) || ! wp_verify_nonce( $_POST['admin_nonce'], 'admin_nonce' ) ) {
-		wp_die( __( 'Your request failed permission check.', '__THEMENAE__' ) );
+		wp_die( __( 'Your request failed permission check.', 'TheCreativityArchitect' ) );
 	}
 	// Store the user's dimissal so that the notice doesn't show again
 	update_user_meta( get_current_user_id(), 'admin_notice', 'dismissed' );
 	// Send success message
 	wp_send_json( array(
 		'status' => 'success',
-		'message' => __( 'Your request was processed. See ya!', '__THEMENAE__' )
+		'message' => __( 'Your request was processed. See ya!', 'TheCreativityArchitect' )
 	) );
 }
 add_action( 'wp_ajax_admin_notice', 'dismiss_admin_notice' );

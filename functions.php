@@ -1,9 +1,9 @@
 <?php
 /**
- * __THEMENAE__'s functions and definitions
+ * TheCreativityArchitect's functions and definitions
  *
- * @package __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @package TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
  defined( 'ABSPATH' ) || die( "Can't access directly" );
@@ -16,6 +16,8 @@
  function THEMENAE_setup() {
 
   require get_template_directory() . '/dev-templates/is-debug.php';
+
+  //require get_template_directory() . '/options.php';
 
   require get_template_directory() . '/inc/admin-options.php';
   require get_template_directory() . '/inc/body-classes.php';
@@ -163,7 +165,7 @@
  function admin_notice() {
    $user_id = get_current_user_id();
    if ( !get_user_meta( $user_id, 'notice_dismissed_4' ) && current_user_can( 'manage_options' ) )
-   echo '<div class="notice notice-info"><p>' . __( '<big><strong>BlankSlate</strong>:</big> Help keep the project alive! <a href="?notice-dismiss" class="alignright">Dismiss</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">Make a Donation</a>', '__THEMENAE__' ) . '</p></div>';
+   echo '<div class="notice notice-info"><p>' . __( '<big><strong>BlankSlate</strong>:</big> Help keep the project alive! <a href="?notice-dismiss" class="alignright">Dismiss</a> <a href="https://calmestghost.com/donate" class="button-primary" target="_blank">Make a Donation</a>', 'TheCreativityArchitect' ) . '</p></div>';
  }
 
  function notice_dismissed() {
@@ -278,19 +280,19 @@
  }
 
  function skip_link() {
-   echo '<a href="#content" class="skip-link screen-reader-text">' . esc_html__( 'Skip to the content', '__THEMENAE__' ) . '</a>';
+   echo '<a href="#content" class="skip-link screen-reader-text">' . esc_html__( 'Skip to the content', 'TheCreativityArchitect' ) . '</a>';
  }
 
  function read_more_link() {
    if ( !is_admin() ) {
-     return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">' . sprintf( __( '...%s', '__THEMENAE__' ), '<span class="screen-reader-text">  ' . esc_html( get_the_title() ) . '</span>' ) . '</a>';
+     return ' <a href="' . esc_url( get_permalink() ) . '" class="more-link">' . sprintf( __( '...%s', 'TheCreativityArchitect' ), '<span class="screen-reader-text">  ' . esc_html( get_the_title() ) . '</span>' ) . '</a>';
    }
  }
 
  function excerpt_read_more_link( $more ) {
    if ( !is_admin() ) {
      global $post;
-     return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">' . sprintf( __( '...%s', '__THEMENAE__' ), '<span class="screen-reader-text">  ' . esc_html( get_the_title() ) . '</span>' ) . '</a>';
+     return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">' . sprintf( __( '...%s', 'TheCreativityArchitect' ), '<span class="screen-reader-text">  ' . esc_html( get_the_title() ) . '</span>' ) . '</a>';
    }
  }
 
@@ -304,7 +306,7 @@
  function widgets_init() {
    register_sidebar(
      array(
-       'name'          => esc_html__( 'Sidebar', '__THEMENAE__' ),
+       'name'          => esc_html__( 'Sidebar', 'TheCreativityArchitect' ),
        'id'            => 'sidebar-1',
        'description'   => '',
        'before_widget' => '<div id="%1$s" class="widget">',
@@ -316,7 +318,7 @@
 
    register_sidebar(
      array(
-       'name'          => esc_html__( 'Top Widget', '__THEMENAE__' ),
+       'name'          => esc_html__( 'Top Widget', 'TheCreativityArchitect' ),
        'id'            => 'sidebar-2',
        'description'   => '',
        'before_widget' => '<div id="%1$s" class="widget">',
@@ -377,8 +379,15 @@
      }
    }
 
-   function enqueue_fonts() {
-     wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+  function enqueue_fonts() {
+    wp_enqueue_style( 'avdira', get_template_directory() . '/assets/fonts/avdira/avdira.css' );
+    wp_enqueue_style( 'enjoy-writing', get_template_directory() . '/assets/fonts/enjoy-writing/enjoywriting.css' );
+    wp_enqueue_style( 'euphorigenic', get_template_directory() . '/assets/fonts/euphorigenic/euphorigenic.css' );
+    wp_enqueue_style( 'glass-antiqua', get_template_directory() . '/assets/fonts/glass-antiqua/glassantiqua.css' );
+    wp_enqueue_style( 'hand-typewriter', get_template_directory() . '/assets/fonts/handtypewriter/handtypewriter.css' );
+    wp_enqueue_style( 'raleway', get_template_directory() . '/assets/fonts/raleway/raleway.css' );
+    wp_enqueue_style( 'lifesavers', get_template_directory() . '/assets/fonts/lifesavers.css' );
+    wp_enqueue_style( 'raylig', get_template_directory() . '/assets/fonts/raylig.css' );
    }
 
    function enqueue_scripts() {

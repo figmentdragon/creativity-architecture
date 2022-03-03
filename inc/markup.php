@@ -73,7 +73,7 @@ if ( ! function_exists( 'body_classes' ) ) {
 
 		// Full width content
 		// Used for page builders, sets the content to full width and removes the padding
-		$full_width = get_post_meta( get_the_ID(), '___THEMENAE-full-width-content', true );
+		$full_width = get_post_meta( get_the_ID(), '_TheCreativityArchitect-full-width-content', true );
 		$classes[] = ( '' !== $full_width && false !== $full_width && is_singular() && 'true' == $full_width ) ? 'full-width-content' : '';
 
 		// Contained content
@@ -105,7 +105,7 @@ if ( ! function_exists( 'body_classes' ) ) {
 		}
 
 		// Transparent header
-		$transparent_header = get_post_meta( get_the_ID(), '___THEMENAE-transparent-header', true );
+		$transparent_header = get_post_meta( get_the_ID(), '_TheCreativityArchitect-transparent-header', true );
 		if ( $transparent_header == true ) {
 			$classes[] = 'transparent-header';
 		}

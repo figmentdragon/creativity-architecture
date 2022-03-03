@@ -1,5 +1,5 @@
 <!-- pagination -->
 <div class="pagination">
-	<?php __THEMENAE___wp_pagination(); ?>
+	<?php TheCreativityArchitect_wp_pagination(); ?>
 </div>
 <!-- /pagination -->

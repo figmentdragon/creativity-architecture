@@ -1,7 +1,7 @@
 <!--sidebar-->
 
 <div id="sidebar-wrapper">
-<div class="wrapper-header">
+<div id="wrapper-header">
   <header>
     <hgroup>
       <?php bloginfo( 'name' ); ?>

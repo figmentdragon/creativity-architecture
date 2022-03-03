@@ -3,21 +3,21 @@
  * Displays the site navigation.
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 ?>
 
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
-	<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary menu', '__THEMENAE__' ); ?>">
+	<nav id="site-navigation" class="primary-navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'TheCreativityArchitect' ); ?>">
 		<div class="menu-button-container">
 			<button id="primary-mobile-menu" class="button" aria-controls="primary-menu-list" aria-expanded="false">
-				<span class="dropdown-icon open"><?php esc_html_e( 'Menu', '__THEMENAE__' ); ?>
-					<?php echo __THEMENAE___get_icon_svg( 'ui', 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<span class="dropdown-icon open"><?php esc_html_e( 'Menu', 'TheCreativityArchitect' ); ?>
+					<?php echo TheCreativityArchitect_get_icon_svg( 'ui', 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
-				<span class="dropdown-icon close"><?php esc_html_e( 'Close', '__THEMENAE__' ); ?>
-					<?php echo __THEMENAE___get_icon_svg( 'ui', 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
+				<span class="dropdown-icon close"><?php esc_html_e( 'Close', 'TheCreativityArchitect' ); ?>
+					<?php echo TheCreativityArchitect_get_icon_svg( 'ui', 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput ?>
 				</span>
 			</button><!-- #primary-mobile-menu -->
 		</div><!-- .menu-button-container -->

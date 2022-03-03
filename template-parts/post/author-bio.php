@@ -3,8 +3,8 @@
  * The template for displaying author info below posts.
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 ?>
@@ -16,7 +16,7 @@
 			<?php
 			printf(
 				/* translators: %s: Author name. */
-				esc_html__( 'By %s', '__THEMENAE__' ),
+				esc_html__( 'By %s', 'TheCreativityArchitect' ),
 				get_the_author()
 			);
 			?>
@@ -28,7 +28,7 @@
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				sprintf(
 					/* translators: %s: Author name. */
-					esc_html__( 'View all of %s\'s posts.', '__THEMENAE__' ),
+					esc_html__( 'View all of %s\'s posts.', 'TheCreativityArchitect' ),
 					get_the_author()
 				)
 			);

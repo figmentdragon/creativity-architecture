@@ -2,7 +2,7 @@
 /**
  * Custom menu.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 

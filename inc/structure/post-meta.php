@@ -8,15 +8,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__content_nav' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectcontent_nav' ) ) {
 	/**
 	 * Display navigation to next/previous pages when applicable.
 	 *
 	 *
 	 * @param string $nav_id The id of our navigation.
 	 */
-	function __THEMENAE__content_nav( $nav_id ) {
-		if ( ! apply_filters( '__THEMENAE__show_post_navigation', true ) ) {
+	function TheCreativityArchitectcontent_nav( $nav_id ) {
+		if ( ! apply_filters( 'TheCreativityArchitectshow_post_navigation', true ) ) {
 			return;
 		}
 
@@ -38,37 +38,37 @@ if ( ! function_exists( '__THEMENAE__content_nav' ) ) {
 		}
 
 		$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
-		$category_specific = apply_filters( '__THEMENAE__category_post_navigation', false );
+		$category_specific = apply_filters( 'TheCreativityArchitectcategory_post_navigation', false );
 		?>
 		<nav id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo esc_attr( $nav_class ); ?>">
-			<span class="screen-reader-text"><?php esc_html_e( 'Post navigation', '__THEMENAE__' ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'TheCreativityArchitect' ); ?></span>
 
 			<?php if ( is_single() ) : // navigation links for single posts.
 
-				previous_post_link( '<div class="nav-previous"><span class="prev" title="' . esc_attr__( 'Previous', '__THEMENAE__' ) . '">%link</span></div>', '%title', $category_specific );
-				next_post_link( '<div class="nav-next"><span class="next" title="' . esc_attr__( 'Next', '__THEMENAE__' ) . '">%link</span></div>', '%title', $category_specific );
+				previous_post_link( '<div class="nav-previous"><span class="prev" title="' . esc_attr__( 'Previous', 'TheCreativityArchitect' ) . '">%link</span></div>', '%title', $category_specific );
+				next_post_link( '<div class="nav-next"><span class="next" title="' . esc_attr__( 'Next', 'TheCreativityArchitect' ) . '">%link</span></div>', '%title', $category_specific );
 
 			elseif ( is_home() || is_archive() || is_search() ) : // navigation links for home, archive, and search pages.
 
 				if ( get_next_posts_link() ) : ?>
-					<div class="nav-previous"><span class="prev" title="<?php esc_attr_e( 'Previous', '__THEMENAE__' );?>"><?php next_posts_link( __( 'Older posts', '__THEMENAE__' ) ); ?></span></div>
+					<div class="nav-previous"><span class="prev" title="<?php esc_attr_e( 'Previous', 'TheCreativityArchitect' );?>"><?php next_posts_link( __( 'Older posts', 'TheCreativityArchitect' ) ); ?></span></div>
 				<?php endif;
 
 				if ( get_previous_posts_link() ) : ?>
-					<div class="nav-next"><span class="next" title="<?php esc_attr_e( 'Next', '__THEMENAE__' );?>"><?php previous_posts_link( __( 'Newer posts', '__THEMENAE__' ) ); ?></span></div>
+					<div class="nav-next"><span class="next" title="<?php esc_attr_e( 'Next', 'TheCreativityArchitect' );?>"><?php previous_posts_link( __( 'Newer posts', 'TheCreativityArchitect' ) ); ?></span></div>
 				<?php endif;
 
 				the_posts_pagination( array(
-					'mid_size' => apply_filters( '__THEMENAE__pagination_mid_size', 1 ),
-					'prev_text' => apply_filters( '__THEMENAE__previous_link_text', __( '&larr; Previous', '__THEMENAE__' ) ),
-					'next_text' => apply_filters( '__THEMENAE__next_link_text', __( 'Next &rarr;', '__THEMENAE__' ) ),
+					'mid_size' => apply_filters( 'TheCreativityArchitectpagination_mid_size', 1 ),
+					'prev_text' => apply_filters( 'TheCreativityArchitectprevious_link_text', __( '&larr; Previous', 'TheCreativityArchitect' ) ),
+					'next_text' => apply_filters( 'TheCreativityArchitectnext_link_text', __( 'Next &rarr;', 'TheCreativityArchitect' ) ),
 				) );
 
 				/**
-				 * __THEMENAE__paging_navigation hook.
+				 * TheCreativityArchitectpaging_navigation hook.
 				 *
 				 */
-				do_action( '__THEMENAE__paging_navigation' );
+				do_action( 'TheCreativityArchitectpaging_navigation' );
 
 			endif; ?>
 		</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
@@ -76,18 +76,18 @@ if ( ! function_exists( '__THEMENAE__content_nav' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__modify_posts_pagination_template' ) ) {
-	add_filter( 'navigation_markup_template', '__THEMENAE__modify_posts_pagination_template', 10, 2 );
+if ( ! function_exists( 'TheCreativityArchitectmodify_posts_pagination_template' ) ) {
+	add_filter( 'navigation_markup_template', 'TheCreativityArchitectmodify_posts_pagination_template', 10, 2 );
 	/**
 	 * Remove the container and screen reader text from the_posts_pagination()
-	 * We add this in ourselves in __THEMENAE__content_nav()
+	 * We add this in ourselves in TheCreativityArchitectcontent_nav()
 	 *
 	 *
 	 * @param string $template The default template.
 	 * @param string $class The class passed by the calling function.
 	 * @return string The HTML for the post navigation.
 	 */
-	function __THEMENAE__modify_posts_pagination_template( $template, $class ) {
+	function TheCreativityArchitectmodify_posts_pagination_template( $template, $class ) {
 	    if ( ! empty( $class ) && false !== strpos( $class, 'pagination' ) ) {
 	        $template = '<div class="nav-links">%3$s</div>';
 	    }
@@ -96,14 +96,14 @@ if ( ! function_exists( '__THEMENAE__modify_posts_pagination_template' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__posted_on' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectposted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 *
 	 */
-	function __THEMENAE__posted_on() {
-		$date = apply_filters( '__THEMENAE__post_date', true );
-		$author = apply_filters( '__THEMENAE__post_author', true );
+	function TheCreativityArchitectposted_on() {
+		$date = apply_filters( 'TheCreativityArchitectpost_date', true );
+		$author = apply_filters( 'TheCreativityArchitectpost_author', true );
 
 		// If our date is enabled, show it.
 		if ( $date ) {
@@ -117,41 +117,41 @@ if ( ! function_exists( '__THEMENAE__posted_on' ) ) {
 
 		// If our author is enabled, show it.
 		if ( $author ) {
-			echo ' <span class="byline"><span class="author vcard" itemtype="https://schema.org/Person" itemscope="itemscope" itemprop="author">' . esc_html__( 'by','__THEMENAE__') . ' <a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr__( 'View all posts by ', '__THEMENAE__' ) . esc_html( get_the_author() ) . '" rel="author" itemprop="url"><span class="author-name" itemprop="name">' . esc_html( get_the_author() ) . '</span></a></span></span>';
+			echo ' <span class="byline"><span class="author vcard" itemtype="https://schema.org/Person" itemscope="itemscope" itemprop="author">' . esc_html__( 'by','TheCreativityArchitect') . ' <a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr__( 'View all posts by ', 'TheCreativityArchitect' ) . esc_html( get_the_author() ) . '" rel="author" itemprop="url"><span class="author-name" itemprop="name">' . esc_html( get_the_author() ) . '</span></a></span></span>';
 		}
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__entry_meta' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectentry_meta' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags.
 	 *
 	 */
-	function __THEMENAE__entry_meta() {
-		$categories = apply_filters( '__THEMENAE__show_categories', true );
-		$tags = apply_filters( '__THEMENAE__show_tags', true );
-		$comments = apply_filters( '__THEMENAE__show_comments', true );
+	function TheCreativityArchitectentry_meta() {
+		$categories = apply_filters( 'TheCreativityArchitectshow_categories', true );
+		$tags = apply_filters( 'TheCreativityArchitectshow_tags', true );
+		$comments = apply_filters( 'TheCreativityArchitectshow_comments', true );
 
-		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', '__THEMENAE__' ) );
+		$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'TheCreativityArchitect' ) );
 		if ( $categories_list && $categories ) {
-			echo '<span class="cat-links"><span class="screen-reader-text">' . esc_html_x( 'Categories', 'Used before category names.', '__THEMENAE__' ) . ' </span>' . wp_kses_post( $categories_list ) . '</span>';
+			echo '<span class="cat-links"><span class="screen-reader-text">' . esc_html_x( 'Categories', 'Used before category names.', 'TheCreativityArchitect' ) . ' </span>' . wp_kses_post( $categories_list ) . '</span>';
 		}
 
-		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', '__THEMENAE__' ) );
+		$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'TheCreativityArchitect' ) );
 		if ( $tags_list && $tags ) {
-			echo '<span class="tags-links"><span class="screen-reader-text">'. esc_html_x( 'Tags', 'Used before tag names.', '__THEMENAE__' ) . ' </span>' . wp_kses_post( $tags_list ) . '</span>';
+			echo '<span class="tags-links"><span class="screen-reader-text">'. esc_html_x( 'Tags', 'Used before tag names.', 'TheCreativityArchitect' ) . ' </span>' . wp_kses_post( $tags_list ) . '</span>';
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) && $comments ) {
 			echo '<span class="comments-link">';
-				comments_popup_link( __( 'Leave a comment', '__THEMENAE__' ), __( '1 Comment', '__THEMENAE__' ), __( '% Comments', '__THEMENAE__' ) );
+				comments_popup_link( __( 'Leave a comment', 'TheCreativityArchitect' ), __( '1 Comment', 'TheCreativityArchitect' ), __( '% Comments', 'TheCreativityArchitect' ) );
 			echo '</span>';
 		}
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__excerpt_more' ) ) {
-	add_filter( 'excerpt_more', '__THEMENAE__excerpt_more' );
+if ( ! function_exists( 'TheCreativityArchitectexcerpt_more' ) ) {
+	add_filter( 'excerpt_more', 'TheCreativityArchitectexcerpt_more' );
 	/**
 	 * Prints the read more HTML to post excerpts.
 	 *
@@ -159,22 +159,22 @@ if ( ! function_exists( '__THEMENAE__excerpt_more' ) ) {
 	 * @param string $more The string shown within the more link.
 	 * @return string The HTML for the more link.
 	 */
-	function __THEMENAE__excerpt_more( $more ) {
+	function TheCreativityArchitectexcerpt_more( $more ) {
 		if ( is_admin() ) {
 			return '[&hellip;]';
 		} else {
-			return apply_filters( '__THEMENAE__excerpt_more_output', sprintf( ' ... <a title="%1$s" class="read-more" href="%2$s">%3$s%4$s</a>',
+			return apply_filters( 'TheCreativityArchitectexcerpt_more_output', sprintf( ' ... <a title="%1$s" class="read-more" href="%2$s">%3$s%4$s</a>',
 				the_title_attribute( 'echo=0' ),
 				esc_url( get_permalink( get_the_ID() ) ),
-				__( 'Read more', '__THEMENAE__' ),
+				__( 'Read more', 'TheCreativityArchitect' ),
 				'<span class="screen-reader-text">' . get_the_title() . '</span>'
 			) );
 		}
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__content_more' ) ) {
-	add_filter( 'the_content_more_link', '__THEMENAE__content_more' );
+if ( ! function_exists( 'TheCreativityArchitectcontent_more' ) ) {
+	add_filter( 'the_content_more_link', 'TheCreativityArchitectcontent_more' );
 	/**
 	 * Prints the read more HTML to post content using the more tag.
 	 *
@@ -182,42 +182,42 @@ if ( ! function_exists( '__THEMENAE__content_more' ) ) {
 	 * @param string $more The string shown within the more link.
 	 * @return string The HTML for the more link
 	 */
-	function __THEMENAE__content_more( $more ) {
-		return apply_filters( '__THEMENAE__content_more_link_output', sprintf( '<p class="read-more-container"><a title="%1$s" class="read-more content-read-more" href="%2$s">%3$s%4$s</a></p>',
+	function TheCreativityArchitectcontent_more( $more ) {
+		return apply_filters( 'TheCreativityArchitectcontent_more_link_output', sprintf( '<p class="read-more-container"><a title="%1$s" class="read-more content-read-more" href="%2$s">%3$s%4$s</a></p>',
 			the_title_attribute( 'echo=0' ),
-			esc_url( get_permalink( get_the_ID() ) . apply_filters( '__THEMENAE__more_jump','#more-' . get_the_ID() ) ),
-			__( 'Read more', '__THEMENAE__' ),
+			esc_url( get_permalink( get_the_ID() ) . apply_filters( 'TheCreativityArchitectmore_jump','#more-' . get_the_ID() ) ),
+			__( 'Read more', 'TheCreativityArchitect' ),
 			'<span class="screen-reader-text">' . get_the_title() . '</span>'
 		) );
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__post_meta' ) ) {
-	add_action( '__THEMENAE__after_entry_title', '__THEMENAE__post_meta' );
+if ( ! function_exists( 'TheCreativityArchitectpost_meta' ) ) {
+	add_action( 'TheCreativityArchitectafter_entry_title', 'TheCreativityArchitectpost_meta' );
 	/**
 	 * Build the post meta.
 	 *
 	 */
-	function __THEMENAE__post_meta() {
+	function TheCreativityArchitectpost_meta() {
 		if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php __THEMENAE__posted_on(); ?>
+				<?php TheCreativityArchitectposted_on(); ?>
 			</div><!-- .entry-meta -->
 		<?php endif;
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__footer_meta' ) ) {
-	add_action( '__THEMENAE__after_entry_content', '__THEMENAE__footer_meta' );
+if ( ! function_exists( 'TheCreativityArchitectfooter_meta' ) ) {
+	add_action( 'TheCreativityArchitectafter_entry_content', 'TheCreativityArchitectfooter_meta' );
 	/**
 	 * Build the footer post meta.
 	 *
 	 */
-	function __THEMENAE__footer_meta() {
+	function TheCreativityArchitectfooter_meta() {
 		if ( 'post' == get_post_type() ) : ?>
 			<footer class="entry-meta">
-				<?php __THEMENAE__entry_meta(); ?>
-				<?php if ( is_single() ) __THEMENAE__content_nav( 'nav-below' ); ?>
+				<?php TheCreativityArchitectentry_meta(); ?>
+				<?php if ( is_single() ) TheCreativityArchitectcontent_nav( 'nav-below' ); ?>
 			</footer><!-- .entry-meta -->
 		<?php endif;
 	}

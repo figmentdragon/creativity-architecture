@@ -3,7 +3,7 @@
  * This template displays the post loop.
  *
  * @package Portfolio
- * @since __THEMENAE__ 1.0
+ * @since TheCreativityArchitect 1.0
  */
 
 ?>

@@ -4,7 +4,7 @@
  *
  * Renders the featured image on posts & pages.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 

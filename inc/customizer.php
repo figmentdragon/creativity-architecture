@@ -1,8 +1,8 @@
 <?php
 /**
- * __THEMENAE__: Customizer
+ * TheCreativityArchitect: Customizer
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  *
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -47,7 +47,7 @@ function customize_register( $wp_customize ) {
       $wp_customize->add_panel( 'layout_panel',
         array(
           'priority' => 25,
-          'title' => __( 'Layout', '__THEMENAE__' ),
+          'title' => __( 'Layout', 'TheCreativityArchitect' ),
           'description' => esc_html__( 'Page Layouts' ),
           'capability' => 'edit_theme_options',
         )
@@ -65,8 +65,8 @@ function customize_register( $wp_customize ) {
     wp_customize->add_control( 'settings[font_awesome_essentials]',
       array(
         'type' => 'checkbox',
-        'label' => __( 'Load essential icons only', '__THEMENAE__' ),
-        'description' => __( 'Load essential Font Awesome icons instead of the full library.', '__THEMENAE__' ),
+        'label' => __( 'Load essential icons only', 'TheCreativityArchitect' ),
+        'description' => __( 'Load essential Font Awesome icons instead of the full library.', 'TheCreativityArchitect' ),
         'section' => 'general_section',
         'settings' => 'settings[font_awesome_essentials]',
       )
@@ -75,7 +75,7 @@ function customize_register( $wp_customize ) {
 
   $wp_customize->add_section( 'layout_container',
     array(
-      'title' => __( 'Container', '__THEMENAE__' ),
+      'title' => __( 'Container', 'TheCreativityArchitect' ),
       'priority' => 10,
       'panel' => 'layout_panel'
     )
@@ -97,13 +97,13 @@ function customize_register( $wp_customize ) {
   );
   $wp_customize->add_section( 'layout_effects',
     array(
-			'title' => __( 'Effects', '__THEMENAE__' ),
+			'title' => __( 'Effects', 'TheCreativityArchitect' ),
 			'priority' => 24,
 		)
 	);
   $wp_customize->add_section( 'top_bar',
     array(
-			'title' => __( 'Top Bar', '__THEMENAE__' ),
+			'title' => __( 'Top Bar', 'TheCreativityArchitect' ),
 			'priority' => 15,
 			'panel' => 'layout_panel',
     )
@@ -127,7 +127,7 @@ function customize_register( $wp_customize ) {
 			'transport'         => 'postMessage', ) );
 	$wp_customize->add_control( 'copyright_text',
 		array(
-			'label'   => esc_html__( 'Add copyright text in the footer.', '__THEMENAE__' ),
+			'label'   => esc_html__( 'Add copyright text in the footer.', 'TheCreativityArchitect' ),
 			'section' => 'theme_options',
 			'type'    => 'textarea',
 		) );
@@ -141,7 +141,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'text-color',
 			array(
-				'label'    => esc_html__( 'General text color', '__THEMENAE__' ),
+				'label'    => esc_html__( 'General text color', 'TheCreativityArchitect' ),
 				'section'  => 'colors',
 				'settings' => 'text-color',
 				'priority' => 8,
@@ -158,7 +158,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'menu-links',
 		array(
-			'label'    => esc_html__( 'Menu links', '__THEMENAE__' ),
+			'label'    => esc_html__( 'Menu links', 'TheCreativityArchitect' ),
 			'section'  => 'colors',
 			'settings' => 'menu-links',
 			'priority' => 10,
@@ -175,7 +175,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'secondary-color',
 		array(
-				'label'    => esc_html__( 'Change the theme red color throughout', '__THEMENAE__' ),
+				'label'    => esc_html__( 'Change the theme red color throughout', 'TheCreativityArchitect' ),
 				'section'  => 'colors',
 				'settings' => 'secondary-color',
 				'priority' => 12,
@@ -192,7 +192,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'title-color',
 			array(
-				'label'    => esc_html__( 'Titles color', '__THEMENAE__' ),
+				'label'    => esc_html__( 'Titles color', 'TheCreativityArchitect' ),
 				'section'  => 'colors',
 				'settings' => 'title-color',
 				'priority' => 14,
@@ -677,10 +677,10 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[bg_dots]',
 		array(
 			'type' => 'select',
-			'label' => __( 'BG dots', '__THEMENAE__' ),
+			'label' => __( 'BG dots', 'TheCreativityArchitect' ),
 			'choices' => array(
-				'enable' => __( 'Enable', '__THEMENAE__' ),
-				'disable' => __( 'Disable', '__THEMENAE__' )
+				'enable' => __( 'Enable', 'TheCreativityArchitect' ),
+				'disable' => __( 'Disable', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[bg_dots]',
 			'section' => 'layout_effects',
@@ -698,10 +698,10 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[magic_cursor]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Magic cursor', '__THEMENAE__' ),
+			'label' => __( 'Magic cursor', 'TheCreativityArchitect' ),
 			'choices' => array(
-				'enable' => __( 'Enable', '__THEMENAE__' ),
-				'disable' => __( 'Disable', '__THEMENAE__' )
+				'enable' => __( 'Enable', 'TheCreativityArchitect' ),
+				'disable' => __( 'Disable', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[magic_cursor]',
 			'section' => 'layout_effects',
@@ -719,10 +719,10 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[blog_bg]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Blog post background', '__THEMENAE__' ),
+			'label' => __( 'Blog post background', 'TheCreativityArchitect' ),
 			'choices' => array(
-				'enable' => __( 'Enable', '__THEMENAE__' ),
-				'disable' => __( 'Disable', '__THEMENAE__' )
+				'enable' => __( 'Enable', 'TheCreativityArchitect' ),
+				'disable' => __( 'Disable', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[blog_bg]',
 			'section' => 'layout_effects',
@@ -740,7 +740,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[nav_btn_text]',
 		array(
 			'type' => 'text',
-			'label' => __( 'Extra button text', '__THEMENAE__' ),
+			'label' => __( 'Extra button text', 'TheCreativityArchitect' ),
 			'section' => 'layout_effects',
 			'settings' => 'settings[nav_btn_text]',
 			'priority' => 25
@@ -757,7 +757,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[nav_btn_url]',
 		array(
 			'type' => 'text',
-			'label' => __( 'Extra button URL', '__THEMENAE__' ),
+			'label' => __( 'Extra button URL', 'TheCreativityArchitect' ),
 			'section' => 'layout_effects',
 			'settings' => 'settings[nav_btn_url]',
 			'priority' => 25
@@ -774,7 +774,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[hide_title]',
 		array(
 			'type' => 'checkbox',
-			'label' => __( 'Hide site title', '__THEMENAE__' ),
+			'label' => __( 'Hide site title', 'TheCreativityArchitect' ),
 			'section' => 'title_tagline',
 			'priority' => 2
 		)
@@ -790,7 +790,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[hide_tagline]',
 		array(
 			'type' => 'checkbox',
-			'label' => __( 'Hide site tagline', '__THEMENAE__' ),
+			'label' => __( 'Hide site tagline', 'TheCreativityArchitect' ),
 			'section' => 'title_tagline',
 			'priority' => 4
 		)
@@ -805,7 +805,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control(
     $wp_customize, 'settings[retina_logo]',
 		array(
-			'label' => __( 'Retina Logo', '__THEMENAE__' ),
+			'label' => __( 'Retina Logo', 'TheCreativityArchitect' ),
 			'section' => 'title_tagline',
 			'settings' => 'settings[retina_logo]',
 			'active_callback' => 'has_custom_logo_callback'
@@ -824,7 +824,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'settings[side_inside_color]',
 		array(
-			'label' => __( 'Inside padding', '__THEMENAE__' ),
+			'label' => __( 'Inside padding', 'TheCreativityArchitect' ),
 			'section' => 'colors',
 			'settings' => 'settings[side_inside_color]',
 			'active_callback' => 'is_side_padding_active',
@@ -843,7 +843,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'settings[text_color]',
 		array(
-			'label' => __( 'Text Color', '__THEMENAE__' ),
+			'label' => __( 'Text Color', 'TheCreativityArchitect' ),
 			'section' => 'colors',
 			'settings' => 'settings[text_color]'
 		)
@@ -861,7 +861,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'settings[link_color]',
 		array(
-			'label' => __( 'Link Color', '__THEMENAE__' ),
+			'label' => __( 'Link Color', 'TheCreativityArchitect' ),
 			'section' => 'colors',
 			'settings' => 'settings[link_color]'
 		)
@@ -878,7 +878,7 @@ function customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'settings[link_color_hover]',
 		array(
-			'label' => __( 'Link Color Hover', '__THEMENAE__' ),
+			'label' => __( 'Link Color Hover', 'TheCreativityArchitect' ),
 			'section' => 'colors',
 			'settings' => 'settings[link_color_hover]'
 		)
@@ -896,7 +896,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control(
     $wp_customize, 'settings[link_color_visited]',
 		array(
-			'label' => __( 'Link Color Visited', '__THEMENAE__' ),
+			'label' => __( 'Link Color Visited', 'TheCreativityArchitect' ),
 			'section' => 'colors',
 			'settings' => 'settings[link_color_visited]'
 			)
@@ -915,7 +915,7 @@ function customize_register( $wp_customize ) {
     $wp_customize, 'settings[container_width]',
       array(
 			'type' => 'lalita-range-slider',
-			'label' => __( 'Container Width', '__THEMENAE__' ),
+			'label' => __( 'Container Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_container',
 			'settings' => array(
 				'desktop' => 'settings[container_width]',
@@ -948,11 +948,11 @@ function customize_register( $wp_customize ) {
   $wp_customize->add_control( 'settings[top_bar_width]',
     array(
 			'type' => 'select',
-			'label' => __( 'Top Bar Width', '__THEMENAE__' ),
+			'label' => __( 'Top Bar Width', 'TheCreativityArchitect' ),
 			'section' => 'top_bar',
 			'choices' => array(
-        'full' => __( 'Full', '__THEMENAE__' ),
-        'contained' => __( 'Contained', '__THEMENAE__' )
+        'full' => __( 'Full', 'TheCreativityArchitect' ),
+        'contained' => __( 'Contained', 'TheCreativityArchitect' )
       ),
 			'settings' => 'settings[top_bar_width]',
 			'priority' => 5,
@@ -972,11 +972,11 @@ function customize_register( $wp_customize ) {
   $wp_customize->add_control( 'settings[top_bar_inner_width]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Top Bar Inner Width', '__THEMENAE__' ),
+			'label' => __( 'Top Bar Inner Width', 'TheCreativityArchitect' ),
 			'section' => 'top_bar',
 			'choices' => array(
-				'full' => __( 'Full', '__THEMENAE__' ),
-				'contained' => __( 'Contained', '__THEMENAE__' )
+				'full' => __( 'Full', 'TheCreativityArchitect' ),
+				'contained' => __( 'Contained', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[top_bar_inner_width]',
 			'priority' => 10,
@@ -996,12 +996,12 @@ function customize_register( $wp_customize ) {
   $wp_customize->add_control( 'settings[top_bar_alignment]',
     array(
 			'type' => 'select',
-			'label' => __( 'Top Bar Alignment', '__THEMENAE__' ),
+			'label' => __( 'Top Bar Alignment', 'TheCreativityArchitect' ),
 			'section' => 'top_bar',
 			'choices' => array(
-				'left' => __( 'Left', '__THEMENAE__' ),
-				'center' => __( 'Center', '__THEMENAE__' ),
-				'right' => __( 'Right', '__THEMENAE__' )
+				'left' => __( 'Left', 'TheCreativityArchitect' ),
+				'center' => __( 'Center', 'TheCreativityArchitect' ),
+				'right' => __( 'Right', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[top_bar_alignment]',
 			'priority' => 15,
@@ -1013,7 +1013,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'layout_header',
 		array(
-			'title' => __( 'Header', '__THEMENAE__' ),
+			'title' => __( 'Header', 'TheCreativityArchitect' ),
 			'priority' => 20,
 			'panel' => 'layout_panel'
 		)
@@ -1035,11 +1035,11 @@ function customize_register( $wp_customize ) {
 		'settings[header_layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Header Width', '__THEMENAE__' ),
+			'label' => __( 'Header Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_header',
 			'choices' => array(
-				'fluid-header' => __( 'Full', '__THEMENAE__' ),
-				'contained-header' => __( 'Contained', '__THEMENAE__' )
+				'fluid-header' => __( 'Full', 'TheCreativityArchitect' ),
+				'contained-header' => __( 'Contained', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[header_layout_setting]',
 			'priority' => 5
@@ -1062,11 +1062,11 @@ function customize_register( $wp_customize ) {
 		'settings[header_inner_width]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Inner Header Width', '__THEMENAE__' ),
+			'label' => __( 'Inner Header Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_header',
 			'choices' => array(
-				'contained' => __( 'Contained', '__THEMENAE__' ),
-				'full-width' => __( 'Full', '__THEMENAE__' )
+				'contained' => __( 'Contained', 'TheCreativityArchitect' ),
+				'full-width' => __( 'Full', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[header_inner_width]',
 			'priority' => 6
@@ -1089,12 +1089,12 @@ function customize_register( $wp_customize ) {
 		'settings[header_alignment_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Header Alignment', '__THEMENAE__' ),
+			'label' => __( 'Header Alignment', 'TheCreativityArchitect' ),
 			'section' => 'layout_header',
 			'choices' => array(
-				'left' => __( 'Left', '__THEMENAE__' ),
-				'center' => __( 'Center', '__THEMENAE__' ),
-				'right' => __( 'Right', '__THEMENAE__' )
+				'left' => __( 'Left', 'TheCreativityArchitect' ),
+				'center' => __( 'Center', 'TheCreativityArchitect' ),
+				'right' => __( 'Right', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[header_alignment_setting]',
 			'priority' => 10
@@ -1104,7 +1104,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'layout_navigation',
 		array(
-			'title' => __( 'Primary Navigation', '__THEMENAE__' ),
+			'title' => __( 'Primary Navigation', 'TheCreativityArchitect' ),
 			'priority' => 30,
 			'panel' => 'layout_panel'
 		)
@@ -1126,11 +1126,11 @@ function customize_register( $wp_customize ) {
 		'settings[nav_layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Navigation Width', '__THEMENAE__' ),
+			'label' => __( 'Navigation Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'fluid-nav' => __( 'Full', '__THEMENAE__' ),
-				'contained-nav' => __( 'Contained', '__THEMENAE__' )
+				'fluid-nav' => __( 'Full', 'TheCreativityArchitect' ),
+				'contained-nav' => __( 'Contained', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_layout_setting]',
 			'priority' => 15
@@ -1153,11 +1153,11 @@ function customize_register( $wp_customize ) {
 		'settings[nav_inner_width]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Inner Navigation Width', '__THEMENAE__' ),
+			'label' => __( 'Inner Navigation Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'contained' => __( 'Contained', '__THEMENAE__' ),
-				'full-width' => __( 'Full', '__THEMENAE__' )
+				'contained' => __( 'Contained', 'TheCreativityArchitect' ),
+				'full-width' => __( 'Full', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_inner_width]',
 			'priority' => 16
@@ -1180,12 +1180,12 @@ function customize_register( $wp_customize ) {
 		'settings[nav_alignment_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Navigation Alignment', '__THEMENAE__' ),
+			'label' => __( 'Navigation Alignment', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'left' => __( 'Left', '__THEMENAE__' ),
-				'center' => __( 'Center', '__THEMENAE__' ),
-				'right' => __( 'Right', '__THEMENAE__' )
+				'left' => __( 'Left', 'TheCreativityArchitect' ),
+				'center' => __( 'Center', 'TheCreativityArchitect' ),
+				'right' => __( 'Right', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_alignment_setting]',
 			'priority' => 20
@@ -1208,16 +1208,16 @@ function customize_register( $wp_customize ) {
 		'settings[nav_position_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Navigation Location', '__THEMENAE__' ),
+			'label' => __( 'Navigation Location', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'nav-below-header' => __( 'Below Header', '__THEMENAE__' ),
-				'nav-above-header' => __( 'Above Header', '__THEMENAE__' ),
-				'nav-float-right' => __( 'Float Right', '__THEMENAE__' ),
-				'nav-float-left' => __( 'Float Left', '__THEMENAE__' ),
-				'nav-left-sidebar' => __( 'Left Sidebar', '__THEMENAE__' ),
-				'nav-right-sidebar' => __( 'Right Sidebar', '__THEMENAE__' ),
-				'' => __( 'No Navigation', '__THEMENAE__' )
+				'nav-below-header' => __( 'Below Header', 'TheCreativityArchitect' ),
+				'nav-above-header' => __( 'Above Header', 'TheCreativityArchitect' ),
+				'nav-float-right' => __( 'Float Right', 'TheCreativityArchitect' ),
+				'nav-float-left' => __( 'Float Left', 'TheCreativityArchitect' ),
+				'nav-left-sidebar' => __( 'Left Sidebar', 'TheCreativityArchitect' ),
+				'nav-right-sidebar' => __( 'Right Sidebar', 'TheCreativityArchitect' ),
+				'' => __( 'No Navigation', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_position_setting]',
 			'priority' => 22
@@ -1239,12 +1239,12 @@ function customize_register( $wp_customize ) {
 		'settings[nav_dropdown_type]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Navigation Dropdown', '__THEMENAE__' ),
+			'label' => __( 'Navigation Dropdown', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'hover' => __( 'Hover', '__THEMENAE__' ),
-				'click' => __( 'Click - Menu Item', '__THEMENAE__' ),
-				'click-arrow' => __( 'Click - Arrow', '__THEMENAE__' )
+				'hover' => __( 'Hover', 'TheCreativityArchitect' ),
+				'click' => __( 'Click - Menu Item', 'TheCreativityArchitect' ),
+				'click-arrow' => __( 'Click - Arrow', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_dropdown_type]',
 			'priority' => 22
@@ -1264,11 +1264,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[nav_search]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Navigation Search', '__THEMENAE__' ),
+			'label' => __( 'Navigation Search', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'enable' => __( 'Enable', '__THEMENAE__' ),
-				'disable' => __( 'Disable', '__THEMENAE__' )
+				'enable' => __( 'Enable', 'TheCreativityArchitect' ),
+				'disable' => __( 'Disable', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_search]',
 			'priority' => 23
@@ -1288,14 +1288,14 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[nav_effect]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Navigation Effects', '__THEMENAE__' ),
+			'label' => __( 'Navigation Effects', 'TheCreativityArchitect' ),
 			'section' => 'layout_navigation',
 			'choices' => array(
-				'none' => __( 'None', '__THEMENAE__' ),
-				'stylea' => __( 'Brackets', '__THEMENAE__' ),
-				'styleb' => __( 'Borders', '__THEMENAE__' ),
-				'stylec' => __( 'Switch', '__THEMENAE__' ),
-				'styled' => __( 'Fall down', '__THEMENAE__' )
+				'none' => __( 'None', 'TheCreativityArchitect' ),
+				'stylea' => __( 'Brackets', 'TheCreativityArchitect' ),
+				'styleb' => __( 'Borders', 'TheCreativityArchitect' ),
+				'stylec' => __( 'Switch', 'TheCreativityArchitect' ),
+				'styled' => __( 'Fall down', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[nav_effect]',
 			'priority' => 24
@@ -1316,11 +1316,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[content_layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Content Layout', '__THEMENAE__' ),
+			'label' => __( 'Content Layout', 'TheCreativityArchitect' ),
 			'section' => 'layout_container',
 			'choices' => array(
-				'separate-containers' => __( 'Separate Containers', '__THEMENAE__' ),
-				'one-container' => __( 'One Container', '__THEMENAE__' )
+				'separate-containers' => __( 'Separate Containers', 'TheCreativityArchitect' ),
+				'one-container' => __( 'One Container', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[content_layout_setting]',
 			'priority' => 25
@@ -1329,7 +1329,7 @@ function customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'layout_sidecontent',
 		array(
-			'title' => __( 'Fixed Side Content', '__THEMENAE__' ),
+			'title' => __( 'Fixed Side Content', 'TheCreativityArchitect' ),
 			'priority' => 39,
 			'panel' => 'layout_panel'
 		)
@@ -1346,8 +1346,8 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[fixed_side_content]',
 		array(
 			'type' 		 => 'textarea',
-			'label'      => __( 'Fixed Side Content', '__THEMENAE__' ),
-			'description'=> __( 'Content that You want to display fixed on the left.', '__THEMENAE__' ),
+			'label'      => __( 'Fixed Side Content', 'TheCreativityArchitect' ),
+			'description'=> __( 'Content that You want to display fixed on the left.', 'TheCreativityArchitect' ),
 			'section'    => 'layout_sidecontent',
 			'settings'   => 'settings[fixed_side_content]',
 		)
@@ -1355,7 +1355,7 @@ function customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'layout_sidebars',
 		array(
-			'title' => __( 'Sidebars', '__THEMENAE__' ),
+			'title' => __( 'Sidebars', 'TheCreativityArchitect' ),
 			'priority' => 40,
 			'panel' => 'layout_panel'
 		)
@@ -1374,15 +1374,15 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Sidebar Layout', '__THEMENAE__' ),
+			'label' => __( 'Sidebar Layout', 'TheCreativityArchitect' ),
 			'section' => 'layout_sidebars',
 			'choices' => array(
-				'left-sidebar' => __( 'Sidebar / Content', '__THEMENAE__' ),
-				'right-sidebar' => __( 'Content / Sidebar', '__THEMENAE__' ),
-				'no-sidebar' => __( 'Content (no sidebars)', '__THEMENAE__' ),
-				'both-sidebars' => __( 'Sidebar / Content / Sidebar', '__THEMENAE__' ),
-				'both-left' => __( 'Sidebar / Sidebar / Content', '__THEMENAE__' ),
-				'both-right' => __( 'Content / Sidebar / Sidebar', '__THEMENAE__' )
+				'left-sidebar' => __( 'Sidebar / Content', 'TheCreativityArchitect' ),
+				'right-sidebar' => __( 'Content / Sidebar', 'TheCreativityArchitect' ),
+				'no-sidebar' => __( 'Content (no sidebars)', 'TheCreativityArchitect' ),
+				'both-sidebars' => __( 'Sidebar / Content / Sidebar', 'TheCreativityArchitect' ),
+				'both-left' => __( 'Sidebar / Sidebar / Content', 'TheCreativityArchitect' ),
+				'both-right' => __( 'Content / Sidebar / Sidebar', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[layout_setting]',
 			'priority' => 30
@@ -1402,15 +1402,15 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[blog_layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Blog Sidebar Layout', '__THEMENAE__' ),
+			'label' => __( 'Blog Sidebar Layout', 'TheCreativityArchitect' ),
 			'section' => 'layout_sidebars',
 			'choices' => array(
-				'left-sidebar' => __( 'Sidebar / Content', '__THEMENAE__' ),
-				'right-sidebar' => __( 'Content / Sidebar', '__THEMENAE__' ),
-				'no-sidebar' => __( 'Content (no sidebars)', '__THEMENAE__' ),
-				'both-sidebars' => __( 'Sidebar / Content / Sidebar', '__THEMENAE__' ),
-				'both-left' => __( 'Sidebar / Sidebar / Content', '__THEMENAE__' ),
-				'both-right' => __( 'Content / Sidebar / Sidebar', '__THEMENAE__' )
+				'left-sidebar' => __( 'Sidebar / Content', 'TheCreativityArchitect' ),
+				'right-sidebar' => __( 'Content / Sidebar', 'TheCreativityArchitect' ),
+				'no-sidebar' => __( 'Content (no sidebars)', 'TheCreativityArchitect' ),
+				'both-sidebars' => __( 'Sidebar / Content / Sidebar', 'TheCreativityArchitect' ),
+				'both-left' => __( 'Sidebar / Sidebar / Content', 'TheCreativityArchitect' ),
+				'both-right' => __( 'Content / Sidebar / Sidebar', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[blog_layout_setting]',
 			'priority' => 35
@@ -1430,15 +1430,15 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[single_layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Single Post Sidebar Layout', '__THEMENAE__' ),
+			'label' => __( 'Single Post Sidebar Layout', 'TheCreativityArchitect' ),
 			'section' => 'layout_sidebars',
 			'choices' => array(
-				'left-sidebar' => __( 'Sidebar / Content', '__THEMENAE__' ),
-				'right-sidebar' => __( 'Content / Sidebar', '__THEMENAE__' ),
-				'no-sidebar' => __( 'Content (no sidebars)', '__THEMENAE__' ),
-				'both-sidebars' => __( 'Sidebar / Content / Sidebar', '__THEMENAE__' ),
-				'both-left' => __( 'Sidebar / Sidebar / Content', '__THEMENAE__' ),
-				'both-right' => __( 'Content / Sidebar / Sidebar', '__THEMENAE__' )
+				'left-sidebar' => __( 'Sidebar / Content', 'TheCreativityArchitect' ),
+				'right-sidebar' => __( 'Content / Sidebar', 'TheCreativityArchitect' ),
+				'no-sidebar' => __( 'Content (no sidebars)', 'TheCreativityArchitect' ),
+				'both-sidebars' => __( 'Sidebar / Content / Sidebar', 'TheCreativityArchitect' ),
+				'both-left' => __( 'Sidebar / Sidebar / Content', 'TheCreativityArchitect' ),
+				'both-right' => __( 'Content / Sidebar / Sidebar', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[single_layout_setting]',
 			'priority' => 36
@@ -1447,7 +1447,7 @@ function customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'layout_footer',
 		array(
-			'title' => __( 'Footer', '__THEMENAE__' ),
+			'title' => __( 'Footer', 'TheCreativityArchitect' ),
 			'priority' => 50,
 			'panel' => 'layout_panel'
 		)
@@ -1467,11 +1467,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[footer_layout_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Footer Width', '__THEMENAE__' ),
+			'label' => __( 'Footer Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_footer',
 			'choices' => array(
-				'fluid-footer' => __( 'Full', '__THEMENAE__' ),
-				'contained-footer' => __( 'Contained', '__THEMENAE__' )
+				'fluid-footer' => __( 'Full', 'TheCreativityArchitect' ),
+				'contained-footer' => __( 'Contained', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[footer_layout_setting]',
 			'priority' => 40
@@ -1491,11 +1491,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[footer_widgets_inner_width]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Inner Footer Widgets Width', '__THEMENAE__' ),
+			'label' => __( 'Inner Footer Widgets Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_footer',
 			'choices' => array(
-				'contained' => __( 'Contained', '__THEMENAE__' ),
-				'full-width' => __( 'Full', '__THEMENAE__' )
+				'contained' => __( 'Contained', 'TheCreativityArchitect' ),
+				'full-width' => __( 'Full', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[footer_widgets_inner_width]',
 			'priority' => 41
@@ -1516,11 +1516,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[footer_inner_width]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Inner Footer Width', '__THEMENAE__' ),
+			'label' => __( 'Inner Footer Width', 'TheCreativityArchitect' ),
 			'section' => 'layout_footer',
 			'choices' => array(
-				'contained' => __( 'Contained', '__THEMENAE__' ),
-				'full-width' => __( 'Full', '__THEMENAE__' )
+				'contained' => __( 'Contained', 'TheCreativityArchitect' ),
+				'full-width' => __( 'Full', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[footer_inner_width]',
 			'priority' => 41
@@ -1541,7 +1541,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[footer_widget_setting]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Footer Widgets', '__THEMENAE__' ),
+			'label' => __( 'Footer Widgets', 'TheCreativityArchitect' ),
 			'section' => 'layout_footer',
 			'choices' => array(
 				'0' => '0',
@@ -1570,12 +1570,12 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[footer_bar_alignment]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Footer Bar Alignment', '__THEMENAE__' ),
+			'label' => __( 'Footer Bar Alignment', 'TheCreativityArchitect' ),
 			'section' => 'layout_footer',
 			'choices' => array(
-				'left' => __( 'Left','__THEMENAE__' ),
-				'center' => __( 'Center','__THEMENAE__' ),
-				'right' => __( 'Right','__THEMENAE__' )
+				'left' => __( 'Left','TheCreativityArchitect' ),
+				'center' => __( 'Center','TheCreativityArchitect' ),
+				'right' => __( 'Right','TheCreativityArchitect' )
 			),
 			'settings' => 'settings[footer_bar_alignment]',
 			'priority' => 47,
@@ -1596,11 +1596,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[back_to_top]',
 		array(
 			'type' => 'select',
-			'label' => __( 'Back to Top Button', '__THEMENAE__' ),
+			'label' => __( 'Back to Top Button', 'TheCreativityArchitect' ),
 			'section' => 'layout_footer',
 			'choices' => array(
-				'enable' => __( 'Enable', '__THEMENAE__' ),
-				'' => __( 'Disable', '__THEMENAE__' )
+				'enable' => __( 'Enable', 'TheCreativityArchitect' ),
+				'' => __( 'Disable', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[back_to_top]',
 			'priority' => 50
@@ -1610,7 +1610,7 @@ function customize_register( $wp_customize ) {
 	// Add Layout section
 	$wp_customize->add_section( 'blog_section',
 		array(
-			'title' => __( 'Blog', '__THEMENAE__' ),
+			'title' => __( 'Blog', 'TheCreativityArchitect' ),
 			'priority' => 55,
 			'panel' => 'layout_panel'
 		)
@@ -1626,10 +1626,10 @@ function customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'settings[blog_header_image]',
 		array(
-			'label' => __( 'Blog Header image', '__THEMENAE__' ),
+			'label' => __( 'Blog Header image', 'TheCreativityArchitect' ),
 			'section' => 'blog_section',
 			'settings' => 'settings[blog_header_image]',
-			'description' => __( 'Recommended size: 1520*660px', '__THEMENAE__' )
+			'description' => __( 'Recommended size: 1520*660px', 'TheCreativityArchitect' )
 			)
 		)
 	);
@@ -1646,10 +1646,10 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[blog_header_title]',
 		array(
 			'type' 		 => 'textarea',
-			'label'      => __( 'Blog Header title', '__THEMENAE__' ),
+			'label'      => __( 'Blog Header title', 'TheCreativityArchitect' ),
 			'section'    => 'blog_section',
 			'settings'   => 'settings[blog_header_title]',
-			'description' => __( 'HTML allowed.', '__THEMENAE__' )
+			'description' => __( 'HTML allowed.', 'TheCreativityArchitect' )
 		)
 	);
 
@@ -1664,7 +1664,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[blog_header_text]',
 		array(
 			'type' 		 => 'textarea',
-			'label'      => __( 'Blog Header text', '__THEMENAE__' ),
+			'label'      => __( 'Blog Header text', 'TheCreativityArchitect' ),
 			'section'    => 'blog_section',
 			'settings'   => 'settings[blog_header_text]',
 		)
@@ -1681,7 +1681,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[blog_header_button_text]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Blog Header button text', '__THEMENAE__' ),
+			'label'      => __( 'Blog Header button text', 'TheCreativityArchitect' ),
 			'section'    => 'blog_section',
 			'settings'   => 'settings[blog_header_button_text]',
 		)
@@ -1698,7 +1698,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[blog_header_button_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Blog Header button url', '__THEMENAE__' ),
+			'label'      => __( 'Blog Header button url', 'TheCreativityArchitect' ),
 			'section'    => 'blog_section',
 			'settings'   => 'settings[blog_header_button_url]',
 		)
@@ -1717,11 +1717,11 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'blog_content_control',
 		array(
 			'type' => 'select',
-			'label' => __( 'Content Type', '__THEMENAE__' ),
+			'label' => __( 'Content Type', 'TheCreativityArchitect' ),
 			'section' => 'blog_section',
 			'choices' => array(
-				'full' => __( 'Full', '__THEMENAE__' ),
-				'excerpt' => __( 'Excerpt', '__THEMENAE__' )
+				'full' => __( 'Full', 'TheCreativityArchitect' ),
+				'excerpt' => __( 'Excerpt', 'TheCreativityArchitect' )
 			),
 			'settings' => 'settings[post_content]',
 			'priority' => 10
@@ -1730,14 +1730,14 @@ function customize_register( $wp_customize ) {
 
 	$wp_customize->add_section( 'general_section',
 		array(
-			'title' => __( 'General', '__THEMENAE__' ),
+			'title' => __( 'General', 'TheCreativityArchitect' ),
 			'priority' => 99
 		)
 	);
 
 	$wp_customize->add_section( 'socials_section',
 		array(
-			'title' => __( 'Socials', '__THEMENAE__' ),
+			'title' => __( 'Socials', 'TheCreativityArchitect' ),
 			'priority' => 99
 		)
 	);
@@ -1753,7 +1753,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_display_side]',
 		array(
 			'type' => 'checkbox',
-			'label' => __( 'Display on fixed side', '__THEMENAE__' ),
+			'label' => __( 'Display on fixed side', 'TheCreativityArchitect' ),
 			'section' => 'socials_section'
 		)
 	);
@@ -1769,7 +1769,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_display_top]',
 		array(
 			'type' => 'checkbox',
-			'label' => __( 'Display on top bar', '__THEMENAE__' ),
+			'label' => __( 'Display on top bar', 'TheCreativityArchitect' ),
 			'section' => 'socials_section'
 		)
 	);
@@ -1785,7 +1785,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_facebook_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Facebook url', '__THEMENAE__' ),
+			'label'      => __( 'Facebook url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_facebook_url]',
 		)
@@ -1802,7 +1802,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_twitter_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Twitter url', '__THEMENAE__' ),
+			'label'      => __( 'Twitter url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_twitter_url]',
 		)
@@ -1819,7 +1819,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_google_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Google url', '__THEMENAE__' ),
+			'label'      => __( 'Google url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_google_url]',
 		)
@@ -1836,7 +1836,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_tumblr_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Tumblr url', '__THEMENAE__' ),
+			'label'      => __( 'Tumblr url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_tumblr_url]',
 		)
@@ -1853,7 +1853,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_pinterest_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Pinterest url', '__THEMENAE__' ),
+			'label'      => __( 'Pinterest url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_pinterest_url]',
 		)
@@ -1870,7 +1870,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_youtube_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Youtube url', '__THEMENAE__' ),
+			'label'      => __( 'Youtube url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_youtube_url]',
 		)
@@ -1887,7 +1887,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_linkedin_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Linkedin url', '__THEMENAE__' ),
+			'label'      => __( 'Linkedin url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_linkedin_url]',
 		)
@@ -1904,7 +1904,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_linkedin_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Linkedin url', '__THEMENAE__' ),
+			'label'      => __( 'Linkedin url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_linkedin_url]',
 		)
@@ -1921,14 +1921,14 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_custom_icon_1]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Custom icon 1', '__THEMENAE__' ),
+			'label'      => __( 'Custom icon 1', 'TheCreativityArchitect' ),
 			'description'=> sprintf(
 				'%1$s<br>%2$s<code>fa-file-pdf-o</code><br>%3$s<a href="%4$s" target="_blank">%5$s</a>',
-				esc_html__( 'You can add icon code for Your button.', '__THEMENAE__' ),
-				esc_html__( 'Example: ', '__THEMENAE__' ),
-				esc_html__( 'Use the codes from ', '__THEMENAE__' ),
+				esc_html__( 'You can add icon code for Your button.', 'TheCreativityArchitect' ),
+				esc_html__( 'Example: ', 'TheCreativityArchitect' ),
+				esc_html__( 'Use the codes from ', 'TheCreativityArchitect' ),
 				esc_url( 'FONT_AWESOME_LINK' ),
-				esc_html__( 'this link', '__THEMENAE__' )
+				esc_html__( 'this link', 'TheCreativityArchitect' )
 			),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_custom_icon_1]',
@@ -1946,7 +1946,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_custom_icon_url_1]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Custom icon 1 url', '__THEMENAE__' ),
+			'label'      => __( 'Custom icon 1 url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_custom_icon_url_1]',
 		)
@@ -1963,14 +1963,14 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_custom_icon_2]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Custom icon 2', '__THEMENAE__' ),
+			'label'      => __( 'Custom icon 2', 'TheCreativityArchitect' ),
 			'description'=> sprintf(
 				'%1$s<br>%2$s<code>fa-file-pdf-o</code><br>%3$s<a href="%4$s" target="_blank">%5$s</a>',
-				esc_html__( 'You can add icon code for Your button.', '__THEMENAE__' ),
-				esc_html__( 'Example: ', '__THEMENAE__' ),
-				esc_html__( 'Use the codes from ', '__THEMENAE__' ),
+				esc_html__( 'You can add icon code for Your button.', 'TheCreativityArchitect' ),
+				esc_html__( 'Example: ', 'TheCreativityArchitect' ),
+				esc_html__( 'Use the codes from ', 'TheCreativityArchitect' ),
 				esc_url( 'FONT_AWESOME_LINK' ),
-				esc_html__( 'this link', '__THEMENAE__' )
+				esc_html__( 'this link', 'TheCreativityArchitect' )
 			),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_custom_icon_2]',
@@ -1988,7 +1988,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_custom_icon_url_2]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Custom icon 2 url', '__THEMENAE__' ),
+			'label'      => __( 'Custom icon 2 url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_custom_icon_url_2]',
 		)
@@ -2005,14 +2005,14 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_custom_icon_3]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Custom icon 3', '__THEMENAE__' ),
+			'label'      => __( 'Custom icon 3', 'TheCreativityArchitect' ),
 			'description'=> sprintf(
 				'%1$s<br>%2$s<code>fa-file-pdf-o</code><br>%3$s<a href="%4$s" target="_blank">%5$s</a>',
-				esc_html__( 'You can add icon code for Your button.', '__THEMENAE__' ),
-				esc_html__( 'Example: ', '__THEMENAE__' ),
-				esc_html__( 'Use the codes from ', '__THEMENAE__' ),
+				esc_html__( 'You can add icon code for Your button.', 'TheCreativityArchitect' ),
+				esc_html__( 'Example: ', 'TheCreativityArchitect' ),
+				esc_html__( 'Use the codes from ', 'TheCreativityArchitect' ),
 				esc_url( 'FONT_AWESOME_LINK' ),
-				esc_html__( 'this link', '__THEMENAE__' )
+				esc_html__( 'this link', 'TheCreativityArchitect' )
 			),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_custom_icon_3]',
@@ -2030,7 +2030,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_custom_icon_url_3]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'Custom icon 3 url', '__THEMENAE__' ),
+			'label'      => __( 'Custom icon 3 url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_custom_icon_url_3]',
 		)
@@ -2047,7 +2047,7 @@ function customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'settings[socials_mail_url]',
 		array(
 			'type' 		 => 'text',
-			'label'      => __( 'E-mail url', '__THEMENAE__' ),
+			'label'      => __( 'E-mail url', 'TheCreativityArchitect' ),
 			'section'    => 'socials_section',
 			'settings'   => 'settings[socials_mail_url]',
 		)

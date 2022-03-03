@@ -6,7 +6,7 @@
  * 		Removed the hue picker script because we don't use it here
  * 		Added the "palettes" argument in wpColorPicker().
  *
- * @since _THEMENAE_ 1.0
+ * @since TheCreativityArchitect 1.0
  */
 wp.customize.controlConstructor['color'] = wp.customize.Control.extend( {
 	ready: function() {

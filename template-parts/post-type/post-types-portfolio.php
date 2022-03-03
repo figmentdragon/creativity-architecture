@@ -2,12 +2,12 @@
 /**
  * The template for displaying portfolio items
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  */
 ?>
 
 <?php
-$number = get_theme_mod( '__THEMENAE___portfolio_number', 6 );
+$number = get_theme_mod( 'TheCreativityArchitect_portfolio_number', 6 );
 
 if ( ! $number ) {
 	// If number is 0, then this section is disabled
@@ -26,17 +26,17 @@ $no_of_post = 0; // for number of posts
 $args['post_type'] = 'jetpack-portfolio';
 
 for ( $i = 1; $i <= $number; $i++ ) {
-	$__THEMENAE___post_id = '';
+	$TheCreativityArchitect_post_id = '';
 
-	$__THEMENAE___post_id =  get_theme_mod( '__THEMENAE___portfolio_cpt_' . $i );
+	$TheCreativityArchitect_post_id =  get_theme_mod( 'TheCreativityArchitect_portfolio_cpt_' . $i );
 
-	if ( $__THEMENAE___post_id && '' !== $__THEMENAE___post_id ) {
+	if ( $TheCreativityArchitect_post_id && '' !== $TheCreativityArchitect_post_id ) {
 		// Polylang Support.
 		if ( class_exists( 'Polylang' ) ) {
-			$__THEMENAE___post_id = pll_get_post( $__THEMENAE___post_id, pll_current_language() );
+			$TheCreativityArchitect_post_id = pll_get_post( $TheCreativityArchitect_post_id, pll_current_language() );
 		}
 
-		$post_list = array_merge( $post_list, array( $__THEMENAE___post_id ) );
+		$post_list = array_merge( $post_list, array( $TheCreativityArchitect_post_id ) );
 
 		$no_of_post++;
 	}

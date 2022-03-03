@@ -595,7 +595,7 @@ function scrolltop() {
 		}
 
 		echo '<a class="scrolltop" rel="nofollow" href="javascript:void(0)" data-scrolltop-value="' . (int) $scrollTop . '">';
-		echo '<span class="screen-reader-text">' . __( 'Scroll to Top', '__THEMENAE__' ) . '</span>';
+		echo '<span class="screen-reader-text">' . __( 'Scroll to Top', 'TheCreativityArchitect' ) . '</span>';
 		echo $icon;
 		echo '</a>';
 
@@ -733,7 +733,7 @@ function archive_header() {
 			'search_page_title',
 			sprintf(
 				/* translators: Search query */
-				__( 'Search Results for: %s', '__THEMENAE__' ),
+				__( 'Search Results for: %s', 'TheCreativityArchitect' ),
 				'<span>' . get_search_query() . '</span>'
 			)
 		);
@@ -837,13 +837,13 @@ function do_post_links() {
 
 	?>
 
-	<nav class="post-links clearfix" aria-label="<?php _e( 'Post Navigation', '__THEMENAE__' ); ?>">
+	<nav class="post-links clearfix" aria-label="<?php _e( 'Post Navigation', 'TheCreativityArchitect' ); ?>">
 
-		<span class="screen-reader-text"><?php _e( 'Post Navigation', '__THEMENAE__' ); ?></span>
+		<span class="screen-reader-text"><?php _e( 'Post Navigation', 'TheCreativityArchitect' ); ?></span>
 
 		<?php
-		previous_post_link( '<span class="previous-post-link">%link</span>', apply_filters( 'previous_post_link', __( '&larr; Previous Post', '__THEMENAE__' ) ) );
-		next_post_link( '<span class="next-post-link">%link</span>', apply_filters( 'next_post_link', __( 'Next Post &rarr;', '__THEMENAE__' ) ) );
+		previous_post_link( '<span class="previous-post-link">%link</span>', apply_filters( 'previous_post_link', __( '&larr; Previous Post', 'TheCreativityArchitect' ) ) );
+		next_post_link( '<span class="next-post-link">%link</span>', apply_filters( 'next_post_link', __( 'Next Post &rarr;', 'TheCreativityArchitect' ) ) );
 		?>
 
 	</nav>
@@ -865,8 +865,8 @@ function do_posts_pagination() {
 	the_posts_pagination(
 		array(
 			'mid_size'  => apply_filters( 'posts_pagination_size', 2 ),
-			'prev_text' => apply_filters( 'posts_navigation_prev_text', __( '&larr; Previous', '__THEMENAE__' ) ),
-			'next_text' => apply_filters( 'posts_navigation_next_text', __( 'Next &rarr;', '__THEMENAE__' ) ),
+			'prev_text' => apply_filters( 'posts_navigation_prev_text', __( '&larr; Previous', 'TheCreativityArchitect' ) ),
+			'next_text' => apply_filters( 'posts_navigation_next_text', __( 'Next &rarr;', 'TheCreativityArchitect' ) ),
 		)
 	);
 
@@ -1037,7 +1037,7 @@ function do_author_meta() {
 	echo sprintf(
 		'<span class="article-author author vcard" itemscope="itemscope" itemprop="author" itemtype="https://schema.org/Person"><a class="url fn" href="%1$s" title="%2$s" rel="author" itemprop="url"><span itemprop="name">%3$s</span></a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', '__THEMENAE__' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'TheCreativityArchitect' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
 
@@ -1055,7 +1055,7 @@ add_action( 'author_meta', 'do_author_meta' );
  */
 function do_date_meta() {
 
-	echo '<span class="posted-on">' . __( 'Posted on', '__THEMENAE__' ) . '</span> <time class="article-time published" datetime="' . get_the_date( 'c' ) . '" itemprop="datePublished">' . get_the_date() . '</time>';
+	echo '<span class="posted-on">' . __( 'Posted on', 'TheCreativityArchitect' ) . '</span> <time class="article-time published" datetime="' . get_the_date( 'c' ) . '" itemprop="datePublished">' . get_the_date() . '</time>';
 	echo '<span class="article-meta-separator">' . apply_filters( 'article_meta_separator', ' | ' ) . '</span>';
 
 }
@@ -1069,9 +1069,9 @@ function do_comments_meta() {
 	echo '<span class="comments-count">';
 
 	comments_number(
-		__( '<span>No</span> Comments', '__THEMENAE__' ),
-		__( '<span>1</span> Comment', '__THEMENAE__' ),
-		__( '<span>%</span> Comments', '__THEMENAE__' )
+		__( '<span>No</span> Comments', 'TheCreativityArchitect' ),
+		__( '<span>1</span> Comment', 'TheCreativityArchitect' ),
+		__( '<span>%</span> Comments', 'TheCreativityArchitect' )
 	);
 
 	echo '</span>';

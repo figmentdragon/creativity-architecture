@@ -22,35 +22,35 @@ if ( ! function_exists( 'scripts' ) ) {
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 		$dir_uri = get_template_directory_uri();
 
-		wp_enqueue_style( '__THEMENAE-style-grid', $dir_uri . "/css/unsemantic-grid{$suffix}.css", false, VERSION, 'all' );
-		wp_enqueue_style( '__THEMENAE-style', $dir_uri . "/style{$suffix}.css", array( '__THEMENAE-style-grid' ), VERSION, 'all' );
-		wp_enqueue_style( '__THEMENAE-mobile-style', $dir_uri . "/css/mobile{$suffix}.css", array( '__THEMENAE-style' ), VERSION, 'all' );
+		wp_enqueue_style( 'TheCreativityArchitect-style-grid', $dir_uri . "/css/unsemantic-grid{$suffix}.css", false, VERSION, 'all' );
+		wp_enqueue_style( 'TheCreativityArchitect-style', $dir_uri . "/style{$suffix}.css", array( 'TheCreativityArchitect-style-grid' ), VERSION, 'all' );
+		wp_enqueue_style( 'TheCreativityArchitect-mobile-style', $dir_uri . "/css/mobile{$suffix}.css", array( 'TheCreativityArchitect-style' ), VERSION, 'all' );
 
 		if ( is_child_theme() ) {
-			wp_enqueue_style( '__THEMENAE-child', get_stylesheet_uri(), array( '__THEMENAE-style' ), filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
+			wp_enqueue_style( 'TheCreativityArchitect-child', get_stylesheet_uri(), array( 'TheCreativityArchitect-style' ), filemtime( get_stylesheet_directory() . '/style.css' ), 'all' );
 		}
 
 		wp_enqueue_style( 'font-awesome', $dir_uri . "/css/font-awesome{$suffix}.css", false, '5.1', 'all' );
 
 		if ( function_exists( 'wp_script_add_data' ) ) {
-			wp_enqueue_script( '__THEMENAE-classlist', $dir_uri . "/js/classList{$suffix}.js", array(), VERSION, true );
-			wp_script_add_data( '__THEMENAE-classlist', 'conditional', 'lte IE 11' );
+			wp_enqueue_script( 'TheCreativityArchitect-classlist', $dir_uri . "/js/classList{$suffix}.js", array(), VERSION, true );
+			wp_script_add_data( 'TheCreativityArchitect-classlist', 'conditional', 'lte IE 11' );
 		}
 
-		wp_enqueue_script( '__THEMENAE-menu', $dir_uri . "/js/menu{$suffix}.js", array( 'jquery'), VERSION, true );
-		wp_enqueue_script( '__THEMENAE-a11y', $dir_uri . "/js/a11y{$suffix}.js", array(), VERSION, true );
-		wp_enqueue_script( '__THEMENAE-menu-control', $dir_uri . "/js/menu-control.js", array( 'jquery'), VERSION, true );
+		wp_enqueue_script( 'TheCreativityArchitect-menu', $dir_uri . "/js/menu{$suffix}.js", array( 'jquery'), VERSION, true );
+		wp_enqueue_script( 'TheCreativityArchitect-a11y', $dir_uri . "/js/a11y{$suffix}.js", array(), VERSION, true );
+		wp_enqueue_script( 'TheCreativityArchitect-menu-control', $dir_uri . "/js/menu-control.js", array( 'jquery'), VERSION, true );
 
 		if ( 'click' == $settings[ 'nav_dropdown_type' ] || 'click-arrow' == $settings[ 'nav_dropdown_type' ] ) {
-			wp_enqueue_script( '__THEMENAE-dropdown-click', $dir_uri . "/js/dropdown-click{$suffix}.js", array( '__THEMENAE-menu' ), VERSION, true );
+			wp_enqueue_script( 'TheCreativityArchitect-dropdown-click', $dir_uri . "/js/dropdown-click{$suffix}.js", array( 'TheCreativityArchitect-menu' ), VERSION, true );
 		}
 
 		if ( 'enable' == $settings['nav_search'] ) {
-			wp_enqueue_script( '__THEMENAE-navigation-search', $dir_uri . "/js/navigation-search{$suffix}.js", array( '__THEMENAE-menu' ), VERSION, true );
+			wp_enqueue_script( 'TheCreativityArchitect-navigation-search', $dir_uri . "/js/navigation-search{$suffix}.js", array( 'TheCreativityArchitect-menu' ), VERSION, true );
 		}
 
 		if ( 'enable' == $settings['back_to_top'] ) {
-			wp_enqueue_script( '__THEMENAE-back-to-top', $dir_uri . "/js/back-to-top{$suffix}.js", array(), VERSION, true );
+			wp_enqueue_script( 'TheCreativityArchitect-back-to-top', $dir_uri . "/js/back-to-top{$suffix}.js", array(), VERSION, true );
 		}
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -66,16 +66,16 @@ if ( ! function_exists( 'widgets_init' ) ) {
 	 */
 	function widgets_init() {
 		$widgets = array(
-			'sidebar-1' => __( 'Right Sidebar', '__THEMENAE__' ),
-			'sidebar-2' => __( 'Left Sidebar', '__THEMENAE__' ),
-			'header' => __( 'Header', '__THEMENAE__' ),
-			'footer-1' => __( 'Footer Widget 1', '__THEMENAE__' ),
-			'footer-2' => __( 'Footer Widget 2', '__THEMENAE__' ),
-			'footer-3' => __( 'Footer Widget 3', '__THEMENAE__' ),
-			'footer-4' => __( 'Footer Widget 4', '__THEMENAE__' ),
-			'footer-5' => __( 'Footer Widget 5', '__THEMENAE__' ),
-			'footer-bar' => __( 'Footer Bar','__THEMENAE__' ),
-			'top-bar' => __( 'Top Bar','__THEMENAE__' ),
+			'sidebar-1' => __( 'Right Sidebar', 'TheCreativityArchitect' ),
+			'sidebar-2' => __( 'Left Sidebar', 'TheCreativityArchitect' ),
+			'header' => __( 'Header', 'TheCreativityArchitect' ),
+			'footer-1' => __( 'Footer Widget 1', 'TheCreativityArchitect' ),
+			'footer-2' => __( 'Footer Widget 2', 'TheCreativityArchitect' ),
+			'footer-3' => __( 'Footer Widget 3', 'TheCreativityArchitect' ),
+			'footer-4' => __( 'Footer Widget 4', 'TheCreativityArchitect' ),
+			'footer-5' => __( 'Footer Widget 5', 'TheCreativityArchitect' ),
+			'footer-bar' => __( 'Footer Bar','TheCreativityArchitect' ),
+			'top-bar' => __( 'Top Bar','TheCreativityArchitect' ),
 		);
 
 		foreach ( $widgets as $id => $name ) {
@@ -129,7 +129,7 @@ if ( ! function_exists( 'disable_title' ) ) {
 	function disable_title() {
 		global $post;
 
-		$disable_headline = ( isset( $post ) ) ? get_post_meta( $post->ID, '___THEMENAE-disable-headline', true ) : '';
+		$disable_headline = ( isset( $post ) ) ? get_post_meta( $post->ID, '_TheCreativityArchitect-disable-headline', true ) : '';
 
 		if ( ! empty( $disable_headline ) && false !== $disable_headline ) {
 			return false;
@@ -150,7 +150,7 @@ if ( ! function_exists( 'resource_hints' ) ) {
 	 * @return array $urls           URLs to print for resource hints.
 	 */
 	function resource_hints( $urls, $relation_type ) {
-		if ( wp_style_is( '__THEMENAE-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		if ( wp_style_is( 'TheCreativityArchitect-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 			if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '>=' ) ) {
 				$urls[] = array(
 					'href' => 'https://fonts.gstatic.com',

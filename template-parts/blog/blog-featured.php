@@ -4,7 +4,7 @@
  *
  * Renders featured image on archives.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 

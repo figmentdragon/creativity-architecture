@@ -8,34 +8,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__construct_header' ) ) {
-	add_action( '__THEMENAE__header', '__THEMENAE__construct_header' );
+if ( ! function_exists( 'TheCreativityArchitectconstruct_header' ) ) {
+	add_action( 'TheCreativityArchitectheader', 'TheCreativityArchitectconstruct_header' );
 	/**
 	 * Build the header.
 	 *
 	 */
-	function __THEMENAE__construct_header() {
+	function TheCreativityArchitectconstruct_header() {
 		?>
-		<header itemtype="https://schema.org/WPHeader" itemscope="itemscope" id="masthead" <?php __THEMENAE__header_class(); ?> style="background-image: url(<?php header_image(); ?>)">
-			<div <?php __THEMENAE__inside_header_class(); ?>>
+		<header itemtype="https://schema.org/WPHeader" itemscope="itemscope" id="masthead" <?php TheCreativityArchitectheader_class(); ?> style="background-image: url(<?php header_image(); ?>)">
+			<div <?php TheCreativityArchitectinside_header_class(); ?>>
             	<div class="header-content-h">
 				<?php
 				/**
-				 * __THEMENAE__before_header_content hook.
+				 * TheCreativityArchitectbefore_header_content hook.
 				 *
 				 */
-				do_action( '__THEMENAE__before_header_content' );
+				do_action( 'TheCreativityArchitectbefore_header_content' );
 
 				// Add our main header items.
-				__THEMENAE__header_items();
+				TheCreativityArchitectheader_items();
 
 				/**
-				 * __THEMENAE__after_header_content hook.
+				 * TheCreativityArchitectafter_header_content hook.
 				 *
 				 *
-				 * @hooked __THEMENAE__add_navigation_float_right - 5
+				 * @hooked TheCreativityArchitectadd_navigation_float_right - 5
 				 */
-				do_action( '__THEMENAE__after_header_content' );
+				do_action( 'TheCreativityArchitectafter_header_content' );
 				?>
                 </div><!-- .header-content-h -->
 			</div><!-- .inside-header -->
@@ -44,30 +44,30 @@ if ( ! function_exists( '__THEMENAE__construct_header' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__header_items' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectheader_items' ) ) {
 	/**
 	 * Build the header contents.
 	 * Wrapping this into a function allows us to customize the order.
 	 *
 	 */
-	function __THEMENAE__header_items() {
-		__THEMENAE__construct_header_widget();
-		__THEMENAE__construct_site_title();
-		__THEMENAE__construct_logo();
+	function TheCreativityArchitectheader_items() {
+		TheCreativityArchitectconstruct_header_widget();
+		TheCreativityArchitectconstruct_site_title();
+		TheCreativityArchitectconstruct_logo();
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__construct_logo' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectconstruct_logo' ) ) {
 	/**
 	 * Build the logo
 	 *
 	 */
-	function __THEMENAE__construct_logo() {
+	function TheCreativityArchitectconstruct_logo() {
 		$logo_url = ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) ) ? wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' ) : false;
 		$logo_url = ( $logo_url ) ? $logo_url[0] : '';
 
-		$logo_url = esc_url( apply_filters( '__THEMENAE__logo', $logo_url ) );
-		$retina_logo_url = esc_url( apply_filters( '__THEMENAE__retina_logo', '' ) );
+		$logo_url = esc_url( apply_filters( 'TheCreativityArchitectlogo', $logo_url ) );
+		$retina_logo_url = esc_url( apply_filters( 'TheCreativityArchitectretina_logo', '' ) );
 
 		// If we don't have a logo, bail.
 		if ( empty( $logo_url ) ) {
@@ -75,15 +75,15 @@ if ( ! function_exists( '__THEMENAE__construct_logo' ) ) {
 		}
 
 		/**
-		 * __THEMENAE__before_logo hook.
+		 * TheCreativityArchitectbefore_logo hook.
 		 *
 		 */
-		do_action( '__THEMENAE__before_logo' );
+		do_action( 'TheCreativityArchitectbefore_logo' );
 
-		$attr = apply_filters( '__THEMENAE__logo_attributes', array(
+		$attr = apply_filters( 'TheCreativityArchitectlogo_attributes', array(
 			'class' => 'header-image',
 			'src'	=> $logo_url,
-			'title'	=> esc_attr( apply_filters( '__THEMENAE__logo_title', get_bloginfo( 'name', 'display' ) ) ),
+			'title'	=> esc_attr( apply_filters( 'TheCreativityArchitectlogo_title', get_bloginfo( 'name', 'display' ) ) ),
 		) );
 
 		if ( '' !== $retina_logo_url ) {
@@ -108,34 +108,34 @@ if ( ! function_exists( '__THEMENAE__construct_logo' ) ) {
 		}
 
 		// Print our HTML.
-		echo apply_filters( '__THEMENAE__logo_output', sprintf( 
+		echo apply_filters( 'TheCreativityArchitectlogo_output', sprintf( 
 			'<div class="site-logo">
 				<a href="%1$s" title="%2$s" rel="home">
 					<img %3$s />
 				</a>
 			</div>',
-			esc_url( apply_filters( '__THEMENAE__logo_href' , home_url( '/' ) ) ),
-			esc_attr( apply_filters( '__THEMENAE__logo_title', get_bloginfo( 'name', 'display' ) ) ),
+			esc_url( apply_filters( 'TheCreativityArchitectlogo_href' , home_url( '/' ) ) ),
+			esc_attr( apply_filters( 'TheCreativityArchitectlogo_title', get_bloginfo( 'name', 'display' ) ) ),
 			$html_attr
 		), $logo_url, $html_attr );
 
 		/**
-		 * __THEMENAE__after_logo hook.
+		 * TheCreativityArchitectafter_logo hook.
 		 *
 		 */
-		do_action( '__THEMENAE__after_logo' );
+		do_action( 'TheCreativityArchitectafter_logo' );
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__construct_site_title' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectconstruct_site_title' ) ) {
 	/**
 	 * Build the site title and tagline.
 	 *
 	 */
-	function __THEMENAE__construct_site_title() {
-		$__THEMENAE__settings = wp_parse_args(
-			get_option( '__THEMENAE__settings', array() ),
-			__THEMENAE__get_defaults()
+	function TheCreativityArchitectconstruct_site_title() {
+		$TheCreativityArchitectsettings = wp_parse_args(
+			get_option( 'TheCreativityArchitectsettings', array() ),
+			TheCreativityArchitectget_defaults()
 		);
 
 		// Get the title and tagline.
@@ -143,25 +143,25 @@ if ( ! function_exists( '__THEMENAE__construct_site_title' ) ) {
 		$tagline = get_bloginfo( 'description' );
 
 		// If the disable title checkbox is checked, or the title field is empty, return true.
-		$disable_title = ( '1' == $__THEMENAE__settings[ 'hide_title' ] || '' == $title ) ? true : false;
+		$disable_title = ( '1' == $TheCreativityArchitectsettings[ 'hide_title' ] || '' == $title ) ? true : false;
 
 		// If the disable tagline checkbox is checked, or the tagline field is empty, return true.
-		$disable_tagline = ( '1' == $__THEMENAE__settings[ 'hide_tagline' ] || '' == $tagline ) ? true : false;
+		$disable_tagline = ( '1' == $TheCreativityArchitectsettings[ 'hide_tagline' ] || '' == $tagline ) ? true : false;
 
 		// Build our site title.
-		$site_title = apply_filters( '__THEMENAE__site_title_output', sprintf(
+		$site_title = apply_filters( 'TheCreativityArchitectsite_title_output', sprintf(
 			'<%1$s class="main-title" itemprop="headline">
 				<a href="%2$s" rel="home">
 					%3$s
 				</a>
 			</%1$s>',
 			( is_front_page() && is_home() ) ? 'h1' : 'p',
-			esc_url( apply_filters( '__THEMENAE__site_title_href', home_url( '/' ) ) ),
+			esc_url( apply_filters( 'TheCreativityArchitectsite_title_href', home_url( '/' ) ) ),
 			get_bloginfo( 'name' )
 		) );
 
 		// Build our tagline.
-		$site_tagline = apply_filters( '__THEMENAE__site_description_output', sprintf(
+		$site_tagline = apply_filters( 'TheCreativityArchitectsite_description_output', sprintf(
 			'<p class="site-description">
 				%1$s
 			</p>',
@@ -170,7 +170,7 @@ if ( ! function_exists( '__THEMENAE__construct_site_title' ) ) {
 
 		// Site title and tagline.
 		if ( false == $disable_title || false == $disable_tagline ) {
-			echo apply_filters( '__THEMENAE__site_branding_output', sprintf( 
+			echo apply_filters( 'TheCreativityArchitectsite_branding_output', sprintf( 
 				'<div class="site-branding">
 					%1$s
 					%2$s
@@ -182,12 +182,12 @@ if ( ! function_exists( '__THEMENAE__construct_site_title' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__construct_header_widget' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectconstruct_header_widget' ) ) {
 	/**
 	 * Build the header widget.
 	 *
 	 */
-	function __THEMENAE__construct_header_widget() {
+	function TheCreativityArchitectconstruct_header_widget() {
 		if ( is_active_sidebar('header') ) : ?>
 			<div class="header-widget">
 				<?php dynamic_sidebar( 'header' ); ?>
@@ -196,25 +196,25 @@ if ( ! function_exists( '__THEMENAE__construct_header_widget' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__top_bar' ) ) {
-	add_action( '__THEMENAE__before_header', '__THEMENAE__top_bar', 5 );
+if ( ! function_exists( 'TheCreativityArchitecttop_bar' ) ) {
+	add_action( 'TheCreativityArchitectbefore_header', 'TheCreativityArchitecttop_bar', 5 );
 	/**
 	 * Build our top bar.
 	 *
 	 */
-	function __THEMENAE__top_bar() {
-		$socials_display_top =  __THEMENAE__get_setting( 'socials_display_top' );
+	function TheCreativityArchitecttop_bar() {
+		$socials_display_top =  TheCreativityArchitectget_setting( 'socials_display_top' );
 		if ( ( ! is_active_sidebar( 'top-bar' ) ) && ( $socials_display_top != true ) ) {
 			return;
 		}
 		?>
-		<div <?php __THEMENAE__top_bar_class(); ?>>
-			<div class="inside-top-bar<?php if ( 'contained' == __THEMENAE__get_setting( 'top_bar_inner_width' ) ) echo ' grid-container grid-parent'; ?>">
+		<div <?php TheCreativityArchitecttop_bar_class(); ?>>
+			<div class="inside-top-bar<?php if ( 'contained' == TheCreativityArchitectget_setting( 'top_bar_inner_width' ) ) echo ' grid-container grid-parent'; ?>">
 				<?php if ( is_active_sidebar( 'top-bar' ) ) {
 					dynamic_sidebar( 'top-bar' ); 
 				} ?>
                 <?php if ( $socials_display_top == true ) {
-					do_action( '__THEMENAE__social_bar_action' );
+					do_action( 'TheCreativityArchitectsocial_bar_action' );
 				}?>
 			</div>
 		</div>
@@ -222,56 +222,56 @@ if ( ! function_exists( '__THEMENAE__top_bar' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__pingback_header' ) ) {
-	add_action( 'wp_head', '__THEMENAE__pingback_header' );
+if ( ! function_exists( 'TheCreativityArchitectpingback_header' ) ) {
+	add_action( 'wp_head', 'TheCreativityArchitectpingback_header' );
 	/**
 	 * Add a pingback url auto-discovery header for singularly identifiable articles.
 	 *
 	 */
-	function __THEMENAE__pingback_header() {
+	function TheCreativityArchitectpingback_header() {
 		if ( is_singular() && pings_open() ) {
 			printf( '<link rel="pingback" href="%s">' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
 		}
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__add_viewport' ) ) {
-	add_action( 'wp_head', '__THEMENAE__add_viewport' );
+if ( ! function_exists( 'TheCreativityArchitectadd_viewport' ) ) {
+	add_action( 'wp_head', 'TheCreativityArchitectadd_viewport' );
 	/**
 	 * Add viewport to wp_head.
 	 *
 	 */
-	function __THEMENAE__add_viewport() {
+	function TheCreativityArchitectadd_viewport() {
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
 	}
 }
 
-add_action( '__THEMENAE__before_header', '__THEMENAE__do_skip_to_content_link', 2 );
+add_action( 'TheCreativityArchitectbefore_header', 'TheCreativityArchitectdo_skip_to_content_link', 2 );
 /**
  * Add skip to content link before the header.
  *
  */
-function __THEMENAE__do_skip_to_content_link() {
+function TheCreativityArchitectdo_skip_to_content_link() {
 	printf( '<a class="screen-reader-text skip-link" href="#content" title="%1$s">%2$s</a>',
-		esc_attr__( 'Skip to content', '__THEMENAE__' ),
-		esc_html__( 'Skip to content', '__THEMENAE__' )
+		esc_attr__( 'Skip to content', 'TheCreativityArchitect' ),
+		esc_html__( 'Skip to content', 'TheCreativityArchitect' )
 	);
 }
 
-add_action( '__THEMENAE__before_header', '__THEMENAE__side_padding', 1 );
+add_action( 'TheCreativityArchitectbefore_header', 'TheCreativityArchitectside_padding', 1 );
 /**
  * Add holder div if sidebar padding is enabled
  *
  */
-function __THEMENAE__side_padding() { 
-	$__THEMENAE__settings = wp_parse_args(
-		get_option( '__THEMENAE__spacing_settings', array() ),
-		__THEMENAE__spacing_get_defaults()
+function TheCreativityArchitectside_padding() { 
+	$TheCreativityArchitectsettings = wp_parse_args(
+		get_option( 'TheCreativityArchitectspacing_settings', array() ),
+		TheCreativityArchitectspacing_get_defaults()
 	);
 	
-	if ( ( $__THEMENAE__settings[ 'side_top' ] != 0 ) || ( $__THEMENAE__settings[ 'side_right' ] != 0 ) || ( $__THEMENAE__settings[ 'side_bottom' ] != 0 ) || ( $__THEMENAE__settings[ 'side_left' ] != 0 ) ) {
+	if ( ( $TheCreativityArchitectsettings[ 'side_top' ] != 0 ) || ( $TheCreativityArchitectsettings[ 'side_right' ] != 0 ) || ( $TheCreativityArchitectsettings[ 'side_bottom' ] != 0 ) || ( $TheCreativityArchitectsettings[ 'side_left' ] != 0 ) ) {
 	?>
-	<div class="__THEMENAE-side-padding-inside">
+	<div class="TheCreativityArchitect-side-padding-inside">
 	<?php
 	}
 }

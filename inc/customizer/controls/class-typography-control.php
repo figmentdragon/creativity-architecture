@@ -28,15 +28,15 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Typography_Custo
 			parent::to_json();
 
 			$number_of_fonts = apply_filters( 'number_of_fonts', 200 );
-			$this->json[ 'default_fonts_title'] = __( 'System fonts', '__THEMENAE__' );
-			$this->json[ 'google_fonts_title'] = __( 'Google fonts', '__THEMENAE__' );
+			$this->json[ 'default_fonts_title'] = __( 'System fonts', 'TheCreativityArchitect' );
+			$this->json[ 'google_fonts_title'] = __( 'Google fonts', 'TheCreativityArchitect' );
 			$this->json[ 'google_fonts' ] = apply_filters( 'typography_customize_list', get_all_google_fonts( $number_of_fonts ) );
 			$this->json[ 'default_fonts' ] = typography_default_fonts();
-			$this->json[ 'family_title' ] = esc_html__( 'Font family', '__THEMENAE__' );
-			$this->json[ 'weight_title' ] = esc_html__( 'Font weight', '__THEMENAE__' );
-			$this->json[ 'transform_title' ] = esc_html__( 'Text transform', '__THEMENAE__' );
+			$this->json[ 'family_title' ] = esc_html__( 'Font family', 'TheCreativityArchitect' );
+			$this->json[ 'weight_title' ] = esc_html__( 'Font weight', 'TheCreativityArchitect' );
+			$this->json[ 'transform_title' ] = esc_html__( 'Text transform', 'TheCreativityArchitect' );
 			$this->json[ 'category_title' ] = '';
-			$this->json[ 'variant_title' ] = esc_html__( 'Variants', '__THEMENAE__' );
+			$this->json[ 'variant_title' ] = esc_html__( 'Variants', 'TheCreativityArchitect' );
 
 			foreach ( $this->settings as $setting_key => $setting_id ) {
 				$this->json[ $setting_key ] = array(

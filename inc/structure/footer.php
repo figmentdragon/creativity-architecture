@@ -8,34 +8,34 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__construct_footer' ) ) {
-	add_action( '__THEMENAE__footer', '__THEMENAE__construct_footer' );
+if ( ! function_exists( 'TheCreativityArchitectconstruct_footer' ) ) {
+	add_action( 'TheCreativityArchitectfooter', 'TheCreativityArchitectconstruct_footer' );
 	/**
 	 * Build our footer.
 	 *
 	 */
-	function __THEMENAE__construct_footer() {
+	function TheCreativityArchitectconstruct_footer() {
 		?>
 		<footer class="site-info" itemtype="https://schema.org/WPFooter" itemscope="itemscope">
-			<div class="inside-site-info <?php if ( 'full-width' !== __THEMENAE__get_setting( 'footer_inner_width' ) ) : ?>grid-container grid-parent<?php endif; ?>">
+			<div class="inside-site-info <?php if ( 'full-width' !== TheCreativityArchitectget_setting( 'footer_inner_width' ) ) : ?>grid-container grid-parent<?php endif; ?>">
 				<?php
 				/**
-				 * __THEMENAE__before_copyright hook.
+				 * TheCreativityArchitectbefore_copyright hook.
 				 *
 				 *
-				 * @hooked __THEMENAE__footer_bar - 15
+				 * @hooked TheCreativityArchitectfooter_bar - 15
 				 */
-				do_action( '__THEMENAE__before_copyright' );
+				do_action( 'TheCreativityArchitectbefore_copyright' );
 				?>
 				<div class="copyright-bar">
 					<?php
 					/**
-					 * __THEMENAE__credits hook.
+					 * TheCreativityArchitectcredits hook.
 					 *
 					 *
-					 * @hooked __THEMENAE__add_footer_info - 10
+					 * @hooked TheCreativityArchitectadd_footer_info - 10
 					 */
-					do_action( '__THEMENAE__credits' );
+					do_action( 'TheCreativityArchitectcredits' );
 					?>
 				</div>
 			</div>
@@ -44,13 +44,13 @@ if ( ! function_exists( '__THEMENAE__construct_footer' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__footer_bar' ) ) {
-	add_action( '__THEMENAE__before_copyright', '__THEMENAE__footer_bar', 15 );
+if ( ! function_exists( 'TheCreativityArchitectfooter_bar' ) ) {
+	add_action( 'TheCreativityArchitectbefore_copyright', 'TheCreativityArchitectfooter_bar', 15 );
 	/**
 	 * Build our footer bar
 	 *
 	 */
-	function __THEMENAE__footer_bar() {
+	function TheCreativityArchitectfooter_bar() {
 		if ( ! is_active_sidebar( 'footer-bar' ) ) {
 			return;
 		}
@@ -62,14 +62,14 @@ if ( ! function_exists( '__THEMENAE__footer_bar' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__add_footer_info' ) ) {
-	add_action( '__THEMENAE__credits', '__THEMENAE__add_footer_info' );
+if ( ! function_exists( 'TheCreativityArchitectadd_footer_info' ) ) {
+	add_action( 'TheCreativityArchitectcredits', 'TheCreativityArchitectadd_footer_info' );
 	/**
 	 * Add the copyright to the footer
 	 *
 	 */
-	function __THEMENAE__add_footer_info() {
-		echo '<span class="copyright">&copy; ' . esc_html( date( 'Y' ) ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '</span> &bull; ' . esc_html__( 'Powered by', '__THEMENAE__' ) . ' <a href="' . esc_url( __THEMENAE__theme_uri_link() ) . '" itemprop="url">' . esc_html__( 'WPKoi', '__THEMENAE__' ) . '</a>';
+	function TheCreativityArchitectadd_footer_info() {
+		echo '<span class="copyright">&copy; ' . esc_html( date( 'Y' ) ) . ' ' . esc_html( get_bloginfo( 'name' ) ) . '</span> &bull; ' . esc_html__( 'Powered by', 'TheCreativityArchitect' ) . ' <a href="' . esc_url( TheCreativityArchitecttheme_uri_link() ) . '" itemprop="url">' . esc_html__( 'WPKoi', 'TheCreativityArchitect' ) . '</a>';
 	}
 }
 
@@ -81,22 +81,22 @@ if ( ! function_exists( '__THEMENAE__add_footer_info' ) ) {
  * @param int $widget_width The width class of our widget.
  * @param int $widget The ID of our widget.
  */
-function __THEMENAE__do_footer_widget( $widget_width, $widget ) {
-	$widget_width = apply_filters( "__THEMENAE__footer_widget_{$widget}_width", $widget_width );
-	$tablet_widget_width = apply_filters( "__THEMENAE__footer_widget_{$widget}_tablet_width", '50' );
+function TheCreativityArchitectdo_footer_widget( $widget_width, $widget ) {
+	$widget_width = apply_filters( "TheCreativityArchitectfooter_widget_{$widget}_width", $widget_width );
+	$tablet_widget_width = apply_filters( "TheCreativityArchitectfooter_widget_{$widget}_tablet_width", '50' );
 	?>
 	<div class="footer-widget-<?php echo absint( $widget ); ?> grid-parent grid-<?php echo absint( $widget_width ); ?> tablet-grid-<?php echo absint( $tablet_widget_width ); ?> mobile-grid-100">
 		<?php if ( ! dynamic_sidebar( 'footer-' . absint( $widget ) ) ) :
 	        $current_user = wp_get_current_user();
 	        if (user_can( $current_user, 'administrator' )) { ?>
 			<aside class="widget inner-padding widget_text">
-				<h4 class="widget-title"><?php esc_html_e( 'Footer Widget', '__THEMENAE__' );?></h4>
+				<h4 class="widget-title"><?php esc_html_e( 'Footer Widget', 'TheCreativityArchitect' );?></h4>
 				<div class="textwidget">
 					<p>
-						<?php esc_html_e( 'Replace this widget content by going to ', '__THEMENAE__' ); ?><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>"><strong><?php esc_html_e('Appearance / Widgets', '__THEMENAE__' ); ?></strong></a><?php esc_html_e( ' and dragging widgets into this widget area.', '__THEMENAE__' ); ?>
+						<?php esc_html_e( 'Replace this widget content by going to ', 'TheCreativityArchitect' ); ?><a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>"><strong><?php esc_html_e('Appearance / Widgets', 'TheCreativityArchitect' ); ?></strong></a><?php esc_html_e( ' and dragging widgets into this widget area.', 'TheCreativityArchitect' ); ?>
 					</p>
 					<p>
-						<?php esc_html_e( 'To remove or choose the number of footer widgets, go to ', '__THEMENAE__' ); ?><a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>"><strong><?php esc_html_e('Appearance / Customize / Layout / Footer Widgets', '__THEMENAE__' ); ?></strong></a><?php esc_html_e( '.', '__THEMENAE__' ); ?>
+						<?php esc_html_e( 'To remove or choose the number of footer widgets, go to ', 'TheCreativityArchitect' ); ?><a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>"><strong><?php esc_html_e('Appearance / Customize / Layout / Footer Widgets', 'TheCreativityArchitect' ); ?></strong></a><?php esc_html_e( '.', 'TheCreativityArchitect' ); ?>
 					</p>
 				</div>
 			</aside>
@@ -105,15 +105,15 @@ function __THEMENAE__do_footer_widget( $widget_width, $widget ) {
 	<?php
 }
 
-if ( ! function_exists( '__THEMENAE__construct_footer_widgets' ) ) {
-	add_action( '__THEMENAE__footer', '__THEMENAE__construct_footer_widgets', 5 );
+if ( ! function_exists( 'TheCreativityArchitectconstruct_footer_widgets' ) ) {
+	add_action( 'TheCreativityArchitectfooter', 'TheCreativityArchitectconstruct_footer_widgets', 5 );
 	/**
 	 * Build our footer widgets.
 	 *
 	 */
-	function __THEMENAE__construct_footer_widgets() {
+	function TheCreativityArchitectconstruct_footer_widgets() {
 		// Get how many widgets to show.
-		$widgets = __THEMENAE__get_footer_widgets();
+		$widgets = TheCreativityArchitectget_footer_widgets();
 
 		if ( ! empty( $widgets ) && 0 !== $widgets ) :
 
@@ -140,27 +140,27 @@ if ( ! function_exists( '__THEMENAE__construct_footer_widgets' ) ) {
 			}
 			?>
 			<div id="footer-widgets" class="site footer-widgets">
-				<div <?php __THEMENAE__inside_footer_class(); ?>>
+				<div <?php TheCreativityArchitectinside_footer_class(); ?>>
 					<div class="inside-footer-widgets">
 						<?php
 						if ( $widgets >= 1 ) {
-							__THEMENAE__do_footer_widget( $widget_width, 1 );
+							TheCreativityArchitectdo_footer_widget( $widget_width, 1 );
 						}
 
 						if ( $widgets >= 2 ) {
-							__THEMENAE__do_footer_widget( $widget_width, 2 );
+							TheCreativityArchitectdo_footer_widget( $widget_width, 2 );
 						}
 
 						if ( $widgets >= 3 ) {
-							__THEMENAE__do_footer_widget( $widget_width, 3 );
+							TheCreativityArchitectdo_footer_widget( $widget_width, 3 );
 						}
 
 						if ( $widgets >= 4 ) {
-							__THEMENAE__do_footer_widget( $widget_width, 4 );
+							TheCreativityArchitectdo_footer_widget( $widget_width, 4 );
 						}
 
 						if ( $widgets >= 5 ) {
-							__THEMENAE__do_footer_widget( $widget_width, 5 );
+							TheCreativityArchitectdo_footer_widget( $widget_width, 5 );
 						}
 						?>
 					</div>
@@ -170,63 +170,63 @@ if ( ! function_exists( '__THEMENAE__construct_footer_widgets' ) ) {
 		endif;
 
 		/**
-		 * __THEMENAE__after_footer_widgets hook.
+		 * TheCreativityArchitectafter_footer_widgets hook.
 		 *
 		 */
-		do_action( '__THEMENAE__after_footer_widgets' );
+		do_action( 'TheCreativityArchitectafter_footer_widgets' );
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__back_to_top' ) ) {
-	add_action( '__THEMENAE__after_footer', '__THEMENAE__back_to_top', 2 );
+if ( ! function_exists( 'TheCreativityArchitectback_to_top' ) ) {
+	add_action( 'TheCreativityArchitectafter_footer', 'TheCreativityArchitectback_to_top', 2 );
 	/**
 	 * Build the back to top button
 	 *
 	 */
-	function __THEMENAE__back_to_top() {
-		$__THEMENAE__settings = wp_parse_args(
-			get_option( '__THEMENAE__settings', array() ),
-			__THEMENAE__get_defaults()
+	function TheCreativityArchitectback_to_top() {
+		$TheCreativityArchitectsettings = wp_parse_args(
+			get_option( 'TheCreativityArchitectsettings', array() ),
+			TheCreativityArchitectget_defaults()
 		);
 
-		if ( 'enable' !== $__THEMENAE__settings[ 'back_to_top' ] ) {
+		if ( 'enable' !== $TheCreativityArchitectsettings[ 'back_to_top' ] ) {
 			return;
 		}
 
-		echo '<a title="' . esc_attr__( 'Scroll back to top', '__THEMENAE__' ) . '" rel="nofollow" href="#" class="__THEMENAE-back-to-top" style="opacity:0;visibility:hidden;" data-scroll-speed="' . absint( apply_filters( '__THEMENAE__back_to_top_scroll_speed', 400 ) ) . '" data-start-scroll="' . absint( apply_filters( '__THEMENAE__back_to_top_start_scroll', 300 ) ) . '">
-				<span class="screen-reader-text">' . esc_html__( 'Scroll back to top', '__THEMENAE__' ) . '</span>
+		echo '<a title="' . esc_attr__( 'Scroll back to top', 'TheCreativityArchitect' ) . '" rel="nofollow" href="#" class="TheCreativityArchitect-back-to-top" style="opacity:0;visibility:hidden;" data-scroll-speed="' . absint( apply_filters( 'TheCreativityArchitectback_to_top_scroll_speed', 400 ) ) . '" data-start-scroll="' . absint( apply_filters( 'TheCreativityArchitectback_to_top_start_scroll', 300 ) ) . '">
+				<span class="screen-reader-text">' . esc_html__( 'Scroll back to top', 'TheCreativityArchitect' ) . '</span>
 			</a>';
 	}
 }
 
-add_action( '__THEMENAE__after_footer', '__THEMENAE__side_padding_footer', 5 );
+add_action( 'TheCreativityArchitectafter_footer', 'TheCreativityArchitectside_padding_footer', 5 );
 /**
  * Add holder div if sidebar padding is enabled
  *
  */
-function __THEMENAE__side_padding_footer() {
-	$__THEMENAE__settings = wp_parse_args(
-		get_option( '__THEMENAE__spacing_settings', array() ),
-		__THEMENAE__spacing_get_defaults()
+function TheCreativityArchitectside_padding_footer() {
+	$TheCreativityArchitectsettings = wp_parse_args(
+		get_option( 'TheCreativityArchitectspacing_settings', array() ),
+		TheCreativityArchitectspacing_get_defaults()
 	);
 
-	$fixed_side_content   =  __THEMENAE__get_setting( 'fixed_side_content' );
-	$socials_display_side =  __THEMENAE__get_setting( 'socials_display_side' );
+	$fixed_side_content   =  TheCreativityArchitectget_setting( 'fixed_side_content' );
+	$socials_display_side =  TheCreativityArchitectget_setting( 'socials_display_side' );
 
-	if ( ( $__THEMENAE__settings[ 'side_top' ] != 0 ) || ( $__THEMENAE__settings[ 'side_right' ] != 0 ) || ( $__THEMENAE__settings[ 'side_bottom' ] != 0 ) || ( $__THEMENAE__settings[ 'side_left' ] != 0 ) ) { ?>
-    	<div class="__THEMENAE-side-left-cover"></div>
-    	<div class="__THEMENAE-side-right-cover"></div>
+	if ( ( $TheCreativityArchitectsettings[ 'side_top' ] != 0 ) || ( $TheCreativityArchitectsettings[ 'side_right' ] != 0 ) || ( $TheCreativityArchitectsettings[ 'side_bottom' ] != 0 ) || ( $TheCreativityArchitectsettings[ 'side_left' ] != 0 ) ) { ?>
+    	<div class="TheCreativityArchitect-side-left-cover"></div>
+    	<div class="TheCreativityArchitect-side-right-cover"></div>
 	</div>
 	<?php }
 	if ( ( $fixed_side_content != '' ) || ( $socials_display_side == true ) ) { ?>
-    <div class="__THEMENAE-side-left-content">
+    <div class="TheCreativityArchitect-side-left-content">
         <?php if ( $socials_display_side == true ) { ?>
-        <div class="__THEMENAE-side-left-socials">
-        <?php do_action( '__THEMENAE__social_bar_action' ); ?>
+        <div class="TheCreativityArchitect-side-left-socials">
+        <?php do_action( 'TheCreativityArchitectsocial_bar_action' ); ?>
         </div>
         <?php } ?>
         <?php if ( $fixed_side_content != '' ) { ?>
-    	<div class="__THEMENAE-side-left-text">
+    	<div class="TheCreativityArchitect-side-left-text">
         <?php echo wp_kses_post( $fixed_side_content ); ?>
         </div>
         <?php } ?>

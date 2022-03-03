@@ -3,8 +3,8 @@
  * Displays the post header
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 // Don't show the title if the post-format is `aside` or `status`.
@@ -17,6 +17,6 @@ if ( 'aside' === $post_format || 'status' === $post_format ) {
 <header class="entry-header">
 	<?php
 	the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' );
-	__THEMENAE___post_thumbnail();
+	TheCreativityArchitect_post_thumbnail();
 	?>
 </header><!-- .entry-header -->

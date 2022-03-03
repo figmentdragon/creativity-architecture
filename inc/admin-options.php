@@ -15,9 +15,9 @@ function options_to_admin() {
 		// we can add a submenu item too
 		$wp_admin_bar->add_menu( array(
 			'parent' => '',
-			'id' => 'THEMENAE-options',
-			'title' => __('__THEMENAE__ Options'),
-			'href' => admin_url( 'themes.php?page=THEMENAE-options')
+			'id' => 'TheCreativityArchitect-options',
+			'title' => __('TheCreativityArchitect Options'),
+			'href' => admin_url( 'themes.php?page=TheCreativityArchitect-options')
 		) );
 
 		// add a customizer link that opens the sharing form
@@ -38,7 +38,7 @@ function enqueue_options_scripts() {
 	wp_enqueue_media();
 
 	// custom jquery for the options admin screen
-	wp_register_script( 'options_js' , get_stylesheet_directory_uri() . '/js/jQuery/jquery.THEMENAE-options.js', null , '1.0', TRUE );
+	wp_register_script( 'options_js' , get_stylesheet_directory_uri() . '/js/jQuery/jquery.TheCreativityArchitect-options.js', null , '1.0', TRUE );
 	wp_enqueue_script( 'options_js' );
 }
 

@@ -5,7 +5,7 @@ get_header(); ?>
 
 <div id="wrapper">
 	<main class="main" role="main" aria-label="Content">
-		<h4 class="page-title"><?php the_title(); ?></h2>
+		<h4 class="page-title"><?php the_title(); ?></h4>
 			<div id="contentwrapper" class="content">
 				<!-- section -->
 					<section>

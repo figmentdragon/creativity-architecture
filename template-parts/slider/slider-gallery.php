@@ -3,7 +3,7 @@
  * This template is used to display the theme slider gallery.
  *
  * @package Portfolio
- * @since __THEMENAE__ 1.0
+ * @since TheCreativityArchitect 1.0
  */
 
 ?>

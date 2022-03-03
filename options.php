@@ -1,9 +1,15 @@
 <?php
+/**
+ * A unique identifier is defined to store the options in the database and reference them from the theme.
+ * By default it uses the theme name, in lowercase and without spaces, but this can be changed if needed.
+ * If the identifier changes, it'll appear as if the options have been reset.
+ *
+ */
 
     $themename = "base-theme";
     $shortname = "mnt";
 
-	/* functions to andale the options array  */
+	/* functions to the options array  */
 
 	function mnt_get_formatted_page_array() {
 		global $suffusion_pages_array;
@@ -327,8 +333,8 @@
 
 	<?php
 
-add_action('admin_menu', 'mynewtheme_add_admin');
-function mynewtheme_add_admin() {
+add_action('admin_menu', 'add_admin');
+function add_admin() {
     global $themename, $shortname, $options, $spawned_options;
 
     if ( $_GET['page'] == basename(__FILE__) ) {
@@ -366,10 +372,10 @@ function mynewtheme_add_admin() {
         }
   }
 
-add_theme_page($themename." Theme Options", "".$themename." Theme Options",
-        'edit_themes', basename(__FILE__), 'mynewtheme_admin'); }
+add_theme_page($themename. "Theme Options", "".$themename." Theme Options",
+        'edit_themes', basename(__FILE__), 'admin'); }
 
-function mynewtheme_admin() {
+function admin() {
     global $themename, $shortname, $options, $spawned_options, $theme_name;
 
     if ($_REQUEST['saved']) {
@@ -387,5 +393,5 @@ function mynewtheme_admin() {
 ?>
     </div><!-- mnt-options -->
 </div><!-- wrap -->
-<?php } // end function mynewtheme_admin()
+<?php } // end function admin()
 ?>

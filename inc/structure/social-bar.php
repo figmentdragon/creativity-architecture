@@ -8,26 +8,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__social_bar' ) ) {
-	add_action( '__THEMENAE__social_bar_action', '__THEMENAE__social_bar' );
-	function __THEMENAE__social_bar() {
-		$socials_facebook_url  		=  __THEMENAE__get_setting( 'socials_facebook_url' );
-		$socials_twitter_url   		=  __THEMENAE__get_setting( 'socials_twitter_url' );
-		$socials_google_url    		=  __THEMENAE__get_setting( 'socials_google_url' );
-		$socials_tumblr_url    		=  __THEMENAE__get_setting( 'socials_tumblr_url' );
-		$socials_pinterest_url 		=  __THEMENAE__get_setting( 'socials_pinterest_url' );
-		$socials_youtube_url   		=  __THEMENAE__get_setting( 'socials_youtube_url' );
-		$socials_linkedin_url  		=  __THEMENAE__get_setting( 'socials_linkedin_url' );
-		$socials_custom_icon_1  	=  __THEMENAE__get_setting( 'socials_custom_icon_1' );
-		$socials_custom_icon_url_1  =  __THEMENAE__get_setting( 'socials_custom_icon_url_1' );
-		$socials_custom_icon_2  	=  __THEMENAE__get_setting( 'socials_custom_icon_2' );
-		$socials_custom_icon_url_2  =  __THEMENAE__get_setting( 'socials_custom_icon_url_2' );
-		$socials_custom_icon_3  	=  __THEMENAE__get_setting( 'socials_custom_icon_3' );
-		$socials_custom_icon_url_3  =  __THEMENAE__get_setting( 'socials_custom_icon_url_3' );
-		$socials_mail_url     		=  __THEMENAE__get_setting( 'socials_mail_url' );
+if ( ! function_exists( 'TheCreativityArchitectsocial_bar' ) ) {
+	add_action( 'TheCreativityArchitectsocial_bar_action', 'TheCreativityArchitectsocial_bar' );
+	function TheCreativityArchitectsocial_bar() {
+		$socials_facebook_url  		=  TheCreativityArchitectget_setting( 'socials_facebook_url' );
+		$socials_twitter_url   		=  TheCreativityArchitectget_setting( 'socials_twitter_url' );
+		$socials_google_url    		=  TheCreativityArchitectget_setting( 'socials_google_url' );
+		$socials_tumblr_url    		=  TheCreativityArchitectget_setting( 'socials_tumblr_url' );
+		$socials_pinterest_url 		=  TheCreativityArchitectget_setting( 'socials_pinterest_url' );
+		$socials_youtube_url   		=  TheCreativityArchitectget_setting( 'socials_youtube_url' );
+		$socials_linkedin_url  		=  TheCreativityArchitectget_setting( 'socials_linkedin_url' );
+		$socials_custom_icon_1  	=  TheCreativityArchitectget_setting( 'socials_custom_icon_1' );
+		$socials_custom_icon_url_1  =  TheCreativityArchitectget_setting( 'socials_custom_icon_url_1' );
+		$socials_custom_icon_2  	=  TheCreativityArchitectget_setting( 'socials_custom_icon_2' );
+		$socials_custom_icon_url_2  =  TheCreativityArchitectget_setting( 'socials_custom_icon_url_2' );
+		$socials_custom_icon_3  	=  TheCreativityArchitectget_setting( 'socials_custom_icon_3' );
+		$socials_custom_icon_url_3  =  TheCreativityArchitectget_setting( 'socials_custom_icon_url_3' );
+		$socials_mail_url     		=  TheCreativityArchitectget_setting( 'socials_mail_url' );
 	?>
-    <div class="__THEMENAE-social-bar">
-    	<ul class="__THEMENAE-socials-list">
+    <div class="TheCreativityArchitect-social-bar">
+    	<ul class="TheCreativityArchitect-socials-list">
         <?php if ( $socials_facebook_url != '' ) { ?>
         	<li><a href="<?php echo esc_url( $socials_facebook_url ); ?>" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
         <?php } ?>

@@ -2,13 +2,13 @@
 /**
  * The template used for displaying credits
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  */
 ?>
 
 <?php
 /**
- * __THEMENAE___credits hook
- * @hooked __THEMENAE___footer_content - 10
+ * TheCreativityArchitect_credits hook
+ * @hooked TheCreativityArchitect_footer_content - 10
  */
-do_action( '__THEMENAE___credits' );
+do_action( 'TheCreativityArchitect_credits' );

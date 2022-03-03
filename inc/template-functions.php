@@ -2,7 +2,7 @@
 /**
  * Functions for page templates.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  */
 
 function get_theme_layout() {
@@ -400,9 +400,9 @@ function new_excerpt_length( $length ) {
 
 function read_more_custom_excerpt( $text ) {
 		if ( strpos( $text, '[&hellip;]' ) ) {
-			$excerpt = str_replace( '[&hellip;]', '<a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', '__THEMENAE__' ) . '</a>', $text );
+			$excerpt = str_replace( '[&hellip;]', '<a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'TheCreativityArchitect' ) . '</a>', $text );
 		} else {
-			$excerpt = $text . '<a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', '__THEMENAE__' ) . '</a>';
+			$excerpt = $text . '<a class="more-link" href="' . get_permalink() . '">' . __( 'Read More', 'TheCreativityArchitect' ) . '</a>';
 		}
 		return $excerpt;
 	}
@@ -558,8 +558,8 @@ if ( ! function_exists ( 'pagenavi' ) ) {
 		the_posts_pagination(
 			array(
 				'mid_size' => 2,
-				'prev_text' => __( '&larr; Previous', '__THEMENAE__' ),
-				'next_text' => __( 'Next &rarr;', '__THEMENAE__' ),
+				'prev_text' => __( '&larr; Previous', 'TheCreativityArchitect' ),
+				'next_text' => __( 'Next &rarr;', 'TheCreativityArchitect' ),
 			)
 		);
 	}
@@ -573,7 +573,7 @@ function comment_list( $comment, $args, $depth ) {
 		case 'trackback' : // 1
 		?>
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', '__THEMENAE__' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', '__THEMENAE__' ), '<span class="edit-link">', '</span>' ); ?></p>
+			<p><?php _e( 'Pingback:', 'TheCreativityArchitect' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Edit)', 'TheCreativityArchitect' ), '<span class="edit-link">', '</span>' ); ?></p>
 			<?php
 			break;
 			default : // 2
@@ -584,7 +584,7 @@ function comment_list( $comment, $args, $depth ) {
 				<?php
 				printf( '<div class="comment-img">%1$s %2$s</div>',
 				get_avatar( $comment, 120 ),
-				( $comment->user_id === $post->post_author ) ? '<span class="bypostauthor">' . __( 'Post<br>Author', '__THEMENAE__' ) . '</span>' : ''
+				( $comment->user_id === $post->post_author ) ? '<span class="bypostauthor">' . __( 'Post<br>Author', 'TheCreativityArchitect' ) . '</span>' : ''
 			);
 			?>
 			<article id="comment-<?php comment_ID(); ?>" class="comment-meta">
@@ -596,17 +596,17 @@ function comment_list( $comment, $args, $depth ) {
 				printf( '<div> <a href="%1$s" class="comment-time"><time datetime="%2$s">%3$s</time></a> </div>',
 				  esc_url( get_comment_link( $comment->comment_ID ) ),
 					get_comment_time( 'c' ),
-					sprintf( __( '%1$s at %2$s', '__THEMENAE__' ),
+					sprintf( __( '%1$s at %2$s', 'TheCreativityArchitect' ),
 					get_comment_date(),
 					get_comment_time()
 					)
 				);
-				edit_comment_link( __( '<i class="icon-edit"></i> Edit', '__THEMENAE__' ) );
+				edit_comment_link( __( '<i class="icon-edit"></i> Edit', 'TheCreativityArchitect' ) );
 				?>
 				<div class="comment-reply"><?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?></div><!-- .reply -->
 			</header>
 			<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', '__THEMENAE__' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'TheCreativityArchitect' ); ?></p>
 			<?php endif; ?>
 			<section class="comment-content">
 				<?php comment_text(); ?>

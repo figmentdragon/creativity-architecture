@@ -8,8 +8,8 @@
  * @link https://make.wordpress.org/themes/2020/07/06/printing-navigation-block-html-from-a-legacy-menu-in-themes/
  *
  * @package WordPress
- * @subpackage _THEMENAE_
- * @since _THEMENAE_ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 function menu_functions_and_filters() {
@@ -52,8 +52,8 @@ function nav() {
 function nav_menus() {
 	register_nav_menus(
 		array(
-			'main-menu' => esc_html__( 'Primary Menu', '__THEMENAE__' ),
-			'social'    => esc_html__( 'Social Menu', '__THEMENAE__' ),
+			'main-menu' => esc_html__( 'Primary Menu', 'TheCreativityArchitect' ),
+			'social'    => esc_html__( 'Social Menu', 'TheCreativityArchitect' ),
 		)
 	);
 
@@ -63,16 +63,16 @@ function nav_menus() {
 	if ( $pre_header_layout && 'none' !== $pre_header_layout ) {
 		register_nav_menus(
 			array(
-				'pre_header_menu'       => __( 'Pre Header Left', '__THEMENAE__' ),
-				'pre_header_menu_right' => __( 'Pre Header Right', '__THEMENAE__' ),
+				'pre_header_menu'       => __( 'Pre Header Left', 'TheCreativityArchitect' ),
+				'pre_header_menu_right' => __( 'Pre Header Right', 'TheCreativityArchitect' ),
 			)
 		);
 	}
 	if ( 'none' !== $footer_layout ) {
 		register_nav_menus(
 			array(
-				'footer_menu'       => __( 'Footer Left', '__THEMENAE__' ),
-				'footer_menu_right' => __( 'Footer Right', '__THEMENAE__' ),
+				'footer_menu'       => __( 'Footer Left', 'TheCreativityArchitect' ),
+				'footer_menu_right' => __( 'Footer Right', 'TheCreativityArchitect' ),
 			)
 		);
 	}
@@ -93,7 +93,7 @@ function add_sub_menu_toggle( $output, $item, $depth, $args ) {
 		$output .= '<button class="sub-menu-toggle" aria-expanded="false" onClick="ExpandSubMenu(this)">';
 		$output .= '<span class="icon-plus">' . get_icon_svg( 'ui', 'plus', 18 ) . '</span>';
 		$output .= '<span class="icon-minus">' . get_icon_svg( 'ui', 'minus', 18 ) . '</span>';
-		$output .= '<span class="screen-reader-text">' . esc_html__( 'Open menu', '__THEMENAE__' ) . '</span>';
+		$output .= '<span class="screen-reader-text">' . esc_html__( 'Open menu', 'TheCreativityArchitect' ) . '</span>';
 		$output .= '</button>';
 	}
 	return $output;
@@ -153,13 +153,13 @@ function mobile_sub_menu_indicators( $item_output, $item, $depth, $args ) {
 
 				$item_output .=
 				'<button class="submenu-toggle" aria-expanded="false">
-					<span class="screen-reader-text">' . __( 'Menu Toggle', '__THEMENAE__' ) . '</span>
+					<span class="screen-reader-text">' . __( 'Menu Toggle', 'TheCreativityArchitect' ) . '</span>
 					' . svg( 'arrow-down' ) . svg( 'arrow-up' ) . '
 				</button>';
 
 			} else {
 
-				$item_output .= '<button class="submenu-toggle" aria-expanded="false"><span class="screen-reader-text">' . __( 'Menu Toggle', '__THEMENAE__' ) . '</span><i class="THEMENAEf THEMENAEf-arrow-down" aria-hidden="true"></i></button>';
+				$item_output .= '<button class="submenu-toggle" aria-expanded="false"><span class="screen-reader-text">' . __( 'Menu Toggle', 'TheCreativityArchitect' ) . '</span><i class="THEMENAEf THEMENAEf-arrow-down" aria-hidden="true"></i></button>';
 
 			}
 
@@ -251,9 +251,9 @@ function content_nav() {
 		the_posts_navigation();
 	} elseif ( 'numeric' === $pagination_type && function_exists( 'the_posts_pagination' ) ) {
 		the_posts_pagination( array(
-			'prev_text'          => '<span>' . esc_html__( 'Prev', '__THEMENAE__' ) . '</span>',
-			'next_text'          => '<span>' . esc_html__( 'Next', '__THEMENAE__' ) . '</span>',
-			'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', '__THEMENAE__' ) . ' </span>',
+			'prev_text'          => '<span>' . esc_html__( 'Prev', 'TheCreativityArchitect' ) . '</span>',
+			'next_text'          => '<span>' . esc_html__( 'Next', 'TheCreativityArchitect' ) . '</span>',
+			'screen_reader_text' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'TheCreativityArchitect' ) . ' </span>',
 		) );
 	} else {
 		the_posts_navigation();

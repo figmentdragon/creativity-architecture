@@ -3,7 +3,7 @@
   global $path;
     $path = defined( get_template_directory() );
   global $version;
-    $version = defined( wp_get_theme( '__THEMENAE__' )->get( 'VERSION' ) );
+    $version = defined( wp_get_theme( 'TheCreativityArchitect' )->get( 'VERSION' ) );
   global $uri_path;
     $uri_path = defined( get_template_directory_uri() );
   global $font_url;

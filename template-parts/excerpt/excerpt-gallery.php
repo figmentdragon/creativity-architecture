@@ -5,14 +5,14 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 // Print the 1st gallery found.
 if ( has_block( 'core/gallery', get_the_content() ) ) {
 
-	__THEMENAE___print_first_instance_of_block( 'core/gallery', get_the_content() );
+	TheCreativityArchitect_print_first_instance_of_block( 'core/gallery', get_the_content() );
 }
 
 the_excerpt();

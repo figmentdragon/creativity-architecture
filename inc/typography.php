@@ -108,9 +108,9 @@ if ( ! function_exists( 'enqueue_google_fonts' ) ) {
 		$fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
 
 		// Enqueue our fonts
-		wp_enqueue_style('__THEMENAE-default-fonts', $default_fonts, array(), null, 'all' );
+		wp_enqueue_style('TheCreativityArchitect-default-fonts', $default_fonts, array(), null, 'all' );
 		if ( $google_fonts ) {
-			wp_enqueue_style('__THEMENAE-fonts', $fonts_url, array(), null, 'all' );
+			wp_enqueue_style('TheCreativityArchitect-fonts', $fonts_url, array(), null, 'all' );
 		}
 	}
 }
@@ -123,7 +123,7 @@ if ( ! function_exists( 'default_fonts_customize_register' ) ) {
 	 */
 	function default_fonts_customize_register( $wp_customize ) {
 		if ( function_exists( 'fonts_customize_register' ) ) {
-			// Bail if __THEMENAE__ Premium is active
+			// Bail if TheCreativityArchitect Premium is active
 			return;
 		}
 
@@ -137,7 +137,7 @@ if ( ! function_exists( 'default_fonts_customize_register' ) ) {
 		$wp_customize->add_section(
 			'font_section',
 			array(
-				'title' => __( 'Typography', '__THEMENAE__' ),
+				'title' => __( 'Typography', 'TheCreativityArchitect' ),
 				'capability' => 'edit_theme_options',
 				'description' => '',
 				'priority' => 30
@@ -197,7 +197,7 @@ if ( ! function_exists( 'default_fonts_customize_register' ) ) {
 				array(
 					'section' => 'font_section',
 					'priority' => 1,
-					'label' => __( 'Text Font', '__THEMENAE__' ),
+					'label' => __( 'Text Font', 'TheCreativityArchitect' ),
 					'settings' => array(
 						'family' => 'settings[font_body]',
 						'variant' => 'font_body_variants',
@@ -224,8 +224,8 @@ if ( ! function_exists( 'default_fonts_customize_register' ) ) {
 				$wp_customize,
 				'settings[body_font_size]',
 				array(
-					'type' => '__THEMENAE-range-slider',
-					'description' => __( 'Font size', '__THEMENAE__' ),
+					'type' => 'TheCreativityArchitect-range-slider',
+					'description' => __( 'Font size', 'TheCreativityArchitect' ),
 					'section' => 'font_section',
 					'settings' => array(
 						'desktop' => 'settings[body_font_size]',
@@ -259,8 +259,8 @@ if ( ! function_exists( 'default_fonts_customize_register' ) ) {
 				$wp_customize,
 				'settings[body_line_height]',
 				array(
-					'type' => '__THEMENAE-range-slider',
-					'description' => __( 'Line height', '__THEMENAE__' ),
+					'type' => 'TheCreativityArchitect-range-slider',
+					'description' => __( 'Line height', 'TheCreativityArchitect' ),
 					'section' => 'font_section',
 					'settings' => array(
 						'desktop' => 'settings[body_line_height]',
@@ -294,8 +294,8 @@ if ( ! function_exists( 'default_fonts_customize_register' ) ) {
 				$wp_customize,
 				'settings[paragraph_margin]',
 				array(
-					'type' => '__THEMENAE-range-slider',
-					'description' => __( 'Paragraph margin', '__THEMENAE__' ),
+					'type' => 'TheCreativityArchitect-range-slider',
+					'description' => __( 'Paragraph margin', 'TheCreativityArchitect' ),
 					'section' => 'font_section',
 					'settings' => array(
 						'desktop' => 'settings[paragraph_margin]',

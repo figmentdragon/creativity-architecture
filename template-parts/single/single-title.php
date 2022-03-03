@@ -4,7 +4,7 @@
  *
  * Renders the title on posts.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 

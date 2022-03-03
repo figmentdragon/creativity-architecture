@@ -5,17 +5,17 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage __THEMENAE__
- * @since __THEMENAE__ 1.0
+ * @subpackage TheCreativityArchitect
+ * @since TheCreativityArchitect 1.0
  */
 
 // If there is no featured-image, print the first image block found.
 if (
-	! __THEMENAE___can_show_post_thumbnail() &&
+	! TheCreativityArchitect_can_show_post_thumbnail() &&
 	has_block( 'core/image', get_the_content() )
 ) {
 
-	__THEMENAE___print_first_instance_of_block( 'core/image', get_the_content() );
+	TheCreativityArchitect_print_first_instance_of_block( 'core/image', get_the_content() );
 }
 
 the_excerpt();

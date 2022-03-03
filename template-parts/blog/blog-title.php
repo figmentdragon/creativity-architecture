@@ -4,7 +4,7 @@
  *
  * Renders post title on archives.
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  * @subpackage Template Parts
  */
 

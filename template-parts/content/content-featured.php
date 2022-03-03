@@ -2,7 +2,7 @@
 /**
  * The template for displaying featured posts on the front page
  *
- * @package __THEMENAE__
+ * @package TheCreativityArchitect
  */
 ?>
 
@@ -10,7 +10,7 @@
 	<div class="hentry-inner">
 		<?php
 		if( has_post_thumbnail() ) {
-			__THEMENAE___post_thumbnail( array(767, 575) );			
+			TheCreativityArchitect_post_thumbnail( array(767, 575) );			
 		}
 		?>
 
@@ -20,7 +20,7 @@
 				
 				<?php if ( 'post' === get_post_type() ) : ?>
 				<div class="entry-meta">
-					<?php __THEMENAE___posted_on(); ?>
+					<?php TheCreativityArchitect_posted_on(); ?>
 
 				</div><!-- .entry-meta -->
 				<?php

@@ -8,12 +8,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-if ( ! function_exists( '__THEMENAE__post_image' ) ) {
-	add_action( '__THEMENAE__after_entry_header', '__THEMENAE__post_image' );
+if ( ! function_exists( 'TheCreativityArchitectpost_image' ) ) {
+	add_action( 'TheCreativityArchitectafter_entry_header', 'TheCreativityArchitectpost_image' );
 	/**
 	 * Prints the Post Image to post excerpts
 	 */
-	function __THEMENAE__post_image() {
+	function TheCreativityArchitectpost_image() {
 		// If there's no featured image, return.
 		if ( ! has_post_thumbnail() ) {
 			return;
@@ -25,7 +25,7 @@ if ( ! function_exists( '__THEMENAE__post_image' ) ) {
 					<a href="' . esc_url( get_permalink() ) . '">
 						' . get_the_post_thumbnail(
 								get_the_ID(),
-								apply_filters( '__THEMENAE__pageheader_default_size', 'full' ),
+								apply_filters( 'TheCreativityArchitectpageheader_default_size', 'full' ),
 								array(
 									'itemprop' => 'image',
 								)
@@ -36,14 +36,14 @@ if ( ! function_exists( '__THEMENAE__post_image' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__featured_page_header_area' ) ) {
+if ( ! function_exists( 'TheCreativityArchitectfeatured_page_header_area' ) ) {
 	/**
 	 * Build the page header.
 	 *
 	 *
 	 * @param string The featured image container class
 	 */
-	function __THEMENAE__featured_page_header_area( $class ) {
+	function TheCreativityArchitectfeatured_page_header_area( $class ) {
 		// Don't run the function unless we're on a page it applies to.
 		if ( ! is_singular() ) {
 			return;
@@ -56,7 +56,7 @@ if ( ! function_exists( '__THEMENAE__featured_page_header_area' ) ) {
 		?>
 		<div class="<?php echo esc_attr( $class ); ?> grid-parent">
 			<?php the_post_thumbnail(
-				apply_filters( '__THEMENAE__pageheader_default_size', 'full' ),
+				apply_filters( 'TheCreativityArchitectpageheader_default_size', 'full' ),
 				array(
 					'itemprop' => 'image',
 				)
@@ -66,37 +66,37 @@ if ( ! function_exists( '__THEMENAE__featured_page_header_area' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__featured_page_header' ) ) {
-	add_action( '__THEMENAE__after_header', '__THEMENAE__featured_page_header', 10 );
+if ( ! function_exists( 'TheCreativityArchitectfeatured_page_header' ) ) {
+	add_action( 'TheCreativityArchitectafter_header', 'TheCreativityArchitectfeatured_page_header', 10 );
 	/**
 	 * Add page header above content.
 	 *
 	 */
-	function __THEMENAE__featured_page_header() {
-		if ( function_exists( '__THEMENAE__pageheader' ) ) {
+	function TheCreativityArchitectfeatured_page_header() {
+		if ( function_exists( 'TheCreativityArchitectpageheader' ) ) {
 			return;
 		}
 
 		if ( is_page() ) {
-			__THEMENAE__featured_page_header_area( 'page-header-image' );
+			TheCreativityArchitectfeatured_page_header_area( 'page-header-image' );
 		} 
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__blog_header_image' ) ) {
-	add_action( '__THEMENAE__after_header', '__THEMENAE__blog_header_image', 11 );
+if ( ! function_exists( 'TheCreativityArchitectblog_header_image' ) ) {
+	add_action( 'TheCreativityArchitectafter_header', 'TheCreativityArchitectblog_header_image', 11 );
 	/**
 	 * Add blog header above content.
 	 *
 	 */
-	function __THEMENAE__blog_header_image() {
+	function TheCreativityArchitectblog_header_image() {
 
 		if ( ( is_front_page() && is_home() ) || ( is_home() ) ) { 
-			$blog_header_image =  __THEMENAE__get_setting( 'blog_header_image' ); 
-			$blog_header_title =  __THEMENAE__get_setting( 'blog_header_title' ); 
-			$blog_header_text =  __THEMENAE__get_setting( 'blog_header_text' ); 
-			$blog_header_button_text =  __THEMENAE__get_setting( 'blog_header_button_text' ); 
-			$blog_header_button_url =  __THEMENAE__get_setting( 'blog_header_button_url' ); 
+			$blog_header_image =  TheCreativityArchitectget_setting( 'blog_header_image' ); 
+			$blog_header_title =  TheCreativityArchitectget_setting( 'blog_header_title' ); 
+			$blog_header_text =  TheCreativityArchitectget_setting( 'blog_header_text' ); 
+			$blog_header_button_text =  TheCreativityArchitectget_setting( 'blog_header_button_text' ); 
+			$blog_header_button_url =  TheCreativityArchitectget_setting( 'blog_header_button_url' ); 
 			if ( $blog_header_image != '' ) { ?>
 			<div class="page-header-image grid-parent page-header-blog" style="background-image: url(<?php echo esc_url($blog_header_image); ?>)">
                 <div class="page-header-blog-inner">
@@ -125,20 +125,20 @@ if ( ! function_exists( '__THEMENAE__blog_header_image' ) ) {
 	}
 }
 
-if ( ! function_exists( '__THEMENAE__featured_page_header_inside_single' ) ) {
-	add_action( '__THEMENAE__before_content', '__THEMENAE__featured_page_header_inside_single', 10 );
+if ( ! function_exists( 'TheCreativityArchitectfeatured_page_header_inside_single' ) ) {
+	add_action( 'TheCreativityArchitectbefore_content', 'TheCreativityArchitectfeatured_page_header_inside_single', 10 );
 	/**
 	 * Add post header inside content.
 	 * Only add to single post.
 	 *
 	 */
-	function __THEMENAE__featured_page_header_inside_single() {
-		if ( function_exists( '__THEMENAE__pageheader' ) ) {
+	function TheCreativityArchitectfeatured_page_header_inside_single() {
+		if ( function_exists( 'TheCreativityArchitectpageheader' ) ) {
 			return;
 		}
 
 		if ( is_single() ) {
-			__THEMENAE__featured_page_header_area( 'page-header-image-single' );
+			TheCreativityArchitectfeatured_page_header_area( 'page-header-image-single' );
 		}
 	}
 }

@@ -181,7 +181,7 @@ function body_classes( $classes ) {
 	}
 
 	// Add THEMENAE body class.
-	$classes[] = '__THEMENAE__';
+	$classes[] = 'TheCreativityArchitect';
 
 	// WooCommerce list layout.
 	if ( 'list' === get_theme_mod( 'woocommerce_loop_layout' ) ) {
