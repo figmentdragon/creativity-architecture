@@ -3,56 +3,56 @@
 
 $variable-prefix: ca-;
 
-@import "05-wrappers-containers/grid/grid";
+@import "grid/grid";
 
 /* 2.0 Tools */
 /* 2.0 Functions */
-@import "02-tools/functions/assert-ascending";
-@import "02-tools/functions/assert-at-zero";
-@import "02-tools/functions/calc-percent";
-@import "02-tools/functions/color-function";
-@import "02-tools/functions/color-contrast";
-@import "02-tools/functions/colors";
-@import "02-tools/functions/make-color-map";
-@import "02-tools/functions/escape-svg";
-@import "02-tools/functions/map-multiple";
-@import "02-tools/functions/negativify-map";
-@import "02-tools/functions/replace-search";
-@import "02-tools/functions/valid-calc";
+@import "tools/functions/assert-ascending";
+@import "tools/functions/assert-at-zero";
+@import "tools/functions/calc-percent";
+@import "tools/functions/color-function";
+@import "tools/functions/color-contrast";
+@import "tools/functions/colors";
+@import "tools/functions/make-color-map";
+@import "tools/functions/escape-svg";
+@import "tools/functions/map-multiple";
+@import "tools/functions/negativify-map";
+@import "tools/functions/replace-search";
+@import "tools/functions/valid-calc";
 
-@import "02-tools/properties/change-percentage";
-@import "02-tools/properties/options";
-@import "02-tools/properties/escaped-characters";
-@import "02-tools/properties/structure";
-@import "02-tools/properties/positioning";
-@import "02-tools/properties/aspect-ratio";
+@import "tools/properties/change-percentage";
+@import "tools/properties/options";
+@import "tools/properties/escaped-characters";
+@import "tools/properties/structure";
+@import "tools/properties/positioning";
+@import "tools/properties/aspect-ratio";
 
 /* 2.0 Qualities */
-@import "02-tools/qualities/base-units";
-@import "02-tools/qualities/size";
-@import "02-tools/qualities/spacing";
-@import "02-tools/qualities/width";
-@import "02-tools/qualities/height";
-@import "02-tools/qualities/padding";
-@import "02-tools/qualities/border";
-@import "02-tools/qualities/zindex";
+@import "tools/qualities/base-units";
+@import "tools/qualities/size";
+@import "tools/qualities/spacing";
+@import "tools/qualities/width";
+@import "tools/qualities/height";
+@import "tools/qualities/padding";
+@import "tools/qualities/border";
+@import "tools/qualities/zindex";
 
 /* 1.0 Variables */
 /* 1.1 Colors */
-@import "01-variables/colors/gray-scale";
-@import "01-variables/colors/base";
+@import "variables/colors/gray-scale";
+@import "variables/colors/base";
 $silver : #c0c0c0;
 $chocolate : #3F000F;
-@import "01-variables/colors/theme";
-@import "01-variables/colors/rgba";
-@import "01-variables/colors/contrast";
+@import "variables/colors/theme";
+@import "variables/colors/rgba";
+@import "variables/colors/contrast";
 
-@import "01-variables/link";
+@import "variables/link";
 
 /* 1.2 Typography */
-@import "01-variables/typography/typography";
-@import "01-variables/typography/properties/heading-properties";
-@import "01-variables/typography/properties/type-properties";
+@import "variables/typography/typography";
+@import "variables/typography/properties/heading-properties";
+@import "variables/typography/properties/type-properties";
 
 
 
@@ -60,104 +60,101 @@ $chocolate : #3F000F;
 
 
 /* 2.0 Utilities */
-@import "02-tools/utilities/colored-links";
-@import "02-tools/utilities/responsive";
-@import "02-tools/utilities/rfs";
-@import "02-tools/utilities/utilities-generator";
-@import "02-tools/utilities/utilities";
-@import "02-tools/utilities/api";
+@import "tools/utilities/colored-links";
+@import "tools/utilities/responsive";
+@import "tools/utilities/rfs";
+@import "tools/utilities/utilities-generator";
+@import "tools/utilities/utilities";
+@import "tools/utilities/api";
 
 /* 3.0 Global*/
 /* 3.0 Patterns*/
-@import "03-global/patterns/patterns";
+@import "patterns/patterns";
 
 
 /* 2.0 Mixins */
-@import "02-tools/mixins/responsive";
-@import "02-tools/mixins/backdrop";
-@import "02-tools/mixins/border-box";
-@import "02-tools/mixins/border-radius";
-@import "02-tools/mixins/buttons";
-@import "02-tools/mixins/cards";
-@import "02-tools/mixins/caret";
-@import "02-tools/mixins/center-block";
-@import "02-tools/mixins/color-scheme";
-@import "02-tools/mixins/container";
-@import "02-tools/mixins/elevation";
-@import "02-tools/mixins/flex";
-@import "02-tools/mixins/font-size";
-@import "02-tools/mixins/hover";
-@import "02-tools/mixins/hue-rotate";
-@import "02-tools/mixins/links";
-@import "02-tools/mixins/list";
-@import "02-tools/mixins/list-padding";
-@import "02-tools/mixins/ltr";
-@import "02-tools/mixins/media";
-@import "02-tools/mixins/navigation";
-@import "02-tools/mixins/placeholder";
-@import "02-tools/mixins/reset-box";
-@import "02-tools/mixins/text-truncate";
-@import "02-tools/mixins/transition";
-@import "02-tools/mixins/visually-hidden";
-@import "02-tools/mixins/clearfix";
+@import "tools/mixins/responsive";
+@import "tools/mixins/backdrop";
+@import "tools/mixins/border-box";
+@import "tools/mixins/border-radius";
+@import "tools/mixins/buttons";
+@import "tools/mixins/cards";
+@import "tools/mixins/caret";
+@import "tools/mixins/center-block";
+@import "tools/mixins/color-scheme";
+@import "tools/mixins/container";
+@import "tools/mixins/elevation";
+@import "tools/mixins/flex";
+@import "tools/mixins/font-size";
+@import "tools/mixins/hover";
+@import "tools/mixins/hue-rotate";
+@import "tools/mixins/links";
+@import "tools/mixins/list";
+@import "tools/mixins/list-padding";
+@import "tools/mixins/ltr";
+@import "tools/mixins/media";
+@import "tools/mixins/navigation";
+@import "tools/mixins/placeholder";
+@import "tools/mixins/reset-box";
+@import "tools/mixins/text-truncate";
+@import "tools/mixins/transition";
+@import "tools/mixins/visually-hidden";
+@import "tools/mixins/clearfix";
 
 /* 2.0 Helpers */
-@import "02-tools/helpers/a11y";
-@import "02-tools/helpers/alignment";
-@import "02-tools/helpers/borders";
-@import "02-tools/helpers/clearfix";
-@import "02-tools/helpers/lists";
-@import "02-tools/helpers/misc";
-@import "02-tools/helpers/ratio";
-@import "02-tools/helpers/span";
-@import "02-tools/helpers/stacks";
-@import "02-tools/helpers/stretched-link";
-@import "02-tools/helpers/text-truncation";
-@import "02-tools/helpers/type";
-@import "02-tools/helpers/visibility";
-@import "02-tools/helpers/visually-hidden";
-@import "02-tools/helpers/vr";
-
-
-
+@import "tools/helpers/a11y";
+@import "tools/helpers/alignment";
+@import "tools/helpers/borders";
+@import "tools/helpers/clearfix";
+@import "tools/helpers/lists";
+@import "tools/helpers/misc";
+@import "tools/helpers/ratio";
+@import "tools/helpers/span";
+@import "tools/helpers/stacks";
+@import "tools/helpers/stretched-link";
+@import "tools/helpers/text-truncation";
+@import "tools/helpers/type";
+@import "tools/helpers/visibility";
+@import "tools/helpers/visually-hidden";
+@import "tools/helpers/vr";
 
 /* 3.0 Base*/
-@import "03-global/base/root";
-@import "03-global/base/responsive-style";
-@import "03-global/base/media-query";
+@import "global/base/root";
+@import "global/base/responsive-style";
+@import "global/base/media-query";
 
-@import "03-global/base/reset";
-@import "03-global/base/normalize";
+@import "global/base/reset";
+@import "global/base/normalize";
 
-@import "03-global/base/section";
-@import "03-global/base/div";
-@import "03-global/base/span";
+@import "global/base/section";
+@import "global/base/div";
+@import "global/base/span";
 
 /* 4.0 Bare Elements*/
 /* 4.0 HTML*/
-@import "04-bare_elements/html/index";
-@import "04-bare_elements/html/body";
-@import "04-bare_elements/html/header";
-@import "04-bare_elements/html/nav";
-@import "04-bare_elements/html/main";
-@import "04-bare_elements/html/article";
-@import "04-bare_elements/html/aside";
-@import "04-bare_elements/html/footer";
+@import "global/html/index";
+@import "global/html/body";
+@import "global/html/header";
+@import "global/html/nav";
+@import "global/html/main";
+@import "global/html/article";
+@import "global/html/aside";
+@import "global/html/footer";
 
 /* 4.0 Bare Type*/
-@import "04-bare_elements/type/blockquote";
-@import "04-bare_elements/type/body";
-@import "04-bare_elements/type/display";
-@import "04-bare_elements/type/emphasis";
-@import "04-bare_elements/type/figure";
-@import "04-bare_elements/type/headings";
-@import "04-bare_elements/type/lead";
-@import "04-bare_elements/type/type";
+@import "global/type/blockquote";
+@import "global/type/body";
+@import "global/type/display";
+@import "global/type/emphasis";
+@import "global/type/figure";
+@import "global/type/headings";
+@import "global/type/lead";
+@import "global/type/type";
 
-@import "05-wrappers-containers/05-wrappers";
-@import "05-wrappers-containers/05-containers";
+@import "global/wrapper";
 
 @import "partials/logo";
+
 @import "partials/headings";
 @import "partials/site-header";
 @import "partials/site-footer";

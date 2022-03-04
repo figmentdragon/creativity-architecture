@@ -1,4 +1,5 @@
 <!-- footer -->
+</div>
 	<div>
     <footer id="site-info" class="site-footer" role="contentinfo" itemtype="https://schema.org/WPFooter" itemscope="itemscope">
       <div id="copyright" class="small copyright">

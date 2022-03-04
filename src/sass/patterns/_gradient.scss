@@ -2,10 +2,15 @@ $gradient: linear-gradient(-120deg, rgba($primary, .95), rgba($secondary, .65), 
 
 $gradient-tabs-bg: linear-gradient(320deg, transparent, rgba($white, .10) 20%, rgba($accent, .20) 35%, rgba($accent, .30) 50%, rgba($accent, .40) 65%);
 
+$gradient-primary: linear-gradient( 190deg, $primary, $white );
+$gradient-secondary: linear-gradient( $secondary, $white );
+$gradient-accent: linear-gradient( 290deg, $accent, $white );
+$gradient-chocolate: linear-gradient( 120deg, $chocolate, $white );
+
+
 @import "gradients/mixins/css-gradient";
 @import "gradients/mixins/global-gradient";
 @import "gradients/mixins/gradient-mixins";
-@import "gradients/mixins/theme-mixins";
 @import "gradients/global-gradient";
 @import "gradients/theme-gradient";
 

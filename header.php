@@ -28,26 +28,16 @@
 
 	<?php do_action( 'wp_body_open' ); ?>
 
-	<?php
-
-  function THEMENAE_setup() {
-    $logo_height => 500;
-    $logo_width => 500;
-    function add_theme_support( 'custom_logo',
-      array(
-        'height' => $logo_height,
-        'width'  => $logo_width,
-        'flex-height' => true,
-        'flex-width'  => true,
-        'header-text' => 'site-title',
-      ));
-    }
-
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
-	   $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-
-     if ( has_custom_logo() ) {
-       echo '<img width="500" height="500" class="logo logo-img" src="' . esc_url( $logo[0] ) . '" alt="' . bloginfo( 'name' ) . '">';
-     } else {
-       echo '<h1>' . get_bloginfo('name') . '</h1>';
-     } ?>
+  <?php get_sidebar(); ?>
+  <div class="logo-wrapper">
+  if ( is_front_page() && is_home() ) {
+      <img src="http://localhost:10004/wp-content/uploads/2022/02/logo-corner.png" class="logo logo-img" height="500" width="500"></img>
+  } elseif ( is_front_page() ) {
+      <img src="http://localhost:10004/wp-content/uploads/2022/02/logo-corner.png" class="logo logo-img" height="500" width="500"></img>
+  } elseif ( is_home() ) {
+      <img src="http://localhost:10004/wp-content/uploads/2022/02/logo-corner.png" class="logo logo-img" height="500" width="500"></img>
+  } else {
+      <img src="http://localhost:10004/wp-content/uploads/2022/02/logo-corner.png" class="logo logo-img" height="500" width="500"></img>
+  } endif; ?>
+</div>
+  <div class="wrapper">
