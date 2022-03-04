@@ -3,6 +3,7 @@
   @return red($value), green($value), blue($value);
 }
 
+
 // stylelint-disable scss/dollar-variable-pattern
 @function rgba-css-var($identifier, $target) {
   @if $identifier == "body" and $target == "bg" {

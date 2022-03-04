@@ -1,9 +1,3 @@
-<?php
-	/*-----------------------------------------------------------------------------------*/
-	/* This template will be called by all other template files to begin
-	/* rendering the page and display the header/nav
-	/*-----------------------------------------------------------------------------------*/
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -35,6 +29,20 @@
 	<?php do_action( 'wp_body_open' ); ?>
 
 	<?php
+
+  function THEMENAE_setup() {
+    $logo_height => 500;
+    $logo_width => 500;
+    function add_theme_support( 'custom_logo',
+      array(
+        'height' => $logo_height,
+        'width'  => $logo_width,
+        'flex-height' => true,
+        'flex-width'  => true,
+        'header-text' => 'site-title',
+      ));
+    }
+
     $custom_logo_id = get_theme_mod( 'custom_logo' );
 	   $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 

@@ -1,5 +1,28 @@
-*:fullscreen #main {
-  p {
-    background: #3880ff;
+*,
+*::after,
+*::before,
+*:after,
+*:before,
+*:fullscreen {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include box-sizing($type: inherit);
+  transition: all .3s cubic-bezier(.5, 0, .5, 1);
+}
+
+html {
+  @include gradient-chocolate;
+  @include container-base;
+  position: relative;
+  z-index: $z-index-html;
+  height: 100%;
+  width: 100%;
+
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+
+  @media screen and (min-width: 768px) {
+    font-size: 75%;
   }
 }

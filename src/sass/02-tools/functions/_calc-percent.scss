@@ -1,6 +1,12 @@
-@function calc-percent(#{$target, #{$container) {
-  @return (#{$target / #{$container) * 100%;
+@function calc-percent ($target, $context) {
+    @return divide($target, $context) * 100%;
 }
-@function cp(#{$target, #{$container) {
-  @return calc-percent(#{$target, #{$container);
+
+@function calc-ems ($target) {
+    @return divide($target, $font-size-base) * 1em; // Had to multiply by one to stop a space between the sum and type
+}
+
+
+@function font-sizing ($target, $context: $font-size-base) {
+    @return divide($target, $context) * 1em; // Had to multiply by one to stop a space between the sum and type.
 }

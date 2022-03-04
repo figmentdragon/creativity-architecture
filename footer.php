@@ -1,9 +1,9 @@
 <!-- footer -->
-	<div id="wrapper-footer">
-		 <footer id="site-info" class="site-footer" role="contentinfo">
-			     <!-- copyright -->
-			   <small class="copyright">
-				    <?php echo copyright(); ?>
+	<div>
+    <footer id="site-info" class="site-footer" role="contentinfo" itemtype="https://schema.org/WPFooter" itemscope="itemscope">
+      <div id="copyright" class="small copyright">
+          <!-- copyright -->
+          <?php echo copyright(); ?>
               <?php bloginfo( 'name' ); ?>  &
             <address>
               <?php the_author_meta( $auth_id = true ); ?>

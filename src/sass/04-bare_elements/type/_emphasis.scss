@@ -1,5 +1,7 @@
 /* 7 */
 
+$small-percentage: 6%;
+
 b, strong, time, cite, dfn, em, i, sub, sup, small, big {
 	font-family: $accent-font;
 
@@ -50,13 +52,18 @@ sub {
 	bottom: -0.25em;
 }
 
-small {
+small,
+.small {
   font-family: $accent-font;
-	font-size: $font-size-sm + 3;
   line-height: $line-height-sm;
   text-transform: capitalize;
+  text-align: right;
+  color: black;
+  text-shadow: 0 1px .5px $chocolate, 1px 0 .5px $black;
+  display: inline-block;
 }
 
-big {
+big,
+.big {
 	font-size: $big-font-size;
 }
